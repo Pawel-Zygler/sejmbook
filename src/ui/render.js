@@ -144,10 +144,27 @@ export function renderDirectory(ctx, state, list) {
   </section>`;
 }
 
+/** One row under the photo: club • district • attendance, separated by dots. */
+export function mpCardMeta(ctx, mp) {
+  const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
+  const c = ctx.clubs.get(mp.club) ?? { ...FALLBACK_CLUB, id: mp.club, short: mp.club };
+  const logo = clubLogo(ctx, mp.club);
+  // With a logo the chip shows only the logo, so long club names do not push the row apart.
+  const club = logo
+    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}"></span>`
+    : clubChip(ctx, mp.club);
+  const parts = [
+    club,
+    `<span class="mp-card-district" title="okręg ${mp.districtNum} · ${esc(mp.districtName)}">okr. ${mp.districtNum}</span>`,
+    attendanceBadge(ctx, mp.id, 16),
+  ].filter(Boolean);
+  return `<span class="mp-card-meta" data-testid="mp-card-meta">${parts.join(sep)}</span>`;
+}
+
 function mpCard(ctx, mp) {
   const off = inactiveLabel(mp);
   return `<li class="mp-card${off ? ' inactive' : ''}">${mpLink(mp, `${avatar(ctx, mp, 'lg')}<span class="mp-card-name">${esc(mp.name)}</span>`, 'mp-card-link')}
-    <span class="mp-card-meta">${clubChip(ctx, mp.club)} okręg ${mp.districtNum} · ${esc(mp.districtName)}${attendanceBadge(ctx, mp.id, 16)}</span>
+    ${mpCardMeta(ctx, mp)}
     ${off ? `<span class="badge-off">${esc(off)}</span>` : ''}</li>`;
 }
 

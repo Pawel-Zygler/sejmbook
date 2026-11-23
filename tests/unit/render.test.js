@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -249,5 +249,31 @@ describe('bundled media', () => {
     const html = renderAside(withMedia);
     expect(html).toContain('club-logo-lg');
     expect(html).toContain('class="dot"');
+  });
+});
+
+describe('mpCardMeta', () => {
+  it('puts club, district and attendance in one row separated by dots', () => {
+    const mp = ctx.mpsById.get(70);
+    const html = mpCardMeta(ctx, mp);
+    expect(html).toContain('class="mp-card-meta"');
+    expect(html).toContain(`>okr. ${mp.districtNum}</span>`);
+    expect(html).toContain(`title="okręg ${mp.districtNum} · ${mp.districtName}"`);
+    expect(html.indexOf('chip')).toBeLessThan(html.indexOf('mp-card-district'));
+    const dots = html.match(/class="meta-dot"/g) ?? [];
+    expect(dots.length).toBe(html.includes('att-badge') ? 2 : 1);
+    expect(html.replace(/<[^>]*>/g, '')).not.toMatch(/ [–-] /);
+  });
+});
+
+describe('mpCardMeta with logos', () => {
+  it('shows only the club logo (name in alt and title) when there is one', () => {
+    const withMedia = { ...ctx, media: { photos: {}, logos: { KO: 'data:image/png;base64,BBB' } } };
+    const ko = [...ctx.mpsById.values()].find((m) => m.club === 'KO');
+    const html = mpCardMeta(withMedia, ko);
+    expect(html).toContain('class="chip has-logo logo-only"');
+    expect(html).toContain('alt="KO"');
+    const pis = [...ctx.mpsById.values()].find((m) => m.club === 'PiS');
+    expect(mpCardMeta(withMedia, pis)).not.toContain('logo-only');
   });
 });

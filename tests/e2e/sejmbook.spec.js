@@ -160,3 +160,16 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   await expect(page.locator('.avatar-xl img')).toHaveCount(0);
   await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });
+
+test('MP cards: club, district and attendance in one row under the photo', async ({ page }) => {
+  await page.goto(`${PAGE}#poslowie`);
+  const card = page.locator('.mp-card').first();
+  const meta = card.getByTestId('mp-card-meta');
+  await expect(meta).toBeVisible();
+  const tops = await meta.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().top + c.getBoundingClientRect().height / 2)));
+  expect(Math.max(...tops) - Math.min(...tops)).toBeLessThanOrEqual(3);
+  const photo = await card.locator('.avatar').boundingBox();
+  const row = await meta.boundingBox();
+  expect(row.y).toBeGreaterThan(photo.y + photo.height);
+  expect(row.width).toBeLessThanOrEqual((await card.boundingBox()).width);
+});
