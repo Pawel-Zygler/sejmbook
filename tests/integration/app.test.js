@@ -7,6 +7,7 @@ import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import newsData from '../../data/news.json';
 import attendanceData from '../../data/attendance.json';
+import careerData from '../../data/career.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -21,7 +22,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData });
 });
 afterEach(() => app.destroy());
 
@@ -145,7 +146,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Loga klubów');
+    expect(first.textContent).toContain('Spektrum partyjne');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -252,5 +253,27 @@ describe('bundled media', () => {
     expect($('.avatar-xl img').getAttribute('src')).toBe('data:image/jpeg;base64,AAA');
     expect($('.profile .chip.has-logo img, .chip.has-logo img').getAttribute('src')).toBe('data:image/png;base64,BBB');
     expect($('#aside img.club-logo-lg').getAttribute('src')).toBe('data:image/png;base64,BBB');
+  });
+});
+
+describe('Spektrum partyjne', () => {
+  it('shows the club split of a long career under the profile card', () => {
+    // Pick the current MP with the most terms in the data.
+    const [id, rows] = Object.entries(careerData.career).sort((a, b) => b[1].length - a[1].length)[0];
+    nav(`#posel-${id}`);
+    const panel = $('[data-testid="spectrum"]');
+    expect(panel).not.toBeNull();
+    expect(panel.previousElementSibling.classList.contains('profile-top')).toBe(true);
+    expect(panel.textContent).toContain('Spektrum partyjne');
+    expect(panel.textContent).toContain(`${rows.length} kadencj`);
+    const segs = panel.querySelectorAll('.spectrum-seg');
+    expect(segs.length).toBe(panel.querySelectorAll('.spectrum-legend li').length);
+    expect(segs.length).toBeGreaterThan(0);
+  });
+  it('first-term MPs get a single full bar', () => {
+    const id = Object.entries(careerData.career).find(([, r]) => r.length === 1 && r[0].term === 10)[0];
+    nav(`#posel-${id}`);
+    expect($$('[data-testid="spectrum"] .spectrum-seg')).toHaveLength(1);
+    expect($('[data-testid="spectrum"]').textContent).toContain('100%');
   });
 });

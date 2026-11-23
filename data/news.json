@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-spektrum",
+      "date": "2026-11-24",
+      "title": "Spektrum partyjne",
+      "body": "Na profilu posła pasek pokazuje, w jakich klubach spędził swoje kadencje w Sejmie od 1997 roku.",
+      "link": {
+        "href": "#posel-1",
+        "label": "Zobacz przykład"
+      }
+    },
+    {
       "id": "2026-11-24-loga",
       "date": "2026-11-24",
       "title": "Loga klubów i zdjęcia w każdym widoku",

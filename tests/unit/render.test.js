@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -275,5 +275,24 @@ describe('mpCardMeta with logos', () => {
     expect(html).toContain('alt="KO"');
     const pis = [...ctx.mpsById.values()].find((m) => m.club === 'PiS');
     expect(mpCardMeta(withMedia, pis)).not.toContain('logo-only');
+  });
+});
+
+describe('renderCareerSpectrum', () => {
+  const career = {
+    terms: [{ num: 9, from: '2019-11-12', to: '2023-11-12' }, { num: 10, from: '2023-11-13', to: null }],
+    career: { 70: [{ term: 9, club: 'PO-KO', clubName: 'x' }, { term: 10, club: 'PiS', clubName: 'y' }] },
+  };
+  it('draws one segment per camp with a legend and source note', () => {
+    const html = renderCareerSpectrum({ ...ctx, career }, ctx.mpsById.get(70));
+    expect(html).toContain('Spektrum partyjne');
+    expect((html.match(/class="spectrum-seg"/g) ?? []).length).toBe(2);
+    expect(html).toContain('KO / PO');
+    expect(html).toContain('kadencja IX');
+    expect(html).toContain('2 kadencje w Sejmie (IX–X)');
+    expect(html).toContain('API Sejmu');
+  });
+  it('renders nothing without data', () => {
+    expect(renderCareerSpectrum({ ...ctx, career: null }, ctx.mpsById.get(70))).toBe('');
   });
 });

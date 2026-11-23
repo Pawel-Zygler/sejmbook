@@ -97,7 +97,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Loga klubów');
+  await expect(post).toContainText('Spektrum partyjne');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -122,7 +122,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Loga klubów');
+  await expect(page.locator('.news-post').first()).toContainText('Spektrum partyjne');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -172,4 +172,16 @@ test('MP cards: club, district and attendance in one row under the photo', async
   const row = await meta.boundingBox();
   expect(row.y).toBeGreaterThan(photo.y + photo.height);
   expect(row.width).toBeLessThanOrEqual((await card.boundingBox()).width);
+});
+
+test('Spektrum partyjne: bar under the profile card', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-1`);
+  const panel = page.getByTestId('spectrum');
+  await expect(panel).toBeVisible();
+  await expect(panel).toContainText('Spektrum partyjne');
+  const bar = await panel.locator('.spectrum-bar').boundingBox();
+  expect(bar.width).toBeGreaterThan(200);
+  const top = await page.locator('.profile-top').boundingBox();
+  expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);
+  expect(await panel.locator('.spectrum-seg').count()).toBeGreaterThan(0);
 });

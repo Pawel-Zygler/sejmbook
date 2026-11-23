@@ -4,6 +4,7 @@ import flightsData from '../data/flights.json';
 import airportsData from '../data/airports.json';
 import newsData from '../data/news.json';
 import attendanceData from '../data/attendance.json';
+import careerData from '../data/career.json';
 import { createApp } from './app.js';
 
-createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData: window.__SEJM_MEDIA__ });
+createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, mediaData: window.__SEJM_MEDIA__ });

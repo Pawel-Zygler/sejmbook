@@ -1,4 +1,5 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } from '../lib/mps.js';
+import { careerSpectrum, termRanges } from '../lib/career.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
@@ -176,6 +177,26 @@ export function plural(n, one, few, many) {
 }
 
 /* ---------- Profile ---------- */
+const fmtYears = (y) => `${y.toFixed(1).replace('.', ',').replace(/,0$/, '')} ${y >= 1.5 && y < 4.5 ? 'lata' : 'lat'}`;
+
+/** "Spektrum partyjne": a bar showing how the MP's years in the Sejm split between clubs. */
+export function renderCareerSpectrum(ctx, mp) {
+  const sp = careerSpectrum(ctx.career, mp.id, ctx.fetchedAt);
+  if (!sp) return '';
+  const pct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
+  const bar = sp.parts.map((p) => `<span class="spectrum-seg" style="--seg:${esc(p.color)};flex-grow:${p.years.toFixed(3)}" title="${esc(p.label)}: ${pct(p.share)}%"></span>`).join('');
+  const legend = sp.parts.map((p) => `<li data-family="${esc(p.id)}"><span class="spectrum-swatch" style="--seg:${esc(p.color)}"></span><b>${esc(p.label)}</b> <span class="muted">${pct(p.share)}% · kadencja ${termRanges(p.terms)}</span></li>`).join('');
+  const n = sp.terms.length;
+  return `
+    <section class="panel spectrum" data-testid="spectrum">
+      <h2>Spektrum partyjne</h2>
+      <p class="muted spectrum-sub">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')} w Sejmie (${termRanges(sp.terms)}), razem ok. ${fmtYears(sp.totalYears)}</p>
+      <div class="spectrum-bar" role="img" aria-label="${esc(sp.parts.map((p) => `${p.label} ${pct(p.share)}%`).join(', '))}">${bar}</div>
+      <ul class="spectrum-legend">${legend}</ul>
+      <p class="src">Klub w każdej kadencji według API Sejmu (ostatni klub w danej kadencji), ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
+    </section>`;
+}
+
 export function renderProfile(ctx, id) {
   const mp = ctx.mpsById.get(id);
   if (!mp) return renderNotFound(`posel-${id}`);
@@ -199,6 +220,7 @@ export function renderProfile(ctx, id) {
         </div>
       </div>
     </div>
+    ${renderCareerSpectrum(ctx, mp)}
     <div class="profile-cols">
       <aside class="panel about">
         <h2>Informacje</h2>
