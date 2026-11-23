@@ -1,0 +1,7762 @@
+{
+ "source": "https://api.sejm.gov.pl/sejm/termN/MP",
+ "fetchedAt": "2026-11-23",
+ "note": "Klub w każdej kadencji Sejmu według API Sejmu (ostatni klub posła w danej kadencji). Posłowie dopasowani po imieniu, nazwisku i dacie urodzenia.",
+ "terms": [
+  {
+   "num": 1,
+   "from": "1991-11-25",
+   "to": "1993-05-31",
+   "mps": 0,
+   "matched": 0
+  },
+  {
+   "num": 2,
+   "from": "1993-10-14",
+   "to": "1997-10-19",
+   "mps": 0,
+   "matched": 0
+  },
+  {
+   "num": 3,
+   "from": "1997-10-20",
+   "to": "2001-10-18",
+   "mps": 482,
+   "matched": 13
+  },
+  {
+   "num": 4,
+   "from": "2001-10-19",
+   "to": "2005-10-18",
+   "mps": 489,
+   "matched": 26
+  },
+  {
+   "num": 5,
+   "from": "2005-10-19",
+   "to": "2007-11-04",
+   "mps": 478,
+   "matched": 70
+  },
+  {
+   "num": 6,
+   "from": "2007-11-05",
+   "to": "2011-11-07",
+   "mps": 520,
+   "matched": 92
+  },
+  {
+   "num": 7,
+   "from": "2011-11-08",
+   "to": "2015-11-11",
+   "mps": 517,
+   "matched": 127
+  },
+  {
+   "num": 8,
+   "from": "2015-11-12",
+   "to": "2019-11-11",
+   "mps": 505,
+   "matched": 202
+  },
+  {
+   "num": 9,
+   "from": "2019-11-12",
+   "to": "2023-11-12",
+   "mps": 475,
+   "matched": 308
+  },
+  {
+   "num": 10,
+   "from": "2023-11-13",
+   "to": null,
+   "mps": 499,
+   "matched": 499
+  }
+ ],
+ "career": {
+  "1": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "2": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "3": [
+   {
+    "term": 8,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "4": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "5": [
+   {
+    "term": 3,
+    "club": "SKL",
+    "clubName": "SKL"
+   },
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "6": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "Demokracja",
+    "clubName": "Koło Poselskie Demokracja Bezpośrednia"
+   }
+  ],
+  "7": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "8": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "9": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "10": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "11": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "12": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "13": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "14": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "15": [
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "16": [
+   {
+    "term": 9,
+    "club": "Konfederacja",
+    "clubName": "Koło Poselskie Konfederacja"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "17": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "18": [
+   {
+    "term": 3,
+    "club": "AWS",
+    "clubName": "AWS"
+   },
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "19": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "20": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "21": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "22": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "23": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "24": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "25": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "26": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "27": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "28": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "29": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "30": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "31": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "32": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "33": [
+   {
+    "term": 5,
+    "club": "LPR",
+    "clubName": "LPR"
+   },
+   {
+    "term": 9,
+    "club": "Konfederacja",
+    "clubName": "Koło Poselskie Konfederacja"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "34": [
+   {
+    "term": 9,
+    "club": "Konfederacja",
+    "clubName": "Koło Poselskie Konfederacja"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "35": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "36": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "37": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "38": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "39": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "40": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "41": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "42": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "43": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "44": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "45": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "46": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "47": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "48": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "49": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "50": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "51": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "52": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "53": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "54": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "55": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "56": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "57": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "58": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "59": [
+   {
+    "term": 7,
+    "club": "SLD",
+    "clubName": "Klub Poselski Sojusz  Lewicy Demokratycznej"
+   },
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "60": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "61": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "62": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "63": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "64": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "65": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "66": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "67": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "68": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "69": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "70": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "71": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "72": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "73": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "74": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "75": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "76": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "77": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "78": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "79": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "80": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "81": [
+   {
+    "term": 10,
+    "club": "Konfederacja_KP",
+    "clubName": "Koło Poselskie Konfederacja Korony Polskiej"
+   }
+  ],
+  "82": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "83": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "84": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "85": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "86": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "87": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "88": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "89": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "90": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "91": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "92": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "93": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "94": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "95": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "96": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "97": [
+   {
+    "term": 4,
+    "club": "LPR",
+    "clubName": "LPR"
+   },
+   {
+    "term": 5,
+    "club": "LPR",
+    "clubName": "LPR"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "98": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "99": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "100": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "101": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "102": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "103": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "104": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "105": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "106": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "107": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "108": [
+   {
+    "term": 4,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "109": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "110": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "111": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "112": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "113": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "114": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "115": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "116": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "117": [
+   {
+    "term": 9,
+    "club": "Polska2050",
+    "clubName": "Koło Parlamentarne Polska 2050"
+   },
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "118": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "119": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "120": [
+   {
+    "term": 4,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 5,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 6,
+    "club": "PSL",
+    "clubName": "Klub Poselski Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "121": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "122": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "123": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "124": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "125": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "126": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "127": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "128": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "Polska2050",
+    "clubName": "Koło Parlamentarne Polska 2050"
+   },
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "129": [
+   {
+    "term": 7,
+    "club": null,
+    "clubName": null
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "130": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "131": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "132": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "133": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "134": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "135": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "136": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "137": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "138": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "139": [
+   {
+    "term": 8,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "140": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "141": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "142": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "143": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "144": [
+   {
+    "term": 7,
+    "club": "SLD",
+    "clubName": "Klub Poselski Sojusz  Lewicy Demokratycznej"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "145": [
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "146": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "147": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "148": [
+   {
+    "term": 3,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "149": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "150": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "151": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "152": [
+   {
+    "term": 3,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "153": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "154": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "155": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "156": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "157": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "158": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "159": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "160": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "161": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "162": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "163": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "164": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "165": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "166": [
+   {
+    "term": 10,
+    "club": "Polska2050-TD",
+    "clubName": "Polska2050-TD"
+   }
+  ],
+  "167": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "168": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "169": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "170": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "171": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "172": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Razem",
+    "clubName": "Koło Poselskie Razem"
+   }
+  ],
+  "173": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "174": [
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "175": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "176": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "177": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "178": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "179": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "180": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "181": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "182": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "183": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "184": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "185": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "186": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "187": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "188": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "189": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "190": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "191": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "192": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "193": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "194": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "195": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "196": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "197": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "198": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "199": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "200": [
+   {
+    "term": 8,
+    "club": "Kukiz15",
+    "clubName": "Klub Poselski Kukiz'15"
+   },
+   {
+    "term": 9,
+    "club": "Kukiz15",
+    "clubName": "Koło Poselskie Kukiz'15 - Demokracja Bezpośrednia"
+   },
+   {
+    "term": 10,
+    "club": "Demokracja",
+    "clubName": "Koło Poselskie Demokracja Bezpośrednia"
+   }
+  ],
+  "201": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "202": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "203": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "204": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "205": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "206": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "207": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "208": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "209": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "210": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "211": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "212": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "213": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "214": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "215": [
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "216": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "217": [
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "218": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "219": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "220": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "221": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "222": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "223": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "224": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "225": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "226": [
+   {
+    "term": 3,
+    "club": "niez.",
+    "clubName": "niez."
+   },
+   {
+    "term": 4,
+    "club": "RKN",
+    "clubName": "RKN"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "227": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "228": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "229": [
+   {
+    "term": 5,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 6,
+    "club": "PSL",
+    "clubName": "Klub Poselski Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 7,
+    "club": "PSL",
+    "clubName": "Klub Parlamentarny Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "230": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "231": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "232": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "233": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "234": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "235": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "236": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "237": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "238": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "239": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "240": [
+   {
+    "term": 9,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "241": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "242": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "243": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "244": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "245": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "246": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "247": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "248": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "249": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "250": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "251": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "252": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "Polska2050",
+    "clubName": "Koło Parlamentarne Polska 2050"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "253": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "ZP",
+    "clubName": "Klub Parlamentarny Zjednoczona Prawica"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "254": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "255": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "256": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "257": [
+   {
+    "term": 4,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 5,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 6,
+    "club": "SLD",
+    "clubName": "Klub Poselski Sojusz  Lewicy Demokratycznej"
+   },
+   {
+    "term": 7,
+    "club": "BC",
+    "clubName": "Koło Poselskie Biało-Czerwoni"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "258": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "259": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "260": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "261": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "262": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "263": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "264": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "265": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "266": [
+   {
+    "term": 7,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   },
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "267": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "268": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "269": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "270": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "271": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "272": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "273": [
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "274": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "275": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "276": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "277": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "278": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "279": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "280": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "281": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "282": [
+   {
+    "term": 7,
+    "club": "PSL",
+    "clubName": "Klub Parlamentarny Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "283": [
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "284": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "285": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "286": [
+   {
+    "term": 8,
+    "club": "TERAZ!",
+    "clubName": "Koło Poselskie TERAZ!"
+   },
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "287": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "288": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "289": [
+   {
+    "term": 3,
+    "club": "AWS",
+    "clubName": "AWS"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "290": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "291": [
+   {
+    "term": 3,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 4,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 5,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "292": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "293": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "294": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "295": [
+   {
+    "term": 4,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "296": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "297": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "298": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "299": [
+   {
+    "term": 3,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "300": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "301": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "302": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "303": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "304": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "305": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "306": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "307": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "308": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "309": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "310": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "311": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "312": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "313": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "314": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "315": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "316": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "317": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "318": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "319": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "320": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "321": [
+   {
+    "term": 8,
+    "club": "Kukiz15",
+    "clubName": "Klub Poselski Kukiz'15"
+   },
+   {
+    "term": 9,
+    "club": "Kukiz15",
+    "clubName": "Koło Poselskie Kukiz'15 - Demokracja Bezpośrednia"
+   },
+   {
+    "term": 10,
+    "club": "Demokracja",
+    "clubName": "Koło Poselskie Demokracja Bezpośrednia"
+   }
+  ],
+  "322": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "323": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "324": [
+   {
+    "term": 4,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "325": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "326": [
+   {
+    "term": 3,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 4,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 5,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 6,
+    "club": "PSL",
+    "clubName": "Klub Poselski Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 7,
+    "club": "PSL",
+    "clubName": "Klub Parlamentarny Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "327": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "328": [
+   {
+    "term": 8,
+    "club": "TERAZ!",
+    "clubName": "Koło Poselskie TERAZ!"
+   },
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "329": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "330": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "331": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "332": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "333": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "ZP",
+    "clubName": "Klub Parlamentarny Zjednoczona Prawica"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "334": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "335": [
+   {
+    "term": 3,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 4,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "336": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "337": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "338": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "339": [
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "340": [
+   {
+    "term": 10,
+    "club": "Konfederacja_KP",
+    "clubName": "Koło Poselskie Konfederacja Korony Polskiej"
+   }
+  ],
+  "341": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "342": [
+   {
+    "term": 4,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "343": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "344": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "345": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "346": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "347": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "348": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "349": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "350": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "351": [
+   {
+    "term": 4,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 5,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 7,
+    "club": "PSL",
+    "clubName": "Klub Parlamentarny Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "352": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "353": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "354": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "355": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "356": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "357": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "358": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "359": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "Polska2050",
+    "clubName": "Koło Parlamentarne Polska 2050"
+   },
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "360": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "361": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "362": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "363": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "364": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "365": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "366": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "367": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "368": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "369": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "370": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "371": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "372": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "373": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "374": [
+   {
+    "term": 4,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "375": [
+   {
+    "term": 3,
+    "club": "AWS",
+    "clubName": "AWS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "376": [
+   {
+    "term": 10,
+    "club": "Centrum",
+    "clubName": "Klub Parlamentarny Centrum"
+   }
+  ],
+  "377": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "378": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "379": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "380": [
+   {
+    "term": 8,
+    "club": "Kukiz15",
+    "clubName": "Klub Poselski Kukiz'15"
+   },
+   {
+    "term": 9,
+    "club": "PS",
+    "clubName": "Koło Poselskie Polskie Sprawy"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "381": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "382": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "383": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "384": [
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "385": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "386": [
+   {
+    "term": 3,
+    "club": "AWS",
+    "clubName": "AWS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "387": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "388": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "389": [
+   {
+    "term": 3,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 4,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 5,
+    "club": "SLD",
+    "clubName": "SLD"
+   },
+   {
+    "term": 6,
+    "club": "SLD",
+    "clubName": "Klub Poselski Sojusz  Lewicy Demokratycznej"
+   },
+   {
+    "term": 7,
+    "club": "SLD",
+    "clubName": "Klub Poselski Sojusz  Lewicy Demokratycznej"
+   },
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "390": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "391": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "392": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "393": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "394": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "395": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "396": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "397": [
+   {
+    "term": 9,
+    "club": "Konfederacja",
+    "clubName": "Koło Poselskie Konfederacja"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "398": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "399": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "400": [
+   {
+    "term": 4,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "401": [
+   {
+    "term": 8,
+    "club": "Kukiz15",
+    "clubName": "Klub Poselski Kukiz'15"
+   },
+   {
+    "term": 9,
+    "club": "Konfederacja",
+    "clubName": "Koło Poselskie Konfederacja"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "402": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "403": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "404": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "405": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "406": [
+   {
+    "term": 5,
+    "club": "PO",
+    "clubName": "PO"
+   },
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "407": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "408": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "409": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "410": [
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "411": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "412": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "413": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "414": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "415": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "416": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "417": [
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "418": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "419": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "420": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "421": [
+   {
+    "term": 6,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "422": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "423": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "424": [
+   {
+    "term": 7,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "425": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "426": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "427": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "428": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "429": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "430": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "431": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "432": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "433": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "434": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "435": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "436": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "437": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "ZP",
+    "clubName": "Klub Parlamentarny Zjednoczona Prawica"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "438": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "439": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "440": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "441": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   },
+   {
+    "term": 9,
+    "club": "Polska2050",
+    "clubName": "Koło Parlamentarne Polska 2050"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "442": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Razem",
+    "clubName": "Koło Poselskie Razem"
+   }
+  ],
+  "443": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "444": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "445": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Razem",
+    "clubName": "Koło Poselskie Razem"
+   }
+  ],
+  "446": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja_KP",
+    "clubName": "Koło Poselskie Konfederacja Korony Polskiej"
+   }
+  ],
+  "447": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "448": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "449": [
+   {
+    "term": 7,
+    "club": "PSL",
+    "clubName": "Klub Parlamentarny Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 8,
+    "club": "PSL-KP",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Koalicja Polska"
+   },
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "450": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "451": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "452": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "453": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "454": [
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "455": [
+   {
+    "term": 9,
+    "club": "Polska2050",
+    "clubName": "Koło Parlamentarne Polska 2050"
+   },
+   {
+    "term": 10,
+    "club": "niez.",
+    "clubName": "Posłowie niezrzeszeni"
+   }
+  ],
+  "456": [
+   {
+    "term": 4,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "457": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "458": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "459": [
+   {
+    "term": 9,
+    "club": "KP",
+    "clubName": "Klub Parlamentarny Koalicja Polska - PSL, UED, Konserwatyści"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "460": [
+   {
+    "term": 9,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Razem)"
+   },
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "461": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "462": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "463": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "464": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "465": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "466": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "467": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "468": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "469": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "470": [
+   {
+    "term": 10,
+    "club": "Polska2050",
+    "clubName": "Klub Parlamentarny Polska 2050"
+   }
+  ],
+  "471": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "472": [
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ],
+  "473": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "474": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "475": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "476": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "477": [
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "478": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "479": [
+   {
+    "term": 8,
+    "club": "PO-KO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska - Koalicja Obywatelska"
+   },
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "480": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 6,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "481": [
+   {
+    "term": 9,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "482": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "483": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "484": [
+   {
+    "term": 10,
+    "club": "Razem",
+    "clubName": "Koło Poselskie Razem"
+   }
+  ],
+  "485": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "486": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "RozwojPlus",
+    "clubName": "Klub Parlamentarny Rozwój Plus"
+   }
+  ],
+  "487": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "488": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "489": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "490": [
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "491": [
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "492": [
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "493": [
+   {
+    "term": 5,
+    "club": "PSL",
+    "clubName": "PSL"
+   },
+   {
+    "term": 7,
+    "club": "PSL",
+    "clubName": "Klub Parlamentarny Polskiego Stronnictwa Ludowego"
+   },
+   {
+    "term": 10,
+    "club": "PSL-TD",
+    "clubName": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga"
+   }
+  ],
+  "494": [
+   {
+    "term": 7,
+    "club": "PO",
+    "clubName": "Klub Parlamentarny Platforma Obywatelska"
+   },
+   {
+    "term": 10,
+    "club": "KO",
+    "clubName": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni"
+   }
+  ],
+  "495": [
+   {
+    "term": 5,
+    "club": "PiS",
+    "clubName": "PiS"
+   },
+   {
+    "term": 7,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "496": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "497": [
+   {
+    "term": 8,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 9,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   },
+   {
+    "term": 10,
+    "club": "Konfederacja",
+    "clubName": "Klub Poselski Konfederacja"
+   }
+  ],
+  "498": [
+   {
+    "term": 10,
+    "club": "PiS",
+    "clubName": "Klub Parlamentarny Prawo i Sprawiedliwość"
+   }
+  ],
+  "499": [
+   {
+    "term": 10,
+    "club": "Lewica",
+    "clubName": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)"
+   }
+  ]
+ }
+}
