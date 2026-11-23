@@ -1,0 +1,25 @@
+name: media
+# Downloads MP photos and club logos from the Sejm API into media/ and commits them.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/fetch-sejm-media.mjs', '.github/workflows/media.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-sejm-media.mjs
+      - name: Commit media
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update MP photos and club logos from the Sejm API"
+          git push
