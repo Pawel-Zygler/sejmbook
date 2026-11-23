@@ -178,7 +178,11 @@ h2 { font-size: 1.1rem; }
   .profile-cols { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 520px) {
-  .topnav a { padding: 8px 8px; font-size: 0.85rem; }
+  .topbar-in { gap: 10px; }
+  .topnav { min-width: 0; overflow-x: auto; scrollbar-width: none; gap: 0; }
+  .topnav::-webkit-scrollbar { display: none; }
+  .topnav a { padding: 8px 7px; font-size: 0.82rem; }
+  .nav-long { display: none; }
   .logo { font-size: 1.3rem; }
   .avatar-xl { width: 100px; height: 100px; font-size: 2rem; }
   .flyer-hero h1 { font-size: 1.9rem; }
@@ -193,3 +197,21 @@ h2 { font-size: 1.1rem; }
 .rank td:nth-child(2) { min-width: 230px; }
 .news-post { border-left: 4px solid var(--accent); }
 .news-title { font-size: 1.15rem; }
+
+/* Attendance */
+:root { --att-on: #1f9d55; --att-off: #d9dde3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --att-on: #3ccf7e; --att-off: #3a4048; } }
+:root[data-theme="dark"] { --att-on: #3ccf7e; --att-off: #3a4048; }
+.pie { flex: none; vertical-align: middle; }
+.pie .pie-on { fill: var(--att-on); }
+.pie .pie-off { fill: var(--att-off); }
+.att-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.8rem; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mp-card-meta .att-badge, .rank td .att-badge { margin-left: 2px; }
+.att-badge.band-low span { color: var(--accent); }
+.day-strip { display: flex; flex-wrap: wrap; gap: 3px; }
+.day { width: 11px; height: 11px; border-radius: 2px; background: color-mix(in srgb, var(--att-on) calc(var(--lvl) * 100%), var(--att-off)); }
+.day-none { background: transparent; border: 1px dashed var(--line); }
+.att-terms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.att-terms li { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.att-terms li > span:first-child { min-width: 120px; }
+.att-post h2 { margin: 0; }

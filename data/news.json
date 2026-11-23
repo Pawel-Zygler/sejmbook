@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-23-frekwencja",
+      "date": "2026-11-23",
+      "title": "Nowa zakładka: Frekwencja",
+      "body": "Sprawdź, jak często posłowie biorą udział w głosowaniach. Liczymy frekwencję każdego posła dzień po dniu na podstawie wszystkich głosowań X kadencji z API Sejmu. Mały wykres kołowy przy nazwisku pokazuje ją na profilach, w katalogu posłów i w rankingu Frequent Flyer.",
+      "link": {
+        "href": "#frekwencja",
+        "label": "Zobacz frekwencję"
+      }
+    },
+    {
       "id": "2026-11-23-artykuly",
       "date": "2026-11-23",
       "title": "Artykuły przy każdym pośle w rankingu Frequent Flyer",

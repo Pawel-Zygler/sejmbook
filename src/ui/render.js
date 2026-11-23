@@ -1,6 +1,7 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } from '../lib/mps.js';
 import { buildRanking, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
+import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 
 export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -127,7 +128,7 @@ export function renderDirectory(ctx, state, list) {
 function mpCard(ctx, mp) {
   const off = inactiveLabel(mp);
   return `<li class="mp-card${off ? ' inactive' : ''}">${mpLink(mp, `${avatar(ctx, mp, 'lg')}<span class="mp-card-name">${esc(mp.name)}</span>`, 'mp-card-link')}
-    <span class="mp-card-meta">${clubChip(ctx, mp.club)} okręg ${mp.districtNum} · ${esc(mp.districtName)}</span>
+    <span class="mp-card-meta">${clubChip(ctx, mp.club)} okręg ${mp.districtNum} · ${esc(mp.districtName)}${attendanceBadge(ctx, mp.id, 16)}</span>
     ${off ? `<span class="badge-off">${esc(off)}</span>` : ''}</li>`;
 }
 
@@ -176,6 +177,7 @@ export function renderProfile(ctx, id) {
         <p class="src">Dane: <a href="${sejmProfileUrl(mp.id)}" target="_blank" rel="noopener">profil na sejm.gov.pl</a> · API Sejmu</p>
       </aside>
       <div class="feed">
+        ${renderProfileAttendance(ctx, mp)}
         ${history.length === 0
           ? `<article class="post"><p class="post-text">Brak tego posła w opublikowanych zestawieniach lotów. To nie znaczy, że nie latał: media ujawniły tylko czołówki rankingów.</p></article>`
           : history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
@@ -246,6 +248,7 @@ export function renderFlyer(ctx, state) {
               return `<tr data-mp-id="${r.mp.id}">
                 <td class="pos">${r.rank}</td>
                 <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club)}
+                  ${attendanceBadge(ctx, r.mp.id, 16)}
                   <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small></td>
                 <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>

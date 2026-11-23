@@ -1,8 +1,9 @@
 import { indexById, clubById, filterMps } from './lib/mps.js';
 import { parseHash } from './lib/router.js';
-import { renderHome, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside } from './ui/render.js';
+import { renderHome, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip } from './ui/render.js';
+import { renderAttendance } from './ui/attendance-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData }) {
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -11,10 +12,11 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     airports: airportsData,
     fetchedAt: mpsData.fetchedAt,
     news: newsData?.posts ?? [],
+    attendance: attendanceData ?? null,
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', flyer: 'flyer' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', flyer: 'flyer', attendance: 'attendance' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -25,6 +27,7 @@ export function createApp(doc, win, data) {
     route: parseHash(win.location.hash),
     directory: { query: '', club: '', includeInactive: false },
     flyer: { dataset: data.flightsData.datasets[0].id, sortBy: 'km' },
+    attendance: { order: 'desc', club: '' },
   };
 
   function renderDirectoryList() {
@@ -39,6 +42,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'directory') html = renderDirectoryList();
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
+    else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
     aside.innerHTML = renderAside(ctx);
@@ -77,6 +81,12 @@ export function createApp(doc, win, data) {
       go('#frequent-flyer');
     } else if (action === 'sort') {
       state.flyer.sortBy = el.dataset.sort;
+      render();
+    } else if (action === 'att-order') {
+      state.attendance.order = el.dataset.order;
+      render();
+    } else if (action === 'att-club') {
+      state.attendance.club = el.dataset.club;
       render();
     }
   }

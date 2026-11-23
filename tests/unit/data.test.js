@@ -5,6 +5,8 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import newsData from '../../data/news.json';
+import attendanceData from '../../data/attendance.json';
+import { meanDaily, decodeStrip } from '../../src/lib/attendance.js';
 import { parseHash } from '../../src/lib/router.js';
 
 const ids = new Set(mpsData.mps.map((m) => m.id));
@@ -103,5 +105,40 @@ describe('news (Aktualności)', () => {
   });
   it('announces the article-links feature', () => {
     expect(newsData.posts.map((p) => p.id)).toContain('2026-11-23-artykuly');
+  });
+});
+
+describe('attendance (API Sejmu, głosowania)', () => {
+  it('covers every sitting day once, in order', () => {
+    expect(new Set(attendanceData.days).size).toBe(attendanceData.days.length);
+    expect([...attendanceData.days].sort()).toEqual(attendanceData.days);
+  });
+  it('every record references a known MP and has consistent numbers', () => {
+    for (const [id, a] of Object.entries(attendanceData.mps)) {
+      expect(ids, id).toContain(Number(id));
+      for (const [t, v] of Object.entries(a.terms)) {
+        expect(v.mean, `${id}/${t}`).toBeGreaterThanOrEqual(0);
+        expect(v.mean).toBeLessThanOrEqual(100);
+        expect(v.days).toBeGreaterThan(0);
+        if (v.present != null) expect(v.present).toBeLessThanOrEqual(v.eligible);
+        if (v.strip) {
+          expect(v.strip).toHaveLength(attendanceData.days.length);
+          expect(v.strip.replace(/-/g, '')).toHaveLength(v.days);
+        }
+      }
+    }
+  });
+  it('the strip agrees with the stored mean within rounding', () => {
+    for (const a of Object.values(attendanceData.mps)) {
+      const cur = a.terms[String(attendanceData.currentTerm)];
+      if (!cur) continue;
+      const m = meanDaily(decodeStrip(cur.strip)).mean;
+      expect(Math.abs(m - cur.mean)).toBeLessThan(100 / 18 + 0.01);
+    }
+  });
+  it('almost every active MP has current-term data', () => {
+    const active = mpsData.mps.filter((m) => m.active);
+    const missing = active.filter((m) => !attendanceData.mps[m.id]?.terms?.['10']);
+    expect(missing.length).toBeLessThan(5);
   });
 });

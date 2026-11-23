@@ -6,6 +6,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import newsData from '../../data/news.json';
+import attendanceData from '../../data/attendance.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -20,7 +21,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData });
 });
 afterEach(() => app.destroy());
 
@@ -142,7 +143,8 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Artykuły przy każdym pośle');
+    expect(first.textContent).toContain('Nowa zakładka: Frekwencja');
+    expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
   });
   it('the news post button opens the ranking', () => {
     const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
@@ -169,5 +171,54 @@ describe('article links in the ranking', () => {
     click($('button[data-dataset="2025"]'));
     const outlets = [...$('tr[data-mp-id="165"] td.arts').querySelectorAll('a')].map((a) => a.textContent);
     expect(outlets).toEqual(['Wprost', 'Zero.pl', 'Super Express', 'Kraków dla Was']);
+  });
+});
+
+describe('Frekwencja', () => {
+  const ranking = () => $$('[data-testid="att-ranking"] tbody tr');
+  const pctText = (tr) => tr.children[2].querySelector('.att-badge > span').textContent.trim();
+  const pct = (tr) => Number(pctText(tr).replace('%', '').replace(',', '.'));
+
+  it('nav link opens the tab with every active MP that has data', () => {
+    click($('.topnav a[data-nav="attendance"]'));
+    nav('#frekwencja');
+    expect($('[data-nav="attendance"]').getAttribute('aria-current')).toBe('page');
+    const withData = app.ctx.mps.filter((m) => m.active && attendanceData.mps[m.id]?.terms?.['10']).length;
+    expect(ranking()).toHaveLength(withData);
+    expect(withData).toBeGreaterThan(440);
+  });
+  it('sorts highest first, then lowest first', () => {
+    nav('#frekwencja');
+    const desc = ranking().map(pct);
+    expect(desc.every(Number.isFinite)).toBe(true);
+    expect(desc).toEqual([...desc].sort((a, b) => b - a));
+    click($('button[data-order="asc"]'));
+    const asc = ranking().map(pct);
+    expect(asc).toEqual([...asc].sort((a, b) => a - b));
+  });
+  it('filters by club and shows the club average', () => {
+    nav('#frekwencja');
+    click($('button[data-action="att-club"][data-club="Razem"]'));
+    expect(ranking().length).toBe(4);
+    expect($('[data-view="attendance"]').textContent).toContain('Średnia w klubie Razem');
+  });
+  it('every row has a pie icon whose label matches the percentage', () => {
+    nav('#frekwencja');
+    for (const tr of ranking().slice(0, 20)) {
+      const svg = tr.querySelector('svg.pie');
+      expect(svg.getAttribute('aria-label')).toBe(`Frekwencja ${pctText(tr)}`);
+    }
+  });
+  it('profile shows the attendance card with a day strip', () => {
+    nav('#posel-70');
+    const card = $('[data-testid="profile-attendance"]');
+    expect(card).not.toBeNull();
+    expect(card.querySelectorAll('.day').length).toBe(attendanceData.days.length);
+  });
+  it('Frequent Flyer rows and directory cards carry the pie badge', () => {
+    nav('#frequent-flyer');
+    expect($$('[data-testid="ranking"] tbody tr [data-testid="att-badge"]').length).toBe(10);
+    nav('#poslowie');
+    expect($$('.mp-card [data-testid="att-badge"]').length).toBeGreaterThan(440);
   });
 });

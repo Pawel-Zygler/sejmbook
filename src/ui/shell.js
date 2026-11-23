@@ -9,7 +9,8 @@ export const SHELL_HTML = `
     <nav class="topnav" aria-label="Główne">
       <a href="#start" data-nav="home">Start</a>
       <a href="#poslowie" data-nav="directory">Posłowie</a>
-      <a href="#frequent-flyer" data-nav="flyer">Frequent Flyer</a>
+      <a href="#frequent-flyer" data-nav="flyer" aria-label="Frequent Flyer"><span class="nav-long">Frequent </span>Flyer</a>
+      <a href="#frekwencja" data-nav="attendance">Frekwencja</a>
     </nav>
   </div>
 </header>
@@ -19,7 +20,8 @@ export const SHELL_HTML = `
     <a href="#poslowie" data-nav="directory"><span class="ico">☷</span>Posłowie X kadencji</a>
     <p class="sidenav-label">Rankingi</p>
     <a href="#frequent-flyer" data-nav="flyer"><span class="ico">✈</span>Frequent Flyer</a>
-    <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie. Wkrótce: głosowania, frekwencja, wystąpienia.</p>
+    <a href="#frekwencja" data-nav="attendance"><span class="ico">◔</span>Frekwencja</a>
+    <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie. Wkrótce: głosowania i wystąpienia.</p>
   </nav>
   <main id="view" tabindex="-1"></main>
   <aside id="aside" aria-label="Kluby"></aside>

@@ -5,7 +5,7 @@ export default defineConfig({
     include: ['tests/unit/**/*.test.js', 'tests/integration/**/*.test.js'],
     coverage: {
       provider: 'v8',
-      include: ['src/lib/**', 'src/ui/render.js'],
+      include: ['src/lib/**', 'src/ui/render.js', 'src/ui/attendance-view.js'],
       thresholds: { lines: 95, functions: 95, branches: 85, statements: 95 },
       reporter: ['text', 'html'],
     },

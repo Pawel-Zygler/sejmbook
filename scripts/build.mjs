@@ -32,4 +32,7 @@ const standalone = `<!doctype html>\n<html lang="pl">\n<head>\n<meta charset="ut
 await mkdir(p('dist'), { recursive: true });
 await writeFile(p('dist/index.html'), fragment);
 await writeFile(p('dist/standalone.html'), standalone);
+// Static hosting (Cloudflare Pages): output directory dist/pages
+await mkdir(p('dist/pages'), { recursive: true });
+await writeFile(p('dist/pages/index.html'), standalone);
 console.log(`dist/index.html ${(fragment.length / 1024).toFixed(1)} KB`);

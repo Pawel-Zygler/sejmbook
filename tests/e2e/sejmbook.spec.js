@@ -97,10 +97,33 @@ test('ranking rows link to articles about the MP', async ({ page }) => {
   await expect(romowicz.locator('td.num').first()).toHaveText('127');
 });
 
-test('home starts with the newest feature post and links to it', async ({ page }) => {
+test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Artykuły przy każdym pośle');
-  await post.getByRole('link', { name: 'Zobacz ranking' }).click();
+  await expect(post).toContainText('Nowa zakładka: Frekwencja');
+  await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
+});
+
+test('Frekwencja tab: ranking with pie icons, sorting and profile card', async ({ page }) => {
+  await page.goto(PAGE);
+  await page.locator('.topnav').getByRole('link', { name: 'Frekwencja' }).click();
+  await expect(page).toHaveURL(/#frekwencja$/);
+  const rows = page.locator('[data-testid="att-ranking"] tbody tr');
+  await expect(rows.first()).toBeVisible();
+  expect(await rows.count()).toBeGreaterThan(440);
+  await expect(rows.first().locator('svg.pie')).toBeVisible();
+  await page.getByRole('button', { name: 'Najniższa' }).click();
+  const first = await rows.first().locator('td').nth(2).locator('.att-badge > span').innerText();
+  const last = await rows.last().locator('td').nth(2).locator('.att-badge > span').innerText();
+  const n = (s) => Number(s.replace('%', '').replace(',', '.'));
+  expect(Number.isFinite(n(first))).toBe(true);
+  expect(n(first)).toBeLessThanOrEqual(n(last));
+  await rows.first().locator('a.rank-mp').click();
+  await expect(page.locator('[data-testid="profile-attendance"] .day-strip')).toBeVisible();
+});
+
+test('home announces the attendance feature first', async ({ page }) => {
+  await page.goto(PAGE);
+  await expect(page.locator('.news-post').first()).toContainText('Nowa zakładka: Frekwencja');
 });
