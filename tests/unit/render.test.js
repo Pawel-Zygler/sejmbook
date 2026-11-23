@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, articleLinks, renderNewsPost, sortNews } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, articleLinks, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -136,5 +136,35 @@ describe('news', () => {
   });
   it('home works without news', () => {
     expect(renderHome({ ...ctx, news: undefined })).toContain('data-view="home"');
+  });
+});
+
+describe('podium badges', () => {
+  it('names the first three places and nothing else', () => {
+    expect(podiumBadge(1)).toContain('Super-mąż');
+    expect(podiumBadge(2)).toContain('Orzeł III RP');
+    expect(podiumBadge(3)).toContain('Bocian III RP');
+    expect(podiumBadge(1)).toContain('podium-1');
+    expect(podiumBadge(4)).toBe('');
+    expect(podiumBadge(undefined)).toBe('');
+    expect(Object.keys(PODIUM_BADGES)).toEqual(['1', '2', '3']);
+  });
+  it('flyer puts the ranking before the method and the filters in a sidebar', () => {
+    const html = renderFlyer(ctx, { dataset: '2026', sortBy: 'km' });
+    expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel coverage"'));
+    const side = html.slice(html.indexOf('<aside class="flyer-side"'));
+    expect(side).toContain('data-action="pick-dataset"');
+    expect(side).toContain('data-action="sort"');
+  });
+  it('flyer gives badges to rows ranked 1-3 only', () => {
+    for (const d of ctx.flights.datasets) {
+      const html = renderFlyer(ctx, { dataset: d.id, sortBy: 'km' });
+      const tbody = html.slice(html.indexOf('<tbody>'), html.indexOf('</tbody>'));
+      const rows = tbody.split('<tr ').slice(1);
+      for (const tr of rows) {
+        const rank = Number(tr.match(/<td class="pos">(\d+)<\/td>/)[1]);
+        expect(tr.includes('data-testid="podium-badge"'), `${d.id} rank ${rank}`).toBe(rank <= 3);
+      }
+    }
   });
 });

@@ -143,7 +143,8 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Nowa zakładka: Frekwencja');
+    expect(first.textContent).toContain('Frequent Flyer: ranking na górze i odznaki podium');
+    expect($('.news-post[data-news-id="2026-11-23-frekwencja"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
   });
   it('the news post button opens the ranking', () => {
@@ -220,5 +221,28 @@ describe('Frekwencja', () => {
     expect($$('[data-testid="ranking"] tbody tr [data-testid="att-badge"]').length).toBe(10);
     nav('#poslowie');
     expect($$('.mp-card [data-testid="att-badge"]').length).toBeGreaterThan(440);
+  });
+});
+
+describe('Frequent Flyer podium', () => {
+  beforeEach(() => nav('#frequent-flyer'));
+  const badgeOf = (tr) => tr.querySelector('[data-testid="podium-badge"]')?.textContent ?? null;
+  it('the top three get Super-mąż, Orzeł III RP and Bocian III RP', () => {
+    const rows = $$('[data-testid="ranking"] tbody tr');
+    expect(rows.slice(0, 3).map(badgeOf)).toEqual(['Super-mąż', 'Orzeł III RP', 'Bocian III RP']);
+    expect(rows.slice(3).map(badgeOf).every((b) => b === null)).toBe(true);
+  });
+  it('badges follow the sort order', () => {
+    click($('button[data-dataset="2025"]'));
+    click($('button[data-sort="flights"]'));
+    const first = $('[data-testid="ranking"] tbody tr');
+    expect(first.textContent).toContain('Łukasz Kmita');
+    expect(badgeOf(first)).toBe('Super-mąż');
+  });
+  it('filters live in the sidebar, the ranking comes first', () => {
+    const view = $('[data-view="flyer"]');
+    expect(view.querySelector('.flyer-side [data-action="pick-dataset"]')).not.toBeNull();
+    expect(view.querySelector('.flyer-side [data-action="sort"]')).not.toBeNull();
+    expect(view.querySelector('.flyer-main > .panel').querySelector('[data-testid="ranking"]')).not.toBeNull();
   });
 });

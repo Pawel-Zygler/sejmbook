@@ -100,7 +100,7 @@ test('ranking rows link to articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Nowa zakładka: Frekwencja');
+  await expect(post).toContainText('Frequent Flyer: ranking na górze i odznaki podium');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -123,7 +123,25 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
   await expect(page.locator('[data-testid="profile-attendance"] .day-strip')).toBeVisible();
 });
 
-test('home announces the attendance feature first', async ({ page }) => {
+test('home announces the podium feature first and keeps the attendance post', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Nowa zakładka: Frekwencja');
+  await expect(page.locator('.news-post').first()).toContainText('odznaki podium');
+  await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
+});
+
+test('Frequent Flyer: ranking at the top, filters in the sidebar, podium badges', async ({ page, isMobile }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  const rows = page.locator('[data-testid="ranking"] tbody tr');
+  await expect(rows.nth(0).getByTestId('podium-badge')).toHaveText('Super-mąż');
+  await expect(rows.nth(1).getByTestId('podium-badge')).toHaveText('Orzeł III RP');
+  await expect(rows.nth(2).getByTestId('podium-badge')).toHaveText('Bocian III RP');
+  await expect(rows.nth(3).getByTestId('podium-badge')).toHaveCount(0);
+  const table = await page.locator('[data-testid="ranking"]').boundingBox();
+  const coverage = await page.locator('.coverage').boundingBox();
+  expect(table.y).toBeLessThan(coverage.y);
+  const side = await page.locator('.flyer-side').boundingBox();
+  if (!isMobile) expect(side.x).toBeGreaterThan(table.x + table.width / 2);
+  await page.locator('.flyer-side').getByRole('tab', { name: 'Cały 2025' }).click();
+  await expect(rows.first().getByTestId('podium-badge')).toHaveText('Super-mąż');
+  await expect(rows.first()).toContainText('Robert Dowhan');
 });

@@ -212,12 +212,35 @@ export function renderFlyer(ctx, state) {
 
   return `
   <section data-view="flyer" data-dataset="${esc(ds.id)}">
-    <div class="panel flyer-hero">
+    <header class="flyer-head">
       <p class="eyebrow">Ranking</p>
       <h1>Frequent Flyer</h1>
-      <p class="lede">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Liczba lotów pochodzi z danych Kancelarii. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
-      <div class="tabs" role="tablist" aria-label="Okres">
-        ${ctx.flights.datasets.map((d) => `<button type="button" role="tab" class="tab ${d.id === ds.id ? 'on' : ''}" aria-selected="${d.id === ds.id}" data-action="pick-dataset" data-dataset="${esc(d.id)}">${esc(d.label)}</button>`).join('')}
+    </header>
+
+    <div class="flyer-layout">
+    <div class="flyer-main">
+    <div class="panel rank-panel">
+      <div class="table-wrap">
+        <table class="rank" data-testid="ranking">
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
+          <tbody>
+            ${rows.map((r) => {
+              const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
+              return `<tr data-mp-id="${r.mp.id}"${r.rank <= 3 ? ` class="podium-row podium-row-${r.rank}"` : ''}>
+                <td class="pos">${r.rank}</td>
+                <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club)}
+                  ${podiumBadge(r.rank)}
+                  ${attendanceBadge(ctx, r.mp.id, 16)}
+                  <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small></td>
+                <td class="num">${r.flights}</td>
+                <td class="arts">${articleLinks(r.articles)}</td>
+                <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
+                ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
+                <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -233,36 +256,10 @@ export function renderFlyer(ctx, state) {
       ${ds.totals?.costPln ? `<div class="stat"><span>Koszt wszystkich lotów</span><b>${formatPln(ds.totals.costPln)}</b></div>` : ''}
     </div>
 
-    <div class="panel">
-      <div class="rank-tools">
-        <span>Sortuj:</span>
-        <button type="button" class="filter ${state.sortBy === 'km' ? 'on' : ''}" data-action="sort" data-sort="km" aria-pressed="${state.sortBy === 'km'}">Kilometry (szacunek)</button>
-        <button type="button" class="filter ${state.sortBy === 'flights' ? 'on' : ''}" data-action="sort" data-sort="flights" aria-pressed="${state.sortBy === 'flights'}">Liczba lotów</button>
-      </div>
-      <div class="table-wrap">
-        <table class="rank" data-testid="ranking">
-          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
-          <tbody>
-            ${rows.map((r) => {
-              const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
-              return `<tr data-mp-id="${r.mp.id}">
-                <td class="pos">${r.rank}</td>
-                <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club)}
-                  ${attendanceBadge(ctx, r.mp.id, 16)}
-                  <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small></td>
-                <td class="num">${r.flights}</td>
-                <td class="arts">${articleLinks(r.articles)}</td>
-                <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
-                ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
-                <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>
-              </tr>`;
-            }).join('')}
-          </tbody>
-        </table>
-      </div>
-    </div>
-
     <div class="panel method">
+      <p class="lede">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Liczba lotów pochodzi z danych Kancelarii. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
+      <h2>Odznaki podium</h2>
+      <p>Pierwsze miejsce dostaje odznakę ${podiumBadge(1)}, drugie ${podiumBadge(2)}, a trzecie ${podiumBadge(3)}. Przy remisie odznakę dostają wszyscy na tym samym miejscu.</p>
       <h2>Jak liczymy kilometry</h2>
       <p>Kancelaria Sejmu ujawnia liczbę lotów i koszt, ale nie trasy. Przyjmujemy, że każdy lot to jeden odcinek między Warszawą (Chopin) a lotniskiem najbliższym okręgowi posła, i liczymy odległość po kole wielkim. Prawdziwy dystans może być inny: posłowie latają też innymi trasami, a ministrowie i wiceministrowie część lotów odbywają służbowo.</p>
       <p>Pozycje w zestawieniu 2025 to podium oraz liderzy klubów. Pełna lista nie została opublikowana. Klub przy nazwisku to klub z dnia ${esc(ctx.fetchedAt)} według API Sejmu, który może różnić się od klubu w okresie objętym danymi.</p>
@@ -270,7 +267,33 @@ export function renderFlyer(ctx, state) {
       <p class="muted">${esc(ds.origin)}.</p>
       <ul class="sources">${sourceLinks(ds.sources)}</ul>
     </div>
+    </div>
+
+    <aside class="flyer-side" aria-label="Filtry rankingu">
+      <div class="panel side-filters">
+        <h2>Okres</h2>
+        <div class="tabs" role="tablist" aria-label="Okres">
+          ${ctx.flights.datasets.map((d) => `<button type="button" role="tab" class="tab ${d.id === ds.id ? 'on' : ''}" aria-selected="${d.id === ds.id}" data-action="pick-dataset" data-dataset="${esc(d.id)}">${esc(d.label)}</button>`).join('')}
+        </div>
+        <h2>Sortuj według</h2>
+        <div class="rank-tools">
+          <button type="button" class="filter ${state.sortBy === 'km' ? 'on' : ''}" data-action="sort" data-sort="km" aria-pressed="${state.sortBy === 'km'}">Kilometry (szacunek)</button>
+          <button type="button" class="filter ${state.sortBy === 'flights' ? 'on' : ''}" data-action="sort" data-sort="flights" aria-pressed="${state.sortBy === 'flights'}">Liczba lotów</button>
+        </div>
+      </div>
+    </aside>
+    </div>
   </section>`;
+}
+
+/* ---------- Podium badges ---------- */
+export const PODIUM_BADGES = { 1: 'Super-mąż', 2: 'Orzeł III RP', 3: 'Bocian III RP' };
+
+/** Badge for places 1-3 of a ranking (tied places share the badge), empty otherwise. */
+export function podiumBadge(rank) {
+  const label = PODIUM_BADGES[rank];
+  if (!label) return '';
+  return `<span class="podium-badge podium-${rank}" data-testid="podium-badge" title="${rank}. miejsce w rankingu Frequent Flyer">${esc(label)}</span>`;
 }
 
 /* ---------- Misc ---------- */

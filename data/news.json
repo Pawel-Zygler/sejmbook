@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-23-podium",
+      "date": "2026-11-23",
+      "title": "Frequent Flyer: ranking na górze i odznaki podium",
+      "body": "Ranking Frequent Flyer jest teraz na samej górze strony, a wybór okresu i sortowania przeniesiony do panelu bocznego. Pierwsza trójka dostaje odznaki: Super-mąż za 1. miejsce, Orzeł III RP za 2. i Bocian III RP za 3.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz podium"
+      }
+    },
+    {
       "id": "2026-11-23-frekwencja",
       "date": "2026-11-23",
       "title": "Nowa zakładka: Frekwencja",

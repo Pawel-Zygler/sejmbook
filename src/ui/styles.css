@@ -215,3 +215,30 @@ h2 { font-size: 1.1rem; }
 .att-terms li { display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
 .att-terms li > span:first-child { min-width: 120px; }
 .att-post h2 { margin: 0; }
+
+/* Frequent Flyer: ranking first, filters in a sidebar, podium badges */
+.flyer-head { padding: 4px 4px 0; }
+.flyer-head h1 { font-size: 2rem; margin: 0; }
+.flyer-layout { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 16px; align-items: start; }
+.flyer-main { display: grid; gap: 16px; min-width: 0; }
+.flyer-side { position: sticky; top: 72px; }
+.side-filters h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; }
+.side-filters h2 + * { margin-bottom: 16px; }
+.side-filters .tabs, .side-filters .rank-tools { flex-direction: column; align-items: stretch; }
+.side-filters .rank-tools:last-child { margin-bottom: 0; }
+.side-filters .tab, .side-filters .filter { text-align: left; }
+.podium-badge { display: inline-block; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; white-space: nowrap; vertical-align: middle; border: 1px solid transparent; }
+.podium-1 { background: #f6d860; color: #4a3600; border-color: #d9b520; }
+.podium-2 { background: #dfe3ea; color: #2b313b; border-color: #b9c0cc; }
+.podium-3 { background: #e9b88a; color: #4a2a0c; border-color: #c98f5c; }
+.podium-row-1 td { background: color-mix(in srgb, #f6d860 14%, transparent); }
+@media (max-width: 820px) {
+  .flyer-layout { grid-template-columns: minmax(0, 1fr); }
+  .flyer-side { position: static; order: -1; }
+  .side-filters .tabs, .side-filters .rank-tools { flex-direction: row; flex-wrap: wrap; }
+}
+/* On the Flyer page the filter sidebar replaces the clubs column, so the table keeps its width */
+@media (min-width: 1101px) {
+  .layout:has([data-view="flyer"]) { grid-template-columns: 240px minmax(0, 1fr); }
+  .layout:has([data-view="flyer"]) #aside { display: none; }
+}
