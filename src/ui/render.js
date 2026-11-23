@@ -27,16 +27,38 @@ function sourceLinks(sources) {
   return sources.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
 }
 
+/** Compact list of article links (outlet names), each opening in a new tab. */
+export function articleLinks(articles) {
+  if (!articles || articles.length === 0) return '<span class="muted">–</span>';
+  return `<ul class="art-links">${articles
+    .map((a) => `<li><a href="${esc(a.url)}" target="_blank" rel="noopener" title="${esc(a.title)}">${esc(a.outlet)}</a></li>`)
+    .join('')}</ul>`;
+}
+
+export function renderNewsPost(post) {
+  return `<article class="post news-post" data-news-id="${esc(post.id)}">
+      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Nowość</strong><small><time datetime="${esc(post.date)}">${esc(post.date)}</time></small></div></header>
+      <h2 class="news-title">${esc(post.title)}</h2>
+      <p class="post-text">${esc(post.body)}</p>
+      ${post.link ? `<footer class="post-foot"><a class="btn" href="${esc(post.link.href)}">${esc(post.link.label)}</a></footer>` : ''}
+    </article>`;
+}
+
+/** Newest first; posts on the same day keep their file order. */
+export function sortNews(posts) {
+  return posts.map((p, i) => [p, i]).sort((a, b) => b[0].date.localeCompare(a[0].date) || a[1] - b[1]).map(([p]) => p);
+}
+
 const mpLink = (mp, inner, cls = '') => `<a class="${cls}" href="${hrefFor({ name: 'profile', id: mp.id })}">${inner}</a>`;
 
 /* ---------- Home feed ---------- */
 export function renderHome(ctx) {
   const ds = ctx.flights.datasets[0];
-  const top = buildRanking(ds, ctx.mpsById, ctx.airports, 'flights').slice(0, 3);
+  const top = buildRanking(ds, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles).slice(0, 3);
   const counts = clubCounts(ctx.mps);
   const active = counts.reduce((s, c) => s + c.count, 0);
   const term = ctx.flights.datasets.find((d) => d.id === 'kadencja');
-  const termTop = term ? buildRanking(term, ctx.mpsById, ctx.airports, 'flights')[0] : null;
+  const termTop = term ? buildRanking(term, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles)[0] : null;
 
   const bar = counts
     .map((c) => {
@@ -47,6 +69,7 @@ export function renderHome(ctx) {
 
   return `
   <section class="feed" data-view="home">
+    ${sortNews(ctx.news ?? []).map(renderNewsPost).join('')}
     <article class="post">
       <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Frequent Flyer</strong><small>${esc(ds.label)} · ${esc(ds.origin)}</small></div></header>
       <p class="post-text">Najczęściej latający posłowie w ${esc(ds.label.toLowerCase())}. Wszystkie loty krajowe opłaciła Kancelaria Sejmu.</p>
@@ -170,14 +193,14 @@ function flightPost(ctx, mp, h, legKm) {
       <div><b>${km == null ? '–' : '≈\u00a0' + formatInt(km)}</b><span>km, szacunek</span></div>
       <div><b>${formatPln(h.costPln)}</b><span>koszt biletów</span></div>
     </div>
-    <footer class="post-foot"><a class="btn" href="#frequent-flyer" data-action="pick-dataset" data-dataset="${esc(h.dataset.id)}">Pokaż w rankingu</a><span class="src">Źródło: <a href="${esc(h.dataset.sources[0].url)}" target="_blank" rel="noopener">${esc(h.dataset.sources[0].title.split(':')[0])}</a></span></footer>
+    <footer class="post-foot"><a class="btn" href="#frequent-flyer" data-action="pick-dataset" data-dataset="${esc(h.dataset.id)}">Pokaż w rankingu</a><span class="src">Artykuły: ${articleLinks(h.articles)}</span></footer>
   </article>`;
 }
 
 /* ---------- Frequent Flyer ---------- */
 export function renderFlyer(ctx, state) {
   const ds = ctx.flights.datasets.find((d) => d.id === state.dataset) ?? ctx.flights.datasets[0];
-  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy);
+  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
   const sum = datasetSummary(rows);
   const maxKm = Math.max(1, ...rows.map((r) => r.km ?? 0));
   const maxFl = Math.max(1, ...rows.map((r) => r.flights));
@@ -216,7 +239,7 @@ export function renderFlyer(ctx, state) {
       </div>
       <div class="table-wrap">
         <table class="rank" data-testid="ranking">
-          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col" class="num">≈ km</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
           <tbody>
             ${rows.map((r) => {
               const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
@@ -225,6 +248,7 @@ export function renderFlyer(ctx, state) {
                 <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club)}
                   <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small></td>
                 <td class="num">${r.flights}</td>
+                <td class="arts">${articleLinks(r.articles)}</td>
                 <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
                 ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
                 <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>

@@ -5,6 +5,7 @@ import mpsData from '../../data/mps.json';
 import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
+import newsData from '../../data/news.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -19,7 +20,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData });
 });
 afterEach(() => app.destroy());
 
@@ -134,5 +135,39 @@ describe('Frequent Flyer', () => {
   it('MP names link to profiles', () => {
     const link = firstRow().querySelector('a.rank-mp');
     expect(link.getAttribute('href')).toBe('#posel-240');
+  });
+});
+
+describe('news feed (Aktualności)', () => {
+  it('starts the home feed with the newest feature post', () => {
+    const first = $('#view .post');
+    expect(first.classList.contains('news-post')).toBe(true);
+    expect(first.textContent).toContain('Artykuły przy każdym pośle');
+  });
+  it('the news post button opens the ranking', () => {
+    const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
+    expect(btn.getAttribute('href')).toBe('#frequent-flyer');
+    nav(btn.getAttribute('href'));
+    expect($('[data-view="flyer"]')).not.toBeNull();
+  });
+});
+
+describe('article links in the ranking', () => {
+  it('every row shows article links next to the flight count', () => {
+    nav('#frequent-flyer');
+    for (const id of ['2026', '2025', 'kadencja']) {
+      click($(`button[data-dataset="${id}"]`));
+      for (const tr of $$('[data-testid="ranking"] tbody tr')) {
+        const links = tr.querySelectorAll('td.arts a');
+        expect(links.length).toBeGreaterThan(0);
+        expect(tr.children[3]).toBe(links[0].closest('td'));
+      }
+    }
+  });
+  it('Kmita in 2025 has links to all four articles about him', () => {
+    nav('#frequent-flyer');
+    click($('button[data-dataset="2025"]'));
+    const outlets = [...$('tr[data-mp-id="165"] td.arts').querySelectorAll('a')].map((a) => a.textContent);
+    expect(outlets).toEqual(['Wprost', 'Zero.pl', 'Super Express', 'Kraków dla Was']);
   });
 });

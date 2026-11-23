@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { airportForDistrict, legKmForDistrict, estimateKm, timesAroundEarth, buildRanking, flightHistoryForMp, datasetSummary } from '../../src/lib/flights.js';
+import { airportForDistrict, legKmForDistrict, estimateKm, timesAroundEarth, buildRanking, flightHistoryForMp, datasetSummary, resolveArticles } from '../../src/lib/flights.js';
 
 const airports = {
   hub: 'WAW',
@@ -93,5 +93,30 @@ describe('datasetSummary', () => {
   });
   it('handles an empty ranking', () => {
     expect(datasetSummary([])).toEqual({ mps: 0, flights: 0, km: 0, withoutEstimate: 0 });
+  });
+});
+
+describe('articles', () => {
+  const registry = { a1: { outlet: 'Wprost', title: 'T', url: 'https://x' }, a2: { outlet: 'TVN24', title: 'U', url: 'https://y' } };
+  it('resolveArticles maps ids to objects in order', () => {
+    expect(resolveArticles(registry, ['a2', 'a1']).map((a) => [a.id, a.outlet])).toEqual([['a2', 'TVN24'], ['a1', 'Wprost']]);
+  });
+  it('resolveArticles handles missing lists', () => {
+    expect(resolveArticles(registry, undefined)).toEqual([]);
+    expect(resolveArticles(registry, null)).toEqual([]);
+  });
+  it('resolveArticles throws on unknown ids', () => {
+    expect(() => resolveArticles(registry, ['nope'])).toThrow(/Unknown article id nope/);
+    expect(() => resolveArticles(undefined, ['a1'])).toThrow();
+  });
+  it('buildRanking attaches articles to each row', () => {
+    const ds = { id: 'x', entries: [{ mpId: 1, flights: 5, articles: ['a1', 'a2'] }, { mpId: 2, flights: 3 }] };
+    const rows = buildRanking(ds, mps, airports, 'flights', registry);
+    expect(rows[0].articles.map((a) => a.outlet)).toEqual(['Wprost', 'TVN24']);
+    expect(rows[1].articles).toEqual([]);
+  });
+  it('flightHistoryForMp includes articles', () => {
+    const data = { articles: registry, datasets: [{ id: 'd', entries: [{ mpId: 1, flights: 5, articles: ['a1'] }] }] };
+    expect(flightHistoryForMp(data, 1)[0].articles[0].url).toBe('https://x');
   });
 });

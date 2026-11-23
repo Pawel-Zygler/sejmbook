@@ -1,5 +1,49 @@
 {
   "note": "Liczba lotów to liczba krajowych przelotów opłaconych przez Kancelarię Sejmu (art. 43 ustawy o wykonywaniu mandatu posła i senatora). Kancelaria nie podaje kilometrów ani tras. Kilometry na stronie są szacunkiem.",
+  "articles": {
+    "wprost-2026-11-16": {
+      "outlet": "Wprost",
+      "title": "115 lotów Łukasza Mejzy. Żaden inny poseł nie przekroczył setki",
+      "date": "2026-11-16",
+      "url": "https://www.wprost.pl/kraj/12503329/krajowe-loty-poslow-w-2026-r-lukasz-mejza-pierwszy-ze-115-przelotami.html"
+    },
+    "wprost-2026-01-30": {
+      "outlet": "Wprost",
+      "title": "Astronomiczny koszt podniebnych podróży posłów",
+      "date": "2026-01-30",
+      "url": "https://www.wprost.pl/kraj/12236820/274-poslow-latalo-po-polsce-za-pieniadze-obywateli-kaczynski-tusk-i-mentzen-na-drugim-biegunie.html"
+    },
+    "zero-2026-02-19": {
+      "outlet": "Zero.pl",
+      "title": "Poseł PiS w 2025 r. odbył 144 podróże za publiczne pieniądze",
+      "date": "2026-02-19",
+      "url": "https://zero.pl/news/posel-pis-w-2025-r-odbyl-144-podroze-za-publiczne-pieniadze-nie-mozna-stawiac-mi-zarzutow"
+    },
+    "se-kmita-2026": {
+      "outlet": "Super Express",
+      "title": "Loty posłów za 8 mln zł. Rekordzista Łukasz Kmita latał 144 razy w ciągu roku",
+      "date": "2026",
+      "url": "https://polityka.se.pl/wiadomosci/loty-poslow-za-8-mln-zl-rekordzista-lukasz-kmita-latal-144-razy-w-ciagu-roku-aa-TJJo-xq74-q68a.html"
+    },
+    "dlawas-kmita-2026": {
+      "outlet": "Kraków dla Was",
+      "title": "144 loty w rok. Łukasz Kmita odpowiada na krytykę",
+      "date": "2026",
+      "url": "https://krakow.dlawas.info/wiadomosci/144-loty-w-rok-lukasz-kmita-odpowiada-na-krytyke/cid,27953,a"
+    },
+    "tvn24-romowicz-2026-02-27": {
+      "outlet": "TVN24",
+      "title": "Latał 127 razy w ciągu roku. Poseł: wstaję o drugiej w nocy",
+      "date": "2026-02-27",
+      "url": "https://tvn24.pl/polska/posel-bartosz-romowicz-odbyl-127-lotow-w-rok-tlumaczy-z-czego-to-wynika-st8923526"
+    },
+    "interia-2025-10": {
+      "outlet": "Interia",
+      "title": "Loty posłów kosztowały 13,7 mln zł. „Mam pływać Odrą?”",
+      "date": "2025-10",
+      "url": "https://wydarzenia.interia.pl/kraj/news-loty-poslow-kosztowaly-13-7-mln-zl-mam-plywac-odra,nId,22429973"
+    }
+  },
   "datasets": [
     {
       "id": "2026",
@@ -10,20 +54,83 @@
       "coverageNote": "Pełna pierwsza dziesiątka. Pozostali posłowie nie zostali opublikowani.",
       "totals": null,
       "sources": [
-        { "title": "Wprost: 115 lotów Łukasza Mejzy. Żaden inny poseł nie przekroczył setki (16.11.2026)", "url": "https://www.wprost.pl/kraj/12503329/krajowe-loty-poslow-w-2026-r-lukasz-mejza-pierwszy-ze-115-przelotami.html" }
+        {
+          "title": "Wprost: 115 lotów Łukasza Mejzy. Żaden inny poseł nie przekroczył setki (16.11.2026)",
+          "url": "https://www.wprost.pl/kraj/12503329/krajowe-loty-poslow-w-2026-r-lukasz-mejza-pierwszy-ze-115-przelotami.html"
+        }
       ],
       "origin": "Dane Kancelarii Sejmu przekazane dziennikarzowi RMF FM Kacprowi Wróblewskiemu",
       "entries": [
-        { "mpId": 240, "flights": 115 },
-        { "mpId": 70, "flights": 93 },
-        { "mpId": 188, "flights": 90 },
-        { "mpId": 257, "flights": 83 },
-        { "mpId": 359, "flights": 78 },
-        { "mpId": 419, "flights": 78 },
-        { "mpId": 309, "flights": 73 },
-        { "mpId": 93, "flights": 71 },
-        { "mpId": 297, "flights": 71 },
-        { "mpId": 382, "flights": 70 }
+        {
+          "mpId": 240,
+          "flights": 115,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 70,
+          "flights": 93,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 188,
+          "flights": 90,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 257,
+          "flights": 83,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 359,
+          "flights": 78,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 419,
+          "flights": 78,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 309,
+          "flights": 73,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 93,
+          "flights": 71,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 297,
+          "flights": 71,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        },
+        {
+          "mpId": 382,
+          "flights": 70,
+          "articles": [
+            "wprost-2026-11-16"
+          ]
+        }
       ]
     },
     {
@@ -33,32 +140,176 @@
       "periodEnd": "2025-12-31",
       "coverage": "clubLeaders",
       "coverageNote": "Opublikowano podium oraz liderów poszczególnych klubów, a nie pełny ranking. Między pozycjami mogą być posłowie, których dane nie zostały ujawnione.",
-      "totals": { "flights": 9112, "mpsFlying": 274, "mpsNotFlying": 186, "costPln": 8078871.67 },
+      "totals": {
+        "flights": 9112,
+        "mpsFlying": 274,
+        "mpsNotFlying": 186,
+        "costPln": 8078871.67
+      },
       "sources": [
-        { "title": "Wprost: Astronomiczny koszt podniebnych podróży posłów (30.01.2026)", "url": "https://www.wprost.pl/kraj/12236820/274-poslow-latalo-po-polsce-za-pieniadze-obywateli-kaczynski-tusk-i-mentzen-na-drugim-biegunie.html" },
-        { "title": "TVN24: Tysiące lotów, miliony złotych (29.01.2026)", "url": "https://tvn24.pl/polska/loty-poslow-mamy-wykaz-z-sejmu-oto-rekordzisci-st8874033" },
-        { "title": "TVN24: Latał 127 razy w ciągu roku (27.02.2026)", "url": "https://tvn24.pl/polska/posel-bartosz-romowicz-odbyl-127-lotow-w-rok-tlumaczy-z-czego-to-wynika-st8923526" }
+        {
+          "title": "Wprost: Astronomiczny koszt podniebnych podróży posłów (30.01.2026)",
+          "url": "https://www.wprost.pl/kraj/12236820/274-poslow-latalo-po-polsce-za-pieniadze-obywateli-kaczynski-tusk-i-mentzen-na-drugim-biegunie.html"
+        },
+        {
+          "title": "TVN24: Tysiące lotów, miliony złotych (29.01.2026)",
+          "url": "https://tvn24.pl/polska/loty-poslow-mamy-wykaz-z-sejmu-oto-rekordzisci-st8874033"
+        },
+        {
+          "title": "TVN24: Latał 127 razy w ciągu roku (27.02.2026)",
+          "url": "https://tvn24.pl/polska/posel-bartosz-romowicz-odbyl-127-lotow-w-rok-tlumaczy-z-czego-to-wynika-st8923526"
+        }
       ],
       "origin": "Wykaz Kancelarii Sejmu, do którego dotarł reporter TVN24 Radomir Wit",
       "entries": [
-        { "mpId": 165, "flights": 144, "costPln": 127681.92 },
-        { "mpId": 70, "flights": 143, "costPln": 126795.24 },
-        { "mpId": 240, "flights": 130, "costPln": 115268.40 },
-        { "mpId": 312, "flights": 127, "costPln": 112608.36 },
-        { "mpId": 257, "flights": 111, "costPln": 98421.48 },
-        { "mpId": 7, "flights": 105, "costPln": 93101.40 },
-        { "mpId": 408, "flights": 98, "costPln": 86894.64 },
-        { "mpId": 419, "flights": 98, "costPln": 86894.64 },
-        { "mpId": 382, "flights": 97, "costPln": 86007.96 },
-        { "mpId": 320, "flights": 90, "costPln": 79801.20 },
-        { "mpId": 402, "flights": 88, "costPln": 78027.84 },
-        { "mpId": 112, "flights": 86, "costPln": 76254.48 },
-        { "mpId": 309, "flights": 81, "costPln": 71821.08 },
-        { "mpId": 354, "flights": 75, "costPln": 66501.00 },
-        { "mpId": 443, "flights": 52, "costPln": 46107.36 },
-        { "mpId": 198, "flights": 49, "costPln": 43447.32 },
-        { "mpId": 397, "flights": 29, "costPln": 25713.72 },
-        { "mpId": 254, "flights": 14, "costPln": 12413.52 }
+        {
+          "mpId": 165,
+          "flights": 144,
+          "costPln": 127681.92,
+          "articles": [
+            "wprost-2026-01-30",
+            "zero-2026-02-19",
+            "se-kmita-2026",
+            "dlawas-kmita-2026"
+          ]
+        },
+        {
+          "mpId": 70,
+          "flights": 143,
+          "costPln": 126795.24,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 240,
+          "flights": 130,
+          "costPln": 115268.4,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 312,
+          "flights": 127,
+          "costPln": 112608.36,
+          "articles": [
+            "wprost-2026-01-30",
+            "tvn24-romowicz-2026-02-27"
+          ]
+        },
+        {
+          "mpId": 257,
+          "flights": 111,
+          "costPln": 98421.48,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 7,
+          "flights": 105,
+          "costPln": 93101.4,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 408,
+          "flights": 98,
+          "costPln": 86894.64,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 419,
+          "flights": 98,
+          "costPln": 86894.64,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 382,
+          "flights": 97,
+          "costPln": 86007.96,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 320,
+          "flights": 90,
+          "costPln": 79801.2,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 402,
+          "flights": 88,
+          "costPln": 78027.84,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 112,
+          "flights": 86,
+          "costPln": 76254.48,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 309,
+          "flights": 81,
+          "costPln": 71821.08,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 354,
+          "flights": 75,
+          "costPln": 66501.0,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 443,
+          "flights": 52,
+          "costPln": 46107.36,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 198,
+          "flights": 49,
+          "costPln": 43447.32,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 397,
+          "flights": 29,
+          "costPln": 25713.72,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        },
+        {
+          "mpId": 254,
+          "flights": 14,
+          "costPln": 12413.52,
+          "articles": [
+            "wprost-2026-01-30"
+          ]
+        }
       ]
     },
     {
@@ -68,15 +319,40 @@
       "periodEnd": "2025-08-31",
       "coverage": "top3",
       "coverageNote": "Opublikowano tylko podium. Dane obejmują okres od początku kadencji do końca sierpnia 2025.",
-      "totals": { "flights": 17378, "costPln": 13700000 },
+      "totals": {
+        "flights": 17378,
+        "costPln": 13700000
+      },
       "sources": [
-        { "title": "Interia: Loty posłów kosztowały 13,7 mln zł. „Mam pływać Odrą?” (X 2025)", "url": "https://wydarzenia.interia.pl/kraj/news-loty-poslow-kosztowaly-13-7-mln-zl-mam-plywac-odra,nId,22429973" }
+        {
+          "title": "Interia: Loty posłów kosztowały 13,7 mln zł. „Mam pływać Odrą?” (X 2025)",
+          "url": "https://wydarzenia.interia.pl/kraj/news-loty-poslow-kosztowaly-13-7-mln-zl-mam-plywac-odra,nId,22429973"
+        }
       ],
       "origin": "Dane Centrum Informacyjnego Sejmu przekazane Interii",
       "entries": [
-        { "mpId": 70, "flights": 244, "costPln": 192762 },
-        { "mpId": 240, "flights": 203 },
-        { "mpId": 156, "flights": 201 }
+        {
+          "mpId": 70,
+          "flights": 244,
+          "costPln": 192762,
+          "articles": [
+            "interia-2025-10"
+          ]
+        },
+        {
+          "mpId": 240,
+          "flights": 203,
+          "articles": [
+            "interia-2025-10"
+          ]
+        },
+        {
+          "mpId": 156,
+          "flights": 201,
+          "articles": [
+            "interia-2025-10"
+          ]
+        }
       ]
     }
   ]

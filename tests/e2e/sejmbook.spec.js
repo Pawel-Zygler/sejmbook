@@ -86,3 +86,21 @@ test('dark mode uses the dark palette', async ({ page }) => {
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
   expect(bg).toBe('rgb(18, 20, 24)');
 });
+
+test('ranking rows link to articles about the MP', async ({ page }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  await page.getByRole('tab', { name: 'Cały 2025' }).click();
+  const romowicz = page.locator('tr[data-mp-id="312"]');
+  const link = romowicz.getByRole('link', { name: 'TVN24' });
+  await expect(link).toHaveAttribute('href', /tvn24\.pl/);
+  await expect(link).toHaveAttribute('target', '_blank');
+  await expect(romowicz.locator('td.num').first()).toHaveText('127');
+});
+
+test('home starts with the newest feature post and links to it', async ({ page }) => {
+  await page.goto(PAGE);
+  const post = page.locator('.news-post').first();
+  await expect(post).toContainText('Artykuły przy każdym pośle');
+  await post.getByRole('link', { name: 'Zobacz ranking' }).click();
+  await expect(page.locator('[data-view="flyer"]')).toBeVisible();
+});

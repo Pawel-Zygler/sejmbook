@@ -4,6 +4,8 @@ import mpsData from '../../data/mps.json';
 import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
+import newsData from '../../data/news.json';
+import { parseHash } from '../../src/lib/router.js';
 
 const ids = new Set(mpsData.mps.map((m) => m.id));
 
@@ -69,5 +71,37 @@ describe('flights', () => {
     expect(byId['kadencja'][70]).toBe(244); // Dowhan, Interia
     const d2025 = flightsData.datasets.find((d) => d.id === '2025');
     expect(d2025.totals).toEqual({ flights: 9112, mpsFlying: 274, mpsNotFlying: 186, costPln: 8078871.67 });
+  });
+});
+
+describe('articles', () => {
+  const used = new Set(flightsData.datasets.flatMap((d) => d.entries.flatMap((e) => e.articles ?? [])));
+  it('every ranking entry has at least one article', () => {
+    for (const d of flightsData.datasets) for (const e of d.entries) expect(e.articles?.length, `${d.id}:${e.mpId}`).toBeGreaterThan(0);
+  });
+  it('every article is complete, https and actually used', () => {
+    for (const [id, a] of Object.entries(flightsData.articles)) {
+      expect(a.url, id).toMatch(/^https:\/\//);
+      expect(a.outlet.length).toBeGreaterThan(1);
+      expect(a.title.length).toBeGreaterThan(5);
+      expect(used, id).toContain(id);
+    }
+  });
+});
+
+describe('news (Aktualności)', () => {
+  it('has unique ids, ISO dates and in-app links that resolve', () => {
+    const ids = new Set();
+    for (const p of newsData.posts) {
+      expect(ids.has(p.id)).toBe(false);
+      ids.add(p.id);
+      expect(p.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(p.title.length).toBeGreaterThan(5);
+      expect(p.body.length).toBeGreaterThan(20);
+      if (p.link) expect(parseHash(p.link.href).name).not.toBe('notFound');
+    }
+  });
+  it('announces the article-links feature', () => {
+    expect(newsData.posts.map((p) => p.id)).toContain('2026-11-23-artykuly');
   });
 });

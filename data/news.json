@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": "2026-11-23-artykuly",
+      "date": "2026-11-23",
+      "title": "Artykuły przy każdym pośle w rankingu Frequent Flyer",
+      "body": "W rankingu Frequent Flyer przy każdym pośle, obok liczby lotów, są teraz linki do artykułów, które o nim piszą. Każdy link prowadzi do tekstu, w którym pada jego nazwisko i liczba lotów.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
+      "id": "2026-11-23-start",
+      "date": "2026-11-23",
+      "title": "Startuje Sejmbook",
+      "body": "Pierwsza wersja: profile 460 posłów X kadencji z przynależnością klubową (dane z API Sejmu) i ranking Frequent Flyer z danymi Kancelarii Sejmu ujawnionymi przez media.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Przeglądaj posłów"
+      }
+    }
+  ]
+}

@@ -37,7 +37,7 @@ export const SORT_KEYS = ['km', 'flights'];
  * Build a ranking for one dataset: joins MPs, adds airport, leg and km estimate, sorts and ranks.
  * Ties share a rank (competition ranking: 1, 2, 2, 4).
  */
-export function buildRanking(dataset, mpsById, airportsData, sortBy = 'km') {
+export function buildRanking(dataset, mpsById, airportsData, sortBy = 'km', articles = {}) {
   if (!SORT_KEYS.includes(sortBy)) throw new RangeError(`Unknown sort key: ${sortBy}`);
   const rows = dataset.entries.map((e) => {
     const mp = mpsById.get(e.mpId);
@@ -53,6 +53,7 @@ export function buildRanking(dataset, mpsById, airportsData, sortBy = 'km') {
       airportName: airport ? airportsData.airports[airport].name : null,
       legKm,
       km,
+      articles: resolveArticles(articles, e.articles),
     };
   });
   const val = (r) => (sortBy === 'km' ? r.km ?? -1 : r.flights);
@@ -65,12 +66,21 @@ export function buildRanking(dataset, mpsById, airportsData, sortBy = 'km') {
   return rows;
 }
 
+/** Turn article ids into article objects; unknown ids are a data error. */
+export function resolveArticles(registry, ids = []) {
+  return (ids ?? []).map((id) => {
+    const a = registry?.[id];
+    if (!a) throw new Error(`Unknown article id ${id}`);
+    return { id, ...a };
+  });
+}
+
 /** All flight records for one MP across datasets, newest first by dataset order. */
 export function flightHistoryForMp(flightsData, mpId) {
   return flightsData.datasets
     .map((d) => {
       const e = d.entries.find((x) => x.mpId === mpId);
-      return e ? { dataset: d, flights: e.flights, costPln: e.costPln ?? null } : null;
+      return e ? { dataset: d, flights: e.flights, costPln: e.costPln ?? null, articles: resolveArticles(flightsData.articles, e.articles) } : null;
     })
     .filter(Boolean);
 }

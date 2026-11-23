@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, articleLinks, renderNewsPost, sortNews } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -86,5 +86,55 @@ describe('views', () => {
   });
   it('aside lists clubs with counts', () => {
     expect(renderAside(ctx)).toMatch(/KO<\/a><b>\d+<\/b>/);
+  });
+});
+
+describe('article links', () => {
+  it('renders outlet names as external links with the title as tooltip', () => {
+    const html = articleLinks([{ outlet: 'Wprost', title: 'Tytuł "x"', url: 'https://w.pl/a?b=1&c=2' }]);
+    expect(html).toContain('href="https://w.pl/a?b=1&amp;c=2"');
+    expect(html).toContain('target="_blank"');
+    expect(html).toContain('title="Tytuł &quot;x&quot;"');
+    expect(html).toContain('>Wprost<');
+  });
+  it('shows a dash when there are no articles', () => {
+    expect(articleLinks([])).toContain('–');
+    expect(articleLinks(undefined)).toContain('–');
+  });
+  it('every ranking row in every dataset has at least one article link', () => {
+    for (const d of flightsData.datasets) {
+      const html = renderFlyer(ctx, { dataset: d.id, sortBy: 'km' });
+      const rows = html.split('<tr data-mp-id=').slice(1);
+      expect(rows).toHaveLength(d.entries.length);
+      for (const r of rows) expect(r).toMatch(/class="art-links"/);
+    }
+  });
+  it('profile flight posts link to articles', () => {
+    expect(renderProfile(ctx, 165)).toContain('Kraków dla Was');
+  });
+});
+
+describe('news', () => {
+  const posts = [
+    { id: 'a', date: '2026-11-20', title: 'Stary', body: 'b' },
+    { id: 'b', date: '2026-11-23', title: 'Nowy 1', body: 'b', link: { href: '#frequent-flyer', label: 'Zobacz' } },
+    { id: 'c', date: '2026-11-23', title: 'Nowy 2', body: 'b' },
+  ];
+  it('sortNews puts newest first and keeps file order within a day', () => {
+    expect(sortNews(posts).map((p) => p.id)).toEqual(['b', 'c', 'a']);
+  });
+  it('renderNewsPost escapes content and renders the optional link', () => {
+    const html = renderNewsPost({ id: 'x', date: '2026-11-23', title: '<b>', body: 'a & b', link: { href: '#poslowie', label: 'Idź' } });
+    expect(html).toContain('&lt;b&gt;');
+    expect(html).toContain('a &amp; b');
+    expect(html).toContain('href="#poslowie"');
+    expect(renderNewsPost(posts[0])).not.toContain('post-foot');
+  });
+  it('home shows news posts before the rest of the feed', () => {
+    const html = renderHome({ ...ctx, news: posts });
+    expect(html.indexOf('Nowy 1')).toBeLessThan(html.indexOf('Frequent Flyer</strong>'));
+  });
+  it('home works without news', () => {
+    expect(renderHome({ ...ctx, news: undefined })).toContain('data-view="home"');
   });
 });

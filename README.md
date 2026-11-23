@@ -24,4 +24,6 @@ npm ci
 npm test            # unit → integration → build → e2e
 npm run coverage    # unit + progi pokrycia (lines/functions/statements 95%, branches 85%)
 ```
-Zasada: każda nowa funkcja wchodzi razem z testami na wszystkich trzech poziomach. CI: `.github/workflows/tests.yml`.
+Zasady:
+- każda nowa funkcja wchodzi razem z testami na wszystkich trzech poziomach;
+- każda nowa funkcja dostaje swój post w Aktualnościach (`data/news.json`), a test kontraktu danych pilnuje jego poprawności. CI: `.github/workflows/tests.yml`.

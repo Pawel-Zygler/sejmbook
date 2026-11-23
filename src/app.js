@@ -2,7 +2,7 @@ import { indexById, clubById, filterMps } from './lib/mps.js';
 import { parseHash } from './lib/router.js';
 import { renderHome, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside } from './ui/render.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData }) {
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -10,6 +10,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData })
     flights: flightsData,
     airports: airportsData,
     fetchedAt: mpsData.fetchedAt,
+    news: newsData?.posts ?? [],
   };
 }
 
