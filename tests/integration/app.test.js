@@ -143,7 +143,8 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Frequent Flyer: ranking na górze i odznaki podium');
+    expect(first.textContent).toContain('Sejm w powietrzu: nowy Frequent Flyer');
+    expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-frekwencja"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
   });
@@ -243,6 +244,45 @@ describe('Frequent Flyer podium', () => {
     const view = $('[data-view="flyer"]');
     expect(view.querySelector('.flyer-side [data-action="pick-dataset"]')).not.toBeNull();
     expect(view.querySelector('.flyer-side [data-action="sort"]')).not.toBeNull();
-    expect(view.querySelector('.flyer-main > .panel').querySelector('[data-testid="ranking"]')).not.toBeNull();
+    const main = view.querySelector('.flyer-main');
+    expect(main.querySelector('[data-testid="podium"]')).not.toBeNull();
+    expect(main.querySelector('[data-testid="ranking"]')).not.toBeNull();
+  });
+});
+
+describe('Frequent Flyer spectacle', () => {
+  beforeEach(() => nav('#frequent-flyer'));
+  it('opens with the flight map and the podium of the current dataset', () => {
+    const map = $('[data-testid="flight-map"]');
+    expect(map).not.toBeNull();
+    expect(map.querySelectorAll('.route').length).toBeGreaterThan(3);
+    const cards = $$('[data-testid="podium"] .podium-card');
+    expect(cards).toHaveLength(3);
+    expect(cards[0].textContent).toContain('Łukasz Mejza');
+    expect(cards[0].textContent).toContain('Super-mąż');
+  });
+  it('period filter: "Od zawsze" first, then X kadencja with its ranges', () => {
+    const periods = $$('.flyer-side [data-action="pick-period"]').map((b) => b.textContent);
+    expect(periods).toEqual(['Od zawsze', 'X kadencja']);
+    expect($('[data-view="flyer"]').dataset.period).toBe('10');
+    expect($$('.flyer-side .sub-tabs [data-action="pick-dataset"]')).toHaveLength(3);
+    click($('[data-action="pick-period"][data-period="all"]'));
+    const view = $('[data-view="flyer"]');
+    expect(view.dataset.period).toBe('all');
+    expect(view.dataset.dataset).toBe('kadencja');
+    expect($('.flyer-side .sub-tabs')).toBeNull();
+    expect($('[data-testid="period-note"]').textContent).toContain('Starszych kadencji');
+    expect($('[data-testid="ranking"] tbody tr').textContent).toContain('Robert Dowhan');
+    click($('[data-action="pick-period"][data-period="10"]'));
+    expect($('[data-view="flyer"]').dataset.period).toBe('10');
+  });
+  it('picking a range from a profile selects its term', () => {
+    click($('[data-action="pick-period"][data-period="all"]'));
+    nav('#posel-70');
+    click($('.flight-post [data-dataset="2025"]'));
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    const view = $('[data-view="flyer"]');
+    expect(view.dataset.period).toBe('10');
+    expect(view.dataset.dataset).toBe('2025');
   });
 });

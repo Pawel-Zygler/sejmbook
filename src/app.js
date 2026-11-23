@@ -26,7 +26,7 @@ export function createApp(doc, win, data) {
   const state = {
     route: parseHash(win.location.hash),
     directory: { query: '', club: '', includeInactive: false },
-    flyer: { dataset: data.flightsData.datasets[0].id, sortBy: 'km' },
+    flyer: { period: String(data.flightsData.datasets[0].term), dataset: data.flightsData.datasets[0].id, sortBy: 'km' },
     attendance: { order: 'desc', club: '' },
   };
 
@@ -78,7 +78,12 @@ export function createApp(doc, win, data) {
     } else if (action === 'pick-dataset') {
       e.preventDefault();
       state.flyer.dataset = el.dataset.dataset;
+      const ds = ctx.flights.datasets.find((d) => d.id === el.dataset.dataset);
+      if (ds) state.flyer.period = String(ds.term);
       go('#frequent-flyer');
+    } else if (action === 'pick-period') {
+      state.flyer.period = el.dataset.period;
+      render();
     } else if (action === 'sort') {
       state.flyer.sortBy = el.dataset.sort;
       render();

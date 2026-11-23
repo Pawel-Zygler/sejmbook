@@ -100,7 +100,7 @@ test('ranking rows link to articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Frequent Flyer: ranking na górze i odznaki podium');
+  await expect(post).toContainText('Sejm w powietrzu: nowy Frequent Flyer');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -125,7 +125,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the podium feature first and keeps the attendance post', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('odznaki podium');
+  await expect(page.locator('.news-post').first()).toContainText('Sejm w powietrzu');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -144,4 +144,31 @@ test('Frequent Flyer: ranking at the top, filters in the sidebar, podium badges'
   await page.locator('.flyer-side').getByRole('tab', { name: 'Cały 2025' }).click();
   await expect(rows.first().getByTestId('podium-badge')).toHaveText('Super-mąż');
   await expect(rows.first()).toContainText('Robert Dowhan');
+});
+
+test('Frequent Flyer spectacle: map, swipeable podium, period filter', async ({ page, isMobile }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Sejm w powietrzu');
+  const map = page.getByTestId('flight-map');
+  await expect(map).toBeVisible();
+  const box = await map.boundingBox();
+  const vw = page.viewportSize().width;
+  expect(box.width).toBeLessThanOrEqual(vw);
+  await expect(page.locator('[data-testid="podium"] .podium-card')).toHaveCount(3);
+  if (isMobile) {
+    // podium scrolls sideways inside itself, the page does not
+    const podium = page.getByTestId('podium');
+    const scroll = await podium.evaluate((el) => el.scrollWidth - el.clientWidth);
+    expect(scroll).toBeGreaterThan(0);
+    // ranking rows are laid out as cards (no table header visible)
+    const thead = await page.locator('[data-testid="ranking"] thead').boundingBox();
+    expect(thead.height).toBeLessThanOrEqual(1);
+  }
+  await page.getByRole('tab', { name: 'Od zawsze' }).click();
+  await expect(page.getByTestId('period-note')).toBeVisible();
+  await expect(page.locator('[data-testid="ranking"] tbody tr')).toHaveCount(3);
+  await page.getByRole('tab', { name: 'X kadencja' }).click();
+  await expect(page.getByRole('tab', { name: 'Cały 2025' })).toBeVisible();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(0);
 });

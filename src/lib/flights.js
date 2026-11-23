@@ -91,3 +91,33 @@ export function datasetSummary(rows) {
   const km = kmRows.reduce((s, r) => s + r.km, 0);
   return { mps: rows.length, flights, km, withoutEstimate: rows.length - kmRows.length };
 }
+
+/** Days covered by a dataset (inclusive). */
+const spanDays = (ds) => (Date.parse(ds.periodEnd) - Date.parse(ds.periodStart)) / 86400000 + 1;
+
+/**
+ * Period filter: "Od zawsze" first, then one entry per term (newest first).
+ * "Od zawsze" uses the dataset with the longest span, because the sources do not
+ * publish one all-time list and adding overlapping lists would double count.
+ */
+export function flyerPeriods(datasets) {
+  if (!datasets.length) throw new RangeError('No flight datasets');
+  const terms = [...new Set(datasets.map((ds) => ds.term))].sort((a, b) => b - a);
+  const longest = [...datasets].sort((a, b) => spanDays(b) - spanDays(a) || a.periodStart.localeCompare(b.periodStart))[0];
+  return [
+    { id: 'all', term: null, choices: [longest] },
+    ...terms.map((t) => ({
+      id: String(t),
+      term: t,
+      choices: datasets.filter((ds) => ds.term === t).sort((a, b) => b.periodEnd.localeCompare(a.periodEnd)),
+    })),
+  ];
+}
+
+/** Resolve the {period, dataset} state into the period, its dataset and the sub-choices to show. */
+export function resolvePeriod(datasets, periodId, datasetId) {
+  const periods = flyerPeriods(datasets);
+  const period = periods.find((p) => p.id === periodId) ?? periods[1] ?? periods[0];
+  const dataset = period.choices.find((ds) => ds.id === datasetId) ?? period.choices[0];
+  return { periods, period, dataset };
+}

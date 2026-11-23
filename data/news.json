@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-sejm-w-powietrzu",
+      "date": "2026-11-24",
+      "title": "Sejm w powietrzu: nowy Frequent Flyer",
+      "body": "Frequent Flyer dostał nową odsłonę, projektowaną z myślą o telefonie. Na górze jest mapa lotów z Warszawy do lotnisk w okręgach posłów, a grubość łuku pokazuje, ile było lotów. Pod mapą jest podium z kartami do przesuwania palcem, a pełny ranking na telefonie wyświetla się jako karty. Filtr okresu ma teraz opcję „Od zawsze” i podział na kadencje.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz mapę lotów"
+      }
+    },
+    {
       "id": "2026-11-23-podium",
       "date": "2026-11-23",
       "title": "Frequent Flyer: ranking na górze i odznaki podium",
