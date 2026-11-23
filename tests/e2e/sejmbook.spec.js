@@ -97,7 +97,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Frequent Flyer od zawsze');
+  await expect(post).toContainText('Loga klubów');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -122,7 +122,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Frequent Flyer od zawsze');
+  await expect(page.locator('.news-post').first()).toContainText('Loga klubów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -142,12 +142,21 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   expect(await thumb.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
   await page.goto(`${PAGE}#posel-70`);
   const big = page.locator('.avatar-xl img');
-  await expect(big).toHaveAttribute('src', /\/MP\/70\/photo$/);
+  // The build bundles the photos as data: URLs, so they load without api.sejm.gov.pl.
+  await expect(big).toHaveAttribute('src', /^data:image\/jpeg;base64,/);
   expect(await big.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
 
+  // Club logo next to the club name, instead of the colour dot.
+  const logo = page.locator('.profile .chip.has-logo img.club-logo, .chip.has-logo img.club-logo').first();
+  await expect(logo).toBeVisible();
+  expect(await logo.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+  await expect(page.locator('#aside img.club-logo-lg').first()).toHaveAttribute('src', /^data:image\/png;base64,/);
+
+  // A photo that fails to load is removed and the initials stay.
   await page.unroute(/api\.sejm\.gov\.pl\/.*\/photo/);
   await page.route(/api\.sejm\.gov\.pl\/.*\/photo/, (r) => r.fulfill({ status: 404, body: '' }));
   await page.goto(`${PAGE}#posel-456`);
+  await page.locator('.avatar-xl img').evaluate((img) => { img.src = 'https://api.sejm.gov.pl/sejm/term10/MP/456/photo'; });
   await expect(page.locator('.avatar-xl img')).toHaveCount(0);
   await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });

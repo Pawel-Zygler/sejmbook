@@ -6,4 +6,4 @@ import newsData from '../data/news.json';
 import attendanceData from '../data/attendance.json';
 import { createApp } from './app.js';
 
-createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData });
+createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData: window.__SEJM_MEDIA__ });

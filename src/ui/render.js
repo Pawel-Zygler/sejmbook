@@ -20,16 +20,26 @@ export function photoUrl(mpId, size = 'md', term = 10) {
   return `https://api.sejm.gov.pl/sejm/term${term}/MP/${mpId}/${size === 'xl' || size === 'lg' ? 'photo' : 'photo-mini'}`;
 }
 
+/** The photo to show: the copy bundled with the site when there is one, otherwise the Sejm API. */
+export function photoSrc(ctx, mpId, size = 'md') {
+  return ctx.media?.photos?.[mpId] ?? photoUrl(mpId, size, ctx.term ?? 10);
+}
+
+/** Bundled club logo, or null (then the club colour is used). */
+export const clubLogo = (ctx, clubId) => ctx.media?.logos?.[clubId] ?? null;
+
 /** Initials in club colour, with the official photo laid on top; if the photo fails, the initials stay. */
 export function avatar(ctx, mp, size = 'md') {
   const c = clubOf(ctx, mp);
-  const src = photoUrl(mp.id, size, ctx.term ?? 10);
+  const src = photoSrc(ctx, mp.id, size);
   const img = src ? `<img class="avatar-photo" src="${esc(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-photo>` : '';
   return `<span class="avatar avatar-${size}" style="--club:${esc(c.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(mp.name))}</span>${img}</span>`;
 }
 
 export function clubChip(ctx, clubId) {
   const c = ctx.clubs.get(clubId) ?? { ...FALLBACK_CLUB, id: clubId, short: clubId };
+  const logo = clubLogo(ctx, clubId);
+  if (logo) return `<span class="chip has-logo" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="">${esc(c.short)}</span>`;
   return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}</span>`;
 }
 
@@ -314,7 +324,7 @@ export function renderAside(ctx) {
   return `<div class="panel aside-box"><h2>Kluby i koła</h2><ul class="aside-clubs">
     ${counts.map((c) => {
       const club = ctx.clubs.get(c.club) ?? FALLBACK_CLUB;
-      return `<li><a href="#poslowie" data-action="filter-club" data-club="${esc(c.club)}"><span class="dot" style="--club:${esc(club.color)}"></span>${esc(club.short)}</a><b>${c.count}</b></li>`;
+      return `<li><a href="#poslowie" data-action="filter-club" data-club="${esc(c.club)}">${clubLogo(ctx, c.club) ? `<img class="club-logo club-logo-lg" src="${esc(clubLogo(ctx, c.club))}" alt="">` : `<span class="dot" style="--club:${esc(club.color)}"></span>`}${esc(club.short)}</a><b>${c.count}</b></li>`;
     }).join('')}
   </ul><p class="src">API Sejmu, stan na ${esc(ctx.fetchedAt)}</p></div>`;
 }

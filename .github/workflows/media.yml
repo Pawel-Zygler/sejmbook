@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['scripts/fetch-sejm-media.mjs', '.github/workflows/media.yml']
+    paths: ['scripts/fetch-sejm-media.mjs', 'scripts/optimize-media.py', '.github/workflows/media.yml']
 permissions:
   contents: write
 jobs:
@@ -15,6 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/fetch-sejm-media.mjs
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pillow && python scripts/optimize-media.py
       - name: Commit media
         run: |
           git config user.name "github-actions[bot]"

@@ -248,3 +248,8 @@ h2 { font-size: 1.1rem; }
 .article-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .article-list li { line-height: 1.4; }
 .art-date { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.85rem; margin-right: 4px; }
+
+/* Club logos instead of colour dots, when bundled */
+.chip.has-logo::before { display: none; }
+.club-logo { width: 16px; height: 16px; object-fit: contain; flex: none; border-radius: 3px; background: #fff; }
+.club-logo-lg { width: 22px; height: 22px; margin-right: 8px; vertical-align: middle; }

@@ -145,7 +145,8 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Frequent Flyer od zawsze');
+    expect(first.textContent).toContain('Loga klubów');
+    expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-frekwencja"]')).not.toBeNull();
@@ -238,5 +239,18 @@ describe('MP photos', () => {
     img.dispatchEvent(new Event('error'));
     expect($('.avatar-xl img')).toBeNull();
     expect($('.avatar-xl .avatar-ini').textContent).toBe('RD');
+  });
+});
+
+describe('bundled media', () => {
+  it('uses inlined photos and logos when the build provides them', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    const mediaData = { photos: { 70: 'data:image/jpeg;base64,AAA' }, logos: { KO: 'data:image/png;base64,BBB' } };
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData });
+    nav('#posel-70');
+    expect($('.avatar-xl img').getAttribute('src')).toBe('data:image/jpeg;base64,AAA');
+    expect($('.profile .chip.has-logo img, .chip.has-logo img').getAttribute('src')).toBe('data:image/png;base64,BBB');
+    expect($('#aside img.club-logo-lg').getAttribute('src')).toBe('data:image/png;base64,BBB');
   });
 });

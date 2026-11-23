@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -227,5 +227,27 @@ describe('all articles list', () => {
   it('the merged ranking names the periods each total comes from', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
     expect(html).toMatch(/Loty z: IX kadencja: XI 2019 – VIII 2023 \+ Cały 2025 \+ 2026 \(do 1 listopada\)/);
+  });
+});
+
+describe('bundled media', () => {
+  const withMedia = { ...ctx, media: { photos: { 70: 'data:image/jpeg;base64,AAA' }, logos: { KO: 'data:image/png;base64,BBB' } } };
+  it('prefers the bundled photo, falls back to the Sejm API', () => {
+    expect(photoSrc(withMedia, 70)).toBe('data:image/jpeg;base64,AAA');
+    expect(photoSrc(withMedia, 71, 'xl')).toBe('https://api.sejm.gov.pl/sejm/term10/MP/71/photo');
+    expect(avatar(withMedia, ctx.mpsById.get(70), 'sm')).toContain('src="data:image/jpeg;base64,AAA"');
+  });
+  it('club chips show the logo instead of the colour dot when there is one', () => {
+    expect(clubLogo(withMedia, 'KO')).toBe('data:image/png;base64,BBB');
+    expect(clubLogo(withMedia, 'PiS')).toBeNull();
+    expect(clubChip(withMedia, 'KO')).toContain('class="chip has-logo"');
+    expect(clubChip(withMedia, 'KO')).toContain('<img class="club-logo" src="data:image/png;base64,BBB" alt="">');
+    expect(clubChip(withMedia, 'PiS')).not.toContain('<img');
+    expect(clubLogo({ clubs: ctx.clubs }, 'KO')).toBeNull();
+  });
+  it('the club list in the aside uses logos too', () => {
+    const html = renderAside(withMedia);
+    expect(html).toContain('club-logo-lg');
+    expect(html).toContain('class="dot"');
   });
 });

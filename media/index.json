@@ -2002,55 +2002,47 @@
   "logos": [
     {
       "id": "Centrum",
-      "file": "logos/Centrum.jpg"
+      "file": "logos/Centrum.png"
     },
     {
       "id": "Demokracja",
-      "file": "logos/Demokracja.jpg"
+      "file": "logos/Demokracja.png"
     },
     {
       "id": "KO",
-      "file": "logos/KO.jpg"
+      "file": "logos/KO.png"
     },
     {
       "id": "Konfederacja",
-      "file": "logos/Konfederacja.jpg"
+      "file": "logos/Konfederacja.png"
     },
     {
       "id": "Konfederacja_KP",
-      "file": "logos/Konfederacja_KP.jpg"
+      "file": "logos/Konfederacja_KP.png"
     },
     {
       "id": "Lewica",
-      "file": "logos/Lewica.jpg"
-    },
-    {
-      "id": "niez.",
-      "file": "logos/niez..jpg"
+      "file": "logos/Lewica.png"
     },
     {
       "id": "PiS",
-      "file": "logos/PiS.jpg"
+      "file": "logos/PiS.png"
     },
     {
       "id": "Polska2050",
-      "file": "logos/Polska2050.jpg"
-    },
-    {
-      "id": "Polska2050-TD",
-      "file": "logos/Polska2050-TD.jpg"
+      "file": "logos/Polska2050.png"
     },
     {
       "id": "PSL-TD",
-      "file": "logos/PSL-TD.jpg"
+      "file": "logos/PSL-TD.png"
     },
     {
       "id": "Razem",
-      "file": "logos/Razem.jpg"
+      "file": "logos/Razem.png"
     },
     {
       "id": "RozwojPlus",
-      "file": "logos/RozwojPlus.jpg"
+      "file": "logos/RozwojPlus.png"
     }
   ]
 }

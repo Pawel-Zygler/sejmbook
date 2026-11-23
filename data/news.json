@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-loga",
+      "date": "2026-11-24",
+      "title": "Loga klubów i zdjęcia w każdym widoku",
+      "body": "Przy nazwie klubu widać teraz jego logo zamiast kolorowej kropki. Zdjęcia posłów i loga pobieramy z API Sejmu i trzymamy w samej stronie, więc ładują się wszędzie, także na telefonie.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz posłów"
+      }
+    },
+    {
       "id": "2026-11-24-od-zawsze",
       "date": "2026-11-24",
       "title": "Frequent Flyer od zawsze: jeden ranking i wszystkie artykuły",

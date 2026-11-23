@@ -3,7 +3,7 @@ import { parseHash } from './lib/router.js';
 import { renderHome, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData }) {
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -13,6 +13,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     fetchedAt: mpsData.fetchedAt,
     news: newsData?.posts ?? [],
     attendance: attendanceData ?? null,
+    // Inlined photos and club logos (data: URLs) from media/, when the build found them.
+    media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {} },
   };
 }
 
