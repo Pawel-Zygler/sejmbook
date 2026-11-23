@@ -1,0 +1,22 @@
+{
+  "name": "sejmbook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sejmbook – profile posłów X kadencji i ranking Frequent Flyer",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run test:unit && npm run test:integration && npm run build && npm run test:e2e",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "playwright test --trace off",
+    "coverage": "vitest run tests/unit --coverage"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "esbuild": "^0.25.5",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4"
+  }
+}

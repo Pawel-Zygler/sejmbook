@@ -1,0 +1,19 @@
+{
+  "source": "https://api.sejm.gov.pl/sejm/term10/clubs",
+  "fetchedAt": "2026-11-23",
+  "clubs": [
+    { "id": "KO", "name": "Klub Parlamentarny Koalicja Obywatelska - Platforma Obywatelska, Nowoczesna, Inicjatywa Polska, Zieloni", "short": "KO", "color": "#d9432b" },
+    { "id": "PiS", "name": "Klub Parlamentarny Prawo i Sprawiedliwość", "short": "PiS", "color": "#1f4e9c" },
+    { "id": "RozwojPlus", "name": "Klub Parlamentarny Rozwój Plus", "short": "Rozwój+", "color": "#3a7fc1" },
+    { "id": "PSL-TD", "name": "Klub Parlamentarny Polskie Stronnictwo Ludowe - Trzecia Droga", "short": "PSL", "color": "#2f8f46" },
+    { "id": "Lewica", "name": "Koalicyjny Klub Parlamentarny Lewicy (Nowa Lewica, PPS, Unia Pracy)", "short": "Lewica", "color": "#b5174b" },
+    { "id": "Konfederacja", "name": "Klub Poselski Konfederacja", "short": "Konfederacja", "color": "#22303f" },
+    { "id": "Centrum", "name": "Klub Parlamentarny Centrum", "short": "Centrum", "color": "#c98a12" },
+    { "id": "Polska2050", "name": "Klub Parlamentarny Polska 2050", "short": "Polska 2050", "color": "#d9a400" },
+    { "id": "Razem", "name": "Koło Poselskie Razem", "short": "Razem", "color": "#7a1f5c" },
+    { "id": "Demokracja", "name": "Koło Poselskie Demokracja Bezpośrednia", "short": "Demokracja B.", "color": "#5b6b7a" },
+    { "id": "Konfederacja_KP", "name": "Koło Poselskie Konfederacja Korony Polskiej", "short": "Korona", "color": "#4a3b2a" },
+    { "id": "niez.", "name": "Posłowie niezrzeszeni", "short": "Niezrzeszeni", "color": "#7d8590" },
+    { "id": "Polska2050-TD", "name": "Polska 2050 - Trzecia Droga (dawny klub)", "short": "Polska 2050-TD", "color": "#d9a400" }
+  ]
+}

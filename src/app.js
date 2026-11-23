@@ -1,0 +1,125 @@
+import { indexById, clubById, filterMps } from './lib/mps.js';
+import { parseHash } from './lib/router.js';
+import { renderHome, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside } from './ui/render.js';
+
+export function createContext({ mpsData, clubsData, flightsData, airportsData }) {
+  return {
+    mps: mpsData.mps,
+    mpsById: indexById(mpsData.mps),
+    clubs: clubById(clubsData),
+    flights: flightsData,
+    airports: airportsData,
+    fetchedAt: mpsData.fetchedAt,
+  };
+}
+
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', flyer: 'flyer' };
+
+/** Mount the app into a document. Returns a small handle for tests. */
+export function createApp(doc, win, data) {
+  const ctx = createContext(data);
+  const view = doc.getElementById('view');
+  const aside = doc.getElementById('aside');
+  const state = {
+    route: parseHash(win.location.hash),
+    directory: { query: '', club: '', includeInactive: false },
+    flyer: { dataset: data.flightsData.datasets[0].id, sortBy: 'km' },
+  };
+
+  function renderDirectoryList() {
+    const list = filterMps(ctx.mps, state.directory);
+    return renderDirectory(ctx, state.directory, list);
+  }
+
+  function render() {
+    const r = state.route;
+    let html;
+    if (r.name === 'home') html = renderHome(ctx);
+    else if (r.name === 'directory') html = renderDirectoryList();
+    else if (r.name === 'profile') html = renderProfile(ctx, r.id);
+    else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
+    else html = renderNotFound(r.hash);
+    view.innerHTML = html;
+    aside.innerHTML = renderAside(ctx);
+    for (const a of doc.querySelectorAll('[data-nav]')) {
+      const on = a.dataset.nav === NAV_FOR[r.name];
+      a.classList.toggle('on', on);
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    }
+    const h1 = view.querySelector('h1');
+    doc.title = r.name === 'profile' && h1 ? `${h1.textContent} · Sejmbook` : 'Sejmbook';
+  }
+
+  function go(hash) {
+    if (win.location.hash === hash) { state.route = parseHash(hash); render(); }
+    else win.location.hash = hash;
+  }
+
+  function onHashChange() {
+    state.route = parseHash(win.location.hash);
+    render();
+    win.scrollTo?.(0, 0);
+  }
+
+  function onClick(e) {
+    const el = e.target.closest('[data-action]');
+    if (!el || el.matches('input')) return;
+    const action = el.dataset.action;
+    if (action === 'filter-club') {
+      e.preventDefault();
+      state.directory.club = el.dataset.club;
+      state.directory.query = '';
+      go('#poslowie');
+    } else if (action === 'pick-dataset') {
+      e.preventDefault();
+      state.flyer.dataset = el.dataset.dataset;
+      go('#frequent-flyer');
+    } else if (action === 'sort') {
+      state.flyer.sortBy = el.dataset.sort;
+      render();
+    }
+  }
+
+  function onInput(e) {
+    const el = e.target;
+    if (el.dataset.action === 'search') {
+      state.directory.query = el.value;
+      const pos = el.selectionStart;
+      render();
+      const again = doc.getElementById('dir-search');
+      again.focus();
+      try { again.setSelectionRange(pos, pos); } catch { /* not all inputs support it */ }
+    } else if (el.dataset.action === 'top-search') {
+      state.directory.query = el.value;
+      state.directory.club = '';
+      if (state.route.name !== 'directory') go('#poslowie'); else render();
+      const again = doc.getElementById('top-search');
+      if (again) again.focus();
+    }
+  }
+
+  function onChange(e) {
+    if (e.target.dataset.action === 'toggle-inactive') {
+      state.directory.includeInactive = e.target.checked;
+      render();
+    }
+  }
+
+  doc.addEventListener('click', onClick);
+  doc.addEventListener('input', onInput);
+  doc.addEventListener('change', onChange);
+  win.addEventListener('hashchange', onHashChange);
+  render();
+
+  return {
+    ctx,
+    state,
+    render,
+    destroy() {
+      doc.removeEventListener('click', onClick);
+      doc.removeEventListener('input', onInput);
+      doc.removeEventListener('change', onChange);
+      win.removeEventListener('hashchange', onHashChange);
+    },
+  };
+}

@@ -1,0 +1,83 @@
+{
+  "note": "Liczba lotów to liczba krajowych przelotów opłaconych przez Kancelarię Sejmu (art. 43 ustawy o wykonywaniu mandatu posła i senatora). Kancelaria nie podaje kilometrów ani tras. Kilometry na stronie są szacunkiem.",
+  "datasets": [
+    {
+      "id": "2026",
+      "label": "2026 (do 1 listopada)",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-11-01",
+      "coverage": "top10",
+      "coverageNote": "Pełna pierwsza dziesiątka. Pozostali posłowie nie zostali opublikowani.",
+      "totals": null,
+      "sources": [
+        { "title": "Wprost: 115 lotów Łukasza Mejzy. Żaden inny poseł nie przekroczył setki (16.11.2026)", "url": "https://www.wprost.pl/kraj/12503329/krajowe-loty-poslow-w-2026-r-lukasz-mejza-pierwszy-ze-115-przelotami.html" }
+      ],
+      "origin": "Dane Kancelarii Sejmu przekazane dziennikarzowi RMF FM Kacprowi Wróblewskiemu",
+      "entries": [
+        { "mpId": 240, "flights": 115 },
+        { "mpId": 70, "flights": 93 },
+        { "mpId": 188, "flights": 90 },
+        { "mpId": 257, "flights": 83 },
+        { "mpId": 359, "flights": 78 },
+        { "mpId": 419, "flights": 78 },
+        { "mpId": 309, "flights": 73 },
+        { "mpId": 93, "flights": 71 },
+        { "mpId": 297, "flights": 71 },
+        { "mpId": 382, "flights": 70 }
+      ]
+    },
+    {
+      "id": "2025",
+      "label": "Cały 2025",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31",
+      "coverage": "clubLeaders",
+      "coverageNote": "Opublikowano podium oraz liderów poszczególnych klubów, a nie pełny ranking. Między pozycjami mogą być posłowie, których dane nie zostały ujawnione.",
+      "totals": { "flights": 9112, "mpsFlying": 274, "mpsNotFlying": 186, "costPln": 8078871.67 },
+      "sources": [
+        { "title": "Wprost: Astronomiczny koszt podniebnych podróży posłów (30.01.2026)", "url": "https://www.wprost.pl/kraj/12236820/274-poslow-latalo-po-polsce-za-pieniadze-obywateli-kaczynski-tusk-i-mentzen-na-drugim-biegunie.html" },
+        { "title": "TVN24: Tysiące lotów, miliony złotych (29.01.2026)", "url": "https://tvn24.pl/polska/loty-poslow-mamy-wykaz-z-sejmu-oto-rekordzisci-st8874033" },
+        { "title": "TVN24: Latał 127 razy w ciągu roku (27.02.2026)", "url": "https://tvn24.pl/polska/posel-bartosz-romowicz-odbyl-127-lotow-w-rok-tlumaczy-z-czego-to-wynika-st8923526" }
+      ],
+      "origin": "Wykaz Kancelarii Sejmu, do którego dotarł reporter TVN24 Radomir Wit",
+      "entries": [
+        { "mpId": 165, "flights": 144, "costPln": 127681.92 },
+        { "mpId": 70, "flights": 143, "costPln": 126795.24 },
+        { "mpId": 240, "flights": 130, "costPln": 115268.40 },
+        { "mpId": 312, "flights": 127, "costPln": 112608.36 },
+        { "mpId": 257, "flights": 111, "costPln": 98421.48 },
+        { "mpId": 7, "flights": 105, "costPln": 93101.40 },
+        { "mpId": 408, "flights": 98, "costPln": 86894.64 },
+        { "mpId": 419, "flights": 98, "costPln": 86894.64 },
+        { "mpId": 382, "flights": 97, "costPln": 86007.96 },
+        { "mpId": 320, "flights": 90, "costPln": 79801.20 },
+        { "mpId": 402, "flights": 88, "costPln": 78027.84 },
+        { "mpId": 112, "flights": 86, "costPln": 76254.48 },
+        { "mpId": 309, "flights": 81, "costPln": 71821.08 },
+        { "mpId": 354, "flights": 75, "costPln": 66501.00 },
+        { "mpId": 443, "flights": 52, "costPln": 46107.36 },
+        { "mpId": 198, "flights": 49, "costPln": 43447.32 },
+        { "mpId": 397, "flights": 29, "costPln": 25713.72 },
+        { "mpId": 254, "flights": 14, "costPln": 12413.52 }
+      ]
+    },
+    {
+      "id": "kadencja",
+      "label": "Kadencja: XI 2023 – VIII 2025",
+      "periodStart": "2023-11-13",
+      "periodEnd": "2025-08-31",
+      "coverage": "top3",
+      "coverageNote": "Opublikowano tylko podium. Dane obejmują okres od początku kadencji do końca sierpnia 2025.",
+      "totals": { "flights": 17378, "costPln": 13700000 },
+      "sources": [
+        { "title": "Interia: Loty posłów kosztowały 13,7 mln zł. „Mam pływać Odrą?” (X 2025)", "url": "https://wydarzenia.interia.pl/kraj/news-loty-poslow-kosztowaly-13-7-mln-zl-mam-plywac-odra,nId,22429973" }
+      ],
+      "origin": "Dane Centrum Informacyjnego Sejmu przekazane Interii",
+      "entries": [
+        { "mpId": 70, "flights": 244, "costPln": 192762 },
+        { "mpId": 240, "flights": 203 },
+        { "mpId": 156, "flights": 201 }
+      ]
+    }
+  ]
+}

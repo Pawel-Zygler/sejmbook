@@ -1,0 +1,27 @@
+{
+  "hub": "WAW",
+  "note": "Współrzędne portów lotniczych (punkt referencyjny lotniska). Okręg → najbliższe lotnisko z rejsowym połączeniem do Warszawy. null = brak sensownego połączenia lotniczego z Warszawą.",
+  "airports": {
+    "WAW": { "name": "Warszawa-Chopin", "lat": 52.1657, "lon": 20.9671 },
+    "IEG": { "name": "Zielona Góra-Babimost", "lat": 52.1385, "lon": 15.7986 },
+    "KRK": { "name": "Kraków-Balice", "lat": 50.0777, "lon": 19.7848 },
+    "GDN": { "name": "Gdańsk", "lat": 54.3776, "lon": 18.4662 },
+    "SZZ": { "name": "Szczecin-Goleniów", "lat": 53.5847, "lon": 14.9022 },
+    "WRO": { "name": "Wrocław", "lat": 51.1027, "lon": 16.8858 },
+    "RZE": { "name": "Rzeszów-Jasionka", "lat": 50.1100, "lon": 22.0190 },
+    "KTW": { "name": "Katowice-Pyrzowice", "lat": 50.4743, "lon": 19.0800 },
+    "POZ": { "name": "Poznań-Ławica", "lat": 52.4210, "lon": 16.8263 },
+    "BZG": { "name": "Bydgoszcz", "lat": 53.0968, "lon": 17.9777 },
+    "LUZ": { "name": "Lublin", "lat": 51.2403, "lon": 22.7136 },
+    "SZY": { "name": "Olsztyn-Mazury", "lat": 53.4819, "lon": 20.9377 },
+    "LCJ": { "name": "Łódź", "lat": 51.7219, "lon": 19.3981 }
+  },
+  "districtAirport": {
+    "1": "WRO", "2": "WRO", "3": "WRO", "4": "BZG", "5": "BZG", "6": "LUZ", "7": "LUZ",
+    "8": "IEG", "9": "LCJ", "10": "LCJ", "11": "LCJ", "12": "KRK", "13": "KRK", "14": "KRK",
+    "15": "KRK", "16": null, "17": null, "18": null, "19": null, "20": null, "21": "WRO",
+    "22": "RZE", "23": "RZE", "24": null, "25": "GDN", "26": "GDN", "27": "KTW", "28": "KTW",
+    "29": "KTW", "30": "KTW", "31": "KTW", "32": "KTW", "33": null, "34": "GDN", "35": "SZY",
+    "36": "POZ", "37": "POZ", "38": "POZ", "39": "POZ", "40": "SZZ", "41": "SZZ"
+  }
+}
