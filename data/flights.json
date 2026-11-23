@@ -42,6 +42,66 @@
       "title": "Loty posłów kosztowały 13,7 mln zł. „Mam pływać Odrą?”",
       "date": "2025-10",
       "url": "https://wydarzenia.interia.pl/kraj/news-loty-poslow-kosztowaly-13-7-mln-zl-mam-plywac-odra,nId,22429973"
+    },
+    "tvn24-2026-01-29": {
+      "outlet": "TVN24",
+      "title": "Tysiące lotów, miliony złotych. Tyle płacimy za podniebne podróże posłów",
+      "date": "2026-01-29",
+      "url": "https://tvn24.pl/polska/loty-poslow-mamy-wykaz-z-sejmu-oto-rekordzisci-st8874033"
+    },
+    "rmf24-2026-11-16": {
+      "outlet": "RMF FM",
+      "title": "W samolocie średnio co dwa dni. Jak latają posłowie? Ustalenia RMF FM",
+      "date": "2026-11-16",
+      "url": "https://www.rmf24.pl/fakty/polityka/news-w-samolocie-srednio-co-dwa-dni-jak-lataja-poslowie-ustalenia,nIdn,1026237"
+    },
+    "niezalezna-2024-09-19": {
+      "outlet": "Niezależna",
+      "title": "Posłowie latają samolotami na koszt podatnika. Zobacz, kto najczęściej! Mamy dane od początku kadencji",
+      "date": "2024-09-19",
+      "url": "https://niezalezna.pl/index.php/polska/poslowie-lataja-samolotami-na-koszt-podatnika-zobacz-kto-najczesciej-mamy-dane-od-poczatku-kadencji/527102"
+    },
+    "kaszuby24-2024-09-10": {
+      "outlet": "Kaszuby24",
+      "title": "Ile latają posłowie? Jacek Karnowski na czele rankingu z 73 lotami krajowymi",
+      "date": "2024-09-10",
+      "url": "https://kaszuby24.pl/ile-lataja-poslowie-jacek-karnowski-na-czele-rankingu-z-73-lotami-krajowymi/"
+    },
+    "money-2024-09-06": {
+      "outlet": "Money.pl",
+      "title": "Loty posłów. Rekordzista? 73 loty w ciągu pół roku",
+      "date": "2024-09-06",
+      "url": "https://www.money.pl/gospodarka/loty-poslow-rekordzista-73-loty-w-ciagu-pol-roku-7068241216428672a.html"
+    },
+    "smoglab-2024-07-09": {
+      "outlet": "SmogLab",
+      "title": "Wszystkie loty posłów. Czy Konfederacja lepiej dba o środowisko niż Lewica i Zieloni?",
+      "date": "2024-07-09",
+      "url": "https://smoglab.pl/wszystkie-loty-poslow-2024/"
+    },
+    "money-2023-11-22": {
+      "outlet": "Money.pl",
+      "title": "Prawie 27 tys. lotów. Ci posłowie latali najwięcej po Polsce",
+      "date": "2023-11-22",
+      "url": "https://www.money.pl/gospodarka/prawie-27-tys-lotow-ci-poslowie-latali-najwiecej-po-polsce-6965964787448608a.html"
+    },
+    "money-2023-01-30": {
+      "outlet": "Money.pl",
+      "title": "Ponad 5 mln zł na bezpłatne loty posłów po kraju. Najwięcej latał Łukasz Mejza",
+      "date": "2023-01-30",
+      "url": "https://www.money.pl/gospodarka/ponad-5-mln-zl-na-bezplatne-loty-poslow-po-kraju-najwiecej-latal-lukasz-mejza-6861041759480512a.html"
+    },
+    "o2-2022-08-25": {
+      "outlet": "o2.pl",
+      "title": "Loty posłów za 10 mln zł. Rekordzista latał średnio co trzy dni",
+      "date": "2022-08-25",
+      "url": "https://www.o2.pl/biznes/loty-poslow-za-10-mln-zl-rekordzista-latal-srednio-co-trzy-dni-6805110678850304a"
+    },
+    "se-2022-08-25": {
+      "outlet": "Super Express",
+      "title": "Zapłaciliśmy za loty posłów 10 mln zł! Rekordzista to Grzegorz Napieralski",
+      "date": "2022-08-25",
+      "url": "https://polityka.se.pl/wiadomosci/zaplacilismy-za-loty-poslow-10-mln-zl-rekordzista-to-grzegorz-napieralski-lista-nazwisk-aa-Jhsm-3u36-C4Tx.html"
     }
   },
   "datasets": [
@@ -65,21 +125,24 @@
           "mpId": 240,
           "flights": 115,
           "articles": [
-            "wprost-2026-11-16"
+            "wprost-2026-11-16",
+            "rmf24-2026-11-16"
           ]
         },
         {
           "mpId": 70,
           "flights": 93,
           "articles": [
-            "wprost-2026-11-16"
+            "wprost-2026-11-16",
+            "rmf24-2026-11-16"
           ]
         },
         {
           "mpId": 188,
           "flights": 90,
           "articles": [
-            "wprost-2026-11-16"
+            "wprost-2026-11-16",
+            "rmf24-2026-11-16"
           ]
         },
         {
@@ -168,6 +231,7 @@
           "flights": 144,
           "costPln": 127681.92,
           "articles": [
+            "tvn24-2026-01-29",
             "wprost-2026-01-30",
             "zero-2026-02-19",
             "se-kmita-2026",
@@ -228,7 +292,8 @@
           "flights": 98,
           "costPln": 86894.64,
           "articles": [
-            "wprost-2026-01-30"
+            "wprost-2026-01-30",
+            "smoglab-2024-07-09"
           ]
         },
         {
@@ -292,7 +357,8 @@
           "flights": 49,
           "costPln": 43447.32,
           "articles": [
-            "wprost-2026-01-30"
+            "wprost-2026-01-30",
+            "smoglab-2024-07-09"
           ]
         },
         {
@@ -357,6 +423,195 @@
         }
       ],
       "term": 10
+    },
+    {
+      "id": "x-2024-06",
+      "label": "X kadencja: XI 2023 – VI 2024",
+      "periodStart": "2023-11-13",
+      "periodEnd": "2024-06-30",
+      "coverage": "top3",
+      "coverageNote": "Opublikowano tylko podium. Borys Budka nie jest już posłem.",
+      "totals": null,
+      "sources": [
+        {
+          "title": "Niezależna: Posłowie latają samolotami na koszt podatnika. Zobacz, kto najczęściej! Mamy dane od początku kadencji (2024-09-19)",
+          "url": "https://niezalezna.pl/index.php/polska/poslowie-lataja-samolotami-na-koszt-podatnika-zobacz-kto-najczesciej-mamy-dane-od-poczatku-kadencji/527102"
+        }
+      ],
+      "origin": "Dane Kancelarii Sejmu opisane przez Niezależną",
+      "term": 10,
+      "entries": [
+        {
+          "mpId": 70,
+          "flights": 93,
+          "articles": [
+            "niezalezna-2024-09-19"
+          ]
+        },
+        {
+          "mpId": 156,
+          "flights": 84,
+          "articles": [
+            "niezalezna-2024-09-19"
+          ]
+        },
+        {
+          "mpId": 38,
+          "flights": 74,
+          "articles": [
+            "niezalezna-2024-09-19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-h1",
+      "label": "I półrocze 2024",
+      "periodStart": "2024-01-01",
+      "periodEnd": "2024-06-30",
+      "coverage": "top3",
+      "coverageNote": "Opublikowano tylko podium.",
+      "totals": null,
+      "sources": [
+        {
+          "title": "Money.pl: Loty posłów. Rekordzista? 73 loty w ciągu pół roku (2024-09-06)",
+          "url": "https://www.money.pl/gospodarka/loty-poslow-rekordzista-73-loty-w-ciagu-pol-roku-7068241216428672a.html"
+        }
+      ],
+      "origin": "Dane Kancelarii Sejmu opisane przez Money.pl",
+      "term": 10,
+      "entries": [
+        {
+          "mpId": 156,
+          "flights": 73,
+          "articles": [
+            "money-2024-09-06",
+            "kaszuby24-2024-09-10"
+          ]
+        },
+        {
+          "mpId": 70,
+          "flights": 62,
+          "articles": [
+            "money-2024-09-06"
+          ]
+        },
+        {
+          "mpId": 73,
+          "flights": 62,
+          "articles": [
+            "money-2024-09-06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ix-2019-2023",
+      "label": "IX kadencja: XI 2019 – VIII 2023",
+      "periodStart": "2019-11-19",
+      "periodEnd": "2023-08-31",
+      "coverage": "top3",
+      "coverageNote": "Opublikowano tylko podium. Trzeci, Jacek Protasiewicz (361 lotów), nie jest posłem X kadencji, więc nie ma go w rankingu.",
+      "totals": null,
+      "sources": [
+        {
+          "title": "Money.pl: Prawie 27 tys. lotów. Ci posłowie latali najwięcej po Polsce (2023-11-22)",
+          "url": "https://www.money.pl/gospodarka/prawie-27-tys-lotow-ci-poslowie-latali-najwiecej-po-polsce-6965964787448608a.html"
+        }
+      ],
+      "origin": "Dane Kancelarii Sejmu opisane przez Money.pl",
+      "term": 9,
+      "entries": [
+        {
+          "mpId": 257,
+          "flights": 400,
+          "articles": [
+            "money-2023-11-22"
+          ]
+        },
+        {
+          "mpId": 188,
+          "flights": 375,
+          "articles": [
+            "money-2023-11-22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022",
+      "label": "I–XI 2022",
+      "periodStart": "2022-01-01",
+      "periodEnd": "2022-11-30",
+      "coverage": "top3",
+      "coverageNote": "Opublikowano tylko podium. Drugi, Jacek Protasiewicz (101 lotów), nie jest posłem X kadencji.",
+      "totals": null,
+      "sources": [
+        {
+          "title": "Money.pl: Ponad 5 mln zł na bezpłatne loty posłów po kraju. Najwięcej latał Łukasz Mejza (2023-01-30)",
+          "url": "https://www.money.pl/gospodarka/ponad-5-mln-zl-na-bezplatne-loty-poslow-po-kraju-najwiecej-latal-lukasz-mejza-6861041759480512a.html"
+        }
+      ],
+      "origin": "Dane Kancelarii Sejmu opisane przez Money.pl",
+      "term": 9,
+      "entries": [
+        {
+          "mpId": 240,
+          "flights": 119,
+          "articles": [
+            "money-2023-01-30"
+          ]
+        },
+        {
+          "mpId": 495,
+          "flights": 100,
+          "articles": [
+            "money-2023-01-30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ix-2019-2022",
+      "label": "IX kadencja: XI 2019 – VI 2022",
+      "periodStart": "2019-11-12",
+      "periodEnd": "2022-06-30",
+      "coverage": "top3",
+      "coverageNote": "Opublikowano tylko podium.",
+      "totals": null,
+      "sources": [
+        {
+          "title": "o2.pl: Loty posłów za 10 mln zł. Rekordzista latał średnio co trzy dni (2022-08-25)",
+          "url": "https://www.o2.pl/biznes/loty-poslow-za-10-mln-zl-rekordzista-latal-srednio-co-trzy-dni-6805110678850304a"
+        }
+      ],
+      "origin": "Dane Kancelarii Sejmu opisane przez o2.pl i Super Express",
+      "term": 9,
+      "entries": [
+        {
+          "mpId": 257,
+          "flights": 273,
+          "articles": [
+            "o2-2022-08-25",
+            "se-2022-08-25"
+          ]
+        },
+        {
+          "mpId": 262,
+          "flights": 262,
+          "articles": [
+            "o2-2022-08-25",
+            "se-2022-08-25"
+          ]
+        },
+        {
+          "mpId": 320,
+          "flights": 240,
+          "articles": [
+            "o2-2022-08-25"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -26,7 +26,8 @@ export function createApp(doc, win, data) {
   const state = {
     route: parseHash(win.location.hash),
     directory: { query: '', club: '', includeInactive: false },
-    flyer: { period: String(data.flightsData.datasets[0].term), dataset: data.flightsData.datasets[0].id, sortBy: 'km' },
+    // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
+    flyer: { period: 'all', dataset: null, sortBy: 'km' },
     attendance: { order: 'desc', club: '' },
   };
 
@@ -75,18 +76,6 @@ export function createApp(doc, win, data) {
       state.directory.club = el.dataset.club;
       state.directory.query = '';
       go('#poslowie');
-    } else if (action === 'pick-dataset') {
-      e.preventDefault();
-      state.flyer.dataset = el.dataset.dataset;
-      const ds = ctx.flights.datasets.find((d) => d.id === el.dataset.dataset);
-      if (ds) state.flyer.period = String(ds.term);
-      go('#frequent-flyer');
-    } else if (action === 'pick-period') {
-      state.flyer.period = el.dataset.period;
-      render();
-    } else if (action === 'sort') {
-      state.flyer.sortBy = el.dataset.sort;
-      render();
     } else if (action === 'att-order') {
       state.attendance.order = el.dataset.order;
       render();

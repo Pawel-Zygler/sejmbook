@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-od-zawsze",
+      "date": "2026-11-24",
+      "title": "Frequent Flyer od zawsze: jeden ranking i wszystkie artykuły",
+      "body": "Ranking Frequent Flyer to teraz jeden zbiór ze wszystkich opublikowanych list lotów posłów, także z IX kadencji (od 2019 roku). Przy każdym pośle sumujemy loty tylko z okresów, które się nie nakładają, więc nic nie jest liczone dwa razy. Pod rankingiem jest lista wszystkich artykułów o lotach posłów, od najnowszych.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-24-zdjecia",
       "date": "2026-11-24",
       "title": "Zdjęcia posłów",
@@ -8,16 +18,6 @@
       "link": {
         "href": "#poslowie",
         "label": "Zobacz posłów"
-      }
-    },
-    {
-      "id": "2026-11-24-sejm-w-powietrzu",
-      "date": "2026-11-24",
-      "title": "Sejm w powietrzu: nowy Frequent Flyer",
-      "body": "Frequent Flyer dostał nową odsłonę, projektowaną z myślą o telefonie. Na górze jest mapa lotów z Warszawy do lotnisk w okręgach posłów, a grubość łuku pokazuje, ile było lotów. Pod mapą jest podium z kartami do przesuwania palcem, a pełny ranking na telefonie wyświetla się jako karty. Filtr okresu ma teraz opcję „Od zawsze” i podział na kadencje.",
-      "link": {
-        "href": "#frequent-flyer",
-        "label": "Zobacz mapę lotów"
       }
     },
     {

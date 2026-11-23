@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, articleLinks, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -60,7 +60,7 @@ describe('views', () => {
   });
   it('flyer shows the coverage note and sources for every dataset', () => {
     for (const d of flightsData.datasets) {
-      const html = renderFlyer(ctx, { dataset: d.id, sortBy: 'km' });
+      const html = renderFlyer(ctx, { period: String(d.term), dataset: d.id, sortBy: 'km' });
       expect(html).toContain(esc(d.coverageNote));
       for (const s of d.sources) expect(html).toContain(esc(s.url));
     }
@@ -103,7 +103,7 @@ describe('article links', () => {
   });
   it('every ranking row in every dataset has at least one article link', () => {
     for (const d of flightsData.datasets) {
-      const html = renderFlyer(ctx, { dataset: d.id, sortBy: 'km' });
+      const html = renderFlyer(ctx, { period: String(d.term), dataset: d.id, sortBy: 'km' });
       const rows = html.split('<tr data-mp-id=').slice(1);
       expect(rows).toHaveLength(d.entries.length);
       for (const r of rows) expect(r).toMatch(/class="art-links"/);
@@ -149,12 +149,30 @@ describe('podium badges', () => {
     expect(podiumBadge(undefined)).toBe('');
     expect(Object.keys(PODIUM_BADGES)).toEqual(['1', '2', '3']);
   });
-  it('flyer puts the ranking before the method and the filters in a sidebar', () => {
-    const html = renderFlyer(ctx, { dataset: '2026', sortBy: 'km' });
+  it('flyer has no filters and puts the podium and ranking before the method', () => {
+    const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
+    expect(html).not.toContain('flyer-side');
+    expect(html).not.toContain('data-action="sort"');
     expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel coverage"'));
-    const side = html.slice(html.indexOf('<aside class="flyer-side"'));
-    expect(side).toContain('data-action="pick-dataset"');
-    expect(side).toContain('data-action="sort"');
+    expect(html).toContain('Jeden zbiór ze wszystkich opublikowanych list');
+    expect(html).toContain('data-testid="all-articles"');
+  });
+  it('flyer still renders any dataset (2025: Dowhan leads on km, Kmita on flights)', () => {
+    const first = (html) => html.slice(html.indexOf('<tbody>')).match(/data-mp-id="(\d+)"/)[1];
+    expect(first(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'km' }))).toBe('70');
+    expect(first(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'flights' }))).toBe('165');
+    expect(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'km' })).not.toContain('data-testid="parts"');
+  });
+  it('every dataset gives each row article links, Kmita 2025 has all five', () => {
+    for (const d of ctx.flights.datasets) {
+      const html = renderFlyer(ctx, { period: '10', dataset: d.id, sortBy: 'km' });
+      const body = html.slice(html.indexOf('<tbody>'), html.indexOf('</tbody>'));
+      for (const tr of body.split('<tr ').slice(1)) expect(tr).toMatch(/<td class="arts">[\s\S]*<a /);
+    }
+    const html = renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'km' });
+    const row = html.slice(html.indexOf('data-mp-id="165"'));
+    const arts = row.slice(row.indexOf('<td class="arts">'), row.indexOf('</td>', row.indexOf('<td class="arts">')));
+    expect([...arts.matchAll(/>([^<]+)<\/a>/g)].map((m) => m[1])).toEqual(['TVN24', 'Wprost', 'Zero.pl', 'Super Express', 'Kraków dla Was']);
   });
   it('flyer gives badges to rows ranked 1-3 only', () => {
     for (const d of ctx.flights.datasets) {
@@ -190,5 +208,24 @@ describe('MP photos', () => {
   });
   it('avatar without an id shows initials only', () => {
     expect(avatar(ctx, { name: 'Jan Nowak', club: 'Nowy' })).not.toContain('<img');
+  });
+});
+
+describe('all articles list', () => {
+  it('lists every known article once, newest first, opening in a new tab', () => {
+    const html = renderAllArticles(flightsData.articles);
+    const ids = [...html.matchAll(/data-article-id="([^"]+)"/g)].map((m) => m[1]);
+    expect(new Set(ids).size).toBe(Object.keys(flightsData.articles).length);
+    const dates = ids.map((id) => flightsData.articles[id].date);
+    expect(dates).toEqual([...dates].sort().reverse());
+    expect(html).toContain('target="_blank"');
+  });
+  it('renders nothing without articles', () => {
+    expect(renderAllArticles({})).toBe('');
+    expect(renderAllArticles()).toBe('');
+  });
+  it('the merged ranking names the periods each total comes from', () => {
+    const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
+    expect(html).toMatch(/Loty z: IX kadencja: XI 2019 – VIII 2023 \+ Cały 2025 \+ 2026 \(do 1 listopada\)/);
   });
 });

@@ -2,7 +2,6 @@ import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } 
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
-import { flightMap, podiumCards } from './flight-map.js';
 
 export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -205,13 +204,13 @@ function flightPost(ctx, mp, h, legKm) {
       <div><b>${km == null ? '–' : '≈\u00a0' + formatInt(km)}</b><span>km, szacunek</span></div>
       <div><b>${formatPln(h.costPln)}</b><span>koszt biletów</span></div>
     </div>
-    <footer class="post-foot"><a class="btn" href="#frequent-flyer" data-action="pick-dataset" data-dataset="${esc(h.dataset.id)}">Pokaż w rankingu</a><span class="src">Artykuły: ${articleLinks(h.articles)}</span></footer>
+    <footer class="post-foot"><a class="btn" href="#frequent-flyer">Pokaż w rankingu</a><span class="src">Artykuły: ${articleLinks(h.articles)}</span></footer>
   </article>`;
 }
 
 /* ---------- Frequent Flyer ---------- */
 export function renderFlyer(ctx, state) {
-  const { periods, period, dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
+  const { dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
   const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
   const sum = datasetSummary(rows);
   const maxKm = Math.max(1, ...rows.map((r) => r.km ?? 0));
@@ -221,36 +220,20 @@ export function renderFlyer(ctx, state) {
   const earth = leader && leader.km ? timesAroundEarth(leader.km) : null;
 
   return `
-  <section data-view="flyer" data-dataset="${esc(ds.id)}" data-period="${esc(period.id)}">
-    <div class="ff-hero">
-      <div class="ff-hero-text">
-        <p class="ff-eyebrow">/ Frequent Flyer</p>
-        <h1>Sejm w powietrzu</h1>
-        <p class="ff-lede">Posłowie latają po kraju za darmo, a rachunek płaci Kancelaria Sejmu. Tras nikt nie publikuje, więc policzyliśmy, ile to kilometrów.</p>
-        <dl class="ff-numbers">
-          <div><dt>lotów w zestawieniu</dt><dd data-testid="sum-flights">${formatInt(sum.flights)}</dd></div>
-          <div><dt>km (szacunek)</dt><dd data-testid="sum-km">≈&nbsp;${formatInt(sum.km)}</dd></div>
-          ${earth ? `<div><dt>razy wokół Ziemi lider</dt><dd>${earth.toFixed(1).replace('.', ',')}×</dd></div>` : ''}
-          ${ds.totals?.costPln ? `<div><dt>kosztowały wszystkie loty</dt><dd>${formatPln(ds.totals.costPln)}</dd></div>` : ''}
-        </dl>
-        <p class="ff-period">${esc(ds.label)} · ${esc(ds.periodStart)} – ${esc(ds.periodEnd)}</p>
-      </div>
-      <div class="ff-map">${flightMap(rows, ctx.airports)}</div>
+  <section data-view="flyer" data-dataset="${esc(ds.id)}">
+    <div class="panel flyer-hero">
+      <p class="eyebrow">Ranking</p>
+      <h1>Frequent Flyer</h1>
+      <p class="lede">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Liczba lotów pochodzi z danych Kancelarii. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
     </div>
 
-    <div class="flyer-layout">
-    <div class="flyer-main">
-    <h2 class="ff-section"><span>/01</span> Podium</h2>
-    ${podiumCards(rows, {
-      avatar: (mp) => avatar(ctx, mp, 'lg'),
-      clubChip: (club) => clubChip(ctx, club),
-      podiumBadge,
-      mpHref: (mp) => hrefFor({ name: 'profile', id: mp.id }),
-      metric: (r) => (state.sortBy === 'km'
-        ? { value: r.km == null ? '–' : `≈&nbsp;${formatInt(r.km)}`, unit: 'km', sub: `${r.flights} lotów${r.airport ? ` · WAW ↔ ${r.airport}` : ''}` }
-        : { value: String(r.flights), unit: 'lotów', sub: r.km == null ? 'brak szacunku km' : `≈ ${formatInt(r.km)} km` }),
-    })}
-    <h2 class="ff-section"><span>/02</span> Pełny ranking</h2>
+    <div class="stats">
+      <div class="stat"><span>Posłów w zestawieniu</span><b>${formatInt(sum.mps)}</b></div>
+      <div class="stat"><span>Udokumentowanych lotów</span><b data-testid="sum-flights">${formatInt(sum.flights)}</b></div>
+      <div class="stat"><span>Szacowane km</span><b data-testid="sum-km">≈&nbsp;${formatInt(sum.km)}</b></div>
+      ${earth ? `<div class="stat"><span>Lider okrążyłby Ziemię</span><b>${earth.toFixed(1).replace('.', ',')}×</b></div>` : ''}
+    </div>
+
     <div class="panel rank-panel">
       <div class="table-wrap">
         <table class="rank" data-testid="ranking">
@@ -263,11 +246,12 @@ export function renderFlyer(ctx, state) {
                 <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club)}
                   ${podiumBadge(r.rank)}
                   ${attendanceBadge(ctx, r.mp.id, 16)}
-                  <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small></td>
-                <td class="num" data-label="lotów">${r.flights}</td>
+                  <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small>
+                  ${r.parts ? `<small class="muted parts" data-testid="parts">Loty z: ${r.parts.map((id) => esc(partLabel(ds, id))).join(' + ')}</small>` : ''}</td>
+                <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>
-                <td class="num" data-label="km">${r.km == null ? '–' : formatInt(r.km)}</td>
-                ${hasCost ? `<td class="num" data-label="koszt">${formatPln(r.costPln)}</td>` : ''}
+                <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
+                ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
                 <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>
               </tr>`;
             }).join('')}
@@ -280,42 +264,35 @@ export function renderFlyer(ctx, state) {
       <strong>Zakres danych:</strong> ${esc(ds.coverageNote)} <span class="muted">Okres: ${esc(ds.periodStart)} – ${esc(ds.periodEnd)}.</span>
     </div>
 
-    <h2 class="ff-section"><span>/03</span> Jak liczymy</h2>
     <div class="panel method">
-      <p class="lede">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Liczba lotów pochodzi z danych Kancelarii. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
       <h2>Odznaki podium</h2>
       <p>Pierwsze miejsce dostaje odznakę ${podiumBadge(1)}, drugie ${podiumBadge(2)}, a trzecie ${podiumBadge(3)}. Przy remisie odznakę dostają wszyscy na tym samym miejscu.</p>
       <h2>Jak liczymy kilometry</h2>
       <p>Kancelaria Sejmu ujawnia liczbę lotów i koszt, ale nie trasy. Przyjmujemy, że każdy lot to jeden odcinek między Warszawą (Chopin) a lotniskiem najbliższym okręgowi posła, i liczymy odległość po kole wielkim. Prawdziwy dystans może być inny: posłowie latają też innymi trasami, a ministrowie i wiceministrowie część lotów odbywają służbowo.</p>
-      <p>Pozycje w zestawieniu 2025 to podium oraz liderzy klubów. Pełna lista nie została opublikowana. Klub przy nazwisku to klub z dnia ${esc(ctx.fetchedAt)} według API Sejmu, który może różnić się od klubu w okresie objętym danymi.</p>
-      <h2>Źródła</h2>
+      <p>Klub przy nazwisku to klub z dnia ${esc(ctx.fetchedAt)} według API Sejmu, który może różnić się od klubu w okresie objętym danymi.</p>
+      <h2>Źródła danych</h2>
       <p class="muted">${esc(ds.origin)}.</p>
       <ul class="sources">${sourceLinks(ds.sources)}</ul>
     </div>
-    </div>
 
-    <aside class="flyer-side" aria-label="Filtry rankingu">
-      <div class="panel side-filters">
-        <h2>Okres</h2>
-        <div class="tabs period-tabs" role="tablist" aria-label="Okres">
-          ${periods.map((p) => `<button type="button" role="tab" class="tab ${p.id === period.id ? 'on' : ''}" aria-selected="${p.id === period.id}" data-action="pick-period" data-period="${esc(p.id)}">${p.term ? `${romanNum(p.term)} kadencja` : 'Od zawsze'}</button>`).join('')}
-        </div>
-        ${period.term ? `<div class="tabs sub-tabs" role="tablist" aria-label="Zakres w ${romanNum(period.term)} kadencji">
-          ${period.choices.map((d) => `<button type="button" role="tab" class="tab ${d.id === ds.id ? 'on' : ''}" aria-selected="${d.id === ds.id}" data-action="pick-dataset" data-dataset="${esc(d.id)}" data-period="${esc(period.id)}">${esc(d.label)}</button>`).join('')}
-        </div>` : `<p class="period-note" data-testid="period-note">Starszych kadencji nie ma jeszcze w danych, więc „Od zawsze” pokazuje najdłuższy znany okres: ${esc(ds.label)}.</p>`}
-        <h2>Sortuj według</h2>
-        <div class="rank-tools">
-          <button type="button" class="filter ${state.sortBy === 'km' ? 'on' : ''}" data-action="sort" data-sort="km" aria-pressed="${state.sortBy === 'km'}">Kilometry (szacunek)</button>
-          <button type="button" class="filter ${state.sortBy === 'flights' ? 'on' : ''}" data-action="sort" data-sort="flights" aria-pressed="${state.sortBy === 'flights'}">Liczba lotów</button>
-        </div>
-      </div>
-    </aside>
-    </div>
+    ${renderAllArticles(ctx.flights.articles)}
   </section>`;
+}
+
+/** Every article about MPs' flights we know of, newest first. */
+export function renderAllArticles(registry = {}) {
+  const list = Object.entries(registry).map(([id, a]) => ({ id, ...a })).sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.outlet.localeCompare(b.outlet, 'pl'));
+  if (!list.length) return '';
+  return `<div class="panel all-articles" data-testid="all-articles">
+      <h2>Wszystkie artykuły o lotach posłów</h2>
+      <ul class="article-list">${list.map((a) => `<li data-article-id="${esc(a.id)}"><span class="art-date">${esc(a.date)}</span> <a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a> <span class="muted">· ${esc(a.outlet)}</span></li>`).join('')}</ul>
+    </div>`;
 }
 
 const ROMAN_NUM = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 export const romanNum = (n) => ROMAN_NUM[n] ?? String(n);
+
+const partLabel = (ds, id) => ds.parts?.find((p) => p.id === id)?.label ?? id;
 
 /* ---------- Podium badges ---------- */
 export const PODIUM_BADGES = { 1: 'Super-mąż', 2: 'Orzeł III RP', 3: 'Bocian III RP' };

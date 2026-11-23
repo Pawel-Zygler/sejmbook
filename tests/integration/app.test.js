@@ -90,14 +90,15 @@ describe('profile', () => {
     nav('#posel-70');
     expect($('h1').textContent).toBe('Robert Dowhan');
     expect(document.title).toBe('Robert Dowhan · Sejmbook');
-    expect($$('.flight-post')).toHaveLength(3);
+    expect($$('.flight-post')).toHaveLength(app.ctx.flights.datasets.filter((d) => d.entries.some((e) => e.mpId === 70)).length);
     expect($('[data-nav="directory"]').classList.contains('on')).toBe(true);
   });
-  it('"Pokaż w rankingu" opens the matching dataset', () => {
+  it('"Pokaż w rankingu" opens the single Frequent Flyer view', () => {
     nav('#posel-70');
-    click($('.flight-post [data-dataset="kadencja"]'));
-    window.dispatchEvent(new HashChangeEvent('hashchange'));
-    expect($('[data-view="flyer"]').dataset.dataset).toBe('kadencja');
+    const btn = $('.flight-post a.btn');
+    expect(btn.getAttribute('href')).toBe('#frequent-flyer');
+    nav(btn.getAttribute('href'));
+    expect($('[data-view="flyer"]').dataset.dataset).toBe('all');
   });
   it('unknown id shows not found', () => {
     nav('#posel-9999');
@@ -107,25 +108,20 @@ describe('profile', () => {
 
 describe('Frequent Flyer', () => {
   beforeEach(() => nav('#frequent-flyer'));
-  const firstRow = () => $('[data-testid="ranking"] tbody tr');
+  const rows = () => $$('[data-testid="ranking"] tbody tr');
 
-  it('defaults to 2026 sorted by estimated km', () => {
-    expect($('[data-view="flyer"]').dataset.dataset).toBe('2026');
-    expect(firstRow().textContent).toContain('Łukasz Mejza');
-    expect($$('[data-testid="ranking"] tbody tr')).toHaveLength(10);
+  it('shows one merged "Od zawsze" set sorted by estimated km, with every article', () => {
+    const view = $('[data-view="flyer"]');
+    expect(view.dataset.dataset).toBe('all');
+    const ids = new Set(app.ctx.flights.datasets.flatMap((d) => d.entries.map((e) => String(e.mpId))));
+    expect(rows().map((tr) => tr.dataset.mpId).sort()).toEqual([...ids].sort());
+    expect(rows()[0].textContent).toContain('Grzegorz Napieralski');
+    expect($('.coverage').textContent).toContain('Jeden zbiór');
+    expect($$('[data-testid="all-articles"] li')).toHaveLength(Object.keys(app.ctx.flights.articles).length);
   });
-  it('re-sorts by flights', () => {
-    click($('button[data-sort="flights"]'));
-    expect($('button[data-sort="flights"]').getAttribute('aria-pressed')).toBe('true');
-    const flights = $$('[data-testid="ranking"] tbody tr').map((tr) => Number(tr.children[2].textContent));
-    expect(flights).toEqual([...flights].sort((a, b) => b - a));
-  });
-  it('switches to 2025, where Dowhan leads on km and Kmita on flights', () => {
-    click($('button[data-dataset="2025"]'));
-    expect(firstRow().textContent).toContain('Robert Dowhan');
-    expect($('.coverage').textContent).toContain('nie pełny ranking');
-    click($('button[data-sort="flights"]'));
-    expect(firstRow().textContent).toContain('Łukasz Kmita');
+  it('has no filters', () => {
+    expect($('.flyer-side')).toBeNull();
+    expect($('[data-view="flyer"] [data-action="pick-period"], [data-view="flyer"] [data-action="pick-dataset"], [data-view="flyer"] [data-action="sort"]')).toBeNull();
   });
   it('lists sources with external links', () => {
     for (const a of $$('.sources a')) {
@@ -134,8 +130,14 @@ describe('Frequent Flyer', () => {
     }
   });
   it('MP names link to profiles', () => {
-    const link = firstRow().querySelector('a.rank-mp');
-    expect(link.getAttribute('href')).toBe('#posel-240');
+    expect(rows()[0].querySelector('a.rank-mp').getAttribute('href')).toBe('#posel-257');
+  });
+  it('every row shows article links next to the flight count', () => {
+    for (const tr of rows()) {
+      const links = tr.querySelectorAll('td.arts a');
+      expect(links.length).toBeGreaterThan(0);
+      expect(tr.children[3]).toBe(links[0].closest('td'));
+    }
   });
 });
 
@@ -143,8 +145,8 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Zdjęcia posłów');
-    expect($('.news-post[data-news-id="2026-11-24-sejm-w-powietrzu"]')).not.toBeNull();
+    expect(first.textContent).toContain('Frequent Flyer od zawsze');
+    expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-frekwencja"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
@@ -154,26 +156,6 @@ describe('news feed (Aktualności)', () => {
     expect(btn.getAttribute('href')).toBe('#frequent-flyer');
     nav(btn.getAttribute('href'));
     expect($('[data-view="flyer"]')).not.toBeNull();
-  });
-});
-
-describe('article links in the ranking', () => {
-  it('every row shows article links next to the flight count', () => {
-    nav('#frequent-flyer');
-    for (const id of ['2026', '2025', 'kadencja']) {
-      click($(`button[data-dataset="${id}"]`));
-      for (const tr of $$('[data-testid="ranking"] tbody tr')) {
-        const links = tr.querySelectorAll('td.arts a');
-        expect(links.length).toBeGreaterThan(0);
-        expect(tr.children[3]).toBe(links[0].closest('td'));
-      }
-    }
-  });
-  it('Kmita in 2025 has links to all four articles about him', () => {
-    nav('#frequent-flyer');
-    click($('button[data-dataset="2025"]'));
-    const outlets = [...$('tr[data-mp-id="165"] td.arts').querySelectorAll('a')].map((a) => a.textContent);
-    expect(outlets).toEqual(['Wprost', 'Zero.pl', 'Super Express', 'Kraków dla Was']);
   });
 });
 
@@ -220,71 +202,19 @@ describe('Frekwencja', () => {
   });
   it('Frequent Flyer rows and directory cards carry the pie badge', () => {
     nav('#frequent-flyer');
-    expect($$('[data-testid="ranking"] tbody tr [data-testid="att-badge"]').length).toBe(10);
+    expect($$('[data-testid="ranking"] tbody tr [data-testid="att-badge"]').length).toBeGreaterThan(20);
     nav('#poslowie');
     expect($$('.mp-card [data-testid="att-badge"]').length).toBeGreaterThan(440);
   });
 });
 
 describe('Frequent Flyer podium', () => {
-  beforeEach(() => nav('#frequent-flyer'));
-  const badgeOf = (tr) => tr.querySelector('[data-testid="podium-badge"]')?.textContent ?? null;
   it('the top three get Super-mąż, Orzeł III RP and Bocian III RP', () => {
+    nav('#frequent-flyer');
+    const badgeOf = (tr) => tr.querySelector('[data-testid="podium-badge"]')?.textContent ?? null;
     const rows = $$('[data-testid="ranking"] tbody tr');
     expect(rows.slice(0, 3).map(badgeOf)).toEqual(['Super-mąż', 'Orzeł III RP', 'Bocian III RP']);
-    expect(rows.slice(3).map(badgeOf).every((b) => b === null)).toBe(true);
-  });
-  it('badges follow the sort order', () => {
-    click($('button[data-dataset="2025"]'));
-    click($('button[data-sort="flights"]'));
-    const first = $('[data-testid="ranking"] tbody tr');
-    expect(first.textContent).toContain('Łukasz Kmita');
-    expect(badgeOf(first)).toBe('Super-mąż');
-  });
-  it('filters live in the sidebar, the ranking comes first', () => {
-    const view = $('[data-view="flyer"]');
-    expect(view.querySelector('.flyer-side [data-action="pick-dataset"]')).not.toBeNull();
-    expect(view.querySelector('.flyer-side [data-action="sort"]')).not.toBeNull();
-    const main = view.querySelector('.flyer-main');
-    expect(main.querySelector('[data-testid="podium"]')).not.toBeNull();
-    expect(main.querySelector('[data-testid="ranking"]')).not.toBeNull();
-  });
-});
-
-describe('Frequent Flyer spectacle', () => {
-  beforeEach(() => nav('#frequent-flyer'));
-  it('opens with the flight map and the podium of the current dataset', () => {
-    const map = $('[data-testid="flight-map"]');
-    expect(map).not.toBeNull();
-    expect(map.querySelectorAll('.route').length).toBeGreaterThan(3);
-    const cards = $$('[data-testid="podium"] .podium-card');
-    expect(cards).toHaveLength(3);
-    expect(cards[0].textContent).toContain('Łukasz Mejza');
-    expect(cards[0].textContent).toContain('Super-mąż');
-  });
-  it('period filter: "Od zawsze" first, then X kadencja with its ranges', () => {
-    const periods = $$('.flyer-side [data-action="pick-period"]').map((b) => b.textContent);
-    expect(periods).toEqual(['Od zawsze', 'X kadencja']);
-    expect($('[data-view="flyer"]').dataset.period).toBe('10');
-    expect($$('.flyer-side .sub-tabs [data-action="pick-dataset"]')).toHaveLength(3);
-    click($('[data-action="pick-period"][data-period="all"]'));
-    const view = $('[data-view="flyer"]');
-    expect(view.dataset.period).toBe('all');
-    expect(view.dataset.dataset).toBe('kadencja');
-    expect($('.flyer-side .sub-tabs')).toBeNull();
-    expect($('[data-testid="period-note"]').textContent).toContain('Starszych kadencji');
-    expect($('[data-testid="ranking"] tbody tr').textContent).toContain('Robert Dowhan');
-    click($('[data-action="pick-period"][data-period="10"]'));
-    expect($('[data-view="flyer"]').dataset.period).toBe('10');
-  });
-  it('picking a range from a profile selects its term', () => {
-    click($('[data-action="pick-period"][data-period="all"]'));
-    nav('#posel-70');
-    click($('.flight-post [data-dataset="2025"]'));
-    window.dispatchEvent(new HashChangeEvent('hashchange'));
-    const view = $('[data-view="flyer"]');
-    expect(view.dataset.period).toBe('10');
-    expect(view.dataset.dataset).toBe('2025');
+    expect(rows.slice(3).every((tr) => badgeOf(tr) === null)).toBe(true);
   });
 });
 
@@ -295,9 +225,8 @@ describe('MP photos', () => {
     expect(imgs).toHaveLength(460);
     expect(imgs[0].getAttribute('src')).toMatch(/^https:\/\/api\.sejm\.gov\.pl\/sejm\/term10\/MP\/\d+\/photo$/);
     nav('#frequent-flyer');
-    expect($$('[data-testid="ranking"] tbody .avatar img[data-photo]')).toHaveLength(10);
+    expect($$('[data-testid="ranking"] tbody .avatar img[data-photo]').length).toBe($$('[data-testid="ranking"] tbody tr').length);
     expect($('[data-testid="ranking"] tbody .avatar img').getAttribute('src')).toMatch(/photo-mini$/);
-    expect($$('[data-testid="podium"] .avatar img[data-photo]')).toHaveLength(3);
     nav('#frekwencja');
     expect($$('[data-testid="att-ranking"] tbody .avatar img[data-photo]').length).toBeGreaterThan(440);
     nav('#posel-70');

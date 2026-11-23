@@ -54,6 +54,7 @@ export function buildRanking(dataset, mpsById, airportsData, sortBy = 'km', arti
       legKm,
       km,
       articles: resolveArticles(articles, e.articles),
+      parts: e.parts ?? null,
     };
   });
   const val = (r) => (sortBy === 'km' ? r.km ?? -1 : r.flights);
@@ -95,17 +96,76 @@ export function datasetSummary(rows) {
 /** Days covered by a dataset (inclusive). */
 const spanDays = (ds) => (Date.parse(ds.periodEnd) - Date.parse(ds.periodStart)) / 86400000 + 1;
 
+const overlaps = (a, b) => a.periodStart <= b.periodEnd && b.periodStart <= a.periodEnd;
+
 /**
- * Period filter: "Od zawsze" first, then one entry per term (newest first).
- * "Od zawsze" uses the dataset with the longest span, because the sources do not
- * publish one all-time list and adding overlapping lists would double count.
+ * Best documented total for one MP: the largest sum of flights over datasets whose
+ * periods do not overlap, so no flight is counted twice. It is a lower bound:
+ * the real all-time number can only be higher.
+ * `found` is a list of { dataset, flights }.
+ */
+export function bestNonOverlapping(found) {
+  let best = { flights: 0, parts: [] };
+  const n = found.length;
+  if (n > 16) throw new RangeError('Too many datasets for one MP');
+  for (let mask = 1; mask < 1 << n; mask++) {
+    const pick = found.filter((_, i) => mask & (1 << i));
+    if (pick.some((a, i) => pick.slice(i + 1).some((b) => overlaps(a.dataset, b.dataset)))) continue;
+    const flights = pick.reduce((s, x) => s + x.flights, 0);
+    if (flights > best.flights || (flights === best.flights && spanOf(pick) > spanOf(best.parts))) best = { flights, parts: pick };
+  }
+  return { flights: best.flights, parts: best.parts.map((x) => x.dataset).sort((a, b) => a.periodStart.localeCompare(b.periodStart)) };
+}
+const spanOf = (pick) => pick.reduce((s, x) => s + spanDays(x.dataset ?? x), 0);
+
+/**
+ * All published lists merged into one "Od zawsze" dataset: every MP once, with the best
+ * non-overlapping documented total, every article that mentions them, and all sources.
+ */
+export function mergeDatasets(datasets) {
+  if (!datasets.length) throw new RangeError('No flight datasets');
+  const byMp = new Map();
+  for (const ds of datasets) {
+    for (const e of ds.entries) {
+      const cur = byMp.get(e.mpId) ?? { found: [], articles: [] };
+      cur.found.push({ dataset: ds, flights: e.flights });
+      for (const a of e.articles ?? []) if (!cur.articles.includes(a)) cur.articles.push(a);
+      byMp.set(e.mpId, cur);
+    }
+  }
+  const entries = [...byMp.entries()].map(([mpId, v]) => {
+    const best = bestNonOverlapping(v.found);
+    return { mpId, flights: best.flights, articles: v.articles, parts: best.parts.map((d) => d.id) };
+  });
+  const sources = [];
+  for (const ds of datasets) for (const s of ds.sources ?? []) if (!sources.some((x) => x.url === s.url)) sources.push(s);
+  const starts = datasets.map((d) => d.periodStart).sort();
+  const ends = datasets.map((d) => d.periodEnd).sort();
+  return {
+    id: 'all',
+    label: 'Od zawsze',
+    term: null,
+    merged: true,
+    periodStart: starts[0],
+    periodEnd: ends[ends.length - 1],
+    coverage: 'merged',
+    coverageNote: `Jeden zbiór ze wszystkich opublikowanych list (${datasets.map((d) => d.label).join('; ')}). Przy każdym pośle sumujemy loty tylko z okresów, które się nie nakładają, więc żaden lot nie jest liczony dwa razy. To liczba udokumentowana, prawdziwa może być wyższa. Listy nie obejmują wszystkich posłów.`,
+    totals: null,
+    origin: datasets.map((d) => d.origin).join('; '),
+    sources,
+    parts: datasets.map((d) => ({ id: d.id, label: d.label })),
+    entries,
+  };
+}
+
+/**
+ * Period filter: "Od zawsze" first (all lists merged), then one entry per term (newest first).
  */
 export function flyerPeriods(datasets) {
   if (!datasets.length) throw new RangeError('No flight datasets');
   const terms = [...new Set(datasets.map((ds) => ds.term))].sort((a, b) => b - a);
-  const longest = [...datasets].sort((a, b) => spanDays(b) - spanDays(a) || a.periodStart.localeCompare(b.periodStart))[0];
   return [
-    { id: 'all', term: null, choices: [longest] },
+    { id: 'all', term: null, choices: [mergeDatasets(datasets)] },
     ...terms.map((t) => ({
       id: String(t),
       term: t,
