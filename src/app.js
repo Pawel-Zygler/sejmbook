@@ -121,6 +121,13 @@ export function createApp(doc, win, data) {
     }
   }
 
+  // A photo that cannot load (no photo, offline, blocked) is removed so the initials show.
+  function onPhotoError(e) {
+    const img = e.target;
+    if (img && img.matches && img.matches('img[data-photo]')) img.remove();
+  }
+
+  doc.addEventListener('error', onPhotoError, true);
   doc.addEventListener('click', onClick);
   doc.addEventListener('input', onInput);
   doc.addEventListener('change', onChange);
@@ -132,6 +139,7 @@ export function createApp(doc, win, data) {
     state,
     render,
     destroy() {
+      doc.removeEventListener('error', onPhotoError, true);
       doc.removeEventListener('click', onClick);
       doc.removeEventListener('input', onInput);
       doc.removeEventListener('change', onChange);

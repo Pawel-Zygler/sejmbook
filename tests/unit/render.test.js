@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, articleLinks, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, articleLinks, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -166,5 +166,29 @@ describe('podium badges', () => {
         expect(tr.includes('data-testid="podium-badge"'), `${d.id} rank ${rank}`).toBe(rank <= 3);
       }
     }
+  });
+});
+
+describe('MP photos', () => {
+  it('photoUrl points at the Sejm API, mini for thumbnails and full for the profile', () => {
+    expect(photoUrl(70)).toBe('https://api.sejm.gov.pl/sejm/term10/MP/70/photo-mini');
+    expect(photoUrl(70, 'sm')).toMatch(/photo-mini$/);
+    expect(photoUrl(70, 'lg')).toMatch(/\/photo$/);
+    expect(photoUrl(70, 'xl')).toBe('https://api.sejm.gov.pl/sejm/term10/MP/70/photo');
+    expect(photoUrl(70, 'md', 9)).toContain('/term9/');
+  });
+  it('photoUrl rejects ids that are not positive integers', () => {
+    for (const bad of [undefined, 0, -1, 1.5, '70']) expect(photoUrl(bad)).toBeNull();
+  });
+  it('avatar keeps the initials under a lazy photo', () => {
+    const html = avatar(ctx, ctx.mps[0], 'sm');
+    expect(html).toContain('class="avatar-ini"');
+    expect(html).toContain(`src="https://api.sejm.gov.pl/sejm/term10/MP/${ctx.mps[0].id}/photo-mini"`);
+    expect(html).toContain('loading="lazy"');
+    expect(html).toContain('alt=""');
+    expect(avatar(ctx, ctx.mps[0], 'xl')).toMatch(/\/photo"/);
+  });
+  it('avatar without an id shows initials only', () => {
+    expect(avatar(ctx, { name: 'Jan Nowak', club: 'Nowy' })).not.toContain('<img');
   });
 });

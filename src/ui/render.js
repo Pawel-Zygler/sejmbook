@@ -15,9 +15,18 @@ export function sejmProfileUrl(mpId) {
   return `https://www.sejm.gov.pl/Sejm10.nsf/posel.xsp?id=${String(mpId).padStart(3, '0')}&type=A`;
 }
 
+/** Official MP photo from the Sejm API: the 50x62 mini for small avatars, the 110x137 photo for large ones. */
+export function photoUrl(mpId, size = 'md', term = 10) {
+  if (!Number.isInteger(mpId) || mpId <= 0) return null;
+  return `https://api.sejm.gov.pl/sejm/term${term}/MP/${mpId}/${size === 'xl' || size === 'lg' ? 'photo' : 'photo-mini'}`;
+}
+
+/** Initials in club colour, with the official photo laid on top; if the photo fails, the initials stay. */
 export function avatar(ctx, mp, size = 'md') {
   const c = clubOf(ctx, mp);
-  return `<span class="avatar avatar-${size}" style="--club:${esc(c.color)}" aria-hidden="true">${esc(initials(mp.name))}</span>`;
+  const src = photoUrl(mp.id, size, ctx.term ?? 10);
+  const img = src ? `<img class="avatar-photo" src="${esc(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-photo>` : '';
+  return `<span class="avatar avatar-${size}" style="--club:${esc(c.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(mp.name))}</span>${img}</span>`;
 }
 
 export function clubChip(ctx, clubId) {

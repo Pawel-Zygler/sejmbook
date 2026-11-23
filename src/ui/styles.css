@@ -329,3 +329,8 @@ h2 { font-size: 1.1rem; }
 .side-filters .sub-tabs .tab { font-size: 0.82rem; padding: 6px 10px; }
 .side-filters .sub-tabs .tab.on { background: var(--accent); border-color: var(--accent); color: #fff; }
 .period-note { font-size: 0.8rem; color: var(--muted); margin: -6px 0 16px; line-height: 1.4; }
+
+/* Official photos on top of the initials */
+.avatar { position: relative; overflow: hidden; }
+.avatar-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; background: var(--surface-2); }
+.avatar-xl .avatar-photo { object-position: 50% 12%; }

@@ -1,13 +1,17 @@
 // End-to-end: the built single-file page in a real browser (desktop + phone projects).
 import { test, expect } from '@playwright/test';
 import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'node:fs';
 
 const PAGE = new URL('../../dist/standalone.html', import.meta.url).href;
+const PHOTO = readFileSync(new URL('./fixtures/photo.jpg', import.meta.url));
 if (!fileURLToPath(PAGE)) throw new Error('Run `npm run build` first');
 
 test.beforeEach(async ({ page }) => {
   // Hermetic: never depend on Google Fonts during tests.
   await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+  // Hermetic photos: serve a tiny fixture instead of calling the Sejm API.
+  await page.route(/api\.sejm\.gov\.pl\/.*\/photo/, (r) => r.fulfill({ contentType: 'image/jpeg', body: PHOTO }));
   page.on('pageerror', (e) => { throw e; });
 });
 
@@ -100,7 +104,7 @@ test('ranking rows link to articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Sejm w powietrzu: nowy Frequent Flyer');
+  await expect(post).toContainText('Zdjęcia posłów');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -125,7 +129,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the podium feature first and keeps the attendance post', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Sejm w powietrzu');
+  await expect(page.locator('.news-post').first()).toContainText('Zdjęcia posłów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -171,4 +175,21 @@ test('Frequent Flyer spectacle: map, swipeable podium, period filter', async ({ 
   await expect(page.getByRole('tab', { name: 'Cały 2025' })).toBeVisible();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);
+});
+
+test('MP photos show in rankings and on the profile, initials when a photo fails', async ({ page }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  const thumb = page.locator('[data-testid="ranking"] tbody tr').first().locator('.avatar img');
+  await expect(thumb).toBeVisible();
+  expect(await thumb.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+  await page.goto(`${PAGE}#posel-70`);
+  const big = page.locator('.avatar-xl img');
+  await expect(big).toHaveAttribute('src', /\/MP\/70\/photo$/);
+  expect(await big.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+
+  await page.unroute(/api\.sejm\.gov\.pl\/.*\/photo/);
+  await page.route(/api\.sejm\.gov\.pl\/.*\/photo/, (r) => r.fulfill({ status: 404, body: '' }));
+  await page.goto(`${PAGE}#posel-456`);
+  await expect(page.locator('.avatar-xl img')).toHaveCount(0);
+  await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });

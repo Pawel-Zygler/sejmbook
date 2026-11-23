@@ -143,7 +143,8 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Sejm w powietrzu: nowy Frequent Flyer');
+    expect(first.textContent).toContain('Zdjęcia posłów');
+    expect($('.news-post[data-news-id="2026-11-24-sejm-w-powietrzu"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-frekwencja"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
@@ -284,5 +285,29 @@ describe('Frequent Flyer spectacle', () => {
     const view = $('[data-view="flyer"]');
     expect(view.dataset.period).toBe('10');
     expect(view.dataset.dataset).toBe('2025');
+  });
+});
+
+describe('MP photos', () => {
+  it('every avatar in the directory, rankings and profile carries the official photo', () => {
+    nav('#poslowie');
+    const imgs = $$('.mp-card .avatar img[data-photo]');
+    expect(imgs).toHaveLength(460);
+    expect(imgs[0].getAttribute('src')).toMatch(/^https:\/\/api\.sejm\.gov\.pl\/sejm\/term10\/MP\/\d+\/photo$/);
+    nav('#frequent-flyer');
+    expect($$('[data-testid="ranking"] tbody .avatar img[data-photo]')).toHaveLength(10);
+    expect($('[data-testid="ranking"] tbody .avatar img').getAttribute('src')).toMatch(/photo-mini$/);
+    expect($$('[data-testid="podium"] .avatar img[data-photo]')).toHaveLength(3);
+    nav('#frekwencja');
+    expect($$('[data-testid="att-ranking"] tbody .avatar img[data-photo]').length).toBeGreaterThan(440);
+    nav('#posel-70');
+    expect($('.avatar-xl img').getAttribute('src')).toBe('https://api.sejm.gov.pl/sejm/term10/MP/70/photo');
+  });
+  it('a photo that fails to load is removed so the initials show', () => {
+    nav('#posel-70');
+    const img = $('.avatar-xl img');
+    img.dispatchEvent(new Event('error'));
+    expect($('.avatar-xl img')).toBeNull();
+    expect($('.avatar-xl .avatar-ini').textContent).toBe('RD');
   });
 });

@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-zdjecia",
+      "date": "2026-11-24",
+      "title": "Zdjęcia posłów",
+      "body": "Przy każdym pośle widać teraz jego oficjalne zdjęcie z API Sejmu: w katalogu, na profilu, na podium i w rankingach Frequent Flyer i Frekwencji. Jeśli zdjęcie się nie wczyta, zostają inicjały w kolorze klubu.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz posłów"
+      }
+    },
+    {
       "id": "2026-11-24-sejm-w-powietrzu",
       "date": "2026-11-24",
       "title": "Sejm w powietrzu: nowy Frequent Flyer",
