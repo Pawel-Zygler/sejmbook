@@ -4,7 +4,7 @@
       "id": "2026-11-24-loga",
       "date": "2026-11-24",
       "title": "Loga klubów i zdjęcia w każdym widoku",
-      "body": "Przy nazwie klubu widać teraz jego logo zamiast kolorowej kropki. Zdjęcia posłów i loga pobieramy z API Sejmu i trzymamy w samej stronie, więc ładują się wszędzie, także na telefonie.",
+      "body": "Przy nazwie klubu jest teraz jego logo, a zdjęcia posłów ładują się także na telefonie.",
       "link": {
         "href": "#poslowie",
         "label": "Zobacz posłów"
@@ -14,7 +14,7 @@
       "id": "2026-11-24-od-zawsze",
       "date": "2026-11-24",
       "title": "Frequent Flyer od zawsze: jeden ranking i wszystkie artykuły",
-      "body": "Ranking Frequent Flyer to teraz jeden zbiór ze wszystkich opublikowanych list lotów posłów, także z IX kadencji (od 2019 roku). Przy każdym pośle sumujemy loty tylko z okresów, które się nie nakładają, więc nic nie jest liczone dwa razy. Pod rankingiem jest lista wszystkich artykułów o lotach posłów, od najnowszych.",
+      "body": "Ranking łączy wszystkie listy lotów od 2019 roku bez liczenia lotów dwa razy, a pod nim są wszystkie artykuły.",
       "link": {
         "href": "#frequent-flyer",
         "label": "Zobacz ranking"
@@ -24,7 +24,7 @@
       "id": "2026-11-24-zdjecia",
       "date": "2026-11-24",
       "title": "Zdjęcia posłów",
-      "body": "Przy każdym pośle widać teraz jego oficjalne zdjęcie z API Sejmu: w katalogu, na profilu, na podium i w rankingach Frequent Flyer i Frekwencji. Jeśli zdjęcie się nie wczyta, zostają inicjały w kolorze klubu.",
+      "body": "Przy każdym pośle widać jego oficjalne zdjęcie z Sejmu.",
       "link": {
         "href": "#poslowie",
         "label": "Zobacz posłów"
@@ -33,8 +33,8 @@
     {
       "id": "2026-11-23-podium",
       "date": "2026-11-23",
-      "title": "Frequent Flyer: ranking na górze i odznaki podium",
-      "body": "Ranking Frequent Flyer jest teraz na samej górze strony, a wybór okresu i sortowania przeniesiony do panelu bocznego. Pierwsza trójka dostaje odznaki: Super-mąż za 1. miejsce, Orzeł III RP za 2. i Bocian III RP za 3.",
+      "title": "Frequent Flyer: odznaki podium",
+      "body": "Pierwsza trójka dostaje odznaki Super-mąż, Orzeł III RP i Bocian III RP.",
       "link": {
         "href": "#frequent-flyer",
         "label": "Zobacz podium"
@@ -44,7 +44,7 @@
       "id": "2026-11-23-frekwencja",
       "date": "2026-11-23",
       "title": "Nowa zakładka: Frekwencja",
-      "body": "Sprawdź, jak często posłowie biorą udział w głosowaniach. Liczymy frekwencję każdego posła dzień po dniu na podstawie wszystkich głosowań X kadencji z API Sejmu. Mały wykres kołowy przy nazwisku pokazuje ją na profilach, w katalogu posłów i w rankingu Frequent Flyer.",
+      "body": "Sprawdź, jak często każdy poseł bierze udział w głosowaniach X kadencji.",
       "link": {
         "href": "#frekwencja",
         "label": "Zobacz frekwencję"
@@ -54,7 +54,7 @@
       "id": "2026-11-23-artykuly",
       "date": "2026-11-23",
       "title": "Artykuły przy każdym pośle w rankingu Frequent Flyer",
-      "body": "W rankingu Frequent Flyer przy każdym pośle, obok liczby lotów, są teraz linki do artykułów, które o nim piszą. Każdy link prowadzi do tekstu, w którym pada jego nazwisko i liczba lotów.",
+      "body": "Przy każdym pośle w rankingu są linki do artykułów o jego lotach.",
       "link": {
         "href": "#frequent-flyer",
         "label": "Zobacz ranking"
@@ -64,7 +64,7 @@
       "id": "2026-11-23-start",
       "date": "2026-11-23",
       "title": "Startuje Sejmbook",
-      "body": "Pierwsza wersja: profile 460 posłów X kadencji z przynależnością klubową (dane z API Sejmu) i ranking Frequent Flyer z danymi Kancelarii Sejmu ujawnionymi przez media.",
+      "body": "Profile 460 posłów X kadencji i ranking Frequent Flyer na danych Kancelarii Sejmu.",
       "link": {
         "href": "#poslowie",
         "label": "Przeglądaj posłów"
