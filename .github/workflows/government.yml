@@ -1,0 +1,26 @@
+name: government
+# Saves the Wikipedia tables of III RP governments and top state offices (data/raw/gov/) and commits them.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/fetch-government.mjs', 'src/lib/government-sources.js']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-government.mjs
+      - name: Commit tables
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw/gov
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update Wikipedia tables of governments and state offices"
+          git pull --rebase
+          git push
