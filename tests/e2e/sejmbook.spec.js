@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Zdjęcia w sekcji Państwo');
+  await expect(post).toContainText('Jeden wygląd profili');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Zdjęcia w sekcji Państwo');
+  await expect(page.locator('.news-post').first()).toContainText('Jeden wygląd profili');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -398,4 +398,19 @@ test('Państwo: portraits of officials', async ({ page }) => {
   await expect(page.locator('[data-office="prezydent"].office-card img.avatar-photo')).toHaveCount(1);
   expect(await page.locator('[data-testid="cabinet-now"]').count()).toBe(1);
   expect(await page.locator('#view img.avatar-photo').count()).toBeGreaterThan(5);
+});
+
+test('Profiles: officials and former MPs use the MP profile layout', async ({ page }) => {
+  for (const h of ['#urzad-karol-nawrocki', '#urzad-lech-walesa']) {
+    await page.goto(`${PAGE}${h}`);
+    await expect(page.locator('.profile-top h1')).toBeVisible();
+    await expect(page.getByTestId('spectrum')).toContainText('Spektrum partyjne');
+    await expect(page.locator('.profile-cols aside.about')).toContainText('Informacje');
+  }
+  await page.goto(`${PAGE}#panstwo`);
+  await page.locator('#view a', { hasText: 'Małgorzata Kidawa-Błońska' }).first().click();
+  await expect(page.locator('[data-view="person"] .profile-top h1')).toHaveText('Małgorzata Kidawa-Błońska');
+  await expect(page.getByTestId('spectrum').locator('.spectrum-bar')).toBeVisible();
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

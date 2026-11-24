@@ -1,6 +1,6 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCounts, ageInYear } from '../lib/mps.js';
 import { againstClub, inWindow, FEED_WINDOWS } from '../lib/feed.js';
-import { careerSpectrum, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
+import { careerSpectrum, spectrumOf, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
@@ -563,24 +563,34 @@ export function renderLifeLine(ctx, mp) {
       ${tl.undated.length ? `<p class="muted life-undated">Bez dat w Wikidata: ${tl.undated.map(esc).join(', ')}.</p>` : ''}`;
 }
 
+const spPct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
+
+/** Bar + legend of a spectrum ({parts:[{id,label,color,years,share}]}); `note(part)` is the grey text after the share. */
+export function spectrumBar(sp, note) {
+  const bar = sp.parts.map((p) => `<span class="spectrum-seg" style="--seg:${esc(p.color)};flex-grow:${p.years.toFixed(3)}" title="${esc(p.label)}: ${spPct(p.share)}%"></span>`).join('');
+  const legend = sp.parts.map((p) => `<li data-family="${esc(p.id)}"><span class="spectrum-swatch" style="--seg:${esc(p.color)}"></span><b>${esc(p.label)}</b> <span class="muted">${spPct(p.share)}% · ${note(p)}</span></li>`).join('');
+  return `<div class="spectrum-bar" role="img" aria-label="${esc(sp.parts.map((p) => `${p.label} ${spPct(p.share)}%`).join(', '))}">${bar}</div>
+      <ul class="spectrum-legend">${legend}</ul>`;
+}
+
+/** Bar of Sejm clubs by term, as on the MP profile. */
+function clubSpectrumBlock(sp) {
+  const n = sp.terms.length;
+  return `<h3 class="spectrum-h3">Kluby w Sejmie III RP</h3>
+      <p class="muted spectrum-sub">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')} w Sejmie (${termRanges(sp.terms)}), razem ok. ${fmtYears(sp.totalYears)}</p>
+      ${spectrumBar(sp, (p) => `kadencja ${termRanges(p.terms)}`)}`;
+}
+
 export function renderCareerSpectrum(ctx, mp) {
   const sp = careerSpectrum(ctx.career, mp.id, ctx.fetchedAt);
   const lifeLine = renderLifeLine(ctx, mp);
   if (!sp && !lifeLine) return '';
   if (!sp) return `<section class="panel spectrum" data-testid="spectrum"><h2>Spektrum partyjne</h2>${lifeLine}</section>`;
-  const pct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
-  const bar = sp.parts.map((p) => `<span class="spectrum-seg" style="--seg:${esc(p.color)};flex-grow:${p.years.toFixed(3)}" title="${esc(p.label)}: ${pct(p.share)}%"></span>`).join('');
-  const legend = sp.parts.map((p) => `<li data-family="${esc(p.id)}"><span class="spectrum-swatch" style="--seg:${esc(p.color)}"></span><b>${esc(p.label)}</b> <span class="muted">${pct(p.share)}% · kadencja ${termRanges(p.terms)}</span></li>`).join('');
-  const n = sp.terms.length;
   return `
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
       ${lifeLine}
-      <h3 class="spectrum-h3">Kluby w Sejmie III RP</h3>
-      <p class="muted spectrum-sub">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')} w Sejmie (${termRanges(sp.terms)}), razem ok. ${fmtYears(sp.totalYears)}</p>
-      <div class="spectrum-bar" role="img" aria-label="${esc(sp.parts.map((p) => `${p.label} ${pct(p.share)}%`).join(', '))}">${bar}</div>
-      <ul class="spectrum-legend">${legend}</ul>
-      <p class="src">Partie i opozycja w PRL: <a href="https://www.wikidata.org/wiki/${esc(ctx.life?.mps?.[mp.id]?.qid ?? '')}" target="_blank" rel="noopener">Wikidata</a> i infoboks Wikipedii (członkostwo bez dat w PZPR i ZSL zakreskowane, inne wpisy bez dat wymienione pod osią). Kluby: API Sejmu, ostatni klub w każdej kadencji, ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
+      ${clubSpectrumBlock(sp)}
     </section>`;
 }
 
@@ -598,9 +608,14 @@ export function renderPerson(ctx, key) {
   const rows = p.terms.map((t) => ({ term: t.t, club: t.club, clubName: clubNameIn(ctx.terms, t.t, t.club) }));
   const route = buildPath(rows);
   const color = route.path[route.path.length - 1]?.color ?? FALLBACK_CLUB.color;
-  const info = new Map((ctx.terms?.terms ?? []).map((t) => [t.num, t]));
+  const info = new Map([...(ctx.career?.terms ?? []), ...(ctx.terms?.terms ?? [])].map((t) => [t.num, t]));
   const years = (n) => { const t = info.get(n); return t ? `${t.from.slice(0, 4)}–${t.to ? t.to.slice(0, 4) : 'dziś'}` : ''; };
   const age = p.birthDate ? `${p.birthDate.split('-').reverse().join('.')}` : null;
+  const sp = spectrumOf(rows, info, ctx.fetchedAt);
+  const last = [...p.terms].sort((a, b) => a.t - b.t).at(-1);
+  const lastFam = last ? clubFamily(last.club, clubNameIn(ctx.terms, last.t, last.club)) : null;
+  const lastName = last ? clubNameIn(ctx.terms, last.t, last.club) ?? last.club : null;
+  const nTerms = p.terms.length;
   return `
   <section data-view="person" data-person="${esc(key)}">
     <div class="profile-top panel">
@@ -609,21 +624,38 @@ export function renderPerson(ctx, key) {
         ${personAvatar(p.name, color, 'xl', govPhoto(ctx, p.name))}
         <div class="profile-name">
           <h1>${esc(p.name)}</h1>
-          <p><span class="muted">Poseł na Sejm RP · ${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>
+          <p>${lastFam ? `<span class="route-chip" style="--club:${esc(lastFam.color ?? color)}">${esc(lastFam.label)}</span> ` : ''}<span class="muted">Poseł na Sejm RP · ${nTerms} ${plural(nTerms, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>
           <p class="badge-off">Nie zasiada w Sejmie obecnej kadencji</p>
-          ${stateRolesLink(ctx, p.name)}
         </div>
       </div>
     </div>
-    ${route.path.length ? `<div class="panel" data-testid="person-route"><h2>Ścieżka partyjna</h2>${partyRoute(route.path)}<p class="muted">${route.count} ${partyWord(route.count)}${route.jumps ? `, ${route.jumps} ${plural(route.jumps, 'przeskok', 'przeskoki', 'przeskoków')}` : ''}</p></div>` : ''}
+    <section class="panel spectrum" data-testid="spectrum">
+      <h2>Spektrum partyjne</h2>
+      ${sp && route.path.length ? clubSpectrumBlock(sp) : '<p class="muted">Brak danych o klubach tej osoby w Sejmie.</p>'}
+      ${route.path.length ? `<div data-testid="person-route"><h3 class="spectrum-h3">Ścieżka partyjna</h3>${partyRoute(route.path)}<p class="muted">${route.count} ${partyWord(route.count)}${route.jumps ? `, ${route.jumps} ${plural(route.jumps, 'przeskok', 'przeskoki', 'przeskoków')}` : ''}</p></div>` : ''}
+    </section>
+    <div class="profile-cols">
+      <aside class="panel about">
+        <h2>Informacje</h2>
+        <dl>
+          ${age ? `<dt>Data urodzenia</dt><dd>${esc(age)}</dd>` : ''}
+          <dt>Kadencje w Sejmie</dt><dd>${termRanges(p.terms.map((t) => t.t))} <span class="muted">(${nTerms})</span></dd>
+          <dt>Ostatni klub</dt><dd>${esc(lastName ?? 'brak danych')}</dd>
+          <dt>Ostatni okręg</dt><dd>${last?.d ? `nr ${last.d} · ${esc(last.dn ?? '')}` : 'brak danych'}</dd>
+        </dl>
+        <p class="src">Dane: API Sejmu i listy posłów w Wikipedii</p>
+        ${stateRolesLink(ctx, p.name)}
+      </aside>
+      <div class="feed">
     <div class="panel" data-testid="person-terms">
       <h2>Kadencje w Sejmie</h2>
-      ${age ? `<p class="muted">Data urodzenia: ${esc(age)}</p>` : ''}
       <div class="table-wrap"><table class="rank person-terms">
         <thead><tr><th scope="col">Kadencja</th><th scope="col">Klub</th><th scope="col">Okręg</th><th scope="col"><span class="visually-hidden">Źródło</span></th></tr></thead>
         <tbody>${p.terms.map((t) => `<tr data-term="${t.t}"><td><b>${romanTerm(t.t)}</b> <small class="muted">${years(t.t)}</small></td><td>${esc(clubNameIn(ctx.terms, t.t, t.club) ?? t.club ?? '—')}</td><td>${t.d ? `${t.d} · ${esc(t.dn ?? '')}` : '—'}</td><td>${t.src === 'wikipedia' ? `<a href="${esc(wikiListUrl(t.t))}" target="_blank" rel="noopener">Wikipedia</a>` : `<a href="https://api.sejm.gov.pl/sejm/term${t.t}/MP/${t.id}" target="_blank" rel="noopener">API Sejmu</a>`}</td></tr>`).join('')}</tbody>
       </table></div>
       <p class="src">${esc(termsSourceNote(ctx))}</p>
+    </div>
+      </div>
     </div>
   </section>`;
 }

@@ -152,6 +152,16 @@ describe('state views', () => {
     expect(renderOfficial(ctx, 'nikt', '2026-11-24')).toContain('Nie ma takiej osoby');
     expect(mpLinkFor(ctx, 'Nikt')).toBeNull();
   });
+  it('renders officials in the MP profile layout, with a party spectrum when roles carry a party', () => {
+    const html = renderOfficial(ctx, 'ewa-lacka', '2026-11-24');
+    for (const part of ['class="profile-top panel"', 'data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>']) expect(html).toContain(part);
+    expect(html).not.toContain('official-head');
+    for (const slug of ctx.bySlug ? [...ctx.bySlug.keys()] : [...ctx.gov.bySlug.keys()]) {
+      const h = renderOfficial(ctx, slug, '2026-11-24');
+      expect(h).toContain('data-testid="spectrum"');
+      expect(h).toMatch(/spectrum-bar|Brak danych o partii/);
+    }
+  });
   it('uses portraits when the build bundled them', () => {
     const c = { ...ctx, media: { gov: { 'jan-kowalski': 'data:image/jpeg;base64,CC' } } };
     expect(renderState(c, '2026-11-24')).toContain('src="data:image/jpeg;base64,CC"');

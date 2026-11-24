@@ -1,8 +1,8 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
-import { esc, plural, personHref, personAvatar, govPhoto } from './render.js';
+import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar } from './render.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
-import { personKey } from '../lib/career.js';
+import { personKey, roleSpectrum } from '../lib/career.js';
 
 const day = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
 const span = (from, to) => (to ? `${day(from)} – ${day(to)}` : `od ${day(from)}`);
@@ -123,15 +123,44 @@ export function renderOfficial(ctx, slug, today) {
   const govName = (id) => ctx.gov.governments.find((x) => x.id === id);
   const now = p.roles.filter((r) => r.from <= today && (!r.to || r.to > today));
   const mp = mpLinkFor(ctx, p.name);
+  const sp = roleSpectrum(p.roles, today);
+  const color = sp?.parts[0]?.color ?? '#7d8590';
+  const first = p.roles.at(-1);
+  const partyNow = [...p.roles].find((r) => r.party)?.party ?? p.party;
+  const yrs = (y) => `${Math.round(y * 10) / 10}`.replace('.', ',');
   return `
-  <section class="feed state" data-view="official">
-    <div class="panel official-head">
-      ${personAvatar(p.name, null, 'xl', govPhoto(ctx, p.name))}
-      <div><p class="muted"><a href="#panstwo">Państwo</a></p><h1>${esc(p.name)}</h1>
-        <p>${now.length ? now.map((r) => `<span class="chip chip-now">${esc(r.office)}</span>`).join(' ') : '<span class="muted">Dziś bez funkcji w rządzie i na najważniejszych urzędach</span>'}${p.party ? ` <span class="chip">${esc(p.party)}</span>` : ''}</p>
-        <p class="official-links">${p.wiki ? `<a class="btn" href="${esc(wikiUrl(p.wiki))}" target="_blank" rel="noopener">Wikipedia</a>` : ''}${mp ? ` <a class="btn" href="${esc(mp.href)}" data-testid="official-mp">${esc(mp.label)}</a>` : ''}</p>
+  <section data-view="official" data-official="${esc(p.slug)}">
+    <div class="profile-top panel">
+      <div class="cover" style="--club:${esc(color)}"></div>
+      <div class="profile-id">
+        ${personAvatar(p.name, color, 'xl', govPhoto(ctx, p.name))}
+        <div class="profile-name">
+          <h1>${esc(p.name)}</h1>
+          <p>${now.map((r) => `<span class="chip chip-now">${esc(r.office)}</span>`).join(' ')}${partyNow ? ` <span class="route-chip" style="--club:${esc(color)}">${esc(partyNow)}</span>` : ''}</p>
+          ${now.length ? '' : '<p class="badge-off">Dziś bez funkcji w rządzie i na najważniejszych urzędach</p>'}
+        </div>
       </div>
     </div>
+    <section class="panel spectrum" data-testid="spectrum">
+      <h2>Spektrum partyjne</h2>
+      ${sp ? `<h3 class="spectrum-h3">Partia w funkcjach państwowych</h3>
+      <p class="muted spectrum-sub">Razem ok. ${yrs(sp.totalYears)} lat w funkcjach z przypisaną partią</p>
+      ${spectrumBar(sp, (x) => `${esc(years(x.from, x.to === today ? null : x.to))}`)}`
+        : '<p class="muted">Brak danych o partii: te funkcje nie mają w źródle przypisanej partii (np. prezydent, prezes NBP, sędziowie).</p>'}
+    </section>
+    <div class="profile-cols">
+      <aside class="panel about">
+        <h2>Informacje</h2>
+        <dl>
+          <dt>Funkcja dziś</dt><dd>${now.length ? now.map((r) => esc(r.office)).join(', ') : 'brak'}</dd>
+          <dt>Partia</dt><dd>${esc(partyNow ?? 'brak danych')}</dd>
+          <dt>Funkcje państwowe</dt><dd>${p.roles.length}</dd>
+          ${first ? `<dt>Pierwsza funkcja</dt><dd>${esc(first.office)} <span class="muted">(${esc(String(first.from).slice(0, 4))})</span></dd>` : ''}
+        </dl>
+        <p class="src">Dane: ${p.wiki ? `<a href="${esc(wikiUrl(p.wiki))}" target="_blank" rel="noopener">Wikipedia</a> · ` : ''}<a href="#panstwo">Państwo</a></p>
+        ${mp ? `<p><a class="btn" href="${esc(mp.href)}" data-testid="official-mp">${esc(mp.label)}</a></p>` : ''}
+      </aside>
+      <div class="feed">
     <div class="panel">
       <h2>Funkcje państwowe</h2>
       <ol class="role-list" data-testid="role-list">${p.roles.map((r) => {
@@ -140,6 +169,8 @@ export function renderOfficial(ctx, slug, today) {
       }).join('')}</ol>
     </div>
     ${sourceNote(ctx)}
+      </div>
+    </div>
   </section>`;
 }
 

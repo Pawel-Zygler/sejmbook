@@ -306,14 +306,14 @@ describe('renderCareerSpectrum', () => {
     terms: [{ num: 9, from: '2019-11-12', to: '2023-11-12' }, { num: 10, from: '2023-11-13', to: null }],
     career: { 70: [{ term: 9, club: 'PO-KO', clubName: 'x' }, { term: 10, club: 'PiS', clubName: 'y' }] },
   };
-  it('draws one segment per camp with a legend and source note', () => {
+  it('draws one segment per camp with a legend, without a source footnote', () => {
     const html = renderCareerSpectrum({ ...ctx, career }, ctx.mpsById.get(70));
     expect(html).toContain('Spektrum partyjne');
     expect((html.match(/class="spectrum-seg"/g) ?? []).length).toBe(2);
     expect(html).toContain('KO / PO');
     expect(html).toContain('kadencja IX');
     expect(html).toContain('2 kadencje w Sejmie (IX–X)');
-    expect(html).toContain('API Sejmu');
+    expect(html).not.toContain('Nie obejmuje Senatu');
   });
   it('without Sejm club data shows only the life line; without a birth year, nothing', () => {
     const html = renderCareerSpectrum({ ...ctx, career: null, life: null }, ctx.mpsById.get(70));
@@ -461,6 +461,15 @@ describe('renderPerson', () => {
     expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
     expect(html).toContain('03.02.1950');
     expect(html).toContain('data-testid="person-route"');
+  });
+  it('uses the same layout as the MP profile: header, Spektrum partyjne, Informacje', () => {
+    const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
+    for (const part of ['class="profile-top panel"', 'class="panel spectrum" data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>', 'spectrum-bar']) expect(html).toContain(part);
+    expect(html).toContain('<dt>Ostatni okręg</dt><dd>nr 2 · Wałbrzych</dd>');
+    const noClubs = { ...terms, people: [{ name: 'Bez Klubu', current: null, terms: [{ t: 3, id: 8, club: 'niez' }] }] };
+    const html2 = renderPerson({ ...ctx, terms: noClubs, peopleByKey: new Map([['3-8', noClubs.people[0]]]) }, '3-8');
+    expect(html2).toContain('Brak danych o klubach');
+    expect(html2).toContain('<dt>Ostatni okręg</dt><dd>brak danych</dd>');
   });
   it('sends today\'s MPs to their full profile and unknown keys to "not found"', () => {
     expect(renderPerson({ ...ctx, terms, peopleByKey }, '3-6')).toContain('data-view="profile"');

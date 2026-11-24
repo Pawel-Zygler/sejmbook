@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { personKey, indexPeople, clubFamily, termYears, careerSpectrum, termRanges, romanTerm, partyPath, partyHoppers, buildPath, allPartyHoppers, termMps, clubNameIn, singlePartyCount } from '../../src/lib/career.js';
+import { personKey, indexPeople, clubFamily, termYears, careerSpectrum, spectrumOf, roleSpectrum, termRanges, romanTerm, partyPath, partyHoppers, buildPath, allPartyHoppers, termMps, clubNameIn, singlePartyCount } from '../../src/lib/career.js';
 
 const careerData = {
   terms: [
@@ -138,5 +138,30 @@ describe('people index', () => {
     expect(personKey(p)).toBe('4-20');
     expect(indexPeople({ people: [p] }).get('4-20')).toBe(p);
     expect(indexPeople(null).size).toBe(0);
+  });
+});
+
+describe('spectrumOf and roleSpectrum', () => {
+  it('splits rows of earlier terms by camp, weighted by term length', () => {
+    const terms = new Map([[3, { num: 3, from: '1997-10-20', to: '2001-10-18' }], [4, { num: 4, from: '2001-10-19', to: '2005-10-18' }]]);
+    const sp = spectrumOf([{ term: 4, club: 'PO' }, { term: 3, club: 'UW' }], terms, '2026-11-24');
+    expect(sp.terms).toEqual([3, 4]);
+    expect(sp.parts.map((p) => p.id).sort()).toEqual(['KO', 'UW']);
+    expect(sp.parts.reduce((a, p) => a + p.share, 0)).toBeCloseTo(1);
+    expect(spectrumOf([], terms, '2026-11-24')).toBeNull();
+  });
+  it('weights the party of state roles by time in office, ongoing roles until today', () => {
+    const sp = roleSpectrum([
+      { office: 'Minister', party: 'PiS', from: '2015-11-16', to: '2019-11-15' },
+      { office: 'Minister', party: 'PL2050', from: '2023-12-13', to: null },
+      { office: 'Prezydent RP', from: '2025-08-06', to: null },
+      { office: 'Zły', party: 'PSL', from: '2020-01-01', to: '2019-01-01' },
+    ], '2025-12-13');
+    expect(sp.parts.map((p) => p.id)).toEqual(['PiS', 'Polska2050']);
+    expect(sp.parts[1].to).toBe('2025-12-13');
+    expect(sp.totalYears).toBeCloseTo(6, 0);
+    expect(roleSpectrum([{ office: 'Prezydent RP', from: '2025-08-06' }], '2026-11-24')).toBeNull();
+    expect(roleSpectrum(undefined, '2026-11-24')).toBeNull();
+    expect(roleSpectrum([{ party: 'Inna', from: '2001-01-01', to: '2002-01-01' }], '2026-11-24').parts[0].color).toMatch(/^#/);
   });
 });

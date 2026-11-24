@@ -13,7 +13,7 @@ export const CLUB_FAMILIES = [
   { id: 'PSL', label: 'PSL', color: '#2f8f46', ids: ['PSL', 'PSL-TD', 'PSL-UED', 'PSL-KP'], re: /stronnictw\S* ludow|koalicja polska/i },
   { id: 'Lewica', label: 'Lewica / SLD', color: '#b5174b', ids: ['Lewica', 'SLD', 'SLD-UP', 'LiD', 'LD'], re: /lewic|sojusz\S* lewicy|socjaldemokracj|unia pracy/i },
   { id: 'Razem', label: 'Razem', color: '#7a1f5c', ids: ['Razem'], re: /razem/i },
-  { id: 'Polska2050', label: 'Polska 2050', color: '#d9a400', ids: ['Polska2050', 'Polska2050-TD'], re: /polska ?2050/i },
+  { id: 'Polska2050', label: 'Polska 2050', color: '#d9a400', ids: ['Polska2050', 'Polska2050-TD', 'PL2050'], re: /polska ?2050/i },
   { id: 'Konfederacja', label: 'Konfederacja', color: '#22303f', ids: ['Konfederacja'], re: /^(klub|koło) poselski\S* konfederacja$/i },
   { id: 'Korona', label: 'Korona', color: '#4a3b2a', ids: ['Konfederacja_KP'], re: /korony polskiej/i },
   { id: 'Kukiz', label: "Kukiz'15 / Demokracja B.", color: '#111111', ids: ['Kukiz15', 'Demokracja'], re: /kukiz|demokracja bezpośrednia/i },
@@ -66,8 +66,12 @@ export function termYears(term, today) {
  */
 export function careerSpectrum(careerData, mpId, today) {
   const rows = careerData?.career?.[mpId];
+  return spectrumOf(rows, new Map((careerData?.terms ?? []).map((t) => [t.num, t])), today);
+}
+
+/** The same split for any rows {term, club, clubName}, e.g. an MP of earlier terms (data/terms.json). */
+export function spectrumOf(rows, termsByNum, today) {
   if (!rows?.length) return null;
-  const termsByNum = new Map((careerData.terms ?? []).map((t) => [t.num, t]));
   const parts = new Map();
   let total = 0;
   for (const r of [...rows].sort((a, b) => a.term - b.term)) {
@@ -192,4 +196,35 @@ export const personKey = (p) => `${p.terms[0].t}-${p.terms[0].id}`;
 /** Map key → person for every person in data/terms.json. */
 export function indexPeople(termsData) {
   return new Map((termsData?.people ?? []).map((p) => [personKey(p), p]));
+}
+
+const YEAR_MS = 365.25 * 24 * 3600 * 1000;
+
+/**
+ * "Spektrum partyjne" of someone in state offices: their party in each role (data/government.json),
+ * weighted by how long the role lasted (an ongoing one until `today`). Roles without a party
+ * (president, NBP, courts) are left out. Returns { totalYears, parts: [{id,label,color,years,share,from,to}] } or null.
+ */
+export function roleSpectrum(roles, today) {
+  const parts = new Map();
+  let total = 0;
+  for (const r of roles ?? []) {
+    if (!r.party || !r.from) continue;
+    const to = r.to ?? today;
+    const years = (Date.parse(to) - Date.parse(r.from)) / YEAR_MS;
+    if (!(years > 0)) continue;
+    const fam = clubFamily(r.party, r.party);
+    const p = parts.get(fam.id) ?? { ...fam, years: 0, from: r.from, to };
+    p.years += years;
+    if (r.from < p.from) p.from = r.from;
+    if (to > p.to) p.to = to;
+    parts.set(fam.id, p);
+    total += years;
+  }
+  if (!parts.size) return null;
+  let other = 0;
+  const list = [...parts.values()]
+    .map((p) => ({ ...p, color: p.color ?? OTHER_COLORS[other++ % OTHER_COLORS.length], share: p.years / total }))
+    .sort((a, b) => b.years - a.years || a.from.localeCompare(b.from));
+  return { totalYears: total, parts: list };
 }

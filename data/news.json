@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-jeden-profil",
+      "date": "2026-11-24",
+      "title": "Jeden wygląd profili",
+      "section": "Państwo",
+      "body": "Prezydenci, ministrowie i byli posłowie mają teraz profil w tym samym układzie co posłowie, ze spektrum partyjnym.",
+      "link": {
+        "href": "#urzad-karol-nawrocki",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-zdjecia-panstwo",
       "date": "2026-11-24",
       "title": "Zdjęcia w sekcji Państwo",

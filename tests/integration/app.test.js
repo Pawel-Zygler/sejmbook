@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Zdjęcia w sekcji Państwo';
-const NEWEST_LINE = 'Państwo: Zdjęcia w sekcji Państwo';
+const NEWEST = 'Jeden wygląd profili';
+const NEWEST_LINE = 'Państwo: Jeden wygląd profili';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -566,6 +566,19 @@ describe('Państwo: III RP hierarchy', () => {
     expect($('#view h1').textContent).toBe('Rząd Tadeusza Mazowieckiego');
     expect($('[data-testid="gov-table"]').textContent).toContain('Krzysztof Skubiszewski');
     expect(document.title).toBe('Rząd Tadeusza Mazowieckiego · Sejmbook');
+  });
+  it('shows every profile in one layout: MPs, former MPs and officials', () => {
+    const parts = (h) => { nav(h); return ['.profile-top', '[data-testid="spectrum"]', '.profile-cols aside.about', '.profile-cols .feed'].map((s) => Boolean($(s))); };
+    nav('#panstwo');
+    const kidawa = $$('#view a').find((x) => x.textContent === 'Małgorzata Kidawa-Błońska');
+    expect(kidawa.getAttribute('href')).toMatch(/^#osoba-/);
+    for (const h of ['#urzad-karol-nawrocki', kidawa.getAttribute('href'), `#posel-${$$('[data-testid="cabinet-now"] a').find((x) => x.getAttribute('href').startsWith('#posel-')).getAttribute('href').slice(7)}`]) {
+      expect(parts(h)).toEqual([true, true, true, true]);
+    }
+    nav('#urzad-karol-nawrocki');
+    expect($('.profile-top h1').textContent).toBe('Karol Nawrocki');
+    expect($('.official-head')).toBeNull();
+    expect($('[data-testid="spectrum"] h2').textContent).toBe('Spektrum partyjne');
   });
   it('gives presidents and prime ministers profiles with all their roles', () => {
     nav('#urzad-lech-kaczynski');
