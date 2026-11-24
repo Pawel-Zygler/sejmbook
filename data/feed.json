@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-24T10:15:06.879Z",
+ "fetchedAt": "2026-11-24T12:28:19.158Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
@@ -9,6 +9,12 @@
     "title": "Buenos Aires. Spotkanie Prezydenta RP z przedstawicielami argentyńskiej Polonii",
     "date": "2026-11-23",
     "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/buenos-aires-spotkanie-prezydenta-rp-z-przedstawicielami-argentynskiej-polonii,130594",
+    "seenAt": "2026-11-23T23:59:59.000Z"
+   },
+   {
+    "title": "Wystąpienie Prezydenta RP podczas spotkania z argentyńską Polonią",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/wystapienie-prezydenta-rp-podczas-spotkania-z-argentynska-polonia,130624",
     "seenAt": "2026-11-23T23:59:59.000Z"
    },
    {
@@ -24,7 +30,7 @@
     "seenAt": "2026-11-23T23:59:59.000Z"
    },
    {
-    "title": "Polska potrzebuje pilnych decyzji w sprawie magazynów i infrastruktury paliwowej",
+    "title": "Rada Energii: Polska potrzebuje pilnych decyzji w sprawie magazynów i infrastruktury paliwowej",
     "date": "2026-11-23",
     "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/polska-potrzebuje-pilnych-decyzji-w-sprawie-magazynow-i-infrastruktury-paliwowej,130614",
     "seenAt": "2026-11-23T23:59:59.000Z"
@@ -36,22 +42,16 @@
     "seenAt": "2026-11-23T23:59:59.000Z"
    },
    {
-    "title": "List na obchody stulecia Parafii Matki Boskiej Jasnogórskiej w Los Angeles",
+    "title": "Gala 100-lecia Polskich Kolei Państwowych z udziałem doradcy Alvina Gajadhura",
     "date": "2026-11-23",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-obchody-stulecia-parafii-matki-boskiej-jasnogorskiej-w-los-angeles,130435",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-doradcow/gala-100-lecia-polskich-kolei-panstwowych-z-udzialem-doradcy-alvina-gajadhura,130620",
     "seenAt": "2026-11-23T23:59:59.000Z"
    },
    {
-    "title": "Prezydent udał się z wizytą do Argentyny i Chile",
-    "date": "2026-11-22",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-udal-sie-z-wizyta-do-argentyny-i-chile,130500",
-    "seenAt": "2026-11-22T23:59:59.000Z"
-   },
-   {
-    "title": "List na obchody 80. rocznicy odbicia więźniów z więzienia w Pułtusku",
-    "date": "2026-11-22",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-obchody-80-rocznicy-odbicia-wiezniow-z-wiezienia-w-pultusku,130425",
-    "seenAt": "2026-11-22T23:59:59.000Z"
+    "title": "List z okazji stulecia PKP i Święta Kolejarza w Warszawie",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-z-okazji-stulecia-pkp-i-swieta-kolejarza-w-warszawie,130621",
+    "seenAt": "2026-11-23T23:59:59.000Z"
    }
   ]
  },
@@ -3048,6 +3048,12 @@
    "source": "https://www.gov.pl/web/cyfryzacja/wiadomosci",
    "items": [
     {
+     "title": "Europejski Portfel Tożsamości Cyfrowej. Coraz więcej firm i instytucji przygotowuje się do zmian",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/cyfryzacja/europejski-portfel-tozsamosci-cyfrowej-coraz-wiecej-firm-i-instytucji-przygotowuje-sie-do-zmian",
+     "seenAt": "2026-11-24T12:28:19.158Z"
+    },
+    {
      "title": "Zapraszamy na szkolenie on-line: dostęp telekomunikacyjny do budynków i nieruchomości",
      "date": "2026-11-24",
      "url": "https://www.gov.pl/web/cyfryzacja/zapraszamy-na-szkolenie-on-line-dostep-telekomunikacyjny-do-budynkow-i-nieruchomosci",
@@ -3070,12 +3076,6 @@
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/cyfryzacja/media-spolecznosciowe-od-15-roku-zycia-projekt-ustawy-skierowany-do-konsultacji",
      "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Narracje dezinformacyjne po naruszeniu polskiej przestrzeni powietrznej",
-     "date": "2026-11-20",
-     "url": "https://www.gov.pl/web/cyfryzacja/narracje-dezinformacyjne-po-naruszeniu-polskiej-przestrzeni-powietrznej",
-     "seenAt": "2026-11-20T23:59:59.000Z"
     }
    ]
   },
@@ -3124,6 +3124,12 @@
    "source": "https://www.gov.pl/web/energia/wiadomosci",
    "items": [
     {
+     "title": "Maksymalna cena detaliczna paliw obowiązująca 25 listopada 2026 r.",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-25-listopada-2026-r",
+     "seenAt": "2026-11-24T12:28:19.158Z"
+    },
+    {
      "title": "Zespół do spraw wydobycia węgla kamiennego i brunatnego powołany przez Ministra Energii",
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/energia/zespol-do-spraw-wydobycia-wegla-kamiennego-i-brunatnego-powolany-przez-ministra-energii",
@@ -3146,12 +3152,6 @@
      "date": "2026-11-20",
      "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-w-dniach-21-23-listopada-2026-r",
      "seenAt": "2026-11-20T23:59:59.000Z"
-    },
-    {
-     "title": "O niezależności energetycznej i bezpieczeństwie energetycznym regionu podczas drugiego dnia 7. Szczytu P-TEC",
-     "date": "2026-11-19",
-     "url": "https://www.gov.pl/web/energia/o-niezaleznosci-energetycznej-i-bezpieczenstwie-energetycznym-regionu-podczas-drugiego-dnia-7-szczytu-p-tec",
-     "seenAt": "2026-11-19T23:59:59.000Z"
     }
    ]
   },
@@ -3244,6 +3244,12 @@
      "seenAt": "2026-11-23T23:59:59.000Z"
     },
     {
+     "title": "Święto Kolejarza w 100-lecie PKP",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/infrastruktura/swieto-kolejarza-w-100-lecie-pkp",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
      "title": "Rozwój prognozowania pogody i monitorowania atmosfery - rozmowy wiceministra Koperskiego z szefem ECMWF",
      "date": "2026-11-18",
      "url": "https://www.gov.pl/web/infrastruktura/rozwoj-prognozowania-pogody-i-monitorowania-atmosfery--rozmowy-wiceministra-koperskiego-z-szefem-ecmwf",
@@ -3260,12 +3266,6 @@
      "date": "2026-11-15",
      "url": "https://www.gov.pl/web/infrastruktura/swiatowy-dzien-pamieci-ofiar-wypadkow-drogowych---dzialamy-na-rzecz-poprawy-bezpieczenstwa-na-drogach",
      "seenAt": "2026-11-15T23:59:59.000Z"
-    },
-    {
-     "title": "Obwodnica Morawicy i Woli Morawickiej oddana do ruchu",
-     "date": "2026-11-13",
-     "url": "https://www.gov.pl/web/infrastruktura/obwodnica-morawicy-i-woli-morawickiej-oddana-do-ruchu",
-     "seenAt": "2026-11-13T23:59:59.000Z"
     }
    ]
   },
@@ -3466,6 +3466,12 @@
      "seenAt": "2026-11-23T23:59:59.000Z"
     },
     {
+     "title": "Działanie 1.9 FER – opublikowaliśmy dwie listy wniosków",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/rolnictwo/dzialanie-19-fer--opublikowalismy-dwie-listy-wnioskow",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
      "title": "Skuteczniejsza promocja polskiej żywności. Pracujemy nad zmianami w funduszach promocji",
      "date": "2026-11-20",
      "url": "https://www.gov.pl/web/rolnictwo/skuteczniejsza-promocja-polskiej-zywnosci-pracujemy-nad-zmianami-w-funduszach-promocji",
@@ -3482,12 +3488,6 @@
      "date": "2026-11-20",
      "url": "https://www.gov.pl/web/rolnictwo/odszkodowania-za-szkody-wyrzadzone-przez-ptaki-coraz-blizej",
      "seenAt": "2026-11-20T23:59:59.000Z"
-    },
-    {
-     "title": "Dzięki działaniom Ministerstwa Rolnictwa i Rozwoju Wsi polski drób wraca na rynek chiński",
-     "date": "2026-11-19",
-     "url": "https://www.gov.pl/web/rolnictwo/dzieki-dzialaniom-ministerstwa-rolnictwa-i-rozwoju-wsi-polski-drob-wraca-na-rynek-chinski",
-     "seenAt": "2026-11-19T23:59:59.000Z"
     }
    ]
   },
@@ -3716,6 +3716,44 @@
      "date": "2026-11-19",
      "url": "https://www.gov.pl/web/zdrowie/zmiany-dla-pacjentow-ponad-podzialami-sejm-bez-glosu-sprzeciwu-uchwalil-nowelizacje-ustawy-refundacyjnej",
      "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "senat",
+   "name": "Marszałek i Prezydium Senatu",
+   "office": "marszalek-senatu",
+   "source": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/",
+   "items": [
+    {
+     "title": "Marszałek Senatu spotkała się z przewodniczącą Zgromadzenia Parlamentarnego Rady Europy",
+     "date": "2026-11-23",
+     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17941,marszalek-senatu-spotkala-sie-z-przewodniczaca-zgromadzenia-parlamentarnego-rady-europy.html",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Marszałek i wicemarszałkini Senatu na 10. Forum Prawa Autorskiego",
+     "date": "2026-11-20",
+     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17933,marszalek-i-wicemarszalkini-senatu-na-10-forum-prawa-autorskiego.html",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Spotkanie marszałek Senatu z młodymi Polakami z Wielkiej Brytanii",
+     "date": "2026-11-19",
+     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17930,spotkanie-marszalek-senatu-z-mlodymi-polakami-z-wielkiej-brytanii.html",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "Senacka uroczystość przekazania archiwum Henryka i Ludwiki Wujców do zasobu Archiwum Akt Nowych",
+     "date": "2026-11-19",
+     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17928,senacka-uroczystosc-przekazania-archiwum-henryka-i-ludwiki-wujcow-do-zasobu-archiwum-akt-nowych.html",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "\"Świat wartości prawników\" - debata w Senacie",
+     "date": "2026-11-18",
+     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17926,swiat-wartosci-prawnikow-debata-w-senacie.html",
+     "seenAt": "2026-11-18T23:59:59.000Z"
     }
    ]
   },
