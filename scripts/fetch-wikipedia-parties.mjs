@@ -9,10 +9,11 @@ const root = new URL('..', import.meta.url);
 const life = JSON.parse(await readFile(new URL('data/life.json', root), 'utf8'));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function getJson(url, tries = 4) {
+async function getJson(url, tries = 8) {
   for (let i = 1; ; i++) {
     try {
       const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } });
+      if (res.status === 429) { const wait = Number(res.headers.get("retry-after")) || 10 * i; await sleep(wait * 1000); throw new Error("HTTP 429"); }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.json();
     } catch (e) {
@@ -40,10 +41,10 @@ console.log(`plwiki articles: ${titleOf.size}/${qids.length}`);
 // 2) Article wikitext -> infobox "partia" parameter (parsers live in src/lib/wikitext.js, unit-tested).
 const result = {};
 const entries = [...titleOf.entries()];
-for (let i = 0; i < entries.length; i += 40) {
-  const batch = entries.slice(i, i + 40);
+for (let i = 0; i < entries.length; i += 20) {
+  const batch = entries.slice(i, i + 20);
   const titles = batch.map(([, t]) => t).join('|');
-  const r = await getJson(`https://pl.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&formatversion=2&redirects=1&titles=${encodeURIComponent(titles)}`);
+  const r = await getJson(`https://pl.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&formatversion=2&redirects=1&maxlag=5&titles=${encodeURIComponent(titles)}`);
   const redirect = new Map((r.query?.redirects ?? []).map((x) => [x.to, x.from]));
   const norm = new Map((r.query?.normalized ?? []).map((x) => [x.to, x.from]));
   for (const page of r.query?.pages ?? []) {
@@ -56,7 +57,7 @@ for (let i = 0; i < entries.length; i += 40) {
     const parties = parseParties(infoboxParam(text, 'partia'));
     if (parties.length) result[hit[0]] = { title: page.title, parties };
   }
-  await sleep(500);
+  await sleep(2000);
 }
 const dated = Object.values(result).filter((e) => e.parties.some((p) => p.from || p.to)).length;
 await writeFile(new URL('data/wiki-parties.json', root), JSON.stringify({
