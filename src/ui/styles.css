@@ -231,7 +231,7 @@ h2 { font-size: 1.1rem; }
 .side-filters .tabs, .side-filters .rank-tools { flex-direction: column; align-items: stretch; }
 .side-filters .rank-tools:last-child { margin-bottom: 0; }
 .side-filters .tab, .side-filters .filter { text-align: left; }
-.podium-badge { display: inline-block; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; white-space: nowrap; vertical-align: middle; border: 1px solid transparent; }
+.podium-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; white-space: nowrap; vertical-align: middle; border: 1px solid transparent; }
 .podium-1 { background: #f6d860; color: #4a3600; border-color: #d9b520; }
 .podium-2 { background: #dfe3ea; color: #2b313b; border-color: #b9c0cc; }
 .podium-3 { background: #e9b88a; color: #4a2a0c; border-color: #c98f5c; }
@@ -362,3 +362,4 @@ h2 { font-size: 1.1rem; }
 /* Profile: Kontakt */
 .contact { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
 .contact dd a { overflow-wrap: anywhere; }
+.hero-icon { flex: none; width: 22px; height: 22px; margin: -4px 0 -4px -4px; }

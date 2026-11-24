@@ -567,10 +567,20 @@ const partLabel = (ds, id) => ds.parts?.find((p) => p.id === id)?.label ?? id;
 export const PODIUM_BADGES = { 1: 'Super-mąż', 2: 'Orzeł III RP', 3: 'Bocian III RP' };
 
 /** Badge for places 1-3 of a ranking (tied places share the badge), empty otherwise. */
+// Our own drawing of a flying caped hero (no logo or "S" shield borrowed from any comic).
+export const HERO_ICON = '<svg class="hero-icon" data-testid="hero-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">'
+  + '<path d="M7.6 7.4h8.8l4.6 15H3z" fill="#d9432b"/>'
+  + '<path d="M8.6 7.6c-1.6.6-2.6 2.2-3 4.2l3.4 1.8.6-1.6-1.6-.8.8-1.8z M15.4 7.6c1.6.6 2.6 2.2 3 4.2l-3.4 1.8-.6-1.6 1.6-.8-.8-1.8z" fill="#1f4e9c"/>'
+  + '<path d="M8.4 7.4h7.2l-.9 6.8H9.3z" fill="#1f4e9c"/>'
+  + '<rect x="9.2" y="13.2" width="5.6" height="1.4" fill="#f2c200"/>'
+  + '<path d="M9.3 14.6h2.4v6.2H9.3zM12.3 14.6h2.4v6.2h-2.4z" fill="#1f4e9c"/>'
+  + '<path d="M9 20.4h2.9v1.8H8.6zM12.1 20.4H15l.4 1.8h-3.3z" fill="#b3261e"/>'
+  + '<circle cx="12" cy="4.4" r="2.7" fill="#f0c191"/><path d="M9.3 4.2c0-2 1.2-3.1 2.7-3.1s2.7 1 2.7 2.6c-1-.8-2.5-1-4-.4z" fill="#2b2b2b"/></svg>';
+
 export function podiumBadge(rank) {
   const label = PODIUM_BADGES[rank];
   if (!label) return '';
-  return `<span class="podium-badge podium-${rank}" data-testid="podium-badge" title="${rank}. miejsce w rankingu Frequent Flyer">${esc(label)}</span>`;
+  return `<span class="podium-badge podium-${rank}" data-testid="podium-badge" title="${rank}. miejsce w rankingu Frequent Flyer">${rank === 1 ? HERO_ICON : ''}${esc(label)}</span>`;
 }
 
 /* ---------- Misc ---------- */

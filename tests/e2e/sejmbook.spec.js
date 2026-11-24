@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Kontakt do posła');
+  await expect(post).toContainText('Ikonka Super-męża');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -128,7 +128,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Kontakt do posła');
+  await expect(page.locator('.news-post').first()).toContainText('Ikonka Super-męża');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -136,6 +136,7 @@ test('Frequent Flyer: podium badges on the top three', async ({ page }) => {
   await page.goto(`${PAGE}#frequent-flyer`);
   const rows = page.locator('[data-testid="ranking"] tbody tr');
   await expect(rows.nth(0).getByTestId('podium-badge')).toHaveText('Super-mąż');
+  await expect(rows.nth(0).getByTestId('hero-icon')).toBeVisible();
   await expect(rows.nth(1).getByTestId('podium-badge')).toHaveText('Orzeł III RP');
   await expect(rows.nth(2).getByTestId('podium-badge')).toHaveText('Bocian III RP');
   await expect(rows.nth(3).getByTestId('podium-badge')).toHaveCount(0);

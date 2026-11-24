@@ -145,6 +145,10 @@ describe('podium badges', () => {
     expect(podiumBadge(2)).toContain('Orzeł III RP');
     expect(podiumBadge(3)).toContain('Bocian III RP');
     expect(podiumBadge(1)).toContain('podium-1');
+    // Super-mąż gets our own caped-hero drawing (no comic logo); the other places get none.
+    expect(podiumBadge(1)).toContain('data-testid="hero-icon"');
+    expect(podiumBadge(1)).not.toMatch(/<text|>S</);
+    expect(podiumBadge(2)).not.toContain('hero-icon');
     expect(podiumBadge(4)).toBe('');
     expect(podiumBadge(undefined)).toBe('');
     expect(Object.keys(PODIUM_BADGES)).toEqual(['1', '2', '3']);

@@ -150,7 +150,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Kontakt do posła');
+    expect(first.textContent).toContain('Ikonka Super-męża');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -221,6 +221,8 @@ describe('Frequent Flyer podium', () => {
     const rows = $$('[data-testid="ranking"] tbody tr');
     expect(rows.slice(0, 3).map(badgeOf)).toEqual(['Super-mąż', 'Orzeł III RP', 'Bocian III RP']);
     expect(rows.slice(3).every((tr) => badgeOf(tr) === null)).toBe(true);
+    expect(rows[0].querySelector('[data-testid="podium-badge"] [data-testid="hero-icon"]')).not.toBeNull();
+    expect($$('[data-testid="ranking"] [data-testid="hero-icon"]').length).toBe(rows.filter((tr) => badgeOf(tr) === 'Super-mąż').length);
   });
 });
 

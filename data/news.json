@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-bohater",
+      "date": "2026-11-24",
+      "title": "Ikonka Super-męża",
+      "body": "Odznaka Super-mąż w Frequent Flyer ma teraz własną ikonkę latającego bohatera w pelerynie.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-24-kontakt",
       "date": "2026-11-24",
       "title": "Kontakt do posła",
