@@ -1,0 +1,26 @@
+name: gov-photos
+# Downloads portraits of presidents, prime ministers, ministers and top officials (Wikipedia lead images) into media/gov/.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/fetch-gov-photos.mjs', '.github/workflows/gov-photos.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-gov-photos.mjs
+      - name: Commit photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media/gov
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update portraits of state officials from Wikipedia"
+          git pull --rebase
+          git push
