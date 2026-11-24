@@ -27,7 +27,7 @@ test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', asyn
   const rows = page.locator('[data-testid="ranking"] tbody tr');
   expect(await rows.count()).toBeGreaterThan(20);
   await expect(rows.first()).toContainText('Grzegorz Napieralski');
-  await expect(rows.first().getByTestId('parts')).toContainText('IX kadencja');
+  await expect(rows.first().getByTestId('parts')).toHaveCount(0);
   await expect(page.getByRole('tab')).toHaveCount(0);
   await expect(page.locator('[data-action="sort"]')).toHaveCount(0);
   await expect(page.locator('.coverage')).toContainText('Jeden zbiór');

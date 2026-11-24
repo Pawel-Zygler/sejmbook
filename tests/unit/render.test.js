@@ -224,9 +224,11 @@ describe('all articles list', () => {
     expect(renderAllArticles({})).toBe('');
     expect(renderAllArticles()).toBe('');
   });
-  it('the merged ranking names the periods each total comes from', () => {
+  it('ranking rows have no captions under the name (route, periods)', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
-    expect(html).toMatch(/Loty z: IX kadencja: XI 2019 – VIII 2023 \+ Cały 2025 \+ 2026 \(do 1 listopada\)/);
+    expect(html).not.toContain('Loty z:');
+    expect(html).not.toContain('km na lot');
+    expect(html).not.toContain('data-testid="parts"');
   });
 });
 

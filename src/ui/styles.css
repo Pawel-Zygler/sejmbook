@@ -323,3 +323,6 @@ h2 { font-size: 1.1rem; }
 .chip.former-party.logo-only .sickle { margin-right: 0; }
 .chip.former-party .former-name { text-decoration: line-through; text-decoration-thickness: 1px; }
 .mp-card-meta .chip.former-party { flex: none; margin-left: -1px; }
+.mp-card { position: relative; }
+.card-corner { position: absolute; top: 8px; left: 8px; }
+.card-corner .chip.former-party { margin: 0; background: var(--surface); }

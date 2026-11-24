@@ -213,8 +213,8 @@ export function mpCardMeta(ctx, mp) {
   const logo = clubLogo(ctx, mp.club);
   // With a logo the chip shows only the logo, so long club names do not push the row apart.
   const club = logo
-    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}"></span>${formerPartyChip(ctx, mp, true)}`
-    : clubChip(ctx, mp.club, mp);
+    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}"></span>`
+    : clubChip(ctx, mp.club);
   const parts = [
     club,
     `<span class="mp-card-district" title="okręg ${mp.districtNum} · ${esc(mp.districtName)}">okr. ${mp.districtNum}</span>`,
@@ -225,7 +225,9 @@ export function mpCardMeta(ctx, mp) {
 
 function mpCard(ctx, mp) {
   const off = inactiveLabel(mp);
-  return `<li class="mp-card${off ? ' inactive' : ''}">${mpLink(mp, `${avatar(ctx, mp, 'lg')}<span class="mp-card-name">${esc(mp.name)}</span>`, 'mp-card-link')}
+  // A former communist party (PZPR) sits in the card's top-left corner (Pawel, 2026-11-24).
+  const corner = formerPartyChip(ctx, mp, true);
+  return `<li class="mp-card${off ? ' inactive' : ''}">${corner ? `<span class="card-corner">${corner}</span>` : ''}${mpLink(mp, `${avatar(ctx, mp, 'lg')}<span class="mp-card-name">${esc(mp.name)}</span>`, 'mp-card-link')}
     ${mpCardMeta(ctx, mp)}
     ${off ? `<span class="badge-off">${esc(off)}</span>` : ''}</li>`;
 }
@@ -392,9 +394,7 @@ export function renderFlyer(ctx, state) {
                 <td class="pos">${r.rank}</td>
                 <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club, r.mp)}
                   ${podiumBadge(r.rank)}
-                  ${attendanceBadge(ctx, r.mp.id, 16)}
-                  <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small>
-                  ${r.parts ? `<small class="muted parts" data-testid="parts">Loty z: ${r.parts.map((id) => esc(partLabel(ds, id))).join(' + ')}</small>` : ''}</td>
+                  ${attendanceBadge(ctx, r.mp.id, 16)}</td>
                 <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>
                 <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>

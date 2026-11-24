@@ -346,7 +346,8 @@ describe('Communist past mark', () => {
     nav('#posel-400');
     expect($('.profile-name [data-testid="red-past"]')).toBeNull();
     nav('#poslowie');
-    const marked = $$('.mp-card [data-testid="red-past"]').length;
+    const marked = $$('.mp-card > .card-corner [data-testid="red-past"]').length;
+    expect($$('.mp-card-meta [data-testid="red-past"]')).toHaveLength(0);
     const expected = app.ctx.mps.filter((m) => m.active && lifeData.mps[m.id]?.parties.some((p) => /Zjednoczona Partia Robotnicza/.test(p.label))).length;
     expect(marked).toBe(expected);
     expect(marked).toBeGreaterThan(0);
