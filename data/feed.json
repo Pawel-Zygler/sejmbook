@@ -1,0 +1,227 @@
+{
+ "fetchedAt": "2026-11-24T09:08:27.649Z",
+ "president": {
+  "who": "Karol Nawrocki",
+  "role": "Prezydent RP",
+  "source": "https://www.prezydent.pl/aktualnosci",
+  "items": [
+   {
+    "title": "Wizyty zagraniczne",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne",
+    "date": null
+   },
+   {
+    "title": "Wypowiedzi Prezydenta RP",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp",
+    "date": null
+   },
+   {
+    "title": "Biuro Bezpieczeństwa Narodowego",
+    "url": "https://www.prezydent.pl/aktualnosci/biuro-bezpieczenstwa-narodowego",
+    "date": null
+   },
+   {
+    "title": "Biuro Polityki Międzynarodowej",
+    "url": "https://www.prezydent.pl/aktualnosci/biuro-polityki-miedzynarodowej",
+    "date": null
+   },
+   {
+    "title": "Rady przy Prezydencie RP",
+    "url": "https://www.prezydent.pl/aktualnosci/rady-przy-prezydencie-rp",
+    "date": null
+   },
+   {
+    "title": "Listy uwierzytelniające",
+    "url": "https://www.prezydent.pl/aktualnosci/listy-uwierzytelniajace",
+    "date": null
+   },
+   {
+    "title": "Protektorat nad Organizacjami Harcerskimi",
+    "url": "https://www.prezydent.pl/aktualnosci/protektorat-nad-organizacjami-harcerskimi",
+    "date": null
+   },
+   {
+    "title": "Kierownictwo BBN",
+    "url": "https://www.prezydent.pl/aktualnosci/biuro-bezpieczenstwa-narodowego/kierownictwo-bbn",
+    "date": null
+   }
+  ]
+ },
+ "pm": {
+  "who": "Donald Tusk",
+  "role": "Prezes Rady Ministrów",
+  "source": "https://www.gov.pl/web/premier/wydarzenia",
+  "items": [
+   {
+    "title": "Kierownictwo KPRM",
+    "url": "https://www.gov.pl/web/premier/kierownictwo-kprm5",
+    "date": null
+   },
+   {
+    "title": "Zadania członków Kierownictwa KPRM",
+    "url": "https://www.gov.pl/web/premier/zadania-czlonkow-kierownictwa-kprm2",
+    "date": null
+   },
+   {
+    "title": "Gabinet Polityczny",
+    "url": "https://www.gov.pl/web/premier/gabinet-polityczny",
+    "date": null
+   },
+   {
+    "title": "Lista doradców i asystentów politycznych",
+    "url": "https://www.gov.pl/web/premier/lista-doradcow-i-asystentow-politycznych2",
+    "date": null
+   },
+   {
+    "title": "Organizacja KPRM",
+    "url": "https://www.gov.pl/web/premier/organizacja-kprm",
+    "date": null
+   },
+   {
+    "title": "Sekretariaty, Departamenty, Biura",
+    "url": "https://www.gov.pl/web/premier/sekretariaty-departamenty-biura2",
+    "date": null
+   },
+   {
+    "title": "Przedmiot działalności KPRM",
+    "url": "https://www.gov.pl/web/premier/przedmiot-dzialalnosci",
+    "date": null
+   },
+   {
+    "title": "Majątek i budżet KPRM - 2025 r",
+    "url": "https://www.gov.pl/web/premier/majatek-i-budzet-kprm---2025-r",
+    "date": null
+   }
+  ]
+ },
+ "pmSocial": {
+  "who": "Donald Tusk",
+  "network": "Bluesky",
+  "handle": "donald-tusk.bsky.social",
+  "profile": "https://bsky.app/profile/donald-tusk.bsky.social",
+  "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2wrsehnu74dmbuwa5t43i3ts/bafkreigzlahkwxksgai57rylfnioac5rjrlfv4qaqa6wvnz5ahbn6s3gpq",
+  "items": [
+   {
+    "text": "Zwróciłem się do Marszałka Włodzimierza Czarzastego z wnioskiem o utajnienie pierwszego piątkowego punktu posiedzenia Sejmu, podczas którego przedstawię pilną informację dotyczącą bezpieczeństwa państwa.",
+    "date": "2025-12-04",
+    "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m75w2vof7c25",
+    "likes": 404,
+    "reposts": 72
+   },
+   {
+    "text": "Rekordowy wzrost produkcji przemysłowej we wrześniu: +7,4%! To najwyższy poziom w historii Polski. Jeszcze nigdy polski przemysł tyle nie produkował. Robimy, nie gadamy.",
+    "date": "2025-10-20",
+    "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m3mgd7eyxk23",
+    "likes": 477,
+    "reposts": 79
+   },
+   {
+    "text": "None of us should put pressure on Zelenskyy when it comes to territorial concessions. We should all put pressure on Russia to stop its aggression. Appeasement never was a road to a just and lasting peace.",
+    "date": "2025-10-19",
+    "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m3kvcmjlr222",
+    "likes": 1976,
+    "reposts": 492
+   },
+   {
+    "text": "After President Zelenskyy’s talks yesterday in the White House and with European leaders, one thing is absolutely clear: Europe’s solidarity with Ukraine against Russia’s aggression is today more important than ever before.",
+    "date": "2025-10-18",
+    "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m3hnb3ytxk2a",
+    "likes": 937,
+    "reposts": 182
+   },
+   {
+    "text": "Po antymigracyjnym marszu Kaczyńskiego czas na kolejne pisowskie protesty: na przykład przeciw drożyźnie, przeciw korupcji, w obronie Konstytucji i praw kobiet. Pośmiejemy się razem.",
+    "date": "2025-10-12",
+    "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m2yibfupz22e",
+    "likes": 486,
+    "reposts": 91
+   },
+   {
+    "text": "Fiasko “wielkiego marszu” Kaczyńskiego. Lepiej ci szło ściąganie migrantów niż manifestantów, prezesie.",
+    "date": "2025-10-11",
+    "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m2wflwcj3s25",
+    "likes": 503,
+    "reposts": 96
+   }
+  ]
+ },
+ "sejm": {
+  "date": "2026-11-19",
+  "proceeding": 69,
+  "source": "https://api.sejm.gov.pl/sejm/term10/votings/69",
+  "items": [
+   {
+    "title": "Pkt. 43 Zmiany w składach osobowych komisji sejmowych (druk nr 3394)",
+    "topic": "głosowanie nad przyjęciem wniosku z druku 3394.",
+    "yes": 277,
+    "no": 134,
+    "abstain": 4,
+    "passed": true,
+    "number": 153
+   },
+   {
+    "title": "Pkt. 39 Wybór nowego składu osobowego Komisji do Spraw Unii Europejskiej (druk nr 3386)",
+    "topic": "głosowanie nad przyjęciem wniosku z druku 3386.",
+    "yes": 417,
+    "no": 5,
+    "abstain": 1,
+    "passed": true,
+    "number": 152
+   },
+   {
+    "title": "Pkt. 38 Sprawozdanie Komisji o uchwale Senatu w sprawie ustawy o zmianie ustawy o ewidencji ludności (druki nr 3347 i 3379)",
+    "topic": "poprawka 1",
+    "yes": 19,
+    "no": 402,
+    "abstain": 0,
+    "passed": false,
+    "number": 151
+   },
+   {
+    "title": "Pkt. 37 Sprawozdanie Komisji o uchwale Senatu w sprawie ustawy o usprawnieniu procesu inwestycyjnego w zakresie kluczowych inwestycji infrastrukturalnych (druki nr 3346 i 3349)",
+    "topic": "poprawka 6",
+    "yes": 17,
+    "no": 398,
+    "abstain": 7,
+    "passed": false,
+    "number": 150
+   },
+   {
+    "title": "Pkt. 37 Sprawozdanie Komisji o uchwale Senatu w sprawie ustawy o usprawnieniu procesu inwestycyjnego w zakresie kluczowych inwestycji infrastrukturalnych (druki nr 3346 i 3349)",
+    "topic": "poprawka 5",
+    "yes": 0,
+    "no": 290,
+    "abstain": 136,
+    "passed": false,
+    "number": 149
+   },
+   {
+    "title": "Pkt. 37 Sprawozdanie Komisji o uchwale Senatu w sprawie ustawy o usprawnieniu procesu inwestycyjnego w zakresie kluczowych inwestycji infrastrukturalnych (druki nr 3346 i 3349)",
+    "topic": "poprawki nr 3-4",
+    "yes": 0,
+    "no": 291,
+    "abstain": 141,
+    "passed": false,
+    "number": 148
+   },
+   {
+    "title": "Pkt. 37 Sprawozdanie Komisji o uchwale Senatu w sprawie ustawy o usprawnieniu procesu inwestycyjnego w zakresie kluczowych inwestycji infrastrukturalnych (druki nr 3346 i 3349)",
+    "topic": "poprawka 2",
+    "yes": 135,
+    "no": 284,
+    "abstain": 0,
+    "passed": false,
+    "number": 147
+   },
+   {
+    "title": "Pkt. 37 Sprawozdanie Komisji o uchwale Senatu w sprawie ustawy o usprawnieniu procesu inwestycyjnego w zakresie kluczowych inwestycji infrastrukturalnych (druki nr 3346 i 3349)",
+    "topic": "poprawka 1",
+    "yes": 0,
+    "no": 396,
+    "abstain": 20,
+    "passed": false,
+    "number": 146
+   }
+  ]
+ }
+}
