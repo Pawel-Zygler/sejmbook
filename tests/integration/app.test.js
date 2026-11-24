@@ -9,6 +9,7 @@ import newsData from '../../data/news.json';
 import attendanceData from '../../data/attendance.json';
 import careerData from '../../data/career.json';
 import lifeData from '../../data/life.json';
+import wikiPartiesData from '../../data/wiki-parties.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -23,7 +24,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData });
 });
 afterEach(() => app.destroy());
 
@@ -147,7 +148,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('byłych członkach PZPR');
+    expect(first.textContent).toContain('Lata w partiach z Wikipedii');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -351,5 +352,16 @@ describe('Communist past mark', () => {
     const expected = app.ctx.mps.filter((m) => m.active && lifeData.mps[m.id]?.parties.some((p) => /Zjednoczona Partia Robotnicza/.test(p.label))).length;
     expect(marked).toBe(expected);
     expect(marked).toBeGreaterThan(0);
+  });
+});
+
+describe('Party years from Wikipedia', () => {
+  it('Tadeusz Tomaszewski: PZPR 1978–1990 from the infobox fills the years Wikidata lacks', () => {
+    nav('#posel-389');
+    const seg = [...document.querySelectorAll('[data-lane="parties"] .life-seg')].find((s) => s.textContent.includes('PZPR'));
+    expect(seg.classList.contains('uncertain')).toBe(false);
+    expect(seg.getAttribute('title')).toContain('1978–1990');
+    expect($('.profile-name [data-testid="red-past"]').getAttribute('title')).toContain('1978–1990');
+    expect($('[data-testid="life-first"]').textContent).toContain('1978');
   });
 });

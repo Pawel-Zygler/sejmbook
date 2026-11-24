@@ -149,6 +149,12 @@ function partyRoute(steps) {
   return `<ol class="party-route">${steps.map((s) => `<li><span class="route-chip" style="--club:${esc(s.color)}">${esc(s.label)}</span> <small class="muted">${termRanges(s.terms)}</small></li>`).join('')}</ol>`;
 }
 
+/** On phones the side menu is hidden; this row links the rankings to each other. */
+export function rankingSwitch(current) {
+  const items = [['#frequent-flyer', 'flyer', 'Frequent Flyer'], ['#frekwencja', 'attendance', 'Frekwencja'], ['#partie', 'parties', 'Najwięcej partii']];
+  return `<nav class="rank-switch" aria-label="Rankingi" data-testid="rank-switch">${items.map(([href, id, label]) => `<a href="${href}"${id === current ? ' aria-current="page" class="on"' : ''}>${label}</a>`).join('')}</nav>`;
+}
+
 /** Ranking "Najwięcej partii": current MPs by how many parties they sat in over their Sejm career. */
 export function renderParties(ctx) {
   const active = ctx.mps.filter((m) => m.active);
@@ -168,6 +174,7 @@ export function renderParties(ctx) {
         </li>`).join('');
   return `
   <section data-view="parties">
+    ${rankingSwitch('parties')}
     <div class="panel mps-dash" data-testid="parties">
       ${head}
       <div class="hop-leader" data-testid="hop-leader">
@@ -293,7 +300,7 @@ export function renderCareerSpectrum(ctx, mp) {
       <p class="muted spectrum-sub">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')} w Sejmie (${termRanges(sp.terms)}), razem ok. ${fmtYears(sp.totalYears)}</p>
       <div class="spectrum-bar" role="img" aria-label="${esc(sp.parts.map((p) => `${p.label} ${pct(p.share)}%`).join(', '))}">${bar}</div>
       <ul class="spectrum-legend">${legend}</ul>
-      <p class="src">Partie i opozycja w PRL: <a href="https://www.wikidata.org/wiki/${esc(ctx.life?.mps?.[mp.id]?.qid ?? '')}" target="_blank" rel="noopener">Wikidata</a> (członkostwo bez dat w PZPR i ZSL zakreskowane, inne wpisy bez dat wymienione pod osią). Kluby: API Sejmu, ostatni klub w każdej kadencji, ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
+      <p class="src">Partie i opozycja w PRL: <a href="https://www.wikidata.org/wiki/${esc(ctx.life?.mps?.[mp.id]?.qid ?? '')}" target="_blank" rel="noopener">Wikidata</a> i infoboks Wikipedii (członkostwo bez dat w PZPR i ZSL zakreskowane, inne wpisy bez dat wymienione pod osią). Kluby: API Sejmu, ostatni klub w każdej kadencji, ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
     </section>`;
 }
 
@@ -370,6 +377,7 @@ export function renderFlyer(ctx, state) {
 
   return `
   <section data-view="flyer" data-dataset="${esc(ds.id)}">
+    ${rankingSwitch('flyer')}
     <div class="panel flyer-hero">
       <p class="eyebrow">Ranking</p>
       <h1>Frequent Flyer</h1>

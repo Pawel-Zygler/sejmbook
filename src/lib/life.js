@@ -115,3 +115,26 @@ export function communistPast(life, mpId) {
     to: hits.map((p) => p.to).filter(Boolean).sort().pop() ?? null,
   };
 }
+
+/**
+ * Adds party years from Polish Wikipedia infoboxes (data/wiki-parties.json) to the Wikidata memberships:
+ * a Wikidata entry without years gets them from the same party on Wikipedia; a dated Wikipedia party
+ * missing from Wikidata is added. Entries filled this way carry src: 'wikipedia'.
+ */
+export function mergeWikiParties(life, wiki) {
+  if (!life?.mps || !wiki?.mps) return life ?? null;
+  const same = (a, b) => a.toLowerCase() === b.toLowerCase() || (partyStyle(a).id === partyStyle(b).id && !partyStyle(a).id.startsWith('other:'));
+  const mps = {};
+  for (const [id, e] of Object.entries(life.mps)) {
+    const parties = e.parties.map((p) => ({ ...p }));
+    for (const w of wiki.mps[id]?.parties ?? []) {
+      if (!w.from && !w.to) continue;
+      const p = parties.find((x) => !x.from && same(x.label, w.label));
+      if (p) { p.from = w.from; p.to = p.to ?? w.to; p.src = 'wikipedia'; continue; }
+      const dated = parties.some((x) => x.from && same(x.label, w.label) && x.from === w.from);
+      if (!dated && !parties.some((x) => x.from && same(x.label, w.label))) parties.push({ label: w.label, from: w.from, to: w.to, src: 'wikipedia' });
+    }
+    mps[id] = { ...e, parties };
+  }
+  return { ...life, mps };
+}

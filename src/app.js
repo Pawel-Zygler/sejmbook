@@ -1,9 +1,10 @@
 import { indexById, clubById, filterMps } from './lib/mps.js';
 import { parseHash } from './lib/router.js';
-import { renderHome, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip } from './ui/render.js';
+import { mergeWikiParties } from './lib/life.js';
+import { renderHome, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData }) {
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -14,7 +15,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     news: newsData?.posts ?? [],
     attendance: attendanceData ?? null,
     career: careerData ?? null,
-    life: lifeData ?? null,
+    life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
     media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {} },
   };
@@ -48,7 +49,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
     else if (r.name === 'parties') html = renderParties(ctx);
-    else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip });
+    else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
     aside.innerHTML = renderAside(ctx);

@@ -80,7 +80,7 @@ export const romanTerm = (n) => ROMAN[n] ?? String(n);
 export function renderAttendance(ctx, state, helpers) {
   const att = ctx.attendance;
   if (!att) return `<section data-view="attendance" class="panel"><h1>Frekwencja</h1><p>Dane o frekwencji nie są jeszcze dostępne.</p></section>`;
-  const { avatar, clubChip } = helpers;
+  const { avatar, clubChip, rankingSwitch = () => '' } = helpers;
   const rows = attendanceRanking(ctx.mps, att, { order: state.order, club: state.club });
   const allRows = state.club ? attendanceRanking(ctx.mps, att, {}) : rows;
   const avg = sejmAverage(allRows);
@@ -89,6 +89,7 @@ export function renderAttendance(ctx, state, helpers) {
   const multi = hasEarlierTerms(att);
 
   return `<section data-view="attendance">
+    ${rankingSwitch('attendance')}
     <div class="panel flyer-hero att-hero">
       <p class="eyebrow">Ranking</p>
       <h1>Frekwencja</h1>

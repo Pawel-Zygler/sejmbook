@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-wikipedia",
+      "date": "2026-11-24",
+      "title": "Lata w partiach z Wikipedii",
+      "body": "Oś życia posła uzupełniamy latami członkostwa w partiach z Wikipedii, także z czasów PRL.",
+      "link": {
+        "href": "#posel-389",
+        "label": "Zobacz przykład"
+      }
+    },
+    {
       "id": "2026-11-24-pzpr",
       "date": "2026-11-24",
       "title": "Znaczek ☭ przy byłych członkach PZPR",

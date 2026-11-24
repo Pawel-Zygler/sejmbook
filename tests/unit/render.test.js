@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, formerPartyChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -345,5 +345,14 @@ describe('formerPartyChip', () => {
   it('says "do 1990" when only the end year is known', () => {
     const l2 = { mps: { 70: { parties: [{ label: 'Polska Zjednoczona Partia Robotnicza', from: null, to: 1990 }] } } };
     expect(formerPartyChip({ ...ctx, life: l2 }, mp)).toContain('Były członek PZPR do 1990');
+  });
+});
+
+describe('rankingSwitch', () => {
+  it('links all three rankings and marks the current one', () => {
+    const html = rankingSwitch('parties');
+    expect(html).toContain('href="#frequent-flyer"');
+    expect(html).toContain('href="#frekwencja"');
+    expect(html).toContain('<a href="#partie" aria-current="page" class="on">Najwięcej partii</a>');
   });
 });

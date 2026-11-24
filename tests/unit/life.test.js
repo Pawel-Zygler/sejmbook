@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { lifeTimeline, partyStyle, isOpposition, pos, III_RP_START, communistPast } from '../../src/lib/life.js';
+import { lifeTimeline, partyStyle, isOpposition, pos, III_RP_START, communistPast, mergeWikiParties } from '../../src/lib/life.js';
 
 const career = {
   terms: [
@@ -130,5 +130,29 @@ describe('communistPast', () => {
     expect(communistPast(lifeX, 2)).toBeNull();
     expect(communistPast(lifeX, 3)).toEqual({ parties: ['PPR', 'PZPR'], from: null, to: 1990 });
     expect(communistPast(null, 1)).toBeNull();
+  });
+});
+
+describe('mergeWikiParties', () => {
+  const life = { mps: { 1: { qid: 'Q1', parties: [{ label: 'Polska Zjednoczona Partia Robotnicza', from: null, to: null }, { label: 'Platforma Obywatelska', from: 2001, to: null }], orgs: [] }, 2: { parties: [], orgs: [] } } };
+  const wiki = { mps: {
+    1: { parties: [{ label: 'Polska Zjednoczona Partia Robotnicza', from: 1978, to: 1990 }, { label: 'Platforma Obywatelska', from: 2001, to: null }, { label: 'Unia Wolności', from: 1994, to: 2001 }, { label: 'Bez Lat', from: null, to: null }] },
+    3: { parties: [{ label: 'X', from: 2000, to: 2001 }] },
+  } };
+  it('fills missing years and adds dated parties Wikidata lacks, without duplicates', () => {
+    const m = mergeWikiParties(life, wiki);
+    expect(m.mps[1].parties).toEqual([
+      { label: 'Polska Zjednoczona Partia Robotnicza', from: 1978, to: 1990, src: 'wikipedia' },
+      { label: 'Platforma Obywatelska', from: 2001, to: null },
+      { label: 'Unia Wolności', from: 1994, to: 2001, src: 'wikipedia' },
+    ]);
+    expect(m.mps[2].parties).toEqual([]);
+    expect(m.mps[3]).toBeUndefined();
+    expect(life.mps[1].parties[0].from).toBeNull();
+    expect(communistPast(m, 1)).toEqual({ parties: ['PZPR'], from: 1978, to: 1990 });
+  });
+  it('keeps life as it is without Wikipedia data', () => {
+    expect(mergeWikiParties(life, null)).toBe(life);
+    expect(mergeWikiParties(null, wiki)).toBeNull();
   });
 });
