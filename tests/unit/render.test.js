@@ -292,8 +292,11 @@ describe('renderCareerSpectrum', () => {
     expect(html).toContain('2 kadencje w Sejmie (IX–X)');
     expect(html).toContain('API Sejmu');
   });
-  it('renders nothing without data', () => {
-    expect(renderCareerSpectrum({ ...ctx, career: null }, ctx.mpsById.get(70))).toBe('');
+  it('without Sejm club data shows only the life line; without a birth year, nothing', () => {
+    const html = renderCareerSpectrum({ ...ctx, career: null, life: null }, ctx.mpsById.get(70));
+    expect(html).toContain('data-testid="life-line"');
+    expect(html).not.toContain('Kluby w Sejmie III RP');
+    expect(renderCareerSpectrum({ ...ctx, career: null, life: null }, { ...ctx.mpsById.get(70), birthYear: undefined })).toBe('');
   });
 });
 

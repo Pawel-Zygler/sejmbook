@@ -1,5 +1,6 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } from '../lib/mps.js';
 import { careerSpectrum, termRanges, partyHoppers } from '../lib/career.js';
+import { lifeTimeline, pos } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
@@ -222,9 +223,44 @@ export function plural(n, one, few, many) {
 const fmtYears = (y) => `${y.toFixed(1).replace('.', ',').replace(/,0$/, '')} ${y >= 1.5 && y < 4.5 ? 'lata' : 'lat'}`;
 
 /** "Spektrum partyjne": a bar showing how the MP's years in the Sejm split between clubs. */
+/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms. */
+export function renderLifeLine(ctx, mp) {
+  const now = Number(ctx.fetchedAt.slice(0, 4));
+  const tl = lifeTimeline(ctx, mp, now);
+  if (!tl) return '';
+  const left = (y) => pos(tl, y).toFixed(2);
+  const width = (a, b) => Math.max(pos(tl, b) - pos(tl, a), 0.8).toFixed(2);
+  const lane = (l) => `
+        <div class="life-lane" data-lane="${l.id}">
+          <span class="life-lane-label">${esc(l.label)}</span>
+          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
+        </div>`;
+  const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
+  const first = tl.prlUnknown.length
+    ? `Pierwsza aktywność polityczna: <b>jeszcze w PRL</b> (${tl.prlUnknown.map(esc).join(', ')}; lata nieznane).`
+    : tl.firstYear != null
+    ? `Pierwsza aktywność polityczna: <b>${tl.firstYear}</b> (${esc(tl.firstWhat)}), w wieku ${tl.firstYear - tl.birth} lat${tl.firstInPrl ? ', jeszcze w PRL' : ''}.`
+    : '';
+  return `
+      <div class="life" data-testid="life-line">
+        <div class="life-eras" aria-hidden="true">
+          ${tl.bornInPrl ? `<span class="life-era prl" style="left:0;width:${prlW}%">PRL</span>` : ''}
+          <span class="life-era rp" style="left:${tl.bornInPrl ? prlW : 0}%;width:${(100 - Number(prlW)).toFixed(2)}%">III RP</span>
+        </div>
+        <div class="life-lanes">${tl.lanes.map(lane).join('')}
+          ${tl.bornInPrl ? `<div class="life-overlay"><span class="life-1989" style="left:${left(tl.prlEnd)}%" title="4 czerwca 1989: początek III RP"></span></div>` : ''}
+        </div>
+        <div class="life-axis"><span>ur. ${tl.birth}</span>${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
+      </div>
+      ${first ? `<p class="life-first" data-testid="life-first">${first}</p>` : ''}
+      ${tl.undated.length ? `<p class="muted life-undated">Bez dat w Wikidata: ${tl.undated.map(esc).join(', ')}.</p>` : ''}`;
+}
+
 export function renderCareerSpectrum(ctx, mp) {
   const sp = careerSpectrum(ctx.career, mp.id, ctx.fetchedAt);
-  if (!sp) return '';
+  const lifeLine = renderLifeLine(ctx, mp);
+  if (!sp && !lifeLine) return '';
+  if (!sp) return `<section class="panel spectrum" data-testid="spectrum"><h2>Spektrum partyjne</h2>${lifeLine}</section>`;
   const pct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
   const bar = sp.parts.map((p) => `<span class="spectrum-seg" style="--seg:${esc(p.color)};flex-grow:${p.years.toFixed(3)}" title="${esc(p.label)}: ${pct(p.share)}%"></span>`).join('');
   const legend = sp.parts.map((p) => `<li data-family="${esc(p.id)}"><span class="spectrum-swatch" style="--seg:${esc(p.color)}"></span><b>${esc(p.label)}</b> <span class="muted">${pct(p.share)}% · kadencja ${termRanges(p.terms)}</span></li>`).join('');
@@ -232,10 +268,12 @@ export function renderCareerSpectrum(ctx, mp) {
   return `
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
+      ${lifeLine}
+      <h3 class="spectrum-h3">Kluby w Sejmie III RP</h3>
       <p class="muted spectrum-sub">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')} w Sejmie (${termRanges(sp.terms)}), razem ok. ${fmtYears(sp.totalYears)}</p>
       <div class="spectrum-bar" role="img" aria-label="${esc(sp.parts.map((p) => `${p.label} ${pct(p.share)}%`).join(', '))}">${bar}</div>
       <ul class="spectrum-legend">${legend}</ul>
-      <p class="src">Klub w każdej kadencji według API Sejmu (ostatni klub w danej kadencji), ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
+      <p class="src">Partie i opozycja w PRL: <a href="https://www.wikidata.org/wiki/${esc(ctx.life?.mps?.[mp.id]?.qid ?? '')}" target="_blank" rel="noopener">Wikidata</a> (członkostwo bez dat w PZPR i ZSL zakreskowane, inne wpisy bez dat wymienione pod osią). Kluby: API Sejmu, ostatni klub w każdej kadencji, ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
     </section>`;
 }
 

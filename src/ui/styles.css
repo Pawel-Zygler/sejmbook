@@ -295,3 +295,25 @@ h2 { font-size: 1.1rem; }
 .mps-dash .src { margin: 10px 0 0; }
 .mps-dash h1 { margin: 2px 0 6px; }
 .mps-dash .lede { margin: 0 0 12px; color: var(--muted); }
+
+/* Spektrum partyjne: oś życia posła */
+.life { position: relative; margin: 6px 0 4px; }
+.life-eras { position: relative; height: 20px; margin-left: 92px; }
+.life-era { position: absolute; top: 0; height: 20px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; display: flex; align-items: center; padding-left: 6px; border-radius: 6px 6px 0 0; overflow: hidden; white-space: nowrap; }
+.life-era.prl { background: #ececec; color: #6b6b6b; }
+.life-era.rp { background: var(--accent-soft); color: var(--accent); }
+.life-lanes { position: relative; }
+.life-lane { display: flex; align-items: center; gap: 8px; min-height: 26px; }
+.life-lane-label { width: 84px; flex: none; font-size: 0.72rem; color: var(--muted); text-align: right; line-height: 1.1; }
+.life-track { position: relative; flex: 1; height: 22px; background: repeating-linear-gradient(90deg, transparent 0 9px, var(--line) 9px 10px); border-radius: 4px; }
+.life-seg { box-sizing: border-box; position: absolute; top: 2px; bottom: 2px; background: var(--seg); border-radius: 4px; color: #fff; font-size: 0.68rem; font-weight: 700; overflow: hidden; white-space: nowrap; display: flex; align-items: center; padding: 0; min-width: 0; }
+.life-seg.open { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.life-seg > span { overflow: hidden; text-overflow: ellipsis; padding: 0 4px; }
+.life-overlay { position: absolute; left: 92px; right: 0; top: -20px; bottom: 0; pointer-events: none; }
+.life-1989 { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--accent); }
+.life-axis { position: relative; display: flex; justify-content: space-between; margin-left: 92px; font-size: 0.72rem; color: var(--muted); padding-top: 2px; }
+.life-axis-1989 { position: absolute; transform: translateX(-50%); color: var(--accent); font-weight: 800; }
+.life-first { margin: 8px 0 0; font-size: 0.88rem; }
+.life-undated { margin: 4px 0 0; font-size: 0.78rem; }
+.spectrum-h3 { margin: 16px 0 2px; font-size: 0.95rem; }
+.life-seg.uncertain { background: repeating-linear-gradient(135deg, var(--seg) 0 6px, color-mix(in srgb, var(--seg) 45%, #fff) 6px 12px); }

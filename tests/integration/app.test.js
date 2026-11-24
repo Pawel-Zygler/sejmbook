@@ -8,6 +8,7 @@ import airportsData from '../../data/airports.json';
 import newsData from '../../data/news.json';
 import attendanceData from '../../data/attendance.json';
 import careerData from '../../data/career.json';
+import lifeData from '../../data/life.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -22,7 +23,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData });
 });
 afterEach(() => app.destroy());
 
@@ -146,7 +147,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Kto zmieniał partie');
+    expect(first.textContent).toContain('na tle całego życia');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -297,5 +298,40 @@ describe('Ranking: Najwięcej partii', () => {
   });
   it('top search hints at searching the Sejm and MPs', () => {
     expect($('#top-search').getAttribute('placeholder')).toBe('Szukaj w Sejmie, szukaj posła');
+  });
+});
+
+describe('Spektrum partyjne: life line', () => {
+  it('Donald Tusk: life from birth, PRL and III RP, parties with years from Wikidata', () => {
+    nav('#posel-400');
+    const life = $('[data-testid="life-line"]');
+    expect(life).not.toBeNull();
+    expect(life.textContent).toContain('ur. 1957');
+    expect(life.textContent).toContain('1989');
+    expect(life.querySelector('.life-era.prl')).not.toBeNull();
+    const parties = [...life.querySelectorAll('[data-lane="parties"] .life-seg')].map((s) => s.textContent);
+    expect(parties.join(' ')).toContain('KO / PO');
+    expect(life.querySelector('[data-lane="sejm"] .life-seg')).not.toBeNull();
+    expect($('[data-testid="life-first"]').textContent).toContain('1990');
+  });
+  it('Jacek Tomczak: first activity in the PRL (KPN, 1988)', () => {
+    nav('#posel-390');
+    const first = $('[data-testid="life-first"]').textContent;
+    expect(first).toContain('1988');
+    expect(first).toContain('jeszcze w PRL');
+  });
+  it('an MP born after 1989 has no PRL band', () => {
+    const young = app.ctx.mps.find((m) => m.active && m.birthYear > 1990);
+    nav(`#posel-${young.id}`);
+    expect($('[data-testid="life-line"] .life-era.prl')).toBeNull();
+    expect($('[data-testid="life-line"] .life-era.rp')).not.toBeNull();
+  });
+});
+
+describe('Spektrum partyjne: PZPR without dates', () => {
+  it('Włodzimierz Czarzasty: hatched PZPR span and first activity in the PRL', () => {
+    nav('#posel-58');
+    expect($('[data-lane="parties"] .life-seg.uncertain').textContent).toContain('PZPR');
+    expect($('[data-testid="life-first"]').textContent).toContain('jeszcze w PRL (PZPR; lata nieznane)');
   });
 });

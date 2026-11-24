@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-zycie",
+      "date": "2026-11-24",
+      "title": "Spektrum partyjne na tle całego życia",
+      "body": "Na profilu posła widać teraz oś jego życia: PRL, początek III RP, partie, opozycję i kadencje w Sejmie.",
+      "link": {
+        "href": "#posel-400",
+        "label": "Zobacz przykład"
+      }
+    },
+    {
       "id": "2026-11-24-partie",
       "date": "2026-11-24",
       "title": "Kto zmieniał partie najczęściej",
