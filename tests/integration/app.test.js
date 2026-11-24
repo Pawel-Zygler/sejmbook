@@ -148,7 +148,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Lata w partiach z Wikipedii');
+    expect(first.textContent).toContain('Frekwencja klubów');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -363,5 +363,45 @@ describe('Party years from Wikipedia', () => {
     expect(seg.getAttribute('title')).toContain('1978–1990');
     expect($('.profile-name [data-testid="red-past"]').getAttribute('title')).toContain('1978–1990');
     expect($('[data-testid="life-first"]').textContent).toContain('1978');
+  });
+});
+
+describe('Sidebar per page', () => {
+  it('Posłowie: search first, filters in the sidebar work', () => {
+    nav('#poslowie');
+    const head = $('[data-view="directory"] .dir-head');
+    expect(head.querySelector('#dir-search')).not.toBeNull();
+    expect(head.querySelector(':scope > .filters')).toBeNull();
+    expect($('#aside [data-testid="aside-filters"]')).not.toBeNull();
+    click($('#aside button.filter[data-club="Razem"]'));
+    expect($$('.mp-card').length).toBe(app.ctx.mps.filter((m) => m.active && m.club === 'Razem').length);
+    expect($('#aside button.filter[data-club="Razem"]').classList.contains('on')).toBe(true);
+  });
+  it('Frequent Flyer: no hero before the ranking, totals in the sidebar', () => {
+    nav('#frequent-flyer');
+    const view = $('[data-view="flyer"]');
+    expect(view.querySelector('.flyer-hero')).toBeNull();
+    expect(view.querySelector('.stats')).toBeNull();
+    expect($('#aside [data-testid="sum-flights"]').textContent).toMatch(/\d/);
+    expect($('#aside [data-testid="sum-km"]').textContent).toContain('≈');
+  });
+  it('other pages keep the club list', () => {
+    nav('#start');
+    expect($$('#aside .aside-clubs li').length).toBeGreaterThan(5);
+  });
+});
+
+describe('Frekwencja: clubs', () => {
+  it('switches to the club ranking (mean of MPs) and back to a club\'s MPs', () => {
+    nav('#frekwencja');
+    click($('[data-action="att-view"][data-view="clubs"]'));
+    const rows = $$('[data-testid="att-clubs"] tbody tr');
+    expect(rows.length).toBe(new Set(app.ctx.mps.filter((m) => m.active && attendanceData.mps[m.id]?.terms?.['10']).map((m) => m.club)).size);
+    const pcts = rows.map((r) => parseFloat(r.querySelector('.att-badge > span').textContent.replace(',', '.')));
+    expect(pcts).toEqual([...pcts].sort((a, b) => b - a));
+    click(rows[0].querySelector('button.linklike'));
+    expect($('[data-testid="att-ranking"]')).not.toBeNull();
+    const club = rows[0].getAttribute('data-club');
+    expect($$('[data-testid="att-ranking"] tbody tr').every((tr) => app.ctx.mpsById.get(Number(tr.dataset.mpId)).club === club)).toBe(true);
   });
 });

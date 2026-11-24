@@ -47,12 +47,18 @@ test('clicking an MP in the ranking opens the profile', async ({ page }) => {
 
 test('directory: search and club filter', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
+  // The page starts with the search, then the MPs; filters live in the sidebar (folded under the search on phones).
+  const first = page.locator('section[data-view="directory"] .dir-head');
+  await expect(first.locator('#dir-search')).toBeVisible();
+  const searchBox = await page.locator('#dir-search').boundingBox();
+  expect(searchBox.y).toBeLessThan((await page.locator('.mp-card').first().boundingBox()).y);
   await expect(page.locator('.mp-card')).toHaveCount(460);
   await page.locator('#dir-search').pressSequentially('zukowska');
   await expect(page.locator('.mp-card')).toHaveCount(1);
   await expect(page.locator('.mp-card')).toContainText('Anna Maria Żukowska');
   await page.locator('#dir-search').fill('');
-  await page.locator('button.filter[data-club="Razem"]').click();
+  if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
+  await page.locator('button.filter[data-club="Razem"]:visible').click();
   await expect(page.locator('.mp-card')).toHaveCount(4);
 });
 
@@ -97,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Lata w partiach z Wikipedii');
+  await expect(post).toContainText('Frekwencja klubów');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -122,7 +128,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Lata w partiach z Wikipedii');
+  await expect(page.locator('.news-post').first()).toContainText('Frekwencja klubów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -236,4 +242,28 @@ test('Rankings switcher shows on phones only and reaches "Najwięcej partii"', a
   await sw.getByRole('link', { name: 'Najwięcej partii' }).click();
   await expect(page.getByTestId('parties')).toBeVisible();
   await expect(page.getByTestId('rank-switch').locator('a.on')).toHaveText('Najwięcej partii');
+});
+
+test('Frequent Flyer starts with the first MP; totals in the sidebar or under the ranking', async ({ page }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  const firstRow = page.locator('[data-testid="ranking"] tbody tr').first();
+  await expect(firstRow).toBeVisible();
+  await expect(page.locator('.flyer-hero')).toHaveCount(0);
+  const totals = page.locator('[data-testid="flyer-totals"]:visible');
+  await expect(totals).toHaveCount(1);
+  await expect(totals.getByTestId('sum-km')).toContainText('≈');
+  const rowY = (await firstRow.boundingBox()).y;
+  const viewH = page.viewportSize().height;
+  expect(rowY).toBeLessThan(viewH);
+});
+
+test('Frekwencja: MPs and clubs', async ({ page }) => {
+  await page.goto(`${PAGE}#frekwencja`);
+  await expect(page.getByTestId('att-ranking')).toBeVisible();
+  await page.locator('[data-action="att-view"][data-view="clubs"]').click();
+  const clubs = page.getByTestId('att-clubs').locator('tbody tr');
+  expect(await clubs.count()).toBeGreaterThan(5);
+  await clubs.filter({ has: page.locator('[data-club="KO"]') }).first().locator('button.linklike').click();
+  await expect(page.getByTestId('att-ranking')).toBeVisible();
+  await expect(page.locator('[data-action="att-club"][data-club="KO"]')).toHaveClass(/on/);
 });

@@ -87,3 +87,17 @@ export function formatPct(pct, digits = 1) {
   if (pct == null) return '–';
   return `${pct.toFixed(digits).replace('.', ',')}%`;
 }
+
+/** Club attendance: the mean of its MPs' attendance in the term, highest first (or lowest with order 'asc'). */
+export function clubAttendance(rows, { order = 'desc' } = {}) {
+  const by = new Map();
+  for (const r of rows) {
+    const c = by.get(r.mp.club) ?? { club: r.mp.club, sum: 0, mps: 0 };
+    c.sum += r.term.mean;
+    c.mps += 1;
+    by.set(r.mp.club, c);
+  }
+  const list = [...by.values()].map((c) => ({ club: c.club, mps: c.mps, mean: c.sum / c.mps }));
+  list.sort((a, b) => (order === 'asc' ? a.mean - b.mean : b.mean - a.mean) || a.club.localeCompare(b.club));
+  return list.map((c, i) => ({ ...c, rank: i + 1 }));
+}

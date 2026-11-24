@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-kluby-frekwencja",
+      "date": "2026-11-24",
+      "title": "Frekwencja klubów",
+      "body": "W zakładce Frekwencja jest teraz także ranking klubów, liczony jako średnia frekwencji ich posłów.",
+      "link": {
+        "href": "#frekwencja",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-24-wikipedia",
       "date": "2026-11-24",
       "title": "Lata w partiach z Wikipedii",

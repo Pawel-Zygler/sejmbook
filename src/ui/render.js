@@ -142,6 +142,18 @@ function pageBadge() {
 }
 
 /* ---------- Directory ---------- */
+/** Club filter and the "expired mandates" switch; shown in the sidebar (and folded under the search on phones). */
+export function directoryFilters(ctx, state, where = 'aside') {
+  const counts = clubCounts(ctx.mps);
+  const id = where === 'aside' ? 'dir-inactive' : 'dir-inactive-phone';
+  return `
+      <div class="filters" role="group" aria-label="Filtr klubu">
+        <button type="button" class="filter ${state.club === '' ? 'on' : ''}" data-action="filter-club" data-club="" aria-pressed="${state.club === ''}">Wszystkie</button>
+        ${counts.map((c) => `<button type="button" class="filter ${state.club === c.club ? 'on' : ''}" data-action="filter-club" data-club="${esc(c.club)}" aria-pressed="${state.club === c.club}">${esc((ctx.clubs.get(c.club) ?? FALLBACK_CLUB).short)} <span>${c.count}</span></button>`).join('')}
+      </div>
+      <label class="toggle" for="${id}"><input id="${id}" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>`;
+}
+
 const partyWord = (n) => plural(n, 'partia', 'partie', 'partii');
 
 /** One MP's route through parties: chips in time order, with the terms of each. */
@@ -196,15 +208,11 @@ export function renderDirectory(ctx, state, list) {
   return `
   <section data-view="directory">
     <div class="panel dir-head">
-      <h1>Posłowie X kadencji</h1>
+      <h1 class="visually-hidden">Posłowie X kadencji</h1>
       <label class="search-field" for="dir-search"><span class="visually-hidden">Szukaj posła</span>
-        <input id="dir-search" type="search" placeholder="Szukaj po nazwisku, okręgu lub województwie" value="${esc(state.query)}" data-action="search" autocomplete="off">
+        <input id="dir-search" type="search" placeholder="Szukaj posła po nazwisku, okręgu lub województwie" value="${esc(state.query)}" data-action="search" autocomplete="off">
       </label>
-      <div class="filters" role="group" aria-label="Filtr klubu">
-        <button type="button" class="filter ${state.club === '' ? 'on' : ''}" data-action="filter-club" data-club="" aria-pressed="${state.club === ''}">Wszystkie</button>
-        ${counts.map((c) => `<button type="button" class="filter ${state.club === c.club ? 'on' : ''}" data-action="filter-club" data-club="${esc(c.club)}" aria-pressed="${state.club === c.club}">${esc((ctx.clubs.get(c.club) ?? FALLBACK_CLUB).short)} <span>${c.count}</span></button>`).join('')}
-      </div>
-      <label class="toggle" for="dir-inactive"><input id="dir-inactive" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>
+      <details class="phone-only dir-filters-phone"><summary>Filtry${state.club ? `: ${esc((ctx.clubs.get(state.club) ?? FALLBACK_CLUB).short)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
       <p class="result-count" data-testid="result-count">${list.length} ${plural(list.length, 'poseł', 'posłów', 'posłów')}</p>
     </div>
     <ul class="mp-grid">
@@ -365,6 +373,24 @@ function flightPost(ctx, mp, h, legKm) {
 }
 
 /* ---------- Frequent Flyer ---------- */
+/** Totals of the Frequent Flyer ranking; shown in the right sidebar (and under the ranking on phones). */
+export function flyerTotals(ctx, state) {
+  const { dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
+  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
+  const sum = datasetSummary(rows);
+  const earth = rows[0]?.km ? timesAroundEarth(rows[0].km) : null;
+  return `<div class="panel aside-box flyer-totals" data-testid="flyer-totals">
+    <h2>Frequent Flyer</h2>
+    <p class="muted">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
+    <dl class="totals">
+      <div><dt>Posłów w zestawieniu</dt><dd>${formatInt(sum.mps)}</dd></div>
+      <div><dt>Udokumentowanych lotów</dt><dd data-testid="sum-flights">${formatInt(sum.flights)}</dd></div>
+      <div><dt>Szacowane km</dt><dd data-testid="sum-km">≈&nbsp;${formatInt(sum.km)}</dd></div>
+      ${earth ? `<div><dt>Lider okrążyłby Ziemię</dt><dd>${earth.toFixed(1).replace('.', ',')}×</dd></div>` : ''}
+    </dl>
+  </div>`;
+}
+
 export function renderFlyer(ctx, state) {
   const { dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
   const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
@@ -378,19 +404,7 @@ export function renderFlyer(ctx, state) {
   return `
   <section data-view="flyer" data-dataset="${esc(ds.id)}">
     ${rankingSwitch('flyer')}
-    <div class="panel flyer-hero">
-      <p class="eyebrow">Ranking</p>
-      <h1>Frequent Flyer</h1>
-      <p class="lede">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Liczba lotów pochodzi z danych Kancelarii. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><span>Posłów w zestawieniu</span><b>${formatInt(sum.mps)}</b></div>
-      <div class="stat"><span>Udokumentowanych lotów</span><b data-testid="sum-flights">${formatInt(sum.flights)}</b></div>
-      <div class="stat"><span>Szacowane km</span><b data-testid="sum-km">≈&nbsp;${formatInt(sum.km)}</b></div>
-      ${earth ? `<div class="stat"><span>Lider okrążyłby Ziemię</span><b>${earth.toFixed(1).replace('.', ',')}×</b></div>` : ''}
-    </div>
-
+    <h1 class="visually-hidden">Frequent Flyer</h1>
     <div class="panel rank-panel">
       <div class="table-wrap">
         <table class="rank" data-testid="ranking">
@@ -414,6 +428,7 @@ export function renderFlyer(ctx, state) {
         </table>
       </div>
     </div>
+    <div class="phone-only">${flyerTotals(ctx, state)}</div>
 
     <div class="panel coverage" role="note">
       <strong>Zakres danych:</strong> ${esc(ds.coverageNote)} <span class="muted">Okres: ${esc(ds.periodStart)} – ${esc(ds.periodEnd)}.</span>
@@ -464,7 +479,10 @@ export function renderNotFound(hash) {
   return `<section data-view="notFound" class="panel"><h1>Nie ma takiej strony</h1><p>Adres „#${esc(hash)}” nie prowadzi do żadnego profilu ani rankingu.</p><p><a class="btn" href="#start">Wróć na stronę główną</a></p></section>`;
 }
 
-export function renderAside(ctx) {
+/** Right sidebar: filters on Posłowie, totals on Frequent Flyer, otherwise the club list. */
+export function renderAside(ctx, route = null, state = null) {
+  if (route?.name === 'directory' && state) return `<div class="panel aside-box aside-filters" data-testid="aside-filters"><h2>Filtry</h2>${directoryFilters(ctx, state.directory)}</div>`;
+  if (route?.name === 'flyer' && state) return flyerTotals(ctx, state.flyer);
   const counts = clubCounts(ctx.mps);
   return `<div class="panel aside-box"><h2>Kluby i koła</h2><ul class="aside-clubs">
     ${counts.map((c) => {

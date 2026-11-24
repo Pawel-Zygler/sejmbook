@@ -33,7 +33,7 @@ export function createApp(doc, win, data) {
     directory: { query: '', club: '', includeInactive: false },
     // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
     flyer: { period: 'all', dataset: null, sortBy: 'km' },
-    attendance: { order: 'desc', club: '' },
+    attendance: { order: 'desc', club: '', view: 'mps' },
   };
 
   function renderDirectoryList() {
@@ -52,7 +52,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
-    aside.innerHTML = renderAside(ctx);
+    aside.innerHTML = renderAside(ctx, r, state);
     for (const a of doc.querySelectorAll('[data-nav]')) {
       const on = a.dataset.nav === NAV_FOR[r.name];
       a.classList.toggle('on', on);
@@ -85,8 +85,12 @@ export function createApp(doc, win, data) {
     } else if (action === 'att-order') {
       state.attendance.order = el.dataset.order;
       render();
+    } else if (action === 'att-view') {
+      state.attendance.view = el.dataset.view;
+      render();
     } else if (action === 'att-club') {
       state.attendance.club = el.dataset.club;
+      if (el.dataset.view) state.attendance.view = el.dataset.view;
       render();
     }
   }

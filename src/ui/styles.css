@@ -334,3 +334,18 @@ h2 { font-size: 1.1rem; }
   .rank-switch a { flex: none; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
   .rank-switch a.on { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
 }
+
+/* Sidebar filters (Posłowie), totals (Frequent Flyer), phone fallbacks */
+.phone-only { display: none; }
+@media (max-width: 1100px) { .phone-only { display: block; } }
+.aside-filters .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+.dir-filters-phone { margin: 10px 0 0; }
+.dir-filters-phone summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.dir-filters-phone .filters { margin-top: 8px; }
+.flyer-totals .totals { margin: 10px 0 0; display: grid; gap: 10px; }
+.flyer-totals .totals div { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 8px; }
+.flyer-totals dt { color: var(--muted); font-size: 0.85rem; }
+.flyer-totals dd { margin: 0; font-weight: 800; }
+.att-tabs { display: flex; gap: 6px; margin: 0 0 12px; }
+.linklike { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-align: left; }
+.linklike:hover span { text-decoration: underline; }

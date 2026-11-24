@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, directoryFilters, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -354,5 +354,17 @@ describe('rankingSwitch', () => {
     expect(html).toContain('href="#frequent-flyer"');
     expect(html).toContain('href="#frekwencja"');
     expect(html).toContain('<a href="#partie" aria-current="page" class="on">Najwięcej partii</a>');
+  });
+});
+
+describe('page-specific sidebar', () => {
+  it('directory filters and flyer totals', () => {
+    const st = { directory: { query: '', club: 'KO', includeInactive: false }, flyer: { period: 'all', dataset: null, sortBy: 'km' } };
+    expect(renderAside(ctx, { name: 'directory' }, st)).toContain('data-testid="aside-filters"');
+    expect(directoryFilters(ctx, st.directory)).toContain('class="filter on" data-action="filter-club" data-club="KO"');
+    expect(directoryFilters(ctx, st.directory, 'phone')).toContain('id="dir-inactive-phone"');
+    expect(renderAside(ctx, { name: 'flyer' }, st)).toBe(flyerTotals(ctx, st.flyer));
+    expect(flyerTotals(ctx, st.flyer)).toContain('data-testid="sum-km"');
+    expect(renderAside(ctx, { name: 'home' }, st)).toContain('Kluby i koła');
   });
 });

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { decodeStrip, encodeStrip, meanDaily, overallAttendance, attendanceBand, attendanceRanking, sejmAverage, formatPct } from '../../src/lib/attendance.js';
+import { clubAttendance, decodeStrip, encodeStrip, meanDaily, overallAttendance, attendanceBand, attendanceRanking, sejmAverage, formatPct } from '../../src/lib/attendance.js';
 import { pieIcon, attendanceBadge, dayStrip, renderProfileAttendance, renderAttendance, romanTerm, hasEarlierTerms } from '../../src/ui/attendance-view.js';
 
 describe('strip encoding', () => {
@@ -185,5 +185,21 @@ describe('views', () => {
   });
   it('ranking view without data shows a notice', () => {
     expect(renderAttendance({ attendance: null }, { order: 'desc', club: '' }, helpers)).toContain('nie są jeszcze dostępne');
+  });
+});
+
+describe('clubAttendance', () => {
+  const rows = [
+    { mp: { club: 'A' }, term: { mean: 90 } }, { mp: { club: 'A' }, term: { mean: 80 } },
+    { mp: { club: 'B' }, term: { mean: 95 } }, { mp: { club: 'C' }, term: { mean: 85 } },
+  ];
+  it('averages each club\'s MPs and ranks clubs', () => {
+    expect(clubAttendance(rows)).toEqual([
+      { club: 'B', mps: 1, mean: 95, rank: 1 },
+      { club: 'A', mps: 2, mean: 85, rank: 2 },
+      { club: 'C', mps: 1, mean: 85, rank: 3 },
+    ]);
+    expect(clubAttendance(rows, { order: 'asc' }).map((c) => c.club)).toEqual(['A', 'C', 'B']);
+    expect(clubAttendance([])).toEqual([]);
   });
 });

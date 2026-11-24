@@ -1,4 +1,4 @@
-import { attendanceRanking, sejmAverage, formatPct, decodeStrip, overallAttendance, attendanceBand } from '../lib/attendance.js';
+import { attendanceRanking, clubAttendance, sejmAverage, formatPct, decodeStrip, overallAttendance, attendanceBand } from '../lib/attendance.js';
 import { hrefFor } from '../lib/router.js';
 import { formatInt, clubCounts } from '../lib/mps.js';
 
@@ -77,6 +77,32 @@ export const hasEarlierTerms = (att) => Object.values(att?.mps ?? {}).some((a) =
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 export const romanTerm = (n) => ROMAN[n] ?? String(n);
 
+/** Club ranking: the mean attendance of each club's MPs; a row opens that club's MPs. */
+function renderClubAttendance(ctx, state, allRows, clubChip) {
+  const clubs = clubAttendance(allRows, { order: state.order });
+  return `<div class="panel">
+      <div class="rank-tools">
+        <span>Kolejność:</span>
+        <button type="button" class="filter ${state.order === 'desc' ? 'on' : ''}" data-action="att-order" data-order="desc" aria-pressed="${state.order === 'desc'}">Najwyższa</button>
+        <button type="button" class="filter ${state.order === 'asc' ? 'on' : ''}" data-action="att-order" data-order="asc" aria-pressed="${state.order === 'asc'}">Najniższa</button>
+      </div>
+      <div class="table-wrap">
+        <table class="rank" data-testid="att-clubs">
+          <thead><tr><th scope="col">#</th><th scope="col">Klub</th><th scope="col" class="num">Średnia X kadencji</th><th scope="col" class="num">Posłów</th></tr></thead>
+          <tbody>
+            ${clubs.map((c) => `<tr data-club="${escHtml(c.club)}">
+              <td class="pos">${c.rank}</td>
+              <td><button type="button" class="linklike" data-action="att-club" data-club="${escHtml(c.club)}" data-view="mps">${clubChip(ctx, c.club)} <span>${escHtml(ctx.clubs.get(c.club)?.name ?? c.club)}</span></button></td>
+              <td class="num"><span class="att-badge band-${attendanceBand(c.mean)}">${pieIcon(c.mean, 18)}<span>${formatPct(c.mean)}</span></span></td>
+              <td class="num">${c.mps}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+      <p class="src">Średnia klubu to średnia frekwencji jego obecnych posłów w X kadencji. Kliknij klub, żeby zobaczyć jego posłów.</p>
+    </div>`;
+}
+
 export function renderAttendance(ctx, state, helpers) {
   const att = ctx.attendance;
   if (!att) return `<section data-view="attendance" class="panel"><h1>Frekwencja</h1><p>Dane o frekwencji nie są jeszcze dostępne.</p></section>`;
@@ -101,6 +127,11 @@ export function renderAttendance(ctx, state, helpers) {
       <div class="stat"><span>Głosowań w X kadencji</span><b>${formatInt(att.votingsTotal)}</b></div>
       <div class="stat"><span>Dane do</span><b>${escHtml(att.days[att.days.length - 1])}</b></div>
     </div>
+    <div class="att-tabs" role="tablist" aria-label="Frekwencja">
+      <button type="button" role="tab" class="filter ${state.view !== 'clubs' ? 'on' : ''}" data-action="att-view" data-view="mps" aria-selected="${state.view !== 'clubs'}">Posłowie</button>
+      <button type="button" role="tab" class="filter ${state.view === 'clubs' ? 'on' : ''}" data-action="att-view" data-view="clubs" aria-selected="${state.view === 'clubs'}">Kluby</button>
+    </div>
+    ${state.view === 'clubs' ? renderClubAttendance(ctx, state, allRows, clubChip) : `
     <div class="panel">
       <div class="rank-tools">
         <span>Kolejność:</span>
@@ -126,7 +157,7 @@ export function renderAttendance(ctx, state, helpers) {
           </tbody>
         </table>
       </div>
-    </div>
+    </div>`}
     <div class="panel method">
       <h2>Jak liczymy frekwencję</h2>
       <p>Dla każdego dnia, w którym Sejm głosował, dzielimy liczbę głosowań, w których poseł oddał głos, przez liczbę głosowań tego dnia. Frekwencja posła to średnia z tych dziennych wyników. Dni, w których nie miał jeszcze mandatu albo już go nie miał, pomijamy.</p>
