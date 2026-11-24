@@ -1,0 +1,26 @@
+name: former-party-logos
+# Downloads logos of former PRL parties (Wikidata P154, Wikimedia Commons) and commits it.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/fetch-former-party-logos.mjs', '.github/workflows/former-party-logos.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-former-party-logos.mjs
+      - name: Commit logos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media/extra
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update former party logos from Wikimedia Commons"
+          git pull --rebase
+          git push
