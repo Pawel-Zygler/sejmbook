@@ -12,6 +12,28 @@ export function esc(s) {
 const FALLBACK_CLUB = { id: '?', short: '?', name: 'Nieznany klub', color: '#7d8590' };
 const clubOf = (ctx, mp) => ctx.clubs.get(mp.club) ?? { ...FALLBACK_CLUB, id: mp.club, short: mp.club };
 
+/**
+ * "Kontakt": only official or sourced data. E-mail from the Sejm API, Facebook from Wikidata (P2013).
+ * Phone and office addresses are not in the Sejm's open data, so we say so and link the MP's page on sejm.gov.pl.
+ */
+export function renderContact(ctx, mp) {
+  const c = ctx.contacts?.mps?.[mp.id] ?? null;
+  const none = '<span class="muted">brak danych</span>';
+  const fb = c?.facebook ?? [];
+  const page = sejmProfileUrl(mp.id);
+  return `
+        <div class="contact" data-testid="contact">
+          <h2>Kontakt</h2>
+          <dl>
+            <dt>E-mail</dt><dd data-testid="contact-email">${c?.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : none}</dd>
+            <dt>Facebook</dt><dd data-testid="contact-fb">${fb.length ? fb.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https:\/\/www\.facebook\.com\//, 'fb.com/'))}</a>`).join('<br>') : none}</dd>
+            <dt>Telefon</dt><dd data-testid="contact-phone"><span class="muted">brak w otwartych danych Sejmu</span></dd>
+            <dt>Biuro poselskie</dt><dd data-testid="contact-office"><span class="muted">brak w otwartych danych Sejmu;</span> adresy i telefony biur są na <a href="${esc(page)}" target="_blank" rel="noopener">stronie posła w serwisie Sejmu</a> (sekcja „Biura Poselskie”)</dd>
+          </dl>
+          <p class="src">Źródła: e-mail z API Sejmu${fb.length ? ', Facebook z Wikidanych' : ''}${ctx.contacts?.fetchedAt ? `, stan na ${esc(ctx.contacts.fetchedAt)}` : ''}.</p>
+        </div>`;
+}
+
 export function sejmProfileUrl(mpId) {
   return `https://www.sejm.gov.pl/Sejm10.nsf/posel.xsp?id=${String(mpId).padStart(3, '0')}&type=A`;
 }
@@ -424,6 +446,7 @@ export function renderProfile(ctx, id) {
           <dt>Lotnisko okręgu</dt><dd>${ap ? `${esc(ctx.airports.airports[ap].name)} <span class="muted">(${formatInt(legKm)} km do Warszawy)</span>` : 'brak połączenia lotniczego z Warszawą'}</dd>
         </dl>
         <p class="src">Dane: <a href="${sejmProfileUrl(mp.id)}" target="_blank" rel="noopener">profil na sejm.gov.pl</a> · API Sejmu</p>
+        ${renderContact(ctx, mp)}
       </aside>
       <div class="feed">
         ${renderProfileAttendance(ctx, mp)}

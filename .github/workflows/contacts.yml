@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['scripts/fetch-sejm-contacts.mjs', '.github/workflows/contacts.yml']
+    paths: ['scripts/fetch-sejm-contacts.mjs']
 permissions:
   contents: write
 jobs:

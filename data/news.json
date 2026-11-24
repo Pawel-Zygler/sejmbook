@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-kontakt",
+      "date": "2026-11-24",
+      "title": "Kontakt do posła",
+      "body": "Na profilu posła jest teraz sekcja Kontakt z oficjalnym e-mailem i Facebookiem, jeśli jest znany.",
+      "link": {
+        "href": "#posel-1",
+        "label": "Zobacz przykład"
+      }
+    },
+    {
       "id": "2026-11-24-kadencje",
       "date": "2026-11-24",
       "title": "Posłowie wszystkich kadencji",

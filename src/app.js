@@ -5,7 +5,7 @@ import { mergeWikiParties } from './lib/life.js';
 import { renderHome, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, contactsData }) {
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -18,6 +18,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     career: careerData ?? null,
     // Every MP of every term the Sejm API covers (III–X), grouped into people.
     terms: termsData ?? null,
+    // Official contacts: e-mail (API Sejmu), Facebook (Wikidata).
+    contacts: contactsData ?? null,
     life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
     media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {} },

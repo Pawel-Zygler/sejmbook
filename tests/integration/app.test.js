@@ -11,6 +11,7 @@ import careerData from '../../data/career.json';
 import lifeData from '../../data/life.json';
 import wikiPartiesData from '../../data/wiki-parties.json';
 import termsData from '../../data/terms.json';
+import contactsData from '../../data/contacts.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -25,7 +26,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, contactsData });
 });
 afterEach(() => app.destroy());
 
@@ -149,7 +150,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Posłowie wszystkich kadencji');
+    expect(first.textContent).toContain('Kontakt do posła');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -429,5 +430,20 @@ describe('Posłowie: all terms', () => {
     click($('#aside [data-action="dir-term"][data-term="10"]'));
     expect($$('.mp-card').length).toBe(app.ctx.mps.filter((m) => m.active).length);
     expect($('.term-card')).toBeNull();
+  });
+});
+
+describe('Profile: Kontakt', () => {
+  it('shows the official e-mail, Facebook when known, and says openly what is missing', () => {
+    const withFb = Object.keys(contactsData.mps).find((id) => contactsData.mps[id].facebook.length && app.ctx.mpsById.get(Number(id)));
+    nav(`#posel-${withFb}`);
+    const box = $('[data-testid="contact"]');
+    expect(box.querySelector('[data-testid="contact-email"] a').getAttribute('href')).toBe(`mailto:${contactsData.mps[withFb].email}`);
+    expect(box.querySelector('[data-testid="contact-fb"] a').getAttribute('href')).toBe(contactsData.mps[withFb].facebook[0]);
+    expect(box.querySelector('[data-testid="contact-phone"]').textContent).toContain('brak w otwartych danych Sejmu');
+    expect(box.querySelector('[data-testid="contact-office"] a').getAttribute('href')).toContain('posel.xsp?id=');
+    const noFb = Object.keys(contactsData.mps).find((id) => !contactsData.mps[id].facebook.length && app.ctx.mpsById.get(Number(id)));
+    nav(`#posel-${noFb}`);
+    expect($('[data-testid="contact-fb"]').textContent).toBe('brak danych');
   });
 });

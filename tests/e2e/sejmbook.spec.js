@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Posłowie wszystkich kadencji');
+  await expect(post).toContainText('Kontakt do posła');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -128,7 +128,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Posłowie wszystkich kadencji');
+  await expect(page.locator('.news-post').first()).toContainText('Kontakt do posła');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -278,6 +278,16 @@ test('Posłowie: earlier terms of the Sejm', async ({ page }) => {
   expect(await page.locator('.term-card').count()).toBeGreaterThan(400);
   await page.locator('#dir-search').fill('Buzek');
   await expect(page.locator('.term-card').first()).toContainText('Buzek');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Profile: Kontakt with official e-mail', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-1`);
+  const box = page.getByTestId('contact');
+  await expect(box).toBeVisible();
+  await expect(box.getByTestId('contact-email').locator('a')).toHaveAttribute('href', /^mailto:.+@sejm\.pl$/);
+  await expect(box.getByTestId('contact-office')).toContainText('Biura Poselskie');
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

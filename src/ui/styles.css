@@ -358,3 +358,7 @@ h2 { font-size: 1.1rem; }
 .term-card-terms { display: block; margin-top: 4px; font-size: 0.75rem; }
 .hop-name { font-weight: 700; }
 .hop-now { font-size: 0.7rem; font-weight: 700; color: var(--accent); }
+
+/* Profile: Kontakt */
+.contact { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+.contact dd a { overflow-wrap: anywhere; }

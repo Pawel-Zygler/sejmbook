@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -407,5 +407,21 @@ describe('all terms (data/terms.json)', () => {
     expect(html).toContain('kadencje III, X');
     expect(personAvatar('Ewa Raz', '#123456')).toContain('ER');
     expect(termPicker(ctx, st)).toBe('');
+  });
+});
+
+describe('renderContact', () => {
+  const mp = { id: 7 };
+  it('links e-mail and Facebook from the data and names the sources', () => {
+    const html = renderContact({ ...ctx, contacts: { fetchedAt: '2026-11-24', mps: { 7: { email: 'Jan.Nowak@sejm.pl', facebook: ['https://www.facebook.com/jan.nowak'] } } } }, mp);
+    expect(html).toContain('href="mailto:Jan.Nowak@sejm.pl"');
+    expect(html).toContain('>fb.com/jan.nowak</a>');
+    expect(html).toContain('Facebook z Wikidanych, stan na 2026-11-24');
+    expect(html).toContain('posel.xsp?id=007&amp;type=A');
+  });
+  it('says "brak danych" when there is nothing', () => {
+    const html = renderContact({ ...ctx, contacts: null }, mp);
+    expect((html.match(/brak danych/g) ?? []).length).toBe(2);
+    expect(html).toContain('brak w otwartych danych Sejmu');
   });
 });
