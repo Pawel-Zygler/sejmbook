@@ -33,7 +33,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     today: today ?? new Date().toISOString().slice(0, 10),
     life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
-    media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {} },
+    media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {}, gov: mediaData?.gov ?? {} },
   };
 }
 

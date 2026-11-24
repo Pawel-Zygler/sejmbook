@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Posłowie w Państwie prosto do profilu';
-const NEWEST_LINE = 'Państwo: Posłowie w Państwie prosto do profilu';
+const NEWEST = 'Zdjęcia w sekcji Państwo';
+const NEWEST_LINE = 'Państwo: Zdjęcia w sekcji Państwo';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

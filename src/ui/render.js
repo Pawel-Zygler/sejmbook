@@ -202,7 +202,8 @@ function feedFace(ctx, name, badge) {
   const mp = mpByName(ctx, name);
   if (mp) return mpLink(mp, avatar(ctx, mp, 'md'));
   const href = feedProfileHref(ctx, name);
-  const face = `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
+  const photo = govPhoto(ctx, name);
+  const face = photo ? personAvatar(name, null, 'md', photo) : `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
   return href ? `<a class="feed-face" href="${esc(href)}" aria-label="Profil: ${esc(name)}">${face}</a>` : face;
 }
 
@@ -375,7 +376,7 @@ export function termInfo(ctx, num) {
 /** Card of an MP of an earlier term: initials (or today's photo for current MPs), that term's club and district. */
 function termCard(ctx, m) {
   const now = m.current ? ctx.mpsById.get(m.current) : null;
-  const face = `${now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg')}<span class="mp-card-name">${esc(m.name)}</span>`;
+  const face = `${now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg', govPhoto(ctx, m.name))}<span class="mp-card-name">${esc(m.name)}</span>`;
   const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
   const meta = [termClubChip(m), m.districtNum ? `<span class="mp-card-district" title="okręg ${m.districtNum} · ${esc(m.districtName ?? '')}">okr. ${m.districtNum}</span>` : ''].filter(Boolean).join(sep);
   return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${now ? mpLink(now, face, 'mp-card-link') : `<a class="mp-card-link" href="#osoba-${esc(m.person)}">${face}</a>`}
@@ -397,8 +398,15 @@ export function rankingSwitch(current) {
 }
 
 /** Initials avatar for someone with no current profile (an MP of an earlier term). */
-export function personAvatar(name, color, size = 'md') {
-  return `<span class="avatar avatar-${size}" style="--club:${esc(color ?? FALLBACK_CLUB.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(name))}</span></span>`;
+export function personAvatar(name, color, size = 'md', photo = null) {
+  const img = photo ? `<img class="avatar-photo" src="${esc(photo)}" alt="" loading="lazy" decoding="async" data-photo>` : '';
+  return `<span class="avatar avatar-${size}" style="--club:${esc(color ?? FALLBACK_CLUB.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(name))}</span>${img}</span>`;
+}
+
+/** A portrait from the Państwo data (Wikipedia lead image) for a person, by name, when the build bundled one. */
+export function govPhoto(ctx, name) {
+  const p = ctx.gov?.byName?.get(foldName(name));
+  return (p && ctx.media?.gov?.[p.slug]) || null;
 }
 
 const jumpWord = (n) => plural(n, 'przeskok', 'przeskoki', 'przeskoków');
@@ -428,7 +436,7 @@ export function renderParties(ctx, state = { scope: 'all' }) {
         <button type="button" class="filter ${state.scope === 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="current" aria-pressed="${state.scope === 'current'}">Obecni posłowie</button>
       </div>` : '';
   if (list.length === 0) return `<section data-view="parties"><div class="panel mps-dash" data-testid="parties">${head}${tabs}<p>Brak danych o kadencjach posłów.</p></div></section>`;
-  const face = (r, size) => (r.mp ? mpLink(r.mp, avatar(ctx, r.mp, size), 'hop-avatar') : r.person.terms ? personLink(r.person, personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size), 'hop-avatar') : `<span class="hop-avatar">${personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size)}</span>`);
+  const face = (r, size) => (r.mp ? mpLink(r.mp, avatar(ctx, r.mp, size), 'hop-avatar') : r.person.terms ? personLink(r.person, personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size, govPhoto(ctx, r.person.name)), 'hop-avatar') : `<span class="hop-avatar">${personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size)}</span>`);
   const name = (r) => (r.mp ? mpLink(r.mp, esc(r.person.name)) : r.person.terms ? personLink(r.person, esc(r.person.name), 'hop-name') : `<span class="hop-name">${esc(r.person.name)}</span>`);
   const top = list[0];
   const tied = list.filter((r) => r.count === top.count && r.jumps === top.jumps).length - 1;
@@ -598,7 +606,7 @@ export function renderPerson(ctx, key) {
     <div class="profile-top panel">
       <div class="cover" style="--club:${esc(color)}"></div>
       <div class="profile-id">
-        ${personAvatar(p.name, color, 'xl')}
+        ${personAvatar(p.name, color, 'xl', govPhoto(ctx, p.name))}
         <div class="profile-name">
           <h1>${esc(p.name)}</h1>
           <p><span class="muted">Poseł na Sejm RP · ${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>

@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Posłowie w Państwie prosto do profilu');
+  await expect(post).toContainText('Zdjęcia w sekcji Państwo');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Posłowie w Państwie prosto do profilu');
+  await expect(page.locator('.news-post').first()).toContainText('Zdjęcia w sekcji Państwo');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -391,4 +391,11 @@ test('Feed: open a voting to see clubs, switch the time window', async ({ page }
   await expect(page.locator('#view h1')).toHaveText('Karol Nawrocki');
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Państwo: portraits of officials', async ({ page }) => {
+  await page.goto(`${PAGE}#panstwo`);
+  await expect(page.locator('[data-office="prezydent"].office-card img.avatar-photo')).toHaveCount(1);
+  expect(await page.locator('[data-testid="cabinet-now"]').count()).toBe(1);
+  expect(await page.locator('#view img.avatar-photo').count()).toBeGreaterThan(5);
 });

@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-zdjecia-panstwo",
+      "date": "2026-11-24",
+      "title": "Zdjęcia w sekcji Państwo",
+      "section": "Państwo",
+      "body": "Prezydenci, premierzy, ministrowie i byli posłowie mają zdjęcia z Wikipedii, tam gdzie są na wolnej licencji.",
+      "link": {
+        "href": "#panstwo",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-panstwo-profile",
       "date": "2026-11-24",
       "title": "Posłowie w Państwie prosto do profilu",

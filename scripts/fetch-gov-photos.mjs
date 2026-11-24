@@ -43,7 +43,7 @@ for (const [title, t] of thumbs) {
   const ext = /\.png$/i.test(t.src) ? 'png' : 'jpg';
   const entry = { slug, file: `gov/${slug}.${ext}`, wiki: title, commons: t.file ? `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(t.file)}` : null };
   // Already downloaded on an earlier run: keep it (Wikimedia rate-limits bulk downloads).
-  if (existsSync(new URL(`${slug}.${ext}`, dir))) { index.push(entry); continue; }
+  if (existsSync(new URL(`${slug}.jpg`, dir)) || existsSync(new URL(`${slug}.${ext}`, dir))) { index.push(entry); continue; }
   try {
     let res = await fetch(t.src, { headers: { 'User-Agent': UA } });
     for (let i = 0; res.status === 429 && i < 3; i++) { await sleep(15000 * (i + 1)); res = await fetch(t.src, { headers: { 'User-Agent': UA } }); }

@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -551,5 +551,17 @@ describe('feed: windows, profile links, voting details', () => {
     expect(more).toContain('https://api.sejm.gov.pl/sejm/term10/votings/69/153');
     expect(more).toContain('tak jak większość');
     expect(renderVotingDetails(ctx, null)).toBe('');
+  });
+});
+
+describe('portraits of state officials', () => {
+  const gov = { byName: new Map([['karol nawrocki', { slug: 'karol-nawrocki' }]]) };
+  it('shows a bundled portrait, initials otherwise', () => {
+    expect(personAvatar('Jan Nowak', '#000', 'md', 'data:image/jpeg;base64,AA')).toContain('<img class="avatar-photo" src="data:image/jpeg;base64,AA"');
+    expect(personAvatar('Jan Nowak', '#000')).not.toContain('<img');
+    const c = { ...ctx, gov, media: { ...ctx.media, gov: { 'karol-nawrocki': 'data:image/jpeg;base64,BB' } } };
+    expect(govPhoto(c, 'Karol Nawrocki')).toBe('data:image/jpeg;base64,BB');
+    expect(govPhoto(c, 'Nikt')).toBeNull();
+    expect(govPhoto({ ...ctx, gov: null }, 'Karol Nawrocki')).toBeNull();
   });
 });

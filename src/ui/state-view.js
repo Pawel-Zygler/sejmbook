@@ -1,6 +1,6 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
-import { esc, plural, personHref } from './render.js';
+import { esc, plural, personHref, personAvatar, govPhoto } from './render.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
 import { personKey } from '../lib/career.js';
 
@@ -8,7 +8,6 @@ const day = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
 const span = (from, to) => (to ? `${day(from)} – ${day(to)}` : `od ${day(from)}`);
 const years = (from, to) => `${String(from ?? '').slice(0, 4)}–${to ? String(to).slice(0, 4) : 'obecnie'}`;
 const wikiUrl = (title) => `https://pl.wikipedia.org/wiki/${encodeURIComponent(String(title).replace(/ /g, '_'))}`;
-const initials = (name) => String(name).split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
 
 /** A link to a person: their MP profile when they are or were an MP, else their state profile. */
 export function officialLink(ctx, p, inner = esc(p.name)) {
@@ -41,7 +40,7 @@ function officeCard(ctx, office, today) {
   const shown = now.length ? now : [];
   return `<li class="office-card" data-office="${esc(office.id)}">
       <p class="office-title">${esc(office.title)}</p>
-      ${shown.length ? shown.map((h) => `<p class="office-holder"><span class="avatar avatar-sm person-badge" aria-hidden="true">${esc(initials(h.name))}</span><span>${holderLink(ctx, h)}${h.acting ? ' <small class="muted">p.o.</small>' : ''}<small class="muted">od ${esc(day(h.from))}</small></span></p>`).join('')
+      ${shown.length ? shown.map((h) => `<p class="office-holder">${personAvatar(h.name, null, 'sm', govPhoto(ctx, h.name))}<span>${holderLink(ctx, h)}${h.acting ? ' <small class="muted">p.o.</small>' : ''}<small class="muted">od ${esc(day(h.from))}</small></span></p>`).join('')
         : `<p class="office-holder muted">brak danych${last ? ` (ostatnio: ${holderLink(ctx, last)})` : ''}</p>`}
     </li>`;
 }
@@ -127,7 +126,7 @@ export function renderOfficial(ctx, slug, today) {
   return `
   <section class="feed state" data-view="official">
     <div class="panel official-head">
-      <span class="avatar avatar-xl person-badge" aria-hidden="true">${esc(initials(p.name))}</span>
+      ${personAvatar(p.name, null, 'xl', govPhoto(ctx, p.name))}
       <div><p class="muted"><a href="#panstwo">Państwo</a></p><h1>${esc(p.name)}</h1>
         <p>${now.length ? now.map((r) => `<span class="chip chip-now">${esc(r.office)}</span>`).join(' ') : '<span class="muted">Dziś bez funkcji w rządzie i na najważniejszych urzędach</span>'}${p.party ? ` <span class="chip">${esc(p.party)}</span>` : ''}</p>
         <p class="official-links">${p.wiki ? `<a class="btn" href="${esc(wikiUrl(p.wiki))}" target="_blank" rel="noopener">Wikipedia</a>` : ''}${mp ? ` <a class="btn" href="${esc(mp.href)}" data-testid="official-mp">${esc(mp.label)}</a>` : ''}</p>
@@ -152,7 +151,7 @@ export function renderOfficialMatches(ctx, query) {
       <h2>Urzędy państwowe</h2>
       <ul>${found.map((p) => {
         const top = p.roles[0];
-        return `<li>${officialLink(ctx, p, `<span class="avatar avatar-sm person-badge" aria-hidden="true">${esc(initials(p.name))}</span><span><strong>${esc(p.name)}</strong><small class="muted">${esc(top.office)}, ${esc(years(top.from, top.to))}</small></span>`)}</li>`;
+        return `<li>${officialLink(ctx, p, `${personAvatar(p.name, null, 'sm', govPhoto(ctx, p.name))}<span><strong>${esc(p.name)}</strong><small class="muted">${esc(top.office)}, ${esc(years(top.from, top.to))}</small></span>`)}</li>`;
       }).join('')}</ul>
     </div>`;
 }

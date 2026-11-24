@@ -36,7 +36,13 @@ async function loadMedia() {
     const extra = JSON.parse(await readFile(p('media/extra/index.json'), 'utf8'));
     for (const l of extra.logos) logos[l.id] = await uri(l.file);
   }
-  return { photos, logos };
+  // Portraits of presidents, ministers and top officials (gov-photos workflow, Wikipedia lead images), by person slug.
+  const gov = {};
+  if (existsSync(p('media/gov/index.json'))) {
+    const g = JSON.parse(await readFile(p('media/gov/index.json'), 'utf8'));
+    for (const ph of g.photos) gov[ph.slug] = await uri(ph.file);
+  }
+  return { photos, logos, gov };
 }
 const media = await loadMedia();
 const mediaScript = media ? `<script>window.__SEJM_MEDIA__=${JSON.stringify(media)}</script>\n` : '';
@@ -57,4 +63,4 @@ await writeFile(p('dist/standalone.html'), standalone);
 // Static hosting (Cloudflare Pages): output directory dist/pages
 await mkdir(p('dist/pages'), { recursive: true });
 await writeFile(p('dist/pages/index.html'), standalone);
-console.log(`dist/index.html ${(fragment.length / 1024).toFixed(1)} KB${media ? `, ${Object.keys(media.photos).length} photos, ${Object.keys(media.logos).length} logos inlined` : ', no media/ yet'}`);
+console.log(`dist/index.html ${(fragment.length / 1024).toFixed(1)} KB${media ? `, ${Object.keys(media.photos).length} photos, ${Object.keys(media.logos).length} logos, ${Object.keys(media.gov).length} official portraits inlined` : ', no media/ yet'}`);

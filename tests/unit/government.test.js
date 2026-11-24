@@ -152,6 +152,11 @@ describe('state views', () => {
     expect(renderOfficial(ctx, 'nikt', '2026-11-24')).toContain('Nie ma takiej osoby');
     expect(mpLinkFor(ctx, 'Nikt')).toBeNull();
   });
+  it('uses portraits when the build bundled them', () => {
+    const c = { ...ctx, media: { gov: { 'jan-kowalski': 'data:image/jpeg;base64,CC' } } };
+    expect(renderState(c, '2026-11-24')).toContain('src="data:image/jpeg;base64,CC"');
+    expect(renderOfficial(c, 'jan-kowalski', '2026-11-24')).toContain('avatar-xl');
+  });
   it('lists search matches, or nothing', () => {
     expect(renderOfficialMatches(ctx, 'kowalski')).toContain('Prezydent RP, 2005–obecnie');
     expect(renderOfficialMatches(ctx, 'zzz')).toBe('');
