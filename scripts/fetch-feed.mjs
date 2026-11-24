@@ -3,9 +3,11 @@
 // - President Karol Nawrocki: news list on prezydent.pl (official site)
 // - Prime Minister Donald Tusk: news on gov.pl/web/premier (KPRM) and his Bluesky posts (account verified by Bluesky)
 // - Sejm: latest votings from the Sejm API
+// - Ministries (gov.pl), the Senate and NIK: their press releases; MPs: interpellations and written questions (API Sejmu)
 // Runs in GitHub Actions on a schedule. Anything that fails is left out, never invented.
 import { readFile, writeFile } from 'node:fs/promises';
 import { summarizeVoting, withSeenAt } from '../src/lib/feed.js';
+import { MINISTRIES, OFFICES, PARSERS, parseGovPl, newest, mpAct } from '../src/lib/feed-sources.js';
 
 const UA = 'sejmbook-data-fetch/1.0 (GitHub Actions; open data project)';
 const out = new URL('../data/feed.json', import.meta.url);
@@ -100,5 +102,38 @@ try {
   sections.sejm = { date: first?.date?.slice(0, 10) ?? null, proceeding: first?.proceeding ?? null, source: 'https://api.sejm.gov.pl/sejm/term10/votings', items };
   console.log('sejm', items.length, JSON.stringify(items.map((i) => [i.date, i.number, i.title.slice(0, 40), i.clubs.length, Object.keys(i.votes).length])));
 } catch (e) { log('sejm', e); }
+
+// Ministries, the Senate and NIK: latest press releases from each office's own site.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const offices = [];
+for (const m of MINISTRIES) {
+  const items = [];
+  for (const path of [m.path, ''].filter((x) => x !== null)) {
+    try { items.push(...parseGovPl(await (await get(`https://www.gov.pl/web/${m.id}${path ? `/${path}` : ''}`, 'text/html')).text(), m.id)); } catch (e) { log(m.id, e); }
+    await sleep(400);
+  }
+  const list = newest(items, 5);
+  if (list.length) offices.push({ id: m.id, name: m.name, office: m.office, source: `https://www.gov.pl/web/${m.id}${m.path ? `/${m.path}` : ''}`, items: withSeenAt(list, previous.offices?.find((x) => x.id === m.id)?.items, nowIso) });
+}
+for (const o of OFFICES) {
+  try {
+    const list = newest(PARSERS[o.parser](await (await get(o.url, 'text/html')).text()), 5);
+    if (list.length) offices.push({ id: o.id, name: o.name, office: o.office, source: o.url, items: withSeenAt(list, previous.offices?.find((x) => x.id === o.id)?.items, nowIso) });
+  } catch (e) { log(o.id, e); }
+}
+if (offices.length) sections.offices = offices;
+console.log('offices', offices.map((o) => `${o.id}:${o.items.length}:${o.items[0]?.date}`).join(' '));
+
+// MPs: the newest interpellations and written questions filed in the Sejm.
+try {
+  const acts = [];
+  for (const [kind, path] of [['interpelacja', 'interpellations'], ['zapytanie', 'writtenQuestions']]) {
+    const list = await (await get(`https://api.sejm.gov.pl/sejm/term10/${path}?limit=15&sort_by=-receiptDate`, 'application/json')).json();
+    acts.push(...list.map((x) => mpAct(x, kind)));
+  }
+  acts.sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.num - a.num);
+  sections.mpActs = { source: 'https://api.sejm.gov.pl/sejm/term10/interpellations', items: withSeenAt(acts.slice(0, 20), previous.mpActs?.items, nowIso) };
+  console.log('mpActs', acts.length, JSON.stringify(acts.slice(0, 2)));
+} catch (e) { log('mpActs', e); }
 
 await writeFile(out, JSON.stringify({ fetchedAt: nowIso, ...sections }, null, 1) + '\n');

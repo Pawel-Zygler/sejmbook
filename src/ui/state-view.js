@@ -136,7 +136,7 @@ export function renderOfficial(ctx, slug, today) {
         ${personAvatar(p.name, color, 'xl', govPhoto(ctx, p.name))}
         <div class="profile-name">
           <h1>${esc(p.name)}</h1>
-          <p>${now.map((r) => `<span class="chip chip-now">${esc(r.office)}</span>`).join(' ')}${partyNow ? ` <span class="route-chip" style="--club:${esc(color)}">${esc(partyNow)}</span>` : ''}</p>
+          <p>${now.map((r) => `<span class="chip chip-now">${esc(r.office)}</span>`).join(' ')}${partyNow ? ` <span class="chip" style="--club:${esc(color)}">${esc(partyNow)}</span>` : ''}</p>
           ${now.length ? '' : '<p class="badge-off">Dziś bez funkcji w rządzie i na najważniejszych urzędach</p>'}
         </div>
       </div>

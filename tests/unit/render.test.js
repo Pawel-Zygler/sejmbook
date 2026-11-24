@@ -455,7 +455,7 @@ describe('renderPerson', () => {
   it('shows terms, clubs, districts and the party route of a former MP', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
     expect(html).toContain('<h1>Jan Były</h1>');
-    expect(html).toContain('2 kadencje: III–IV');
+    expect(html).toContain('poseł 2 kadencji: III–IV');
     expect(html).toContain('Klub Parlamentarny Unii Wolności');
     expect(html).toContain('2 · Wałbrzych');
     expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
@@ -465,11 +465,14 @@ describe('renderPerson', () => {
   it('uses the same layout as the MP profile: header, Spektrum partyjne, Informacje', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
     for (const part of ['class="profile-top panel"', 'class="panel spectrum" data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>', 'spectrum-bar']) expect(html).toContain(part);
-    expect(html).toContain('<dt>Ostatni okręg</dt><dd>nr 2 · Wałbrzych</dd>');
+    expect(html).toContain('<dt>Okręg wyborczy</dt><dd>nr 2 · Wałbrzych</dd>');
+    expect(html).toContain('data-testid="life-line"');
+    expect(html).toContain('(76 lat)');
     const noClubs = { ...terms, people: [{ name: 'Bez Klubu', current: null, terms: [{ t: 3, id: 8, club: 'niez' }] }] };
     const html2 = renderPerson({ ...ctx, terms: noClubs, peopleByKey: new Map([['3-8', noClubs.people[0]]]) }, '3-8');
     expect(html2).toContain('Brak danych o klubach');
-    expect(html2).toContain('<dt>Ostatni okręg</dt><dd>brak danych</dd>');
+    expect(html2).toContain('<dt>Okręg wyborczy</dt><dd>brak danych</dd>');
+    expect(html2).toContain('<dt>Rok urodzenia</dt><dd>brak danych');
   });
   it('sends today\'s MPs to their full profile and unknown keys to "not found"', () => {
     expect(renderPerson({ ...ctx, terms, peopleByKey }, '3-6')).toContain('data-view="profile"');
