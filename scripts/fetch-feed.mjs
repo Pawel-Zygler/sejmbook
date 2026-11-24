@@ -55,7 +55,7 @@ try {
   const html = await (await get('https://www.prezydent.pl/aktualnosci', 'text/html')).text();
   sections.president = { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: newsLinks(html, 'https://www.prezydent.pl', '/aktualnosci/') };
   console.log('president', sections.president.items.length, JSON.stringify(sections.president.items.slice(0, 3)));
-  if (!sections.president.items.length) console.log('PREZ SAMPLE', html.slice(html.indexOf('<main'), html.indexOf('<main') + 3000));
+  { const i = html.search(/\d{1,2}\.\d{2}\.20\d\d|\d{1,2} (listopada|października|grudnia) 20\d\d/); console.log('PREZ SAMPLE', i, html.slice(Math.max(0, i - 2500), i + 1500).replace(/\s+/g, ' ')); }
 } catch (e) { log('president', e); }
 
 // Prime Minister: KPRM news on gov.pl.
@@ -63,7 +63,7 @@ try {
   const html = await (await get('https://www.gov.pl/web/premier/wydarzenia', 'text/html')).text();
   sections.pm = { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: newsLinks(html, 'https://www.gov.pl', '/web/premier/') };
   console.log('pm', sections.pm.items.length, JSON.stringify(sections.pm.items.slice(0, 3)));
-  if (!sections.pm.items.length) console.log('KPRM SAMPLE', html.slice(html.indexOf('<main'), html.indexOf('<main') + 3000));
+  { const i = html.search(/\d{1,2}\.\d{2}\.20\d\d|\d{1,2} (listopada|października|grudnia) 20\d\d/); console.log('KPRM SAMPLE', i, html.slice(Math.max(0, i - 2500), i + 1500).replace(/\s+/g, ' ')); }
 } catch (e) { log('pm', e); }
 
 // Prime Minister on Bluesky (public API; the account is verified by Bluesky).
