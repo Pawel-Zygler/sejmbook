@@ -1,49 +1,49 @@
 {
- "fetchedAt": "2026-11-24T09:09:20.614Z",
+ "fetchedAt": "2026-11-24T09:10:01.127Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
   "source": "https://www.prezydent.pl/aktualnosci",
   "items": [
    {
-    "title": "Wizyty zagraniczne",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne",
-    "date": null
+    "title": "Buenos Aires. Spotkanie Prezydenta RP z przedstawicielami argentyńskiej Polonii",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/buenos-aires-spotkanie-prezydenta-rp-z-przedstawicielami-argentynskiej-polonii,130594"
    },
    {
-    "title": "Wypowiedzi Prezydenta RP",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp",
-    "date": null
+    "title": "Odznaczenia państwowe dla osób zasłużonych dla rozwoju relacji polsko–argentyńskich",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/odznaczenia/odznaczenia-panstwowe-dla-osob-zasluzonych-dla-rozwoju-relacji-polskoargentynskich,130541"
    },
    {
-    "title": "Biuro Bezpieczeństwa Narodowego",
-    "url": "https://www.prezydent.pl/aktualnosci/biuro-bezpieczenstwa-narodowego",
-    "date": null
+    "title": "Prezydent składa wizytę oficjalną w Argentynie",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/argentyna,130558"
    },
    {
-    "title": "Biuro Polityki Międzynarodowej",
-    "url": "https://www.prezydent.pl/aktualnosci/biuro-polityki-miedzynarodowej",
-    "date": null
+    "title": "Minister Leśkiewicz gościem porannego programu TOK FM",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/minister-leskiewicz-gosciem-porannego-programu-tok-fm,130512"
    },
    {
-    "title": "Rady przy Prezydencie RP",
-    "url": "https://www.prezydent.pl/aktualnosci/rady-przy-prezydencie-rp",
-    "date": null
+    "title": "List na obchody stulecia Parafii Matki Boskiej Jasnogórskiej w Los Angeles",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-obchody-stulecia-parafii-matki-boskiej-jasnogorskiej-w-los-angeles,130435"
    },
    {
-    "title": "Listy uwierzytelniające",
-    "url": "https://www.prezydent.pl/aktualnosci/listy-uwierzytelniajace",
-    "date": null
+    "title": "Prezydent udał się z wizytą do Argentyny i Chile",
+    "date": "2026-11-22",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-udal-sie-z-wizyta-do-argentyny-i-chile,130500"
    },
    {
-    "title": "Protektorat nad Organizacjami Harcerskimi",
-    "url": "https://www.prezydent.pl/aktualnosci/protektorat-nad-organizacjami-harcerskimi",
-    "date": null
+    "title": "List na obchody 80. rocznicy odbicia więźniów z więzienia w Pułtusku",
+    "date": "2026-11-22",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-obchody-80-rocznicy-odbicia-wiezniow-z-wiezienia-w-pultusku,130425"
    },
    {
-    "title": "Kierownictwo BBN",
-    "url": "https://www.prezydent.pl/aktualnosci/biuro-bezpieczenstwa-narodowego/kierownictwo-bbn",
-    "date": null
+    "title": "80. rocznica rozbicia więzienia w Pułtusku",
+    "date": "2026-11-22",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-doradcow/80-rocznica-rozbicia-wiezienia-w-pultusku,130498"
    }
   ]
  },
@@ -53,44 +53,52 @@
   "source": "https://www.gov.pl/web/premier/wydarzenia",
   "items": [
    {
-    "title": "Kierownictwo KPRM",
-    "url": "https://www.gov.pl/web/premier/kierownictwo-kprm5",
-    "date": null
+    "title": "Rosyjska agresja przekroczyła granice Ukrainy. Premier z apelem o solidarność z Polską",
+    "date": "2026-11-23",
+    "place": "Bratysława",
+    "url": "https://www.gov.pl/web/premier/rosyjska-agresja-przekroczyla-granice-ukrainy-premier-z-apelem-o-solidarnosc-z-polska"
    },
    {
-    "title": "Zadania członków Kierownictwa KPRM",
-    "url": "https://www.gov.pl/web/premier/zadania-czlonkow-kierownictwa-kprm2",
-    "date": null
+    "title": "Kolej jest ponownie powodem do dumy",
+    "date": "2026-11-23",
+    "place": "Warszawa",
+    "url": "https://www.gov.pl/web/premier/kolej-jest-ponownie-powodem-do-dumy"
    },
    {
-    "title": "Gabinet Polityczny",
-    "url": "https://www.gov.pl/web/premier/gabinet-polityczny",
-    "date": null
+    "title": "Rosyjskie obiekty naruszyły polską przestrzeń powietrzną. Kolejna odsłona rosyjskiej eskalacji",
+    "date": "2026-11-20",
+    "place": null,
+    "url": "https://www.gov.pl/web/premier/rosyjskie-obiekty-naruszyly-polska-przestrzen-powietrzna-kolejna-odslona-rosyjskiej-eskalacji"
    },
    {
-    "title": "Lista doradców i asystentów politycznych",
-    "url": "https://www.gov.pl/web/premier/lista-doradcow-i-asystentow-politycznych2",
-    "date": null
+    "title": "Sprawiedliwy pokój dla Ukrainy fundamentem bezpieczeństwa Europy",
+    "date": "2026-11-19",
+    "place": "Warszawa",
+    "url": "https://www.gov.pl/web/premier/sprawiedliwy-pokoj-dla-ukrainy-fundamentem-bezpieczenstwa-europy"
    },
    {
-    "title": "Organizacja KPRM",
-    "url": "https://www.gov.pl/web/premier/organizacja-kprm",
-    "date": null
+    "title": "Premier zaprasza na Warszawski Szczyt Wysokiego Szczebla w sprawie AI",
+    "date": "2026-11-19",
+    "place": null,
+    "url": "https://www.gov.pl/web/premier/premier-zaprasza-na-warszawski-szczyt-wysokiego-szczebla-w-sprawie-ai"
    },
    {
-    "title": "Sekretariaty, Departamenty, Biura",
-    "url": "https://www.gov.pl/web/premier/sekretariaty-departamenty-biura2",
-    "date": null
+    "title": "Budujemy bezpieczeństwo energetyczne razem z sojusznikami. Inwestycje, dywersyfikacja i współpraca transatlantycka",
+    "date": "2026-11-18",
+    "place": "Warszawa",
+    "url": "https://www.gov.pl/web/premier/budujemy-bezpieczenstwo-energetyczne-razem-z-sojusznikami-inwestycje-dywersyfikacja-i-wspolpraca-transatlantycka"
    },
    {
-    "title": "Przedmiot działalności KPRM",
-    "url": "https://www.gov.pl/web/premier/przedmiot-dzialalnosci",
-    "date": null
+    "title": "Premier o wotum nieufności: To polityczna hucpa",
+    "date": "2026-11-17",
+    "place": "Warszawa",
+    "url": "https://www.gov.pl/web/premier/premier-o-wotum-nieufnosci-to-polityczna-hucpa"
    },
    {
-    "title": "Majątek i budżet KPRM - 2025 r",
-    "url": "https://www.gov.pl/web/premier/majatek-i-budzet-kprm---2025-r",
-    "date": null
+    "title": "Premier: Zdecydowaliśmy o zamrożeniu cen gazu",
+    "date": "2026-11-17",
+    "place": null,
+    "url": "https://www.gov.pl/web/premier/premier-zdecydowalismy-o-zamrozeniu-cen-gazu"
    }
   ]
  },
