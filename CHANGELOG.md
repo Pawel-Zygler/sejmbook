@@ -1,0 +1,44 @@
+# Changelog
+
+Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
+
+## 2026-11-24
+
+- **Serwis: Mapa strony i wspólne nagłówki.** Mapa strony zbiera wszystkie sekcje, a każda strona ma ten sam nagłówek.
+- **Feed: Komunikaty urzędów i posłów.** W Feedzie są komunikaty ministerstw, Senatu i NIK oraz najnowsze interpelacje i zapytania posłów.
+- **Państwo: Jeden wygląd profili.** Prezydenci, ministrowie i byli posłowie mają teraz profil w tym samym układzie co posłowie, ze spektrum partyjnym.
+- **Państwo: Zdjęcia w sekcji Państwo.** Prezydenci, premierzy, ministrowie i byli posłowie mają zdjęcia z Wikipedii, tam gdzie są na wolnej licencji.
+- **Państwo: Posłowie w Państwie prosto do profilu.** W sekcji Państwo kliknięcie posła otwiera od razu jego profil posła, a funkcje państwowe są wypisane na tym profilu.
+- **Feed: Interaktywny Feed.** Feed pokazuje wpisy z wybranych ostatnich godzin, linkuje do profili w Sejmbooku, a 5 ostatnich głosowań rozwija się po kliknięciu.
+- **Państwo: Prezydenci, premierzy i rządy III RP.** Nowa sekcja Państwo: najważniejsze urzędy, wszystkie 21 rządów od 1989 roku i profile ministrów, premierów i prezydentów.
+- **Start: Start bez rankingu lotów.** Na stronie głównej zostaje skład Sejmu; ranking lotów jest w zakładce Frequent Flyer.
+- **Sejmbook: Nowa paleta barw.** Sejmbook ma nowe kolory i czcionkę Geist, wzorowane na beautifulcharts.dev, w trybie jasnym i ciemnym.
+- **Sejmbook: Podpis pod nazwą.** Pod logo jest teraz podpis „wydarzenia w Rzeczypospolitej”.
+- **Nowy feed: prezydent, premier i Sejm.** Strona główna pokazuje aktywność prezydenta Nawrockiego i premiera Tuska oraz ostatnie głosowania w Sejmie.
+- **Changelog.** Zmiany w serwisie są teraz w osobnej sekcji Changelog w menu po lewej.
+- **Kadencje I i II.** W Posłach są teraz też kadencje I i II (1991–1997), z list posłów w polskiej Wikipedii.
+- **Tryb jasny i ciemny.** Przycisk w górnym pasku przełącza motyw: automatyczny, jasny albo ciemny.
+- **Kilometry według klubów.** Obok rankingu jest wykres kołowy z szacowanymi kilometrami według klubów.
+- **Profile byłych posłów.** Posłowie wcześniejszych kadencji mają własne profile z kadencjami, klubami i ścieżką partyjną.
+- **Aktualności: Zwinięte nowości.** Nowości są domyślnie zwinięte do jednej linii; kliknij, żeby rozwinąć.
+- **Szerszy Frequent Flyer.** Strona jest szersza, a wiersze rankingu Frequent Flyer niższe i czytelniejsze.
+- **Ikonka Super-męża.** Odznaka Super-mąż w Frequent Flyer ma teraz własną ikonkę latającego bohatera w pelerynie.
+- **Kontakt do posła.** Na profilu posła jest teraz sekcja Kontakt z oficjalnym e-mailem i Facebookiem, jeśli jest znany.
+- **Posłowie wszystkich kadencji.** W zakładce Posłowie wybierzesz teraz kadencję, od III (1997) do obecnej X.
+- **Rekordzista skoczek III RP.** Ranking „Najwięcej partii” obejmuje teraz wszystkich posłów od 1997 roku, nie tylko obecnych.
+- **Frekwencja klubów.** W zakładce Frekwencja jest teraz także ranking klubów, liczony jako średnia frekwencji ich posłów.
+- **Lata w partiach z Wikipedii.** Oś życia posła uzupełniamy latami członkostwa w partiach z Wikipedii, także z czasów PRL.
+- **Znaczek ☭ przy byłych członkach PZPR.** Przy partii posła, który należał do PZPR, widać teraz ☭ z opisem po najechaniu.
+- **Spektrum partyjne na tle całego życia.** Na profilu posła widać teraz oś jego życia: PRL, początek III RP, partie, opozycję i kadencje w Sejmie.
+- **Kto zmieniał partie najczęściej.** Nowy ranking w panelu Rankingi: posłowie, którzy w karierze byli w największej liczbie partii.
+- **Spektrum partyjne.** Na profilu posła pasek pokazuje, w jakich klubach spędził swoje kadencje w Sejmie od 1997 roku.
+- **Loga klubów i zdjęcia w każdym widoku.** Przy nazwie klubu jest teraz jego logo, a zdjęcia posłów ładują się także na telefonie.
+- **Frequent Flyer od zawsze: jeden ranking i wszystkie artykuły.** Ranking łączy wszystkie listy lotów od 2019 roku bez liczenia lotów dwa razy, a pod nim są wszystkie artykuły.
+- **Zdjęcia posłów.** Przy każdym pośle widać jego oficjalne zdjęcie z Sejmu.
+
+## 2026-11-23
+
+- **Frequent Flyer: odznaki podium.** Pierwsza trójka dostaje odznaki Super-mąż, Orzeł III RP i Bocian III RP.
+- **Nowa zakładka: Frekwencja.** Sprawdź, jak często każdy poseł bierze udział w głosowaniach X kadencji.
+- **Artykuły przy każdym pośle w rankingu Frequent Flyer.** Przy każdym pośle w rankingu są linki do artykułów o jego lotach.
+- **Startuje Sejmbook.** Profile 460 posłów X kadencji i ranking Frequent Flyer na danych Kancelarii Sejmu.

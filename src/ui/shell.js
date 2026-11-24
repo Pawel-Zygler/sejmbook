@@ -27,6 +27,7 @@ export const SHELL_HTML = `
     <a href="#partie" data-nav="parties"><span class="ico">⇄</span>Najwięcej partii</a>
     <p class="sidenav-label">Serwis</p>
     <a href="#changelog" data-nav="changelog"><span class="ico">✎</span>Changelog</a>
+    <a href="#mapa" data-nav="sitemap"><span class="ico">⌗</span>Mapa strony</a>
   </nav>
   <main id="view" tabindex="-1"></main>
   <aside id="aside" aria-label="Kluby"></aside>

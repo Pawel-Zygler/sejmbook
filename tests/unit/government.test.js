@@ -2,7 +2,8 @@
 import { describe, it, expect } from 'vitest';
 import { datesIn, tableGrid, splitParty, canonicalName, parseGovernment, parseOfficeHolders, personSlug, buildHierarchy, currentHolders, currentMembers, searchOfficials } from '../../src/lib/government.js';
 import { slugify, wikitables, GOVERNMENT_PAGES, OFFICE_PAGES } from '../../src/lib/government-sources.js';
-import { renderState, renderGovernment, renderOfficial, renderOfficialMatches, mpLinkFor } from '../../src/ui/state-view.js';
+import { renderState, renderGovernment, renderOfficial, renderOfficialMatches, mpLinkFor, roleLine } from '../../src/ui/state-view.js';
+import { renderSitemap } from '../../src/ui/sitemap-view.js';
 
 const doc = (html) => new DOMParser().parseFromString(html, 'text/html');
 
@@ -159,7 +160,7 @@ describe('state views', () => {
     for (const slug of ctx.bySlug ? [...ctx.bySlug.keys()] : [...ctx.gov.bySlug.keys()]) {
       const h = renderOfficial(ctx, slug, '2026-11-24');
       expect(h).toContain('data-testid="spectrum"');
-      expect(h).toMatch(/spectrum-bar|Brak danych o partii/);
+      expect(h).toMatch(/spectrum-bar|Bez partii/);
     }
   });
   it('uses portraits when the build bundled them', () => {
@@ -170,5 +171,26 @@ describe('state views', () => {
   it('lists search matches, or nothing', () => {
     expect(renderOfficialMatches(ctx, 'kowalski')).toContain('Prezydent RP, 2005–obecnie');
     expect(renderOfficialMatches(ctx, 'zzz')).toBe('');
+  });
+});
+
+describe('official life line and the sitemap', () => {
+  it('draws state roles on a time line, government and offices in separate lanes', () => {
+    const html = roleLine([
+      { office: 'Minister', party: 'PiS', gov: 'g1', from: '2005-10-31', to: '2007-11-16' },
+      { office: 'Prezydent RP', from: '2025-08-06', to: null },
+    ], '2026-11-24');
+    expect(html).toContain('data-lane="gov"');
+    expect(html).toContain('data-lane="office"');
+    expect(html).toContain('Pierwsza funkcja państwowa: <b>2005</b> (Minister)');
+    expect(html).toContain('life-seg open');
+    expect(roleLine([], '2026-11-24')).toBe('');
+  });
+  it('lists every section, top office and government', () => {
+    const html = renderSitemap({ gov: buildHierarchy(DATA), mps: [{ id: 1 }], today: '2026-11-24', peopleByKey: new Map([['3-5', { name: 'Ktoś Dawny', current: null, terms: [{ t: 3, id: 5 }] }]]) });
+    expect(html).toContain('data-testid="sitemap"');
+    for (const h of ['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa', '#rzad-g1']) expect(html).toContain(`href="${h}"`);
+    expect(html).toContain('1 osoba');
+    expect(renderSitemap({ mps: [], gov: null })).not.toContain('rządy III RP');
   });
 });

@@ -31,8 +31,9 @@ describe('feed sources: parsers', () => {
     ]);
   });
   it('reads the Senate list', () => {
-    const html = '<div class="aktualnosc-lista c"><a href="/aktualnoscilista/art,1,a.html"><h3><span class="pseudo-link">Marszałek Senatu</span></h3></a><span class="data">23.11.2026</span></div><div class="aktualnosc-lista"><a href="/inne">x</a></div>';
-    expect(parseSenat(html)).toEqual([{ title: 'Marszałek Senatu', date: '2026-11-23', url: 'https://www.senat.gov.pl/aktualnoscilista/art,1,a.html' }]);
+    const html = '<div class="aktualnosc-lista c"><a href="/aktualnoscilista/art,1,a.html"><h3><span class="pseudo-link">Marszałek Senatu</span></h3></a><span class="data">23.11.2026</span></div><div class="aktualnosc-lista"><a href="/inne">x</a></div><div class="aktualnosc-lista"><a href="/aktualnoscilista/marszalek-i-prezydium/art,2,b.html"><span class="pseudo-link">B</span></a><span class="data">22.11.2026</span></div>';
+    expect(parseSenat(html)).toEqual([{ title: 'Marszałek Senatu', date: '2026-11-23', url: 'https://www.senat.gov.pl/aktualnoscilista/art,1,a.html' },
+      { title: 'B', date: '2026-11-22', url: 'https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,2,b.html' }]);
   });
   it('reads NIK items whether the date is before or after the title', () => {
     const html = '<a href="https://www.nik.gov.pl/komunikaty/a.html"><div class="news__inner"><h2 class="news__title"> Sól w rzekach <span class="helper"></span></h2><span class="news__date"> 24 listopada 2026 08:30 </span></div></a>'

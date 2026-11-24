@@ -62,3 +62,10 @@ describe('state routes', () => {
     expect(hrefFor({ name: 'official', slug: 'ewa-kopacz' })).toBe('#urzad-ewa-kopacz');
   });
 });
+
+describe('sitemap route', () => {
+  it('parses and builds #mapa', () => {
+    expect(parseHash('#mapa')).toEqual({ name: 'sitemap' });
+    expect(hrefFor({ name: 'sitemap' })).toBe('#mapa');
+  });
+});

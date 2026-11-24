@@ -7,6 +7,7 @@ import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderP
 import { renderAttendance } from './ui/attendance-view.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
 import { buildHierarchy } from './lib/government.js';
+import { renderSitemap } from './ui/sitemap-view.js';
 
 export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
@@ -37,7 +38,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', sitemap: 'sitemap', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -72,6 +73,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'person') html = renderPerson(ctx, r.key);
     else if (r.name === 'changelog') html = renderChangelog(ctx);
+    else if (r.name === 'sitemap') html = renderSitemap(ctx);
     else if (r.name === 'state') html = renderState(ctx, ctx.today);
     else if (r.name === 'government') html = renderGovernment(ctx, r.id);
     else if (r.name === 'official') html = renderOfficial(ctx, r.slug, ctx.today);

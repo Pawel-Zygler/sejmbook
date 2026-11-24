@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-mapa-strony",
+      "date": "2026-11-24",
+      "title": "Mapa strony i wspólne nagłówki",
+      "section": "Serwis",
+      "body": "Mapa strony zbiera wszystkie sekcje, a każda strona ma ten sam nagłówek.",
+      "link": {
+        "href": "#mapa",
+        "label": "Zobacz"
+      }
+    },
+    {
+      "id": "2026-11-24-komunikaty",
+      "date": "2026-11-24",
+      "title": "Komunikaty urzędów i posłów",
+      "section": "Feed",
+      "body": "W Feedzie są komunikaty ministerstw, Senatu i NIK oraz najnowsze interpelacje i zapytania posłów.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-jeden-profil",
       "date": "2026-11-24",
       "title": "Jeden wygląd profili",

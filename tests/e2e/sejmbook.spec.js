@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Jeden wygląd profili');
+  await expect(post).toContainText('Mapa strony i wspólne nagłówki');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Jeden wygląd profili');
+  await expect(page.locator('.news-post').first()).toContainText('Mapa strony i wspólne nagłówki');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -367,7 +367,7 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
   await page.locator('[data-testid="gov-list"] a', { hasText: 'Rząd Jerzego Buzka' }).click();
   await expect(page.locator('#view h1')).toHaveText('Rząd Jerzego Buzka');
   await page.goto(`${PAGE}#urzad-lech-walesa`);
-  await expect(page.locator('[data-testid="role-list"]')).toContainText('Prezydent RP');
+  await expect(page.locator('[data-testid="state-roles"]')).toContainText('Prezydent RP');
   await page.goto(`${PAGE}#poslowie`);
   await page.locator('#dir-search').fill('Wałęsa');
   await expect(page.locator('[data-testid="official-matches"]')).toContainText('Lech Wałęsa');
@@ -413,4 +413,21 @@ test('Profiles: officials and former MPs use the MP profile layout', async ({ pa
   await expect(page.getByTestId('spectrum').locator('.spectrum-bar')).toBeVisible();
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Feed: office releases and MP acts; sitemap from the side menu or the feed note', async ({ page }) => {
+  await page.goto(`${PAGE}#start`);
+  await page.locator('[data-action="feed-window"][data-window="all"]').click();
+  await expect(page.locator('.feed-post[data-feed="offices"] .feed-list li').first()).toBeVisible();
+  await expect(page.locator('.feed-post[data-feed="mp-acts"] .feed-list li').first()).toBeVisible();
+  await page.locator('[data-testid="feed-note"] a[href="#mapa"]').click();
+  await expect(page.locator('#view h1')).toHaveText('Mapa strony');
+  await page.getByTestId('sitemap').locator('a', { hasText: 'Rząd Jerzego Buzka' }).click();
+  await expect(page.locator('#view h1')).toHaveText('Rząd Jerzego Buzka');
+  await expect(page.locator('#view .page-head')).toBeVisible();
+  const vw = page.viewportSize().width;
+  for (const h of ['#mapa', '#start']) {
+    await page.goto(`${PAGE}${h}`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+  }
 });

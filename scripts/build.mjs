@@ -4,6 +4,7 @@ import { build } from 'esbuild';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { SHELL_HTML } from '../src/ui/shell.js';
+import { changelogMarkdown } from '../src/lib/changelog.js';
 
 const root = new URL('..', import.meta.url);
 const p = (rel) => new URL(rel, root);
@@ -63,4 +64,6 @@ await writeFile(p('dist/standalone.html'), standalone);
 // Static hosting (Cloudflare Pages): output directory dist/pages
 await mkdir(p('dist/pages'), { recursive: true });
 await writeFile(p('dist/pages/index.html'), standalone);
+// CHANGELOG.md in the repo root, from the same posts as the Changelog page.
+await writeFile(p('CHANGELOG.md'), changelogMarkdown(JSON.parse(await readFile(p('data/news.json'), 'utf8'))));
 console.log(`dist/index.html ${(fragment.length / 1024).toFixed(1)} KB${media ? `, ${Object.keys(media.photos).length} photos, ${Object.keys(media.logos).length} logos, ${Object.keys(media.gov).length} official portraits inlined` : ', no media/ yet'}`);

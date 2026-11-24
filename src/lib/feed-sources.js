@@ -68,7 +68,7 @@ export function parseGovPl(html, slug) {
 export function parseSenat(html) {
   const out = [];
   for (const c of String(html).split('aktualnosc-lista').slice(1)) {
-    const href = /<a href="(\/aktualnoscilista\/art,[^"]+)"/.exec(c)?.[1];
+    const href = /<a href="(\/aktualnoscilista\/[^"]*?art,[^"]+)"/.exec(c)?.[1];
     const title = /pseudo-link">([\s\S]*?)<\/span>/.exec(c)?.[1];
     const date = /<span class="data">\s*([\d.]+)\s*<\/span>/.exec(c)?.[1];
     if (href && title) out.push({ title: text(title), date: isoDate(date ?? ''), url: `https://www.senat.gov.pl${decode(href)}` });

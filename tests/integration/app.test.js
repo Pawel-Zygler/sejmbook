@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Jeden wygląd profili';
-const NEWEST_LINE = 'Państwo: Jeden wygląd profili';
+const NEWEST = 'Mapa strony i wspólne nagłówki';
+const NEWEST_LINE = 'Serwis: Mapa strony i wspólne nagłówki';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -583,7 +583,7 @@ describe('Państwo: III RP hierarchy', () => {
   it('gives presidents and prime ministers profiles with all their roles', () => {
     nav('#urzad-lech-kaczynski');
     expect($('#view h1').textContent).toBe('Lech Kaczyński');
-    const roles = $('[data-testid="role-list"]').textContent;
+    const roles = $('[data-testid="state-roles"]').textContent;
     expect(roles).toContain('Prezydent RP');
     expect(roles).toContain('Prezes NIK');
     expect(roles).toContain('Minister sprawiedliwości');
@@ -645,5 +645,42 @@ describe('Feed: interactive', () => {
   it('links the President to his profile here', () => {
     nav('#start');
     expect($('#view .feed-post[data-feed="president"] .post-head a').getAttribute('href')).toBe('#urzad-karol-nawrocki');
+  });
+});
+
+describe('Feed: office press releases, MP acts; sitemap; one page header', () => {
+  it('shows ministries, the Senate and NIK, and MPs\' interpellations, from data/feed.json', () => {
+    nav('#start');
+    click($('[data-action="feed-window"][data-window="all"]'));
+    const offices = $('#view .feed-post[data-feed="offices"]');
+    expect(offices).not.toBeNull();
+    expect($$('#view .feed-post[data-feed="offices"] .feed-list a[target]').every((a) => /^https:\/\/www\.(gov|senat|nik)\.gov\.pl|^https:\/\/www\.gov\.pl/.test(a.href))).toBe(true);
+    const acts = $('#view .feed-post[data-feed="mp-acts"]');
+    expect(acts.querySelector('a[href^="#posel-"]')).not.toBeNull();
+  });
+  it('opens the sitemap from the side menu and every link goes somewhere real', () => {
+    nav('#mapa');
+    expect($('#view h1').textContent).toBe('Mapa strony');
+    expect($('.sidenav a[data-nav="sitemap"]').classList.contains('on')).toBe(true);
+    const hrefs = [...new Set($$('[data-testid="sitemap"] a').map((a) => a.getAttribute('href')))];
+    expect(hrefs.length).toBeGreaterThan(25);
+    for (const h of hrefs) { nav(h); expect($('#view').textContent).not.toContain('Nie ma takiej strony'); }
+  });
+  it('gives every section page the same header', () => {
+    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']) {
+      nav(h);
+      const head = $('#view .page-head');
+      expect(head, h).not.toBeNull();
+      expect(head.dataset.icon.length, h).toBeGreaterThan(0);
+      expect(head.querySelector('h1'), h).not.toBeNull();
+    }
+    nav('#frekwencja');
+    expect($('#view .page-head').dataset.icon).toBe('◔');
+  });
+  it('shows a minister\'s office releases on their profile', () => {
+    nav('#panstwo');
+    const kk = $$('[data-testid="cabinet-now"] a').find((x) => x.textContent === 'Władysław Kosiniak-Kamysz');
+    nav(kk.getAttribute('href'));
+    expect($('[data-testid="person-news"]').textContent).toContain('Ministerstwo Obrony Narodowej');
   });
 });

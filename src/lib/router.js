@@ -8,6 +8,7 @@ export function parseHash(hash) {
   if (h === 'partie') return { name: 'parties' };
   if (h === 'changelog') return { name: 'changelog' };
   if (h === 'panstwo') return { name: 'state' };
+  if (h === 'mapa') return { name: 'sitemap' };
   const gv = /^rzad-([a-z0-9-]+)$/.exec(h);
   if (gv) return { name: 'government', id: gv[1] };
   const of = /^urzad-([a-z0-9-]+)$/.exec(h);
@@ -28,6 +29,7 @@ export function hrefFor(route) {
     case 'parties': return '#partie';
     case 'changelog': return '#changelog';
     case 'state': return '#panstwo';
+    case 'sitemap': return '#mapa';
     case 'government': return `#rzad-${route.id}`;
     case 'official': return `#urzad-${route.slug}`;
     case 'profile': return `#posel-${route.id}`;

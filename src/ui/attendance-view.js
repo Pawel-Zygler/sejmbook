@@ -116,7 +116,7 @@ export function renderAttendance(ctx, state, helpers) {
 
   return `<section data-view="attendance">
     ${rankingSwitch('attendance')}
-    <div class="panel flyer-hero att-hero">
+    <div class="panel page-head att-hero" data-icon="◔" data-testid="page-head">
       <p class="eyebrow">Ranking</p>
       <h1>Frekwencja</h1>
       <p class="lede">Jak często posłowie biorą udział w głosowaniach. Dla każdego dnia posiedzeń liczymy, w ilu głosowaniach poseł wziął udział, a potem uśredniamy te dzienne wyniki.</p>

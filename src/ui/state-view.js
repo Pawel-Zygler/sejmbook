@@ -1,6 +1,7 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
-import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar } from './render.js';
+import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead } from './render.js';
+import { clubFamily } from '../lib/career.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
 import { personKey, roleSpectrum } from '../lib/career.js';
 
@@ -68,7 +69,7 @@ export function renderState(ctx, today) {
   const ministers = members.filter((m) => !pm.includes(m) && !deputies.includes(m));
   return `
   <section class="feed state" data-view="state">
-    <div class="panel state-head"><h1>Państwo</h1><p class="muted">Najważniejsze urzędy III Rzeczypospolitej, rząd, który rządzi dziś, i wszystkie rządy od 1989 roku. Kliknij osobę, żeby zobaczyć jej profil.</p></div>
+    ${pageHead({ icon: '⚖', eyebrow: 'Państwo', title: 'Państwo i rządy', lede: 'Najważniejsze urzędy III Rzeczypospolitej, rząd, który rządzi dziś, i wszystkie rządy od 1989 roku. Kliknij osobę, żeby zobaczyć jej profil.' })}
 
     <div class="panel">
       <h2>Najważniejsze urzędy dziś</h2>
@@ -106,8 +107,7 @@ export function renderGovernment(ctx, id) {
   const next = ctx.gov.governments[i + 1];
   return `
   <section class="feed state" data-view="government">
-    <div class="panel state-head"><p class="muted"><a href="#panstwo">Państwo</a> · rząd nr ${i + 1} III RP</p><h1>${esc(g.name)}</h1>
-      <p>${esc(span(g.from, g.to))}${g.pm ? ` · premier ${holderLink(ctx, g.pm)}${g.pm.party ? ` (${esc(g.pm.party)})` : ''}` : ''}</p></div>
+    ${pageHead({ icon: '⚖', eyebrow: `<a href="#panstwo">Państwo</a> · rząd nr ${i + 1} III RP`, title: g.name, lede: `${esc(span(g.from, g.to))}${g.pm ? ` · premier ${holderLink(ctx, g.pm)}${g.pm.party ? ` (${esc(g.pm.party)})` : ''}` : ''}` })}
     <div class="panel">
       <table class="gov-table" data-testid="gov-table"><thead><tr><th>Funkcja</th><th>Osoba</th><th class="num">Od</th><th class="num">Do</th></tr></thead><tbody>${memberRows(ctx, g.members)}</tbody></table>
       <p class="src">Źródło: <a href="${esc(g.url ?? wikiUrl(g.name))}" target="_blank" rel="noopener">Wikipedia, ${esc(g.name)}</a></p>
@@ -116,11 +116,43 @@ export function renderGovernment(ctx, id) {
   </section>`;
 }
 
-/** #urzad-<slug>: a person's state roles. */
+const yearOf = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ? 1970 + d / (365.2425 * 864e5) : null; };
+
+/**
+ * The life line of an official, in the same look as on MP profiles: their state roles over time since 1989,
+ * government roles in one lane and the top offices in another, coloured by party.
+ */
+export function roleLine(roles, today) {
+  const now = yearOf(today);
+  const items = roles.map((r) => ({ r, from: yearOf(r.from), to: yearOf(r.to ?? today) })).filter((x) => x.from != null && x.to != null);
+  if (!items.length) return '';
+  const start = Math.min(1989, ...items.map((x) => Math.floor(x.from)));
+  const pos = (y) => (((y - start) / (now - start)) * 100).toFixed(2);
+  const width = (a, b) => Math.max(((b - a) / (now - start)) * 100, 0.8).toFixed(2);
+  const seg = (x) => {
+    const color = x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
+    return `<span class="life-seg${x.r.to ? '' : ' open'}" style="--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
+  };
+  const lanes = [
+    { id: 'gov', label: 'Rząd', items: items.filter((x) => x.r.gov) },
+    { id: 'office', label: 'Urzędy', items: items.filter((x) => !x.r.gov) },
+  ].filter((l) => l.items.length);
+  const first = [...items].sort((x, y) => x.from - y.from)[0];
+  return `
+      <div class="life" data-testid="life-line">
+        <div class="life-eras" aria-hidden="true"><span class="life-era rp" style="left:0;width:100%">III RP</span></div>
+        <div class="life-lanes">${lanes.map((l) => `
+          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span><div class="life-track">${l.items.map(seg).join('')}</div></div>`).join('')}
+        </div>
+        <div class="life-axis"><span>${start}</span><span>${String(today).slice(0, 4)}</span></div>
+      </div>
+      <p class="life-first" data-testid="life-first">Pierwsza funkcja państwowa: <b>${String(first.r.from).slice(0, 4)}</b> (${esc(first.r.office)}).</p>`;
+}
+
+/** #urzad-<slug>: a person who never sat in the Sejm, in the same layout as an MP profile. */
 export function renderOfficial(ctx, slug, today) {
   const p = ctx.gov?.bySlug.get(slug);
   if (!p) return '<section data-view="official"><p class="panel">Nie ma takiej osoby w danych o urzędach.</p></section>';
-  const govName = (id) => ctx.gov.governments.find((x) => x.id === id);
   const now = p.roles.filter((r) => r.from <= today && (!r.to || r.to > today));
   const mp = mpLinkFor(ctx, p.name);
   const sp = roleSpectrum(p.roles, today);
@@ -128,6 +160,7 @@ export function renderOfficial(ctx, slug, today) {
   const first = p.roles.at(-1);
   const partyNow = [...p.roles].find((r) => r.party)?.party ?? p.party;
   const yrs = (y) => `${Math.round(y * 10) / 10}`.replace('.', ',');
+  const news = personNewsPost(ctx, p.name);
   return `
   <section data-view="official" data-official="${esc(p.slug)}">
     <div class="profile-top panel">
@@ -143,10 +176,11 @@ export function renderOfficial(ctx, slug, today) {
     </div>
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
+      ${roleLine(p.roles, today)}
       ${sp ? `<h3 class="spectrum-h3">Partia w funkcjach państwowych</h3>
       <p class="muted spectrum-sub">Razem ok. ${yrs(sp.totalYears)} lat w funkcjach z przypisaną partią</p>
       ${spectrumBar(sp, (x) => `${esc(years(x.from, x.to === today ? null : x.to))}`)}`
-        : '<p class="muted">Brak danych o partii: te funkcje nie mają w źródle przypisanej partii (np. prezydent, prezes NBP, sędziowie).</p>'}
+        : '<p class="muted">Bez partii: te funkcje nie mają w źródle przypisanej partii.</p>'}
     </section>
     <div class="profile-cols">
       <aside class="panel about">
@@ -154,21 +188,15 @@ export function renderOfficial(ctx, slug, today) {
         <dl>
           <dt>Funkcja dziś</dt><dd>${now.length ? now.map((r) => esc(r.office)).join(', ') : 'brak'}</dd>
           <dt>Partia</dt><dd>${esc(partyNow ?? 'brak danych')}</dd>
-          <dt>Funkcje państwowe</dt><dd>${p.roles.length}</dd>
           ${first ? `<dt>Pierwsza funkcja</dt><dd>${esc(first.office)} <span class="muted">(${esc(String(first.from).slice(0, 4))})</span></dd>` : ''}
         </dl>
         <p class="src">Dane: ${p.wiki ? `<a href="${esc(wikiUrl(p.wiki))}" target="_blank" rel="noopener">Wikipedia</a> · ` : ''}<a href="#panstwo">Państwo</a></p>
         ${mp ? `<p><a class="btn" href="${esc(mp.href)}" data-testid="official-mp">${esc(mp.label)}</a></p>` : ''}
+        ${stateRolesLink(ctx, p.name)}
       </aside>
       <div class="feed">
-    <div class="panel">
-      <h2>Funkcje państwowe</h2>
-      <ol class="role-list" data-testid="role-list">${p.roles.map((r) => {
-        const g = r.gov ? govName(r.gov) : null;
-        return `<li><strong>${esc(r.office)}</strong>${r.party ? ` <small class="muted">(${esc(r.party)})</small>` : ''}<br><small class="muted">${esc(span(r.from, r.to))}${g ? ` · <a href="#rzad-${esc(g.id)}">${esc(g.name)}</a>` : ''}</small></li>`;
-      }).join('')}</ol>
-    </div>
-    ${sourceNote(ctx)}
+        ${news || '<article class="post"><p class="post-text">Brak oficjalnych komunikatów tej osoby w Feedzie. Pobieramy je z oficjalnych stron urzędów, które dziś działają.</p></article>'}
+        ${sourceNote(ctx)}
       </div>
     </div>
   </section>`;
