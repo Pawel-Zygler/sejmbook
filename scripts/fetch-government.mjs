@@ -11,10 +11,16 @@ await mkdir(dir, { recursive: true });
 const pages = [...new Set([...GOVERNMENT_PAGES.map((g) => g.page), ...OFFICE_PAGES.map((o) => o.page)])];
 for (const title of pages) {
   const url = `https://pl.wikipedia.org/w/api.php?${new URLSearchParams({ action: 'parse', prop: 'text|revid', format: 'json', formatversion: '2', redirects: '1', page: title })}`;
-  const r = await (await fetch(url, { headers: { 'User-Agent': UA } })).json();
+  let r = null;
+  for (let attempt = 0; attempt < 6 && !r; attempt++) {
+    const res = await fetch(url, { headers: { 'User-Agent': UA } });
+    const body = await res.text();
+    try { r = JSON.parse(body); } catch { console.log(`retry ${title} (${res.status})`); await new Promise((ok) => setTimeout(ok, 5000 * (attempt + 1))); }
+  }
+  if (!r) { console.error(`failed: ${title}`); process.exitCode = 1; continue; }
   if (!r.parse) { console.error(`missing: ${title}`); process.exitCode = 1; continue; }
   const tables = wikitables(r.parse.text);
   await writeFile(new URL(`${slugify(title)}.html`, dir), `<!-- source: https://pl.wikipedia.org/wiki/${encodeURIComponent(r.parse.title.replace(/ /g, '_'))} revid=${r.parse.revid} -->\n${tables.join('\n')}\n`);
   console.log(`${title}: ${tables.length} tables, revid ${r.parse.revid}`);
-  await new Promise((res) => setTimeout(res, 300));
+  await new Promise((res) => setTimeout(res, 2000));
 }
