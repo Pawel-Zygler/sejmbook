@@ -1,36 +1,40 @@
 /* Layout: social-network frame. Sticky top bar, left nav, centre feed, right club column; collapses to one column on phones. */
+/* Palette: modelled on beautifulcharts.dev (its own :root / .dark tokens: canvas, paper, ink, signal amber, cobalt, coral, mint). */
 :root {
-  --bg: #eceef2;
-  --surface: #ffffff;
-  --surface-2: #f4f5f8;
-  --ink: #181b21;
-  --muted: #5c6370;
-  --line: #dde0e6;
-  --accent: #c4122f;      /* parliament red */
+  --bg: #f5f3ee;          /* canvas */
+  --surface: #ffffff;     /* paper */
+  --surface-2: #efede7;
+  --ink: #14161a;
+  --muted: #595f68;
+  --line: #dedbd3;
+  --accent: #8f5200;      /* signal */
   --accent-ink: #ffffff;
-  --accent-soft: #fbe7ea;
-  --warn-bg: #fff6df;
-  --warn-ink: #6b4d00;
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --radius: 10px;
-  /* Chart series, light mode: beautifulcharts.dev palette (each >= 3:1 on the light surface). */
-  --series-1: #365db8; --series-2: #c77600; --series-3: #009bc2; --series-4: #893400; --series-5: #b54154;
-  --series-other: #9aa1ad;
+  --accent-soft: #f6ead8;
+  --cobalt: #3e4fd0; --coral: #c23d22; --mint: #0b7c55;
+  --warn-bg: #fbf0dc;
+  --warn-ink: #6b4300;
+  --font-display: "Geist", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Geist", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 12px;
+  /* Chart series, light: beautifulcharts.dev chart tokens (validated: CVD, contrast >= 3:1 on white). */
+  --series-1: #9a5c00; --series-2: #3e4fd0; --series-3: #c23d22; --series-4: #0b7c55; --series-5: #7c4ad1;
+  --series-other: #9a9da3;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #121418; --surface: #1c1f25; --surface-2: #252930; --ink: #e9ebef; --muted: #9aa1ad;
-    --line: #2f343c; --accent: #ff4d63; --accent-ink: #1a0005; --accent-soft: #3a1820;
-    --warn-bg: #3a2f12; --warn-ink: #f3d68a; color-scheme: dark;
-    --series-1: #77a2fc; --series-2: #cc712b; --series-3: #1fe6e5; --series-4: #e7963e; --series-5: #f5c252; --series-other: #5c6370;
+    --bg: #08090b; --surface: #101216; --surface-2: #1a1c21; --ink: #eef0f2; --muted: #8f959e;
+    --line: #262a31; --accent: #ffb547; --accent-ink: #1c1305; --accent-soft: #2a2114;
+    --cobalt: #8f9bff; --coral: #ff7a63; --mint: #4fe0a2;
+    --warn-bg: #2a2114; --warn-ink: #ffd28a; color-scheme: dark;
+    --series-1: #ffb547; --series-2: #8f9bff; --series-3: #ff7a63; --series-4: #4fe0a2; --series-5: #b98cff; --series-other: #4a4f58;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #121418; --surface: #1c1f25; --surface-2: #252930; --ink: #e9ebef; --muted: #9aa1ad;
-  --line: #2f343c; --accent: #ff4d63; --accent-ink: #1a0005; --accent-soft: #3a1820;
-  --warn-bg: #3a2f12; --warn-ink: #f3d68a; color-scheme: dark;
-  --series-1: #77a2fc; --series-2: #cc712b; --series-3: #1fe6e5; --series-4: #e7963e; --series-5: #f5c252; --series-other: #5c6370;
+    --bg: #08090b; --surface: #101216; --surface-2: #1a1c21; --ink: #eef0f2; --muted: #8f959e;
+    --line: #262a31; --accent: #ffb547; --accent-ink: #1c1305; --accent-soft: #2a2114;
+    --cobalt: #8f9bff; --coral: #ff7a63; --mint: #4fe0a2;
+    --warn-bg: #2a2114; --warn-ink: #ffd28a; color-scheme: dark;
+    --series-1: #ffb547; --series-2: #8f9bff; --series-3: #ff7a63; --series-4: #4fe0a2; --series-5: #b98cff; --series-other: #4a4f58;
 }
 
 * { box-sizing: border-box; }
@@ -386,7 +390,8 @@ h2 { font-size: 1.1rem; }
 .rank-who .rank-mp { display: flex; margin-right: 0; }
 .rank-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 4px 0 0 40px; }
 .rank-meta .att-badge { margin-left: 0; }
-@media (min-width: 1300px) { .rank td.arts { min-width: 300px; } .rank td.rank-who { min-width: 340px; } }
+@media (min-width: 1300px) { .rank td.arts { min-width: 240px; } .rank td.rank-who { min-width: 300px; } }
+@media (min-width: 1600px) { .rank td.arts { min-width: 300px; } .rank td.rank-who { min-width: 340px; } }
 
 /* Former MPs' profiles */
 .person-terms { min-width: 480px; }
@@ -430,8 +435,8 @@ h2 { font-size: 1.1rem; }
 .vote-title { margin: 0 0 4px; font-weight: 600; font-size: 0.92rem; }
 .vote-bar { display: flex; gap: 2px; height: 8px; margin-bottom: 4px; }
 .vote-bar span { display: block; border-radius: 4px; min-width: 0; }
-.v-yes { background: var(--series-1); }
-.v-no { background: var(--series-2); }
+.v-yes { background: var(--series-4); }
+.v-no { background: var(--series-3); }
 .v-abs { background: var(--series-other); }
 .v-pass { color: var(--ink); }
 .v-fail { color: var(--accent); }

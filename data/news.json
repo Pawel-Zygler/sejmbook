@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-paleta",
+      "date": "2026-11-24",
+      "title": "Nowa paleta barw",
+      "section": "Sejmbook",
+      "body": "Sejmbook ma nowe kolory i czcionkę Geist, wzorowane na beautifulcharts.dev, w trybie jasnym i ciemnym.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-podpis",
       "date": "2026-11-24",
       "title": "Podpis pod nazwą",

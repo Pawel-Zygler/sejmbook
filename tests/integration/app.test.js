@@ -148,8 +148,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Podpis pod nazwą';
-const NEWEST_LINE = 'Sejmbook: Podpis pod nazwą';
+const NEWEST = 'Nowa paleta barw';
+const NEWEST_LINE = 'Sejmbook: Nowa paleta barw';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

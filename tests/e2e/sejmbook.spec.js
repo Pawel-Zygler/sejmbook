@@ -90,7 +90,7 @@ test('dark mode uses the dark palette', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto(PAGE);
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  expect(bg).toBe('rgb(18, 20, 24)');
+  expect(bg).toBe('rgb(8, 9, 11)');
 });
 
 test('ranking rows link to all articles about the MP', async ({ page }) => {
@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Podpis pod nazwą');
+  await expect(post).toContainText('Nowa paleta barw');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Podpis pod nazwą');
+  await expect(page.locator('.news-post').first()).toContainText('Nowa paleta barw');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -331,11 +331,12 @@ test('Dark and light mode: switch, and the donut uses the mode\'s palette', asyn
   const donut = page.locator('[data-testid="flyer-donut"]:visible').first();
   if (isMobile) await donut.scrollIntoViewIfNeeded();
   const fill = () => donut.locator('.donut-seg').first().evaluate((el) => getComputedStyle(el).fill);
-  expect(await fill()).toBe('rgb(54, 93, 184)');
+  expect(await fill()).toBe('rgb(154, 92, 0)');
+  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(245, 243, 238)');
   const bgLight = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
   await btn.click();
   await expect(btn).toHaveAttribute('data-theme', 'dark');
-  expect(await fill()).toBe('rgb(119, 162, 252)');
+  expect(await fill()).toBe('rgb(255, 181, 71)');
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).not.toBe(bgLight);
   await page.reload();
   await expect(page.getByTestId('theme-btn')).toHaveAttribute('data-theme', 'dark');

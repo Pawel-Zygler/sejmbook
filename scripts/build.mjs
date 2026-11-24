@@ -45,7 +45,7 @@ const head = `<title>Sejmbook</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Sejmbook: profile posłów X kadencji i ranking Frequent Flyer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
 <style>${css}</style>`;
 
 const fragment = `${head}\n${SHELL_HTML}\n${mediaScript}<script>${js}</script>\n`;
