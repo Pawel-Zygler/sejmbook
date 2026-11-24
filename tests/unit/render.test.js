@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -129,6 +129,19 @@ describe('news', () => {
     expect(html).toContain('a &amp; b');
     expect(html).toContain('href="#poslowie"');
     expect(renderNewsPost(posts[0])).not.toContain('post-foot');
+  });
+  it('news posts are folded by default to one line "Section: title"', () => {
+    const html = renderNewsPost({ id: 'y', date: '2026-11-24', title: 'Ikonka Super-męża', body: 'x', link: { href: '#frequent-flyer', label: 'Zobacz' } });
+    expect(html).toMatch(/^<details class="post news-post"/);
+    expect(html).not.toContain('<details class="post news-post" data-news-id="y" open');
+    expect(html).toContain('<b class="news-section">Frequent Flyer:</b> <span class="news-title">Ikonka Super-męża</span>');
+    expect(html).toContain('>24.11</time>');
+    expect(newsSection({ link: { href: '#posel-4' } })).toBe('Profil posła');
+    expect(newsSection({ link: { href: '#partie' } })).toBe('Najwięcej partii');
+    expect(newsSection({ link: { href: '#poslowie' } })).toBe('Posłowie');
+    expect(newsSection({ link: { href: '#frekwencja' } })).toBe('Frekwencja');
+    expect(newsSection({})).toBe('Sejmbook');
+    expect(newsSection({ section: 'Start', link: { href: '#partie' } })).toBe('Start');
   });
   it('home shows news posts before the rest of the feed', () => {
     const html = renderHome({ ...ctx, news: posts });

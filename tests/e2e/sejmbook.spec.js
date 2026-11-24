@@ -103,8 +103,14 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Szerszy Frequent Flyer');
-  await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
+  await expect(post).toContainText('Zwinięte nowości');
+  // Posts are folded to one line; opening one shows its text and link.
+  const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
+  await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
+  const h = await post.locator('summary').evaluate((el) => el.getBoundingClientRect().height);
+  expect(h).toBeLessThan(40);
+  await art.locator('summary').click();
+  await art.getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
 
@@ -128,7 +134,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Szerszy Frequent Flyer');
+  await expect(page.locator('.news-post').first()).toContainText('Zwinięte nowości');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 

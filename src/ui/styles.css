@@ -199,7 +199,16 @@ h2 { font-size: 1.1rem; }
 .rank td.arts { min-width: 160px; }
 .rank td:nth-child(2) { min-width: 230px; }
 .news-post { border-left: 4px solid var(--accent); }
-.news-title { font-size: 1.15rem; }
+.news-post { display: block; padding-block: 10px; }
+.news-line { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; }
+.news-line::-webkit-details-marker { display: none; }
+.news-line::before { content: "▸"; color: var(--accent); flex: none; transition: transform .15s; }
+.news-post[open] .news-line::before { transform: rotate(90deg); }
+.news-text { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.news-section { color: var(--accent); }
+.news-date { flex: none; font-size: 0.78rem; color: var(--muted); }
+.news-post .post-text { margin: 10px 0 0; }
+.news-post .post-foot { margin-top: 10px; }
 
 /* Attendance */
 :root { --att-on: #1f9d55; --att-off: #d9dde3; }

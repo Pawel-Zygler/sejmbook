@@ -150,7 +150,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Szerszy Frequent Flyer');
+    expect(first.textContent).toContain('Zwinięte nowości');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -158,6 +158,8 @@ describe('news feed (Aktualności)', () => {
     expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
   });
   it('the news post button opens the ranking', () => {
+    expect($$('.news-post').every((d) => d.tagName === 'DETAILS' && !d.open)).toBe(true);
+    expect($('.news-post .news-line').textContent).toContain('Aktualności: Zwinięte nowości');
     const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
     expect(btn.getAttribute('href')).toBe('#frequent-flyer');
     nav(btn.getAttribute('href'));

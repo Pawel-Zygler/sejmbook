@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-zwiniete",
+      "date": "2026-11-24",
+      "section": "Aktualności",
+      "title": "Zwinięte nowości",
+      "body": "Nowości są domyślnie zwinięte do jednej linii; kliknij, żeby rozwinąć."
+    },
+    {
       "id": "2026-11-24-szerzej",
       "date": "2026-11-24",
       "title": "Szerszy Frequent Flyer",

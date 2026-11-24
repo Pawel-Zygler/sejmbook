@@ -97,13 +97,25 @@ export function articleLinks(articles) {
     .join('')}</ul>`;
 }
 
+/** Which part of the site a news post is about, from its link (or `post.section`). */
+export function newsSection(post) {
+  if (post.section) return post.section;
+  const h = post.link?.href ?? '';
+  if (h.startsWith('#frequent-flyer')) return 'Frequent Flyer';
+  if (h.startsWith('#frekwencja')) return 'Frekwencja';
+  if (h.startsWith('#partie')) return 'Najwięcej partii';
+  if (h.startsWith('#poslowie')) return 'Posłowie';
+  if (h.startsWith('#posel-')) return 'Profil posła';
+  return 'Sejmbook';
+}
+
+/** A news post folded to one line ("Frequent Flyer: Ikonka Super-męża"); opens to the text and link (Pawel, 2026-11-24). */
 export function renderNewsPost(post) {
-  return `<article class="post news-post" data-news-id="${esc(post.id)}">
-      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Nowość</strong><small><time datetime="${esc(post.date)}">${esc(post.date)}</time></small></div></header>
-      <h2 class="news-title">${esc(post.title)}</h2>
+  return `<details class="post news-post" data-news-id="${esc(post.id)}">
+      <summary class="news-line"><span class="news-text"><b class="news-section">${esc(newsSection(post))}:</b> <span class="news-title">${esc(post.title)}</span></span><time class="news-date" datetime="${esc(post.date)}">${esc(post.date.slice(8, 10))}.${esc(post.date.slice(5, 7))}</time></summary>
       <p class="post-text">${esc(post.body)}</p>
       ${post.link ? `<footer class="post-foot"><a class="btn" href="${esc(post.link.href)}">${esc(post.link.label)}</a></footer>` : ''}
-    </article>`;
+    </details>`;
 }
 
 /** Newest first; posts on the same day keep their file order. */
