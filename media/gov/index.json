@@ -80,6 +80,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Min._Agnieszka_Buczy%C5%84ska.jpg"
   },
   {
+   "slug": "agnieszka-dziemianowicz-bak",
+   "file": "gov/agnieszka-dziemianowicz-bak.jpg",
+   "wiki": "Agnieszka Dziemianowicz-Bąk",
+   "commons": "https://commons.wikimedia.org/wiki/File:Agnieszka_Dziemianowicz-B%C4%85k_2023.jpg"
+  },
+  {
    "slug": "agnieszka-scigaj",
    "file": "gov/agnieszka-scigaj.jpg",
    "wiki": "Agnieszka Ścigaj",
@@ -132,6 +138,12 @@
    "file": "gov/aleksander-szczyglo.jpg",
    "wiki": "Aleksander Szczygło",
    "commons": "https://commons.wikimedia.org/wiki/File:Aleksander_Szczyg%C5%82o_2_(cropped).jpg"
+  },
+  {
+   "slug": "alfons-klafkowski",
+   "file": "gov/alfons-klafkowski.jpg",
+   "wiki": "Alfons Klafkowski",
+   "commons": "https://commons.wikimedia.org/wiki/File:Prof._Alfons_Klafkowski.jpg"
   },
   {
    "slug": "alicja-grzeskowiak",
@@ -194,10 +206,34 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Andrzej.Czuma.jpg"
   },
   {
+   "slug": "andrzej-domanski",
+   "file": "gov/andrzej-domanski.jpg",
+   "wiki": "Andrzej Domański",
+   "commons": "https://commons.wikimedia.org/wiki/File:Andrzej_Doma%C5%84ski_KPRM.jpg"
+  },
+  {
+   "slug": "andrzej-duda",
+   "file": "gov/andrzej-duda.jpg",
+   "wiki": "Andrzej Duda",
+   "commons": "https://commons.wikimedia.org/wiki/File:President_of_Poland_Andrzej_Duda_(cropped).jpg"
+  },
+  {
    "slug": "andrzej-halicki",
    "file": "gov/andrzej-halicki.jpg",
    "wiki": "Andrzej Halicki",
    "commons": "https://commons.wikimedia.org/wiki/File:HALICKI_Andrzej_(EPP%2C_PL).jpg"
+  },
+  {
+   "slug": "andrzej-kalwas",
+   "file": "gov/andrzej-kalwas.jpg",
+   "wiki": "Andrzej Kalwas",
+   "commons": "https://commons.wikimedia.org/wiki/File:Minister_Kalwas_7_marca_2005.jpg"
+  },
+  {
+   "slug": "andrzej-kosztowniak",
+   "file": "gov/andrzej-kosztowniak.jpg",
+   "wiki": "Andrzej Kosztowniak",
+   "commons": "https://commons.wikimedia.org/wiki/File:Andrzej_Kosztowniak_Sejm_2020.jpg"
   },
   {
    "slug": "andrzej-kraszewski",
@@ -234,6 +270,12 @@
    "file": "gov/andrzej-raczko.jpg",
    "wiki": "Andrzej Raczko",
    "commons": "https://commons.wikimedia.org/wiki/File:Andrzej_Raczko_2011.jpg"
+  },
+  {
+   "slug": "andrzej-rzeplinski",
+   "file": "gov/andrzej-rzeplinski.jpg",
+   "wiki": "Andrzej Rzepliński",
+   "commons": "https://commons.wikimedia.org/wiki/File:Andrzej_Rzepli%C5%84ski_Fot%C5%BBmudzki_(cropped).jpg"
   },
   {
    "slug": "andrzej-sicinski-1924-2006",
@@ -296,6 +338,18 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Anna_Gembicka.jpg"
   },
   {
+   "slug": "anna-kalata",
+   "file": "gov/anna-kalata.jpg",
+   "wiki": "Anna Kalata",
+   "commons": "https://commons.wikimedia.org/wiki/File:Anna_Kalata_(2007).jpg"
+  },
+  {
+   "slug": "anna-korwin-piotrowska",
+   "file": "gov/anna-korwin-piotrowska.jpg",
+   "wiki": "Anna Korwin-Piotrowska",
+   "commons": "https://commons.wikimedia.org/wiki/File:Uroczysto%C5%9B%C4%87_wr%C4%99czenia_uchwa%C5%82_Sejmu_o_wyborze_przez_Sejm_na_s%C4%99dzi%C3%B3w_Trybuna%C5%82u_Konstytucyjnego_oraz_%C5%9Blubowania_wobec_Prezydenta_Rzeczypospolitej_Polskiej_-_55196557051_(cropped).jpg"
+  },
+  {
    "slug": "anna-lukaszewska-trzeciakowska",
    "file": "gov/anna-lukaszewska-trzeciakowska.jpg",
    "wiki": "Anna Łukaszewska-Trzeciakowska",
@@ -306,6 +360,12 @@
    "file": "gov/anna-moskwa.jpg",
    "wiki": "Anna Moskwa",
    "commons": "https://commons.wikimedia.org/wiki/File:Anna_Moskwa.jpg"
+  },
+  {
+   "slug": "anna-strezynska",
+   "file": "gov/anna-strezynska.jpg",
+   "wiki": "Anna Streżyńska",
+   "commons": "https://commons.wikimedia.org/wiki/File:Stre%C5%BCy%C5%84ska_Anna.JPG"
   },
   {
    "slug": "anna-zalewska-ur-1965",
@@ -324,6 +384,12 @@
    "file": "gov/artur-balazs.jpg",
    "wiki": "Artur Balazs",
    "commons": "https://commons.wikimedia.org/wiki/File:Artur_Balazs_(2023).jpg"
+  },
+  {
+   "slug": "august-chelkowski",
+   "file": "gov/august-chelkowski.jpg",
+   "wiki": "August Chełkowski",
+   "commons": "https://commons.wikimedia.org/wiki/File:August_Chelkowski.jpg"
   },
   {
    "slug": "barbara-blida",
@@ -354,6 +420,12 @@
    "file": "gov/bartlomiej-sienkiewicz.jpg",
    "wiki": "Bartłomiej Sienkiewicz",
    "commons": "https://commons.wikimedia.org/wiki/File:Bart%C5%82omiej_Sienkiewicz_MEP_(2024).jpg"
+  },
+  {
+   "slug": "bartosz-arlukowicz",
+   "file": "gov/bartosz-arlukowicz.jpg",
+   "wiki": "Bartosz Arłukowicz",
+   "commons": "https://commons.wikimedia.org/wiki/File:Bartosz_Ar%C5%82ukowicz_MEP_(2024).jpg"
   },
   {
    "slug": "beata-kempa",
@@ -476,6 +548,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Dariusz_Klimczak_2024.jpg"
   },
   {
+   "slug": "dariusz-piontkowski",
+   "file": "gov/dariusz-piontkowski.jpg",
+   "wiki": "Dariusz Piontkowski",
+   "commons": "https://commons.wikimedia.org/wiki/File:Min._Dariusz_Piontkowski.jpg"
+  },
+  {
    "slug": "dariusz-rosati",
    "file": "gov/dariusz-rosati.jpg",
    "wiki": "Dariusz Rosati",
@@ -486,6 +564,12 @@
    "file": "gov/dariusz-wieczorek-polityk.jpg",
    "wiki": "Dariusz Wieczorek (polityk)",
    "commons": "https://commons.wikimedia.org/wiki/File:Dariusz_Wieczorek_2024_upscaled.jpg"
+  },
+  {
+   "slug": "dariusz-zawistowski",
+   "file": "gov/dariusz-zawistowski.jpg",
+   "wiki": "Dariusz Zawistowski",
+   "commons": "https://commons.wikimedia.org/wiki/File:Dariusz_Zawistowski_(cropped).JPG"
   },
   {
    "slug": "dawid-jackiewicz",
@@ -522,6 +606,12 @@
    "file": "gov/elzbieta-bienkowska.jpg",
    "wiki": "Elżbieta Bieńkowska",
    "commons": "https://commons.wikimedia.org/wiki/File:1654239154744_20181025_EP-078281A_GEN_190.jpg"
+  },
+  {
+   "slug": "elzbieta-jakubiak",
+   "file": "gov/elzbieta-jakubiak.jpg",
+   "wiki": "Elżbieta Jakubiak",
+   "commons": "https://commons.wikimedia.org/wiki/File:Elzbieta_Jakubiak.jpg"
   },
   {
    "slug": "elzbieta-rafalska",
@@ -614,6 +704,18 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Grzegorz_Schetyna_Kancelaria_Senatu_2023.jpg"
   },
   {
+   "slug": "grzegorz-wojtowicz-ekonomista",
+   "file": "gov/grzegorz-wojtowicz-ekonomista.jpg",
+   "wiki": "Grzegorz Wójtowicz (ekonomista)",
+   "commons": "https://commons.wikimedia.org/wiki/File:Gr%C3%B3b_Grzegorza_W%C3%B3jtowicza.jpg"
+  },
+  {
+   "slug": "halina-wasilewska-trenkner",
+   "file": "gov/halina-wasilewska-trenkner.jpg",
+   "wiki": "Halina Wasilewska-Trenkner",
+   "commons": "https://commons.wikimedia.org/wiki/File:Halina_Wasilewska-Trenkner%2C_Polish_finance_minister.jpeg"
+  },
+  {
    "slug": "hanna-gronkiewicz-waltz",
    "file": "gov/hanna-gronkiewicz-waltz.jpg",
    "wiki": "Hanna Gronkiewicz-Waltz",
@@ -636,6 +738,12 @@
    "file": "gov/henryk-goryszewski.jpg",
    "wiki": "Henryk Goryszewski",
    "commons": "https://commons.wikimedia.org/wiki/File:Poczet_sztandarowy_i_premier_Henryk_Goryszewski.JPG"
+  },
+  {
+   "slug": "henryk-kowalczyk",
+   "file": "gov/henryk-kowalczyk.jpg",
+   "wiki": "Henryk Kowalczyk",
+   "commons": "https://commons.wikimedia.org/wiki/File:Henryk_Kowalczyk.jpg"
   },
   {
    "slug": "henryk-samsonowicz",
@@ -722,6 +830,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Jacek_Piechota_(2023).jpg"
   },
   {
+   "slug": "jacek-rostowski",
+   "file": "gov/jacek-rostowski.jpg",
+   "wiki": "Jacek Rostowski",
+   "commons": "https://commons.wikimedia.org/wiki/File:Jacek_Rostowski_2020a.jpg"
+  },
+  {
    "slug": "jacek-sasin",
    "file": "gov/jacek-sasin.jpg",
    "wiki": "Jacek Sasin",
@@ -750,6 +864,12 @@
    "file": "gov/jakub-rutnicki.jpg",
    "wiki": "Jakub Rutnicki",
    "commons": "https://commons.wikimedia.org/wiki/File:Jakub_Rutnicki_(cropped).jpg"
+  },
+  {
+   "slug": "jan-grabiec",
+   "file": "gov/jan-grabiec.jpg",
+   "wiki": "Jan Grabiec",
+   "commons": "https://commons.wikimedia.org/wiki/File:Jan_Grabiec_KPRM_(cropped_2).jpg"
   },
   {
    "slug": "jan-krzysztof-ardanowski",
@@ -852,6 +972,18 @@
    "file": "gov/jaroslaw-bauc.jpg",
    "wiki": "Jarosław Bauc",
    "commons": "https://commons.wikimedia.org/wiki/File:Jaros%C5%82aw_Bauc.jpg"
+  },
+  {
+   "slug": "jaroslaw-gowin",
+   "file": "gov/jaroslaw-gowin.jpg",
+   "wiki": "Jarosław Gowin",
+   "commons": "https://commons.wikimedia.org/wiki/File:Jaros%C5%82aw_Gowin_01_(cropped).jpg"
+  },
+  {
+   "slug": "jaroslaw-kaczynski",
+   "file": "gov/jaroslaw-kaczynski.jpg",
+   "wiki": "Jarosław Kaczyński",
+   "commons": "https://commons.wikimedia.org/wiki/File:02_Jaros%C5%82aw_Kaczy%C5%84ski_(cropped).jpg"
   },
   {
    "slug": "jaroslaw-kalinowski",
@@ -1112,6 +1244,18 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Krzysztof_Kwiatkowski_Kancelaria_Senatu_2023.jpg"
   },
   {
+   "slug": "krzysztof-michalkiewicz",
+   "file": "gov/krzysztof-michalkiewicz.jpg",
+   "wiki": "Krzysztof Michałkiewicz",
+   "commons": "https://commons.wikimedia.org/wiki/File:K_Michalkiewicz2.jpg"
+  },
+  {
+   "slug": "krzysztof-opawski",
+   "file": "gov/krzysztof-opawski.jpg",
+   "wiki": "Krzysztof Opawski",
+   "commons": "https://commons.wikimedia.org/wiki/File:Gr%C3%B3b_Krzysztofa_Opawskiego_w_Wierszach.jpg"
+  },
+  {
    "slug": "krzysztof-paszyk",
    "file": "gov/krzysztof-paszyk.jpg",
    "wiki": "Krzysztof Paszyk",
@@ -1152,6 +1296,12 @@
    "file": "gov/lech-kaczynski.jpg",
    "wiki": "Lech Kaczyński",
    "commons": "https://commons.wikimedia.org/wiki/File:Lech_Kaczy%C5%84ski.jpg"
+  },
+  {
+   "slug": "lech-walesa",
+   "file": "gov/lech-walesa.jpg",
+   "wiki": "Lech Wałęsa",
+   "commons": "https://commons.wikimedia.org/wiki/File:03.17_%E7%B8%BD%E7%B5%B1%E6%8E%A5%E8%A6%8B%E3%80%8C%E6%B3%A2%E8%98%AD%E5%89%8D%E7%B8%BD%E7%B5%B1%E8%8F%AF%E5%8B%92%E6%B2%99%E4%B9%99%E8%A1%8C%E3%80%8D_-_55151702432_(cropped).jpg"
   },
   {
    "slug": "lena-kolarska-bobinska",
@@ -1208,6 +1358,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:%C5%81ukasz_Schreiber.jpg"
   },
   {
+   "slug": "lukasz-szumowski",
+   "file": "gov/lukasz-szumowski.jpg",
+   "wiki": "Łukasz Szumowski",
+   "commons": "https://commons.wikimedia.org/wiki/File:Min._%C5%81ukasz_Szumowski_(cropped).jpg"
+  },
+  {
    "slug": "maciej-berek",
    "file": "gov/maciej-berek.jpg",
    "wiki": "Maciej Berek",
@@ -1238,6 +1394,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Maciej_Srebro.jpg"
   },
   {
+   "slug": "magdalena-rzeczkowska",
+   "file": "gov/magdalena-rzeczkowska.jpg",
+   "wiki": "Magdalena Rzeczkowska",
+   "commons": "https://commons.wikimedia.org/wiki/File:Magdalena_Rzeczkowska_6_(cropped).jpg"
+  },
+  {
    "slug": "malgorzata-gersdorf",
    "file": "gov/malgorzata-gersdorf.jpg",
    "wiki": "Małgorzata Gersdorf",
@@ -1260,6 +1422,12 @@
    "file": "gov/malgorzata-manowska.jpg",
    "wiki": "Małgorzata Manowska",
    "commons": "https://commons.wikimedia.org/wiki/File:Ma%C5%82gorzata_Manowska.jpg"
+  },
+  {
+   "slug": "malgorzata-omilanowska",
+   "file": "gov/malgorzata-omilanowska.jpg",
+   "wiki": "Małgorzata Omilanowska",
+   "commons": "https://commons.wikimedia.org/wiki/File:Ma%C5%82gorzata_Omilanowska.jpg"
   },
   {
    "slug": "marcin-kierwinski",
@@ -1394,6 +1562,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Marian_Mi%C5%9Bkiewicz_gr%C3%B3b.jpg"
   },
   {
+   "slug": "marian-zembala",
+   "file": "gov/marian-zembala.jpg",
+   "wiki": "Marian Zembala",
+   "commons": "https://commons.wikimedia.org/wiki/File:Marian_Zembala_Sejm_2016.JPG"
+  },
+  {
    "slug": "mariusz-blaszczak",
    "file": "gov/mariusz-blaszczak.jpg",
    "wiki": "Mariusz Błaszczak",
@@ -1404,6 +1578,12 @@
    "file": "gov/mariusz-haladyj.jpg",
    "wiki": "Mariusz Haładyj",
    "commons": "https://commons.wikimedia.org/wiki/File:Mariusz_Ha%C5%82adyj_2020.jpg"
+  },
+  {
+   "slug": "mariusz-kaminski",
+   "file": "gov/mariusz-kaminski.jpg",
+   "wiki": "Mariusz Kamiński",
+   "commons": "https://commons.wikimedia.org/wiki/File:1718799011114_20240618_KAMINSKI_Mariusz_PL_004.jpg"
   },
   {
    "slug": "marlena-malag",
@@ -1472,6 +1652,18 @@
    "commons": "https://commons.wikimedia.org/wiki/File:Michal_Kleiber.jpg"
   },
   {
+   "slug": "michal-kurtyka",
+   "file": "gov/michal-kurtyka.jpg",
+   "wiki": "Michał Kurtyka",
+   "commons": "https://commons.wikimedia.org/wiki/File:Micha%C5%82_Kurtyka%2C_2019_(cropped).jpg"
+  },
+  {
+   "slug": "michal-sewerynski",
+   "file": "gov/michal-sewerynski.jpg",
+   "wiki": "Michał Seweryński",
+   "commons": "https://commons.wikimedia.org/wiki/File:Micha%C5%82_Sewery%C5%84ski_Kancelaria_Senatu_2023.jpg"
+  },
+  {
    "slug": "michal-wojcik-polityk",
    "file": "gov/michal-wojcik-polityk.jpg",
    "wiki": "Michał Wójcik (polityk)",
@@ -1532,6 +1724,12 @@
    "commons": "https://commons.wikimedia.org/wiki/File:2012.09.17._Paula_and_Miroslaw_Sawicki_Fot_Mariusz_Kubik.jpg"
   },
   {
+   "slug": "miroslaw-sekula",
+   "file": "gov/miroslaw-sekula.jpg",
+   "wiki": "Mirosław Sekuła",
+   "commons": "https://commons.wikimedia.org/wiki/File:Miros%C5%82aw_Seku%C5%82a.JPG"
+  },
+  {
    "slug": "paulina-hennig-kloska",
    "file": "gov/paulina-hennig-kloska.jpg",
    "wiki": "Paulina Hennig-Kloska",
@@ -1542,6 +1740,12 @@
    "file": "gov/pawel-szalamacha.jpg",
    "wiki": "Paweł Szałamacha",
    "commons": "https://commons.wikimedia.org/wiki/File:Pawe%C5%82_Sza%C5%82amacha_(NBP).JPG"
+  },
+  {
+   "slug": "pawel-szefernaker",
+   "file": "gov/pawel-szefernaker.jpg",
+   "wiki": "Paweł Szefernaker",
+   "commons": "https://commons.wikimedia.org/wiki/File:Pawe%C5%82_Szefernaker.png"
   },
   {
    "slug": "pawel-wojciechowski-ekonomista",
@@ -1566,6 +1770,12 @@
    "file": "gov/piotr-kolodziejczyk.jpg",
    "wiki": "Piotr Kołodziejczyk",
    "commons": "https://commons.wikimedia.org/wiki/File:Gr%C3%B3b_Piotra_Ko%C5%82odziejczyka_(IX_2019).jpg"
+  },
+  {
+   "slug": "piotr-nowak-ekonomista",
+   "file": "gov/piotr-nowak-ekonomista.jpg",
+   "wiki": "Piotr Nowak (ekonomista)",
+   "commons": "https://commons.wikimedia.org/wiki/File:Min._Piotr_Nowak.jpg"
   },
   {
    "slug": "piotr-wiesiolek",
@@ -2022,6 +2232,12 @@
    "file": "gov/zbigniew-religa.jpg",
    "wiki": "Zbigniew Religa",
    "commons": "https://commons.wikimedia.org/wiki/File:Zbigniew_Religa_Kancelaria_Senatu_Senat_Rzeczypospolitej_Polskiej_V_kadencji.jpg"
+  },
+  {
+   "slug": "zbigniew-wassermann",
+   "file": "gov/zbigniew-wassermann.jpg",
+   "wiki": "Zbigniew Wassermann",
+   "commons": "https://commons.wikimedia.org/wiki/File:Zbigniew_Wassermann_2008.jpg"
   },
   {
    "slug": "zbigniew-ziobro",
