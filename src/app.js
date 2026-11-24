@@ -1,11 +1,14 @@
 import { indexById, clubById, filterMps, filterTermMps } from './lib/mps.js';
 import { termMps, indexPeople } from './lib/career.js';
+import { mergeEarlyTerms } from './lib/early-terms.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
 import { renderHome, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, contactsData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData }) {
+  // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
+  const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -17,8 +20,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     attendance: attendanceData ?? null,
     career: careerData ?? null,
     // Every MP of every term the Sejm API covers (III–X), grouped into people.
-    terms: termsData ?? null,
-    peopleByKey: indexPeople(termsData),
+    terms: allTerms,
+    peopleByKey: indexPeople(allTerms),
     // Official contacts: e-mail (API Sejmu), Facebook (Wikidata).
     contacts: contactsData ?? null,
     life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),

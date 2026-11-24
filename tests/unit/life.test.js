@@ -67,7 +67,7 @@ describe('lifeTimeline', () => {
   it('merges consecutive Sejm terms in the same club', () => {
     const sejm = tl.lanes.find((l) => l.id === 'sejm').items;
     expect(sejm.map((s) => [s.id, s.from, s.to])).toEqual([['AWS', 1997, 2005], ['KO', 2011, 2015], ['PSL', 2023, 2026]]);
-    expect(sejm[0].label).toBe('AWS · III–IV');
+    expect(sejm[0].label).toBe('Solidarność / AWS · III–IV');
   });
   it('finds the first political activity', () => {
     expect(tl).toMatchObject({ firstYear: 1978, firstInPrl: true, firstWhat: 'Polska Zjednoczona Partia Robotnicza' });
@@ -75,7 +75,7 @@ describe('lifeTimeline', () => {
   it('works without Wikidata (only the Sejm lane) and without a birth year', () => {
     const t2 = lifeTimeline({ life: null, career }, mp, 2026);
     expect(t2.lanes.map((l) => l.id)).toEqual(['sejm']);
-    expect(t2.firstWhat).toBe('Sejm (AWS)');
+    expect(t2.firstWhat).toBe('Sejm (Solidarność / AWS)');
     expect(t2.hasWikidata).toBe(false);
     expect(lifeTimeline({ life, career }, { id: 1 }, 2026)).toBeNull();
     const young = lifeTimeline({ life: null, career: null }, { id: 2, birthYear: 1995 }, 2026);

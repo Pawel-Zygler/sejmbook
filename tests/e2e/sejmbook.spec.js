@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Tryb jasny i ciemny');
+  await expect(post).toContainText('Kadencje I i II');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -134,7 +134,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Tryb jasny i ciemny');
+  await expect(page.locator('.news-post').first()).toContainText('Kadencje I i II');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -336,4 +336,12 @@ test('Dark and light mode: switch, and the donut uses the mode\'s palette', asyn
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).not.toBe(bgLight);
   await page.reload();
   await expect(page.getByTestId('theme-btn')).toHaveAttribute('data-theme', 'dark');
+});
+
+test('Posłowie: term I (1991–1993) from Wikipedia', async ({ page }) => {
+  await page.goto(`${PAGE}#poslowie`);
+  if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
+  await page.locator('[data-action="dir-term"][data-term="1"]:visible').click();
+  await expect(page.getByTestId('term-info')).toContainText('I kadencja · 25.11.1991');
+  expect(await page.locator('.term-card').count()).toBeGreaterThan(450);
 });

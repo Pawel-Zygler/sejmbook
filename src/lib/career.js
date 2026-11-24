@@ -24,7 +24,15 @@ export const CLUB_FAMILIES = [
   { id: 'LPR', label: 'LPR', color: '#4f7a2e', ids: ['LPR'], re: /lig\S* polskich rodzin/i },
   { id: 'Centrum', label: 'Centrum', color: '#c98a12', ids: ['Centrum'], re: /centrum/i },
   { id: 'RozwojPlus', label: 'Rozwój+', color: '#3a7fc1', ids: ['RozwojPlus'], re: /rozw[oó]j/i },
-  { id: 'AWS', label: 'AWS', color: '#355e8c', ids: ['AWS'], re: /akcj\S* wyborcz\S* solidarno/i },
+  { id: 'UW', label: 'UD / UW', color: '#e0a100', ids: ['UW', 'UD'], re: /uni\S* (demokratyczn|wolno)/i },
+  { id: 'AWS', label: 'Solidarność / AWS', color: '#355e8c', ids: ['AWS', 'NSZZ S'], re: /akcj\S* wyborcz\S* solidarno|nszz|„solidarność”/i },
+  // Clubs of terms I–II (Wikipedia) and the 1990s.
+  { id: 'SKL', label: 'SKL / KKL', color: '#6f8f3a', ids: ['SKL', 'KKL'], re: /konserwatywno-ludow/i },
+  { id: 'ZChN', label: 'ZChN', color: '#3d5a80', ids: ['ZChN'], re: /chrześcijańsko-narodow/i },
+  { id: 'KPN', label: 'KPN', color: '#8c2f39', ids: ['KPN'], re: /konfederacj\S* polski niepodleg/i },
+  { id: 'PC', label: 'Porozumienie Centrum', color: '#4a6fa5', ids: ['PC'], re: /porozumieni\S* centrum/i },
+  { id: 'AP', label: 'Akcja Polska', color: '#7a6a53', ids: ['AP'], re: /akcj\S* polsk/i },
+  { id: 'RKN', label: 'Ruch Katolicko-Narodowy', color: '#5e548e', ids: ['RKN'], re: /katolicko-narodow/i },
   { id: 'niez', label: 'Niezrzeszeni', color: '#7d8590', ids: ['niez.', 'niez'], re: /niezrzesz/i },
 ];
 const OTHER_COLORS = ['#8a6d3b', '#5b6b7a', '#6c4f9c', '#2e7d7a', '#9c4f4f'];

@@ -211,6 +211,15 @@ export function directoryFilters(ctx, state, where = 'aside') {
       ${past ? '' : `<label class="toggle" for="${id}"><input id="${id}" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>`}`;
 }
 
+/** Where the term lists come from, for the notes under lists and profiles. */
+export function termsSourceNote(ctx) {
+  const early = Boolean(ctx.terms?.early);
+  return early
+    ? 'Dane: API Sejmu (kadencje III–X) i polska Wikipedia (kadencje I–II, których API nie ma). Klub to ostatni klub posła w danej kadencji; przy I i II kadencji to stan na koniec kadencji, a u posłów, których mandat wygasł, komitet wyborczy. Osoby z I–II kadencji łączymy z późniejszymi kadencjami po imieniu i nazwisku, gdy jest dokładnie jedna taka osoba.'
+    : 'Dane: API Sejmu, kadencje III–X. Klub to ostatni klub posła w danej kadencji. API nie ma list z I i II kadencji (1991–1997).';
+}
+const sinceYear = (ctx) => (ctx.terms?.terms?.[0]?.from ?? '1997').slice(0, 4);
+
 /** "III kadencja · 20.10.1997 – 18.10.2001 · 482 posłów" */
 export function termInfo(ctx, num) {
   const t = (ctx.terms?.terms ?? []).find((x) => x.num === num);
@@ -271,7 +280,7 @@ export function renderParties(ctx, state = { scope: 'all' }) {
   const head = `<p class="eyebrow">Ranking</p><h1>Najwięcej partii</h1>
       <p class="lede">${all ? 'Kto ze wszystkich posłów III RP był w największej liczbie partii. Szukamy rekordzisty skoczka.' : 'Którzy posłowie byli w największej liczbie partii w swojej karierze w Sejmie.'}</p>`;
   const tabs = all ? `<div class="att-tabs" role="group" aria-label="Kogo pokazać">
-        <button type="button" class="filter ${state.scope !== 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="all" aria-pressed="${state.scope !== 'current'}">Wszyscy od 1997</button>
+        <button type="button" class="filter ${state.scope !== 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="all" aria-pressed="${state.scope !== 'current'}">Wszyscy od ${sinceYear(ctx)}</button>
         <button type="button" class="filter ${state.scope === 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="current" aria-pressed="${state.scope === 'current'}">Obecni posłowie</button>
       </div>` : '';
   if (list.length === 0) return `<section data-view="parties"><div class="panel mps-dash" data-testid="parties">${head}${tabs}<p>Brak danych o kadencjach posłów.</p></div></section>`;
@@ -303,7 +312,7 @@ export function renderParties(ctx, state = { scope: 'all' }) {
       </div>
       <ol class="hop-list" data-testid="hop-ranking">${rows}</ol>
       <p class="src">${all
-        ? `${single} ${plural(single, 'osoba była', 'osoby były', 'osób było')} w Sejmie tylko w jednej partii. Bierzemy posłów wszystkich kadencji od III (1997) z API Sejmu, które nie ma list z I i II kadencji (1991–1997). W każdej kadencji liczy się ostatni klub posła, więc zmiany w trakcie kadencji nie zawsze widać. Kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną. Przy remisie wyżej jest ten, kto więcej razy przeskakiwał.`
+        ? `${single} ${plural(single, 'osoba była', 'osoby były', 'osób było')} w Sejmie tylko w jednej partii. ${esc(termsSourceNote(ctx))} Zmiany w trakcie kadencji nie zawsze więc widać. Kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną. Przy remisie wyżej jest ten, kto więcej razy przeskakiwał.`
         : `${single} ${plural(single, 'poseł był', 'posłów było', 'posłów było')} w Sejmie tylko w jednej partii. Liczymy kluby z każdej kadencji od 1997 r. według API Sejmu (ostatni klub w kadencji); kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną.`}</p>
     </div>
   </section>`;
@@ -328,7 +337,7 @@ export function renderDirectory(ctx, state, list) {
     <ul class="mp-grid">
       ${list.length === 0 ? `<li class="empty">Nikt nie pasuje do tego wyszukiwania. Spróbuj innego nazwiska albo wybierz „Wszystkie”.</li>` : list.map((mp) => (past ? termCard(ctx, mp) : mpCard(ctx, mp))).join('')}
     </ul>
-    ${past ? `<p class="src panel">Dane: API Sejmu (${esc(ctx.terms.source)}), pobrane ${esc(ctx.terms.fetchedAt)}. Klub to ostatni klub posła w tej kadencji; lista obejmuje też posłów, którzy objęli lub stracili mandat w trakcie. API nie ma list z I i II kadencji (1991–1997).</p>` : ''}
+    ${past ? `<p class="src panel">${esc(termsSourceNote(ctx))} Lista obejmuje też posłów, którzy objęli lub stracili mandat w trakcie kadencji.</p>` : ''}
   </section>`;
 }
 
@@ -427,6 +436,9 @@ export function renderCareerSpectrum(ctx, mp) {
  * Profile of an MP of earlier terms (data/terms.json): terms with club and district, the route through parties.
  * Someone who sits in today's Sejm goes to their full profile instead.
  */
+const WIKI_LISTS = { 1: 'Posłowie_na_Sejm_Rzeczypospolitej_Polskiej_I_kadencji_(1991–1993)', 2: 'Posłowie_na_Sejm_Rzeczypospolitej_Polskiej_II_kadencji_(1993–1997)' };
+export const wikiListUrl = (term) => `https://pl.wikipedia.org/wiki/${encodeURIComponent(WIKI_LISTS[term] ?? '')}`;
+
 export function renderPerson(ctx, key) {
   const p = ctx.peopleByKey?.get(key);
   if (!p) return renderNotFound(`osoba-${key}`);
@@ -445,7 +457,7 @@ export function renderPerson(ctx, key) {
         ${personAvatar(p.name, color, 'xl')}
         <div class="profile-name">
           <h1>${esc(p.name)}</h1>
-          <p><span class="muted">Poseł na Sejm III RP · ${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>
+          <p><span class="muted">Poseł na Sejm RP · ${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>
           <p class="badge-off">Nie zasiada w Sejmie obecnej kadencji</p>
         </div>
       </div>
@@ -456,9 +468,9 @@ export function renderPerson(ctx, key) {
       ${age ? `<p class="muted">Data urodzenia: ${esc(age)}</p>` : ''}
       <div class="table-wrap"><table class="rank person-terms">
         <thead><tr><th scope="col">Kadencja</th><th scope="col">Klub</th><th scope="col">Okręg</th><th scope="col"><span class="visually-hidden">Źródło</span></th></tr></thead>
-        <tbody>${p.terms.map((t) => `<tr data-term="${t.t}"><td><b>${romanTerm(t.t)}</b> <small class="muted">${years(t.t)}</small></td><td>${esc(clubNameIn(ctx.terms, t.t, t.club) ?? t.club ?? '—')}</td><td>${t.d ? `${t.d} · ${esc(t.dn ?? '')}` : '—'}</td><td><a href="https://api.sejm.gov.pl/sejm/term${t.t}/MP/${t.id}" target="_blank" rel="noopener">API Sejmu</a></td></tr>`).join('')}</tbody>
+        <tbody>${p.terms.map((t) => `<tr data-term="${t.t}"><td><b>${romanTerm(t.t)}</b> <small class="muted">${years(t.t)}</small></td><td>${esc(clubNameIn(ctx.terms, t.t, t.club) ?? t.club ?? '—')}</td><td>${t.d ? `${t.d} · ${esc(t.dn ?? '')}` : '—'}</td><td>${t.src === 'wikipedia' ? `<a href="${esc(wikiListUrl(t.t))}" target="_blank" rel="noopener">Wikipedia</a>` : `<a href="https://api.sejm.gov.pl/sejm/term${t.t}/MP/${t.id}" target="_blank" rel="noopener">API Sejmu</a>`}</td></tr>`).join('')}</tbody>
       </table></div>
-      <p class="src">Dane: API Sejmu, kadencje III–X. Klub to ostatni klub w danej kadencji. API nie ma list z I i II kadencji (1991–1997).</p>
+      <p class="src">${esc(termsSourceNote(ctx))}</p>
     </div>
   </section>`;
 }

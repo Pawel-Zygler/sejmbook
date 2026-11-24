@@ -11,6 +11,7 @@ import careerData from '../../data/career.json';
 import lifeData from '../../data/life.json';
 import wikiPartiesData from '../../data/wiki-parties.json';
 import termsData from '../../data/terms.json';
+import earlyTermsData from '../../data/early-terms.json';
 import contactsData from '../../data/contacts.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
@@ -26,7 +27,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, contactsData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData });
 });
 afterEach(() => app.destroy());
 
@@ -150,7 +151,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Tryb jasny i ciemny');
+    expect(first.textContent).toContain('Kadencje I i II');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -159,7 +160,7 @@ describe('news feed (Aktualności)', () => {
   });
   it('the news post button opens the ranking', () => {
     expect($$('.news-post').every((d) => d.tagName === 'DETAILS' && !d.open)).toBe(true);
-    expect($('.news-post .news-line').textContent).toContain('Sejmbook: Tryb jasny i ciemny');
+    expect($('.news-post .news-line').textContent).toContain('Posłowie: Kadencje I i II');
     const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
     expect(btn.getAttribute('href')).toBe('#frequent-flyer');
     nav(btn.getAttribute('href'));
@@ -493,5 +494,27 @@ describe('Theme switch and Frequent Flyer donut', () => {
     const shares = $$('#aside .donut-legend .lg-val').map((e) => parseFloat(e.textContent.replace(',', '.')));
     expect(shares.reduce((a, b) => a + b, 0)).toBeCloseTo(100, 0);
     expect(donut.querySelectorAll('.donut-seg').length).toBe(shares.length);
+  });
+});
+
+describe('Terms I and II (Wikipedia)', () => {
+  it('Posłowie lists term I with clubs and districts, and people link across terms', () => {
+    nav('#poslowie');
+    expect($$('#aside [data-action="dir-term"]').map((b) => b.dataset.term)).toEqual(['10', '9', '8', '7', '6', '5', '4', '3', '2', '1']);
+    click($('#aside [data-action="dir-term"][data-term="1"]'));
+    expect($('[data-testid="term-info"]').textContent).toContain('I kadencja · 25.11.1991 – 31.05.1993');
+    expect($$('.term-card').length).toBe(earlyTermsData.terms[0].mps.length);
+    expect($('[data-view="directory"] .src').textContent).toContain('polska Wikipedia');
+    const tusk = $$('.term-card').find((c) => c.textContent.includes('Bronisław Geremek'));
+    expect(tusk).toBeTruthy();
+    nav(tusk.querySelector('a').getAttribute('href'));
+    const termsShown = $$('[data-testid="person-terms"] tbody tr').map((r) => Number(r.dataset.term));
+    expect(termsShown[0]).toBe(1);
+    expect(termsShown.length).toBeGreaterThan(1);
+    expect($('[data-testid="person-terms"] tbody tr a').textContent).toBe('Wikipedia');
+  });
+  it('the party ranking counts from 1991', () => {
+    nav('#partie');
+    expect($('[data-action="hop-scope"][data-scope="all"]').textContent).toBe('Wszyscy od 1991');
   });
 });

@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-kadencje-1-2",
+      "date": "2026-11-24",
+      "title": "Kadencje I i II",
+      "body": "W Posłach są teraz też kadencje I i II (1991–1997), z list posłów w polskiej Wikipedii.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz posłów"
+      }
+    },
+    {
       "id": "2026-11-24-motyw",
       "date": "2026-11-24",
       "title": "Tryb jasny i ciemny",

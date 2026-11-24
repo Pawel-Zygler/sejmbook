@@ -8,7 +8,8 @@ import careerData from '../data/career.json';
 import lifeData from '../data/life.json';
 import wikiPartiesData from '../data/wiki-parties.json';
 import termsData from '../data/terms.json';
+import earlyTermsData from '../data/early-terms.json';
 import contactsData from '../data/contacts.json';
 import { createApp } from './app.js';
 
-createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, contactsData, mediaData: window.__SEJM_MEDIA__ });
+createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, mediaData: window.__SEJM_MEDIA__ });
