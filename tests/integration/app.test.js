@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Mapa strony i wspólne nagłówki';
-const NEWEST_LINE = 'Serwis: Mapa strony i wspólne nagłówki';
+const NEWEST = 'Feed jak w serwisie społecznościowym';
+const NEWEST_LINE = 'Feed: Feed jak w serwisie społecznościowym';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -531,13 +531,18 @@ describe('Terms I and II (Wikipedia)', () => {
 });
 
 describe('Home feed', () => {
-  it('starts with the President and the Prime Minister, then the Sejm votings', () => {
+  it('is one chronological stream of posts, each by the official or MP who published it', () => {
     nav('#start');
-    const posts = $$('#view .feed-post').map((p) => p.dataset.feed);
-    expect(posts.slice(0, 2)).toEqual(['president', 'pm']);
-    expect(posts).toContain('sejm');
-    expect($('#view .feed-post').textContent).toContain('Karol Nawrocki');
-    expect($$('#view .feed-post[data-feed="president"] .feed-list a').every((a) => a.href.startsWith('https://www.prezydent.pl/'))).toBe(true);
+    click($('[data-window="all"]'));
+    const posts = $$('#view .feed-post');
+    expect(posts.length).toBeGreaterThan(30);
+    const kinds = new Set(posts.map((p) => p.dataset.feed));
+    for (const k of ['president', 'pm', 'office', 'vote', 'act']) expect(kinds.has(k), k).toBe(true);
+    const times = posts.map((p) => p.querySelector('.post-head time').getAttribute('datetime').slice(0, 10));
+    expect([...times].sort().reverse()).toEqual(times);
+    expect($('#view .feed-post[data-feed="president"]').textContent).toContain('Karol Nawrocki');
+    expect($('#view .feed-list')).toBeNull();
+    expect($('#view .feed-more')).toBeNull();
     expect($('[data-testid="feed-note"]').textContent).toContain('zweryfikowane');
   });
 });
@@ -630,10 +635,11 @@ describe('Feed: interactive', () => {
     expect($('[data-window="24h"]').getAttribute('aria-pressed')).toBe('true');
     click($('[data-window="all"]'));
     expect($('[data-window="all"]').getAttribute('aria-pressed')).toBe('true');
-    expect($('#view .feed-post[data-feed="president"] .feed-list')).not.toBeNull();
+    expect($('#view .feed-post[data-feed="president"]')).not.toBeNull();
   });
   it('loads a voting\'s details when it is opened', () => {
     nav('#start');
+    click($('[data-window="all"]'));
     const d = $('details.vote-item');
     expect($$('details.vote-item').length).toBe(5);
     expect(d.querySelector('.vote-more').innerHTML).toBe('');
@@ -644,6 +650,7 @@ describe('Feed: interactive', () => {
   });
   it('links the President to his profile here', () => {
     nav('#start');
+    click($('[data-window="all"]'));
     expect($('#view .feed-post[data-feed="president"] .post-head a').getAttribute('href')).toBe('#urzad-karol-nawrocki');
   });
 });
@@ -652,11 +659,12 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
   it('shows ministries, the Senate and NIK, and MPs\' interpellations, from data/feed.json', () => {
     nav('#start');
     click($('[data-action="feed-window"][data-window="all"]'));
-    const offices = $('#view .feed-post[data-feed="offices"]');
-    expect(offices).not.toBeNull();
-    expect($$('#view .feed-post[data-feed="offices"] .feed-list a[target]').every((a) => /^https:\/\/www\.(gov|senat|nik)\.gov\.pl|^https:\/\/www\.gov\.pl/.test(a.href))).toBe(true);
-    const acts = $('#view .feed-post[data-feed="mp-acts"]');
-    expect(acts.querySelector('a[href^="#posel-"]')).not.toBeNull();
+    const offices = $$('#view .feed-post[data-feed="office"]');
+    expect(offices.length).toBeGreaterThan(10);
+    expect(offices.every((p) => /^https:\/\/www\.(gov|senat|nik)\.gov\.pl|^https:\/\/www\.gov\.pl/.test(p.querySelector('.post-title a').href))).toBe(true);
+    expect(offices.some((p) => p.querySelector('.post-head a[href^="#"]'))).toBe(true);
+    const acts = $$('#view .feed-post[data-feed="act"]');
+    expect(acts.some((p) => p.querySelector('.post-head a[href^="#posel-"]'))).toBe(true);
   });
   it('opens the sitemap from the side menu and every link goes somewhere real', () => {
     nav('#mapa');
@@ -681,6 +689,8 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     nav('#panstwo');
     const kk = $$('[data-testid="cabinet-now"] a').find((x) => x.textContent === 'Władysław Kosiniak-Kamysz');
     nav(kk.getAttribute('href'));
-    expect($('[data-testid="person-news"]').textContent).toContain('Ministerstwo Obrony Narodowej');
+    const news = $('[data-testid="person-news"]');
+    expect(news.textContent).toContain('Ministerstwo Obrony Narodowej');
+    expect(news.querySelectorAll('article.feed-post').length).toBeGreaterThan(0);
   });
 });

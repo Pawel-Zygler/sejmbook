@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-24
 
+- **Feed: Feed jak w serwisie społecznościowym.** Każdy komunikat, głosowanie i interpelacja to osobny wpis od osoby, która go opublikowała, ułożony chronologicznie.
 - **Serwis: Mapa strony i wspólne nagłówki.** Mapa strony zbiera wszystkie sekcje, a każda strona ma ten sam nagłówek.
 - **Feed: Komunikaty urzędów i posłów.** W Feedzie są komunikaty ministerstw, Senatu i NIK oraz najnowsze interpelacje i zapytania posłów.
 - **Państwo: Jeden wygląd profili.** Prezydenci, ministrowie i byli posłowie mają teraz profil w tym samym układzie co posłowie, ze spektrum partyjnym.

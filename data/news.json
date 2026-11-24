@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-feed-wpisy",
+      "date": "2026-11-24",
+      "title": "Feed jak w serwisie społecznościowym",
+      "section": "Feed",
+      "body": "Każdy komunikat, głosowanie i interpelacja to osobny wpis od osoby, która go opublikowała, ułożony chronologicznie.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-mapa-strony",
       "date": "2026-11-24",
       "title": "Mapa strony i wspólne nagłówki",

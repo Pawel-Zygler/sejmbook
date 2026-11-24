@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Mapa strony i wspólne nagłówki');
+  await expect(post).toContainText('Feed jak w serwisie społecznościowym');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Mapa strony i wspólne nagłówki');
+  await expect(page.locator('.news-post').first()).toContainText('Feed jak w serwisie społecznościowym');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -351,11 +351,12 @@ test('Posłowie: term I (1991–1993) from Wikipedia', async ({ page }) => {
   expect(await page.locator('.term-card').count()).toBeGreaterThan(450);
 });
 
-test('Home feed: President and Prime Minister first', async ({ page }) => {
+test('Home feed: one post per entry, President and Prime Minister among them', async ({ page }) => {
   await page.goto(PAGE);
-  const first = page.locator('#view .feed-post').first();
-  await expect(first).toContainText('Karol Nawrocki');
-  await expect(page.locator('#view .feed-post[data-feed="pm"]')).toContainText('Donald Tusk');
+  await page.locator('[data-window="all"]').click();
+  await expect(page.locator('#view .feed-post[data-feed="president"]').first()).toContainText('Karol Nawrocki');
+  await expect(page.locator('#view .feed-post[data-feed="pm"]').first()).toContainText('Donald Tusk');
+  expect(await page.locator('#view .feed-post').count()).toBeGreaterThan(30);
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
@@ -381,6 +382,7 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
 test('Feed: open a voting to see clubs, switch the time window', async ({ page }) => {
   await page.goto(PAGE);
   await expect(page.locator('.topnav a[data-nav="home"]')).toHaveText('Feed');
+  await page.locator('[data-window="all"]').click();
   const v = page.locator('details.vote-item').first();
   await v.locator('summary').click();
   await expect(v.locator('.vote-clubs')).toBeVisible();
@@ -418,8 +420,8 @@ test('Profiles: officials and former MPs use the MP profile layout', async ({ pa
 test('Feed: office releases and MP acts; sitemap from the side menu or the feed note', async ({ page }) => {
   await page.goto(`${PAGE}#start`);
   await page.locator('[data-action="feed-window"][data-window="all"]').click();
-  await expect(page.locator('.feed-post[data-feed="offices"] .feed-list li').first()).toBeVisible();
-  await expect(page.locator('.feed-post[data-feed="mp-acts"] .feed-list li').first()).toBeVisible();
+  await expect(page.locator('.feed-post[data-feed="office"]').first()).toBeVisible();
+  await expect(page.locator('.feed-post[data-feed="act"] .post-head a[href^="#posel-"]').first()).toBeVisible();
   await page.locator('[data-testid="feed-note"] a[href="#mapa"]').click();
   await expect(page.locator('#view h1')).toHaveText('Mapa strony');
   await page.getByTestId('sitemap').locator('a', { hasText: 'Rząd Jerzego Buzka' }).click();

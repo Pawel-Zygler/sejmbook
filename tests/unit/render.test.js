@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -495,76 +495,109 @@ describe('flyerDonut', () => {
   });
 });
 
-describe('renderLiveFeed', () => {
-  const feed = {
-    fetchedAt: '2026-11-24T09:00:00Z',
-    president: { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: [{ title: 'Wizyta <w> Argentynie', date: '2026-11-23', url: 'https://www.prezydent.pl/a,1' }] },
-    pm: { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: [{ title: 'Szczyt V4', date: '2026-11-23', place: 'Bratysława', url: 'https://www.gov.pl/web/premier/v4' }] },
-    pmSocial: { who: 'Donald Tusk', network: 'Bluesky', handle: 'donald-tusk.bsky.social', profile: 'https://bsky.app/profile/donald-tusk.bsky.social', items: [{ text: 'Robimy.', date: '2025-12-04', url: 'https://bsky.app/x', likes: 1200, reposts: 3 }] },
-    sejm: { date: '2026-11-19', proceeding: 45, items: [{ title: 'Pkt. 43 Zmiany', yes: 277, no: 134, abstain: 4, passed: true }, { title: 'Pkt. 44', yes: 10, no: 300, abstain: 0, passed: false }] },
-  };
-  it('shows the President, the Prime Minister, his social posts and the Sejm votings, escaped', () => {
-    const html = renderLiveFeed({ ...ctx, feed });
-    expect(html.indexOf('Karol Nawrocki')).toBeLessThan(html.indexOf('Szczyt V4'));
+const FEED_GOV = {
+  offices: [{ id: 'marszalek-senatu', title: 'Marszałek Senatu', holders: [{ name: 'Anna Senat', from: '2023-11-13', to: null }] }],
+  governments: [{ id: 'g', name: 'Rząd', from: '2023-12-13', to: null, members: [{ office: 'Minister finansów i gospodarki', name: 'Jan Kasa', from: '2023-12-13', to: null }] }],
+  byName: new Map([['karol nawrocki', { slug: 'karol-nawrocki' }], ['donald tusk', { slug: 'donald-tusk' }], ['jan kasa', { slug: 'jan-kasa' }]]), bySlug: new Map(),
+};
+const FEED = {
+  fetchedAt: '2026-11-24T09:00:00Z',
+  president: { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: [{ title: 'Wizyta <w> Argentynie', date: '2026-11-23', url: 'https://www.prezydent.pl/a,1', seenAt: '2026-11-23T20:00:00.000Z' }] },
+  pm: { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: [{ title: 'Szczyt V4', date: '2026-11-24', place: 'Bratysława', url: 'https://www.gov.pl/web/premier/v4', seenAt: '2026-11-24T10:00:00.000Z' }] },
+  pmSocial: { who: 'Donald Tusk', network: 'Bluesky', handle: 'donald-tusk.bsky.social', profile: 'https://bsky.app/profile/donald-tusk.bsky.social', items: [{ text: 'Robimy.', date: '2025-12-04', time: '2025-12-04T10:00:00Z', url: 'https://bsky.app/x', likes: 1200, reposts: 3 }] },
+  offices: [
+    { id: 'finanse', name: 'Ministerstwo Finansów', office: 'Minister finansów', source: 'https://www.gov.pl/web/finanse/wiadomosci', items: [{ title: 'Budżet <2027>', date: '2026-11-22', url: 'https://www.gov.pl/web/finanse/a', seenAt: '2026-11-22T23:59:59.000Z' }] },
+    { id: 'rozwoj', name: 'Ministerstwo Rozwoju', office: null, source: 'https://www.gov.pl/web/rozwoj', items: [{ title: 'Bez ministra', date: '2026-11-21', url: 'https://www.gov.pl/web/rozwoj/a' }] },
+  ],
+  sejm: { items: [{ title: 'Pkt. 1 <b>', yes: 3, no: 1, abstain: 0, passed: true, date: '2026-11-19T13:43:55', proceeding: 69, number: 153, url: 'https://www.sejm.gov.pl/v', topic: 'wniosek', clubs: [{ club: 'KO', yes: 2, no: 0, abstain: 0, absent: 0 }], votes: {} },
+    { title: 'Pkt. 2', yes: 1, no: 3, abstain: 0, passed: false, date: '2026-11-19', proceeding: 69, number: 154 }] },
+  mpActs: { items: [{ kind: 'interpelacja', num: 1, title: 'W sprawie wilków', date: '2026-11-20', from: [70, 99999], to: ['minister klimatu'], url: 'https://sejm.gov.pl/i1' },
+    { kind: 'zapytanie', num: 2, title: 'W sprawie DK94', date: '2026-11-18', from: [], to: [], url: 'https://sejm.gov.pl/z2' }] },
+};
+describe('Feed: one chronological stream of posts', () => {
+  const c = { ...ctx, gov: FEED_GOV, today: '2026-11-24', feed: FEED };
+  const now = Date.parse('2026-11-24T12:00:00Z');
+  it('puts every entry in its own post, newest first', () => {
+    const e = feedEntries(c);
+    expect(e.map((x) => x.kind)).toEqual(['pm', 'president', 'office', 'office', 'act', 'vote', 'vote', 'act', 'social']);
+    expect(e[0].author).toBe('Donald Tusk');
+    expect(feedEntries({ ...c, feed: null })).toEqual([]);
+  });
+  it('lets the official in charge publish: ministers by name, offices without a head as the office', () => {
+    const e = feedEntries(c);
+    expect(e.find((x) => x.title === 'Budżet <2027>').author).toBe('Jan Kasa');
+    expect(e.find((x) => x.title === 'Bez ministra').author).toBe('Ministerstwo Rozwoju');
+    const html = renderLiveFeed(c, { window: 'all', now });
+    expect((html.match(/<article class="post feed-post"/g) ?? []).length).toBe(9);
+    expect(html).toContain('Budżet &lt;2027&gt;');
+    expect(html).toContain('href="#urzad-jan-kasa"');
+    expect(html).toContain('Ministerstwo Finansów · <time datetime="2026-11-22">22.11.2026</time>');
+    expect(html).not.toContain('feed-more');
+  });
+  it('shows the President and the Prime Minister like everyone else, escaped, with place and source', () => {
+    const html = renderLiveFeed(c, { window: 'all', now });
+    expect(html.indexOf('Szczyt V4')).toBeLessThan(html.indexOf('Wizyta'));
     expect(html).toContain('Wizyta &lt;w&gt; Argentynie');
-    expect(html).toContain('<time datetime="2026-11-23">23.11.2026</time>');
     expect(html).toContain(' · Bratysława');
-    expect(html).toContain('Więcej na prezydent.pl');
-    expect(html).toContain('ostatni wpis 04.12.2025');
-    expect(html).toContain("♥ 1200");
-    expect(html).toContain('Przyjęto</b> · za 277 · przeciw 134 · wstrzymało się 4');
-    expect(html).toContain('Odrzucono');
+    expect(html).toContain('>prezydent.pl</a>');
+    expect(html).toContain('href="#urzad-karol-nawrocki"');
+    expect(html).toContain('♥ 1200');
     expect(html).toContain('stan na 24.11.2026');
   });
-  it('leaves out what is missing', () => {
-    expect(renderLiveFeed({ ...ctx, feed: null })).toBe('');
-    const html = renderLiveFeed({ ...ctx, feed: { fetchedAt: '2026-11-24', pm: feed.pm } });
-    expect(html).not.toContain('Prezydent RP');
-    expect(html).toContain('Szczyt V4');
-  });
-});
-
-describe('feed: windows, profile links, voting details', () => {
-  const now = Date.parse('2026-11-24T12:00:00Z');
-  const feed = {
-    fetchedAt: '2026-11-24T09:00:00Z',
-    president: { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: [{ title: 'Stare', date: '2026-11-10', url: 'https://www.prezydent.pl/1', seenAt: '2026-11-10T23:59:59.000Z' }] },
-    pm: { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: [{ title: 'Nowe', date: '2026-11-24', url: 'https://www.gov.pl/1', seenAt: '2026-11-24T10:00:00.000Z' }] },
-    pmSocial: { who: 'Donald Tusk', network: 'Bluesky', handle: 'x', profile: 'https://bsky.app/profile/x', items: [{ text: 'Stary post', date: '2025-12-04', time: '2025-12-04T10:00:00Z', url: 'https://bsky.app/x', likes: 1, reposts: 0 }] },
-    sejm: { items: [{ title: 'Pkt. 1 <b>', yes: 3, no: 1, abstain: 0, passed: true, date: '2026-11-19T13:43:55', proceeding: 69, number: 153, url: 'https://www.sejm.gov.pl/v', topic: 'wniosek', clubs: [{ club: 'KO', yes: 2, no: 0, abstain: 0, absent: 0 }, { club: 'PiS', yes: 1, no: 1, abstain: 0, absent: 0 }], votes: {} }] },
-  };
-  const gov = { byName: new Map([['karol nawrocki', { slug: 'karol-nawrocki' }], ['donald tusk', { slug: 'donald-tusk' }]]) };
-  it('shows only what is new in the window and says when nothing is', () => {
-    const html = renderLiveFeed({ ...ctx, feed, gov }, { window: '24h', now });
-    expect(html).toContain('Nowe');
-    expect(html).toContain('Nic nowego w ciągu ostatnich 24 godziny. Ostatni wpis: 10.11.2026');
-    expect(html).not.toContain('<time datetime="2026-11-10">');
-    expect(html).not.toContain('Stary post');
-    expect(html).toContain('aria-pressed="true">ostatnich 24 godziny');
-    const all = renderLiveFeed({ ...ctx, feed, gov }, { window: 'all', now });
-    expect(all).toContain('>Stare<');
-    expect(all).toContain('Stary post');
-  });
-  it('links people in the feed to their profiles here', () => {
-    const html = renderLiveFeed({ ...ctx, feed, gov }, { window: 'all', now });
-    expect(html).toContain('href="#urzad-karol-nawrocki"');
-    expect(html).toContain('Profil w Sejmbooku');
-    expect(feedProfileHref({ ...ctx, gov }, ctx.mps[0].name)).toBe(`#posel-${ctx.mps[0].id}`);
-    expect(feedProfileHref({ ...ctx, gov: null }, 'Nikt')).toBeNull();
-  });
-  it('lists votings as closed cards and builds their details on demand', () => {
-    const html = renderLiveFeed({ ...ctx, feed, gov }, { window: 'all', now });
+  it('posts each voting as the Sejm, with details on demand', () => {
+    const html = renderLiveFeed(c, { window: 'all', now });
     expect(html).toContain('<details class="vote-item" data-voting="0">');
     expect(html).toContain('Pkt. 1 &lt;b&gt;');
     expect(html).toContain('19.11.2026, 13:43');
-    const more = renderVotingDetails(ctx, feed.sejm.items[0]);
+    expect(html).toContain('Przyjęto</b> · za 3 · przeciw 1');
+    expect(html).toContain('Odrzucono');
+    const more = renderVotingDetails(ctx, FEED.sejm.items[0]);
     expect(more).toContain('class="vote-clubs"');
-    expect(more).toContain('href="https://www.sejm.gov.pl/v"');
-    expect(more).toContain('https://api.sejm.gov.pl/sejm/term10/votings/69/153');
-    expect(more).toContain('tak jak większość');
     expect(renderVotingDetails(ctx, null)).toBe('');
   });
+  it('posts each interpellation as the MP who filed it', () => {
+    const html = renderLiveFeed(c, { window: 'all', now });
+    const mp = ctx.mpsById.get(70);
+    expect(html).toContain(`href="#posel-70">${mp.name}</a> i 1 inny poseł`);
+    expect(html).toContain('class="official-link" href="#posel-70"');
+    expect(html).toContain('interpelacja nr 1 do: minister klimatu');
+    expect(html).toContain('<strong>Posłowie</strong>');
+  });
+  it('keeps only the chosen window and says when nothing is new', () => {
+    const html = renderLiveFeed(c, { window: '24h', now });
+    expect(html).toContain('Szczyt V4');
+    expect(html).toContain('Wizyta');
+    expect(html).not.toContain('Budżet');
+    expect(html).toContain('aria-pressed="true">ostatnich 24 godziny');
+    const quiet = renderLiveFeed(c, { window: '6h', now: Date.parse('2027-01-01T00:00:00Z') });
+    expect(quiet).toContain('Nic nowego w ciągu ostatnich 6 godzin. Ostatni wpis: 24.11.2026');
+    expect(renderLiveFeed({ ...ctx, feed: null })).toBe('');
+  });
+  it('finds who heads an office today', () => {
+    expect(officeHolderName(c, 'marszalek-senatu')).toBe('Anna Senat');
+    expect(officeHolderName(c, 'Minister finansów')).toBe('Jan Kasa');
+    expect(officeHolderName(c, 'Minister zdrowia')).toBeNull();
+    expect(officeHolderName(c, null)).toBeNull();
+    expect(officeHolderName({ ...c, gov: null }, 'marszalek-senatu')).toBeNull();
+    expect(feedProfileHref({ ...ctx, gov: FEED_GOV }, ctx.mps[0].name)).toBe(`#posel-${ctx.mps[0].id}`);
+    expect(feedProfileHref({ ...ctx, gov: null }, 'Nikt')).toBeNull();
+  });
+  it('shows a person\'s own posts on their profile, nothing for others', () => {
+    const own = personNewsPost(c, 'Donald Tusk');
+    expect(own).toContain('data-testid="person-news"');
+    expect((own.match(/<article/g) ?? []).length).toBe(2);
+    expect(personNewsPost(c, 'Nikt')).toBe('');
+    expect(personNewsPost({ ...c, feed: null }, 'Jan Kasa')).toBe('');
+    expect(feedPost(c, { kind: 'office', author: 'X', role: 'R', title: 'T', date: '2026-11-24' })).not.toContain('Źródło');
+  });
+  it('one page header for every section', () => {
+    const h = pageHead({ icon: '⚖', eyebrow: 'Państwo', title: 'A <b>', lede: 'tekst' });
+    expect(h).toContain('data-icon="⚖"');
+    expect(h).toContain('<h1>A &lt;b&gt;</h1>');
+    expect(pageHead({ icon: 'x', title: 'T' })).not.toContain('eyebrow');
+  });
 });
+
 
 describe('portraits of state officials', () => {
   const gov = { byName: new Map([['karol nawrocki', { slug: 'karol-nawrocki' }]]) };
@@ -578,61 +611,3 @@ describe('portraits of state officials', () => {
   });
 });
 
-describe('office press releases and MP acts in the feed', () => {
-  const gov = {
-    offices: [{ id: 'marszalek-senatu', title: 'Marszałek Senatu', holders: [{ name: 'Anna Senat', from: '2023-11-13', to: null }] }],
-    governments: [{ id: 'g', name: 'Rząd', from: '2023-12-13', to: null, members: [{ office: 'Minister finansów i gospodarki', name: 'Jan Kasa', from: '2023-12-13', to: null }] }],
-    byName: new Map(), bySlug: new Map(),
-  };
-  const feed = {
-    fetchedAt: '2026-11-24T09:00:00Z',
-    offices: [
-      { id: 'finanse', name: 'Ministerstwo Finansów', office: 'Minister finansów', source: 'https://www.gov.pl/web/finanse/wiadomosci', items: [{ title: 'Budżet <2027>', date: '2026-11-23', url: 'https://www.gov.pl/web/finanse/a' }] },
-      { id: 'senat', name: 'Marszałek i Prezydium Senatu', office: 'marszalek-senatu', source: 'https://www.senat.gov.pl/x/', items: Array.from({ length: 7 }, (_, i) => ({ title: `Senat ${i}`, date: `2026-11-${String(10 + i)}`, url: `https://www.senat.gov.pl/${i}` })) },
-    ],
-    mpActs: { source: 'https://api.sejm.gov.pl', items: [{ kind: 'interpelacja', num: 1, title: 'W sprawie wilków', date: '2026-11-23', from: [70, 99999], to: ['minister klimatu'], url: 'https://sejm.gov.pl/i1' },
-      { kind: 'zapytanie', num: 2, title: 'W sprawie DK94', date: '2026-11-22', from: [], to: [], url: 'https://sejm.gov.pl/z2' }] },
-  };
-  const c = { ...ctx, gov, today: '2026-11-24', feed };
-  it('finds who heads an office today', () => {
-    expect(officeHolderName(c, 'marszalek-senatu')).toBe('Anna Senat');
-    expect(officeHolderName(c, 'Minister finansów')).toBe('Jan Kasa');
-    expect(officeHolderName(c, 'Minister zdrowia')).toBeNull();
-    expect(officeHolderName(c, null)).toBeNull();
-    expect(officeHolderName({ ...c, gov: null }, 'marszalek-senatu')).toBeNull();
-  });
-  it('merges office releases newest first, names the minister and folds the rest', () => {
-    const html = renderLiveFeed(c, { window: 'all' });
-    expect(html).toContain('data-feed="offices"');
-    expect(html).toContain('Budżet &lt;2027&gt;');
-    expect(html.indexOf('Budżet')).toBeLessThan(html.indexOf('Senat 6'));
-    expect(html).toContain('Ministerstwo Finansów · ');
-    expect(html).toContain('Jan Kasa');
-    expect(html).toContain('<details class="feed-more"><summary>Pokaż 2 kolejne</summary>');
-  });
-  it('lists interpellations and questions with their authors linked to MP profiles', () => {
-    const html = renderLiveFeed(c, { window: 'all' });
-    expect(html).toContain('data-feed="mp-acts"');
-    expect(html).toContain('Interpelacja nr 1');
-    expect(html).toContain('href="#posel-70"');
-    expect(html).toContain('Zapytanie nr 2');
-    expect(html).toContain('do: minister klimatu');
-  });
-  it('says when nothing is new in the window', () => {
-    const html = renderLiveFeed(c, { window: '6h', now: Date.parse('2026-12-31T00:00:00Z') });
-    expect(html).toContain('Ostatni komunikat: 23.11.2026');
-    expect(html).toContain('Ostatnie: 23.11.2026');
-  });
-  it('shows a person\'s office releases on their profile, nothing for others', () => {
-    expect(personNewsPost(c, 'Jan Kasa')).toContain('data-testid="person-news"');
-    expect(personNewsPost(c, 'Jan Kasa')).toContain('Więcej na gov.pl');
-    expect(personNewsPost(c, 'Nikt')).toBe('');
-    expect(personNewsPost({ ...c, feed: null }, 'Jan Kasa')).toBe('');
-  });
-  it('one page header for every section', () => {
-    const h = pageHead({ icon: '⚖', eyebrow: 'Państwo', title: 'A <b>', lede: 'tekst' });
-    expect(h).toContain('data-icon="⚖"');
-    expect(h).toContain('<h1>A &lt;b&gt;</h1>');
-    expect(pageHead({ icon: 'x', title: 'T' })).not.toContain('eyebrow');
-  });
-});
