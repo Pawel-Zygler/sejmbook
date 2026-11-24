@@ -1,0 +1,1819 @@
+<!-- source: https://pl.wikipedia.org/wiki/Pos%C5%82owie_na_Sejm_Rzeczypospolitej_Polskiej_II_kadencji_(1993%E2%80%931997) revid=80861730 timestamp=2026-09-30T00:11:43Z -->
+{{Inne znaczenia|posłów Sejmu RP kadencji 1993–1997|[[Posłowie na Sejm Rzeczypospolitej Polskiej II kadencji (1928–1930)|listę posłów na Sejm RP kadencji 1928–1930]]}}
+'''Posłowie na [[Sejm Rzeczypospolitej Polskiej II kadencji (1993–1997)|Sejm Rzeczypospolitej Polskiej II kadencji]]''' – [[Poseł|posłowie]] wybrani podczas [[wybory parlamentarne w Polsce w 1993 roku|wyborów parlamentarnych]], które odbyły się w dniu 19 września 1993.
+
+Pierwsze posiedzenie odbyło się 14 i 21 października 1993, a ostatnie, 115. – 4 września 1997. Kadencja Sejmu trwała od 19 września 1993 do 20 października 1997.
+
+Kluby i koła na pierwszym posiedzeniu Sejmu II kadencji i stan na koniec kadencji.
+{{col-begin}}
+{| class="wikitable" style="text-align:right;"
+|-
+!colspan=2| Ugrupowanie polityczne<ref group="uwaga">Uwzględniono komitety wyborcze startujące w wyborach w 1993 oraz przynależność do klubów i kół parlamentarnych pod koniec kadencji.</ref>
+! X 1993
+! X 1997
+! +/−
+|-
+|style="background:#{{partie polityczne - kolor|SLD}};"|
+|align=left| [[Sojusz Lewicy Demokratycznej]]
+| 171
+| 168
+| {{zmiana|spadek|n=3}}
+|-
+|style="background:#{{partie polityczne - kolor|PSL}};"|
+|align=left| [[Polskie Stronnictwo Ludowe]]
+| 132
+| 127
+| {{zmiana|spadek|n=5}}
+|-
+|style="background:#{{partie polityczne - kolor|UW}};"|
+|align=left| [[Unia Wolności]]<ref group="uwaga">Wcześniej funkcjonujący pod nazwą KP [[Unia Demokratyczna|Unii Demokratycznej]].</ref>
+| 74
+| 65
+| {{zmiana|spadek|n=9}}
+|-
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|align=left| [[Unia Pracy]]
+| 41
+| 33
+| {{zmiana|spadek|n=8}}
+|-
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|align=left| [[Konfederacja Polski Niepodległej]]
+| 22
+| 4
+| {{zmiana|spadek|n=18}}
+|-
+|style="background:#{{partie polityczne - kolor|BBWR}};"|
+|align=left| [[Bezpartyjny Blok Wspierania Reform]]
+| 16
+| 7
+| {{zmiana|spadek|n=9}}
+|-
+|style="background:#{{partie polityczne - kolor|MN1}};"|
+|align=left| [[Mniejszość Niemiecka (komitet wyborczy)|Mniejszość Niemiecka]]<ref group="uwaga">Jej posłowie zostali wybrani jako kandydaci Mniejszości Niemieckiej i Towarzystwa Społeczno-Kulturalnego Niemców – DFK.</ref>
+| 4
+| 4
+| {{zmiana|stagnacja}}
+|-
+|style="background:#{{partie polityczne - kolor|AWS}};"|
+|align=left| [[Federacyjny Klub Parlamentarny na rzecz AWS]]<ref group="uwaga">Federacyjny Klub Parlamentarny na rzecz Akcji Wyborczej Solidarność nie istniał w czasie wyborów parlamentarnych w 1993. Jego posłowie zostali wybrani jako kandydaci Konfederacji Polski Niepodległej i Bezpartyjnego Bloku Wspierania Reform.</ref>
+| –
+| 15
+| –
+|-
+|style="background:#{{partie polityczne - kolor|SKL}};"|
+|align=left| [[Koło Konserwatywno-Ludowe]]<ref group="uwaga">Koło Konserwatywno-Ludowe nie istniało w czasie wyborów parlamentarnych w 1993. Jego posłowie zostali wybrani jako kandydaci Unii Demokratycznej.</ref>
+| –
+| 8
+| –
+|-
+|style="background:#{{partie polityczne - kolor|CENT}};"|
+|align=left| [[Ruch Solidarni w Wyborach|Porozumienie Prawicy – Solidarni w Wyborach]]<ref group="uwaga">Porozumienie Prawicy – Solidarni w Wyborach nie istniało w czasie wyborów parlamentarnych w 1993. Jego posłowie zostali wybrani jako kandydaci Bezpartyjnego Bloku Wspierania Reform i Konfederacji Polski Niepodległej.</ref>
+| –
+| 4
+| –
+|-
+|style="background:#{{partie polityczne - kolor|SDPL}};"|
+|align=left| [[Nowa Demokracja (Polska)|Nowa Demokracja]]<ref group="uwaga">Nowa Demokracja nie istniała w czasie wyborów parlamentarnych w 1993. Jej posłowie zostali wybrani jako kandydaci Unii Pracy.</ref>
+| –
+| 3
+| –
+|-
+|style="background:#{{partie polityczne - kolor|PPS}};"|
+|align=left| [[Polska Partia Socjalistyczna (1987–1990)|Polska Partia Socjalistyczna]]<ref group="uwaga">Jej posłowie zostali wybrani jako kandydaci Sojuszu Lewicy Demokratycznej.</ref>
+| –
+| 3
+| –
+|-
+|style="background:#{{partie polityczne - kolor|}};"|
+|align=left| Posłowie niezrzeszeni<ref group="uwaga">Posłowie, którzy nie przystąpili do żadnego z klubów lub kół parlamentarnych bądź opuścili je w trakcie kadencji.</ref>
+| –
+| 17
+| –
+|-
+!colspan=2| Razem
+! 460
+!colspan=2| 458
+|}
+{{col-break}}
+{{Podział miejsc
+|opis = miejsca
+|SLD|UP|PSL|UD|MN|KPN|BBWR|
+|SLD = 171
+|UP = 41
+|PSL = 132
+|UD = 74
+|MN = 4
+|KPN = 22
+|BBWR = 16
+|SLD link = [[Sojusz Lewicy Demokratycznej|SLD]]
+|UP link = [[Unia Pracy|UP]]
+|PSL link = [[Polskie Stronnictwo Ludowe|PSL]]
+|UD link = [[Unia Demokratyczna|UD]]
+|MN link = [[Mniejszość Niemiecka (komitet wyborczy)|Mniejszość Niemiecka]]
+|KPN link = [[Konfederacja Polski Niepodległej|KPN]]
+|BBWR link = [[Bezpartyjny Blok Wspierania Reform|BBWR]]
+|SLD kolor = {{partie polityczne - kolor|SLD}}
+|UP kolor = {{partie polityczne - kolor|UP}}
+|PSL kolor = {{partie polityczne - kolor|PSL}}
+|UD kolor = {{partie polityczne - kolor|UD}}
+|MN kolor = {{partie polityczne - kolor|MN}}
+|KPN kolor = {{partie polityczne - kolor|KPN}}
+|BBWR kolor = {{partie polityczne - kolor|BBWR}}
+}}
+{{col-end}}
+
+== Prezydium Sejmu II kadencji ==
+{| class="wikitable"
+|-
+!rowspan=2 colspan=2| Poseł
+!rowspan=2| Funkcja
+!rowspan=2| Klub
+!colspan=2| Czas pełnienia funkcji
+|-
+! Od
+! Do
+|- style="background: #E6E6E6;"
+|style="background: #{{partie polityczne - kolor|UP}};"|
+| [[Aleksander Małachowski]]
+| [[Marszałek senior]]
+| [[Unia Pracy]] KP
+|colspan=2 align=center style="padding-right:10px"| {{Dts|14|10|1993}}
+|- style="background: gray;"
+|colspan=6 align=center| '''Marszałek senior przewodniczy obradom Sejmu przed wyborem Prezydium'''
+|- style="background: #E6E6E6;"
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+| '''[[Józef Oleksy]]'''
+| '''[[Marszałek Sejmu Rzeczypospolitej Polskiej|Marszałek Sejmu]]'''
+| '''[[Sojusz Lewicy Demokratycznej]] KP'''
+|align=right style="padding-right:10px"| '''{{Dts|14|10|1993}}<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 14 października 1993 r. w sprawie wyboru Marszałka Sejmu ({{Monitor Polski|1993|53|486}}).</ref>'''
+|align=right style="padding-right:10px"| '''{{Dts|3|3|1995}}<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 3 marca 1995 r. w sprawie odwołania posła Józefa Oleksego ze stanowiska Marszałka Sejmu ({{Monitor Polski|1995|13|155}}).</ref>'''
+|-
+|style="background: #{{partie polityczne - kolor|UW}};"|
+| [[Olga Krzyżanowska]]
+| rowspan=2|[[Wicemarszałek Sejmu Rzeczypospolitej Polskiej|Wicemarszałek Sejmu]]
+| KP [[Unia Wolności|Unii Wolności]]
+|align=right style="padding-right:10px"| {{Dts|14|10|1993}}<ref name="wice">Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 14 października 1993 r. w sprawie wyboru wicemarszałków Sejmu ({{Monitor Polski|1993|53|488}}).</ref>
+|align=right style="padding-right:10px"| {{Dts|20|10|1997}}
+|-
+|style="background: #{{partie polityczne - kolor|UP}};"|
+| [[Aleksander Małachowski]]
+| Unia Pracy KP
+|align=right style="padding-right:10px"| {{Dts|14|10|1993}}<ref name="wice" />
+|align=right style="padding-right:10px"| {{Dts|20|10|1997}}
+|-
+|rowspan=2 style="background: #{{partie polityczne - kolor|PSL}};"|
+|rowspan=2| '''[[Józef Zych]]'''
+|style="background: #E6E6E6;"| Wicemarszałek Sejmu
+|rowspan=2| '''KP [[Polskie Stronnictwo Ludowe|Polskiego Stronnictwa Ludowego]]'''
+|align=right style="padding-right:10px; background: #E6E6E6;"| {{Dts|14|10|1993}}<ref name="wice" />
+|align=right style="padding-right:10px; background: #E6E6E6;"| {{Dts|3|3|1995}}
+|-
+| '''Marszałek Sejmu'''
+|align=right style="padding-right:10px"| '''{{Dts|3|3|1995}}<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 3 marca 1995 r. w sprawie wyboru Marszałka Sejmu ({{Monitor Polski|1995|13|156}}).</ref>'''
+|align=right style="padding-right:10px"| '''{{Dts|20|10|1997}}'''
+|- style="background: #E6E6E6;"
+|rowspan=2 style="background: #{{partie polityczne - kolor|SLD}};"|
+| [[Włodzimierz Cimoszewicz]]
+| Wicemarszałek Sejmu
+| Sojusz Lewicy Demokratycznej KP
+|align=right style="padding-right:10px"| {{Dts|3|3|1995}}<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 3 marca 1995 r. w sprawie wyboru wicemarszałka Sejmu ({{Monitor Polski|1995|13|157}}).</ref>
+|align=right style="padding-right:10px"| {{Dts|14|2|1996}}<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 14 lutego 1996 r. w sprawie odwołania posła Włodzimierza Cimoszewicza ze stanowiska wicemarszałka Sejmu ({{Monitor Polski|1996|15|179}}).</ref>
+|-
+| [[Marek Borowski]]
+| Wicemarszałek Sejmu
+| Sojusz Lewicy Demokratycznej KP
+|align=right style="padding-right:10px"| {{Dts|16|2|1996}}<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 16 lutego 1996 r. w sprawie wyboru wicemarszałka Sejmu ({{Monitor Polski|1996|15|181}}).</ref>
+|align=right style="padding-right:10px"| {{Dts|20|10|1997}}
+|}
+
+== Przynależność klubowa ==
+=== Stan na koniec kadencji ===
+Posłowie II kadencji zrzeszeni byli w następujących klubach i kole parlamentarnym:
+* [[Sojusz Lewicy Demokratycznej]] Klub Parlamentarny – 168 posłów, przewodniczący klubu [[Jerzy Szmajdziński]]<ref name="kluby">{{Cytuj stronę |url = http://www.sejm.gov.pl/archiwum/kluby/kadencja2/kluby.htm |tytuł = Kluby i koła poselskie |opublikowany = sejm.gov.pl |data dostępu = 2015-05-29}}</ref>,
+* Klub Parlamentarny [[Polskie Stronnictwo Ludowe|Polskiego Stronnictwa Ludowego]] – 127 posłów, przewodniczący klubu [[Waldemar Pawlak]]<ref name="kluby" />,
+* Klub Parlamentarny [[Unia Wolności|Unii Wolności]] – 65 posłów, przewodniczący klubu [[Bronisław Geremek]]<ref name="kluby" />,
+* [[Unia Pracy]] Klub Parlamentarny – 33 posłów przewodniczący klubu [[Ryszard Bugaj]]<ref name="kluby" />,
+* [[Federacyjny Klub Parlamentarny na rzecz AWS|Federacyjny Klub Parlamentarny na rzecz Akcji Wyborczej Solidarność]] – 15 posłów, przewodniczący klubu [[Janina Kraus]]<ref name="kluby" />,
+* [[Koło Konserwatywno-Ludowe]] – 8 posłów, przewodniczy klubu [[Piotr Buczkowski]]<ref name="kluby" />,
+* Koło Parlamentarne [[Bezpartyjny Blok Wspierania Reform|Bezpartyjnego Bloku Wspierania Reform]] – 7 posłów, przewodniczący koła [[Andrzej Gąsienica-Makowski]]<ref name="kluby" />,
+* Koło Parlamentarne [[Konfederacja Polski Niepodległej|Konfederacji Polski Niepodległej]] – 4 posłów, przewodniczący koła [[Leszek Moczulski|Robert Moczulski]]<ref name="kluby" />,
+* Koło [[Mniejszość Niemiecka (komitet wyborczy)|Mniejszości Niemieckiej]] – 4 posłów, przewodniczący koła [[Henryk Kroll]]<ref name="kluby" />,
+* Koło Parlamentarne [[Ruch Solidarni w Wyborach|Porozumienie Prawicy – Solidarni w Wyborach]] – 4 posłów, przewodniczący koła [[Jerzy Gwiżdż]]<ref name="kluby" />,
+* [[Nowa Demokracja (Polska)|Nowa Demokracja Koło Poselskie]] – 3 posłów, przewodniczący koła [[Sławomir Nowakowski]]<ref name="kluby" />,
+* [[Koło Parlamentarne PPS|Koło Parlamentarne]] [[Polska Partia Socjalistyczna|Polskiej Partii Socjalistycznej]] – 3 posłów, przewodniczący koła [[Piotr Ikonowicz]]<ref name="kluby" />,
+* Posłowie niezrzeszeni – 17 posłów<ref name="kluby" />.
+
+{| class="wikitable"
+!colspan=4| Sojusz Lewicy Demokratycznej Klub Parlamentarny
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|SLD}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Władysław Adamski]]
+* [[Romuald Ajchler]]
+* [[Aleksander Andryszak]]
+* [[Jolanta Banach]]
+* [[Anna Bańkowska (polityk)|Anna Bańkowska]]
+* [[Krzysztof Baszczyński]]
+* [[Tadeusz Biliński (polityk)|Tadeusz Biliński]]
+* [[Barbara Blida]]
+* [[Jadwiga Błoch]]
+* [[Zbigniew Bomba]]
+* [[Marek Borowski]]
+* [[Andrzej Brachmański]]
+* [[Krzysztof Brzeziński]]
+* [[Jan Budkiewicz]]
+* [[Bogdan Bujak]]
+* [[Władysław Bułka]]
+* [[Jan Byra (polityk)|Jan Byra]]
+* [[Stefan Ceranka]]
+* [[Jan Chojnacki (polityk)|Jan Chojnacki]]
+* [[Danuta Ciborowska]]
+* [[Wiesław Ciesielski (polityk)|Wiesław Ciesielski]]
+* [[Włodzimierz Cimoszewicz]]
+* [[Zygmunt Cybulski]]
+* [[Stanisław Czajczyński]]
+* [[Mieczysław Czerniawski]]
+* [[Dorota Dancewicz]]
+* [[Witold Deręgowski]]
+* [[Teresa Dobosz]]
+* [[Marek Dyduch]]
+* [[Stanisław Dzienisiewicz (polityk)|Stanisław Dzienisiewicz]]
+* [[Jerzy Dziewulski]]
+* [[Witold Firak]]
+* [[Tadeusz Gawin (związkowiec)|Tadeusz Gawin]]
+* [[Lubomir Gliniecki]]
+* [[Wojciech Grabałowski]]
+* [[Józef Grabek]]
+* [[Danuta Grabowska]]
+* [[Leon Grela]]
+* [[Ryszard Grodzicki]]
+* [[Grzegorz Gruszka]]
+* [[Zofia Grzebisz-Nowicka]]
+* [[Adam Halber]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Bolesław Herudziński]]<ref group="uwaga">Ślubował 22 sierpnia 1996.</ref>
+* [[Barbara Hyla-Makowska]]
+* [[Tadeusz Iwiński]]
+* [[Stanisław Janas]]
+* [[Krzysztof Janik]]
+* [[Jerzy Jankowski (poseł)|Jerzy Jankowski]]
+* [[Zbigniew Janowski]]
+* [[Jerzy Jaskiernia]]
+* [[Teresa Jasztal]]<ref group="uwaga" name="Ś111095">Ślubował/a 11 października 1995.</ref>
+* [[Mieczysław Jedoń]]
+* [[Tadeusz Jędrzejczak]]
+* [[Ignacy Jurecki]]
+* [[Janusz Jurek]]
+* [[Seweryn Jurgielaniec]]
+* [[Wiesław Kaczmarek]]
+* [[Józef Kaleta]]
+* [[Zbigniew Kaniewski]]
+* [[Jacek Kasprzyk (polityk)|Jacek Kasprzyk]]
+* [[Paweł Kasprzyk]]<ref group="uwaga" name="Ś090196">Ślubował 9 stycznia 1996.</ref>
+* [[Jan Kisieliński]]
+* [[Antoni Kobielusz]]
+* [[Jacek Kocjan]]
+* [[Włodzimierz Konarski]]
+* [[Stanisław Kopeć]]
+* [[Jerzy Kossakowski]]
+* [[Wiesław Kossakowski]]<ref group="uwaga" name="wyborypsl">Wybrany/a z ramienia [[Polskie Stronnictwo Ludowe|Polskiego Stronnictwa Ludowego]].</ref>
+* [[Stanisław Kowalczyk (związkowiec)|Stanisław Kowalczyk]]
+* [[Bronisława Kowalska (polityk)|Bronisława Kowalska]]
+* [[Mieczysław Krajewski (polityk)|Mieczysław Krajewski]]
+* [[Aleksander Krawczuk]]
+* [[Bogdan Krysiewicz]]
+* [[Zenon Kufel]]
+* [[Janusz Lemański (polityk)|Janusz Lemański]]
+* [[Marek Lewandowski (polityk)|Marek Lewandowski]]
+* [[Ewa Lewicka-Łęgowska]]
+* [[Krystyna Łybacka]]
+* [[Wit Majewski]]
+* [[Janusz Maksymiuk]]
+* [[Janusz Malinowski]]
+* [[Stanisław Maliszewski]]
+* [[Maciej Manicki]]
+* [[Marian Marczewski]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Sławomir Marczewski]]
+* [[Wacław Martyniuk]]
+* [[Tadeusz Matyjek]]
+* [[Marek Mazurkiewicz]]
+* [[Leszek Miller]]
+* [[Kazimierz Milner]]
+* [[Kazimierz Modzelewski]]
+* [[Alicja Murynowicz]]
+* [[Kazimierz Musielak]]
+* [[Włodzimierz Nieporęt]]
+* [[Irena Nowacka]]
+* [[Wojciech Nowaczyk]]
+* [[Kazimierz Nowak (polityk)|Kazimierz Nowak]]
+* [[Józef Nowicki (polityk)|Józef Nowicki]]
+* [[Roman Nowicki]]
+* [[Kazimierz Nycz (polityk)|Kazimierz Nycz]]
+* [[Józef Oleksy]]
+* [[Marek Olewiński]]
+* [[Andrzej Olszewski (polityk)|Andrzej Olszewski]]
+* [[Małgorzata Ostrowska (polityk)|Małgorzata Ostrowska]]
+* [[Urszula Pająk]]
+* [[Jerzy Panek (polityk)|Jerzy Panek]]
+* [[Henryk Paniec]]
+* [[Kazimierz Pańtak]]<ref group="uwaga" name="wyboryup">Wybrany z ramienia [[Unia Pracy|Unii Pracy]].</ref>
+* [[Jerzy Passendorfer]]<ref group="uwaga" name="Ś090196" />
+* [[Longin Pastusiak]]
+* [[Stanisław Stefan Paszczyk|Stanisław Paszczyk]]
+* [[Stanisław Pawlak (polityk)|Stanisław Pawlak]]
+* [[Regina Pawłowska]]
+* [[Jacek Piechota]]
+* [[Mieczysław Piecka]]
+* [[Elżbieta Piela-Mielczarek]]
+* [[Józef Jerzy Pilarczyk|Józef Pilarczyk]]
+* [[Andrzej Piotrowski (polityk)|Andrzej Piotrowski]]
+* [[Sergiusz Plewa]]
+* [[Czesław Pogoda]]
+* [[Franciszek Potulski]]
+* [[Marek Rojszyk]]
+* [[Andrzej Rokicki (polityk)|Andrzej Rokicki]]<ref group="uwaga" name="Ś161194">Ślubował 16 listopada 1994.</ref>
+* [[Stanisław Rusznica]]
+* [[Kazimierz Sas]]
+* [[Ireneusz Sekuła]]
+|style="vertical-align:top;"|
+* [[Zbigniew Siemiątkowski]]
+* [[Izabella Sierakowska]]
+* [[Włodzimierz Sitek]]
+* [[Marek Siwiec]]
+* [[Szczepan Skomra]]
+* [[Andrzej Skrzyński]]
+* [[Andrzej Słomski]]
+* [[Zbigniew Sobotka]]
+* [[Stanisław Stec]]
+* [[Władysław Stępień]]
+* [[Andrzej Szarawarski]]
+* [[Wiesław Szczepański]]<ref group="uwaga" name="Ś100596">Ślubował 10 maja 1996.</ref>
+* [[Władysław Szkop]]
+* [[Jerzy Szmajdziński]]
+* [[Jerzy Szteliga]]
+* [[Wiesław Szweda]]
+* [[Lech Szymańczyk]]
+* [[Jan Szymański (ur. 1953)|Jan Szymański]]
+* [[Renata Szynalska]]
+* [[Janusz Ślesak]]<ref group="uwaga">Ślubował 4 grudnia 1996.</ref>
+* [[Czesław Śleziak]]
+* [[Tadeusz Tomaszewski (poseł)|Tadeusz Tomaszewski]]
+* [[Zdzisław Tuszyński]]
+* [[Ryszard Ulicki]]
+* [[Andrzej Urbańczyk (1946–2001)|Andrzej Urbańczyk]]
+* [[Danuta Waniek]]
+* [[Jerzy Wenderlich]]
+* [[Jerzy Wiatr]]
+* [[Zbigniew Wieczorek]]
+* [[Zofia Wilczyńska (polityk)|Zofia Wilczyńska]]
+* [[Małgorzata Winiarczyk-Kossakowska]]
+* [[Zbyszek Zaborowski]]
+* [[Jan Zaciura]]
+* [[Ryszard Zając]]
+* [[Tadeusz Zając (polityk)|Tadeusz Zając]]
+* [[Jerzy Zakrzewski (polityk)|Jerzy Zakrzewski]]
+* [[Anna Zalewska (1939–2004)|Anna Zalewska]]
+* [[Ryszard Zbrzyzny]]
+* [[Janusz Zemke]]
+* [[Władysław Żbikowski]]
+* [[Andrzej Żelazowski]]
+* [[Marian Żenkiewicz]]
+|-
+!colspan=4| Klub Parlamentarny Polskiego Stronnictwa Ludowego
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|PSL}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Kazimierz Adamski (polityk)|Kazimierz Adamski]]
+* [[Jan Andrykiewicz]]
+* [[Andrzej Bajołek]]
+* [[Stanisław Bartoszek]]
+* [[Zygmunt Bartoszewicz]]
+* [[Aleksander Bentkowski]]
+* [[Henryk Bogdan]]
+* [[Włodzimierz Bogusławski]]
+* [[Ryszard Bondyra]]
+* [[Roman Edward Borek|Roman Borek]]<ref group="uwaga" name="Ś161194" />
+* [[Jan Borkowski (polityk)|Jan Borkowski]]
+* [[Leszek Bugaj]]
+* [[Jan Bury (ur. 1963)|Jan Bury]]
+* [[Henryk Choryngiewicz]]
+* [[Janusz Cichosz]]
+* [[Jacek Ciecióra]]
+* [[Stanisław Ciesielski (polityk)|Stanisław Ciesielski]]
+* [[Czesław Cieślak]]
+* [[Kazimierz Dejmek]]
+* [[Adam Dobroński]]
+* [[Janusz Dobrosz]]
+* [[Waldemar Dobrowolski]]
+* [[Alfred Domagalski]]
+* [[Stanisław Fal]]<ref group="uwaga" name="Ś111095" />
+* [[Tadeusz Gajda (ur. 1954)|Tadeusz Gajda]]<ref group="uwaga">Ślubował 12 lipca 1995.</ref>
+* [[Zbigniew Galek]]
+* [[Alojzy Gąsiorczyk]]
+* [[Tomasz Gietek]]
+* [[Edward Gnat]]
+* [[Tadeusz Goć]]<ref group="uwaga">Ślubował 7 maja 1997.</ref>
+* [[Wiesław Gołębiewski]]
+* [[Józef Gruszka (1947–2020)|Józef Gruszka]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Andrzej Grzyb (poseł)|Andrzej Grzyb]]
+* [[Roman Jagieliński]]
+* [[Władysław Jasiński (polityk)|Władysław Jasiński]]
+* [[Jerzy Kado]]
+* [[Ryszard Kalbarczyk]]
+* [[Stanisław Kalemba]]
+* [[Jarosław Kalinowski]]
+* [[Józef Kalisz (polityk)|Józef Kalisz]]
+* [[Mieczysław Kasprzak]]
+* [[Leszek Kiełczewski]]
+* [[Henryk Kisielewski]]
+* [[Ryszard Kołodziej]]
+* [[Jan Kopczyk]]
+* [[Grażyna Kotowicz]]
+* [[Tadeusz Kowalczyk (ur. 1949)|Tadeusz Kowalczyk]]
+* [[Jan Kowalik]]
+* [[Piotr Kozłowski (leśnik)|Piotr Kozłowski]]
+* [[Marian Król]]
+* [[Jan Kubik]]
+* [[Ryszard Kujawa]]
+* [[Maria Kurnatowska]]
+* [[Jarosław Kurzawa]]
+* [[Stanisław Kusior]]
+* [[Józef Łochowski]]
+* [[Aleksander Łuczak]]
+* [[Bolesław Machnio]]
+* [[Janusz Maćkowiak (polityk)|Janusz Maćkowiak]]
+* [[Tadeusz Madzia]]
+* [[Andrzej Malinowski (ekonomista)|Andrzej Malinowski]]
+* [[Aleksandra Małachowska]]
+* [[Stanisław Masternak]]
+* [[Jan Mączewski]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Władysław Medwid]]
+* [[Józef Michalik (polityk)|Józef Michalik]]
+* [[Marian Michalski]]
+* [[Waldemar Michna]]
+* [[Zbigniew Mierzwa]]
+* [[Józef Mioduszewski]]
+* [[Wiesław Opęchowski]]
+* [[Krystyna Ozga]]
+* [[Stanisław Pasoń]]
+* [[Mirosław Pawlak]]
+* [[Waldemar Pawlak]]
+* [[Jacek Pawlicki (polityk)|Jacek Pawlicki]]
+* [[Irena Petryna]]
+* [[Bogdan Pęk]]
+* [[Wiesław Piątkowski]]
+* [[Janusz Piechociński]]
+* [[Jan Pieniądz]]
+* [[Lucyna Pietrzyk]]
+* [[Jerzy Pistelok]]
+* [[Lesław Podkański]]
+* [[Zdzisław Podkański]]
+* [[Tadeusz Polański]]
+* [[Miron Pomirski]]
+* [[Ignacy Półćwiartek]]
+* [[Adam Rychliczek]]
+* [[Grzegorz Rytych]]
+* [[Tadeusz Sabat]]
+* [[Tadeusz Samborski]]
+* [[Marek Sawicki]]
+* [[Władysław Serafin]]
+* [[Ireneusz Skubis]]
+* [[Tadeusz Sławecki]]
+|style="vertical-align:top;"|
+* [[Ryszard Smolarek]]
+* [[Jacek Soska]]
+* [[Ryszard Stanibuła]]
+* [[Marian Starownik]]
+* [[Stanisław Stasiak]]
+* [[Wiesław Stasiak]]
+* [[Franciszek Stefaniuk]]
+* [[Michał Strąk]]
+* [[Zygmunt Suszczewicz]]
+* [[Tadeusz Sytek]]
+* [[Sławomir Szatkowski]]
+* [[Jan Szczepaniak (polityk)|Jan Szczepaniak]]
+* [[Adam Szczęsny]]
+* [[Krzysztof Szymański (ur. 1954)|Krzysztof Szymański]]
+* [[Klemens Ścierski]]
+* [[Andrzej Śmietanko]]
+* [[Władysław Święs]]
+* [[Jan Świrepo]]
+* [[Antoni Tarczyński]]
+* [[Władysław Tomaszewski]]
+* [[Krzysztof Trawicki]]
+* [[Janusz Wierzbicki (polityk)|Janusz Wierzbicki]]
+* [[Andrzej Wiśniewski (ur. 1953)|Andrzej Wiśniewski]]
+* [[Jan Wołek (polityk)|Jan Wołek]]
+* [[Stanisław Jakub Wójcik|Stanisław Wójcik]]
+* [[Władysław Wrona]]
+* [[Wojciech Szczęsny Zarzycki|Wojciech Zarzycki]]
+* [[Józef Zegar]]
+* [[Józef Zych]]
+* [[Władysław Żabiński]]
+* [[Stanisław Żelichowski]]
+|-
+!colspan=4| Klub Parlamentarny Unii Wolności<ref group="uwaga">Klub posłów wybranych z ramienia [[Unia Demokratyczna|Unii Demokratycznej]].</ref>
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|UW}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Marek Balicki]]
+* [[Lidia Błądek]]<ref group="uwaga" name="wyborypsl" />
+* [[Andrzej Bober (polityk)|Andrzej Bober]]<ref group="uwaga" name="Ś100596" />
+* [[Bogdan Borusewicz]]
+* [[Juliusz Braun]]
+* [[Krzysztof Budnik]]
+* [[Andrzej Celiński]]
+* [[Jerzy Ciemniewski]]
+* [[Mirosław Czech]]
+* [[Maria Dmochowska]]
+* [[Krzysztof Dołowy]]
+* [[Karol Działoszyński]]
+* [[Czesław Fiedorowicz]]
+* [[Grzegorz Figura]]
+* [[Władysław Frasyniuk]]
+* [[Andrzej Gaberle]]
+* [[Radosław Gawlik]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Bronisław Geremek]]
+* [[Helena Góralska]]
+* [[Barbara Imiołczyk]]
+* [[Zbigniew Janas]]
+* [[Jerzy Koralewski]]
+* [[Stanisław Kracik]]
+* [[Jan Król (ur. 1950)|Jan Król]]
+* [[Olga Krzyżanowska]]
+* [[Jacek Kuroń]]<ref group="uwaga">Ślubował 21 października 1993.</ref>
+* [[Irena Lipowicz]]
+* [[Jan Lityński]]
+* [[Krzysztof Luks]]
+* [[Tadeusz Mazowiecki]]
+* [[Zbigniew Mączka]]
+* [[Janusz Niemcewicz]]
+* [[Piotr Nowina-Konopka]]
+* [[Jan Okoński]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Jan Olszowski]]
+* [[Janusz Onyszkiewicz]]
+* [[Jerzy Osiatyński]]
+* [[Andrzej Potocki (1964–2025)|Andrzej Potocki]]
+* [[Włodzimierz Puzyna]]
+* [[Jan Rulewski]]
+* [[Ryszard Setnik]]
+* [[Anna Skowrońska-Łuczyńska]]
+* [[Grażyna Staniszewska (polityk)|Grażyna Staniszewska]]
+* [[Joanna Staręga-Piasek]]
+* [[Maria Stolzman]]
+* [[Hanna Suchocka]]
+* [[Tadeusz Syryjczyk]]
+* [[Joanna Szafruga-Sypniewska]]
+* [[Kazimierz Szczygielski]]
+* [[Iwona Śledzińska-Katarasińska]]
+* [[Jacek Taylor]]
+|style="vertical-align:top;"|
+* [[Ludwik Turko]]
+* [[Anna Urbanowicz]]<ref group="uwaga">Ślubowała 5 lipca 1996.</ref>
+* [[Andrzej Wielowieyski]]
+* [[Jerzy Wierchowicz]]
+* [[Krzysztof Wolfram]]
+* [[Gwidon Wójcik]]
+* [[Wiesław Wójcik (ur. 1948)|Wiesław Wójcik]]
+* [[Henryk Wujec]]
+* [[Jan Wyrowiński]]
+* [[Maria Zajączkowska (polityk)|Maria Zajączkowska]]
+* [[Marcin Zawiła]]
+* [[Jerzy Zdrada]]
+* [[Marek Zieliński (polityk)|Marek Zieliński]]
+* [[Tadeusz Jacek Zieliński|Tadeusz Zieliński]]
+|-
+!colspan=4| Unia Pracy Klub Parlamentarny
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|UP}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Andrzej Aumiller]]
+* [[Wojciech Borowik]]
+* [[Ryszard Bugaj]]
+* [[Zbigniew Bujak]]
+* [[Piotr Czarnecki (polityk)|Piotr Czarnecki]]
+* [[Ryszard Faszyński]]
+* [[Janusz Grott]]
+* [[Zygmunt Jakubczyk]]
+* [[Izabela Jaruga-Nowacka]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Tadeusz Jedynak (związkowiec)|Tadeusz Jedynak]]
+* [[Bogusław Kaczmarek (polityk)|Bogusław Kaczmarek]]
+* [[Sergiusz Karpiński]]
+* [[Michał Kowalczyk (polityk)|Michał Kowalczyk]]
+* [[Aleksander Małachowski]]
+* [[Mirosław Małachowski]]
+* [[Grzegorz Marciniak]]
+* [[Piotr Marciniak (polityk)|Piotr Marciniak]]
+* [[Tadeusz Moszyński (poseł)|Tadeusz Moszyński]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Tomasz Nałęcz]]
+* [[Konrad Napierała]]
+* [[Ryszard Nowak (ur. 1953)|Ryszard Nowak]]
+* [[Maria Nowakowska (polityk)|Maria Nowakowska]]
+* [[Piotr Pankanin]]
+* [[Marek Pol]]
+* [[Danuta Polak]]
+* [[Stanisław Rogowski]]
+* [[Artur Siedlarek]]
+|style="vertical-align:top;"|
+* [[Krystyna Sienkiewicz (polityk)|Krystyna Sienkiewicz]]
+* [[Artur Smółko]]
+* [[Beata Świerczyńska]]
+* [[Krzysztof Wiecheć]]
+* [[Stanisław Wiśniewski (poseł)|Stanisław Wiśniewski]]<ref group="uwaga" name="wyborysld">Wybrany/a z ramienia [[Sojusz Lewicy Demokratycznej|Sojuszu Lewicy Demokratycznej]].</ref>
+* [[Wiesława Ziółkowska]]
+|-
+!colspan=4| Federacyjny Klub Parlamentarny na rzecz Akcji Wyborczej Solidarność
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|AWS}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Wojciech Błasiak]]<ref group="uwaga" name="wyborykpn">Wybrany/a z ramienia [[Konfederacja Polski Niepodległej|Konfederacji Polski Niepodległej]].</ref>
+* [[Ryszard Burski]]<ref group="uwaga" name="wyborykpn" />
+* [[Henryk Dyrda]]<ref group="uwaga" name="wyborybbwr">Wybrany/a z ramienia [[Bezpartyjny Blok Wspierania Reform|Bezpartyjnego Bloku Wspierania Reform]].</ref>
+* [[Grzegorz Kaczmarzyk]]<ref group="uwaga" name="wyborykpn" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Andrzej Kaźmierczak (ur. 1961)|Andrzej Kaźmierczak]]<ref group="uwaga" name="wyborykpn" />
+* [[Robert Kościelny]]<ref group="uwaga" name="wyborykpn" />
+* [[Janusz Koza]]<ref group="uwaga" name="wyborykpn" />
+* [[Janina Kraus]]<ref group="uwaga" name="wyborykpn" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Krzysztof Laga]]<ref group="uwaga" name="wyborykpn" />
+* [[Krzysztof Popenda]]<ref group="uwaga" name="wyborykpn" />
+* [[Adam Słomka]]<ref group="uwaga" name="wyborykpn" />
+* [[Leszek Smykowski]]<ref group="uwaga" name="wyborykpn" />
+|style="vertical-align:top;"|
+* [[Bernard Szweda]]<ref group="uwaga" name="wyborybbwr" />
+* [[Hans Szyc]]<ref group="uwaga" name="wyborybbwr" />
+* [[Kazimierz Wilk]]<ref group="uwaga" name="wyborykpn" />
+|-
+!colspan=4| Koło Konserwatywno-Ludowe
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|SKL}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Wojciech Arkuszewski]]<ref group="uwaga" name="wyboryud">Wybrany/a z ramienia [[Unia Demokratyczna|Unii Demokratycznej]].</ref>
+* [[Piotr Buczkowski]]<ref group="uwaga" name="wyboryud" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Leszek Chwat]]<ref group="uwaga" name="wyboryud" />
+* [[Bronisław Komorowski]]<ref group="uwaga" name="wyboryud" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Andrzej Machowski]]<ref group="uwaga" name="wyboryud" />
+* [[Zdobysław Milewski]]<ref group="uwaga" name="wyboryud" />
+|style="vertical-align:top;"|
+* [[Piotr Polmański]]<ref group="uwaga" name="Ś161194" /><ref group="uwaga" name="wyboryud" />
+* [[Jan Rokita]]<ref group="uwaga" name="wyboryud" />
+|-
+!colspan=4| Koło Parlamentarne Bezpartyjnego Bloku Wspierania Reform
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|BBWR}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Andrzej Gąsienica-Makowski]]
+* [[Stanisław Kowolik]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Ryszard Olszewski (polityk)|Ryszard Olszewski]]
+* [[Zbigniew Pietrzykowski]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Marian Piotrowski]]<ref group="uwaga">Ślubował 29 maja 1996.</ref>
+* [[Zdzisław Pisarek]]
+|style="vertical-align:top;"|
+* [[Leszek Zieliński (ur. 1956)|Leszek Zieliński]]
+|-
+!colspan=4| Koło Parlamentarne Konfederacji Polski Niepodległej
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|KPN}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Grzegorz Cygonik]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Krzysztof Król (polityk)|Krzysztof Król]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Leszek Moczulski|Robert Moczulski]]
+|style="vertical-align:top;"|
+* [[Dariusz Wójcik (polityk)|Dariusz Wójcik]]
+|-
+!colspan=4| Koło Mniejszości Niemieckiej
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|MN1}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Joachim Czernek]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Henryk Kroll]]
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Roman Kurzbauer]]<ref group="uwaga">Wybrany z ramienia Towarzystwa Społeczno-Kulturalnego Niemców – DFK.</ref>
+|style="vertical-align:top;"|
+* [[Helmut Paździor]]
+|-
+!colspan=4| Koło Parlamentarne Porozumienie Prawicy – Solidarni w Wyborach
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|CENT}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Tadeusz Gąsienica-Łuszczek]]<ref group="uwaga" name="wyborykpn" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Andrzej Gołaś (ur. 1942)|Andrzej Gołaś]]<ref group="uwaga" name="wyborybbwr" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Jerzy Gwiżdż]]<ref group="uwaga" name="wyborybbwr" />
+|style="vertical-align:top;"|
+* [[Jerzy Wuttke]]<ref group="uwaga" name="wyborybbwr" />
+|-
+!colspan=4| Nowa Demokracja Koło Poselskie
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|SDPL}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Eugeniusz Januła]]<ref group="uwaga" name="wyboryup" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Sławomir Nowakowski]]<ref group="uwaga" name="wyboryup" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Jan Zaborowski]]<ref group="uwaga" name="wyboryup" />
+|style="vertical-align:top;"|
+|-
+!colspan=4| Koło Parlamentarne Polskiej Partii Socjalistycznej
+|-
+|colspan=4 style="background: #{{partie polityczne - kolor|PPS}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Piotr Ikonowicz]]<ref group="uwaga" name="wyborysld" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Cezary Miżejewski]]<ref group="uwaga" name="wyborysld" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Maria Walczyńska-Rechmal]]<ref group="uwaga" name="wyborysld" />
+|style="vertical-align:top;"|
+|-
+!colspan=4| Posłowie niezrzeszeni
+|-
+|colspan=6 style="background: #{{partie polityczne - kolor|}};"|
+|-
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Piotr Aszyk]]<ref group="uwaga" name="wyborykpn" />
+* [[Piotr Chojnacki (prawnik)|Piotr Chojnacki]]<ref group="uwaga" name="wyborypsl" />
+* [[Andrzej Czajka]]<ref group="uwaga" name="wyborykpn" />
+* [[Jerzy Eysymontt]]<ref group="uwaga" name="wyborybbwr" />
+* [[Henryk Hajduk]]<ref group="uwaga" name="wyboryup" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Krzysztof Kamiński (polityk)|Krzysztof Kamiński]]<ref group="uwaga" name="wyborykpn" />
+* [[Barbara Labuda]]<ref group="uwaga" name="wyboryud" />
+* [[Andrzej Micewski]]<ref group="uwaga" name="wyborypsl" />
+* [[Andrzej Ostoja-Owsiany]]<ref group="uwaga" name="wyborykpn" />
+* [[Katarzyna Piekarska]]<ref group="uwaga" name="wyboryud" />
+|style="border-right-style:hidden; vertical-align:top"|
+* [[Paweł Saar]]<ref group="uwaga" name="wyborybbwr" />
+* [[Henryk Siedlecki]]<ref group="uwaga" name="wyborypsl" />
+* [[Jan Skrobisz]]<ref group="uwaga" name="wyborykpn" />
+* [[Zbigniew Szczypiński]]<ref group="uwaga" name="Ś161194" /><ref group="uwaga" name="wyboryup" />
+* [[Janusz Szymański (polityk)|Janusz Szymański]]<ref group="uwaga" name="wyboryup" />
+|style="vertical-align:top;"|
+* [[Jacek Vieth]]<ref group="uwaga">Ślubował 20 sierpnia 1997.</ref><ref group="uwaga" name="wyborybbwr" />
+* [[Zbigniew Zysk]]<ref group="uwaga" name="wyboryup" />
+|}
+
+=== Posłowie, których mandat wygasł w trakcie kadencji (19 posłów) ===
+{| class="wikitable sortable"
+|-
+!colspan=2| Poseł
+! Data wygaśnięcia mandatu
+! Przyczyna
+! Następca
+|-
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+| {{sort|Korczak|[[Marian Korczak (polityk)|Marian Korczak]]}}
+|align=right style="padding-right:10px"| {{Dts|7|10|1994}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 października 1994 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Mariana Korczaka ({{Monitor Polski|1994|56|472}}).</ref>
+|rowspan=4| [[Wypadek drogowy w Krzeczowie|śmierć]]
+| {{sort|Borek|[[Roman Edward Borek|Roman Borek]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 25 października 1994 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 37 – Radom ({{Monitor Polski|1994|60|522}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|UP}};"|
+| {{sort|Licnerska|[[Halina Licnerska]]}}
+|align=right style="padding-right:10px"| {{Dts|7|10|1994}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 października 1994 r. w sprawie stwierdzenia wygaśnięcia mandatu poseł Haliny Licnerskiej ({{Monitor Polski|1994|56|473}}).</ref>
+| {{sort|Szczypiński|[[Zbigniew Szczypiński]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 25 października 1994 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 11 – Gdańsk ({{Monitor Polski|1994|60|519}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+| {{sort|Sokołowska|[[Wanda Sokołowska]]}}
+|align=right style="padding-right:10px"| {{Dts|7|10|1994}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 października 1994 r. w sprawie stwierdzenia wygaśnięcia mandatu poseł Wandy Zofii Sokołowskiej ({{Monitor Polski|1994|56|474}}).</ref>
+| {{sort|Rokicki|[[Andrzej Rokicki (polityk)|Andrzej Rokicki]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 25 października 1994 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 34 – Płock ({{Monitor Polski|1994|60|521}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|UD}};"|
+| {{sort|Trzcińska-Fajfrowska|[[Maria Trzcińska-Fajfrowska]]}}
+|align=right style="padding-right:10px"| {{Dts|7|10|1994}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 października 1994 r. w sprawie stwierdzenia wygaśnięcia mandatu poseł Marii Trzcińskiej-Fajfrowskiej ({{Monitor Polski|1994|56|475}}).</ref>
+| {{sort|Polmański|[[Piotr Polmański]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 25 października 1994 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 16 – Katowice ({{Monitor Polski|1994|60|520}}).</ref>
+|-
+|rowspan=2 style="background: #{{partie polityczne - kolor|PSL}};"|
+| {{sort|Wojciechowski|[[Janusz Wojciechowski]]}}
+|align=right style="padding-right:10px"| {{Dts|23|6|1995}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 23 czerwca 1995 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Janusza Wojciechowskiego. ({{Monitor Polski|1995|32|369}}).</ref>
+| powołanie na Prezesa [[Najwyższa Izba Kontroli|Najwyższej Izby Kontroli]]<ref>Uchwała Sejmu Rzeczypospolitej Polskiej z dnia 22 czerwca 1995 r. w sprawie powołania Prezesa Najwyższej Izby Kontroli ({{Monitor Polski|1995|31|364}}).</ref>
+| {{sort|Gajda|[[Tadeusz Gajda (ur. 1954)|Tadeusz Gajda]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 27 czerwca 1995 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 41 – Skierniewice ({{Monitor Polski|1995|35|414}}).</ref>
+|-
+| {{sort|Olszewska|[[Maria Olszewska (polityk)|Maria Olszewska]]}}
+|align=right style="padding-right:10px"| {{Dts|14|9|1995}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 27 września 1995 r. w sprawie stwierdzenia wygaśnięcia mandatu posłanki Marii Olszewskiej ({{Monitor Polski|1995|50|559}}).</ref>
+| śmierć
+| {{sort|Fal|[[Stanisław Fal]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 27 września 1995 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 22 – Krosno ({{Monitor Polski|1995|50|561}}).</ref>
+|-
+|rowspan=4 style="background: #{{partie polityczne - kolor|SLD}};"|
+| {{sort|Uczkiewicz|[[Jacek Uczkiewicz]]}}
+|align=right style="padding-right:10px"| {{Dts|26|9|1995}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 27 września 1995 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Jacka Uczkiewicza ({{Monitor Polski|1995|50|558}}).</ref>
+| zrzeczenie się mandatu<ref group="uwaga">Jacek Uczkiewicz zrzekł się mandatu w związku z powołaniem na Wiceprezesa [[Najwyższa Izba Kontroli|Najwyższej Izby Kontroli]].</ref>
+| {{sort|Jasztal|[[Teresa Jasztal]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 27 września 1995 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 50 – Wrocław ({{Monitor Polski|1995|50|560}}).</ref>
+|-
+| {{sort|Iwaniec|[[Kazimierz Iwaniec]]}}
+|align=right style="padding-right:10px"| {{Dts|22|12|1995}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 23 grudnia 1995 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Kazimierza Iwańca ({{Monitor Polski|1996|1|4}}).</ref>
+| śmierć
+| {{sort|Kasprzyk|[[Paweł Kasprzyk]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 28 grudnia 1995 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 42 – Słupsk ({{Monitor Polski|1996|2|13}}).</ref>
+|-
+| {{sort|Kwaśniewski|[[Aleksander Kwaśniewski]]}}
+|align=right style="padding-right:10px"| {{Dts|23|12|1995}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 23 grudnia 1995 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Aleksandra Kwaśniewskiego ({{Monitor Polski|1996|1|5}}).</ref>
+| zrzeczenie się mandatu<ref group="uwaga">Aleksander Kwaśniewski zrzekł się mandatu w związku z [[Wybory prezydenckie w Polsce w 1995 roku|wyborem]] na [[Prezydent Rzeczypospolitej Polskiej|Prezydenta Rzeczypospolitej Polskiej]] (Obwieszczenie Państwowej Komisji Wyborczej z dnia 20 listopada 1995 r. o wynikach głosowania i wyniku wyborów Prezydenta Rzeczypospolitej Polskiej w drugiej turze głosowania, przeprowadzonej w dniu 19 listopada 1995 r. {{Dziennik Ustaw|1995|131|636}}).</ref>
+| {{sort|Passendorfer|[[Jerzy Passendorfer]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 28 grudnia 1995 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 1 – Warszawa ({{Monitor Polski|1996|2|12}}).</ref>
+|-
+| {{sort|Gorzelańczyk|[[Zbigniew Gorzelańczyk]]}}
+|align=right style="padding-right:10px"| {{Dts|6|2|1996}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 24 kwietnia 1996 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Zbigniewa Gorzelańczyka ({{Monitor Polski|1996|29|297}}).</ref>
+|rowspan=2| [[Katastrofa lotu Birgenair 301|śmierć]]
+| {{sort|Szczepański|[[Wiesław Szczepański]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 7 maja 1996 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 24 – Leszno ({{Monitor Polski|1996|30|311}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+| {{sort|Wielgus|[[Marek Wielgus]]}}
+|align=right style="padding-right:10px"| {{Dts|6|2|1996}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 24 kwietnia 1996 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Marka Wielgusa ({{Monitor Polski|1996|29|298}}).</ref>
+| {{sort|Piotrowski|[[Marian Piotrowski]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 14 maja 1996 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 2 – Warszawa ({{Monitor Polski|1996|32|325}}).</ref>
+|-
+|rowspan=2 style="background: #{{partie polityczne - kolor|UD}};"|
+| {{sort|Święcicki|[[Marcin Święcicki]]}}
+|align=right style="padding-right:10px"| {{Dts|1|5|1996}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 8 maja 1996 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Marcina Święcickiego ({{Monitor Polski|1996|30|312}}).</ref>
+| zrzeczenie się mandatu
+| {{sort|Bober|[[Andrzej Bober (polityk)|Andrzej Bober]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 maja 1996 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 29 – Olsztyn ({{Monitor Polski|1996|30|313}}).</ref>
+|-
+| {{sort|Czernecki|[[Andrzej Czernecki]]}}
+|align=right style="padding-right:10px"| {{Dts|30|6|1996}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 20 czerwca 1996 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Andrzeja Czerneckiego ({{Monitor Polski|1996|39|383}}).</ref>
+| zrzeczenie się mandatu
+| {{sort|Urbanowicz|[[Anna Urbanowicz]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 2 lipca 1996 r. w sprawie obsadzenia wygasłego mandatu ({{Monitor Polski|1996|42|404}}).</ref>
+|-
+|rowspan=2 style="background: #{{partie polityczne - kolor|SLD}};"|
+| {{sort|Lipski|[[Andrzej Lipski (poseł)|Andrzej Lipski]]}}
+|align=right style="padding-right:10px"| {{Dts|21|7|1996}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 1 sierpnia 1996 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Andrzeja Lipskiego ({{Monitor Polski|1996|53|483}}).</ref>
+| śmierć
+| {{sort|Herudziński|[[Bolesław Herudziński]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 7 sierpnia 1996 r. w sprawie obsadzenia wygasłego mandatu ({{Monitor Polski|1996|55|504}}).</ref>
+|-
+| {{sort|Spychalska|[[Ewa Spychalska]]}}
+|align=right style="padding-right:10px"| {{Dts|3|11|1996}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 13 listopada 1996 r. w sprawie stwierdzenia wygaśnięcia mandatu poseł Ewy Spychalskiej ({{Monitor Polski|1996|71|660}}).</ref>
+| mianowanie na [[Przedstawiciele dyplomatyczni Polski#Białoruś|Ambasadora RP]] w [[Białoruś|Republice Białorusi]]
+| {{sort|Ślesak|[[Janusz Ślesak]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 listopada 1996 r. w sprawie obsadzenia wygasłego mandatu w okręgu wyborczym nr 5 – Bielsko-Biała ({{Monitor Polski|1996|78|710}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+| {{sort|Komornicki|[[Jan Komornicki]]}}
+|align=right style="padding-right:10px"| {{Dts|16|4|1997}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 17 kwietnia 1997 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Jana Komornickiego ({{Monitor Polski|1997|27|250}}).</ref>
+| zrzeczenie się mandatu<ref group="uwaga">Jan Komornicki zrzekł się mandatu w związku z mianowaniem na [[Przedstawiciele dyplomatyczni Polski#Słowacja|Ambasadora RP]] w [[Słowacja|Republice Słowackiej]].</ref>
+| {{sort|Goć|[[Tadeusz Goć]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 24 kwietnia 1997 r. w sprawie obsadzenia wygasłego mandatu ({{Monitor Polski|1997|30|283}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+| {{sort|Kowalczyk|[[Tadeusz Kowalczyk (1952–1997)|Tadeusz Kowalczyk]]}}
+|align=right style="padding-right:10px"| {{Dts|19|7|1997}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 31 lipca 1997 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Tadeusza Kowalczyka ({{Monitor Polski|1997|48|463}}).</ref>
+| śmierć
+| {{sort|Vieth|[[Jacek Vieth]]}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 4 sierpnia 1997 r. w sprawie obsadzenia wygasłego mandatu ({{Monitor Polski|1997|50|477}}).</ref>
+|-
+|style="background: #{{partie polityczne - kolor|UP}};"|
+| {{sort|Lamentowicz|[[Wojciech Lamentowicz]]}}
+|align=right style="padding-right:10px"| {{Dts|13|9|1997}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 1997 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Wojciecha Lamentowicza ({{Monitor Polski|1997|78|738}}).</ref>
+| mianowanie na [[Przedstawiciele dyplomatyczni Polski w Grecji|Ambasadora RP]] w [[Grecja|Republice Greckiej]]
+| {{sort|-|mandat pozostał nieobsadzony}}
+|-
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+| {{sort|Żochowski|[[Ryszard Jacek Żochowski|Ryszard Żochowski]]}}
+|align=right style="padding-right:10px"| {{Dts|17|9|1997}}<ref>Postanowienie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 2 października 1997 r. w sprawie stwierdzenia wygaśnięcia mandatu posła Ryszarda Jacka Żochowskiego ({{Monitor Polski|1997|73|691}}).</ref>
+| śmierć
+| {{sort|-|mandat pozostał nieobsadzony}}
+|}
+
+== Lista według okręgów wyborczych ==
+{| border=0 id="toc" style="margin:auto;"
+|-
+| '''Okręgi wyborcze w poszczególnych województwach''':
+[[#Lista ogólnopolska|Lista ogólnopolska]] • [[#Województwo warszawskie|warszawskie]] • [[#Województwo bialskopodlaskie|bialskopodlaskie]] • [[#Województwo białostockie|białostockie]] • [[#Województwo bielskie|bielskie]] • [[#Województwo bydgoskie|bydgoskie]] • [[#Województwo chełmskie|chełmskie]] • [[#Województwo ciechanowskie|ciechanowskie]] • [[#Województwo częstochowskie|częstochowskie]] • [[#Województwo elbląskie|elbląskie]] • [[#Województwo gdańskie|gdańskie]] • [[#Województwo gorzowskie|gorzowskie]] • [[#Województwo jeleniogórskie|jeleniogórskie]] • [[#Województwo kaliskie|kaliskie]] • [[#Województwo katowickie|katowickie]] • [[#Województwo kieleckie|kieleckie]] • [[#Województwo konińskie|konińskie]] • [[#Województwo koszalińskie|koszalińskie]] • [[#Województwo krakowskie|krakowskie]] • [[#Województwo krośnieńskie|krośnieńskie]] • [[#Województwo legnickie|legnickie]] • [[#Województwo leszczyńskie|leszczyńskie]] • [[#Województwo lubelskie|lubelskie]] • [[#Województwo łomżyńskie|łomżyńskie]] • [[#Województwo łódzkie|łódzkie]] • [[#Województwo nowosądeckie|nowosądeckie]] • [[#Województwo olsztyńskie|olsztyńskie]] • [[#Województwo opolskie|opolskie]] • [[#Województwo ostrołęckie|ostrołęckie]] • [[#Województwo pilskie|pilskie]] • [[#Województwo piotrkowskie|piotrkowskie]] • [[#Województwo płockie|płockie]] • [[#Województwo poznańskie|poznańskie]] • [[#Województwo przemyskie|przemyskie]] • [[#Województwo radomskie|radomskie]] • [[#Województwo rzeszowskie|rzeszowskie]] • [[#Województwo siedleckie|siedleckie]] • [[#Województwo sieradzkie|sieradzkie]] • [[#Województwo skierniewickie|skierniewickie]] • [[#Województwo słupskie|słupskie]] • [[#Województwo suwalskie|suwalskie]] • [[#Województwo szczecińskie|szczecińskie]] • [[#Województwo tarnobrzeskie|tarnobrzeskie]] • [[#Województwo tarnowskie|tarnowskie]] • [[#Województwo toruńskie|toruńskie]] • [[#Województwo wałbrzyskie|wałbrzyskie]] • [[#Województwo włocławskie|włocławskie]] • [[#Województwo wrocławskie|wrocławskie]] • [[#Województwo zamojskie|zamojskie]] • [[#Województwo zielonogórskie|zielonogórskie]]
+|}
+{| class="wikitable"
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Lista ogólnopolska ===
+|-
+!colspan=15| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+|
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">(2 815 169)<br>[[Marek Rojszyk]]<br>[[Ryszard Grodzicki]]<br>[[Wiesław Kaczmarek]]<br>[[Mieczysław Krajewski (polityk)|Mieczysław Krajewski]]<br>[[Zdzisław Tuszyński]]<br>[[Cezary Miżejewski]]<br>[[Stanisław Stefan Paszczyk|Stanisław Paszczyk]]<br>[[Włodzimierz Konarski]]<br>[[Janusz Maksymiuk]]<br>[[Wojciech Grabałowski]]<br>[[Ignacy Jurecki]]<br>[[Stanisław Janas]]<br>[[Urszula Pająk]]<br>[[Bogdan Krysiewicz]]<br>[[Adam Halber]]<br>[[Jan Budkiewicz]]<br>[[Kazimierz Modzelewski]]<br>[[Zofia Grzebisz-Nowicka]]<br>[[Leon Grela]]<br>[[Tadeusz Gawin (związkowiec)|Tadeusz Gawin]]<br>[[Aleksander Andryszak]]<br>[[Andrzej Skrzyński]]<br>[[Andrzej Żelazowski]]<br>[[Władysław Żbikowski]]<br>[[Roman Nowicki]]<br>[[Bolesław Herudziński]]<ref group="uwaga">Zastąpił [[Andrzej Lipski (poseł)|Andrzeja Lipskiego]].</ref></span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">(2 124 367)<br>[[Janusz Cichosz]]<br>[[Andrzej Micewski]]<br>[[Kazimierz Dejmek]]<br>[[Czesław Cieślak]]<br>[[Miron Pomirski]]<br>[[Wiesław Piątkowski]]<br>[[Michał Strąk]]<br>[[Bolesław Machnio]]<br>[[Lucyna Pietrzyk]]<br>[[Stanisław Jakub Wójcik|Stanisław Wójcik]]<br>[[Stanisław Stasiak]]<br>[[Andrzej Bajołek]]<br>[[Alojzy Gąsiorczyk]]<br>[[Waldemar Michna]]<br>[[Józef Zegar]]<br>[[Tadeusz Madzia]]<br>[[Wiesław Kossakowski]]<br>[[Władysław Jasiński (polityk)|Władysław Jasiński]]<br>[[Piotr Kozłowski (leśnik)|Piotr Kozłowski]]<br>[[Tadeusz Goć]]<ref group="uwaga">Zastąpił [[Jan Komornicki|Jana Komornickiego]].</ref></span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">(1 460 957)<br>[[Andrzej Celiński]]<br>[[Henryk Wujec]]<br>[[Janusz Onyszkiewicz]]<br>[[Wojciech Arkuszewski]]<br>[[Maria Stolzman]]<br>[[Ludwik Turko]]<br>[[Jerzy Ciemniewski]]<br>[[Jerzy Zdrada]]<br>[[Andrzej Gaberle]]<br>[[Zbigniew Janas]]<br>[[Marek Zieliński (polityk)|Marek Zieliński]]<br>[[Mirosław Czech]]<br>[[Joanna Staręga-Piasek]]<br>[[Anna Urbanowicz]]<ref group="uwaga">Zastąpiła [[Andrzej Czernecki|Andrzeja Czerneckiego]].</ref></span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">(1 005 004)<br>[[Artur Smółko]]<br>[[Artur Siedlarek]]<br>[[Izabela Jaruga-Nowacka]]<br>[[Marek Pol]]<br>[[Krzysztof Wiecheć]]<br>[[Sławomir Nowakowski]]<br>[[Henryk Hajduk]]<br>[[Michał Kowalczyk (polityk)|Michał Kowalczyk]]<br>[[Ryszard Faszyński]]</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo warszawskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 1 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|1]]
+|rowspan=2 style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Danuta Waniek]] (4762)<br>[[Jerzy Wiatr]] (3895)<br>[[Jan Zaciura]] (3247)<br>[[Stanisław Wiśniewski (poseł)|Stanisław Wiśniewski]] (1787)<br>[[Włodzimierz Nieporęt]] (1684)<br>[[Jerzy Passendorfer]] (929)<ref group="uwaga">Zastąpił [[Aleksander Kwaśniewski|Aleksandra Kwaśniewskiego]] (148 553 głosy).</ref><br>''wakat''<ref group="uwaga">W miejsce [[Ryszard Jacek Żochowski|Ryszarda Żochowskiego]] (5700 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Bronisław Geremek]] (57 219)<br>[[Jacek Kuroń]] (49 442)<br>[[Andrzej Wielowieyski]] (14 220)<br>[[Katarzyna Piekarska]] (3171)<br>[[Krzysztof Dołowy]] (1543)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Ryszard Bugaj]] (86 708)<br>[[Beata Świerczyńska]] (1509)<br>[[Tomasz Nałęcz]] (1314)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Jerzy Eysymontt]] (15 235)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Krzysztof Król (polityk)|Krzysztof Król]] (22 943)</span>
+|colspan=4|
+|-
+| [[Okręg wyborczy nr 2 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|2]]
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Lech Szymańczyk]] (10 142)<br>[[Teresa Dobosz]] (6208)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Janusz Piechociński]] (9949)<br>[[Aleksandra Małachowska]] (4203)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Marek Balicki]] (12 476)<br>[[Jan Olszowski]] (4516)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Wojciech Borowik]] (5998)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Marian Piotrowski]] (2258)<ref group="uwaga">Zastąpił [[Marek Wielgus|Marka Wielgusa]] (9966 głosów).</ref></span>
+|colspan=4|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo bialskopodlaskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 3 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|3]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Franciszek Stefaniuk]] (21 205)<br>[[Tadeusz Sławecki]] (4364)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Szczepan Skomra]] (6909)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo białostockie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 4 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|4]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Włodzimierz Cimoszewicz]] (51 710)<br>[[Sergiusz Plewa]] (4303)<br>[[Stanisław Maliszewski]] (1294)<br>[[Mieczysław Piecka]] (914)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Adam Dobroński]] (4254)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Aleksander Małachowski]] (11 024)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Krzysztof Wolfram]] (7276)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo bielskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 5 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|5]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Antoni Kobielusz]] (7364)<br>[[Władysław Bułka]] (3853)<br>[[Janusz Ślesak]] (2185)<ref group="uwaga">Zastąpił [[Ewa Spychalska|Ewę Spychalską]] (33 294 głosy).</ref></span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Grażyna Staniszewska (polityk)|Grażyna Staniszewska]] (25 862)<br>[[Grzegorz Figura]] (3429)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Kazimierz Wilk]] (11 941)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Tadeusz Sabat]] (4558)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Zbigniew Pietrzykowski]] (7454)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Tadeusz Jedynak (związkowiec)|Tadeusz Jedynak]] (7282)</span>
+|colspan=2|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo bydgoskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 6 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|6]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Anna Bańkowska (polityk)|Anna Bańkowska]] (40 936)<br>[[Janusz Zemke]] (33 243)<br>[[Grzegorz Gruszka]] (20 643)<br>[[Barbara Hyla-Makowska]] (6249)<br>[[Witold Deręgowski]] (4892)<br>[[Zygmunt Cybulski]] (4398)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Maria Kurnatowska]] (10 096)<br>[[Stanisław Ciesielski (polityk)|Stanisław Ciesielski]] (4421)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jan Rulewski]] (31 270)<br>[[Maria Zajączkowska (polityk)|Maria Zajączkowska]] (3717)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Piotr Pankanin]] (12 087)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo chełmskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 7 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|7]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Adam Rychliczek]] (7571)<br>[[Henryk Choryngiewicz]] (4351)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Zbigniew Janowski]] (8608)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo ciechanowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 8 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|8]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Stanisław Żelichowski]] (11 715)<br>[[Jan Mączewski]] (6169)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Zbigniew Siemiątkowski]] (10 381)<br>[[Anna Zalewska (1939–2004)|Anna Zalewska]] (8586)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo częstochowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 9 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|9]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Marek Lewandowski (polityk)|Marek Lewandowski]] (24 761)<br>[[Jacek Kasprzyk (polityk)|Jacek Kasprzyk]] (9495)<br>[[Jerzy Panek (polityk)|Jerzy Panek]] (4565)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Władysław Serafin]] (15 024)<br>[[Ireneusz Skubis]] (5100)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Krzysztof Popenda]] (6680)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Helena Góralska]] (8293)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Danuta Polak]] (5469)</span>
+|colspan=4|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo elbląskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 10 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|10]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Małgorzata Ostrowska (polityk)|Małgorzata Ostrowska]] (10 546)<br>[[Małgorzata Winiarczyk-Kossakowska]] (10 199)<br>[[Andrzej Piotrowski (polityk)|Andrzej Piotrowski]] (5735)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Henryk Siedlecki]] (7010)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Krzysztof Luks]] (4122)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo gdańskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 11 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|11]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Longin Pastusiak]] (51 567)<br>[[Jolanta Banach]] (4644)<br>[[Franciszek Potulski]] (3121)<br>[[Krzysztof Brzeziński]] (3068)<br>[[Jerzy Zakrzewski (polityk)|Jerzy Zakrzewski]] (3029)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Olga Krzyżanowska]] (25 182)<br>[[Bogdan Borusewicz]] (21 885)<br>[[Jacek Taylor]] (5934)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Hans Szyc]] (8857)<br>[[Ryszard Olszewski (polityk)|Ryszard Olszewski]] (4366)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Bogusław Kaczmarek (polityk)|Bogusław Kaczmarek]] (12 327)<br>[[Zbigniew Szczypiński]] (3095)<ref group="uwaga">Zastąpił [[Halina Licnerska|Halinę Licnerską]] (4207 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Krzysztof Trawicki]] (6317)<br>[[Sławomir Szatkowski]] (2414)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Piotr Aszyk]] (7266)</span>
+|colspan=2|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo gorzowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 12 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|12]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Tadeusz Jędrzejczak]] (15 289)<br>[[Maria Walczyńska-Rechmal]] (6042)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Ryszard Kołodziej]] (8823)<br>[[Jan Świrepo]] (4305)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jerzy Wierchowicz]] (7825)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo jeleniogórskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 13 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|13]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Jerzy Szmajdziński]] (20 677)<br>[[Jerzy Jankowski (poseł)|Jerzy Jankowski]] (6614)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Marian Michalski]] (4757)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Marcin Zawiła]] (9057)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Ryszard Nowak (ur. 1953)|Ryszard Nowak]] (8469)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo kaliskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 14 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|14]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Marek Siwiec]] (19 099)<br>[[Renata Szynalska]] (9881)<br>[[Stanisław Czajczyński]] (5768)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Tadeusz Sytek]] (18 031)<br>[[Józef Gruszka (1947–2020)|Józef Gruszka]] (12 265)<br>[[Andrzej Grzyb (poseł)|Andrzej Grzyb]] (9738)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jerzy Koralewski]] (11 230)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo katowickie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 15 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|15]]
+|rowspan=3 style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Ireneusz Sekuła]] (30 974)<br>[[Andrzej Szarawarski]] (21 249)<br>[[Kazimierz Milner]] (13 933)<br>[[Ryszard Zając]] (9185)<br>[[Jerzy Kossakowski]] (8634)<br>[[Jacek Kocjan]] (6478)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Krzysztof Laga]] (9253)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Barbara Imiołczyk]] (8231)</span>
+|rowspan=2 style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Eugeniusz Januła]] (7131)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jacek Soska]] (10 472)</span>
+|colspan=4|
+|-
+| [[Okręg wyborczy nr 16 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|16]]
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Barbara Blida]] (35 729)<br>[[Czesław Śleziak]] (11 968)<br>[[Jan Chojnacki (polityk)|Jan Chojnacki]] (6929)<br>[[Zbigniew Bomba]] (4908)<br>[[Jan Kisieliński]] (4515)<br>[[Zbigniew Wieczorek]] (3968)</span>
+|rowspan=2 style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Irena Lipowicz]] (18 802)<br>[[Tadeusz Jacek Zieliński|Tadeusz Zieliński]] (14 503)<br>[[Janusz Niemcewicz]] (8093)<br>[[Piotr Polmański]] (5369)<ref group="uwaga">Zastąpił [[Maria Trzcińska-Fajfrowska|Marię Trzcińską-Fajfrowską]] (7052 głosy).</ref></span>
+|rowspan=2 style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Adam Słomka]] (24 584)<br>[[Grzegorz Kaczmarzyk]] (2609)</span>
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Zbigniew Bujak]] (32 431)<br>[[Sergiusz Karpiński]] (2067)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Jerzy Wuttke]] (9259)<br>[[Henryk Dyrda]] (3386)</span>
+|rowspan=2 style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Klemens Ścierski]] (5771)</span>
+|colspan=2|
+|-
+| [[Okręg wyborczy nr 17 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|17]]
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Wacław Martyniuk]] (28 837)<br>[[Zbyszek Zaborowski]] (10 491)<br>[[Tadeusz Zając (polityk)|Tadeusz Zając]] (6274)<br>[[Wiesław Szweda]] (3509)</span>
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Andrzej Potocki (1964–2025)|Andrzej Potocki]] (23 442)<br>[[Anna Skowrońska-Łuczyńska]] (4155)<br>[[Joanna Szafruga-Sypniewska]] (3679)</span>
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Janina Kraus]] (17 430)<br>[[Ryszard Burski]] (3545)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Bernard Szweda]] (7463)<br>[[Stanisław Kowolik]] (3986)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">''wakat''<ref group="uwaga">W miejsce [[Wojciech Lamentowicz|Wojciecha Lamentowicza]] (9889 głosów).</ref></span>
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jerzy Pistelok]] (3331)</span>
+|style="background: #{{partie polityczne - kolor|TSKNDFK}};"|
+|valign=top| '''{{partie polityczne - nazwa|TSKNDFK}}'''<br><span style="font-size: 85%">[[Roman Kurzbauer]] (7180)</span>
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo kieleckie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 18 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|18]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Mirosław Pawlak]] (43 793)<br>[[Leszek Bugaj]] (17 374)<br>[[Alfred Domagalski]] (5682)<br>[[Tadeusz Kowalczyk (ur. 1949)|Tadeusz Kowalczyk]] (5273)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Władysław Adamski]] (28 056)<br>[[Andrzej Słomski]] (9379)<br>[[Sławomir Marczewski]] (9008)<br>[[Henryk Paniec]] (7131)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Juliusz Braun]] (9653)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Tadeusz Moszyński (poseł)|Tadeusz Moszyński]] (5579)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Janusz Koza]] (9523)</span>
+|colspan=4|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo konińskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 19 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|19]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Piotr Chojnacki (prawnik)|Piotr Chojnacki]] (9850)<br>[[Jan Kopczyk]] (7815)<br>[[Ryszard Kujawa]] (6089)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Józef Nowicki (polityk)|Józef Nowicki]] (9457)<br>[[Marian Marczewski]] (5057)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo koszalińskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 20 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|20]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Ryszard Ulicki]] (23 510)<br>[[Zofia Wilczyńska (polityk)|Zofia Wilczyńska]] (9543)<br>[[Seweryn Jurgielaniec]] (3605)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Władysław Święs]] (5091)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Wiesław Wójcik (ur. 1948)|Wiesław Wójcik]] (7593)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo krakowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 21 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|21]]
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jan Rokita]] (45 739)<br>[[Stanisław Kracik]] (7244)<br>[[Tadeusz Syryjczyk]] (5642)<br>[[Jan Okoński]] (3283)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Aleksander Krawczuk]] (36 278)<br>[[Andrzej Urbańczyk (1946–2001)|Andrzej Urbańczyk]] (6333)<br>[[Janusz Lemański (polityk)|Janusz Lemański]] (4069)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Leszek Moczulski|Robert Moczulski]] (48 400)<br>[[Robert Kościelny]] (1188)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Bogdan Pęk]] (8188)<br>[[Jan Kubik]] (6039)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Leszek Zieliński (ur. 1956)|Leszek Zieliński]] (8313)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Piotr Czarnecki (polityk)|Piotr Czarnecki]] (16 540)</span>
+|colspan=2|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo krośnieńskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 22 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|22]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Władysław Wrona]] (10 033)<br>[[Stanisław Fal]] (3105)<ref group="uwaga">Zastąpił [[Maria Olszewska (polityk)|Marię Olszewską]] (3562 głosy).</ref></span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Witold Firak]] (6245)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Andrzej Czajka]] (3594)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jerzy Osiatyński]] (5536)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo legnickie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 23 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|23]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Ryszard Zbrzyzny]] (19 180)<br>[[Bronisława Kowalska (polityk)|Bronisława Kowalska]] (8739)<br>[[Lubomir Gliniecki]] (3820)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Tadeusz Samborski]] (7914)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Janusz Grott]] (5605)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo leszczyńskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 24 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|24]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Kazimierz Musielak]] (2253)<br>[[Wiesław Szczepański]] (2038)<ref group="uwaga">Zastąpił [[Zbigniew Gorzelańczyk|Zbigniewa Gorzelańczyka]] (21 999 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Janusz Maćkowiak (polityk)|Janusz Maćkowiak]] (14 610)<br>[[Włodzimierz Bogusławski]] (3347)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo lubelskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 25 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|25]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Zdzisław Podkański]] (16 691)<br>[[Marian Starownik]] (6264)<br>[[Tadeusz Polański]] (5985)<br>[[Ryszard Kalbarczyk]] (5158)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Izabella Sierakowska]] (56 229)<br>[[Janusz Malinowski]] (2838)<br>[[Piotr Ikonowicz]] (2734)<br>[[Janusz Jurek]] (1916)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Dariusz Wójcik (polityk)|Dariusz Wójcik]] (14 862)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Ryszard Setnik]] (13 593)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo łomżyńskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 26 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|26]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Tomasz Gietek]] (9225)<br>[[Józef Mioduszewski]] (8334)<br>[[Leszek Kiełczewski]] (4591)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Mieczysław Czerniawski]] (5286)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo łódzkie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 27 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|27]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Leszek Miller]] (84 355)<br>[[Zbigniew Kaniewski]] (11 889)<br>[[Krzysztof Baszczyński]] (8092)<br>[[Alicja Murynowicz]] (5910)<br>[[Włodzimierz Sitek]] (3669)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Maria Dmochowska]] (18 004)<br>[[Iwona Śledzińska-Katarasińska]] (14 898)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Mirosław Małachowski]] (10 860)<br>[[Piotr Marciniak (polityk)|Piotr Marciniak]] (10 325)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Andrzej Ostoja-Owsiany]] (14 557)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Wiesław Stasiak]] (6711)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Paweł Saar]] (7005)</span>
+|colspan=2|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo nowosądeckie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 28 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|28]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Stanisław Pasoń]] (40 682)<br>[[Grażyna Kotowicz]] (12 096)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Andrzej Gąsienica-Makowski]] (12 019)<br>[[Jerzy Gwiżdż]] (8422)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Zdobysław Milewski]] (5773)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Kazimierz Sas]] (5742)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Tadeusz Gąsienica-Łuszczek]] (3569)</span>
+|colspan=4|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo olsztyńskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 29 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|29]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Tadeusz Iwiński]] (22 852)<br>[[Danuta Ciborowska]] (8459)<br>[[Tadeusz Matyjek]] (4805)<br>[[Stanisław Kowalczyk (związkowiec)|Stanisław Kowalczyk]] (4241)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Zygmunt Suszczewicz]] (7458)<br>[[Irena Petryna]] (4667)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Andrzej Bober (polityk)|Andrzej Bober]] (4165)<ref group="uwaga">Zastąpił [[Marcin Święcicki|Marcina Święcickiego]] (13 896 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Zbigniew Zysk]] (5168)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo opolskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 30 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|30]]
+|style="background: #{{partie polityczne - kolor|MN1}};"|
+|valign=top| '''{{partie polityczne - nazwa|MN1}}'''<br><span style="font-size: 85%">[[Henryk Kroll]] (30 185)<br>[[Helmut Paździor]] (11 941)<br>[[Joachim Czernek]] (5282)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Jerzy Szteliga]] (16 707)<br>[[Józef Jerzy Pilarczyk|Józef Pilarczyk]] (5578)<br>[[Dorota Dancewicz]] (4529)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jacek Pawlicki (polityk)|Jacek Pawlicki]] (7567)<br>[[Władysław Medwid]] (7197)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Kazimierz Szczygielski]] (14 605)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Jan Zaborowski]] (6090)</span>
+|colspan=4|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo ostrołęckie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 31 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|31]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jarosław Kalinowski]] (9334)<br>[[Aleksander Łuczak]] (7581)<br>[[Wiesław Opęchowski]] (3778)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Wit Majewski]] (4021)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo pilskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 32 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|32]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Marek Borowski]] (23 087)<br>[[Wojciech Nowaczyk]] (6989)<br>[[Romuald Ajchler]] (3641)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jerzy Kado]] (6374)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Bronisław Komorowski]] (8607)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo piotrkowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 33 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|33]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Roman Jagieliński]] (15 899)<br>[[Jacek Ciecióra]] (7265)<br>[[Grzegorz Rytych]] (5107)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Zbigniew Sobotka]] (6952)<br>[[Bogdan Bujak]] (5683)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Grzegorz Marciniak]] (5589)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Jan Skrobisz]] (4785)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo płockie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 34 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|34]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Waldemar Pawlak]] (77 811)<br>[[Krzysztof Szymański (ur. 1954)|Krzysztof Szymański]] (1972)<br>[[Henryk Kisielewski]] (1157)<br>[[Waldemar Dobrowolski]] (1107)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Andrzej Rokicki (polityk)|Andrzej Rokicki]] (8448)<ref group="uwaga">Zastąpił [[Wanda Sokołowska|Wandę Sokołowską]] (11 468 głosów).</ref></span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo poznańskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 35 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|35]]
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Hanna Suchocka]] (108 872)<br>[[Tadeusz Mazowiecki]] (10 429)<br>[[Andrzej Machowski]] (1073)<br>[[Karol Działoszyński]] (711)<br>[[Piotr Buczkowski]] (640)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Krystyna Łybacka]] (30 693)<br>[[Tadeusz Tomaszewski (poseł)|Tadeusz Tomaszewski]] (17 640)<br>[[Stanisław Stec]] (9514)<br>[[Ewa Lewicka-Łęgowska]] (6674)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Wiesława Ziółkowska]] (63 637)<br>[[Konrad Napierała]] (4965)<br>[[Andrzej Aumiller]] (2479)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Marian Król]] (15 824)<br>[[Stanisław Kalemba]] (9726)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo przemyskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 36 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|36]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Zbigniew Mierzwa]] (15 475)<br>[[Józef Michalik (polityk)|Józef Michalik]] (7247)<br>[[Mieczysław Kasprzak]] (7220)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Kazimierz Nycz (polityk)|Kazimierz Nycz]] (4371)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo radomskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 37 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|37]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Kazimierz Adamski (polityk)|Kazimierz Adamski]] (8726)<br>[[Andrzej Wiśniewski (ur. 1953)|Andrzej Wiśniewski]] (7181)<br>[[Józef Łochowski]] (5199)<br>[[Roman Edward Borek|Roman Borek]] (4851)<ref group="uwaga">Zastąpił [[Marian Korczak (polityk)|Mariana Korczaka]] (8188 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Regina Pawłowska]] (8488)<br>[[Danuta Grabowska]] (7479)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Jacek Vieth]] (3845)<ref group="uwaga">Zastąpił [[Tadeusz Kowalczyk (1952–1997)|Tadeusza Kowalczyka]] (6042 głosy).</ref></span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Piotr Nowina-Konopka]] (6259)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo rzeszowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 38 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|38]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Aleksander Bentkowski]] (14 767)<br>[[Jan Bury (ur. 1963)|Jan Bury]] (14 018)<br>[[Ignacy Półćwiartek]] (6004)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Wiesław Ciesielski (polityk)|Wiesław Ciesielski]] (10 834)<br>[[Stanisław Rusznica]] (4644)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Andrzej Kaźmierczak (ur. 1961)|Andrzej Kaźmierczak]] (5531)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Zbigniew Mączka]] (6062)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo siedleckie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 39 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|39]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Ryszard Smolarek]] (15 903)<br>[[Jan Borkowski (polityk)|Jan Borkowski]] (7184)<br>[[Janusz Wierzbicki (polityk)|Janusz Wierzbicki]] (6048)<br>[[Antoni Tarczyński]] (5295)<br>[[Marek Sawicki]] (5057)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Józef Oleksy]] (24 843)<br>[[Stefan Ceranka]] (2402)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo sieradzkie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 40 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|40]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Wojciech Szczęsny Zarzycki|Wojciech Zarzycki]] (19 045)<br>[[Władysław Tomaszewski]] (4780)<br>[[Wiesław Gołębiewski]] (4319)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Irena Nowacka]] (11 109)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo skierniewickie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 41 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|41]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Krystyna Ozga]] (6472)<br>[[Edward Gnat]] (6311)<br>[[Tadeusz Gajda (ur. 1954)|Tadeusz Gajda]] (5581)<ref group="uwaga">Zastąpił [[Janusz Wojciechowski|Janusza Wojciechowskiego]] (9930 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Andrzej Olszewski (polityk)|Andrzej Olszewski]] (12 291)</span>
+|colspan=15|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo słupskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 42 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|42]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Władysław Szkop]] (10 206)<br>[[Paweł Kasprzyk]] (6718)<ref group="uwaga">Zastąpił [[Kazimierz Iwaniec|Kazimierza Iwańca]] (7262 głosy).</ref></span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Zbigniew Galek]] (4773)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jan Król (ur. 1950)|Jan Król]] (7525)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo suwalskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 43 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|43]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Jerzy Dziewulski]] (7135)<br>[[Stanisław Dzienisiewicz (polityk)|Stanisław Dzienisiewicz]] (5076)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Andrzej Śmietanko]] (5958)<br>[[Henryk Bogdan]] (5648)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Janusz Szymański (polityk)|Janusz Szymański]] (2762)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo szczecińskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 44 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|44]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Jacek Piechota]] (41 499)<br>[[Stanisław Kopeć]] (7827)<br>[[Maciej Manicki]] (7354)<br>[[Elżbieta Piela-Mielczarek]] (7022)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Włodzimierz Puzyna]] (15 113)<br>[[Leszek Chwat]] (5701)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jan Wołek (polityk)|Jan Wołek]] (7486)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Maria Nowakowska (polityk)|Maria Nowakowska]] (12 227)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Leszek Smykowski]] (5401)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Andrzej Gołaś (ur. 1942)|Andrzej Gołaś]] (3153)</span>
+|colspan=2|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo tarnobrzeskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 45 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|45]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Stanisław Masternak]] (13 462)<br>[[Stanisław Bartoszek]] (5328)<br>[[Lidia Błądek]] (4927)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Jerzy Jaskiernia]] (19 915)<br>[[Władysław Stępień]] (6558)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Krzysztof Kamiński (polityk)|Krzysztof Kamiński]] (5391)</span>
+|colspan=8|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo tarnowskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 46 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|46]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jan Pieniądz]] (9540)<br>[[Władysław Żabiński]] (8624)<br>[[Stanisław Kusior]] (8538)<br>[[Józef Kalisz (polityk)|Józef Kalisz]] (8255)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Gwidon Wójcik]] (11 560)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Krzysztof Janik]] (6264)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Grzegorz Cygonik]] (5641)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo toruńskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 47 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|47]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Marian Żenkiewicz]] (20 803)<br>[[Jerzy Wenderlich]] (10 091)<br>[[Zenon Kufel]] (8429)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Andrzej Malinowski (ekonomista)|Andrzej Malinowski]] (7836)<br>[[Adam Szczęsny]] (5758)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jan Wyrowiński]] (12 459)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Krystyna Sienkiewicz (polityk)|Krystyna Sienkiewicz]] (6436)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo wałbrzyskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 48 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|48]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Czesław Pogoda]] (19 192)<br>[[Marek Dyduch]] (9113)<br>[[Józef Grabek]] (7756)<br>[[Mieczysław Jedoń]] (6884)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Jan Lityński]] (9836)<br>[[Krzysztof Budnik]] (3689)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jarosław Kurzawa]] (5119)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Zygmunt Jakubczyk]] (5348)</span>
+|colspan=6|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo włocławskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 49 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|49]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Kazimierz Nowak (polityk)|Kazimierz Nowak]] (13 298)<br>[[Stanisław Pawlak (polityk)|Stanisław Pawlak]] (13 283)<br>[[Marek Olewiński]] (6225)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jan Szczepaniak (polityk)|Jan Szczepaniak]] (6856)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo wrocławskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 50 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|50]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Józef Kaleta]] (60 749)<br>[[Marek Mazurkiewicz]] (3985)<br>[[Jan Szymański (ur. 1953)|Jan Szymański]] (3146)<br>[[Teresa Jasztal]] (2968)<ref group="uwaga">Zastąpiła [[Jacek Uczkiewicz|Jacka Uczkiewicza]] (4541 głosów).</ref></span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Barbara Labuda]] (31 384)<br>[[Władysław Frasyniuk]] (18 935)<br>[[Radosław Gawlik]] (5242)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Janusz Dobrosz]] (11 207)<br>[[Zygmunt Bartoszewicz]] (5547)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Stanisław Rogowski]] (13 754)</span>
+|style="background: #{{partie polityczne - kolor|BBWR}};"|
+|valign=top| '''{{partie polityczne - nazwa|BBWR}}'''<br><span style="font-size: 85%">[[Zdzisław Pisarek]] (5732)</span>
+|style="background: #{{partie polityczne - kolor|KPN}};"|
+|valign=top| '''{{partie polityczne - nazwa|KPN}}'''<br><span style="font-size: 85%">[[Wojciech Błasiak]] (5696)</span>
+|colspan=2|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo zamojskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 51 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|51]]
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Jan Kowalik]] (23 825)<br>[[Lesław Podkański]] (13 524)<br>[[Ryszard Bondyra]] (7897)<br>[[Ryszard Stanibuła]] (6562)</span>
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Jan Byra (polityk)|Jan Byra]] (11 084)</span>
+|colspan=10|
+|-
+|colspan=15 style="background:#DCDCDC;"|
+
+=== Województwo zielonogórskie ===
+|-
+! Nr
+!colspan=14| Posłowie wybrani z list poszczególnych komitetów wyborczych (w nawiasach liczba zdobytych głosów)
+|-
+| [[Okręg wyborczy nr 52 do Sejmu Rzeczypospolitej Polskiej (1993–2001)|52]]
+|style="background: #{{partie polityczne - kolor|SLD}};"|
+|valign=top| '''{{partie polityczne - nazwa|SLD}}'''<br><span style="font-size: 85%">[[Tadeusz Biliński (polityk)|Tadeusz Biliński]] (25 045)<br>[[Andrzej Brachmański]] (8085)<br>[[Jadwiga Błoch]] (4350)</span>
+|style="background: #{{partie polityczne - kolor|PSL}};"|
+|valign=top| '''{{partie polityczne - nazwa|PSL}}'''<br><span style="font-size: 85%">[[Józef Zych]] (22 313)<br>[[Jan Andrykiewicz]] (2894)</span>
+|style="background: #{{partie polityczne - kolor|UD}};"|
+|valign=top| '''{{partie polityczne - nazwa|UD}}'''<br><span style="font-size: 85%">[[Czesław Fiedorowicz]] (8951)</span>
+|style="background: #{{partie polityczne - kolor|UP}};"|
+|valign=top| '''{{partie polityczne - nazwa|UP}}'''<br><span style="font-size: 85%">[[Kazimierz Pańtak]] (4527)</span>
+|colspan=6|
+|}
+
+== Zobacz też ==
+* [[Sejm Rzeczypospolitej Polskiej II kadencji (1993–1997)]]
+* [[wybory parlamentarne w Polsce w 1993 roku]]
+* [[Senatorowie III kadencji Senatu Rzeczypospolitej Polskiej (1993–1997)|senatorowie III kadencji w latach 1993–1997]]
+
+== Uwagi ==
+{{Uwagi}}
+
+== Przypisy ==
+{{Przypisy}}
+
+== Linki zewnętrzne ==
+* {{Cytuj stronę |url = https://orka.sejm.gov.pl/ArchAll2.nsf/Glowny?OpenFrameset&kad=2 |tytuł = Archiwum Danych o posłach (II kadencja 1993–1997) |opublikowany = sejm.gov.pl |archiwum = https://web.archive.org/web/20230321120930/https://orka.sejm.gov.pl/ArchAll2.nsf/Glowny?OpenFrameset&kad=2 |zarchiwizowano = 2023-03-21 |data dostępu = 2023-05-16}}
+
+{{Posłowie RP}}
+[[Kategoria:Posłowie na Sejm Rzeczypospolitej Polskiej II kadencji (1993–1997)|*]]
