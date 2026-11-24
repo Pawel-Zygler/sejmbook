@@ -33,9 +33,10 @@ beforeEach(() => {
 afterEach(() => app.destroy());
 
 describe('home', () => {
-  it('renders the feed with the 2026 Frequent Flyer leader', () => {
+  it('renders the feed with the seat bar and no Frequent Flyer post', () => {
     expect($('[data-view="home"]')).not.toBeNull();
-    expect($('.mini-rank li').textContent).toContain('Łukasz Mejza');
+    expect($('.mini-rank')).toBeNull();
+    expect($('.seat-bar')).not.toBeNull();
     expect($('[data-nav="home"]').getAttribute('aria-current')).toBe('page');
   });
   it('fills the club column', () => {
@@ -148,8 +149,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Nowa paleta barw';
-const NEWEST_LINE = 'Sejmbook: Nowa paleta barw';
+const NEWEST = 'Start bez rankingu lotów';
+const NEWEST_LINE = 'Start: Start bez rankingu lotów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

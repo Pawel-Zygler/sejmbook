@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-feed-sklad",
+      "date": "2026-11-24",
+      "title": "Start bez rankingu lotów",
+      "section": "Start",
+      "body": "Na stronie głównej zostaje skład Sejmu; ranking lotów jest w zakładce Frequent Flyer.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-paleta",
       "date": "2026-11-24",
       "title": "Nowa paleta barw",

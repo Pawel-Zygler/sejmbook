@@ -72,10 +72,11 @@ describe('views', () => {
     expect(renderFlyer(ctx, { dataset: '2025', sortBy: 'km' })).toContain('>Koszt<');
     expect(renderFlyer(ctx, { dataset: '2026', sortBy: 'km' })).not.toContain('>Koszt<');
   });
-  it('home links to the full ranking and cites a source', () => {
+  it('home keeps the seat bar and has no Frequent Flyer or term-record posts', () => {
     const html = renderHome(ctx);
-    expect(html).toContain('href="#frequent-flyer"');
-    expect(html).toContain('wprost.pl');
+    expect(html).toContain('Sejmbook · Skład Sejmu');
+    expect(html).not.toContain('Sejmbook · Frequent Flyer');
+    expect(html).not.toContain('Rekord kadencji');
   });
   it('directory shows an empty state', () => {
     expect(renderDirectory(ctx, { query: 'zzz', club: '', includeInactive: false }, [])).toContain('Nikt nie pasuje');

@@ -197,12 +197,8 @@ export function renderLiveFeed(ctx) {
 }
 
 export function renderHome(ctx) {
-  const ds = ctx.flights.datasets[0];
-  const top = buildRanking(ds, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles).slice(0, 3);
   const counts = clubCounts(ctx.mps);
   const active = counts.reduce((s, c) => s + c.count, 0);
-  const term = ctx.flights.datasets.find((d) => d.id === 'kadencja');
-  const termTop = term ? buildRanking(term, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles)[0] : null;
 
   const bar = counts
     .map((c) => {
@@ -215,15 +211,6 @@ export function renderHome(ctx) {
   <section class="feed" data-view="home">
     ${renderLiveFeed(ctx)}
     <article class="post">
-      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Frequent Flyer</strong><small>${esc(ds.label)} · ${esc(ds.origin)}</small></div></header>
-      <p class="post-text">Najczęściej latający posłowie w ${esc(ds.label.toLowerCase())}. Wszystkie loty krajowe opłaciła Kancelaria Sejmu.</p>
-      <ol class="mini-rank">
-        ${top.map((r) => `<li>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span class="mini-name">${esc(r.mp.name)}</span>`, 'mini-link')}${clubChip(ctx, r.mp.club, r.mp)}<span class="mini-val"><b>${r.flights}</b> lotów</span></li>`).join('')}
-      </ol>
-      <footer class="post-foot"><a class="btn" href="#frequent-flyer">Zobacz cały ranking</a><span class="src">Źródło: <a href="${esc(ds.sources[0].url)}" target="_blank" rel="noopener">${esc(ds.sources[0].title.split(':')[0])}</a></span></footer>
-    </article>
-
-    <article class="post">
       <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja · dane z API Sejmu, ${esc(ctx.fetchedAt)}</small></div></header>
       <p class="post-text"><b>${active}</b> aktywnych mandatów w ${counts.length} klubach i kołach. Kliknij klub, żeby zobaczyć jego posłów.</p>
       <div class="seat-bar" role="img" aria-label="Podział mandatów między kluby">${bar}</div>
@@ -232,12 +219,6 @@ export function renderHome(ctx) {
       </ul>
     </article>
 
-    ${termTop ? `
-    <article class="post">
-      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Rekord kadencji</strong><small>${esc(term.label)}</small></div></header>
-      <p class="post-text">${mpLink(termTop.mp, esc(termTop.mp.name))} odbył <b>${termTop.flights}</b> lotów od początku kadencji do końca sierpnia 2025. Łącznie posłowie wykonali w tym czasie ${formatInt(term.totals.flights)} lotów za około ${formatPln(term.totals.costPln)}.</p>
-      <footer class="post-foot"><span class="src">Źródło: <a href="${esc(term.sources[0].url)}" target="_blank" rel="noopener">Interia</a></span></footer>
-    </article>` : ''}
   </section>`;
 }
 
