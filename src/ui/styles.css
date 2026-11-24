@@ -71,7 +71,6 @@ h2 { font-size: 1.1rem; }
 .sidenav a.on { background: var(--accent-soft); color: var(--accent); }
 .ico { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); font-size: 14px; }
 .sidenav-label { margin: 16px 12px 4px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.sidenav-note { margin: 24px 12px 0; font-size: 0.8rem; color: var(--muted); }
 #aside { position: sticky; top: 76px; align-self: start; }
 
 /* Surfaces */
@@ -486,3 +485,24 @@ h2 { font-size: 1.1rem; }
   .gov-table td { border: 0; padding: 2px 4px; }
   .gov-table td.gov-office { grid-column: 1 / -1; }
 }
+
+/* Feed: time window, clickable votings */
+.feed-window { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px 14px; }
+.feed-window .chip { cursor: pointer; font: inherit; font-size: 0.82rem; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.feed-window .chip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.feed-quiet { margin: 0; font-size: 0.9rem; }
+.feed-face { display: inline-flex; text-decoration: none; }
+.post-foot .btn + .btn { margin-left: 6px; }
+.vote-item summary { cursor: pointer; list-style: none; }
+.vote-item summary::-webkit-details-marker { display: none; }
+.vote-item summary::after { content: "Pokaż szczegóły ▾"; display: block; font-size: 0.78rem; color: var(--accent); margin-top: 2px; }
+.vote-item[open] summary::after { content: "Zwiń ▴"; }
+.vote-more { padding: 8px 0 4px; display: grid; gap: 8px; }
+.vote-more:empty { display: none; }
+.vote-topic { margin: 0; font-size: 0.9rem; }
+.vote-clubs { width: 100%; border-collapse: collapse; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.vote-clubs th { text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); padding: 4px 6px; border-bottom: 1px solid var(--line); }
+.vote-clubs td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+.vote-clubs .num { text-align: right; }
+.vote-rebels { margin: 0; font-size: 0.88rem; }
+.vote-links { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }

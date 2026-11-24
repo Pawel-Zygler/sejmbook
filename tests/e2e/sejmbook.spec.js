@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Prezydenci, premierzy i rządy III RP');
+  await expect(post).toContainText('Interaktywny Feed');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Prezydenci, premierzy i rządy III RP');
+  await expect(page.locator('.news-post').first()).toContainText('Interaktywny Feed');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -376,4 +376,19 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
     await page.goto(`${PAGE}${h}`);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
   }
+});
+
+test('Feed: open a voting to see clubs, switch the time window', async ({ page }) => {
+  await page.goto(PAGE);
+  await expect(page.locator('.topnav a[data-nav="home"]')).toHaveText('Feed');
+  const v = page.locator('details.vote-item').first();
+  await v.locator('summary').click();
+  await expect(v.locator('.vote-clubs')).toBeVisible();
+  await expect(v.locator('.vote-links a').first()).toHaveAttribute('href', /sejm\.gov\.pl/);
+  await page.locator('[data-window="all"]').click();
+  await expect(page.locator('[data-window="all"]')).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('#view .feed-post[data-feed="president"] .post-head a').first().click();
+  await expect(page.locator('#view h1')).toHaveText('Karol Nawrocki');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

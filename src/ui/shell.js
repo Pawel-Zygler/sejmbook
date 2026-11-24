@@ -7,7 +7,7 @@ export const SHELL_HTML = `
       <input id="top-search" type="search" placeholder="Szukaj posła, ministra, prezydenta" data-action="top-search" autocomplete="off">
     </label>
     <nav class="topnav" aria-label="Główne">
-      <a href="#start" data-nav="home">Start</a>
+      <a href="#start" data-nav="home">Feed</a>
       <a href="#poslowie" data-nav="directory">Posłowie</a>
       <a href="#panstwo" data-nav="state">Państwo</a>
       <a href="#frequent-flyer" data-nav="flyer" aria-label="Frequent Flyer"><span class="nav-long">Frequent </span>Flyer</a>
@@ -18,7 +18,7 @@ export const SHELL_HTML = `
 </header>
 <div class="layout">
   <nav class="sidenav" aria-label="Sekcje">
-    <a href="#start" data-nav="home"><span class="ico">⌂</span>Aktualności</a>
+    <a href="#start" data-nav="home"><span class="ico">⌂</span>Feed</a>
     <a href="#poslowie" data-nav="directory"><span class="ico">☷</span>Posłowie X kadencji</a>
     <a href="#panstwo" data-nav="state"><span class="ico">⚖</span>Państwo i rządy</a>
     <p class="sidenav-label">Rankingi</p>
@@ -27,7 +27,6 @@ export const SHELL_HTML = `
     <a href="#partie" data-nav="parties"><span class="ico">⇄</span>Najwięcej partii</a>
     <p class="sidenav-label">Serwis</p>
     <a href="#changelog" data-nav="changelog"><span class="ico">✎</span>Changelog</a>
-    <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie i państwie. Wkrótce: głosowania i wystąpienia.</p>
   </nav>
   <main id="view" tabindex="-1"></main>
   <aside id="aside" aria-label="Kluby"></aside>

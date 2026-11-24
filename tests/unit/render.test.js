@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -509,5 +509,47 @@ describe('renderLiveFeed', () => {
     const html = renderLiveFeed({ ...ctx, feed: { fetchedAt: '2026-11-24', pm: feed.pm } });
     expect(html).not.toContain('Prezydent RP');
     expect(html).toContain('Szczyt V4');
+  });
+});
+
+describe('feed: windows, profile links, voting details', () => {
+  const now = Date.parse('2026-11-24T12:00:00Z');
+  const feed = {
+    fetchedAt: '2026-11-24T09:00:00Z',
+    president: { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: [{ title: 'Stare', date: '2026-11-10', url: 'https://www.prezydent.pl/1', seenAt: '2026-11-10T23:59:59.000Z' }] },
+    pm: { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: [{ title: 'Nowe', date: '2026-11-24', url: 'https://www.gov.pl/1', seenAt: '2026-11-24T10:00:00.000Z' }] },
+    pmSocial: { who: 'Donald Tusk', network: 'Bluesky', handle: 'x', profile: 'https://bsky.app/profile/x', items: [{ text: 'Stary post', date: '2025-12-04', time: '2025-12-04T10:00:00Z', url: 'https://bsky.app/x', likes: 1, reposts: 0 }] },
+    sejm: { items: [{ title: 'Pkt. 1 <b>', yes: 3, no: 1, abstain: 0, passed: true, date: '2026-11-19T13:43:55', proceeding: 69, number: 153, url: 'https://www.sejm.gov.pl/v', topic: 'wniosek', clubs: [{ club: 'KO', yes: 2, no: 0, abstain: 0, absent: 0 }, { club: 'PiS', yes: 1, no: 1, abstain: 0, absent: 0 }], votes: {} }] },
+  };
+  const gov = { byName: new Map([['karol nawrocki', { slug: 'karol-nawrocki' }], ['donald tusk', { slug: 'donald-tusk' }]]) };
+  it('shows only what is new in the window and says when nothing is', () => {
+    const html = renderLiveFeed({ ...ctx, feed, gov }, { window: '24h', now });
+    expect(html).toContain('Nowe');
+    expect(html).toContain('Nic nowego w ciągu ostatnich 24 godziny. Ostatni wpis: 10.11.2026');
+    expect(html).not.toContain('<time datetime="2026-11-10">');
+    expect(html).not.toContain('Stary post');
+    expect(html).toContain('aria-pressed="true">ostatnich 24 godziny');
+    const all = renderLiveFeed({ ...ctx, feed, gov }, { window: 'all', now });
+    expect(all).toContain('>Stare<');
+    expect(all).toContain('Stary post');
+  });
+  it('links people in the feed to their profiles here', () => {
+    const html = renderLiveFeed({ ...ctx, feed, gov }, { window: 'all', now });
+    expect(html).toContain('href="#urzad-karol-nawrocki"');
+    expect(html).toContain('Profil w Sejmbooku');
+    expect(feedProfileHref({ ...ctx, gov }, ctx.mps[0].name)).toBe(`#posel-${ctx.mps[0].id}`);
+    expect(feedProfileHref({ ...ctx, gov: null }, 'Nikt')).toBeNull();
+  });
+  it('lists votings as closed cards and builds their details on demand', () => {
+    const html = renderLiveFeed({ ...ctx, feed, gov }, { window: 'all', now });
+    expect(html).toContain('<details class="vote-item" data-voting="0">');
+    expect(html).toContain('Pkt. 1 &lt;b&gt;');
+    expect(html).toContain('19.11.2026, 13:43');
+    const more = renderVotingDetails(ctx, feed.sejm.items[0]);
+    expect(more).toContain('class="vote-clubs"');
+    expect(more).toContain('href="https://www.sejm.gov.pl/v"');
+    expect(more).toContain('https://api.sejm.gov.pl/sejm/term10/votings/69/153');
+    expect(more).toContain('tak jak większość');
+    expect(renderVotingDetails(ctx, null)).toBe('');
   });
 });

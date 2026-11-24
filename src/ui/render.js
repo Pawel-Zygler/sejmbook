@@ -1,4 +1,5 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCounts, ageInYear } from '../lib/mps.js';
+import { againstClub, inWindow, FEED_WINDOWS } from '../lib/feed.js';
 import { careerSpectrum, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
@@ -107,7 +108,7 @@ export function newsSection(post) {
   if (h.startsWith('#poslowie')) return 'Posłowie';
   if (h.startsWith('#posel-')) return 'Profil posła';
   if (h.startsWith('#changelog')) return 'Changelog';
-  if (h.startsWith('#start')) return 'Start';
+  if (h.startsWith('#start')) return 'Feed';
   return 'Sejmbook';
 }
 
@@ -152,65 +153,116 @@ export function stateRolesLink(ctx, name) {
   return `<p class="state-roles" data-testid="state-roles"><a class="btn" href="#urzad-${esc(p.slug)}">Funkcje państwowe: ${p.roles.length}</a></p>`;
 }
 
-/** One news list (president / prime minister): latest items, each a dated link to the official page. */
-function officialPost(ctx, sec, { badge, title, limit = 4 }) {
-  if (!sec?.items?.length) return '';
-  const mp = mpByName(ctx, sec.who);
-  const face = mp ? mpLink(mp, avatar(ctx, mp, 'md')) : `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
-  const host = new URL(sec.source).hostname.replace(/^www\./, '');
-  return `<article class="post feed-post" data-feed="${esc(title)}">
-      <header class="post-head">${face}<div><strong>${stateNameLink(ctx, sec.who)}</strong><small>${esc(sec.role)} · oficjalne komunikaty</small></div></header>
-      <ul class="feed-list">${sec.items.slice(0, limit).map((it) => `<li><time datetime="${esc(it.date ?? '')}">${esc(fmtDay(it.date))}</time><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>${it.place ? `<small class="muted"> · ${esc(it.place)}</small>` : ''}</li>`).join('')}</ul>
-      <footer class="post-foot"><a class="btn" href="${esc(sec.source)}" target="_blank" rel="noopener">Więcej na ${esc(host)}</a></footer>
-    </article>`;
+/** Lower case, accents removed: for matching names. */
+const foldName = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
+
+/** Our own profile for a person in the feed: the MP profile for a sitting MP, else the state profile (Państwo). */
+export function feedProfileHref(ctx, name) {
+  const mp = mpByName(ctx, name);
+  if (mp) return `#posel-${mp.id}`;
+  const p = ctx.gov?.byName?.get(foldName(name));
+  return p ? `#urzad-${p.slug}` : null;
 }
 
 function stateNameLink(ctx, name) {
-  const fold = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
-  const p = ctx.gov?.byName?.get(fold(name));
-  return p ? `<a class="official-link" href="#urzad-${esc(p.slug)}">${esc(name)}</a>` : esc(name);
+  const href = feedProfileHref(ctx, name);
+  return href ? `<a class="official-link" href="${esc(href)}">${esc(name)}</a>` : esc(name);
+}
+
+/** The face at the top of a feed card, linked to our profile of that person. */
+function feedFace(ctx, name, badge) {
+  const mp = mpByName(ctx, name);
+  if (mp) return mpLink(mp, avatar(ctx, mp, 'md'));
+  const href = feedProfileHref(ctx, name);
+  const face = `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
+  return href ? `<a class="feed-face" href="${esc(href)}" aria-label="Profil: ${esc(name)}">${face}</a>` : face;
+}
+
+/** A card body when nothing is new in the chosen time window. */
+function quietLine(sec, windowLabel) {
+  const last = sec.items[0];
+  return `<p class="feed-quiet muted" data-testid="feed-quiet">Nic nowego w ciągu ostatnich ${esc(windowLabel)}. Ostatni wpis: ${esc(fmtDay(last?.date))}${last ? ` · <a href="${esc(last.url)}" target="_blank" rel="noopener">${esc(last.title ?? 'zobacz')}</a>` : ''}</p>`;
+}
+
+/** One news list (president / prime minister): latest items, each a dated link to the official page. */
+function officialPost(ctx, sec, { badge, title, limit = 4, win }) {
+  if (!sec?.items?.length) return '';
+  const items = inWindow(sec.items, win.id, win.now);
+  const host = new URL(sec.source).hostname.replace(/^www\./, '');
+  const href = feedProfileHref(ctx, sec.who);
+  return `<article class="post feed-post" data-feed="${esc(title)}">
+      <header class="post-head">${feedFace(ctx, sec.who, badge)}<div><strong>${stateNameLink(ctx, sec.who)}</strong><small>${esc(sec.role)} · oficjalne komunikaty</small></div></header>
+      ${items.length ? `<ul class="feed-list">${items.slice(0, limit).map((it) => `<li><time datetime="${esc(it.date ?? '')}">${esc(fmtDay(it.date))}</time><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>${it.place ? `<small class="muted"> · ${esc(it.place)}</small>` : ''}</li>`).join('')}</ul>` : quietLine(sec, win.label)}
+      <footer class="post-foot">${href ? `<a class="btn" href="${esc(href)}">Profil w Sejmbooku</a>` : ''}<a class="btn" href="${esc(sec.source)}" target="_blank" rel="noopener">Więcej na ${esc(host)}</a></footer>
+    </article>`;
 }
 
 /** Social posts of a politician from a verified public account (Bluesky), with the date of the latest post said openly. */
-function socialPost(ctx, sec) {
+function socialPost(ctx, sec, win) {
   if (!sec?.items?.length) return '';
-  const mp = mpByName(ctx, sec.who);
-  const face = mp ? mpLink(mp, avatar(ctx, mp, 'md')) : '';
+  const items = inWindow(sec.items, win.id, win.now);
+  if (!items.length && win.id !== 'all') return '';
   const latest = sec.items[0].date;
   return `<article class="post feed-post" data-feed="social">
-      <header class="post-head">${face}<div><strong>${esc(sec.who)} na ${esc(sec.network)}</strong><small><a href="${esc(sec.profile)}" target="_blank" rel="noopener">@${esc(sec.handle)}</a> · konto zweryfikowane · ostatni wpis ${esc(fmtDay(latest))}</small></div></header>
-      <ul class="social-list">${sec.items.slice(0, 3).map((p) => `<li><p>${esc(p.text)}</p><small class="muted"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(fmtDay(p.date))}</a> · ♥ ${formatInt(p.likes)} · ⟲ ${formatInt(p.reposts)}</small></li>`).join('')}</ul>
+      <header class="post-head">${feedFace(ctx, sec.who, 'DT')}<div><strong>${stateNameLink(ctx, sec.who)} na ${esc(sec.network)}</strong><small><a href="${esc(sec.profile)}" target="_blank" rel="noopener">@${esc(sec.handle)}</a> · konto zweryfikowane · ostatni wpis ${esc(fmtDay(latest))}</small></div></header>
+      <ul class="social-list">${items.slice(0, 3).map((p) => `<li><p>${esc(p.text)}</p><small class="muted"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(fmtDay(p.date))}</a> · ♥ ${formatInt(p.likes)} · ⟲ ${formatInt(p.reposts)}</small></li>`).join('')}</ul>
     </article>`;
 }
 
-/** The latest Sejm votings: title, result and the yes / no / abstain split. */
+const voteTime = (iso) => (iso && iso.length > 10 ? `${fmtDay(iso.slice(0, 10))}, ${iso.slice(11, 16)}` : fmtDay(iso));
+
+/** The last 5 Sejm votings: title, result and split; each opens (on click) to its details. */
 function sejmVotesPost(ctx, sec) {
   if (!sec?.items?.length) return '';
   return `<article class="post feed-post" data-feed="sejm">
-      <header class="post-head">${pageBadge()}<div><strong>Sejm · głosowania</strong><small>${esc(fmtDay(sec.date))} · ${sec.proceeding}. posiedzenie · API Sejmu</small></div></header>
-      <ul class="vote-list">${sec.items.slice(0, 5).map((v) => {
+      <header class="post-head">${pageBadge()}<div><strong>Sejm · ostatnie głosowania</strong><small>${sec.items.length} ostatnich · API Sejmu · kliknij głosowanie, żeby zobaczyć, jak głosowały kluby</small></div></header>
+      <ul class="vote-list">${sec.items.slice(0, 5).map((v, i) => {
         const all = (v.yes ?? 0) + (v.no ?? 0) + (v.abstain ?? 0) || 1;
         const w = (n) => ((100 * (n ?? 0)) / all).toFixed(1);
-        return `<li><p class="vote-title">${esc(v.title)}</p>
+        return `<li><details class="vote-item" data-voting="${i}">
+          <summary><p class="vote-title">${esc(v.title)}</p>
           <div class="vote-bar" role="img" aria-label="Za ${v.yes}, przeciw ${v.no}, wstrzymało się ${v.abstain}"><span class="v-yes" style="width:${w(v.yes)}%"></span><span class="v-no" style="width:${w(v.no)}%"></span><span class="v-abs" style="width:${w(v.abstain)}%"></span></div>
-          <small><b class="${v.passed ? 'v-pass' : 'v-fail'}">${v.passed ? 'Przyjęto' : 'Odrzucono'}</b> · za ${v.yes} · przeciw ${v.no} · wstrzymało się ${v.abstain}</small></li>`;
+          <small><b class="${v.passed ? 'v-pass' : 'v-fail'}">${v.passed ? 'Przyjęto' : 'Odrzucono'}</b> · za ${v.yes} · przeciw ${v.no} · wstrzymało się ${v.abstain}${v.date ? ` · ${esc(voteTime(v.date))}` : ''}</small></summary>
+          <div class="vote-more" data-testid="vote-more"></div>
+        </details></li>`;
       }).join('')}</ul>
+      <footer class="post-foot"><a class="btn" href="https://www.sejm.gov.pl/sejm10.nsf/agent.xsp?symbol=posglos&NrKadencji=10" target="_blank" rel="noopener">Wszystkie głosowania na sejm.gov.pl</a></footer>
     </article>`;
 }
 
-/** Top of the home feed: the President, the Prime Minister (and his social posts) and the Sejm, from data/feed.json. */
-export function renderLiveFeed(ctx) {
+/** Details of one voting, built when it is opened: topic, how each club voted, MPs against their club, links. */
+export function renderVotingDetails(ctx, v) {
+  if (!v) return '';
+  const rebels = v.votes ? againstClub(v, ctx.mpsById) : [];
+  const clubName = (c) => (ctx.clubs.get(c) ?? { short: c }).short;
+  return `
+    ${v.topic || v.description ? `<p class="vote-topic">${esc(v.topic ?? '')}${v.description ? ` <span class="muted">${esc(v.description)}</span>` : ''}</p>` : ''}
+    ${v.clubs?.length ? `<table class="vote-clubs"><thead><tr><th>Klub</th><th class="num">Za</th><th class="num">Przeciw</th><th class="num">Wstrz.</th><th class="num">Nieob.</th></tr></thead><tbody>${v.clubs.map((c) => `<tr><td>${ctx.clubs.has(c.club) ? clubChip(ctx, c.club) : esc(clubName(c.club))}</td><td class="num">${c.yes}</td><td class="num">${c.no}</td><td class="num">${c.abstain}</td><td class="num">${c.absent}</td></tr>`).join('')}</tbody></table>` : ''}
+    ${rebels.length ? `<p class="vote-rebels"><b>Głosowali inaczej niż większość klubu:</b> ${rebels.map((r) => `${mpLink(r.mp, esc(r.mp.name))} <small class="muted">(${r.vote === 'Y' ? 'za' : 'przeciw'})</small>`).join(', ')}</p>` : v.clubs?.length ? '<p class="muted">Wszyscy głosujący posłowie zagłosowali tak jak większość ich klubów.</p>' : ''}
+    <p class="vote-links">${v.url ? `<a class="btn" href="${esc(v.url)}" target="_blank" rel="noopener">Wyniki na sejm.gov.pl</a>` : ''}${v.proceeding && v.number ? ` <a class="btn" href="https://api.sejm.gov.pl/sejm/term10/votings/${esc(v.proceeding)}/${esc(v.number)}" target="_blank" rel="noopener">Dane w API Sejmu</a>` : ''}</p>`;
+}
+
+/** The time window chips above the feed. */
+function feedWindowBar(winId) {
+  return `<div class="panel feed-window" role="group" aria-label="Pokaż wpisy z" data-testid="feed-window"><span class="muted">Pokaż wpisy z:</span>${FEED_WINDOWS.map((w) => `<button type="button" class="chip${w.id === winId ? ' on' : ''}" data-action="feed-window" data-window="${w.id}" aria-pressed="${w.id === winId}">${w.id === 'all' ? esc(w.label) : `ostatnich ${esc(w.label)}`}</button>`).join('')}</div>`;
+}
+
+/** Top of the feed: the President, the Prime Minister (and his social posts) and the Sejm, from data/feed.json. */
+export function renderLiveFeed(ctx, { window: winId = 'all', now = Date.now() } = {}) {
   const f = ctx.feed;
   if (!f) return '';
+  const w = FEED_WINDOWS.find((x) => x.id === winId) ?? FEED_WINDOWS.at(-1);
+  const win = { id: w.id, now, label: w.label };
   return `
-    ${officialPost(ctx, f.president, { badge: 'KN', title: 'president' })}
-    ${officialPost(ctx, f.pm, { badge: 'DT', title: 'pm' })}
-    ${socialPost(ctx, f.pmSocial)}
+    ${feedWindowBar(w.id)}
+    ${officialPost(ctx, f.president, { badge: 'KN', title: 'president', win })}
+    ${officialPost(ctx, f.pm, { badge: 'DT', title: 'pm', win })}
+    ${socialPost(ctx, f.pmSocial, win)}
     ${sejmVotesPost(ctx, f.sejm)}
     <p class="src feed-note" data-testid="feed-note">Feed odświeża się co 3 godziny (stan na ${esc(fmtDay(f.fetchedAt?.slice(0, 10)))}). Pokazujemy tylko oficjalne strony i zweryfikowane konta: komunikaty z prezydent.pl i gov.pl oraz posty premiera z Bluesky, gdzie ostatnio pisał rzadko. Posty z X i Facebooka wymagają płatnego lub zamkniętego API. Konto Karola Nawrockiego na Bluesky ma oznaczenie podszywania się, więc go nie pokazujemy.</p>`;
 }
 
-export function renderHome(ctx) {
+export function renderHome(ctx, feedState = {}) {
   const counts = clubCounts(ctx.mps);
   const active = counts.reduce((s, c) => s + c.count, 0);
 
@@ -223,7 +275,7 @@ export function renderHome(ctx) {
 
   return `
   <section class="feed" data-view="home">
-    ${renderLiveFeed(ctx)}
+    ${renderLiveFeed(ctx, feedState)}
     <article class="post">
       <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja · dane z API Sejmu, ${esc(ctx.fetchedAt)}</small></div></header>
       <p class="post-text"><b>${active}</b> aktywnych mandatów w ${counts.length} klubach i kołach. Kliknij klub, żeby zobaczyć jego posłów.</p>

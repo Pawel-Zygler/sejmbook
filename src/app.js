@@ -3,7 +3,7 @@ import { termMps, indexPeople } from './lib/career.js';
 import { mergeEarlyTerms } from './lib/early-terms.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
-import { renderHome, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
+import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
 import { buildHierarchy } from './lib/government.js';
@@ -51,6 +51,8 @@ export function createApp(doc, win, data) {
     // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
     flyer: { period: 'all', dataset: null, sortBy: 'km' },
     attendance: { order: 'desc', club: '', view: 'mps' },
+    // Feed time window (Pawel, 2026-11-24: the feed shows the last hours first).
+    feed: { window: '24h' },
   };
 
   function renderDirectoryList() {
@@ -65,7 +67,7 @@ export function createApp(doc, win, data) {
   function render() {
     const r = state.route;
     let html;
-    if (r.name === 'home') html = renderHome(ctx);
+    if (r.name === 'home') html = renderHome(ctx, { window: state.feed.window, now: data.now ?? Date.now() });
     else if (r.name === 'directory') html = renderDirectoryList();
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'person') html = renderPerson(ctx, r.key);
@@ -138,6 +140,9 @@ export function createApp(doc, win, data) {
       state.directory.term = Number(el.dataset.term);
       state.directory.club = '';
       go('#poslowie');
+    } else if (action === 'feed-window') {
+      state.feed.window = el.dataset.window;
+      render();
     } else if (action === 'hop-scope') {
       state.parties.scope = el.dataset.scope;
       render();
@@ -185,6 +190,18 @@ export function createApp(doc, win, data) {
     if (img && img.matches && img.matches('img[data-photo]')) img.remove();
   }
 
+  // A voting's details are built only when it is opened.
+  function onToggle(e) {
+    const d = e.target;
+    if (!d?.matches?.('details.vote-item') || !d.open) return;
+    const box = d.querySelector('.vote-more');
+    if (box && !box.dataset.loaded) {
+      box.innerHTML = renderVotingDetails(ctx, ctx.feed?.sejm?.items?.[Number(d.dataset.voting)]);
+      box.dataset.loaded = '1';
+    }
+  }
+
+  doc.addEventListener('toggle', onToggle, true);
   doc.addEventListener('error', onPhotoError, true);
   doc.addEventListener('click', onClick);
   doc.addEventListener('input', onInput);
@@ -197,6 +214,7 @@ export function createApp(doc, win, data) {
     state,
     render,
     destroy() {
+      doc.removeEventListener('toggle', onToggle, true);
       doc.removeEventListener('error', onPhotoError, true);
       doc.removeEventListener('click', onClick);
       doc.removeEventListener('input', onInput);

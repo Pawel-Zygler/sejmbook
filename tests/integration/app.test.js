@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Prezydenci, premierzy i rządy III RP';
-const NEWEST_LINE = 'Państwo: Prezydenci, premierzy i rządy III RP';
+const NEWEST = 'Interaktywny Feed';
+const NEWEST_LINE = 'Feed: Interaktywny Feed';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -588,5 +588,37 @@ describe('Państwo: III RP hierarchy', () => {
     const found = $('[data-testid="official-matches"]');
     expect(found.textContent).toContain('Aleksander Kwaśniewski');
     expect(found.textContent).toContain('Prezydent RP');
+  });
+});
+
+describe('Feed: interactive', () => {
+  it('has no "coming soon" note in the side menu', () => {
+    expect($('.sidenav-note')).toBeNull();
+    expect($('.sidenav').textContent).not.toContain('Wkrótce');
+  });
+  it('is called Feed in both menus', () => {
+    expect($('.topnav a[data-nav="home"]').textContent).toBe('Feed');
+    expect($('.sidenav a[data-nav="home"]').textContent).toContain('Feed');
+  });
+  it('switches the time window', () => {
+    nav('#start');
+    expect($('[data-window="24h"]').getAttribute('aria-pressed')).toBe('true');
+    click($('[data-window="all"]'));
+    expect($('[data-window="all"]').getAttribute('aria-pressed')).toBe('true');
+    expect($('#view .feed-post[data-feed="president"] .feed-list')).not.toBeNull();
+  });
+  it('loads a voting\'s details when it is opened', () => {
+    nav('#start');
+    const d = $('details.vote-item');
+    expect($$('details.vote-item').length).toBe(5);
+    expect(d.querySelector('.vote-more').innerHTML).toBe('');
+    d.open = true;
+    d.dispatchEvent(new Event('toggle'));
+    expect(d.querySelector('.vote-clubs')).not.toBeNull();
+    expect(d.querySelector('.vote-links a').href).toContain('sejm.gov.pl');
+  });
+  it('links the President to his profile here', () => {
+    nav('#start');
+    expect($('#view .feed-post[data-feed="president"] .post-head a').getAttribute('href')).toBe('#urzad-karol-nawrocki');
   });
 });
