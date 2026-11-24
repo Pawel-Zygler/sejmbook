@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Interaktywny Feed';
-const NEWEST_LINE = 'Feed: Interaktywny Feed';
+const NEWEST = 'Posłowie w Państwie prosto do profilu';
+const NEWEST_LINE = 'Państwo: Posłowie w Państwie prosto do profilu';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -575,12 +575,24 @@ describe('Państwo: III RP hierarchy', () => {
     expect(roles).toContain('Prezes NIK');
     expect(roles).toContain('Minister sprawiedliwości');
   });
-  it('links a minister who was an MP to the MP profile, and the MP profile back', () => {
-    nav('#urzad-wladyslaw-kosiniak-kamysz');
-    const mp = $('[data-testid="official-mp"]');
-    expect(mp.getAttribute('href')).toMatch(/^#posel-\d+$/);
-    nav(mp.getAttribute('href'));
-    expect($('[data-testid="state-roles"] a').getAttribute('href')).toBe('#urzad-wladyslaw-kosiniak-kamysz');
+  it('opens MPs straight on their MP profile, with their state roles listed there', () => {
+    nav('#panstwo');
+    const czarzasty = $$('[data-office="marszalek-sejmu"].office-card a').find((x) => x.textContent === 'Włodzimierz Czarzasty');
+    expect(czarzasty.getAttribute('href')).toMatch(/^#posel-\d+$/);
+    const kk = $$('[data-testid="cabinet-now"] a').find((x) => x.textContent === 'Władysław Kosiniak-Kamysz');
+    expect(kk.getAttribute('href')).toMatch(/^#posel-\d+$/);
+    nav(kk.getAttribute('href'));
+    const roles = $('[data-testid="state-roles"]');
+    expect(roles.textContent).toContain('Minister obrony narodowej');
+    expect(roles.querySelector('a').getAttribute('href')).toMatch(/^#rzad-/);
+  });
+  it('keeps state profiles for people who never sat in the Sejm; former MPs open their former-MP profile', () => {
+    nav('#panstwo');
+    expect($('[data-office="prezydent"].office-card a').getAttribute('href')).toBe('#urzad-karol-nawrocki');
+    const walesa = $$('details[data-office="prezydent"] a').find((x) => x.textContent === 'Lech Wałęsa');
+    expect(walesa.getAttribute('href')).toBe('#urzad-lech-walesa');
+    const kwas = $$('details[data-office="prezydent"] a').find((x) => x.textContent === 'Aleksander Kwaśniewski');
+    expect(kwas.getAttribute('href')).toMatch(/^#osoba-\d+-\d+$/);
   });
   it('finds presidents and prime ministers from the top search', () => {
     type($('#top-search'), 'kwasniewski');

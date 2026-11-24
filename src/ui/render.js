@@ -145,23 +145,51 @@ const fmtDay = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
 /** Today's MP with this full name (for photos and profile links), or null. */
 const mpByName = (ctx, name) => ctx.mps.find((m) => m.name === name) ?? null;
 
-/** A link to a person's state profile (Państwo) when they held a top office or sat in a government. */
+const mpHrefCache = new WeakMap();
+/** Name → our MP profile: current MPs (#posel-) first, then former MPs (#osoba-) whose name is unique. */
+function mpHrefs(ctx) {
+  const key = ctx.mps;
+  if (mpHrefCache.has(key)) return mpHrefCache.get(key);
+  const map = new Map();
+  const seen = new Map();
+  for (const p of ctx.peopleByKey?.values() ?? []) seen.set(p.name, (seen.get(p.name) ?? 0) + 1);
+  for (const p of ctx.peopleByKey?.values() ?? []) if (seen.get(p.name) === 1) map.set(p.name, `#osoba-${personKey(p)}`);
+  for (const m of ctx.mps) map.set(m.name, `#posel-${m.id}`);
+  mpHrefCache.set(key, map);
+  return map;
+}
+
+/**
+ * Where a person's name links: straight to the MP profile when they are or were an MP (Pawel, 2026-11-24),
+ * otherwise to the state profile (#urzad-) for presidents, ministers and officials who never sat in the Sejm.
+ */
+export function personHref(ctx, name, slug = null) {
+  const mp = mpHrefs(ctx).get(name);
+  if (mp) return mp;
+  if (slug) return `#urzad-${slug}`;
+  const p = ctx.gov?.byName?.get(foldName(name));
+  return p ? `#urzad-${p.slug}` : null;
+}
+
+/** On an MP profile: the person's government and top-office roles, listed in place. */
 export function stateRolesLink(ctx, name) {
-  const fold = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
-  const p = ctx.gov?.byName?.get(fold(name));
+  const p = ctx.gov?.byName?.get(foldName(name));
   if (!p) return '';
-  return `<p class="state-roles" data-testid="state-roles"><a class="btn" href="#urzad-${esc(p.slug)}">Funkcje państwowe: ${p.roles.length}</a></p>`;
+  const day = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
+  const gov = (id) => ctx.gov.governments.find((g) => g.id === id);
+  return `<div class="state-roles" data-testid="state-roles"><h3>Funkcje państwowe</h3><ul>${p.roles.map((r) => {
+    const g = r.gov ? gov(r.gov) : null;
+    return `<li><strong>${esc(r.office)}</strong> <small class="muted">${r.to ? `${esc(day(r.from))} – ${esc(day(r.to))}` : `od ${esc(day(r.from))}`}${g ? ` · <a href="#rzad-${esc(g.id)}">${esc(g.name)}</a>` : ''}</small></li>`;
+  }).join('')}</ul></div>`;
 }
 
 /** Lower case, accents removed: for matching names. */
-const foldName = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
+function foldName(s) { return foldNameImpl(s); }
+const foldNameImpl = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
 
 /** Our own profile for a person in the feed: the MP profile for a sitting MP, else the state profile (Państwo). */
 export function feedProfileHref(ctx, name) {
-  const mp = mpByName(ctx, name);
-  if (mp) return `#posel-${mp.id}`;
-  const p = ctx.gov?.byName?.get(foldName(name));
-  return p ? `#urzad-${p.slug}` : null;
+  return personHref(ctx, name);
 }
 
 function stateNameLink(ctx, name) {

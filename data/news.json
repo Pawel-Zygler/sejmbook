@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-panstwo-profile",
+      "date": "2026-11-24",
+      "title": "Posłowie w Państwie prosto do profilu",
+      "section": "Państwo",
+      "body": "W sekcji Państwo kliknięcie posła otwiera od razu jego profil posła, a funkcje państwowe są wypisane na tym profilu.",
+      "link": {
+        "href": "#panstwo",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-feed-interaktywny",
       "date": "2026-11-24",
       "title": "Interaktywny Feed",

@@ -1,6 +1,6 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
-import { esc, plural } from './render.js';
+import { esc, plural, personHref } from './render.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
 import { personKey } from '../lib/career.js';
 
@@ -10,9 +10,9 @@ const years = (from, to) => `${String(from ?? '').slice(0, 4)}–${to ? String(t
 const wikiUrl = (title) => `https://pl.wikipedia.org/wiki/${encodeURIComponent(String(title).replace(/ /g, '_'))}`;
 const initials = (name) => String(name).split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
 
-/** A link to a person's state profile. */
-export function officialLink(p, inner = esc(p.name)) {
-  return `<a class="official-link" href="#urzad-${esc(p.slug)}">${inner}</a>`;
+/** A link to a person: their MP profile when they are or were an MP, else their state profile. */
+export function officialLink(ctx, p, inner = esc(p.name)) {
+  return `<a class="official-link" href="${esc(personHref(ctx, p.name, p.slug))}">${inner}</a>`;
 }
 
 function personOf(ctx, h) {
@@ -21,7 +21,7 @@ function personOf(ctx, h) {
 }
 function holderLink(ctx, h) {
   const p = personOf(ctx, h);
-  return p ? officialLink(p, esc(h.name)) : esc(h.name);
+  return p ? officialLink(ctx, p, esc(h.name)) : esc(h.name);
 }
 
 /** The Sejm side of a person, if they are or were an MP: a link to the current MP profile or to the former-MP profile. */
@@ -152,7 +152,7 @@ export function renderOfficialMatches(ctx, query) {
       <h2>Urzędy państwowe</h2>
       <ul>${found.map((p) => {
         const top = p.roles[0];
-        return `<li>${officialLink(p, `<span class="avatar avatar-sm person-badge" aria-hidden="true">${esc(initials(p.name))}</span><span><strong>${esc(p.name)}</strong><small class="muted">${esc(top.office)}, ${esc(years(top.from, top.to))}</small></span>`)}</li>`;
+        return `<li>${officialLink(ctx, p, `<span class="avatar avatar-sm person-badge" aria-hidden="true">${esc(initials(p.name))}</span><span><strong>${esc(p.name)}</strong><small class="muted">${esc(top.office)}, ${esc(years(top.from, top.to))}</small></span>`)}</li>`;
       }).join('')}</ul>
     </div>`;
 }
