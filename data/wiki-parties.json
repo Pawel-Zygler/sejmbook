@@ -1,0 +1,4741 @@
+{
+ "source": "https://pl.wikipedia.org (infoboks artykułu posła, pole „partia”)",
+ "fetchedAt": "2026-11-24",
+ "mps": {
+  "1": {
+   "title": "Andrzej Adamczyk",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "3": {
+   "title": "Adam Andruszkiewicz",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "4": {
+   "title": "Waldemar Andzel",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "8": {
+   "title": "Bartosz Arłukowicz",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "9": {
+   "title": "Marek Ast",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "10": {
+   "title": "Urszula Augustyn",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "11": {
+   "title": "Piotr Babinetz",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "14": {
+   "title": "Barbara Bartuś",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "15": {
+   "title": "Paweł Bejda",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "18": {
+   "title": "Marek Biernacki",
+   "parties": [
+    {
+     "label": "Ruch Społeczny (partia polityczna)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "19": {
+   "title": "Paweł Bliźniuk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "20": {
+   "title": "Mariusz Błaszczak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "21": {
+   "title": "Mateusz Bochenek",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "23": {
+   "title": "Izabela Bodnar",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "24": {
+   "title": "Jacek Bogucki",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "26": {
+   "title": "Krzysztof Bojarski",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "28": {
+   "title": "Kamil Bortniczuk",
+   "parties": [
+    {
+     "label": "Partia Republikańska (2021–2023)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "29": {
+   "title": "Piotr Borys",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "30": {
+   "title": "Bożena Borys-Szopa",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "31": {
+   "title": "Marcin Bosacki",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "33": {
+   "title": "Krzysztof Bosak",
+   "parties": [
+    {
+     "label": "Liga Polskich Rodzin",
+     "from": 2001,
+     "to": 2008
+    },
+    {
+     "label": "Ruch Narodowy",
+     "from": 2014,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": 2019,
+     "to": null
+    }
+   ]
+  },
+  "34": {
+   "title": "Grzegorz Braun",
+   "parties": [
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": 2019,
+     "to": 2025
+    },
+    {
+     "label": "Konfederacja Korony Polskiej",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "35": {
+   "title": "Krzysztof Brejza",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2005,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "36": {
+   "title": "Agnieszka Buczyńska",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "37": {
+   "title": "Waldemar Buda",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "38": {
+   "title": "Borys Budka",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "39": {
+   "title": "Elżbieta Burkiewicz",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": 2021,
+     "to": 2026
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": 2026,
+     "to": null
+    }
+   ]
+  },
+  "40": {
+   "title": "Lidia Burzyńska",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "43": {
+   "title": "Artur Chojecki (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "46": {
+   "title": "Tadeusz Chrzan",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "49": {
+   "title": "Janusz Cichoń",
+   "parties": [
+    {
+     "label": "Unia Wolności",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "52": {
+   "title": "Michał Cieślak (polityk)",
+   "parties": [
+    {
+     "label": "Polska Razem",
+     "from": 2014,
+     "to": 2017
+    },
+    {
+     "label": "Porozumienie",
+     "from": 2017,
+     "to": 2021
+    },
+    {
+     "label": "Partia Republikańska (2021–2023)",
+     "from": 2021,
+     "to": 2023
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2023,
+     "to": 2026
+    }
+   ]
+  },
+  "53": {
+   "title": "Żaneta Cwalina-Śliwowska",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "54": {
+   "title": "Krzysztof Czarnecki",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "56": {
+   "title": "Przemysław Czarnek",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "57": {
+   "title": "Arkadiusz Czartoryski",
+   "parties": [
+    {
+     "label": "Zjednoczenie Chrześcijańsko-Narodowe",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Przymierze Prawicy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "58": {
+   "title": "Włodzimierz Czarzasty",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "59": {
+   "title": "Jacek Czerniak",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "60": {
+   "title": "Zofia Czernow",
+   "parties": [
+    {
+     "label": "Unia Wolności",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "61": {
+   "title": "Anita Czerwińska",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "62": {
+   "title": "Katarzyna Czochara",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "63": {
+   "title": "Sławomir Ćwik",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "64": {
+   "title": "Władysław Dajczak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "66": {
+   "title": "Zbigniew Dolata",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "67": {
+   "title": "Barbara Dolniak",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "68": {
+   "title": "Andrzej Domański",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "69": {
+   "title": "Bartłomiej Dorywalski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "70": {
+   "title": "Robert Dowhan",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "71": {
+   "title": "Przemysław Drabek",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "76": {
+   "title": "Agnieszka Dziemianowicz-Bąk",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "78": {
+   "title": "Magdalena Filipek-Sobczak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "79": {
+   "title": "Radosław Fogiel",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "80": {
+   "title": "Bronisław Foltyn",
+   "parties": [
+    {
+     "label": "Nowa Nadzieja (polska partia polityczna)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "81": {
+   "title": "Roman Fritz",
+   "parties": [
+    {
+     "label": "Konfederacja Korony Polskiej",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "82": {
+   "title": "Joanna Frydrych",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "83": {
+   "title": "Konrad Frysztak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "84": {
+   "title": "Patryk Gabriel",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "85": {
+   "title": "Krzysztof Gadowski",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "86": {
+   "title": "Aleksandra Gajewska (ur. 1989)",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "87": {
+   "title": "Kinga Gajewska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2008,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "88": {
+   "title": "Elżbieta Gapińska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2002,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "89": {
+   "title": "Kamila Gasiuk-Pihowicz",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "90": {
+   "title": "Krzysztof Gawkowski",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "92": {
+   "title": "Andrzej Gawron (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "94": {
+   "title": "Elżbieta Gelert",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "95": {
+   "title": "Anna Gembicka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "98": {
+   "title": "Włodzisław Giziński",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "99": {
+   "title": "Szymon Giżyński",
+   "parties": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "100": {
+   "title": "Piotr Gliński",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "101": {
+   "title": "Tomasz Głogowski",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "102": {
+   "title": "Piotr Głowski",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "103": {
+   "title": "Marta Golbik",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2017
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2017,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "104": {
+   "title": "Małgorzata Golińska",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "105": {
+   "title": "Kazimierz Gołojuch",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "106": {
+   "title": "Adam Gomoła",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "108": {
+   "title": "Stanisław Gorczyca (polityk)",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "109": {
+   "title": "Mariusz Gosek",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "110": {
+   "title": "Daria Gosek-Popiołek",
+   "parties": [
+    {
+     "label": "Partia Razem",
+     "from": 2016,
+     "to": 2024
+    }
+   ]
+  },
+  "111": {
+   "title": "Małgorzata Gosiewska",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "112": {
+   "title": "Piotr Górnikiewicz",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "113": {
+   "title": "Agnieszka Górska",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "114": {
+   "title": "Krzysztof Grabczuk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "115": {
+   "title": "Jan Grabiec",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "116": {
+   "title": "Marcin Grabowski (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "117": {
+   "title": "Michał Gramatyka",
+   "parties": [
+    {
+     "label": "Unia Wolności",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "118": {
+   "title": "Małgorzata Gromadzka",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2010,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "119": {
+   "title": "Marek Gróbarczyk",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "120": {
+   "title": "Andrzej Grzyb (poseł)",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "121": {
+   "title": "Andrzej Gut-Mostowy",
+   "parties": [
+    {
+     "label": "Ruch Społeczny (partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Porozumienie",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "122": {
+   "title": "Kazimierz Gwiazdowski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "125": {
+   "title": "Krzysztof Habura",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "126": {
+   "title": "Agnieszka Hanajczyk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "128": {
+   "title": "Paulina Hennig-Kloska",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "129": {
+   "title": "Krzysztof Hetman",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "130": {
+   "title": "Czesław Hoc",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "131": {
+   "title": "Zbigniew Hoffmann",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "133": {
+   "title": "Szymon Hołownia",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "135": {
+   "title": "Łukasz Horbatowski",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "136": {
+   "title": "Paweł Hreniak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "138": {
+   "title": "Klaudia Jachira",
+   "parties": [
+    {
+     "label": "Zieloni (Polska)",
+     "from": 2023,
+     "to": null
+    }
+   ]
+  },
+  "141": {
+   "title": "Michał Jaros",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2005,
+     "to": 2016
+    },
+    {
+     "label": "Nowoczesna",
+     "from": 2017,
+     "to": 2018
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "142": {
+   "title": "Patryk Jaskulski",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "143": {
+   "title": "Danuta Jazłowiecka",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "144": {
+   "title": "Dariusz Joński",
+   "parties": [
+    {
+     "label": "Sojusz Lewicy Demokratycznej",
+     "from": 2000,
+     "to": 2017
+    },
+    {
+     "label": "Inicjatywa Polska",
+     "from": 2019,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "145": {
+   "title": "Marcin Józefaciuk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2023,
+     "to": 2025
+    }
+   ]
+  },
+  "147": {
+   "title": "Filip Kaczyński",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "149": {
+   "title": "Piotr Kaleta",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "150": {
+   "title": "Sebastian Kaleta",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2015,
+     "to": 2019
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": 2019,
+     "to": 2024
+    }
+   ]
+  },
+  "151": {
+   "title": "Mariusz Kałużny",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": 2012,
+     "to": 2024
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2024,
+     "to": null
+    }
+   ]
+  },
+  "152": {
+   "title": "Mariusz Kamiński",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "153": {
+   "title": "Piotr Kandyba",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "154": {
+   "title": "Jan Kanthak",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": 2019,
+     "to": 2024
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2024,
+     "to": null
+    }
+   ]
+  },
+  "156": {
+   "title": "Jacek Karnowski (polityk)",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "157": {
+   "title": "Iwona Karolewska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2024,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "158": {
+   "title": "Rafał Kasprzyk (polityk)",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "159": {
+   "title": "Henryk Kiepura",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "160": {
+   "title": "Marcin Kierwiński",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "161": {
+   "title": "Katarzyna Kierzek-Koperska",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2020
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2020,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "162": {
+   "title": "Dariusz Klimczak",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "165": {
+   "title": "Łukasz Kmita",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "166": {
+   "title": "Michał Kobosko",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": 2020,
+     "to": 2026
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": 2026,
+     "to": null
+    }
+   ]
+  },
+  "168": {
+   "title": "Ewa Kołodziej",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "172": {
+   "title": "Maciej Konieczny",
+   "parties": [
+    {
+     "label": "Zieloni (Polska)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Partia Razem",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "174": {
+   "title": "Władysław Kosiniak-Kamysz",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "175": {
+   "title": "Tomasz Kostuś",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "176": {
+   "title": "Andrzej Kosztowniak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "177": {
+   "title": "Katarzyna Kotula",
+   "parties": [
+    {
+     "label": "Wiosna (partia polityczna)",
+     "from": 2019,
+     "to": 2021
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": 2021,
+     "to": null
+    }
+   ]
+  },
+  "178": {
+   "title": "Paweł Kowal",
+   "parties": [
+    {
+     "label": "Polska Jest Najważniejsza",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "179": {
+   "title": "Henryk Kowalczyk",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "180": {
+   "title": "Janusz Kowalski (polityk)",
+   "parties": [
+    {
+     "label": "Stronnictwo Konserwatywno-Ludowe",
+     "from": 1998,
+     "to": 2001
+    },
+    {
+     "label": "Przymierze Prawicy",
+     "from": 2001,
+     "to": 2002
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2002,
+     "to": 2002
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2005,
+     "to": 2006
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": 2019,
+     "to": 2024
+    }
+   ]
+  },
+  "183": {
+   "title": "Stefan Krajewski (ur. 1981)",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "185": {
+   "title": "Leonard Krasulski",
+   "parties": [
+    {
+     "label": "Porozumienie Centrum",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "187": {
+   "title": "Michał Krawczyk (polityk)",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "188": {
+   "title": "Robert Kropiwnicki",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "189": {
+   "title": "Piotr Król",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "190": {
+   "title": "Wojciech Król (polityk)",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "191": {
+   "title": "Anna Krupka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "193": {
+   "title": "Mariusz Krystian",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "194": {
+   "title": "Marek Krząkała",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2002,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "195": {
+   "title": "Adam Krzemiński (polityk)",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "198": {
+   "title": "Anita Kucharska-Dziedzic",
+   "parties": [
+    {
+     "label": "Wiosna (partia polityczna)",
+     "from": 2019,
+     "to": 2021
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": 2021,
+     "to": null
+    }
+   ]
+  },
+  "199": {
+   "title": "Marek Kuchciński",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "201": {
+   "title": "Marcin Kulasek",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "202": {
+   "title": "Maria Kurowska (samorządowiec)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "203": {
+   "title": "Władysław Kurowski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "206": {
+   "title": "Piotr Lachowicz",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "207": {
+   "title": "Stanisław Lamczyk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "208": {
+   "title": "Maciej Lasek",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "209": {
+   "title": "Gabriela Lenartowicz",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "210": {
+   "title": "Ewa Leniart",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "211": {
+   "title": "Aleksandra Leo",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "212": {
+   "title": "Izabela Leszczyna",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "213": {
+   "title": "Joanna Lichocka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "215": {
+   "title": "Łukasz Litewka",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "216": {
+   "title": "Grzegorz Lorek",
+   "parties": [
+    {
+     "label": "Liga Polskich Rodzin",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "217": {
+   "title": "Radosław Lubczyk",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2019
+    },
+    {
+     "label": "Centrum dla Polski",
+     "from": 2022,
+     "to": null
+    }
+   ]
+  },
+  "219": {
+   "title": "Adam Luboński",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "221": {
+   "title": "Alicja Łepkowska-Gołaś",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "222": {
+   "title": "Dorota Łoboda",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "223": {
+   "title": "Krystian Łuczak (ur. 1975)",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "224": {
+   "title": "Sebastian Łukaszewicz",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "226": {
+   "title": "Antoni Macierewicz",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "228": {
+   "title": "Ewa Malik",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "229": {
+   "title": "Mirosław Maliszewski",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "230": {
+   "title": "Maciej Małecki (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "231": {
+   "title": "Arkadiusz Marchewka",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "232": {
+   "title": "Jagna Marczułajtis-Walczak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "233": {
+   "title": "Dorota Marek",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "234": {
+   "title": "Dariusz Matecki",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "235": {
+   "title": "Jerzy Materna",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "236": {
+   "title": "Grzegorz Matusiak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "237": {
+   "title": "Katarzyna Matusik-Lipiec",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "238": {
+   "title": "Marek Matuszewski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "242": {
+   "title": "Anna Milczanowska",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "243": {
+   "title": "Daniel Milewski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "244": {
+   "title": "Rajmund Miller",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "245": {
+   "title": "Aleksander Miszalski",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "246": {
+   "title": "Mateusz Morawiecki",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "247": {
+   "title": "Jan Mosiński",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "248": {
+   "title": "Michał Moskal",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "249": {
+   "title": "Czesław Mroczek (polityk)",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "252": {
+   "title": "Joanna Mucha",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "253": {
+   "title": "Arkadiusz Mularczyk",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "254": {
+   "title": "Krzysztof Mulawa",
+   "parties": [
+    {
+     "label": "Ruch Narodowy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "256": {
+   "title": "Arkadiusz Myrcha",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "258": {
+   "title": "Dorota Niedziela",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "261": {
+   "title": "Jolanta Niezgodzka",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "262": {
+   "title": "Sławomir Nitras",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "263": {
+   "title": "Barbara Nowacka",
+   "parties": [
+    {
+     "label": "Inicjatywa Polska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "266": {
+   "title": "Wanda Nowicka",
+   "parties": [
+    {
+     "label": "Ruch Palikota",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "267": {
+   "title": "Urszula Nowogórska",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "268": {
+   "title": "Mirosława Nykiel",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "269": {
+   "title": "Marcin Ociepa",
+   "parties": [
+    {
+     "label": "Polska Jest Najważniejsza",
+     "from": 2011,
+     "to": 2014
+    },
+    {
+     "label": "Polska Razem",
+     "from": 2014,
+     "to": 2017
+    },
+    {
+     "label": "Porozumienie",
+     "from": 2017,
+     "to": 2021
+    }
+   ]
+  },
+  "270": {
+   "title": "Marzena Okła-Drewnowicz",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "272": {
+   "title": "Barbara Oliwiecka",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Centrum (Polska)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "273": {
+   "title": "Dorota Olko",
+   "parties": [
+    {
+     "label": "Partia Razem",
+     "from": 2015,
+     "to": 2024
+    }
+   ]
+  },
+  "274": {
+   "title": "Paweł Olszewski (polityk)",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2002,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "276": {
+   "title": "Łukasz Osmalak",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "277": {
+   "title": "Katarzyna Osos",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "278": {
+   "title": "Jacek Osuch",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "279": {
+   "title": "Jacek Ozdoba",
+   "parties": [
+    {
+     "label": "Polska Razem",
+     "from": 2014,
+     "to": 2017
+    },
+    {
+     "label": "Porozumienie",
+     "from": 2017,
+     "to": 2019
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": 2019,
+     "to": 2024
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2024,
+     "to": null
+    }
+   ]
+  },
+  "280": {
+   "title": "Teresa Pamuła",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "282": {
+   "title": "Urszula Pasławska",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "283": {
+   "title": "Krzysztof Paszyk",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "284": {
+   "title": "Karolina Pawliczak",
+   "parties": [
+    {
+     "label": "Sojusz Lewicy Demokratycznej",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Socjaldemokracja Polska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "285": {
+   "title": "Bartłomiej Pejo",
+   "parties": [
+    {
+     "label": "Nowa Nadzieja (polska partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "286": {
+   "title": "Ryszard Petru",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "287": {
+   "title": "Małgorzata Pępek",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "288": {
+   "title": "Bolesław Piecha",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "289": {
+   "title": "Grzegorz Piechowiak",
+   "parties": [
+    {
+     "label": "Ruch Społeczny (partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Partia Centrum (Polska)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska Jest Najważniejsza",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska Razem",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Porozumienie",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "290": {
+   "title": "Anna Pieczarka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "294": {
+   "title": "Dariusz Piontkowski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "295": {
+   "title": "Kazimierz Plocke",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "298": {
+   "title": "Szymon Pogoda",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "299": {
+   "title": "Jerzy Polaczek",
+   "parties": [
+    {
+     "label": "Polska Plus",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "301": {
+   "title": "Piotr Polak (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "302": {
+   "title": "Agnieszka Pomaska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2002,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "303": {
+   "title": "Marcin Porzucek",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "304": {
+   "title": "Jacek Protas",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "306": {
+   "title": "Grzegorz Puda",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "307": {
+   "title": "Michał Pyrzyk",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "309": {
+   "title": "Ireneusz Raś",
+   "parties": [
+    {
+     "label": "Porozumienie Centrum",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Centrum dla Polski",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "310": {
+   "title": "Zbigniew Rau (prawnik)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "311": {
+   "title": "Marcin Romanowski",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "312": {
+   "title": "Bartosz Romowicz",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "313": {
+   "title": "Monika Rosa",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "314": {
+   "title": "Wiesław Różyński",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "315": {
+   "title": "Urszula Rusecka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "316": {
+   "title": "Grzegorz Rusiecki",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "317": {
+   "title": "Jakub Rutnicki",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "319": {
+   "title": "Marek Rząsa",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "320": {
+   "title": "Jarosław Rzepa",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "323": {
+   "title": "Wojciech Saługa",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "324": {
+   "title": "Tadeusz Samborski",
+   "parties": [
+    {
+     "label": "Zjednoczone Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polskie Stronnictwo Ludowe „Odrodzenie”",
+     "from": 1964,
+     "to": 1990
+    },
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": 1990,
+     "to": null
+    }
+   ]
+  },
+  "325": {
+   "title": "Jacek Sasin",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "326": {
+   "title": "Marek Sawicki",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "327": {
+   "title": "Ewa Schädler",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "328": {
+   "title": "Joanna Scheuring-Wielgus",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2018
+    },
+    {
+     "label": "Teraz!",
+     "from": 2018,
+     "to": 2019
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": 2021,
+     "to": null
+    }
+   ]
+  },
+  "329": {
+   "title": "Anna Schmidt",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "330": {
+   "title": "Łukasz Schreiber",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "331": {
+   "title": "Jarosław Sellin",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "333": {
+   "title": "Edward Siarka",
+   "parties": [
+    {
+     "label": "Partia Chrześcijańskich Demokratów",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Stronnictwo Konserwatywno-Ludowe",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "334": {
+   "title": "Krystyna Sibińska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "335": {
+   "title": "Czesław Siekierski",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "337": {
+   "title": "Tomasz Siemoniak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "338": {
+   "title": "Bartłomiej Sienkiewicz",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "339": {
+   "title": "Arkadiusz Sikora",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "342": {
+   "title": "Krystyna Skowrońska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "344": {
+   "title": "Waldemar Sługocki",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "345": {
+   "title": "Weronika Smarduch",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "346": {
+   "title": "Kazimierz Smoliński",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "347": {
+   "title": "Anna Sobolak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "348": {
+   "title": "Krzysztof Sobolewski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "349": {
+   "title": "Artur Soboń",
+   "parties": [
+    {
+     "label": "Zjednoczenie Chrześcijańsko-Narodowe",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Przymierze Prawicy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "351": {
+   "title": "Zbigniew Sosnowski (polityk)",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "352": {
+   "title": "Marek Sowa",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "356": {
+   "title": "Dariusz Stefaniuk",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "360": {
+   "title": "Marek Suski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "361": {
+   "title": "Paweł Suski",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "362": {
+   "title": "Artur Szałabawka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "363": {
+   "title": "Wojciech Szarama",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "364": {
+   "title": "Wiesław Szczepański",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "365": {
+   "title": "Michał Szczerba",
+   "parties": [
+    {
+     "label": "Stronnictwo Konserwatywno-Ludowe",
+     "from": 1999,
+     "to": 2001
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2002,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "366": {
+   "title": "Krzysztof Szczucki",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "367": {
+   "title": "Józefa Szczurek-Żelazko",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "369": {
+   "title": "Andrzej Szejna",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "370": {
+   "title": "Andrzej Szewiński",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "371": {
+   "title": "Adam Szłapka",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "372": {
+   "title": "Henryk Szopiński",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "373": {
+   "title": "Paweł Szrot",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "374": {
+   "title": "Krystyna Szumilas",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "375": {
+   "title": "Stanisław Szwed (ur. 1955)",
+   "parties": [
+    {
+     "label": "Ruch Społeczny (partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "377": {
+   "title": "Tomasz Szymański",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "381": {
+   "title": "Andrzej Śliwka",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "382": {
+   "title": "Paweł Śliz",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "383": {
+   "title": "Krzysztof Śmiszek",
+   "parties": [
+    {
+     "label": "Wiosna (partia polityczna)",
+     "from": 2019,
+     "to": 2021
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": 2021,
+     "to": null
+    }
+   ]
+  },
+  "384": {
+   "title": "Jacek Świat",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "386": {
+   "title": "Krzysztof Tchórzewski (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "387": {
+   "title": "Robert Telus",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "388": {
+   "title": "Ryszard Terlecki",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "389": {
+   "title": "Tadeusz Tomaszewski (poseł)",
+   "parties": [
+    {
+     "label": "Polska Zjednoczona Partia Robotnicza",
+     "from": 1978,
+     "to": 1990
+    },
+    {
+     "label": "Socjaldemokracja Rzeczypospolitej Polskiej",
+     "from": 1990,
+     "to": 1999
+    },
+    {
+     "label": "Sojusz Lewicy Demokratycznej",
+     "from": 1999,
+     "to": 2021
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": 2021,
+     "to": null
+    }
+   ]
+  },
+  "390": {
+   "title": "Jacek Tomczak (polityk)",
+   "parties": [
+    {
+     "label": "Zjednoczenie Chrześcijańsko-Narodowe",
+     "from": 1991,
+     "to": 2001
+    },
+    {
+     "label": "Przymierze Prawicy",
+     "from": 2001,
+     "to": 2002
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2002,
+     "to": 2010
+    },
+    {
+     "label": "Polska Plus",
+     "from": 2010,
+     "to": 2010
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2013,
+     "to": 2018
+    },
+    {
+     "label": "Centrum dla Polski",
+     "from": 2022,
+     "to": null
+    }
+   ]
+  },
+  "391": {
+   "title": "Wioleta Tomczak",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "392": {
+   "title": "Cezary Tomczyk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "393": {
+   "title": "Stanisław Tomczyszyn",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "395": {
+   "title": "Tomasz Trela",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "396": {
+   "title": "Krzysztof Truskolaski",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": 2015,
+     "to": 2018
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2019,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "397": {
+   "title": "Krzysztof Tuduj",
+   "parties": [
+    {
+     "label": "Ruch Narodowy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "399": {
+   "title": "Witold Tumanowicz",
+   "parties": [
+    {
+     "label": "Ruch Narodowy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "400": {
+   "title": "Donald Tusk",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "401": {
+   "title": "Stanisław Tyszka",
+   "parties": [
+    {
+     "label": "Polska Razem",
+     "from": 2013,
+     "to": 2014
+    },
+    {
+     "label": "Nowa Nadzieja (polska partia polityczna)",
+     "from": 2022,
+     "to": null
+    }
+   ]
+  },
+  "402": {
+   "title": "Katarzyna Ueberhan",
+   "parties": [
+    {
+     "label": "Twój Ruch",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Wiosna (partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "403": {
+   "title": "Jarosław Urbaniak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "404": {
+   "title": "Piotr Uruski",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": 2012,
+     "to": 2024
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2024,
+     "to": null
+    }
+   ]
+  },
+  "406": {
+   "title": "Jarosław Wałęsa",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2005,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "407": {
+   "title": "Marcin Warchoł",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "408": {
+   "title": "Robert Wardzała",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "409": {
+   "title": "Robert Warwas",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "410": {
+   "title": "Jan Warzecha",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "412": {
+   "title": "Michał Wawer",
+   "parties": [
+    {
+     "label": "Ruch Narodowy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "413": {
+   "title": "Maciej Wąsik",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "414": {
+   "title": "Marta Wcisło",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "415": {
+   "title": "Rafał Weber",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "416": {
+   "title": "Marek Wesoły (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2014,
+     "to": null
+    }
+   ]
+  },
+  "417": {
+   "title": "Joanna Wicha",
+   "parties": [
+    {
+     "label": "Partia Razem",
+     "from": 2015,
+     "to": 2024
+    },
+    {
+     "label": "Nowa Lewica",
+     "from": 2026,
+     "to": null
+    }
+   ]
+  },
+  "418": {
+   "title": "Patryk Wicher",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "419": {
+   "title": "Dariusz Wieczorek (polityk)",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "421": {
+   "title": "Monika Wielichowska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2002,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "422": {
+   "title": "Ryszard Wilk",
+   "parties": [
+    {
+     "label": "Nowa Nadzieja (polska partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "423": {
+   "title": "Teresa Wilk (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "424": {
+   "title": "Przemysław Wipler",
+   "parties": [
+    {
+     "label": "Unia Polityki Realnej",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Polska Razem",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Kongres Nowej Prawicy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Nowa Nadzieja (polska partia polityczna)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "426": {
+   "title": "Adrian Witczak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "427": {
+   "title": "Mariusz Witczak",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "428": {
+   "title": "Elżbieta Witek",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "429": {
+   "title": "Przemysław Witek (polityk)",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "430": {
+   "title": "Kamil Wnuk",
+   "parties": [
+    {
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "431": {
+   "title": "Anna Wojciechowska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "432": {
+   "title": "Agnieszka Wojciechowska van Heukelom",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "433": {
+   "title": "Agata Wojtyszek",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "435": {
+   "title": "Michał Woś",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "436": {
+   "title": "Grzegorz Woźniak (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "437": {
+   "title": "Tadeusz Woźniak (polityk)",
+   "parties": [
+    {
+     "label": "Ruch Społeczny (partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "438": {
+   "title": "Michał Wójcik (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "439": {
+   "title": "Maciej Wróbel",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2022,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "440": {
+   "title": "Bartłomiej Wróblewski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "441": {
+   "title": "Paweł Zalewski (polityk)",
+   "parties": [
+    {
+     "label": "Forum Prawicy Demokratycznej",
+     "from": 1990,
+     "to": 1991
+    },
+    {
+     "label": "Unia Demokratyczna",
+     "from": 1991,
+     "to": 1992
+    },
+    {
+     "label": "Partia Konserwatywna (Polska)",
+     "from": 1992,
+     "to": 1993
+    },
+    {
+     "label": "Koalicja Konserwatywna",
+     "from": 1994,
+     "to": 1999
+    },
+    {
+     "label": "Stronnictwo Konserwatywno-Ludowe",
+     "from": 1999,
+     "to": 2001
+    },
+    {
+     "label": "Przymierze Prawicy",
+     "from": 2001,
+     "to": 2002
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2002,
+     "to": 2007
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2009,
+     "to": 2021
+    },
+    {
+     "label": "Polska 2050",
+     "from": 2021,
+     "to": 2026
+    }
+   ]
+  },
+  "444": {
+   "title": "Bartosz Zawieja",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "446": {
+   "title": "Sławomir Zawiślak",
+   "parties": [
+    {
+     "label": "Zjednoczenie Chrześcijańsko-Narodowe",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Korony Polskiej",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "448": {
+   "title": "Witold Zembaczyński",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "450": {
+   "title": "Zbigniew Ziejewski",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "452": {
+   "title": "Jarosław Zieliński (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "453": {
+   "title": "Tomasz Zieliński (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "456": {
+   "title": "Zbigniew Ziobro",
+   "parties": [
+    {
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "458": {
+   "title": "Ireneusz Zyska",
+   "parties": [
+    {
+     "label": "Ruch Odbudowy Polski",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Demokracja (Obywatele i Sprawiedliwość)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "459": {
+   "title": "Bożena Żelazowska",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "462": {
+   "title": "Magdalena Łośko",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "463": {
+   "title": "Monika Pawłowska",
+   "parties": [
+    {
+     "label": "Sojusz Lewicy Demokratycznej",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Wiosna (partia polityczna)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Porozumienie",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "464": {
+   "title": "Alicja Łuczak",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "465": {
+   "title": "Dominik Jaśkowiec",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "466": {
+   "title": "Paweł Masełko",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "467": {
+   "title": "Katarzyna Stachowicz",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "468": {
+   "title": "Lidia Czechak",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "469": {
+   "title": "Barbara Grygorcewicz",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "471": {
+   "title": "Urszula Koszutska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "473": {
+   "title": "Michał Kowalski (polityk)",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "475": {
+   "title": "Katarzyna Królak",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "478": {
+   "title": "Jerzy Meysztowicz",
+   "parties": [
+    {
+     "label": "Unia Demokratyczna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Wolności",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Partia Demokratyczna – demokraci.pl",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "479": {
+   "title": "Krzysztof Mieszkowski",
+   "parties": [
+    {
+     "label": "Nowoczesna",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "480": {
+   "title": "Anna Paluch",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "481": {
+   "title": "Krzysztof Piątkowski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2001,
+     "to": 2011
+    },
+    {
+     "label": "Platforma Obywatelska",
+     "from": 2013,
+     "to": 2025
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": 2025,
+     "to": null
+    }
+   ]
+  },
+  "482": {
+   "title": "Mariusz Popielarz",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "483": {
+   "title": "Magdalena Roguska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "484": {
+   "title": "Marta Stożek",
+   "parties": [
+    {
+     "label": "Partia Razem",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "485": {
+   "title": "Krzysztof Szymański (ur. 1990)",
+   "parties": [
+    {
+     "label": "Ruch Narodowy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Konfederacja Wolność i Niepodległość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "486": {
+   "title": "Włodzimierz Tomaszewski",
+   "parties": [
+    {
+     "label": "Zjednoczenie Chrześcijańsko-Narodowe",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Porozumienie",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Partia Republikańska (2021–2023)",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "487": {
+   "title": "Maciej Tomczykiewicz",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "488": {
+   "title": "Jarosław Krajewski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "489": {
+   "title": "Bożena Lisowska",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "490": {
+   "title": "Michał Połuboczek",
+   "parties": [
+    {
+     "label": "Fundacja Republikańska#Partia Republikańska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Nowa Nadzieja (polska partia polityczna)",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "491": {
+   "title": "Aleksandra Kot",
+   "parties": [
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "492": {
+   "title": "Rafał Romanowski",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "493": {
+   "title": "Henryk Smolarz",
+   "parties": [
+    {
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "494": {
+   "title": "Robert Jagła",
+   "parties": [
+    {
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "495": {
+   "title": "Michał Jach",
+   "parties": [
+    {
+     "label": "Ruch Odbudowy Polski",
+     "from": 1996,
+     "to": 1998
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2001,
+     "to": null
+    }
+   ]
+  },
+  "496": {
+   "title": "Bogumiła Olbryś",
+   "parties": [
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "497": {
+   "title": "Tomasz Rzymkowski",
+   "parties": [
+    {
+     "label": "Ruch Narodowy",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Unia Polityki Realnej",
+     "from": null,
+     "to": null
+    },
+    {
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "499": {
+   "title": "Bożena Borowiec",
+   "parties": [
+    {
+     "label": "Nowa Lewica",
+     "from": null,
+     "to": null
+    }
+   ]
+  }
+ }
+}
