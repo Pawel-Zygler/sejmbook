@@ -35,3 +35,11 @@ describe('parties route', () => {
     expect(hrefFor({ name: 'parties' })).toBe('#partie');
   });
 });
+
+describe('person route (former MPs)', () => {
+  it('parses and builds #osoba-<term>-<id>', () => {
+    expect(parseHash('#osoba-3-112')).toEqual({ name: 'person', key: '3-112' });
+    expect(hrefFor({ name: 'person', key: '3-112' })).toBe('#osoba-3-112');
+    expect(parseHash('#osoba-x')).toEqual({ name: 'notFound', hash: 'osoba-x' });
+  });
+});

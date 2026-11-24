@@ -1,8 +1,8 @@
 import { indexById, clubById, filterMps, filterTermMps } from './lib/mps.js';
-import { termMps } from './lib/career.js';
+import { termMps, indexPeople } from './lib/career.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
-import { renderHome, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
+import { renderHome, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
 export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, contactsData }) {
@@ -18,6 +18,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     career: careerData ?? null,
     // Every MP of every term the Sejm API covers (III–X), grouped into people.
     terms: termsData ?? null,
+    peopleByKey: indexPeople(termsData),
     // Official contacts: e-mail (API Sejmu), Facebook (Wikidata).
     contacts: contactsData ?? null,
     life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
@@ -26,7 +27,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -54,6 +55,7 @@ export function createApp(doc, win, data) {
     if (r.name === 'home') html = renderHome(ctx);
     else if (r.name === 'directory') html = renderDirectoryList();
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
+    else if (r.name === 'person') html = renderPerson(ctx, r.key);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
     else if (r.name === 'parties') html = renderParties(ctx, state.parties);
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
@@ -66,7 +68,7 @@ export function createApp(doc, win, data) {
       if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     }
     const h1 = view.querySelector('h1');
-    doc.title = r.name === 'profile' && h1 ? `${h1.textContent} · Sejmbook` : 'Sejmbook';
+    doc.title = (r.name === 'profile' || r.name === 'person') && h1 ? `${h1.textContent} · Sejmbook` : 'Sejmbook';
   }
 
   function go(hash) {

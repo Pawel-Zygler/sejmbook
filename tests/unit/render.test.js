@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -400,7 +400,7 @@ describe('all terms (data/terms.json)', () => {
   it('finds the record "skoczek" among all MPs, also those no longer in the Sejm', () => {
     const html = renderParties({ ...ctx, terms }, { scope: 'all' });
     expect(html).toContain('Rekordzista skoczek');
-    expect(html).toContain('<span class="hop-name">Jan Skoczek</span>');
+    expect(html).toContain('<a class="hop-name" href="#osoba-3-1">Jan Skoczek</a>');
     expect(html).toContain('<b>3</b> partie, 3 przeskoki w 4 kadencjach Sejmu');
     expect(html).toContain('href="#posel-1"');
     expect(html).toContain('nie ma list z I i II kadencji');
@@ -440,5 +440,26 @@ describe('renderContact', () => {
     const html = renderContact({ ...ctx, contacts: null }, mp);
     expect((html.match(/brak danych/g) ?? []).length).toBe(2);
     expect(html).toContain('brak w otwartych danych Sejmu');
+  });
+});
+
+describe('renderPerson', () => {
+  const terms = { terms: [{ num: 3, from: '1997-10-20', to: '2001-10-18' }, { num: 4, from: '2001-10-19', to: '2005-10-18' }], clubs: {},
+    people: [{ name: 'Jan Były', lastName: 'Były', birthDate: '1950-02-03', current: null, terms: [{ t: 3, id: 5, club: 'UW', d: 2, dn: 'Wałbrzych' }, { t: 4, id: 9, club: 'PO', d: 2, dn: 'Wałbrzych' }] },
+      { name: 'Anna Dziś', lastName: 'Dziś', current: 1, terms: [{ t: 3, id: 6, club: 'SLD' }, { t: 10, id: 1, club: 'KO' }] }] };
+  const peopleByKey = new Map(terms.people.map((p) => [`${p.terms[0].t}-${p.terms[0].id}`, p]));
+  it('shows terms, clubs, districts and the party route of a former MP', () => {
+    const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
+    expect(html).toContain('<h1>Jan Były</h1>');
+    expect(html).toContain('2 kadencje: III–IV');
+    expect(html).toContain('Klub Parlamentarny Unii Wolności');
+    expect(html).toContain('2 · Wałbrzych');
+    expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
+    expect(html).toContain('03.02.1950');
+    expect(html).toContain('data-testid="person-route"');
+  });
+  it('sends today\'s MPs to their full profile and unknown keys to "not found"', () => {
+    expect(renderPerson({ ...ctx, terms, peopleByKey }, '3-6')).toContain('data-view="profile"');
+    expect(renderPerson({ ...ctx, terms, peopleByKey }, '9-999')).toContain('Nie ma takiej strony');
   });
 });

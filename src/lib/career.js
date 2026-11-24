@@ -160,7 +160,7 @@ export function termMps(termsData, num) {
   for (const p of termsData?.people ?? []) {
     const t = p.terms.find((x) => x.t === num);
     if (!t) continue;
-    out.push({ key: `${num}-${t.id}`, id: t.id, name: p.name, lastName: p.lastName, club: t.club, clubName: clubNameIn(termsData, num, t.club), districtNum: t.d, districtName: t.dn, active: t.active, current: p.current, terms: p.terms.map((x) => x.t) });
+    out.push({ key: `${num}-${t.id}`, person: personKey(p), id: t.id, name: p.name, lastName: p.lastName, club: t.club, clubName: clubNameIn(termsData, num, t.club), districtNum: t.d, districtName: t.dn, active: t.active, current: p.current, terms: p.terms.map((x) => x.t) });
   }
   return out;
 }
@@ -176,4 +176,12 @@ export function partyHoppers(careerData, mps, { min = 2 } = {}) {
     if (pp && pp.count >= min) out.push({ mp, ...pp });
   }
   return out.sort((a, b) => b.count - a.count || b.terms - a.terms || a.mp.name.localeCompare(b.mp.name, 'pl'));
+}
+
+/** Stable key of a person in data/terms.json: their first term and that term's MP id, e.g. "3-112". */
+export const personKey = (p) => `${p.terms[0].t}-${p.terms[0].id}`;
+
+/** Map key → person for every person in data/terms.json. */
+export function indexPeople(termsData) {
+  return new Map((termsData?.people ?? []).map((p) => [personKey(p), p]));
 }

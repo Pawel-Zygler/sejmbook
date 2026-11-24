@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Zwinięte nowości');
+  await expect(post).toContainText('Profile byłych posłów');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -134,7 +134,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Zwinięte nowości');
+  await expect(page.locator('.news-post').first()).toContainText('Profile byłych posłów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -310,4 +310,13 @@ test('Frequent Flyer: on a wide screen rows stay low and the meta sits in one li
   const heights = await page.locator('[data-testid="ranking"] tbody tr').evaluateAll((rows) => rows.slice(0, 12).map((r) => r.getBoundingClientRect().height));
   expect(Math.max(...heights)).toBeLessThan(100);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1600);
+});
+
+test('Former MPs have their own profile', async ({ page }) => {
+  await page.goto(`${PAGE}#partie`);
+  await page.getByTestId('hop-leader').locator('.hop-leader-name a').click();
+  await expect(page.locator('[data-view="person"] h1')).toBeVisible();
+  await expect(page.getByTestId('person-terms').locator('tbody tr').first()).toBeVisible();
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

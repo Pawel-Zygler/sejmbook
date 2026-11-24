@@ -379,3 +379,7 @@ h2 { font-size: 1.1rem; }
 .rank-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 4px 0 0 40px; }
 .rank-meta .att-badge { margin-left: 0; }
 @media (min-width: 1300px) { .rank td.arts { min-width: 300px; } .rank td.rank-who { min-width: 340px; } }
+
+/* Former MPs' profiles */
+.person-terms { min-width: 480px; }
+[data-view="person"] > .panel + .panel, [data-view="person"] > .profile-top + .panel { margin-top: 16px; }

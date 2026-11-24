@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { clubFamily, termYears, careerSpectrum, termRanges, romanTerm, partyPath, partyHoppers, buildPath, allPartyHoppers, termMps, clubNameIn, singlePartyCount } from '../../src/lib/career.js';
+import { personKey, indexPeople, clubFamily, termYears, careerSpectrum, termRanges, romanTerm, partyPath, partyHoppers, buildPath, allPartyHoppers, termMps, clubNameIn, singlePartyCount } from '../../src/lib/career.js';
 
 const careerData = {
   terms: [
@@ -126,8 +126,17 @@ describe('all terms', () => {
     expect(singlePartyCount(d)).toBe(1);
   });
   it('lists the MPs of one term', () => {
-    expect(termMps(d, 10)).toEqual([{ key: '10-7', id: 7, name: 'A', lastName: 'A', club: 'X', clubName: 'Klub Poselski Razem', districtNum: 4, districtName: 'Gdańsk', active: undefined, current: 7, terms: [3, 10] }]);
+    expect(termMps(d, 10)).toEqual([{ key: '10-7', person: '3-9', id: 7, name: 'A', lastName: 'A', club: 'X', clubName: 'Klub Poselski Razem', districtNum: 4, districtName: 'Gdańsk', active: undefined, current: 7, terms: [3, 10] }]);
     expect(termMps(d, 3).length).toBe(3);
     expect(termMps(null, 3)).toEqual([]);
+  });
+});
+
+describe('people index', () => {
+  it('keys people by their first term and id', () => {
+    const p = { terms: [{ t: 4, id: 20 }, { t: 6, id: 3 }] };
+    expect(personKey(p)).toBe('4-20');
+    expect(indexPeople({ people: [p] }).get('4-20')).toBe(p);
+    expect(indexPeople(null).size).toBe(0);
   });
 });

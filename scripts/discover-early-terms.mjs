@@ -7,15 +7,17 @@ for (const term of ['I', 'II']) {
   const s = await get({ action: 'query', list: 'search', srsearch: `intitle:posłów Sejm Rzeczypospolitej Polskiej ${term} kadencji`, srlimit: '10' });
   console.log(`SEARCH ${term}:`, s.query?.search?.map((x) => x.title).join(' | '));
 }
-for (const t of ['Posłowie na Sejm Rzeczypospolitej Polskiej I kadencji', 'Posłowie na Sejm Rzeczypospolitej Polskiej II kadencji', 'Lista posłów na Sejm Rzeczypospolitej Polskiej I kadencji', 'Lista posłów na Sejm Rzeczypospolitej Polskiej II kadencji']) {
+for (const t of ['Posłowie na Sejm Rzeczypospolitej Polskiej I kadencji (1991–1993)', 'Posłowie na Sejm Rzeczypospolitej Polskiej II kadencji (1993–1997)']) {
   const r = await get({ action: 'query', prop: 'revisions', rvprop: 'content', rvslots: 'main', redirects: '1', titles: t });
   const p = r.query?.pages?.[0];
   const text = p?.revisions?.[0]?.slots?.main?.content ?? '';
   console.log(`PAGE ${t} -> ${p?.title} missing=${!!p?.missing} len=${text.length}`);
   if (text) {
-    console.log(text.slice(0, 2500));
+    console.log(text.slice(0, 4000));
     const i = text.indexOf('{|');
-    console.log('TABLE', text.slice(i, i + 2500));
+    console.log('TABLE', text.slice(i, i + 4000));
+    const j = text.indexOf('zmian'); console.log('CHANGES', text.slice(j - 200, j + 2500));
+    console.log('TAIL', text.slice(-2500));
     console.log('CLUBS', text.slice(text.indexOf('Klub'), text.indexOf('Klub') + 1500));
   }
 }

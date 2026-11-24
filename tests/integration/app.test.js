@@ -150,7 +150,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Zwinięte nowości');
+    expect(first.textContent).toContain('Profile byłych posłów');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -159,7 +159,7 @@ describe('news feed (Aktualności)', () => {
   });
   it('the news post button opens the ranking', () => {
     expect($$('.news-post').every((d) => d.tagName === 'DETAILS' && !d.open)).toBe(true);
-    expect($('.news-post .news-line').textContent).toContain('Aktualności: Zwinięte nowości');
+    expect($('.news-post .news-line').textContent).toContain('Najwięcej partii: Profile byłych posłów');
     const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
     expect(btn.getAttribute('href')).toBe('#frequent-flyer');
     nav(btn.getAttribute('href'));
@@ -452,5 +452,23 @@ describe('Profile: Kontakt', () => {
     const noFb = Object.keys(contactsData.mps).find((id) => !contactsData.mps[id].facebook.length && app.ctx.mpsById.get(Number(id)));
     nav(`#posel-${noFb}`);
     expect($('[data-testid="contact-fb"]').textContent).toBe('brak danych');
+  });
+});
+
+describe('Profiles of former MPs', () => {
+  it('opens from an earlier term in Posłowie and from the party ranking', () => {
+    nav('#poslowie');
+    click($('#aside [data-action="dir-term"][data-term="3"]'));
+    const link = $$('.term-card a.mp-card-link').find((a) => a.getAttribute('href').startsWith('#osoba-'));
+    const name = link.querySelector('.mp-card-name').textContent;
+    nav(link.getAttribute('href'));
+    expect($('[data-view="person"] h1').textContent).toBe(name);
+    expect($$('[data-testid="person-terms"] tbody tr').length).toBeGreaterThan(0);
+    expect(document.title).toBe(`${name} · Sejmbook`);
+    nav('#partie');
+    const leader = $('[data-testid="hop-leader"] .hop-leader-name a');
+    expect(leader.getAttribute('href')).toMatch(/^#osoba-\d+-\d+$/);
+    nav(leader.getAttribute('href'));
+    expect($$('[data-testid="person-route"] .party-route li').length).toBeGreaterThan(2);
   });
 });

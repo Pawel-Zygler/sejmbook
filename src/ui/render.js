@@ -1,5 +1,5 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCounts, ageInYear } from '../lib/mps.js';
-import { careerSpectrum, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps } from '../lib/career.js';
+import { careerSpectrum, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
@@ -123,6 +123,7 @@ export function sortNews(posts) {
   return posts.map((p, i) => [p, i]).sort((a, b) => b[0].date.localeCompare(a[0].date) || a[1] - b[1]).map(([p]) => p);
 }
 
+const personLink = (p, inner, cls = '') => `<a class="${cls}" href="${hrefFor({ name: 'person', key: personKey(p) })}">${inner}</a>`;
 const mpLink = (mp, inner, cls = '') => `<a class="${cls}" href="${hrefFor({ name: 'profile', id: mp.id })}">${inner}</a>`;
 
 /* ---------- Home feed ---------- */
@@ -224,7 +225,7 @@ function termCard(ctx, m) {
   const face = `${now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg')}<span class="mp-card-name">${esc(m.name)}</span>`;
   const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
   const meta = [termClubChip(m), m.districtNum ? `<span class="mp-card-district" title="okręg ${m.districtNum} · ${esc(m.districtName ?? '')}">okr. ${m.districtNum}</span>` : ''].filter(Boolean).join(sep);
-  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${now ? mpLink(now, face, 'mp-card-link') : `<span class="mp-card-link">${face}</span>`}
+  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${now ? mpLink(now, face, 'mp-card-link') : `<a class="mp-card-link" href="#osoba-${esc(m.person)}">${face}</a>`}
     <span class="mp-card-meta" data-testid="mp-card-meta">${meta}</span>
     <small class="muted term-card-terms">${now?.active ? 'dziś w Sejmie · ' : ''}kadencje ${termRanges(m.terms)}</small></li>`;
 }
@@ -274,8 +275,8 @@ export function renderParties(ctx, state = { scope: 'all' }) {
         <button type="button" class="filter ${state.scope === 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="current" aria-pressed="${state.scope === 'current'}">Obecni posłowie</button>
       </div>` : '';
   if (list.length === 0) return `<section data-view="parties"><div class="panel mps-dash" data-testid="parties">${head}${tabs}<p>Brak danych o kadencjach posłów.</p></div></section>`;
-  const face = (r, size) => (r.mp ? mpLink(r.mp, avatar(ctx, r.mp, size), 'hop-avatar') : `<span class="hop-avatar">${personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size)}</span>`);
-  const name = (r) => (r.mp ? mpLink(r.mp, esc(r.person.name)) : `<span class="hop-name">${esc(r.person.name)}</span>`);
+  const face = (r, size) => (r.mp ? mpLink(r.mp, avatar(ctx, r.mp, size), 'hop-avatar') : r.person.terms ? personLink(r.person, personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size), 'hop-avatar') : `<span class="hop-avatar">${personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size)}</span>`);
+  const name = (r) => (r.mp ? mpLink(r.mp, esc(r.person.name)) : r.person.terms ? personLink(r.person, esc(r.person.name), 'hop-name') : `<span class="hop-name">${esc(r.person.name)}</span>`);
   const top = list[0];
   const tied = list.filter((r) => r.count === top.count && r.jumps === top.jumps).length - 1;
   const rows = list.map((r, i) => `
@@ -420,6 +421,46 @@ export function renderCareerSpectrum(ctx, mp) {
       <ul class="spectrum-legend">${legend}</ul>
       <p class="src">Partie i opozycja w PRL: <a href="https://www.wikidata.org/wiki/${esc(ctx.life?.mps?.[mp.id]?.qid ?? '')}" target="_blank" rel="noopener">Wikidata</a> i infoboks Wikipedii (członkostwo bez dat w PZPR i ZSL zakreskowane, inne wpisy bez dat wymienione pod osią). Kluby: API Sejmu, ostatni klub w każdej kadencji, ważony długością kadencji. Nie obejmuje Senatu ani zmian klubu w trakcie kadencji.</p>
     </section>`;
+}
+
+/**
+ * Profile of an MP of earlier terms (data/terms.json): terms with club and district, the route through parties.
+ * Someone who sits in today's Sejm goes to their full profile instead.
+ */
+export function renderPerson(ctx, key) {
+  const p = ctx.peopleByKey?.get(key);
+  if (!p) return renderNotFound(`osoba-${key}`);
+  if (p.current && ctx.mpsById.get(p.current)) return renderProfile(ctx, p.current);
+  const rows = p.terms.map((t) => ({ term: t.t, club: t.club, clubName: clubNameIn(ctx.terms, t.t, t.club) }));
+  const route = buildPath(rows);
+  const color = route.path[route.path.length - 1]?.color ?? FALLBACK_CLUB.color;
+  const info = new Map((ctx.terms?.terms ?? []).map((t) => [t.num, t]));
+  const years = (n) => { const t = info.get(n); return t ? `${t.from.slice(0, 4)}–${t.to ? t.to.slice(0, 4) : 'dziś'}` : ''; };
+  const age = p.birthDate ? `${p.birthDate.split('-').reverse().join('.')}` : null;
+  return `
+  <section data-view="person" data-person="${esc(key)}">
+    <div class="profile-top panel">
+      <div class="cover" style="--club:${esc(color)}"></div>
+      <div class="profile-id">
+        ${personAvatar(p.name, color, 'xl')}
+        <div class="profile-name">
+          <h1>${esc(p.name)}</h1>
+          <p><span class="muted">Poseł na Sejm III RP · ${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>
+          <p class="badge-off">Nie zasiada w Sejmie obecnej kadencji</p>
+        </div>
+      </div>
+    </div>
+    ${route.path.length ? `<div class="panel" data-testid="person-route"><h2>Ścieżka partyjna</h2>${partyRoute(route.path)}<p class="muted">${route.count} ${partyWord(route.count)}${route.jumps ? `, ${route.jumps} ${plural(route.jumps, 'przeskok', 'przeskoki', 'przeskoków')}` : ''}</p></div>` : ''}
+    <div class="panel" data-testid="person-terms">
+      <h2>Kadencje w Sejmie</h2>
+      ${age ? `<p class="muted">Data urodzenia: ${esc(age)}</p>` : ''}
+      <div class="table-wrap"><table class="rank person-terms">
+        <thead><tr><th scope="col">Kadencja</th><th scope="col">Klub</th><th scope="col">Okręg</th><th scope="col"><span class="visually-hidden">Źródło</span></th></tr></thead>
+        <tbody>${p.terms.map((t) => `<tr data-term="${t.t}"><td><b>${romanTerm(t.t)}</b> <small class="muted">${years(t.t)}</small></td><td>${esc(clubNameIn(ctx.terms, t.t, t.club) ?? t.club ?? '—')}</td><td>${t.d ? `${t.d} · ${esc(t.dn ?? '')}` : '—'}</td><td><a href="https://api.sejm.gov.pl/sejm/term${t.t}/MP/${t.id}" target="_blank" rel="noopener">API Sejmu</a></td></tr>`).join('')}</tbody>
+      </table></div>
+      <p class="src">Dane: API Sejmu, kadencje III–X. Klub to ostatni klub w danej kadencji. API nie ma list z I i II kadencji (1991–1997).</p>
+    </div>
+  </section>`;
 }
 
 export function renderProfile(ctx, id) {
