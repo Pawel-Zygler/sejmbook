@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-podpis",
+      "date": "2026-11-24",
+      "title": "Podpis pod nazwą",
+      "section": "Sejmbook",
+      "body": "Pod logo jest teraz podpis „wydarzenia w Rzeczypospolitej”.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-feed",
       "date": "2026-11-24",
       "title": "Nowy feed: prezydent, premier i Sejm",

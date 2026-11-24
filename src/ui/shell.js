@@ -2,7 +2,7 @@
 export const SHELL_HTML = `
 <header class="topbar">
   <div class="topbar-in">
-    <a class="logo" href="#start" aria-label="Sejmbook, strona główna">sejmbook</a>
+    <a class="logo" href="#start" aria-label="Sejmbook, strona główna"><span class="logo-name">sejmbook</span><span class="logo-tag" data-testid="logo-tag">wydarzenia w Rzeczypospolitej</span></a>
     <label class="top-search" for="top-search"><span class="visually-hidden">Szukaj posła</span>
       <input id="top-search" type="search" placeholder="Szukaj w Sejmie, szukaj posła" data-action="top-search" autocomplete="off">
     </label>

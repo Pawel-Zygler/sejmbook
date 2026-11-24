@@ -17,7 +17,8 @@ test.beforeEach(async ({ page }) => {
 
 test('home feed shows the Frequent Flyer leader and seat bar', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.logo')).toHaveText('sejmbook');
+  await expect(page.locator('.logo .logo-name')).toHaveText('sejmbook');
+  await expect(page.locator('[data-testid="logo-tag"]')).toHaveText('wydarzenia w Rzeczypospolitej');
   await expect(page.locator('.mini-rank li').first()).toBeVisible();
   await expect(page.locator('.seat-bar .seg')).toHaveCount(12);
 });
@@ -103,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Nowy feed: prezydent, premier i Sejm');
+  await expect(post).toContainText('Podpis pod nazwą');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -136,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Nowy feed: prezydent, premier i Sejm');
+  await expect(page.locator('.news-post').first()).toContainText('Podpis pod nazwą');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 

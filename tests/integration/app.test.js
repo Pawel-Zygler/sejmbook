@@ -148,8 +148,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Nowy feed: prezydent, premier i Sejm';
-const NEWEST_LINE = 'Start: Nowy feed: prezydent, premier i Sejm';
+const NEWEST = 'Podpis pod nazwą';
+const NEWEST_LINE = 'Sejmbook: Podpis pod nazwą';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -537,5 +537,12 @@ describe('Home feed', () => {
     expect($('#view .feed-post').textContent).toContain('Karol Nawrocki');
     expect($$('#view .feed-post[data-feed="president"] .feed-list a').every((a) => a.href.startsWith('https://www.prezydent.pl/'))).toBe(true);
     expect($('[data-testid="feed-note"]').textContent).toContain('zweryfikowane');
+  });
+});
+
+describe('Logo', () => {
+  it('shows the tagline under the name', () => {
+    expect($('.logo .logo-name').textContent).toBe('sejmbook');
+    expect($('[data-testid="logo-tag"]').textContent).toBe('wydarzenia w Rzeczypospolitej');
   });
 });

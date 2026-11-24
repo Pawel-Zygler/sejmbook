@@ -47,7 +47,9 @@ h2 { font-size: 1.1rem; }
 /* Top bar */
 .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
 .topbar-in { display: flex; align-items: center; gap: 16px; padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1600px; margin: 0 auto; }
-.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--accent); text-decoration: none; letter-spacing: -0.03em; }
+.logo { display: inline-flex; flex-direction: column; line-height: 1; text-decoration: none; flex: none; }
+.logo-name { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--accent); letter-spacing: -0.03em; }
+.logo-tag { margin-top: 3px; font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; white-space: nowrap; }
 .top-search { flex: 1; max-width: 320px; min-width: 0; }
 .top-search input, .search-field input { width: 100%; border: 1px solid transparent; background: var(--surface-2); color: var(--ink); border-radius: 999px; padding: 9px 16px; font: inherit; }
 .topnav { display: flex; gap: 4px; margin-left: auto; }
@@ -191,7 +193,8 @@ h2 { font-size: 1.1rem; }
   .topnav::-webkit-scrollbar { display: none; }
   .topnav a { padding: 8px 7px; font-size: 0.82rem; }
   .nav-long { display: none; }
-  .logo { font-size: 1.3rem; }
+  .logo-name { font-size: 1.3rem; }
+  .logo-tag { font-size: 0.62rem; }
   .avatar-xl { width: 100px; height: 100px; font-size: 2rem; }
   .flyer-hero h1 { font-size: 1.9rem; }
 }
