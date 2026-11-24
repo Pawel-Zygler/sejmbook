@@ -278,17 +278,24 @@ describe('Spektrum partyjne', () => {
   });
 });
 
-describe('Posłowie dashboard', () => {
-  it('opens the Posłowie tab with the most-parties dashboard, ranked high to low', () => {
+describe('Ranking: Najwięcej partii', () => {
+  it('is its own page in the side menu, not in the top tabs, and Posłowie stays as before', () => {
     nav('#poslowie');
-    const dash = $('[data-testid="mps-dashboard"]');
-    expect(dash).not.toBeNull();
-    expect(dash.parentElement.firstElementChild).toBe(dash);
-    const counts = $$('[data-testid="mps-dashboard"] .hop-row .hop-count b').map((b) => Number(b.textContent));
+    expect($('[data-testid="parties"]')).toBeNull();
+    expect($('#view section').getAttribute('data-view')).toBe('directory');
+    expect($('.topnav a[href="#partie"]')).toBeNull();
+    expect($$('.topnav a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#frequent-flyer', '#frekwencja']);
+    click($('.sidenav a[href="#partie"]'));
+    nav('#partie');
+    expect($('.sidenav a[data-nav="parties"]').getAttribute('aria-current')).toBe('page');
+    const counts = $$('[data-testid="parties"] .hop-row .hop-count b').map((b) => Number(b.textContent));
     expect(counts.length).toBeGreaterThan(10);
     expect(counts).toEqual([...counts].sort((a, b) => b - a));
     expect(counts[counts.length - 1]).toBeGreaterThanOrEqual(2);
     const leaderHref = $('[data-testid="hop-leader"] .hop-leader-name a').getAttribute('href');
     expect($('[data-testid="hop-ranking"] .hop-row a').getAttribute('href')).toBe(leaderHref);
+  });
+  it('top search hints at searching the Sejm and MPs', () => {
+    expect($('#top-search').getAttribute('placeholder')).toBe('Szukaj w Sejmie, szukaj posła');
   });
 });

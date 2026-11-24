@@ -1,6 +1,6 @@
 import { indexById, clubById, filterMps } from './lib/mps.js';
 import { parseHash } from './lib/router.js';
-import { renderHome, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip } from './ui/render.js';
+import { renderHome, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
 export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData }) {
@@ -19,7 +19,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', flyer: 'flyer', attendance: 'attendance' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -46,6 +46,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'directory') html = renderDirectoryList();
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
+    else if (r.name === 'parties') html = renderParties(ctx);
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;

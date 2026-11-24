@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderMpsDashboard, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -297,23 +297,22 @@ describe('renderCareerSpectrum', () => {
   });
 });
 
-describe('renderMpsDashboard', () => {
-  it('shows the MP with most parties and a ranking', () => {
+describe('renderParties', () => {
+  it('shows the MP with most parties and the full ranking', () => {
     const ids = ctx.mps.filter((m) => m.active).slice(0, 3).map((m) => m.id);
     const career = { terms: [], career: {
       [ids[0]]: [{ term: 8, club: 'SLD' }, { term: 9, club: 'PSL' }, { term: 10, club: 'PiS' }],
       [ids[1]]: [{ term: 9, club: 'PO-KO' }, { term: 10, club: 'PSL-TD' }],
       [ids[2]]: [{ term: 10, club: 'KO' }],
     } };
-    const html = renderMpsDashboard({ ...ctx, career });
-    expect(html).toContain('Najwięcej partii w karierze posła');
+    const html = renderParties({ ...ctx, career });
+    expect(html).toContain('<h1>Najwięcej partii</h1>');
     expect(html).toContain(`href="#posel-${ids[0]}"`);
     expect(html).toContain('<b>3</b> partie w 3 kadencjach Sejmu');
     expect((html.match(/class="hop-row"/g) ?? []).length).toBe(2);
     expect(html).toContain('1 poseł był w Sejmie tylko w jednej partii');
-    expect(html).not.toContain('<details');
   });
-  it('is empty without career data', () => {
-    expect(renderMpsDashboard({ ...ctx, career: null })).toBe('');
+  it('says so when there is no career data', () => {
+    expect(renderParties({ ...ctx, career: null })).toContain('Brak danych');
   });
 });

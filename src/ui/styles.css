@@ -293,3 +293,5 @@ h2 { font-size: 1.1rem; }
 .hop-count small { display: block; color: var(--muted); font-size: 0.72rem; }
 .hop-more summary { cursor: pointer; padding: 8px 0; font-weight: 700; color: var(--accent, #c8102e); }
 .mps-dash .src { margin: 10px 0 0; }
+.mps-dash h1 { margin: 2px 0 6px; }
+.mps-dash .lede { margin: 0 0 12px; color: var(--muted); }

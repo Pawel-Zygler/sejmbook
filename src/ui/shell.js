@@ -4,7 +4,7 @@ export const SHELL_HTML = `
   <div class="topbar-in">
     <a class="logo" href="#start" aria-label="Sejmbook, strona główna">sejmbook</a>
     <label class="top-search" for="top-search"><span class="visually-hidden">Szukaj posła</span>
-      <input id="top-search" type="search" placeholder="Szukaj w Sejmbooku" data-action="top-search" autocomplete="off">
+      <input id="top-search" type="search" placeholder="Szukaj w Sejmie, szukaj posła" data-action="top-search" autocomplete="off">
     </label>
     <nav class="topnav" aria-label="Główne">
       <a href="#start" data-nav="home">Start</a>
@@ -21,6 +21,7 @@ export const SHELL_HTML = `
     <p class="sidenav-label">Rankingi</p>
     <a href="#frequent-flyer" data-nav="flyer"><span class="ico">✈</span>Frequent Flyer</a>
     <a href="#frekwencja" data-nav="attendance"><span class="ico">◔</span>Frekwencja</a>
+    <a href="#partie" data-nav="parties"><span class="ico">⇄</span>Najwięcej partii</a>
     <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie. Wkrótce: głosowania i wystąpienia.</p>
   </nav>
   <main id="view" tabindex="-1"></main>

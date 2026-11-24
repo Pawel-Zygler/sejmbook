@@ -4,9 +4,9 @@
       "id": "2026-11-24-partie",
       "date": "2026-11-24",
       "title": "Kto zmieniał partie najczęściej",
-      "body": "Zakładka Posłowie zaczyna się od rankingu posłów, którzy w karierze byli w największej liczbie partii.",
+      "body": "Nowy ranking w panelu Rankingi: posłowie, którzy w karierze byli w największej liczbie partii.",
       "link": {
-        "href": "#poslowie",
+        "href": "#partie",
         "label": "Zobacz ranking"
       }
     },

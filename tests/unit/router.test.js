@@ -28,3 +28,10 @@ describe('hrefFor', () => {
     expect(() => hrefFor({ name: 'notFound' })).toThrow();
   });
 });
+
+describe('parties route', () => {
+  it('maps #partie both ways', () => {
+    expect(parseHash('#partie')).toEqual({ name: 'parties' });
+    expect(hrefFor({ name: 'parties' })).toBe('#partie');
+  });
+});

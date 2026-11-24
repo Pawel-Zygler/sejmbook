@@ -186,19 +186,18 @@ test('Spektrum partyjne: bar under the profile card', async ({ page }) => {
   expect(await panel.locator('.spectrum-seg').count()).toBeGreaterThan(0);
 });
 
-test('Posłowie starts with the most-parties dashboard', async ({ page }) => {
+test('Ranking "Najwięcej partii" opens from the side menu', async ({ page, isMobile }) => {
   await page.goto(`${PAGE}#poslowie`);
-  const dash = page.getByTestId('mps-dashboard');
-  await expect(dash).toBeVisible();
-  await expect(dash).toContainText('Najwięcej partii w karierze posła');
-  const dashBox = await dash.boundingBox();
-  const grid = await page.locator('.mp-grid').boundingBox();
-  expect(dashBox.y).toBeLessThan(grid.y);
-  await expect(dash.getByTestId('hop-ranking').locator('.hop-row')).toHaveCount(10);
-  await dash.locator('.hop-more summary').click();
-  await expect(dash.locator('.hop-more .hop-row').first()).toBeVisible();
+  await expect(page.getByTestId('parties')).toHaveCount(0);
+  await expect(page.locator('.topnav a[href="#partie"]')).toHaveCount(0);
+  if (isMobile && !(await page.locator('.sidenav a[href="#partie"]').isVisible())) await page.goto(`${PAGE}#partie`);
+  else await page.locator('.sidenav a[href="#partie"]').click();
+  const panel = page.getByTestId('parties');
+  await expect(panel).toBeVisible();
+  await expect(panel.locator('h1')).toHaveText('Najwięcej partii');
+  expect(await panel.getByTestId('hop-ranking').locator('.hop-row').count()).toBeGreaterThan(10);
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
-  await dash.getByTestId('hop-leader').locator('.hop-leader-name a').click();
+  await panel.getByTestId('hop-leader').locator('.hop-leader-name a').click();
   await expect(page.getByTestId('spectrum')).toBeVisible();
 });

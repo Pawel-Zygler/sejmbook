@@ -5,6 +5,7 @@ export function parseHash(hash) {
   if (h === 'poslowie') return { name: 'directory' };
   if (h === 'frequent-flyer') return { name: 'flyer' };
   if (h === 'frekwencja') return { name: 'attendance' };
+  if (h === 'partie') return { name: 'parties' };
   const m = /^posel-(\d+)$/.exec(h);
   if (m) return { name: 'profile', id: Number(m[1]) };
   return { name: 'notFound', hash: h };
@@ -16,6 +17,7 @@ export function hrefFor(route) {
     case 'directory': return '#poslowie';
     case 'flyer': return '#frequent-flyer';
     case 'attendance': return '#frekwencja';
+    case 'parties': return '#partie';
     case 'profile': return `#posel-${route.id}`;
     default: throw new Error(`No href for route ${route.name}`);
   }

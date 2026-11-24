@@ -130,26 +130,27 @@ function partyRoute(steps) {
   return `<ol class="party-route">${steps.map((s) => `<li><span class="route-chip" style="--club:${esc(s.color)}">${esc(s.label)}</span> <small class="muted">${termRanges(s.terms)}</small></li>`).join('')}</ol>`;
 }
 
-/** Dashboard at the top of "Posłowie": who sat in the most parties during their career. */
-export function renderMpsDashboard(ctx) {
+/** Ranking "Najwięcej partii": current MPs by how many parties they sat in over their Sejm career. */
+export function renderParties(ctx) {
   const active = ctx.mps.filter((m) => m.active);
   const list = partyHoppers(ctx.career, active);
-  if (list.length === 0) return '';
+  const head = `<p class="eyebrow">Ranking</p><h1>Najwięcej partii</h1>
+      <p class="lede">Którzy posłowie byli w największej liczbie partii w swojej karierze w Sejmie.</p>`;
+  if (list.length === 0) return `<section data-view="parties"><div class="panel mps-dash" data-testid="parties">${head}<p>Brak danych o kadencjach posłów.</p></div></section>`;
   const top = list[0];
   const tied = list.filter((r) => r.count === top.count).length - 1;
   const single = active.filter((m) => (ctx.career?.career?.[m.id] ?? []).length > 0).length - list.length;
-  const rows = (items, from) => items.map((r, i) => `
+  const rows = list.map((r, i) => `
         <li class="hop-row" data-mp-id="${r.mp.id}">
-          <span class="hop-rank">${from + i + 1}</span>
+          <span class="hop-rank">${i + 1}</span>
           ${mpLink(r.mp, avatar(ctx, r.mp, 'sm'), 'hop-avatar')}
           <div class="hop-main">${mpLink(r.mp, esc(r.mp.name))}${partyRoute(r.path)}</div>
           <span class="hop-count"><b>${r.count}</b> <small>${partyWord(r.count)}</small></span>
         </li>`).join('');
-  const SHOW = 10;
   return `
-    <div class="panel mps-dash" data-testid="mps-dashboard">
-      <p class="eyebrow">Dashboard</p>
-      <h2>Najwięcej partii w karierze posła</h2>
+  <section data-view="parties">
+    <div class="panel mps-dash" data-testid="parties">
+      ${head}
       <div class="hop-leader" data-testid="hop-leader">
         ${mpLink(top.mp, avatar(ctx, top.mp, 'lg'), 'hop-avatar')}
         <div>
@@ -158,17 +159,16 @@ export function renderMpsDashboard(ctx) {
           ${partyRoute(top.path)}
         </div>
       </div>
-      <ol class="hop-list" data-testid="hop-ranking">${rows(list.slice(0, SHOW), 0)}</ol>
-      ${list.length > SHOW ? `<details class="hop-more"><summary>Pokaż wszystkich (${list.length})</summary><ol class="hop-list">${rows(list.slice(SHOW), SHOW)}</ol></details>` : ''}
+      <ol class="hop-list" data-testid="hop-ranking">${rows}</ol>
       <p class="src">${single} ${plural(single, 'poseł był', 'posłów było', 'posłów było')} w Sejmie tylko w jednej partii. Liczymy kluby z każdej kadencji od 1997 r. według API Sejmu (ostatni klub w kadencji); kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną.</p>
-    </div>`;
+    </div>
+  </section>`;
 }
 
 export function renderDirectory(ctx, state, list) {
   const counts = clubCounts(ctx.mps);
   return `
   <section data-view="directory">
-    ${renderMpsDashboard(ctx)}
     <div class="panel dir-head">
       <h1>Posłowie X kadencji</h1>
       <label class="search-field" for="dir-search"><span class="visually-hidden">Szukaj posła</span>
