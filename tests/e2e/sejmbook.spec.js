@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Ikonka Super-męża');
+  await expect(post).toContainText('Szerszy Frequent Flyer');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -128,7 +128,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Ikonka Super-męża');
+  await expect(page.locator('.news-post').first()).toContainText('Szerszy Frequent Flyer');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -291,4 +291,17 @@ test('Profile: Kontakt with official e-mail', async ({ page }) => {
   await expect(box.getByTestId('contact-office')).toContainText('Biura Poselskie');
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Frequent Flyer: on a wide screen rows stay low and the meta sits in one line', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'desktop layout');
+  await page.setViewportSize({ width: 1600, height: 1000 });
+  await page.goto(`${PAGE}#frequent-flyer`);
+  const first = page.locator('[data-testid="ranking"] tbody tr').first();
+  const meta = first.getByTestId('rank-meta');
+  const ys = await meta.locator(':scope > *').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top + e.getBoundingClientRect().height / 2)));
+  expect(Math.max(...ys) - Math.min(...ys)).toBeLessThanOrEqual(4);
+  const heights = await page.locator('[data-testid="ranking"] tbody tr').evaluateAll((rows) => rows.slice(0, 12).map((r) => r.getBoundingClientRect().height));
+  expect(Math.max(...heights)).toBeLessThan(100);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1600);
 });

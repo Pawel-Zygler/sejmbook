@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-szerzej",
+      "date": "2026-11-24",
+      "title": "Szerszy Frequent Flyer",
+      "body": "Strona jest szersza, a wiersze rankingu Frequent Flyer niższe i czytelniejsze.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-24-bohater",
       "date": "2026-11-24",
       "title": "Ikonka Super-męża",

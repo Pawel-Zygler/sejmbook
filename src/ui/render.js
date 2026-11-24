@@ -513,9 +513,8 @@ export function renderFlyer(ctx, state) {
               const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
               return `<tr data-mp-id="${r.mp.id}"${r.rank <= 3 ? ` class="podium-row podium-row-${r.rank}"` : ''}>
                 <td class="pos">${r.rank}</td>
-                <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club, r.mp)}
-                  ${podiumBadge(r.rank)}
-                  ${attendanceBadge(ctx, r.mp.id, 16)}</td>
+                <td class="rank-who">${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')}
+                  <span class="rank-meta" data-testid="rank-meta">${clubChip(ctx, r.mp.club, r.mp)}${podiumBadge(r.rank)}${attendanceBadge(ctx, r.mp.id, 16)}</span></td>
                 <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>
                 <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
