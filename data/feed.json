@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-24T09:40:32.866Z",
+ "fetchedAt": "2026-11-24T10:15:06.879Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
@@ -24,6 +24,12 @@
     "seenAt": "2026-11-23T23:59:59.000Z"
    },
    {
+    "title": "Polska potrzebuje pilnych decyzji w sprawie magazynów i infrastruktury paliwowej",
+    "date": "2026-11-23",
+    "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/polska-potrzebuje-pilnych-decyzji-w-sprawie-magazynow-i-infrastruktury-paliwowej,130614",
+    "seenAt": "2026-11-23T23:59:59.000Z"
+   },
+   {
     "title": "Minister Leśkiewicz gościem porannego programu TOK FM",
     "date": "2026-11-23",
     "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/minister-leskiewicz-gosciem-porannego-programu-tok-fm,130512",
@@ -45,12 +51,6 @@
     "title": "List na obchody 80. rocznicy odbicia więźniów z więzienia w Pułtusku",
     "date": "2026-11-22",
     "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-obchody-80-rocznicy-odbicia-wiezniow-z-wiezienia-w-pultusku,130425",
-    "seenAt": "2026-11-22T23:59:59.000Z"
-   },
-   {
-    "title": "80. rocznica rozbicia więzienia w Pułtusku",
-    "date": "2026-11-22",
-    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-doradcow/80-rocznica-rozbicia-wiezienia-w-pultusku,130498",
     "seenAt": "2026-11-22T23:59:59.000Z"
    }
   ]
@@ -2999,6 +2999,1057 @@
      "498": "A",
      "499": "N"
     }
+   }
+  ]
+ },
+ "offices": [
+  {
+   "id": "aktywa-panstwowe",
+   "name": "Ministerstwo Aktywów Państwowych",
+   "office": "Minister aktywów państwowych",
+   "source": "https://www.gov.pl/web/aktywa-panstwowe/wiadomosci",
+   "items": [
+    {
+     "title": "Minister Wojciech Balczun z wizytą w Brukseli",
+     "date": "2026-11-18",
+     "url": "https://www.gov.pl/web/aktywa-panstwowe/minister-wojciech-balczun-z-wizyta-w-brukseli",
+     "seenAt": "2026-11-18T23:59:59.000Z"
+    },
+    {
+     "title": "MESKO i JELCZ zwiększą moce produkcyjne",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/aktywa-panstwowe/mesko-i-jelcz-zwieksza-moce-produkcyjne",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "T5 - strategiczna inwestycja PFR oddana do użytku. \"Więcej Polski. Więcej mocy\"",
+     "date": "2026-10-30",
+     "url": "https://www.gov.pl/web/aktywa-panstwowe/t5--strategiczna-inwestycja-pfr-oddana-do-uzytku-wiecej-polski-wiecej-mocy",
+     "seenAt": "2026-10-30T23:59:59.000Z"
+    },
+    {
+     "title": "Biznes bez barier. MAP i Enea wspólnie na rzecz inkluzywności i wyrównywania szans",
+     "date": "2026-10-28",
+     "url": "https://www.gov.pl/web/aktywa-panstwowe/biznes-bez-barier-map-i-enea-wspolnie-na-rzecz-inkluzywnosci-i-wyrownywania-szans",
+     "seenAt": "2026-10-28T23:59:59.000Z"
+    },
+    {
+     "title": "Polski biometan zyskuje nowy impuls. Enea i Krajowa Grupa Spożywcza ze strategiczną współpracą",
+     "date": "2026-10-27",
+     "url": "https://www.gov.pl/web/aktywa-panstwowe/polski-biometan-zyskuje-nowy-impuls-enea-i-krajowa-grupa-spozywcza-ze-strategiczna-wspolpraca",
+     "seenAt": "2026-10-27T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "cyfryzacja",
+   "name": "Ministerstwo Cyfryzacji",
+   "office": "Minister cyfryzacji",
+   "source": "https://www.gov.pl/web/cyfryzacja/wiadomosci",
+   "items": [
+    {
+     "title": "Zapraszamy na szkolenie on-line: dostęp telekomunikacyjny do budynków i nieruchomości",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/cyfryzacja/zapraszamy-na-szkolenie-on-line-dostep-telekomunikacyjny-do-budynkow-i-nieruchomosci",
+     "seenAt": "2026-11-24T10:15:06.879Z"
+    },
+    {
+     "title": "HackNation 2026: 600 projektów i 15 zwycięskich zespołów. Innowacje dla administracji publicznej",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/cyfryzacja/hacknation-2026-600-projektow-i-15-zwycieskich-zespolow-innowacje-dla-administracji-publicznej",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Polska w światowej czołówce e-administracji",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/cyfryzacja/polska-w-swiatowej-czolowce-e-administracji",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Media społecznościowe od 15. roku życia. Projekt ustawy skierowany do konsultacji",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/cyfryzacja/media-spolecznosciowe-od-15-roku-zycia-projekt-ustawy-skierowany-do-konsultacji",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Narracje dezinformacyjne po naruszeniu polskiej przestrzeni powietrznej",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/cyfryzacja/narracje-dezinformacyjne-po-naruszeniu-polskiej-przestrzeni-powietrznej",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "edukacja",
+   "name": "Ministerstwo Edukacji Narodowej",
+   "office": "Minister edukacji",
+   "source": "https://www.gov.pl/web/edukacja/wiadomosci",
+   "items": [
+    {
+     "title": "Media społecznościowe od 15. roku życia. Projekt ustawy skierowany do konsultacji",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/edukacja/media-spolecznosciowe-od-15-roku-zycia-projekt-ustawy-skierowany-do-konsultacji",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Cyfrowy świat połączył pokolenia – gala finałowa konkursu „Szkoła międzypokoleniowa”",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/edukacja/cyfrowy-swiat-polaczyl-pokolenia--gala-finalowa-konkursu-szkola-miedzypokoleniowa",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Edukacja medialna i bezpieczeństwo młodych ludzi - Barbara Nowacka na Forum Edukacji Medialnej",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/edukacja/edukacja-medialna-i-bezpieczenstwo-mlodych-ludzi---barbara-nowacka-na-forum-edukacji-medialnej",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Wizyta minister edukacji Barbary Nowackiej w Stanach Zjednoczonych",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/edukacja/wizyta-minister-edukacji-barbary-nowackiej-w-stanach-zjednoczonych",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Spotkanie branżowe z przedstawicielami sektora konstrukcji stalowych i lakiernictwa przemysłowego",
+     "date": "2026-11-12",
+     "url": "https://www.gov.pl/web/edukacja/spotkanie-branzowe-z-przedstawicielami-sektora-konstrukcji-stalowych-i-lakiernictwa-przemyslowego",
+     "seenAt": "2026-11-12T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "energia",
+   "name": "Ministerstwo Energii",
+   "office": "Minister energii",
+   "source": "https://www.gov.pl/web/energia/wiadomosci",
+   "items": [
+    {
+     "title": "Zespół do spraw wydobycia węgla kamiennego i brunatnego powołany przez Ministra Energii",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/energia/zespol-do-spraw-wydobycia-wegla-kamiennego-i-brunatnego-powolany-przez-ministra-energii",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Polska wzmacnia bezpieczeństwo energetyczne regionu. Zakończył się 7. szczyt P-TEC",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/energia/polska-wzmacnia-bezpieczenstwo-energetyczne-regionu-zakonczyl-sie-7-szczyt-p-tec",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Maksymalna cena detaliczna paliw obowiązująca 24 listopada 2026 r.",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-24-listopada-2026-r",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Maksymalna cena detaliczna paliw obowiązująca w dniach 21-23 listopada 2026 r.",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-w-dniach-21-23-listopada-2026-r",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "O niezależności energetycznej i bezpieczeństwie energetycznym regionu podczas drugiego dnia 7. Szczytu P-TEC",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/energia/o-niezaleznosci-energetycznej-i-bezpieczenstwie-energetycznym-regionu-podczas-drugiego-dnia-7-szczytu-p-tec",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "finanse",
+   "name": "Ministerstwo Finansów",
+   "office": "Minister finansów",
+   "source": "https://www.gov.pl/web/finanse/wiadomosci",
+   "items": [
+    {
+     "title": "Wyłoniliśmy zwycięzców wyzwania MF i KAS na HackNation 2026 w Bydgoszczy!",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/finanse/wylonilismy-zwyciezcow-wyzwania-mf-i-kas-na-hacknation-2026-w-bydgoszczy",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Komentarz do prognoz Komisji Europejskiej Autumn Forecast 2026",
+     "date": "2026-11-17",
+     "url": "https://www.gov.pl/web/finanse/komentarz-do-prognoz-komisji-europejskiej-autumn-forecast-2026",
+     "seenAt": "2026-11-17T23:59:59.000Z"
+    },
+    {
+     "title": "Stan środków walutowych w październiku 2026 roku",
+     "date": "2026-11-17",
+     "url": "https://www.gov.pl/web/finanse/stan-srodkow-walutowych-w-pazdzierniku-2026-roku",
+     "seenAt": "2026-11-17T23:59:59.000Z"
+    },
+    {
+     "title": "Szacunkowe wykonanie budżetu państwa w okresie styczeń-październik 2026 r.",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/finanse/szacunkowe-wykonanie-budzetu-panstwa-w-okresie-styczen-pazdziernik-2026-r",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Resort finansów partnerem strategicznym II edycji HackNation w Bydgoszczy",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/finanse/resort-finansow-partnerem-strategicznym-ii-edycji-hacknation-w-bydgoszczy",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "fundusze-regiony",
+   "name": "Ministerstwo Funduszy i Polityki Regionalnej",
+   "office": "Minister funduszy",
+   "source": "https://www.gov.pl/web/fundusze-regiony/komunikaty",
+   "items": [
+    {
+     "title": "Za blisko 260 mln zł z funduszy europejskich powstanie trasa tramwajowa w Gdańsku",
+     "date": "2026-11-21",
+     "url": "https://www.gov.pl/web/fundusze-regiony/za-blisko-260-mln-zl-z-funduszy-europejskich-powstanie-trasa-tramwajowa-w-gdansku",
+     "seenAt": "2026-11-21T23:59:59.000Z"
+    },
+    {
+     "title": "Polska otrzyma rekordowe ponad 55 mld zł z KPO",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/fundusze-regiony/polska-otrzyma-rekordowe-ponad-55-mld-zl-z-kpo",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Agnieszka Bartol nową Minister Funduszy i Polityki Regionalnej",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/fundusze-regiony/agnieszka-bartol-nowa-minister-funduszy-i-polityki-regionalnej",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Roczne podsumowanie programu Fundusze Europejskie dla Nowoczesnej Gospodarki",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/fundusze-regiony/roczne-podsumowanie-programu-fundusze-europejskie-dla-nowoczesnej-gospodarki2",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "Od strategicznych inwestycji i reform po projekty lokalne - KPO zmienia Polskę",
+     "date": "2026-11-18",
+     "url": "https://www.gov.pl/web/fundusze-regiony/od-strategicznych-inwestycji-i-reform-po-projekty-lokalne--kpo-zmienia-polske",
+     "seenAt": "2026-11-18T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "infrastruktura",
+   "name": "Ministerstwo Infrastruktury",
+   "office": "Minister infrastruktury",
+   "source": "https://www.gov.pl/web/infrastruktura/aktualnosci",
+   "items": [
+    {
+     "title": "Łukasz Osmalak powołany na stanowisko wiceministra infrastruktury",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/infrastruktura/lukasz-osmalak-powolany-na-stanowisko-wiceministra-infrastruktury",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Rozwój prognozowania pogody i monitorowania atmosfery - rozmowy wiceministra Koperskiego z szefem ECMWF",
+     "date": "2026-11-18",
+     "url": "https://www.gov.pl/web/infrastruktura/rozwoj-prognozowania-pogody-i-monitorowania-atmosfery--rozmowy-wiceministra-koperskiego-z-szefem-ecmwf",
+     "seenAt": "2026-11-18T23:59:59.000Z"
+    },
+    {
+     "title": "Eksperci o przyszłości ochrony przeciwpowodziowej Żuław",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/infrastruktura/eksperci-o-przyszlosci-ochrony-przeciwpowodziowej-zulaw",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Światowy Dzień Pamięci Ofiar Wypadków Drogowych - działamy na rzecz poprawy bezpieczeństwa na drogach",
+     "date": "2026-11-15",
+     "url": "https://www.gov.pl/web/infrastruktura/swiatowy-dzien-pamieci-ofiar-wypadkow-drogowych---dzialamy-na-rzecz-poprawy-bezpieczenstwa-na-drogach",
+     "seenAt": "2026-11-15T23:59:59.000Z"
+    },
+    {
+     "title": "Obwodnica Morawicy i Woli Morawickiej oddana do ruchu",
+     "date": "2026-11-13",
+     "url": "https://www.gov.pl/web/infrastruktura/obwodnica-morawicy-i-woli-morawickiej-oddana-do-ruchu",
+     "seenAt": "2026-11-13T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "klimat",
+   "name": "Ministerstwo Klimatu i Środowiska",
+   "office": "Minister klimatu",
+   "source": "https://www.gov.pl/web/klimat/wiadomosci",
+   "items": [
+    {
+     "title": "Sprzątamy Polskę 1,1 mld zł na usuwanie odpadów niebezpiecznych",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/klimat/sprzatamy-polske-11-mld-zl-na-usuwanie-odpadow-niebezpiecznych",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Rekordowe wyniki systemu kaucyjnego. Polacy zwrócili już 5,6 mld butelek i puszek",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/klimat/rekordowe-wyniki-systemu-kaucyjnego-polacy-zwrocili-juz-56-mld-mld-butelek-i-puszek",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Miliard złotych na magazyny ciepła w ciepłownictwie systemowym. Ruszają nabory wniosków",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/klimat/miliard-zlotych-na-magazyny-ciepla-w-cieplownictwie-systemowym-ruszaja-nabory-wnioskow",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Polska i Kalifornia rozwijają współpracę na rzecz czystej energii",
+     "date": "2026-11-13",
+     "url": "https://www.gov.pl/web/klimat/polska-i-kalifornia-rozwijaja-wspolprace-na-rzecz-czystej-energii",
+     "seenAt": "2026-11-13T23:59:59.000Z"
+    },
+    {
+     "title": "Senat poparł uproszczenie procedur w ochronie środowiska",
+     "date": "2026-11-06",
+     "url": "https://www.gov.pl/web/klimat/senat-poparl-uproszczenie-procedur-w-ochronie-srodowiska",
+     "seenAt": "2026-11-06T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "kultura",
+   "name": "Ministerstwo Kultury i Dziedzictwa Narodowego",
+   "office": "Minister kultury",
+   "source": "https://www.gov.pl/web/kultura/aktualnosci",
+   "items": [
+    {
+     "title": "Cztery nowe wpisy na Krajowej liście niematerialnego dziedzictwa kulturowego",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/kultura/cztery-nowe-wpisy-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Dwa XV-wieczne kielichy mszalne powróciły do Leszna po ponad 80 latach",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/kultura/dwa-xv-wieczne-kielichy-mszalne-powrocily-do-leszna-po-ponad-80-latach",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Rozmawiamy o przyszłości kultury w Europie - za nami Rada UE w Brukseli",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/kultura/rozmawiamy-o-przyszlosci-kultury-w-europie--za-nami-rada-ue-w-brukseli",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "10. Forum Prawa Autorskiego - rozmawiamy o ochronie twórców i wyzwaniach cyfrowej rzeczywistości",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/kultura/10-forum-prawa-autorskiego--rozmawiamy-o-ochronie-tworcow-i-wyzwaniach-cyfrowej-rzeczywistosci",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Powołaliśmy członków Zespołu do spraw opracowania założeń dokumentu strategicznego dotyczącego ochrony niematerialnego dziedzictwa kulturowego",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/kultura/powolalismy-czlonkow-zespolu-do-spraw-opracowania-zalozen-dokumentu-strategicznego-dotyczacego-ochrony-niematerialnego-dziedzictwa-kulturowego",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "nauka",
+   "name": "Ministerstwo Nauki i Szkolnictwa Wyższego",
+   "office": "Minister nauki",
+   "source": "https://www.gov.pl/web/nauka/wiadomosci",
+   "items": [
+    {
+     "title": "Ministerstwo wzmacnia udział Polski w inicjatywie Uniwersytetów Europejskich",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/nauka/ministerstwo-wzmacnia-udzial-polski-w-inicjatywie-uniwersytetow-europejskich",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Najpopularniejsze uczelnie i kierunki studiów w roku akademickim 2026/2027",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/nauka/najpopularniejsze-uczelnie-i-kierunki-studiow-w-roku-akademickim-20262027",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Rozpoczynamy Tydzień Walki z Dezinformacją Naukową",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/nauka/rozpoczynamy-tydzien-walki-z-dezinformacja-naukowa",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Nowy potencjał dla polskiej gospodarki, nauki i obronności. Powstaje Łukasiewicz - Małopolski Instytut Technologiczny",
+     "date": "2026-11-12",
+     "url": "https://www.gov.pl/web/nauka/nowy-potencjal-dla-polskiej-gospodarki-nauki-i-obronnosci-powstaje-lukasiewicz--malopolski-instytut-technologiczny",
+     "seenAt": "2026-11-12T23:59:59.000Z"
+    },
+    {
+     "title": "Oxford-Poland Hub wzmacnia współpracę naukową Polski i Oksfordu",
+     "date": "2026-11-10",
+     "url": "https://www.gov.pl/web/nauka/oxford-poland-hub-wzmacnia-wspolprace-naukowa-polski-i-oksfordu",
+     "seenAt": "2026-11-10T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "obrona-narodowa",
+   "name": "Ministerstwo Obrony Narodowej",
+   "office": "Minister obrony narodowej",
+   "source": "https://www.gov.pl/web/obrona-narodowa",
+   "items": [
+    {
+     "title": "Bezpieczne państwo, odporne wspólnoty – współpraca na rzecz bezpieczeństwa",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/obrona-narodowa/bezpieczne-panstwo-odporne-wspolnoty--wspolpraca-na-rzecz-bezpieczenstwa",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Spotkanie w Kwaterze Głównej NATO – sekretarz stanu w MON Paweł Zalewski o rosyjskim zagrożeniu",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/obrona-narodowa/spotkanie-w-kwaterze-glownej-nato-w-brukseli--sekretarz-stanu-w-mon-pawel-zalewski-o-rosyjskim-zagrozeniu",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "KOALICJA 26.2. Szef MON obserwował pierwsze ćwiczenie sił Koalicji Chętnych",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/obrona-narodowa/koalicja-262-szef-mon-obserwowal-pierwsze-cwiczenie-sil-koalicji-chetnych",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Wicepremier W. Kosiniak-Kamysz o naruszeniu polskiej przestrzeni powietrznej",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/obrona-narodowa/wicepremier-w-kosiniak-kamysz-o-naruszeniu-polskiej-przestrzeni-powietrznej",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "rodzina",
+   "name": "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+   "office": "Minister rodziny",
+   "source": "https://www.gov.pl/web/rodzina/aktualnosci-wiadomosci",
+   "items": [
+    {
+     "title": "Dialog – spór – strajk: Agnieszka Dziemianowicz-Bąk i związki zawodowe rozmawiają o prawie do strajku",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/rodzina/dialog--spor--strajk-agnieszka-dziemianowicz-bak-i-zwiazki-zawodowe-rozmawiaja-o-prawie-do-strajku",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Historyczny krok dla niezależnego życia osób z niepełnosprawnościami",
+     "date": "2026-11-17",
+     "url": "https://www.gov.pl/web/rodzina/historyczny-krok-dla-niezaleznego-zycia-osob-z-niepelnosprawnosciami",
+     "seenAt": "2026-11-17T23:59:59.000Z"
+    },
+    {
+     "title": "„Nikt nie rodzi się rodzicem. Gotowość przychodzi z czasem” - ruszyła kampania społeczna wspierająca przyszłych i obecnych rodziców",
+     "date": "2026-11-10",
+     "url": "https://www.gov.pl/web/rodzina/nikt-nie-rodzi-sie-rodzicem-gotowosc-przychodzi-z-czasem--ruszyla-kampania-spoleczna-wspierajaca-przyszlych-i-obecnych-rodzicow",
+     "seenAt": "2026-11-10T23:59:59.000Z"
+    },
+    {
+     "title": "Nowe przepisy antymobbingowe wchodzą w życie",
+     "date": "2026-11-05",
+     "url": "https://www.gov.pl/web/rodzina/nowe-przepisy-antymobbingowe-wchodza-w-zycie",
+     "seenAt": "2026-11-05T23:59:59.000Z"
+    },
+    {
+     "title": "Nauka na rzecz polityki społecznej. Wiceminister wręczył powołania członkom Rady Naukowej IPiSS.",
+     "date": "2026-10-28",
+     "url": "https://www.gov.pl/web/rodzina/nauka-na-rzecz-polityki-spolecznej-wiceminister-wreczyl-powolania-czlonkom-rady-naukowej-ipiss",
+     "seenAt": "2026-10-28T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "rolnictwo",
+   "name": "Ministerstwo Rolnictwa i Rozwoju Wsi",
+   "office": "Minister rolnictwa",
+   "source": "https://www.gov.pl/web/rolnictwo/wiadomosci",
+   "items": [
+    {
+     "title": "Większe wsparcie dla rolników w kryzysie. Polska popiera zwiększenie limitów de minimis",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/rolnictwo/wieksze-wsparcie-dla-rolnikow-w-kryzysie-polska-popiera-zwiekszenie-limitow-de-minimis",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Skuteczniejsza promocja polskiej żywności. Pracujemy nad zmianami w funduszach promocji",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/rolnictwo/skuteczniejsza-promocja-polskiej-zywnosci-pracujemy-nad-zmianami-w-funduszach-promocji",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Bałtyk pod lupą – dołącz do obserwacji i pomóż badać nasze morze!",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/rolnictwo/baltyk-pod-lupa--dolacz-do-obserwacji-i-pomoz-badac-nasze-morze",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Odszkodowania za szkody wyrządzone przez ptaki coraz bliżej",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/rolnictwo/odszkodowania-za-szkody-wyrzadzone-przez-ptaki-coraz-blizej",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Dzięki działaniom Ministerstwa Rolnictwa i Rozwoju Wsi polski drób wraca na rynek chiński",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/rolnictwo/dzieki-dzialaniom-ministerstwa-rolnictwa-i-rozwoju-wsi-polski-drob-wraca-na-rynek-chinski",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "rozwoj-technologia",
+   "name": "Ministerstwo Rozwoju i Technologii",
+   "office": null,
+   "source": "https://www.gov.pl/web/rozwoj-technologia/wiadomosci",
+   "items": [
+    {
+     "title": "Nowe rozporządzenie w sprawie warunków technicznych dla budynków",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/rozwoj-technologia/nowe-rozporzadzenie-w-sprawie-warunkow-technicznych-dla-budynkow",
+     "seenAt": "2026-11-24T10:15:06.879Z"
+    },
+    {
+     "title": "Dialog z branżą i wsparcie ekspansji międzynarodowej podczas Forum Eksportera Przemysłu Obronnego w MRiT",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/rozwoj-technologia/dialog-z-branza-i-wsparcie-ekspansji-miedzynarodowej-podczas-forum-eksportera-przemyslu-obronnego-w-mrit",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Polska branża jachtowa na targach METSTRADE 2026 w Amsterdamie",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/rozwoj-technologia/polska-branza-jachtowa-na-targach-metstrade-2026-w-amsterdamie",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Kolejny etap realizacji polityki mieszkaniowej – pakiet ustaw przyjęty przez SKRM",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/rozwoj-technologia/kolejny-etap-realizacji-polityki-mieszkaniowej--pakiet-ustaw-przyjety-przez-skrm",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Polska branża kosmiczna na Space Tech Expo Europe 2026 w Bremie",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/rozwoj-technologia/polska-branza-kosmiczna-na-space-tech-expo-europe-2026-w-bremie",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "sport",
+   "name": "Ministerstwo Sportu i Turystyki",
+   "office": "Minister sportu",
+   "source": "https://www.gov.pl/web/sport/wiadomosci",
+   "items": [
+    {
+     "title": "Wspólny komunikat Ministerstwa Sportu i Turystyki oraz Polskiego Związku Łyżwiarstwa Figurowego",
+     "date": "2026-11-21",
+     "url": "https://www.gov.pl/web/sport/wspolny-komunikat-ministerstwa-sportu-i-turystyki-oraz-polskiego-zwiazku-lyzwiarstwa-figurowego",
+     "seenAt": "2026-11-21T23:59:59.000Z"
+    },
+    {
+     "title": "Informacja dla przedsiębiorców. Tylko do końca roku można zaktualizować kody PKD roku",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/sport/informacja-dla-przedsiebiorcow-tylko-do-konca-roku-mozna-zaktualizowac-kody-pkd-roku",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "Infrastrukturalne przyspieszenie na Mazowszu. Blisko 18 mln zł dofinansowania z Ministerstwa Sportu i Turystyki",
+     "date": "2026-11-18",
+     "url": "https://www.gov.pl/web/sport/infrastrukturalne-przyspieszenie-na-mazowszu-blisko-18-mln-zl-dofinansowania-z-ministerstwa-sportu-i-turystyki",
+     "seenAt": "2026-11-18T23:59:59.000Z"
+    },
+    {
+     "title": "Zimowa edycja akcji informacyjno-edukacyjnej Bezpieczna woda",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/sport/zimowa-edycja-akcji-informacyjno-edukacyjnej-bezpieczna-woda3",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Wielki finał Z Orlika na Stadion za nami! 12 drużyn pojedzie do Portugalii",
+     "date": "2026-11-13",
+     "url": "https://www.gov.pl/web/sport/wielki-final-z-orlika-na-stadion-za-nami-12-druzyn-pojedzie-do-portugalii",
+     "seenAt": "2026-11-13T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "sprawiedliwosc",
+   "name": "Ministerstwo Sprawiedliwości",
+   "office": "Minister sprawiedliwości",
+   "source": "https://www.gov.pl/web/sprawiedliwosc/aktualnosci-wydarzenia",
+   "items": [
+    {
+     "title": "Komunikat Ministerstwa Sprawiedliwości dotyczący sytuacji w Schronisku dla Nieletnich w Dominowie.",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/sprawiedliwosc/komunikat-ministerstwa-sprawiedliwosci-dotyczacy-sytuacji-w-schronisku-dla-nieletnich-w-dominowie",
+     "seenAt": "2026-11-24T10:15:06.879Z"
+    },
+    {
+     "title": "II Ogólnopolskie Spotkanie Sędziów-Koordynatorów w Ministerstwie Sprawiedliwości",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/sprawiedliwosc/ii-ogolnopolskie-spotkanie-sedziow-koordynatorow-w-ministerstwie-sprawiedliwosci",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Zapraszamy na konferencję naukową „Dowód z opinii biegłego – funkcje, dysfunkcje i remedia”",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/sprawiedliwosc/zapraszamy-na-konferencje-naukowa-dowod-z-opinii-bieglego--funkcje-dysfunkcje-i-remedia",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Sędziowie będą mogli dłużej orzekać na nowych zasadach",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/sprawiedliwosc/sedziowie-beda-mogli-dluzej-orzekac-na-nowych-zasadach",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "„Drugi brzeg” - sport jako droga do odpowiedzialności i empatii",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/sprawiedliwosc/drugi-brzeg---sport-jako-droga-do-odpowiedzialnosci-i-empatii",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "mswia",
+   "name": "Ministerstwo Spraw Wewnętrznych i Administracji",
+   "office": "Minister spraw wewnętrznych",
+   "source": "https://www.gov.pl/web/mswia/aktualnosci",
+   "items": [
+    {
+     "title": "Wizyta kierownictwa MSWiA w Helsinkach: Budujemy partnerstwo strategiczne na rzecz bezpieczeństwa regionu",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/mswia/wizyta-kierownictwa-mswia-w-helsinkach",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Działania MSWiA na rzecz bezpieczeństwa. Podsumowanie trzeciego tygodnia listopada",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/mswia/dzialania-mswia-na-rzecz-bezpieczenstwa-podsumowanie-trzeciego-tygodnia-listopada",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Czasowe i terytorialne zawieszenie prawa do azylu przy granicy polsko-białoruskiej przedłużone o następne 60 dni",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/mswia/czasowe-i-terytorialne-zawieszenie-prawa-do-azylu-przy-granicy-polsko-bialoruskiej-przedluzone-o-nastepne-60-dni4",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Polska przystąpi do systemu ETIAS, odprawa ze służbami po zamachu w Krakowie i bezpieczny przebieg Marszu Niepodległości. Podsumowanie drugiego tygodnia listopada w MSWiA",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/mswia/polska-przystapi-do-systemu-etias-odprawa-ze-sluzbami-po-zamachu-w-krakowie-i-bezpieczny-przebieg-marszu-niepodleglosci-podsumowanie-drugiego-tygodnia-listopada-w-mswia",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Projekt ustawy o udziale Rzeczypospolitej Polskiej w europejskim systemie informacji o podróży oraz zezwoleń na podróż (ETIAS)",
+     "date": "2026-11-10",
+     "url": "https://www.gov.pl/web/mswia/projekt-ustawy-o-udziale-rzeczypospolitej-polskiej-w-europejskim-systemie-informacji-o-podrozy-oraz-zezwolen-na-podroz-etias2",
+     "seenAt": "2026-11-10T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "dyplomacja",
+   "name": "Ministerstwo Spraw Zagranicznych",
+   "office": "Minister spraw zagranicznych",
+   "source": "https://www.gov.pl/web/dyplomacja/aktualnosci",
+   "items": [
+    {
+     "title": "Oświadczenia MSZ w związku z atrybucją przez Danię rosyjskim służbom specjalnym próby zamachu na obywatela Stanów Zjednoczonych i Ukrainy na terenie Danii",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/dyplomacja/oswiadczenia-msz-w-zwiazku-z-atrybucja-przez-danie-rosyjskim-sluzbom-specjalnym-proby-zamachu-na-obywatela-stanow-zjednoczonych-i-ukrainy-na-terenie-danii",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Dr Elżbieta Mikos-Skuza ponownie wybrana do Międzynarodowej Komisji Humanitarnej do spraw Ustalania Faktów",
+     "date": "2026-11-20",
+     "url": "https://www.gov.pl/web/dyplomacja/dr-elzbieta-mikos-skuza-ponownie-wybrana-do-miedzynarodowej-komisji-humanitarnej-do-spraw-ustalania-faktow",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Wicepremier Radosław Sikorski z wizytą w Budapeszcie",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/dyplomacja/wicepremier-radoslaw-sikorski-z-wizyta-w-budapeszcie",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "Wicepremier Radosław Sikorski na Radzie FAC",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/dyplomacja/wicepremier-radoslaw-sikorski-na-radzie-fac",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    },
+    {
+     "title": "Dzień Otwarty w Ministerstwie Spraw Zagranicznych 21 listopada 2026 r.",
+     "date": "2026-11-16",
+     "url": "https://www.gov.pl/web/dyplomacja/dzien-otwarty-w-ministerstwie-spraw-zagranicznych-21-listopada-2026-r",
+     "seenAt": "2026-11-16T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "zdrowie",
+   "name": "Ministerstwo Zdrowia",
+   "office": "Minister zdrowia",
+   "source": "https://www.gov.pl/web/zdrowie/wiadomosci",
+   "items": [
+    {
+     "title": "Ostatni wniosek o płatność oceniony. Komisja Europejska pozytywnie o realizacji KPO w ochronie zdrowia",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/zdrowie/ostatni-wniosek-o-platnosc-oceniony-komisja-europejska-pozytywnie-o-realizacji-kpo-w-ochronie-zdrowia",
+     "seenAt": "2026-11-24T10:15:06.879Z"
+    },
+    {
+     "title": "Mężczyźni stawiają na profilaktykę. Rekordowe zainteresowanie programem „Moje Zdrowie”",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/zdrowie/mezczyzni-stawiaja-na-profilaktyke-rekordowe-zainteresowanie-programem-moje-zdrowie",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Rozprawa przed Sądem Apelacyjnym w Brukseli w sprawie wniosku o wstrzymanie wykonania wyroku dotyczącego szczepionek przeciwko COVID-19",
+     "date": "2026-11-23",
+     "url": "https://www.gov.pl/web/zdrowie/rozprawa-przed-sadem-apelacyjnym-w-brukseli-w-sprawie-wniosku-o-wstrzymanie-wykonania-wyroku-dotyczacego-szczepionek-przeciwko-covid-19",
+     "seenAt": "2026-11-23T23:59:59.000Z"
+    },
+    {
+     "title": "Eksperci: Bezpiecznej alternatywy dla papierosów nie ma. Nikotyna zmienia formę, ale nadal uzależnia",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/zdrowie/eksperci-bezpiecznej-alternatywy-dla-papierosow-nie-ma-nikotyna-zmienia-forme-ale-nadal-uzaleznia",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "Zmiany dla pacjentów ponad podziałami. Sejm, bez głosu sprzeciwu, uchwalił nowelizację ustawy refundacyjnej",
+     "date": "2026-11-19",
+     "url": "https://www.gov.pl/web/zdrowie/zmiany-dla-pacjentow-ponad-podzialami-sejm-bez-glosu-sprzeciwu-uchwalil-nowelizacje-ustawy-refundacyjnej",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "nik",
+   "name": "Najwyższa Izba Kontroli",
+   "office": "prezes-nik",
+   "source": "https://www.nik.gov.pl/aktualnosci/",
+   "items": [
+    {
+     "title": "Wciąż ponad 3 miliony ton soli rocznie trafia do polskich rzek. Czy wyciągnięto wnioski po katastrofie ekologicznej na Odrze?",
+     "date": "2026-11-24",
+     "url": "https://www.nik.gov.pl/komunikaty/wciaz-ponad-3-miliony-ton-soli-rocznie-trafia-do-polskich-rzek-czy-wyciagnieto-wnioski-po-katastrofie-ekologicznej-na-odrze/",
+     "seenAt": "2026-11-24T10:15:06.879Z"
+    },
+    {
+     "title": "Być w klasie, rozumieć lekcję, mieć głos – NIK o prawach dzieci",
+     "date": "2026-11-20",
+     "url": "https://www.nik.gov.pl/aktualnosci/miedzynarodowy-dzien-praw-dziecka-proponowana-komunikacja.html",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Z Archiwum NIK: Co stało się z majątkiem hrabiego Potockiego?",
+     "date": "2026-11-20",
+     "url": "https://www.nik.gov.pl/aktualnosci/z-archiwum-nik-co-stalo-sie-z-majatkiem-hrabiego-potockiego.html",
+     "seenAt": "2026-11-20T23:59:59.000Z"
+    },
+    {
+     "title": "Film zniknął z czatu. Czy przemoc się skończyła?",
+     "date": "2026-11-19",
+     "url": "https://www.nik.gov.pl/aktualnosci/film-zniknal-z-czatu-czy-przemoc-sie-skonczyla.html",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    },
+    {
+     "title": "Dofinansowanie turnusów rehabilitacyjnych – duże potrzeby, niewystarczające środki i luki w przepisach",
+     "date": "2026-11-19",
+     "url": "https://www.nik.gov.pl/komunikaty/dofinansowanie-turnusow-rehabilitacyjnych-duze-potrzeby-niewystarczajace-srodki-i-luki-w-przepisach",
+     "seenAt": "2026-11-19T23:59:59.000Z"
+    }
+   ]
+  }
+ ],
+ "mpActs": {
+  "source": "https://api.sejm.gov.pl/sejm/term10/interpellations",
+  "items": [
+   {
+    "kind": "interpelacja",
+    "num": 21195,
+    "title": "W sprawie lokalnych Izb Pamięci",
+    "date": "2026-11-23",
+    "from": [
+     100
+    ],
+    "to": [
+     "minister kultury i dziedzictwa narodowego"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21195",
+    "seenAt": "2026-11-23T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21194,
+    "title": "W sprawie występowania wilków na terenie woj. podlaskiego oraz zapewnienia bezpieczeństwa mieszkańcom i zwierzętom gospodarskim",
+    "date": "2026-11-23",
+    "from": [
+     122
+    ],
+    "to": [
+     "minister klimatu i środowiska"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21194",
+    "seenAt": "2026-11-23T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21193,
+    "title": "W sprawie przeliczania kapitału początkowego emerytek niebędących członkiniami OFE",
+    "date": "2026-11-23",
+    "from": [
+     395
+    ],
+    "to": [
+     "minister rodziny, pracy i polityki społecznej"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21193",
+    "seenAt": "2026-11-23T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21192,
+    "title": "W sprawie systemowych wyzwań w opiece diabetologicznej w Polsce oraz poprawy dostępności do diagnostyki, nowoczesnych terapii i edukacji dla pacjentów z cukrzycą",
+    "date": "2026-11-23",
+    "from": [
+     252
+    ],
+    "to": [
+     "minister zdrowia"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21192",
+    "seenAt": "2026-11-23T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21191,
+    "title": "W sprawie opóźnień w modernizacji DK94 na terenie miasta Olkusza",
+    "date": "2026-11-22",
+    "from": [
+     165
+    ],
+    "to": [
+     "minister infrastruktury"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21191",
+    "seenAt": "2026-11-22T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21190,
+    "title": "W sprawie ciągłości ochrony przeciwlotniczej i przeciwrakietowej Płocka, powiatu płockiego oraz infrastruktury krytycznej regionu po przemieszczeniu wyrzutni systemu Patriot",
+    "date": "2026-11-22",
+    "from": [
+     230
+    ],
+    "to": [
+     "minister obrony narodowej"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21190",
+    "seenAt": "2026-11-22T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21189,
+    "title": "W sprawie kosztów utrzymania biur Ministerstwa Energii, równoległego najmu dwóch lokalizacji w Warszawie oraz wykorzystania dawnej siedziby Ministerstwa Przemysłu w Katowicach",
+    "date": "2026-11-22",
+    "from": [
+     230
+    ],
+    "to": [
+     "minister energii"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21189",
+    "seenAt": "2026-11-22T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21188,
+    "title": "W sprawie wypowiedzi pełnomocnika rządu ds. Centralnego Portu Komunikacyjnego Piotra Malepszaka o politycznej ochronie nieudolnych menedżerów spółek transportowych",
+    "date": "2026-11-22",
+    "from": [
+     230
+    ],
+    "to": [
+     "minister infrastruktury"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21188",
+    "seenAt": "2026-11-22T23:59:59.000Z"
+   },
+   {
+    "kind": "zapytanie",
+    "num": 4243,
+    "title": "W sprawie opóźnień w modernizacji DK94 na odcinku Jerzmanowice-Zederman",
+    "date": "2026-11-22",
+    "from": [
+     165
+    ],
+    "to": [
+     "minister infrastruktury"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4243",
+    "seenAt": "2026-11-22T23:59:59.000Z"
+   },
+   {
+    "kind": "zapytanie",
+    "num": 4242,
+    "title": "W sprawie opóźnień pociągu EN106 IC \"Chopin\" na odcinku Bohumin-Warszawa Wschodnia",
+    "date": "2026-11-22",
+    "from": [
+     165
+    ],
+    "to": [
+     "minister infrastruktury"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4242",
+    "seenAt": "2026-11-22T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21186,
+    "title": "W sprawie ustaleń raportu Państwowej Komisji Badania Wypadków Kolejowych nr 05/2026 dotyczącego incydentu kolejowego na szlaku Sobolew-Życzyn",
+    "date": "2026-11-20",
+    "from": [
+     488,
+     411
+    ],
+    "to": [
+     "minister - członek Rady Ministrów, koordynator służb specjalnych",
+     "minister spraw wewnętrznych i administracji"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21186",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21185,
+    "title": "W sprawie środków zabezpieczonych na budowę Komendy Miejskiej Policji w Jastrzębiu-Zdroju w Programie modernizacji Policji, Straży Granicznej, Państwowej Straży Pożarnej i Służby Ochrony Państwa w latach 2026-2029",
+    "date": "2026-11-20",
+    "from": [
+     85
+    ],
+    "to": [
+     "minister spraw wewnętrznych i administracji"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21185",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21183,
+    "title": "W sprawie skutków społecznych i gospodarczych planowanego utworzenia rezerwatu przyrody \"Puszcza Białowieska Lasy Otwarte im. prof. Simony Kossak\" oraz protestów pracowników, przedsiębiorców i mieszkańców regionu",
+    "date": "2026-11-20",
+    "from": [
+     224
+    ],
+    "to": [
+     "minister klimatu i środowiska"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21183",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21181,
+    "title": "W sprawie wymiany informacji dotyczących polskich podatników oraz współpracy w zakresie zwalczania przestępstw celno-skarbowych pomiędzy Krajową Administracją Skarbową a organami celnymi oraz skarbowymi innych państw członkowskich Unii Europejskiej",
+    "date": "2026-11-20",
+    "from": [
+     485,
+     397
+    ],
+    "to": [
+     "minister finansów i gospodarki"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21181",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21180,
+    "title": "W sprawie postępowania z ciałami dzieci po poronieniu",
+    "date": "2026-11-20",
+    "from": [
+     32,
+     485,
+     412
+    ],
+    "to": [
+     "minister zdrowia"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21180",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21179,
+    "title": "W sprawie ochrony wizerunku dzieci w szkołach i przedszkolach oraz zapobiegania ich wykluczaniu",
+    "date": "2026-11-20",
+    "from": [
+     470,
+     264,
+     276,
+     327,
+     382,
+     391
+    ],
+    "to": [
+     "minister edukacji"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21179",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "interpelacja",
+    "num": 21177,
+    "title": "W sprawie braku zapewnienia środków finansowych na wypłatę dodatku terenowego dla pracowników socjalnych oraz przerzucania kosztów realizacji ustawowych obowiązków na jednostki samorządu terytorialnego",
+    "date": "2026-11-20",
+    "from": [
+     78
+    ],
+    "to": [
+     "minister rodziny, pracy i polityki społecznej"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=int&nr=21177",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "zapytanie",
+    "num": 4244,
+    "title": "W sprawie centrum danych w miejscowości Mory",
+    "date": "2026-11-20",
+    "from": [
+     252
+    ],
+    "to": [
+     "minister spraw wewnętrznych i administracji"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4244",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "zapytanie",
+    "num": 4241,
+    "title": "W sprawie skali importu zagęszczonego soku jabłkowego (koncentratu) do Polski",
+    "date": "2026-11-20",
+    "from": [
+     229
+    ],
+    "to": [
+     "minister rolnictwa i rozwoju wsi"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4241",
+    "seenAt": "2026-11-20T23:59:59.000Z"
+   },
+   {
+    "kind": "zapytanie",
+    "num": 4240,
+    "title": "W sprawie skali importu zagęszczonego soku jabłkowego (koncentratu) do Polski",
+    "date": "2026-11-20",
+    "from": [
+     229
+    ],
+    "to": [
+     "minister finansów i gospodarki"
+    ],
+    "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4240",
+    "seenAt": "2026-11-20T23:59:59.000Z"
    }
   ]
  }
