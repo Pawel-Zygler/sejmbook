@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { clubFamily, termYears, careerSpectrum, termRanges, romanTerm, partyPath, partyHoppers } from '../../src/lib/career.js';
+import { clubFamily, termYears, careerSpectrum, termRanges, romanTerm, partyPath, partyHoppers, buildPath, allPartyHoppers, termMps, clubNameIn, singlePartyCount } from '../../src/lib/career.js';
 
 const careerData = {
   terms: [
@@ -100,5 +100,34 @@ describe('partyPath and partyHoppers', () => {
     const mps = [{ id: 1, name: 'Zenon' }, { id: 2, name: 'Adam' }, { id: 3, name: 'Basia' }, { id: 4, name: 'Celina' }];
     expect(partyHoppers(data, mps).map((r) => r.mp.id)).toEqual([1, 4, 3]);
     expect(partyHoppers(data, mps, { min: 1 }).map((r) => r.mp.id)).toEqual([1, 4, 3, 2]);
+  });
+});
+
+describe('all terms', () => {
+  const d = { clubs: { 10: { X: 'Klub Poselski Razem' } }, people: [
+    { name: 'B', lastName: 'B', current: null, terms: [{ t: 3, id: 1, club: 'AWS' }, { t: 4, id: 2, club: 'PO' }, { t: 5, id: 3, club: 'niez.' }, { t: 6, id: 4, club: 'PiS' }] },
+    { name: 'A', lastName: 'A', current: 7, terms: [{ t: 3, id: 9, club: 'SKL' }, { t: 10, id: 7, club: 'X', d: 4, dn: 'Gdańsk' }] },
+    { name: 'C', lastName: 'C', current: null, terms: [{ t: 3, id: 5, club: 'SLD' }, { t: 4, id: 6, club: 'SLD' }] },
+  ] };
+  it('buildPath merges a camp in a row, skips non-affiliated and counts jumps', () => {
+    const p = buildPath([{ term: 4, club: 'PO' }, { term: 3, club: 'PO' }, { term: 5, club: 'PiS' }, { term: 6, club: 'PO' }]);
+    expect(p.path.map((x) => x.id)).toEqual(['KO', 'PiS', 'KO']);
+    expect(p.count).toBe(2);
+    expect(p.jumps).toBe(2);
+  });
+  it('names historic clubs the API lists without names', () => {
+    expect(clubNameIn(d, 3, 'SKL')).toBe('Klub Parlamentarny Stronnictwa Konserwatywno-Ludowego');
+    expect(clubNameIn(d, 10, 'X')).toBe('Klub Poselski Razem');
+    expect(clubNameIn(d, 3, 'ZZ')).toBeNull();
+  });
+  it('ranks every person by parties, then jumps', () => {
+    const r = allPartyHoppers(d);
+    expect(r.map((x) => [x.person.name, x.count, x.jumps])).toEqual([['B', 3, 2], ['A', 2, 1]]);
+    expect(singlePartyCount(d)).toBe(1);
+  });
+  it('lists the MPs of one term', () => {
+    expect(termMps(d, 10)).toEqual([{ key: '10-7', id: 7, name: 'A', lastName: 'A', club: 'X', clubName: 'Klub Poselski Razem', districtNum: 4, districtName: 'Gdańsk', active: undefined, current: 7, terms: [3, 10] }]);
+    expect(termMps(d, 3).length).toBe(3);
+    expect(termMps(null, 3)).toEqual([]);
   });
 });

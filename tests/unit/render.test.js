@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, directoryFilters, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -313,7 +313,7 @@ describe('renderParties', () => {
     const html = renderParties({ ...ctx, career });
     expect(html).toContain('<h1>Najwięcej partii</h1>');
     expect(html).toContain(`href="#posel-${ids[0]}"`);
-    expect(html).toContain('<b>3</b> partie w 3 kadencjach Sejmu');
+    expect(html).toContain('<b>3</b> partie, 2 przeskoki w 3 kadencjach Sejmu');
     expect((html.match(/class="hop-row"/g) ?? []).length).toBe(2);
     expect(html).toContain('1 poseł był w Sejmie tylko w jednej partii');
   });
@@ -366,5 +366,46 @@ describe('page-specific sidebar', () => {
     expect(renderAside(ctx, { name: 'flyer' }, st)).toBe(flyerTotals(ctx, st.flyer));
     expect(flyerTotals(ctx, st.flyer)).toContain('data-testid="sum-km"');
     expect(renderAside(ctx, { name: 'home' }, st)).toContain('Kluby i koła');
+  });
+});
+
+describe('all terms (data/terms.json)', () => {
+  const terms = {
+    source: 'api', fetchedAt: '2026-11-24',
+    terms: [{ num: 3, from: '1997-10-20', to: '2001-10-18', mps: 3 }, { num: 10, from: '2023-11-13', to: null, mps: 2 }],
+    clubs: { 10: { KO: 'Klub Parlamentarny Koalicja Obywatelska' } },
+    people: [
+      { name: 'Jan Skoczek', lastName: 'Skoczek', birthDate: '1950-01-01', current: null, terms: [{ t: 3, id: 1, club: 'AWS', d: 1, dn: 'Legnica' }, { t: 4, id: 2, club: 'PO' }, { t: 5, id: 3, club: 'PiS' }, { t: 6, id: 4, club: 'PO' }] },
+      { name: 'Anna Dwa', lastName: 'Dwa', birthDate: null, current: 1, terms: [{ t: 3, id: 5, club: 'UW', d: 2, dn: 'Wałbrzych' }, { t: 10, id: 1, club: 'KO' }] },
+      { name: 'Ewa Raz', lastName: 'Raz', birthDate: null, current: null, terms: [{ t: 3, id: 6, club: 'SLD' }] },
+    ],
+  };
+  it('finds the record "skoczek" among all MPs, also those no longer in the Sejm', () => {
+    const html = renderParties({ ...ctx, terms }, { scope: 'all' });
+    expect(html).toContain('Rekordzista skoczek');
+    expect(html).toContain('<span class="hop-name">Jan Skoczek</span>');
+    expect(html).toContain('<b>3</b> partie, 3 przeskoki w 4 kadencjach Sejmu');
+    expect(html).toContain('href="#posel-1"');
+    expect(html).toContain('nie ma list z I i II kadencji');
+    expect(html).toContain('1 osoba była w Sejmie tylko w jednej partii');
+    const current = renderParties({ ...ctx, terms }, { scope: 'current' });
+    expect((current.match(/class="hop-row"/g) ?? []).length).toBe(1);
+    expect(current).not.toContain('Jan Skoczek');
+  });
+  it('lists the MPs of an earlier term with that term\'s club and district', () => {
+    const st = { query: '', club: '', includeInactive: false, term: 3 };
+    expect(termPicker({ ...ctx, terms }, st)).toContain('data-term="3" aria-pressed="true"');
+    expect(termInfo({ ...ctx, terms }, 3)).toBe('III kadencja · 20.10.1997 – 18.10.2001 · 3 posłów w ciągu kadencji');
+    const f = directoryFilters({ ...ctx, terms }, st);
+    expect(f).toContain('data-club="UW"');
+    expect(f).not.toContain('dir-inactive');
+    const list = [{ key: '3-5', id: 5, name: 'Anna Dwa', lastName: 'Dwa', club: 'UW', clubName: 'Klub Parlamentarny Unii Wolności', districtNum: 2, districtName: 'Wałbrzych', current: 1, terms: [3, 10] }];
+    const html = renderDirectory({ ...ctx, terms }, st, list);
+    expect(html).toContain('data-testid="term-info"');
+    expect(html).toContain('title="Klub Parlamentarny Unii Wolności"');
+    expect(html).toContain('href="#posel-1"');
+    expect(html).toContain('kadencje III, X');
+    expect(personAvatar('Ewa Raz', '#123456')).toContain('ER');
+    expect(termPicker(ctx, st)).toBe('');
   });
 });

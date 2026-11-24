@@ -33,6 +33,22 @@ export function filterMps(mps, { query = '', club = '', includeInactive = false 
     .sort((a, b) => lastName(a.name).localeCompare(lastName(b.name), 'pl') || a.name.localeCompare(b.name, 'pl'));
 }
 
+/** MPs of an earlier term (from termMps): search by name or district, filter by that term's club. */
+export function filterTermMps(list, { query = '', club = '' } = {}) {
+  const q = normalize(query);
+  return list
+    .filter((m) => !club || (m.club ?? '') === club)
+    .filter((m) => !q || normalize(`${m.name} ${m.districtName ?? ''}`).includes(q))
+    .sort((a, b) => a.lastName.localeCompare(b.lastName, 'pl') || a.name.localeCompare(b.name, 'pl'));
+}
+
+/** Count MPs per club in an earlier term, largest first. */
+export function termClubCounts(list) {
+  const counts = new Map();
+  for (const m of list) counts.set(m.club ?? '', (counts.get(m.club ?? '') ?? 0) + 1);
+  return [...counts.entries()].map(([club, count]) => ({ club, count })).sort((a, b) => b.count - a.count || a.club.localeCompare(b.club, 'pl'));
+}
+
 export function lastName(name) {
   const parts = String(name).trim().split(/\s+/);
   return parts[parts.length - 1];

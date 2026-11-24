@@ -1,5 +1,5 @@
-import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } from '../lib/mps.js';
-import { careerSpectrum, termRanges, partyHoppers } from '../lib/career.js';
+import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCounts, ageInYear } from '../lib/mps.js';
+import { careerSpectrum, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
@@ -142,16 +142,57 @@ function pageBadge() {
 }
 
 /* ---------- Directory ---------- */
-/** Club filter and the "expired mandates" switch; shown in the sidebar (and folded under the search on phones). */
+export const CURRENT_TERM = 10;
+const isPastTerm = (ctx, state) => Boolean(ctx.terms?.people?.length) && Number(state.term ?? CURRENT_TERM) !== CURRENT_TERM;
+
+/** Term picker (X … III) for "Posłowie"; only when the all-terms data is bundled. */
+export function termPicker(ctx, state) {
+  const nums = (ctx.terms?.terms ?? []).map((t) => t.num).sort((a, b) => b - a);
+  if (nums.length < 2) return '';
+  const cur = Number(state.term ?? CURRENT_TERM);
+  return `<div class="filters term-picker" role="group" aria-label="Kadencja Sejmu" data-testid="term-picker">${nums.map((n) => `<button type="button" class="filter ${n === cur ? 'on' : ''}" data-action="dir-term" data-term="${n}" aria-pressed="${n === cur}">${romanTerm(n)}</button>`).join('')}</div>`;
+}
+
+/** A club of an earlier term: its id as the label, the camp's colour, the full name on hover. */
+function termClubChip(m) {
+  const name = m.clubName ?? m.club ?? 'brak klubu';
+  const color = clubFamily(m.club, m.clubName).color ?? FALLBACK_CLUB.color;
+  return `<span class="chip" style="--club:${esc(color)}" title="${esc(name)}">${esc(m.club ?? '—')}</span>`;
+}
+
+/** Term picker, club filter and the "expired mandates" switch; shown in the sidebar (and folded under the search on phones). */
 export function directoryFilters(ctx, state, where = 'aside') {
-  const counts = clubCounts(ctx.mps);
   const id = where === 'aside' ? 'dir-inactive' : 'dir-inactive-phone';
+  const past = isPastTerm(ctx, state);
+  const picker = termPicker(ctx, state);
+  const counts = past ? termClubCounts(termMps(ctx.terms, Number(state.term))) : clubCounts(ctx.mps);
+  const label = (club) => (past ? club || 'bez klubu' : (ctx.clubs.get(club) ?? FALLBACK_CLUB).short);
   return `
+      ${picker ? `<p class="filters-label">Kadencja</p>${picker}<p class="filters-label">Klub</p>` : ''}
       <div class="filters" role="group" aria-label="Filtr klubu">
         <button type="button" class="filter ${state.club === '' ? 'on' : ''}" data-action="filter-club" data-club="" aria-pressed="${state.club === ''}">Wszystkie</button>
-        ${counts.map((c) => `<button type="button" class="filter ${state.club === c.club ? 'on' : ''}" data-action="filter-club" data-club="${esc(c.club)}" aria-pressed="${state.club === c.club}">${esc((ctx.clubs.get(c.club) ?? FALLBACK_CLUB).short)} <span>${c.count}</span></button>`).join('')}
+        ${counts.map((c) => `<button type="button" class="filter ${state.club === c.club ? 'on' : ''}" data-action="filter-club" data-club="${esc(c.club)}" aria-pressed="${state.club === c.club}">${esc(label(c.club))} <span>${c.count}</span></button>`).join('')}
       </div>
-      <label class="toggle" for="${id}"><input id="${id}" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>`;
+      ${past ? '' : `<label class="toggle" for="${id}"><input id="${id}" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>`}`;
+}
+
+/** "III kadencja · 20.10.1997 – 18.10.2001 · 482 posłów" */
+export function termInfo(ctx, num) {
+  const t = (ctx.terms?.terms ?? []).find((x) => x.num === num);
+  if (!t) return '';
+  const d = (s) => s.split('-').reverse().join('.');
+  return `${romanTerm(num)} kadencja · ${d(t.from)} – ${t.to ? d(t.to) : 'dziś'} · ${t.mps} ${plural(t.mps, 'poseł', 'posłów', 'posłów')} w ciągu kadencji`;
+}
+
+/** Card of an MP of an earlier term: initials (or today's photo for current MPs), that term's club and district. */
+function termCard(ctx, m) {
+  const now = m.current ? ctx.mpsById.get(m.current) : null;
+  const face = `${now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg')}<span class="mp-card-name">${esc(m.name)}</span>`;
+  const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
+  const meta = [termClubChip(m), m.districtNum ? `<span class="mp-card-district" title="okręg ${m.districtNum} · ${esc(m.districtName ?? '')}">okr. ${m.districtNum}</span>` : ''].filter(Boolean).join(sep);
+  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${now ? mpLink(now, face, 'mp-card-link') : `<span class="mp-card-link">${face}</span>`}
+    <span class="mp-card-meta" data-testid="mp-card-meta">${meta}</span>
+    <small class="muted term-card-terms">${now?.active ? 'dziś w Sejmie · ' : ''}kadencje ${termRanges(m.terms)}</small></li>`;
 }
 
 const partyWord = (n) => plural(n, 'partia', 'partie', 'partii');
@@ -167,21 +208,47 @@ export function rankingSwitch(current) {
   return `<nav class="rank-switch" aria-label="Rankingi" data-testid="rank-switch">${items.map(([href, id, label]) => `<a href="${href}"${id === current ? ' aria-current="page" class="on"' : ''}>${label}</a>`).join('')}</nav>`;
 }
 
-/** Ranking "Najwięcej partii": current MPs by how many parties they sat in over their Sejm career. */
-export function renderParties(ctx) {
-  const active = ctx.mps.filter((m) => m.active);
-  const list = partyHoppers(ctx.career, active);
+/** Initials avatar for someone with no current profile (an MP of an earlier term). */
+export function personAvatar(name, color, size = 'md') {
+  return `<span class="avatar avatar-${size}" style="--club:${esc(color ?? FALLBACK_CLUB.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(name))}</span></span>`;
+}
+
+const jumpWord = (n) => plural(n, 'przeskok', 'przeskoki', 'przeskoków');
+const termWordIn = (n) => plural(n, 'kadencji', 'kadencjach', 'kadencjach');
+
+/**
+ * Ranking "Najwięcej partii": every MP of every term since 1997 (data/terms.json) by how many parties
+ * they sat in. Current MPs link to their profile; earlier MPs show initials. `scope` 'current' keeps today's MPs.
+ * Without terms data it falls back to today's MPs from data/career.json.
+ */
+export function renderParties(ctx, state = { scope: 'all' }) {
+  const all = ctx.terms?.people?.length ? allPartyHoppers(ctx.terms) : null;
+  let list, single;
+  if (all) {
+    const rows = all.map((r) => ({ ...r, mp: r.person.current ? ctx.mpsById.get(r.person.current) ?? null : null }));
+    list = state.scope === 'current' ? rows.filter((r) => r.mp?.active) : rows;
+    single = singlePartyCount(ctx.terms);
+  } else {
+    const active = ctx.mps.filter((m) => m.active);
+    list = partyHoppers(ctx.career, active).map((r) => ({ ...r, person: { name: r.mp.name } }));
+    single = active.filter((m) => (ctx.career?.career?.[m.id] ?? []).length > 0).length - list.length;
+  }
   const head = `<p class="eyebrow">Ranking</p><h1>Najwięcej partii</h1>
-      <p class="lede">Którzy posłowie byli w największej liczbie partii w swojej karierze w Sejmie.</p>`;
-  if (list.length === 0) return `<section data-view="parties"><div class="panel mps-dash" data-testid="parties">${head}<p>Brak danych o kadencjach posłów.</p></div></section>`;
+      <p class="lede">${all ? 'Kto ze wszystkich posłów III RP był w największej liczbie partii. Szukamy rekordzisty skoczka.' : 'Którzy posłowie byli w największej liczbie partii w swojej karierze w Sejmie.'}</p>`;
+  const tabs = all ? `<div class="att-tabs" role="group" aria-label="Kogo pokazać">
+        <button type="button" class="filter ${state.scope !== 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="all" aria-pressed="${state.scope !== 'current'}">Wszyscy od 1997</button>
+        <button type="button" class="filter ${state.scope === 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="current" aria-pressed="${state.scope === 'current'}">Obecni posłowie</button>
+      </div>` : '';
+  if (list.length === 0) return `<section data-view="parties"><div class="panel mps-dash" data-testid="parties">${head}${tabs}<p>Brak danych o kadencjach posłów.</p></div></section>`;
+  const face = (r, size) => (r.mp ? mpLink(r.mp, avatar(ctx, r.mp, size), 'hop-avatar') : `<span class="hop-avatar">${personAvatar(r.person.name, r.path[r.path.length - 1]?.color, size)}</span>`);
+  const name = (r) => (r.mp ? mpLink(r.mp, esc(r.person.name)) : `<span class="hop-name">${esc(r.person.name)}</span>`);
   const top = list[0];
-  const tied = list.filter((r) => r.count === top.count).length - 1;
-  const single = active.filter((m) => (ctx.career?.career?.[m.id] ?? []).length > 0).length - list.length;
+  const tied = list.filter((r) => r.count === top.count && r.jumps === top.jumps).length - 1;
   const rows = list.map((r, i) => `
-        <li class="hop-row" data-mp-id="${r.mp.id}">
+        <li class="hop-row" data-person="${esc(r.person.name)}"${r.mp ? ` data-mp-id="${r.mp.id}"` : ''}>
           <span class="hop-rank">${i + 1}</span>
-          ${mpLink(r.mp, avatar(ctx, r.mp, 'sm'), 'hop-avatar')}
-          <div class="hop-main">${mpLink(r.mp, esc(r.mp.name))}${partyRoute(r.path)}</div>
+          ${face(r, 'sm')}
+          <div class="hop-main">${name(r)}${r.mp?.active ? ' <small class="hop-now">obecny poseł</small>' : ''}${partyRoute(r.path)}</div>
           <span class="hop-count"><b>${r.count}</b> <small>${partyWord(r.count)}</small></span>
         </li>`).join('');
   return `
@@ -189,35 +256,44 @@ export function renderParties(ctx) {
     ${rankingSwitch('parties')}
     <div class="panel mps-dash" data-testid="parties">
       ${head}
+      ${tabs}
       <div class="hop-leader" data-testid="hop-leader">
-        ${mpLink(top.mp, avatar(ctx, top.mp, 'lg'), 'hop-avatar')}
+        ${face(top, 'lg')}
         <div>
-          <p class="hop-leader-name">${mpLink(top.mp, esc(top.mp.name))}</p>
-          <p class="hop-leader-stat"><b>${top.count}</b> ${partyWord(top.count)} w ${top.terms} ${plural(top.terms, 'kadencji', 'kadencjach', 'kadencjach')} Sejmu${tied > 0 ? `<span class="muted"> · ex aequo z ${tied} ${plural(tied, 'innym posłem', 'innymi posłami', 'innymi posłami')}</span>` : ''}</p>
+          ${all && state.scope !== 'current' ? '<p class="eyebrow">Rekordzista skoczek</p>' : ''}
+          <p class="hop-leader-name">${name(top)}</p>
+          <p class="hop-leader-stat"><b>${top.count}</b> ${partyWord(top.count)}${top.jumps != null ? `, ${top.jumps} ${jumpWord(top.jumps)}` : ''} w ${top.terms} ${termWordIn(top.terms)} Sejmu${tied > 0 ? `<span class="muted"> · ex aequo z ${tied} ${plural(tied, 'innym posłem', 'innymi posłami', 'innymi posłami')}</span>` : ''}</p>
           ${partyRoute(top.path)}
         </div>
       </div>
       <ol class="hop-list" data-testid="hop-ranking">${rows}</ol>
-      <p class="src">${single} ${plural(single, 'poseł był', 'posłów było', 'posłów było')} w Sejmie tylko w jednej partii. Liczymy kluby z każdej kadencji od 1997 r. według API Sejmu (ostatni klub w kadencji); kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną.</p>
+      <p class="src">${all
+        ? `${single} ${plural(single, 'osoba była', 'osoby były', 'osób było')} w Sejmie tylko w jednej partii. Bierzemy posłów wszystkich kadencji od III (1997) z API Sejmu, które nie ma list z I i II kadencji (1991–1997). W każdej kadencji liczy się ostatni klub posła, więc zmiany w trakcie kadencji nie zawsze widać. Kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną. Przy remisie wyżej jest ten, kto więcej razy przeskakiwał.`
+        : `${single} ${plural(single, 'poseł był', 'posłów było', 'posłów było')} w Sejmie tylko w jednej partii. Liczymy kluby z każdej kadencji od 1997 r. według API Sejmu (ostatni klub w kadencji); kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną.`}</p>
     </div>
   </section>`;
 }
 
 export function renderDirectory(ctx, state, list) {
-  const counts = clubCounts(ctx.mps);
+  const past = isPastTerm(ctx, state);
+  const num = Number(state.term ?? CURRENT_TERM);
+  const clubLabel = past ? state.club : (ctx.clubs.get(state.club) ?? FALLBACK_CLUB).short;
+  const info = ctx.terms?.terms?.length ? termInfo(ctx, num) : '';
   return `
   <section data-view="directory">
     <div class="panel dir-head">
-      <h1 class="visually-hidden">Posłowie X kadencji</h1>
+      <h1 class="visually-hidden">Posłowie ${romanTerm(num)} kadencji</h1>
       <label class="search-field" for="dir-search"><span class="visually-hidden">Szukaj posła</span>
-        <input id="dir-search" type="search" placeholder="Szukaj posła po nazwisku, okręgu lub województwie" value="${esc(state.query)}" data-action="search" autocomplete="off">
+        <input id="dir-search" type="search" placeholder="Szukaj posła po nazwisku, okręgu${past ? '' : ' lub województwie'}" value="${esc(state.query)}" data-action="search" autocomplete="off">
       </label>
-      <details class="phone-only dir-filters-phone"><summary>Filtry${state.club ? `: ${esc((ctx.clubs.get(state.club) ?? FALLBACK_CLUB).short)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
+      <details class="phone-only dir-filters-phone"><summary>Filtry${past ? `: ${romanTerm(num)} kadencja` : ''}${state.club ? `${past ? ', ' : ': '}${esc(clubLabel)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
+      ${info ? `<p class="term-info" data-testid="term-info">${esc(info)}</p>` : ''}
       <p class="result-count" data-testid="result-count">${list.length} ${plural(list.length, 'poseł', 'posłów', 'posłów')}</p>
     </div>
     <ul class="mp-grid">
-      ${list.length === 0 ? `<li class="empty">Nikt nie pasuje do tego wyszukiwania. Spróbuj innego nazwiska albo wybierz „Wszystkie”.</li>` : list.map((mp) => mpCard(ctx, mp)).join('')}
+      ${list.length === 0 ? `<li class="empty">Nikt nie pasuje do tego wyszukiwania. Spróbuj innego nazwiska albo wybierz „Wszystkie”.</li>` : list.map((mp) => (past ? termCard(ctx, mp) : mpCard(ctx, mp))).join('')}
     </ul>
+    ${past ? `<p class="src panel">Dane: API Sejmu (${esc(ctx.terms.source)}), pobrane ${esc(ctx.terms.fetchedAt)}. Klub to ostatni klub posła w tej kadencji; lista obejmuje też posłów, którzy objęli lub stracili mandat w trakcie. API nie ma list z I i II kadencji (1991–1997).</p>` : ''}
   </section>`;
 }
 

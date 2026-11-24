@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Frekwencja klubów');
+  await expect(post).toContainText('Posłowie wszystkich kadencji');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -128,7 +128,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Frekwencja klubów');
+  await expect(page.locator('.news-post').first()).toContainText('Posłowie wszystkich kadencji');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -204,6 +204,8 @@ test('Ranking "Najwięcej partii" opens from the side menu', async ({ page, isMo
   expect(await panel.getByTestId('hop-ranking').locator('.hop-row').count()).toBeGreaterThan(10);
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+  await expect(panel.getByTestId('hop-leader')).toContainText('Rekordzista skoczek');
+  await panel.locator('[data-action="hop-scope"][data-scope="current"]').click();
   await panel.getByTestId('hop-leader').locator('.hop-leader-name a').click();
   await expect(page.getByTestId('spectrum')).toBeVisible();
 });
@@ -266,4 +268,16 @@ test('Frekwencja: MPs and clubs', async ({ page }) => {
   await clubs.filter({ has: page.locator('[data-club="KO"]') }).first().locator('button.linklike').click();
   await expect(page.getByTestId('att-ranking')).toBeVisible();
   await expect(page.locator('[data-action="att-club"][data-club="KO"]')).toHaveClass(/on/);
+});
+
+test('Posłowie: earlier terms of the Sejm', async ({ page }) => {
+  await page.goto(`${PAGE}#poslowie`);
+  if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
+  await page.locator('[data-action="dir-term"][data-term="3"]:visible').click();
+  await expect(page.getByTestId('term-info')).toContainText('III kadencja');
+  expect(await page.locator('.term-card').count()).toBeGreaterThan(400);
+  await page.locator('#dir-search').fill('Buzek');
+  await expect(page.locator('.term-card').first()).toContainText('Buzek');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

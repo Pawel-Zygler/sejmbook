@@ -95,9 +95,23 @@ export function termRanges(nums) {
  * The MP's path through parties, in order: consecutive terms in the same camp are merged.
  * "Niezrzeszeni" is not a party, so it is left out of the path and the count.
  */
-export function partyPath(careerData, mpId) {
-  const rows = careerData?.career?.[mpId];
-  if (!rows?.length) return null;
+/** Full names of clubs from terms the API lists without names (III–V); only names we are sure of. */
+export const HISTORIC_CLUBS = {
+  UW: 'Klub Parlamentarny Unii Wolności',
+  SKL: 'Klub Parlamentarny Stronnictwa Konserwatywno-Ludowego',
+  ROP: 'Koło Poselskie Ruchu Odbudowy Polski',
+  SDPL: 'Klub Parlamentarny Socjaldemokracji Polskiej',
+  UP: 'Klub Parlamentarny Unii Pracy',
+  RLN: 'Koło Poselskie Ruch Ludowo-Narodowy',
+  RKN: 'Koło Poselskie Ruch Katolicko-Narodowy',
+  D_OJCZYSTY: 'Koło Poselskie Dom Ojczysty',
+};
+
+/** Name of a club in a term: from the API, from HISTORIC_CLUBS, else null. */
+export const clubNameIn = (termsData, term, club) => termsData?.clubs?.[term]?.[club] ?? HISTORIC_CLUBS[club] ?? null;
+
+/** Rows {term, club, clubName} in time order → parties in time order (same camp in a row merged; "niezrzeszeni" skipped). */
+export function buildPath(rows) {
   const path = [];
   for (const r of [...rows].sort((a, b) => a.term - b.term)) {
     const fam = clubFamily(r.club, r.clubName);
@@ -112,7 +126,43 @@ export function partyPath(careerData, mpId) {
     if (!p.color) p.color = colors.get(p.id) ?? OTHER_COLORS[other++ % OTHER_COLORS.length];
     colors.set(p.id, p.color);
   }
-  return { path, count: new Set(path.map((p) => p.id)).size, terms: rows.length };
+  return { path, count: new Set(path.map((p) => p.id)).size, jumps: Math.max(path.length - 1, 0) };
+}
+
+export function partyPath(careerData, mpId) {
+  const rows = careerData?.career?.[mpId];
+  if (!rows?.length) return null;
+  return { ...buildPath(rows), terms: rows.length };
+}
+
+/**
+ * "Najwięcej partii" over every MP of every term in data/terms.json (III RP from 1997).
+ * Most parties first; ties: more jumps between clubs, more terms, then by name.
+ */
+export function allPartyHoppers(termsData, { min = 2 } = {}) {
+  const out = [];
+  for (const person of termsData?.people ?? []) {
+    const rows = person.terms.map((t) => ({ term: t.t, club: t.club, clubName: clubNameIn(termsData, t.t, t.club) }));
+    const pp = buildPath(rows);
+    if (pp.count >= min) out.push({ person, ...pp, terms: rows.length });
+  }
+  return out.sort((a, b) => b.count - a.count || b.jumps - a.jumps || b.terms - a.terms || a.person.name.localeCompare(b.person.name, 'pl'));
+}
+
+/** How many people sat in the Sejm in only one party (out of everyone with at least one club). */
+export function singlePartyCount(termsData) {
+  return (termsData?.people ?? []).filter((p) => buildPath(p.terms.map((t) => ({ term: t.t, club: t.club, clubName: clubNameIn(termsData, t.t, t.club) }))).count === 1).length;
+}
+
+/** MPs of one term from data/terms.json, as {key, name, lastName, club, clubName, districtNum, districtName, active, current, terms}. */
+export function termMps(termsData, num) {
+  const out = [];
+  for (const p of termsData?.people ?? []) {
+    const t = p.terms.find((x) => x.t === num);
+    if (!t) continue;
+    out.push({ key: `${num}-${t.id}`, id: t.id, name: p.name, lastName: p.lastName, club: t.club, clubName: clubNameIn(termsData, num, t.club), districtNum: t.d, districtName: t.dn, active: t.active, current: p.current, terms: p.terms.map((x) => x.t) });
+  }
+  return out;
 }
 
 /**

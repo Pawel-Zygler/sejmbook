@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-kadencje",
+      "date": "2026-11-24",
+      "title": "Posłowie wszystkich kadencji",
+      "body": "W zakładce Posłowie wybierzesz teraz kadencję, od III (1997) do obecnej X.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz posłów"
+      }
+    },
+    {
+      "id": "2026-11-24-skoczek",
+      "date": "2026-11-24",
+      "title": "Rekordzista skoczek III RP",
+      "body": "Ranking „Najwięcej partii” obejmuje teraz wszystkich posłów od 1997 roku, nie tylko obecnych.",
+      "link": {
+        "href": "#partie",
+        "label": "Kto skakał najwięcej"
+      }
+    },
+    {
       "id": "2026-11-24-kluby-frekwencja",
       "date": "2026-11-24",
       "title": "Frekwencja klubów",

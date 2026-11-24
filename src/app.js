@@ -1,10 +1,11 @@
-import { indexById, clubById, filterMps } from './lib/mps.js';
+import { indexById, clubById, filterMps, filterTermMps } from './lib/mps.js';
+import { termMps } from './lib/career.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
 import { renderHome, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData }) {
   return {
     mps: mpsData.mps,
     mpsById: indexById(mpsData.mps),
@@ -15,6 +16,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     news: newsData?.posts ?? [],
     attendance: attendanceData ?? null,
     career: careerData ?? null,
+    // Every MP of every term the Sejm API covers (III–X), grouped into people.
+    terms: termsData ?? null,
     life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
     media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {} },
@@ -30,14 +33,16 @@ export function createApp(doc, win, data) {
   const aside = doc.getElementById('aside');
   const state = {
     route: parseHash(win.location.hash),
-    directory: { query: '', club: '', includeInactive: false },
+    directory: { query: '', club: '', includeInactive: false, term: 10 },
+    parties: { scope: 'all' },
     // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
     flyer: { period: 'all', dataset: null, sortBy: 'km' },
     attendance: { order: 'desc', club: '', view: 'mps' },
   };
 
   function renderDirectoryList() {
-    const list = filterMps(ctx.mps, state.directory);
+    const t = Number(state.directory.term);
+    const list = t !== 10 && ctx.terms ? filterTermMps(termMps(ctx.terms, t), state.directory) : filterMps(ctx.mps, state.directory);
     return renderDirectory(ctx, state.directory, list);
   }
 
@@ -48,7 +53,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'directory') html = renderDirectoryList();
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
-    else if (r.name === 'parties') html = renderParties(ctx);
+    else if (r.name === 'parties') html = renderParties(ctx, state.parties);
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
@@ -82,6 +87,14 @@ export function createApp(doc, win, data) {
       state.directory.club = el.dataset.club;
       state.directory.query = '';
       go('#poslowie');
+    } else if (action === 'dir-term') {
+      e.preventDefault();
+      state.directory.term = Number(el.dataset.term);
+      state.directory.club = '';
+      go('#poslowie');
+    } else if (action === 'hop-scope') {
+      state.parties.scope = el.dataset.scope;
+      render();
     } else if (action === 'att-order') {
       state.attendance.order = el.dataset.order;
       render();

@@ -10,6 +10,7 @@ import attendanceData from '../../data/attendance.json';
 import careerData from '../../data/career.json';
 import lifeData from '../../data/life.json';
 import wikiPartiesData from '../../data/wiki-parties.json';
+import termsData from '../../data/terms.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -24,7 +25,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData });
 });
 afterEach(() => app.destroy());
 
@@ -148,7 +149,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Frekwencja klubów');
+    expect(first.textContent).toContain('Posłowie wszystkich kadencji');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -294,8 +295,16 @@ describe('Ranking: Najwięcej partii', () => {
     expect(counts.length).toBeGreaterThan(10);
     expect(counts).toEqual([...counts].sort((a, b) => b - a));
     expect(counts[counts.length - 1]).toBeGreaterThanOrEqual(2);
+    // All MPs since 1997: the record holder may no longer be in the Sejm (then there is no profile link).
+    expect($('[data-testid="hop-leader"]').textContent).toContain('Rekordzista skoczek');
+    expect($('[data-testid="hop-ranking"] .hop-row').dataset.person).toBe($('[data-testid="hop-leader"] .hop-leader-name').textContent.trim());
+    expect($$('[data-testid="hop-ranking"] .hop-row').length).toBeGreaterThan(100);
+    click($('[data-action="hop-scope"][data-scope="current"]'));
+    const rows = $$('[data-testid="hop-ranking"] .hop-row');
+    expect(rows.length).toBeGreaterThan(10);
+    expect(rows.every((r) => app.ctx.mpsById.get(Number(r.dataset.mpId))?.active)).toBe(true);
     const leaderHref = $('[data-testid="hop-leader"] .hop-leader-name a').getAttribute('href');
-    expect($('[data-testid="hop-ranking"] .hop-row a').getAttribute('href')).toBe(leaderHref);
+    expect(rows[0].querySelector('a').getAttribute('href')).toBe(leaderHref);
   });
   it('top search hints at searching the Sejm and MPs', () => {
     expect($('#top-search').getAttribute('placeholder')).toBe('Szukaj w Sejmie, szukaj posła');
@@ -403,5 +412,22 @@ describe('Frekwencja: clubs', () => {
     expect($('[data-testid="att-ranking"]')).not.toBeNull();
     const club = rows[0].getAttribute('data-club');
     expect($$('[data-testid="att-ranking"] tbody tr').every((tr) => app.ctx.mpsById.get(Number(tr.dataset.mpId)).club === club)).toBe(true);
+  });
+});
+
+describe('Posłowie: all terms', () => {
+  it('switches to an earlier term and back', () => {
+    nav('#poslowie');
+    expect($('[data-testid="term-info"]').textContent).toContain('X kadencja');
+    click($('#aside [data-action="dir-term"][data-term="3"]'));
+    expect($('[data-testid="term-info"]').textContent).toContain('III kadencja · 20.10.1997');
+    const cards = $$('.term-card');
+    expect(cards.length).toBe(termsData.people.filter((p) => p.terms.some((t) => t.t === 3)).length);
+    click($('#aside button.filter[data-club="UW"]'));
+    expect($$('.term-card').length).toBe(termsData.people.filter((p) => p.terms.some((t) => t.t === 3 && t.club === 'UW')).length);
+    expect($('.term-card .chip').getAttribute('title')).toBe('Klub Parlamentarny Unii Wolności');
+    click($('#aside [data-action="dir-term"][data-term="10"]'));
+    expect($$('.mp-card').length).toBe(app.ctx.mps.filter((m) => m.active).length);
+    expect($('.term-card')).toBeNull();
   });
 });

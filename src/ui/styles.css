@@ -349,3 +349,12 @@ h2 { font-size: 1.1rem; }
 .att-tabs { display: flex; gap: 6px; margin: 0 0 12px; }
 .linklike { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-align: left; }
 .linklike:hover span { text-decoration: underline; }
+
+/* Posłowie: earlier terms */
+.filters-label { margin: 10px 0 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.filters-label:first-child { margin-top: 0; }
+.term-picker .filter { min-width: 42px; justify-content: center; }
+.term-info { margin: 8px 0 0; font-size: 0.85rem; color: var(--muted); }
+.term-card-terms { display: block; margin-top: 4px; font-size: 0.75rem; }
+.hop-name { font-weight: 700; }
+.hop-now { font-size: 0.7rem; font-weight: 700; color: var(--accent); }
