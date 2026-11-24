@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { airportForDistrict, legKmForDistrict, estimateKm, timesAroundEarth, buildRanking, flightHistoryForMp, datasetSummary, resolveArticles } from '../../src/lib/flights.js';
+import { airportForDistrict, legKmForDistrict, estimateKm, timesAroundEarth, buildRanking, flightHistoryForMp, datasetSummary, resolveArticles, kmByClub } from '../../src/lib/flights.js';
 
 const airports = {
   hub: 'WAW',
@@ -118,5 +118,22 @@ describe('articles', () => {
   it('flightHistoryForMp includes articles', () => {
     const data = { articles: registry, datasets: [{ id: 'd', entries: [{ mpId: 1, flights: 5, articles: ['a1'] }] }] };
     expect(flightHistoryForMp(data, 1)[0].articles[0].url).toBe('https://x');
+  });
+});
+
+describe('kmByClub', () => {
+  const rows = [
+    { mp: { club: 'A' }, km: 500 }, { mp: { club: 'B' }, km: 300 }, { mp: { club: 'A' }, km: 100 },
+    { mp: { club: 'C' }, km: 50 }, { mp: { club: 'D' }, km: 30 }, { mp: { club: 'E' }, km: 20 }, { mp: { club: 'F' }, km: null },
+  ];
+  it('keeps the biggest clubs and folds the rest into "Inne"', () => {
+    const { total, slices } = kmByClub(rows, 2);
+    expect(total).toBe(1000);
+    expect(slices.map((s) => [s.club, s.km, s.series])).toEqual([['A', 600, 1], ['B', 300, 2], [null, 100, 0]]);
+    expect(kmByClub(rows, 4).slices.map((s) => s.series)).toEqual([1, 2, 3, 5, 0]);
+    expect(slices[2].clubs).toEqual(['C', 'D', 'E']);
+    expect(slices.reduce((s, x) => s + x.share, 0)).toBeCloseTo(1);
+    expect(kmByClub([])).toEqual({ total: 0, slices: [] });
+    expect(kmByClub(rows.slice(0, 2), 4).slices.some((s) => s.club === null)).toBe(false);
   });
 });

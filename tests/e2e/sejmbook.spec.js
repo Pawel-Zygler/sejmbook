@@ -103,7 +103,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Profile byłych posłów');
+  await expect(post).toContainText('Tryb jasny i ciemny');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -134,7 +134,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Profile byłych posłów');
+  await expect(page.locator('.news-post').first()).toContainText('Tryb jasny i ciemny');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -319,4 +319,21 @@ test('Former MPs have their own profile', async ({ page }) => {
   await expect(page.getByTestId('person-terms').locator('tbody tr').first()).toBeVisible();
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Dark and light mode: switch, and the donut uses the mode\'s palette', async ({ page, isMobile }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  const btn = page.getByTestId('theme-btn');
+  while ((await btn.getAttribute('data-theme')) !== 'light') await btn.click();
+  const donut = page.locator('[data-testid="flyer-donut"]:visible').first();
+  if (isMobile) await donut.scrollIntoViewIfNeeded();
+  const fill = () => donut.locator('.donut-seg').first().evaluate((el) => getComputedStyle(el).fill);
+  expect(await fill()).toBe('rgb(54, 93, 184)');
+  const bgLight = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  await btn.click();
+  await expect(btn).toHaveAttribute('data-theme', 'dark');
+  expect(await fill()).toBe('rgb(119, 162, 252)');
+  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).not.toBe(bgLight);
+  await page.reload();
+  await expect(page.getByTestId('theme-btn')).toHaveAttribute('data-theme', 'dark');
 });

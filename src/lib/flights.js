@@ -181,3 +181,22 @@ export function resolvePeriod(datasets, periodId, datasetId) {
   const dataset = period.choices.find((ds) => ds.id === datasetId) ?? period.choices[0];
   return { periods, period, dataset };
 }
+
+/**
+ * Estimated km per club, largest first: the `top` biggest clubs, then everyone else as one "Inne" slice.
+ * Rows without an estimate are left out. Shares add up to 1.
+ */
+export function kmByClub(rows, top = 4) {
+  const byClub = new Map();
+  for (const r of rows) if (r.km != null) byClub.set(r.mp.club, (byClub.get(r.mp.club) ?? 0) + r.km);
+  const total = [...byClub.values()].reduce((s, v) => s + v, 0);
+  if (total === 0) return { total: 0, slices: [] };
+  const sorted = [...byClub.entries()].map(([club, km]) => ({ club, km })).sort((a, b) => b.km - a.km || a.club.localeCompare(b.club, 'pl'));
+  const head = sorted.slice(0, top);
+  const rest = sorted.slice(top);
+  // Series slots 1, 2, 3, 5: slot 4 is too close to slot 2 in the dark palette (both orange).
+  const SLOTS = [1, 2, 3, 5];
+  const slices = head.map((s, i) => ({ ...s, series: SLOTS[i] ?? 0 }));
+  if (rest.length) slices.push({ club: null, km: rest.reduce((s, r) => s + r.km, 0), series: 0, clubs: rest.map((r) => r.club) });
+  return { total, slices: slices.map((s) => ({ ...s, share: s.km / total })) };
+}

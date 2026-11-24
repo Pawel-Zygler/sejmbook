@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -461,5 +461,20 @@ describe('renderPerson', () => {
   it('sends today\'s MPs to their full profile and unknown keys to "not found"', () => {
     expect(renderPerson({ ...ctx, terms, peopleByKey }, '3-6')).toContain('data-view="profile"');
     expect(renderPerson({ ...ctx, terms, peopleByKey }, '9-999')).toContain('Nie ma takiej strony');
+  });
+});
+
+describe('flyerDonut', () => {
+  it('draws one slice per club plus "Inne", with tooltips and a legend in series colours', () => {
+    const mk = (club, km) => ({ mp: { club }, km });
+    const html = flyerDonut(ctx, [mk('KO', 600), mk('PiS', 200), mk('PSL', 100), mk('Lewica', 50), mk('Razem', 30), mk('niez.', 20)]);
+    expect((html.match(/class="donut-seg"/g) ?? []).length).toBe(5);
+    expect(html).toContain('fill:var(--series-1)');
+    expect(html).toContain('fill:var(--series-other)');
+    expect(html).toContain('<title>KO: ≈ 600 km (60,0%)</title>');
+    expect(html).toContain('<span class="lg-name" title="Razem, Niezrzeszeni">Inne</span>');
+    expect(html).toContain('>0,00</text>');
+    expect(flyerDonut(ctx, [])).toBe('');
+    expect(flyerDonut(ctx, [mk('KO', 10)])).toContain('A 52 52 0 1 1');
   });
 });

@@ -82,10 +82,35 @@ export function createApp(doc, win, data) {
     win.scrollTo?.(0, 0);
   }
 
+  // Theme: auto (system) → light → dark. Remembered per browser when storage works.
+  const THEMES = ['auto', 'light', 'dark'];
+  const THEME_LABEL = { auto: 'automatyczny', light: 'jasny', dark: 'ciemny' };
+  const svg = (inner) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">${inner}</svg>`;
+  const THEME_ICON = {
+    auto: svg('<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/>'),
+    light: svg('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+    dark: svg('<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>'),
+  };
+  function applyTheme(t) {
+    const root = doc.documentElement;
+    if (t === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', t);
+    const btn = doc.querySelector('[data-action="theme"]');
+    if (btn) { btn.innerHTML = THEME_ICON[t]; btn.setAttribute('aria-label', `Motyw: ${THEME_LABEL[t]}`); btn.title = `Motyw: ${THEME_LABEL[t]}`; btn.dataset.theme = t; }
+  }
+  let theme = 'auto';
+  try { theme = THEMES.includes(win.localStorage?.getItem('sejmbook-theme')) ? win.localStorage.getItem('sejmbook-theme') : 'auto'; } catch { /* storage blocked */ }
+  applyTheme(theme);
+
   function onClick(e) {
     const el = e.target.closest('[data-action]');
     if (!el || el.matches('input')) return;
     const action = el.dataset.action;
+    if (action === 'theme') {
+      theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length];
+      applyTheme(theme);
+      try { win.localStorage?.setItem('sejmbook-theme', theme); } catch { /* storage blocked */ }
+      return;
+    }
     if (action === 'filter-club') {
       e.preventDefault();
       state.directory.club = el.dataset.club;

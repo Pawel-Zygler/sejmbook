@@ -12,6 +12,7 @@ export const SHELL_HTML = `
       <a href="#frequent-flyer" data-nav="flyer" aria-label="Frequent Flyer"><span class="nav-long">Frequent </span>Flyer</a>
       <a href="#frekwencja" data-nav="attendance">Frekwencja</a>
     </nav>
+    <button type="button" class="theme-btn" data-action="theme" data-testid="theme-btn" aria-label="Motyw: automatyczny" title="Motyw: automatyczny"></button>
   </div>
 </header>
 <div class="layout">

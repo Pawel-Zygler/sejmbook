@@ -14,18 +14,23 @@
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   --radius: 10px;
+  /* Chart series, light mode: beautifulcharts.dev palette (each >= 3:1 on the light surface). */
+  --series-1: #365db8; --series-2: #c77600; --series-3: #009bc2; --series-4: #893400; --series-5: #b54154;
+  --series-other: #9aa1ad;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #121418; --surface: #1c1f25; --surface-2: #252930; --ink: #e9ebef; --muted: #9aa1ad;
     --line: #2f343c; --accent: #ff4d63; --accent-ink: #1a0005; --accent-soft: #3a1820;
     --warn-bg: #3a2f12; --warn-ink: #f3d68a; color-scheme: dark;
+    --series-1: #77a2fc; --series-2: #cc712b; --series-3: #1fe6e5; --series-4: #e7963e; --series-5: #f5c252; --series-other: #5c6370;
   }
 }
 :root[data-theme="dark"] {
   --bg: #121418; --surface: #1c1f25; --surface-2: #252930; --ink: #e9ebef; --muted: #9aa1ad;
   --line: #2f343c; --accent: #ff4d63; --accent-ink: #1a0005; --accent-soft: #3a1820;
   --warn-bg: #3a2f12; --warn-ink: #f3d68a; color-scheme: dark;
+  --series-1: #77a2fc; --series-2: #cc712b; --series-3: #1fe6e5; --series-4: #e7963e; --series-5: #f5c252; --series-other: #5c6370;
 }
 
 * { box-sizing: border-box; }
@@ -383,3 +388,25 @@ h2 { font-size: 1.1rem; }
 /* Former MPs' profiles */
 .person-terms { min-width: 480px; }
 [data-view="person"] > .panel + .panel, [data-view="person"] > .profile-top + .panel { margin-top: 16px; }
+
+/* Theme switch */
+.theme-btn { flex: none; width: 36px; height: 36px; display: inline-grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); cursor: pointer; }
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn:hover { border-color: var(--accent); }
+
+/* Frequent Flyer donut (beautifulcharts.dev palette) */
+.donut { margin: 14px 0 0; border-top: 1px solid var(--line); padding-top: 12px; }
+.donut-title { font-size: 0.8rem; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+.donut-body { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.donut svg { width: 140px; height: 140px; }
+.donut svg { flex: none; overflow: visible; }
+.donut-seg { stroke: var(--surface); stroke-width: 2; stroke-linejoin: round; transition: transform .15s; transform-origin: 60px 60px; outline: none; }
+.donut-seg:hover, .donut-seg:focus-visible { transform: scale(1.05); }
+.donut-num { font: 800 17px var(--font-display); fill: var(--ink); }
+.donut-unit { font-size: 9px; fill: var(--muted); }
+.donut-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; width: 100%; min-width: 0; font-size: 0.85rem; }
+.donut-legend li { display: flex; align-items: center; gap: 6px; }
+.swatch { flex: none; width: 10px; height: 10px; border-radius: 3px; }
+.lg-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lg-val { font-variant-numeric: tabular-nums; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .donut-seg { transition: none; } }

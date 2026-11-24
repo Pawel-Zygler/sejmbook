@@ -150,7 +150,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Profile byłych posłów');
+    expect(first.textContent).toContain('Tryb jasny i ciemny');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -159,7 +159,7 @@ describe('news feed (Aktualności)', () => {
   });
   it('the news post button opens the ranking', () => {
     expect($$('.news-post').every((d) => d.tagName === 'DETAILS' && !d.open)).toBe(true);
-    expect($('.news-post .news-line').textContent).toContain('Najwięcej partii: Profile byłych posłów');
+    expect($('.news-post .news-line').textContent).toContain('Sejmbook: Tryb jasny i ciemny');
     const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
     expect(btn.getAttribute('href')).toBe('#frequent-flyer');
     nav(btn.getAttribute('href'));
@@ -470,5 +470,28 @@ describe('Profiles of former MPs', () => {
     expect(leader.getAttribute('href')).toMatch(/^#osoba-\d+-\d+$/);
     nav(leader.getAttribute('href'));
     expect($$('[data-testid="person-route"] .party-route li').length).toBeGreaterThan(2);
+  });
+});
+
+describe('Theme switch and Frequent Flyer donut', () => {
+  it('cycles auto → light → dark and back, on the <html> element', () => {
+    const btn = $('[data-action="theme"]');
+    const root = document.documentElement;
+    const start = btn.dataset.theme;
+    const order = ['auto', 'light', 'dark'];
+    for (let i = 1; i <= 3; i++) {
+      click(btn);
+      const t = order[(order.indexOf(start) + i) % 3];
+      expect(btn.dataset.theme).toBe(t);
+      expect(root.getAttribute('data-theme')).toBe(t === 'auto' ? null : t);
+    }
+  });
+  it('the donut in the sidebar matches the km totals', () => {
+    nav('#frequent-flyer');
+    const donut = $('#aside [data-testid="flyer-donut"]');
+    expect(donut).not.toBeNull();
+    const shares = $$('#aside .donut-legend .lg-val').map((e) => parseFloat(e.textContent.replace(',', '.')));
+    expect(shares.reduce((a, b) => a + b, 0)).toBeCloseTo(100, 0);
+    expect(donut.querySelectorAll('.donut-seg').length).toBe(shares.length);
   });
 });

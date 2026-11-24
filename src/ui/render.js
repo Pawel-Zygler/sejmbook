@@ -1,7 +1,7 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCounts, ageInYear } from '../lib/mps.js';
 import { careerSpectrum, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
-import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
+import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 
@@ -526,6 +526,39 @@ function flightPost(ctx, mp, h, legKm) {
 
 /* ---------- Frequent Flyer ---------- */
 /** Totals of the Frequent Flyer ranking; shown in the right sidebar (and under the ranking on phones). */
+/**
+ * Donut chart (experiment, Pawel 2026-11-24): estimated km by club. Colours are the series palette of
+ * beautifulcharts.dev (--series-1..4, separate light and dark values); everyone else is a grey "Inne".
+ * Each slice has a tooltip; the legend lists club, km and share, so colour is never the only key.
+ */
+export function flyerDonut(ctx, rows) {
+  const { total, slices } = kmByClub(rows, 4);
+  if (!slices.length) return '';
+  const R = 52, r = 34, C = 60;
+  const pt = (rad, a) => `${(C + rad * Math.sin(a)).toFixed(2)} ${(C - rad * Math.cos(a)).toFixed(2)}`;
+  let a0 = 0;
+  const label = (s) => (s.club ? (ctx.clubs.get(s.club)?.short ?? s.club) : 'Inne');
+  const pct = (s) => `${(s.share * 100).toFixed(1).replace('.', ',')}%`;
+  const paths = slices.map((s) => {
+    const a1 = a0 + s.share * 2 * Math.PI;
+    const big = a1 - a0 > Math.PI ? 1 : 0;
+    const d = s.share >= 0.9999
+      ? `M ${pt(R, 0)} A ${R} ${R} 0 1 1 ${pt(R, Math.PI)} A ${R} ${R} 0 1 1 ${pt(R, 0)} M ${pt(r, 0)} A ${r} ${r} 0 1 0 ${pt(r, Math.PI)} A ${r} ${r} 0 1 0 ${pt(r, 0)} Z`
+      : `M ${pt(R, a0)} A ${R} ${R} 0 ${big} 1 ${pt(R, a1)} L ${pt(r, a1)} A ${r} ${r} 0 ${big} 0 ${pt(r, a0)} Z`;
+    a0 = a1;
+    return `<path class="donut-seg" d="${d}" style="fill:var(--series-${s.series || 'other'})" data-club="${esc(s.club ?? 'inne')}" tabindex="0"><title>${esc(label(s))}: ≈ ${formatInt(s.km)} km (${pct(s)})</title></path>`;
+  }).join('');
+  const mln = (total / 1e6).toFixed(2).replace('.', ',');
+  return `<figure class="donut" data-testid="flyer-donut">
+      <figcaption class="donut-title">Kilometry według klubów</figcaption>
+      <div class="donut-body">
+        <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Szacowane kilometry według klubów">${paths}
+          <text x="60" y="58" text-anchor="middle" class="donut-num">${mln}</text><text x="60" y="72" text-anchor="middle" class="donut-unit">mln km</text></svg>
+        <ul class="donut-legend">${slices.map((s) => `<li data-club="${esc(s.club ?? 'inne')}"><span class="swatch" style="background:var(--series-${s.series || 'other'})"></span><span class="lg-name"${s.clubs ? ` title="${esc(s.clubs.map((c) => ctx.clubs.get(c)?.short ?? c).join(', '))}"` : ''}>${esc(label(s))}</span><span class="lg-val">${pct(s)}</span></li>`).join('')}</ul>
+      </div>
+    </figure>`;
+}
+
 export function flyerTotals(ctx, state) {
   const { dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
   const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
@@ -540,6 +573,7 @@ export function flyerTotals(ctx, state) {
       <div><dt>Szacowane km</dt><dd data-testid="sum-km">≈&nbsp;${formatInt(sum.km)}</dd></div>
       ${earth ? `<div><dt>Lider okrążyłby Ziemię</dt><dd>${earth.toFixed(1).replace('.', ',')}×</dd></div>` : ''}
     </dl>
+    ${flyerDonut(ctx, rows)}
   </div>`;
 }
 

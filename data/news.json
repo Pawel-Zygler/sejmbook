@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-motyw",
+      "date": "2026-11-24",
+      "title": "Tryb jasny i ciemny",
+      "body": "Przycisk w górnym pasku przełącza motyw: automatyczny, jasny albo ciemny."
+    },
+    {
+      "id": "2026-11-24-donut",
+      "date": "2026-11-24",
+      "title": "Kilometry według klubów",
+      "body": "Obok rankingu jest wykres kołowy z szacowanymi kilometrami według klubów.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz wykres"
+      }
+    },
+    {
       "id": "2026-11-24-byli-poslowie",
       "date": "2026-11-24",
       "title": "Profile byłych posłów",
