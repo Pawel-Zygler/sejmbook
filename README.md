@@ -1,16 +1,29 @@
 # Sejmbook
 
-Dashboard o Sejmie RP w formie serwisu społecznościowego. MVP: profile posłów X kadencji z przynależnością klubową oraz ranking **Frequent Flyer** (krajowe loty posłów na koszt Kancelarii Sejmu).
+**Wydarzenia w Rzeczypospolitej.** Sejmbook to niezależny serwis w formie mediów społecznościowych, w którym patrzymy, co robią posłowie: jak głosują, ile latają na koszt Sejmu, czy przychodzą na posiedzenia i jakie funkcje pełnili w państwie. Wszystkie liczby pochodzą z oficjalnych lub sprawdzonych źródeł i są podpisane źródłem. Nic nie jest dopisane z głowy.
+
+Wersja na żywo: [sejmbook.pages.dev](https://sejmbook.pages.dev).
+
+## Co jest w serwisie
+- **Feed**: bieżące wydarzenia: ostatnie głosowania w Sejmie (z odnośnikami do protokołów), komunikaty urzędów i wpisy posłów, z filtrem czasu (6 h, 24 h, 3 dni, wszystko).
+- **Posłowie**: profil każdego posła X kadencji: klub, spektrum partyjne całej kariery, frekwencja, loty, kontakt, funkcje państwowe.
+- **Państwo**: hierarchia III RP od 1989 roku: prezydenci, premierzy, wszystkie 21 rządów z ministrami, marszałkowie, prezesi TK, SN, NBP i NIK, RPO.
+- **Frequent Flyer**: ranking krajowych lotów posłów na koszt Kancelarii Sejmu.
+- **Frekwencja**: obecność posłów na głosowaniach.
+- **Changelog**: każda nowa funkcja w jednym zdaniu.
 
 ## Dane
-- `data/mps.json`, `data/clubs.json` – API Sejmu (`api.sejm.gov.pl/sejm/term10/MP`, `/clubs`), stan na 2026-11-23.
-- `data/flights.json` – liczby lotów i koszty z danych Kancelarii Sejmu opublikowanych przez media (RMF FM/Wprost, TVN24/Wprost, Interia). Każdy zbiór ma okres, opis zakresu (`coverageNote`) i źródła. Nic nie jest dopisane z głowy.
-- `data/airports.json` – lotnisko dla każdego okręgu; kilometry = liczba lotów × odległość po kole wielkim WAW ↔ lotnisko okręgu (szacunek, Sejm nie publikuje tras).
+- `data/mps.json`, `data/clubs.json`: API Sejmu (`api.sejm.gov.pl`).
+- `data/feed.json`: głosowania z API Sejmu oraz kanały oficjalne; pobierane w GitHub Actions (`feed.yml`).
+- `data/attendance.json`, `data/terms.json`, `data/career.json`: frekwencja, kadencje i historia klubowa z API Sejmu i Wikipedii.
+- `data/government.json`: rządy i urzędy z artykułów polskiej Wikipedii (`government.yml`), zdjęcia z Wikimedia Commons na wolnych licencjach (`gov-photos.yml`).
+- `data/flights.json`: loty i koszty z danych Kancelarii Sejmu opublikowanych przez media (RMF FM/Wprost, TVN24/Wprost, Interia). Każdy zbiór ma okres, zakres i źródła.
+- `data/airports.json`: lotnisko dla każdego okręgu; kilometry to liczba lotów razy odległość WAW ↔ lotnisko okręgu (szacunek, Sejm nie publikuje tras).
 
 ## Struktura
-- `src/lib/` – czysta logika (geo, ranking, wyszukiwanie, routing) – 100% pokrycia testami jednostkowymi.
-- `src/ui/render.js` – widoki jako funkcje zwracające HTML; `src/app.js` – stan, routing po `#hash`, zdarzenia.
-- `scripts/build.mjs` – bundel do jednego pliku: `dist/index.html` (artefakt) i `dist/standalone.html`.
+- `src/lib/`: czysta logika (geo, ranking, wyszukiwanie, routing, rządy, feed), pokryta testami jednostkowymi.
+- `src/ui/`: widoki jako funkcje zwracające HTML; `src/app.js`: stan, routing po `#hash`, zdarzenia.
+- `scripts/`: pobieranie danych (uruchamiane w GitHub Actions) i `build.mjs`, który składa jeden plik `dist/index.html` oraz stronę `dist/pages`.
 
 ## Piramida testów
 | Warstwa | Narzędzie | Gdzie | Co sprawdza |
@@ -26,4 +39,4 @@ npm run coverage    # unit + progi pokrycia (lines/functions/statements 95%, bra
 ```
 Zasady:
 - każda nowa funkcja wchodzi razem z testami na wszystkich trzech poziomach;
-- każda nowa funkcja dostaje swój post w Aktualnościach (`data/news.json`), a test kontraktu danych pilnuje jego poprawności. CI: `.github/workflows/tests.yml`.
+- każda nowa funkcja dostaje krótki post w Changelogu (`data/news.json`), a test kontraktu danych pilnuje jego poprawności. CI: `.github/workflows/tests.yml`.
