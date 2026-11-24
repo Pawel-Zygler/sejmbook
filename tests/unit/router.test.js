@@ -43,3 +43,10 @@ describe('person route (former MPs)', () => {
     expect(parseHash('#osoba-x')).toEqual({ name: 'notFound', hash: 'osoba-x' });
   });
 });
+
+describe('changelog route', () => {
+  it('parses and builds #changelog', () => {
+    expect(parseHash('#changelog')).toEqual({ name: 'changelog' });
+    expect(hrefFor({ name: 'changelog' })).toBe('#changelog');
+  });
+});

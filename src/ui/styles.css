@@ -410,3 +410,26 @@ h2 { font-size: 1.1rem; }
 .lg-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lg-val { font-variant-numeric: tabular-nums; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .donut-seg { transition: none; } }
+
+.changelog-head h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.changelog-head p { margin: 0; }
+
+/* Home feed: President, Prime Minister, Sejm */
+.person-badge { background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); font-weight: 800; }
+.feed-list, .social-list, .vote-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.feed-list li { display: grid; grid-template-columns: 5.5em 1fr; gap: 2px 10px; align-items: baseline; }
+.feed-list time { color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.feed-list a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.feed-list a:hover { color: var(--accent); text-decoration: underline; }
+.feed-list small { grid-column: 2; }
+.social-list li { border-left: 3px solid var(--series-1); padding-left: 10px; }
+.social-list p { margin: 0 0 4px; }
+.vote-title { margin: 0 0 4px; font-weight: 600; font-size: 0.92rem; }
+.vote-bar { display: flex; gap: 2px; height: 8px; margin-bottom: 4px; }
+.vote-bar span { display: block; border-radius: 4px; min-width: 0; }
+.v-yes { background: var(--series-1); }
+.v-no { background: var(--series-2); }
+.v-abs { background: var(--series-other); }
+.v-pass { color: var(--ink); }
+.v-fail { color: var(--accent); }
+.feed-note { margin: 0; }

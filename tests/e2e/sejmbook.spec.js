@@ -100,10 +100,10 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
   await expect(dowhan.locator('td.num').first()).toHaveText('337');
 });
 
-test('home lists feature posts and links to them', async ({ page }) => {
-  await page.goto(PAGE);
+test('Changelog lists site changes and links to them', async ({ page }) => {
+  await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Kadencje I i II');
+  await expect(post).toContainText('Nowy feed: prezydent, premier i Sejm');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -132,9 +132,11 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
   await expect(page.locator('[data-testid="profile-attendance"] .day-strip')).toBeVisible();
 });
 
-test('home announces the newest feature first and keeps older posts', async ({ page }) => {
+test('Changelog shows the newest change first and keeps older ones; home has none', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Kadencje I i II');
+  await expect(page.locator('.news-post')).toHaveCount(0);
+  await page.goto(`${PAGE}#changelog`);
+  await expect(page.locator('.news-post').first()).toContainText('Nowy feed: prezydent, premier i Sejm');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -344,4 +346,13 @@ test('Posłowie: term I (1991–1993) from Wikipedia', async ({ page }) => {
   await page.locator('[data-action="dir-term"][data-term="1"]:visible').click();
   await expect(page.getByTestId('term-info')).toContainText('I kadencja · 25.11.1991');
   expect(await page.locator('.term-card').count()).toBeGreaterThan(450);
+});
+
+test('Home feed: President and Prime Minister first', async ({ page }) => {
+  await page.goto(PAGE);
+  const first = page.locator('#view .feed-post').first();
+  await expect(first).toContainText('Karol Nawrocki');
+  await expect(page.locator('#view .feed-post[data-feed="pm"]')).toContainText('Donald Tusk');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

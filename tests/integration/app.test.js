@@ -13,6 +13,7 @@ import wikiPartiesData from '../../data/wiki-parties.json';
 import termsData from '../../data/terms.json';
 import earlyTermsData from '../../data/early-terms.json';
 import contactsData from '../../data/contacts.json';
+import feedData from '../../data/feed.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -27,7 +28,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData });
 });
 afterEach(() => app.destroy());
 
@@ -147,11 +148,18 @@ describe('Frequent Flyer', () => {
   });
 });
 
-describe('news feed (Aktualności)', () => {
-  it('starts the home feed with the newest feature post', () => {
-    const first = $('#view .post');
+const NEWEST = 'Nowy feed: prezydent, premier i Sejm';
+const NEWEST_LINE = 'Start: Nowy feed: prezydent, premier i Sejm';
+
+describe('Changelog', () => {
+  it('lists site changes, newest first, and the home feed has none', () => {
+    nav('#start');
+    expect($('#view .news-post')).toBeNull();
+    nav('#changelog');
+    expect($('.sidenav a[data-nav="changelog"]').getAttribute('aria-current')).toBe('page');
+    const first = $('#view .news-post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Kadencje I i II');
+    expect(first.textContent).toContain(NEWEST);
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -159,8 +167,9 @@ describe('news feed (Aktualności)', () => {
     expect($('.news-post[data-news-id="2026-11-23-artykuly"]')).not.toBeNull();
   });
   it('the news post button opens the ranking', () => {
+    nav('#changelog');
     expect($$('.news-post').every((d) => d.tagName === 'DETAILS' && !d.open)).toBe(true);
-    expect($('.news-post .news-line').textContent).toContain('Posłowie: Kadencje I i II');
+    expect($('.news-post .news-line').textContent).toContain(NEWEST_LINE);
     const btn = $('.news-post[data-news-id="2026-11-23-artykuly"] a.btn');
     expect(btn.getAttribute('href')).toBe('#frequent-flyer');
     nav(btn.getAttribute('href'));
@@ -516,5 +525,17 @@ describe('Terms I and II (Wikipedia)', () => {
   it('the party ranking counts from 1991', () => {
     nav('#partie');
     expect($('[data-action="hop-scope"][data-scope="all"]').textContent).toBe('Wszyscy od 1991');
+  });
+});
+
+describe('Home feed', () => {
+  it('starts with the President and the Prime Minister, then the Sejm votings', () => {
+    nav('#start');
+    const posts = $$('#view .feed-post').map((p) => p.dataset.feed);
+    expect(posts.slice(0, 2)).toEqual(['president', 'pm']);
+    expect(posts).toContain('sejm');
+    expect($('#view .feed-post').textContent).toContain('Karol Nawrocki');
+    expect($$('#view .feed-post[data-feed="president"] .feed-list a').every((a) => a.href.startsWith('https://www.prezydent.pl/'))).toBe(true);
+    expect($('[data-testid="feed-note"]').textContent).toContain('zweryfikowane');
   });
 });

@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -143,9 +143,12 @@ describe('news', () => {
     expect(newsSection({})).toBe('Sejmbook');
     expect(newsSection({ section: 'Start', link: { href: '#partie' } })).toBe('Start');
   });
-  it('home shows news posts before the rest of the feed', () => {
-    const html = renderHome({ ...ctx, news: posts });
-    expect(html.indexOf('Nowy 1')).toBeLessThan(html.indexOf('Frequent Flyer</strong>'));
+  it('site changes live in the Changelog, not on the home feed', () => {
+    expect(renderHome({ ...ctx, news: posts })).not.toContain('Nowy 1');
+    const html = renderChangelog({ ...ctx, news: posts });
+    expect(html).toContain('<h1>Changelog</h1>');
+    expect(html.indexOf('Nowy 1')).toBeLessThan(html.indexOf('Nowy 2'));
+    expect(renderChangelog({ ...ctx, news: [] })).toContain('Brak wpisów');
   });
   it('home works without news', () => {
     expect(renderHome({ ...ctx, news: undefined })).toContain('data-view="home"');
@@ -476,5 +479,34 @@ describe('flyerDonut', () => {
     expect(html).toContain('>0,00</text>');
     expect(flyerDonut(ctx, [])).toBe('');
     expect(flyerDonut(ctx, [mk('KO', 10)])).toContain('A 52 52 0 1 1');
+  });
+});
+
+describe('renderLiveFeed', () => {
+  const feed = {
+    fetchedAt: '2026-11-24T09:00:00Z',
+    president: { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: [{ title: 'Wizyta <w> Argentynie', date: '2026-11-23', url: 'https://www.prezydent.pl/a,1' }] },
+    pm: { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: [{ title: 'Szczyt V4', date: '2026-11-23', place: 'Bratysława', url: 'https://www.gov.pl/web/premier/v4' }] },
+    pmSocial: { who: 'Donald Tusk', network: 'Bluesky', handle: 'donald-tusk.bsky.social', profile: 'https://bsky.app/profile/donald-tusk.bsky.social', items: [{ text: 'Robimy.', date: '2025-12-04', url: 'https://bsky.app/x', likes: 1200, reposts: 3 }] },
+    sejm: { date: '2026-11-19', proceeding: 45, items: [{ title: 'Pkt. 43 Zmiany', yes: 277, no: 134, abstain: 4, passed: true }, { title: 'Pkt. 44', yes: 10, no: 300, abstain: 0, passed: false }] },
+  };
+  it('shows the President, the Prime Minister, his social posts and the Sejm votings, escaped', () => {
+    const html = renderLiveFeed({ ...ctx, feed });
+    expect(html.indexOf('Karol Nawrocki')).toBeLessThan(html.indexOf('Szczyt V4'));
+    expect(html).toContain('Wizyta &lt;w&gt; Argentynie');
+    expect(html).toContain('<time datetime="2026-11-23">23.11.2026</time>');
+    expect(html).toContain(' · Bratysława');
+    expect(html).toContain('Więcej na prezydent.pl');
+    expect(html).toContain('ostatni wpis 04.12.2025');
+    expect(html).toContain("♥ 1200");
+    expect(html).toContain('Przyjęto</b> · za 277 · przeciw 134 · wstrzymało się 4');
+    expect(html).toContain('Odrzucono');
+    expect(html).toContain('stan na 24.11.2026');
+  });
+  it('leaves out what is missing', () => {
+    expect(renderLiveFeed({ ...ctx, feed: null })).toBe('');
+    const html = renderLiveFeed({ ...ctx, feed: { fetchedAt: '2026-11-24', pm: feed.pm } });
+    expect(html).not.toContain('Prezydent RP');
+    expect(html).toContain('Szczyt V4');
   });
 });

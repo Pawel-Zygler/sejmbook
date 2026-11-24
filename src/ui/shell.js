@@ -23,6 +23,8 @@ export const SHELL_HTML = `
     <a href="#frequent-flyer" data-nav="flyer"><span class="ico">✈</span>Frequent Flyer</a>
     <a href="#frekwencja" data-nav="attendance"><span class="ico">◔</span>Frekwencja</a>
     <a href="#partie" data-nav="parties"><span class="ico">⇄</span>Najwięcej partii</a>
+    <p class="sidenav-label">Serwis</p>
+    <a href="#changelog" data-nav="changelog"><span class="ico">✎</span>Changelog</a>
     <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie. Wkrótce: głosowania i wystąpienia.</p>
   </nav>
   <main id="view" tabindex="-1"></main>

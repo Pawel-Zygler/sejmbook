@@ -106,6 +106,8 @@ export function newsSection(post) {
   if (h.startsWith('#partie')) return 'Najwięcej partii';
   if (h.startsWith('#poslowie')) return 'Posłowie';
   if (h.startsWith('#posel-')) return 'Profil posła';
+  if (h.startsWith('#changelog')) return 'Changelog';
+  if (h.startsWith('#start')) return 'Start';
   return 'Sejmbook';
 }
 
@@ -127,6 +129,73 @@ const personLink = (p, inner, cls = '') => `<a class="${cls}" href="${hrefFor({ 
 const mpLink = (mp, inner, cls = '') => `<a class="${cls}" href="${hrefFor({ name: 'profile', id: mp.id })}">${inner}</a>`;
 
 /* ---------- Home feed ---------- */
+/** Changelog: every change to the site, newest first, each folded to one line (moved off the home feed, Pawel 2026-11-24). */
+export function renderChangelog(ctx) {
+  const posts = sortNews(ctx.news ?? []);
+  return `
+  <section class="feed" data-view="changelog">
+    <div class="panel changelog-head"><h1>Changelog</h1><p class="muted">Zmiany w Sejmbooku, od najnowszej. Kliknij wpis, żeby go rozwinąć.</p></div>
+    ${posts.length ? posts.map(renderNewsPost).join('') : '<p class="panel">Brak wpisów.</p>'}
+  </section>`;
+}
+
+const fmtDay = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
+
+/** Today's MP with this full name (for photos and profile links), or null. */
+const mpByName = (ctx, name) => ctx.mps.find((m) => m.name === name) ?? null;
+
+/** One news list (president / prime minister): latest items, each a dated link to the official page. */
+function officialPost(ctx, sec, { badge, title, limit = 4 }) {
+  if (!sec?.items?.length) return '';
+  const mp = mpByName(ctx, sec.who);
+  const face = mp ? mpLink(mp, avatar(ctx, mp, 'md')) : `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
+  const host = new URL(sec.source).hostname.replace(/^www\./, '');
+  return `<article class="post feed-post" data-feed="${esc(title)}">
+      <header class="post-head">${face}<div><strong>${esc(sec.who)}</strong><small>${esc(sec.role)} · oficjalne komunikaty</small></div></header>
+      <ul class="feed-list">${sec.items.slice(0, limit).map((it) => `<li><time datetime="${esc(it.date ?? '')}">${esc(fmtDay(it.date))}</time><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>${it.place ? `<small class="muted"> · ${esc(it.place)}</small>` : ''}</li>`).join('')}</ul>
+      <footer class="post-foot"><a class="btn" href="${esc(sec.source)}" target="_blank" rel="noopener">Więcej na ${esc(host)}</a></footer>
+    </article>`;
+}
+
+/** Social posts of a politician from a verified public account (Bluesky), with the date of the latest post said openly. */
+function socialPost(ctx, sec) {
+  if (!sec?.items?.length) return '';
+  const mp = mpByName(ctx, sec.who);
+  const face = mp ? mpLink(mp, avatar(ctx, mp, 'md')) : '';
+  const latest = sec.items[0].date;
+  return `<article class="post feed-post" data-feed="social">
+      <header class="post-head">${face}<div><strong>${esc(sec.who)} na ${esc(sec.network)}</strong><small><a href="${esc(sec.profile)}" target="_blank" rel="noopener">@${esc(sec.handle)}</a> · konto zweryfikowane · ostatni wpis ${esc(fmtDay(latest))}</small></div></header>
+      <ul class="social-list">${sec.items.slice(0, 3).map((p) => `<li><p>${esc(p.text)}</p><small class="muted"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(fmtDay(p.date))}</a> · ♥ ${formatInt(p.likes)} · ⟲ ${formatInt(p.reposts)}</small></li>`).join('')}</ul>
+    </article>`;
+}
+
+/** The latest Sejm votings: title, result and the yes / no / abstain split. */
+function sejmVotesPost(ctx, sec) {
+  if (!sec?.items?.length) return '';
+  return `<article class="post feed-post" data-feed="sejm">
+      <header class="post-head">${pageBadge()}<div><strong>Sejm · głosowania</strong><small>${esc(fmtDay(sec.date))} · ${sec.proceeding}. posiedzenie · API Sejmu</small></div></header>
+      <ul class="vote-list">${sec.items.slice(0, 5).map((v) => {
+        const all = (v.yes ?? 0) + (v.no ?? 0) + (v.abstain ?? 0) || 1;
+        const w = (n) => ((100 * (n ?? 0)) / all).toFixed(1);
+        return `<li><p class="vote-title">${esc(v.title)}</p>
+          <div class="vote-bar" role="img" aria-label="Za ${v.yes}, przeciw ${v.no}, wstrzymało się ${v.abstain}"><span class="v-yes" style="width:${w(v.yes)}%"></span><span class="v-no" style="width:${w(v.no)}%"></span><span class="v-abs" style="width:${w(v.abstain)}%"></span></div>
+          <small><b class="${v.passed ? 'v-pass' : 'v-fail'}">${v.passed ? 'Przyjęto' : 'Odrzucono'}</b> · za ${v.yes} · przeciw ${v.no} · wstrzymało się ${v.abstain}</small></li>`;
+      }).join('')}</ul>
+    </article>`;
+}
+
+/** Top of the home feed: the President, the Prime Minister (and his social posts) and the Sejm, from data/feed.json. */
+export function renderLiveFeed(ctx) {
+  const f = ctx.feed;
+  if (!f) return '';
+  return `
+    ${officialPost(ctx, f.president, { badge: 'KN', title: 'president' })}
+    ${officialPost(ctx, f.pm, { badge: 'DT', title: 'pm' })}
+    ${socialPost(ctx, f.pmSocial)}
+    ${sejmVotesPost(ctx, f.sejm)}
+    <p class="src feed-note" data-testid="feed-note">Feed odświeża się co 3 godziny (stan na ${esc(fmtDay(f.fetchedAt?.slice(0, 10)))}). Pokazujemy tylko oficjalne strony i zweryfikowane konta: komunikaty z prezydent.pl i gov.pl oraz posty premiera z Bluesky, gdzie ostatnio pisał rzadko. Posty z X i Facebooka wymagają płatnego lub zamkniętego API. Konto Karola Nawrockiego na Bluesky ma oznaczenie podszywania się, więc go nie pokazujemy.</p>`;
+}
+
 export function renderHome(ctx) {
   const ds = ctx.flights.datasets[0];
   const top = buildRanking(ds, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles).slice(0, 3);
@@ -144,7 +213,7 @@ export function renderHome(ctx) {
 
   return `
   <section class="feed" data-view="home">
-    ${sortNews(ctx.news ?? []).map(renderNewsPost).join('')}
+    ${renderLiveFeed(ctx)}
     <article class="post">
       <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Frequent Flyer</strong><small>${esc(ds.label)} · ${esc(ds.origin)}</small></div></header>
       <p class="post-text">Najczęściej latający posłowie w ${esc(ds.label.toLowerCase())}. Wszystkie loty krajowe opłaciła Kancelaria Sejmu.</p>

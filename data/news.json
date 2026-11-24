@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-feed",
+      "date": "2026-11-24",
+      "title": "Nowy feed: prezydent, premier i Sejm",
+      "body": "Strona główna pokazuje aktywność prezydenta Nawrockiego i premiera Tuska oraz ostatnie głosowania w Sejmie.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz feed"
+      }
+    },
+    {
+      "id": "2026-11-24-changelog",
+      "date": "2026-11-24",
+      "title": "Changelog",
+      "body": "Zmiany w serwisie są teraz w osobnej sekcji Changelog w menu po lewej.",
+      "link": {
+        "href": "#changelog",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-kadencje-1-2",
       "date": "2026-11-24",
       "title": "Kadencje I i II",
