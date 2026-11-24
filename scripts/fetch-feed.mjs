@@ -4,7 +4,8 @@
 // - Prime Minister Donald Tusk: news on gov.pl/web/premier (KPRM) and his Bluesky posts (account verified by Bluesky)
 // - Sejm: latest votings from the Sejm API
 // Runs in GitHub Actions on a schedule. Anything that fails is left out, never invented.
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
+import { summarizeVoting, withSeenAt } from '../src/lib/feed.js';
 
 const UA = 'sejmbook-data-fetch/1.0 (GitHub Actions; open data project)';
 const out = new URL('../data/feed.json', import.meta.url);
@@ -29,6 +30,10 @@ function isoDate(s) {
 }
 
 const sections = {};
+const nowIso = new Date().toISOString();
+// The previous feed, to keep when each item was first seen ("new in the last hours" on the page).
+let previous = {};
+try { previous = JSON.parse(await readFile(out, 'utf8')); } catch { /* first run */ }
 const log = (k, e) => console.warn(`${k}: ${e.message}`);
 
 // President: prezydent.pl news list (title, date, link).
@@ -41,7 +46,7 @@ try {
     items.push({ title: text(m[3]), date: isoDate(m[1]), url });
     if (items.length >= 8) break;
   }
-  sections.president = { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items };
+  sections.president = { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: withSeenAt(items, previous.president?.items, nowIso) };
   console.log('president', items.length, JSON.stringify(items.slice(0, 3)));
 } catch (e) { log('president', e); }
 
@@ -53,7 +58,7 @@ try {
     items.push({ title: text(m[4]), date: isoDate(m[1]), place: m[2] ? text(m[2]) : null, url: new URL(decode(m[3]), 'https://www.gov.pl').toString() });
     if (items.length >= 8) break;
   }
-  sections.pm = { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items };
+  sections.pm = { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: withSeenAt(items, previous.pm?.items, nowIso) };
   console.log('pm', items.length, JSON.stringify(items.slice(0, 3)));
 } catch (e) { log('pm', e); }
 
@@ -67,6 +72,7 @@ try {
   const posts = (feed.feed ?? []).filter((f) => !f.reason && f.post?.author?.handle === handle).slice(0, 6).map((f) => ({
     text: f.post.record?.text ?? '',
     date: (f.post.record?.createdAt ?? '').slice(0, 10),
+    time: f.post.record?.createdAt ?? null,
     url: `https://bsky.app/profile/${handle}/post/${f.post.uri.split('/').pop()}`,
     likes: f.post.likeCount ?? 0,
     reposts: f.post.repostCount ?? 0,
@@ -75,21 +81,24 @@ try {
   console.log('bluesky', posts.length, JSON.stringify(posts.slice(0, 2)));
 } catch (e) { log('bluesky', e); }
 
-// Sejm: the latest sitting day with votings.
+// Sejm: the last 5 votings, each with how every club and MP voted (opened on the page when clicked).
 try {
   const days = await (await get('https://api.sejm.gov.pl/sejm/term10/votings', 'application/json')).json();
-  const last = days.sort((a, b) => a.date.localeCompare(b.date)).at(-1);
-  const votes = await (await get(`https://api.sejm.gov.pl/sejm/term10/votings/${last.proceeding}`, 'application/json')).json();
-  const onDay = votes.filter((v) => (v.date ?? '').startsWith(last.date));
-  const items = onDay.slice(-8).reverse().map((v) => ({
-    title: v.title ?? v.topic ?? 'Głosowanie',
-    topic: v.topic ?? null,
-    yes: v.yes ?? null, no: v.no ?? null, abstain: v.abstain ?? null,
-    passed: v.yes != null && v.no != null ? v.yes > v.no : null,
-    number: v.votingNumber,
-  }));
-  sections.sejm = { date: last.date, proceeding: last.proceeding, source: `https://api.sejm.gov.pl/sejm/term10/votings/${last.proceeding}`, items };
-  console.log('sejm', last.date, items.length, JSON.stringify(items.slice(0, 2)));
+  const sittings = [...new Set(days.sort((a, b) => b.date.localeCompare(a.date)).map((d) => d.proceeding))];
+  const latest = [];
+  for (const sitting of sittings) {
+    const list = await (await get(`https://api.sejm.gov.pl/sejm/term10/votings/${sitting}`, 'application/json')).json();
+    latest.push(...list.sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.votingNumber - a.votingNumber));
+    if (latest.length >= 5) break;
+  }
+  const items = [];
+  for (const v of latest.slice(0, 5)) {
+    const detail = await (await get(`https://api.sejm.gov.pl/sejm/term10/votings/${v.sitting ?? v.proceeding}/${v.votingNumber}`, 'application/json')).json();
+    items.push(summarizeVoting({ ...v, ...detail }, 10));
+  }
+  const first = items[0];
+  sections.sejm = { date: first?.date?.slice(0, 10) ?? null, proceeding: first?.proceeding ?? null, source: 'https://api.sejm.gov.pl/sejm/term10/votings', items };
+  console.log('sejm', items.length, JSON.stringify(items.map((i) => [i.date, i.number, i.title.slice(0, 40), i.clubs.length, Object.keys(i.votes).length])));
 } catch (e) { log('sejm', e); }
 
-await writeFile(out, JSON.stringify({ fetchedAt: new Date().toISOString(), ...sections }, null, 1) + '\n');
+await writeFile(out, JSON.stringify({ fetchedAt: nowIso, ...sections }, null, 1) + '\n');
