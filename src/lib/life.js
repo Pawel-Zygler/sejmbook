@@ -100,3 +100,18 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
 
 /** Position of a year on the life line, in percent. */
 export const pos = (tl, y) => (tl.now === tl.birth ? 0 : ((y - tl.birth) / (tl.now - tl.birth)) * 100);
+
+// Communist parties of the PRL era. ZSL and SD were allied parties, not communist, so they are not marked.
+const COMMUNIST = /zjednoczon\S* parti\S* robotnicz|^pzpr$|polsk\S* parti\S* robotnicz|^ppr$/i;
+
+/** The MP's communist party past from Wikidata (PZPR, PPR), or null. Years may be unknown. */
+export function communistPast(life, mpId) {
+  const hits = (life?.mps?.[mpId]?.parties ?? []).filter((p) => COMMUNIST.test(p.label));
+  if (!hits.length) return null;
+  const name = (l) => (/^polska zjednoczona/i.test(l) ? 'PZPR' : /^polska partia robotnicza/i.test(l) ? 'PPR' : l);
+  return {
+    parties: [...new Set(hits.map((p) => name(p.label)))],
+    from: hits.map((p) => p.from).filter(Boolean).sort()[0] ?? null,
+    to: hits.map((p) => p.to).filter(Boolean).sort().pop() ?? null,
+  };
+}

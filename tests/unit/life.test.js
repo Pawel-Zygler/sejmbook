@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { lifeTimeline, partyStyle, isOpposition, pos, III_RP_START } from '../../src/lib/life.js';
+import { lifeTimeline, partyStyle, isOpposition, pos, III_RP_START, communistPast } from '../../src/lib/life.js';
 
 const career = {
   terms: [
@@ -116,5 +116,19 @@ describe('first activity when only undated PRL membership is known', () => {
     const tl = lifeTimeline({ life: lifeX, career: null }, { id: 1, birthYear: 1960 }, 2026);
     expect(tl.prlUnknown).toEqual(['PZPR']);
     expect(tl.firstYear).toBe(1990);
+  });
+});
+
+describe('communistPast', () => {
+  it('finds PZPR (and PPR), not ZSL or SD', () => {
+    const lifeX = { mps: {
+      1: { parties: [{ label: 'Polska Zjednoczona Partia Robotnicza', from: 1976, to: null }, { label: 'Sojusz Lewicy Demokratycznej', from: 1990, to: null }] },
+      2: { parties: [{ label: 'Zjednoczone Stronnictwo Ludowe', from: null, to: null }, { label: 'Stronnictwo Demokratyczne', from: 1980, to: 1990 }] },
+      3: { parties: [{ label: 'Polska Partia Robotnicza', from: null, to: 1948 }, { label: 'Polska Zjednoczona Partia Robotnicza', from: null, to: 1990 }] },
+    } };
+    expect(communistPast(lifeX, 1)).toEqual({ parties: ['PZPR'], from: 1976, to: null });
+    expect(communistPast(lifeX, 2)).toBeNull();
+    expect(communistPast(lifeX, 3)).toEqual({ parties: ['PPR', 'PZPR'], from: null, to: 1990 });
+    expect(communistPast(null, 1)).toBeNull();
   });
 });

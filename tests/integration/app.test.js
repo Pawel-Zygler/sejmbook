@@ -147,7 +147,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('na tle całego życia');
+    expect(first.textContent).toContain('byłych członkach PZPR');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -333,5 +333,21 @@ describe('Spektrum partyjne: PZPR without dates', () => {
     nav('#posel-58');
     expect($('[data-lane="parties"] .life-seg.uncertain').textContent).toContain('PZPR');
     expect($('[data-testid="life-first"]').textContent).toContain('jeszcze w PRL (PZPR; lata nieznane)');
+  });
+});
+
+describe('Communist past mark', () => {
+  it('Czarzasty has ☭ next to today\'s club on the profile and in the directory; Tusk does not', () => {
+    nav('#posel-58');
+    const mark = $('.profile-name [data-testid="red-past"]');
+    expect(mark.textContent).toBe('☭');
+    expect(mark.getAttribute('title')).toContain('PZPR');
+    nav('#posel-400');
+    expect($('.profile-name [data-testid="red-past"]')).toBeNull();
+    nav('#poslowie');
+    const marked = $$('.mp-card [data-testid="red-past"]').length;
+    const expected = app.ctx.mps.filter((m) => m.active && lifeData.mps[m.id]?.parties.some((p) => /Zjednoczona Partia Robotnicza/.test(p.label))).length;
+    expect(marked).toBe(expected);
+    expect(marked).toBeGreaterThan(0);
   });
 });

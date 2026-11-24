@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-pzpr",
+      "date": "2026-11-24",
+      "title": "Znaczek ☭ przy byłych członkach PZPR",
+      "body": "Przy partii posła, który należał do PZPR, widać teraz ☭ z opisem po najechaniu.",
+      "link": {
+        "href": "#posel-58",
+        "label": "Zobacz przykład"
+      }
+    },
+    {
       "id": "2026-11-24-zycie",
       "date": "2026-11-24",
       "title": "Spektrum partyjne na tle całego życia",

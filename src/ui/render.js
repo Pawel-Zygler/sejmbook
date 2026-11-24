@@ -1,6 +1,6 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } from '../lib/mps.js';
 import { careerSpectrum, termRanges, partyHoppers } from '../lib/career.js';
-import { lifeTimeline, pos } from '../lib/life.js';
+import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
@@ -38,11 +38,21 @@ export function avatar(ctx, mp, size = 'md') {
   return `<span class="avatar avatar-${size}" style="--club:${esc(c.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(mp.name))}</span>${img}</span>`;
 }
 
-export function clubChip(ctx, clubId) {
+/** ☭ next to today's club when the MP was a member of a communist party in the PRL (Wikidata). */
+export function formerCommunistMark(ctx, mp) {
+  const cp = mp ? communistPast(ctx.life, mp.id) : null;
+  if (!cp) return '';
+  const years = cp.from ? ` ${cp.from}–${cp.to ?? ''}` : cp.to ? ` do ${cp.to}` : '';
+  const text = `Były członek ${cp.parties.join(', ')}${years} (Wikidata)`;
+  return `<span class="red-past" data-testid="red-past" title="${esc(text)}" aria-label="${esc(text)}">☭</span>`;
+}
+
+export function clubChip(ctx, clubId, mp = null) {
   const c = ctx.clubs.get(clubId) ?? { ...FALLBACK_CLUB, id: clubId, short: clubId };
   const logo = clubLogo(ctx, clubId);
-  if (logo) return `<span class="chip has-logo" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="">${esc(c.short)}</span>`;
-  return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}</span>`;
+  const mark = formerCommunistMark(ctx, mp);
+  if (logo) return `<span class="chip has-logo" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="">${esc(c.short)}${mark}</span>`;
+  return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}${mark}</span>`;
 }
 
 function sourceLinks(sources) {
@@ -96,7 +106,7 @@ export function renderHome(ctx) {
       <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Frequent Flyer</strong><small>${esc(ds.label)} · ${esc(ds.origin)}</small></div></header>
       <p class="post-text">Najczęściej latający posłowie w ${esc(ds.label.toLowerCase())}. Wszystkie loty krajowe opłaciła Kancelaria Sejmu.</p>
       <ol class="mini-rank">
-        ${top.map((r) => `<li>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span class="mini-name">${esc(r.mp.name)}</span>`, 'mini-link')}${clubChip(ctx, r.mp.club)}<span class="mini-val"><b>${r.flights}</b> lotów</span></li>`).join('')}
+        ${top.map((r) => `<li>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span class="mini-name">${esc(r.mp.name)}</span>`, 'mini-link')}${clubChip(ctx, r.mp.club, r.mp)}<span class="mini-val"><b>${r.flights}</b> lotów</span></li>`).join('')}
       </ol>
       <footer class="post-foot"><a class="btn" href="#frequent-flyer">Zobacz cały ranking</a><span class="src">Źródło: <a href="${esc(ds.sources[0].url)}" target="_blank" rel="noopener">${esc(ds.sources[0].title.split(':')[0])}</a></span></footer>
     </article>
@@ -195,8 +205,8 @@ export function mpCardMeta(ctx, mp) {
   const logo = clubLogo(ctx, mp.club);
   // With a logo the chip shows only the logo, so long club names do not push the row apart.
   const club = logo
-    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}"></span>`
-    : clubChip(ctx, mp.club);
+    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}">${formerCommunistMark(ctx, mp)}</span>`
+    : clubChip(ctx, mp.club, mp);
   const parts = [
     club,
     `<span class="mp-card-district" title="okręg ${mp.districtNum} · ${esc(mp.districtName)}">okr. ${mp.districtNum}</span>`,
@@ -295,7 +305,7 @@ export function renderProfile(ctx, id) {
         ${avatar(ctx, mp, 'xl')}
         <div class="profile-name">
           <h1>${esc(mp.name)}</h1>
-          <p>${clubChip(ctx, mp.club)} <span class="muted">${esc(club.name)}</span></p>
+          <p>${clubChip(ctx, mp.club, mp)} <span class="muted">${esc(club.name)}</span></p>
           ${off ? `<p class="badge-off">${esc(off)}</p>` : ''}
         </div>
       </div>
@@ -372,7 +382,7 @@ export function renderFlyer(ctx, state) {
               const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
               return `<tr data-mp-id="${r.mp.id}"${r.rank <= 3 ? ` class="podium-row podium-row-${r.rank}"` : ''}>
                 <td class="pos">${r.rank}</td>
-                <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club)}
+                <td>${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')} ${clubChip(ctx, r.mp.club, r.mp)}
                   ${podiumBadge(r.rank)}
                   ${attendanceBadge(ctx, r.mp.id, 16)}
                   <small class="muted route">${r.airport ? `WAW ↔ ${esc(r.airport)} · ${formatInt(r.legKm)} km na lot` : 'brak szacunku: okręg bez lotniska z połączeniem do WAW'}</small>

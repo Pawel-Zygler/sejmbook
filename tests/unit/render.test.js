@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, clubChip, formerCommunistMark, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -317,5 +317,23 @@ describe('renderParties', () => {
   });
   it('says so when there is no career data', () => {
     expect(renderParties({ ...ctx, career: null })).toContain('Brak danych');
+  });
+});
+
+describe('formerCommunistMark', () => {
+  const life = { mps: { 70: { parties: [{ label: 'Polska Zjednoczona Partia Robotnicza', from: 1976, to: 1990 }] } } };
+  const mp = ctx.mpsById.get(70);
+  it('adds a hammer and sickle with the former party to today\'s club chip', () => {
+    const html = clubChip({ ...ctx, life }, mp.club, mp);
+    expect(html).toContain('☭');
+    expect(html).toContain('Były członek PZPR 1976–1990 (Wikidata)');
+  });
+  it('shows nothing without a communist past or without the MP', () => {
+    expect(formerCommunistMark({ ...ctx, life: null }, mp)).toBe('');
+    expect(clubChip({ ...ctx, life }, mp.club)).not.toContain('☭');
+  });
+  it('says "do 1990" when only the end year is known', () => {
+    const l2 = { mps: { 70: { parties: [{ label: 'Polska Zjednoczona Partia Robotnicza', from: null, to: 1990 }] } } };
+    expect(formerCommunistMark({ ...ctx, life: l2 }, mp)).toContain('Były członek PZPR do 1990');
   });
 });

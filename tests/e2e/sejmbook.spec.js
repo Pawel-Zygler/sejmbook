@@ -97,7 +97,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('na tle całego życia');
+  await expect(post).toContainText('byłych członkach PZPR');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -122,7 +122,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('na tle całego życia');
+  await expect(page.locator('.news-post').first()).toContainText('byłych członkach PZPR');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -218,4 +218,12 @@ test('Spektrum partyjne: life line with PRL and III RP fits the screen', async (
   }
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Communist past: ☭ next to today\'s club', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-58`);
+  const mark = page.locator('.profile-name').getByTestId('red-past');
+  await expect(mark).toBeVisible();
+  await expect(mark).toHaveText('☭');
+  await expect(mark).toHaveAttribute('title', /PZPR/);
 });

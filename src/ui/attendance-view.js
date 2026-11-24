@@ -117,7 +117,7 @@ export function renderAttendance(ctx, state, helpers) {
           <tbody>
             ${rows.map((r) => `<tr data-mp-id="${r.mp.id}">
               <td class="pos">${r.rank}</td>
-              <td><a class="rank-mp" href="${hrefFor({ name: 'profile', id: r.mp.id })}">${avatar(ctx, r.mp, 'sm')}<span>${escHtml(r.mp.name)}</span></a> ${clubChip(ctx, r.mp.club)}</td>
+              <td><a class="rank-mp" href="${hrefFor({ name: 'profile', id: r.mp.id })}">${avatar(ctx, r.mp, 'sm')}<span>${escHtml(r.mp.name)}</span></a> ${clubChip(ctx, r.mp.club, r.mp)}</td>
               <td class="num"><span class="att-badge band-${attendanceBand(r.term.mean)}">${pieIcon(r.term.mean, 18)}<span>${formatPct(r.term.mean)}</span></span></td>
               ${multi ? `<td class="num">${formatPct(r.overall.mean)}${r.overall.terms.length > 1 ? ` <small class="muted">(${r.overall.terms.length} kad.)</small>` : ''}</td>` : ''}
               <td class="num">${r.term.days}</td>

@@ -317,3 +317,4 @@ h2 { font-size: 1.1rem; }
 .life-undated { margin: 4px 0 0; font-size: 0.78rem; }
 .spectrum-h3 { margin: 16px 0 2px; font-size: 0.95rem; }
 .life-seg.uncertain { background: repeating-linear-gradient(135deg, var(--seg) 0 6px, color-mix(in srgb, var(--seg) 45%, #fff) 6px 12px); }
+.red-past { color: #c8102e; font-weight: 900; margin-left: 4px; font-size: 0.95em; line-height: 1; cursor: help; }
