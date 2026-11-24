@@ -1,0 +1,158 @@
+// "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
+// lists of holders of each top office, and a profile for every president, prime minister and minister.
+import { esc, plural } from './render.js';
+import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
+import { personKey } from '../lib/career.js';
+
+const day = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
+const span = (from, to) => (to ? `${day(from)} – ${day(to)}` : `od ${day(from)}`);
+const years = (from, to) => `${String(from ?? '').slice(0, 4)}–${to ? String(to).slice(0, 4) : 'obecnie'}`;
+const wikiUrl = (title) => `https://pl.wikipedia.org/wiki/${encodeURIComponent(String(title).replace(/ /g, '_'))}`;
+const initials = (name) => String(name).split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+
+/** A link to a person's state profile. */
+export function officialLink(p, inner = esc(p.name)) {
+  return `<a class="official-link" href="#urzad-${esc(p.slug)}">${inner}</a>`;
+}
+
+function personOf(ctx, h) {
+  const g = ctx.gov;
+  return g?.bySlug.get(personSlug(h)) ?? g?.byName.get(fold(h.name)) ?? null;
+}
+function holderLink(ctx, h) {
+  const p = personOf(ctx, h);
+  return p ? officialLink(p, esc(h.name)) : esc(h.name);
+}
+
+/** The Sejm side of a person, if they are or were an MP: a link to the current MP profile or to the former-MP profile. */
+export function mpLinkFor(ctx, name) {
+  const mp = ctx.mps.find((m) => m.name === name);
+  if (mp) return { href: `#posel-${mp.id}`, label: 'Profil posła' };
+  for (const p of ctx.peopleByKey?.values() ?? []) {
+    const n = p.name ?? `${p.firstName ?? ''} ${p.lastName ?? ''}`.trim();
+    if (n === name) return { href: `#osoba-${personKey(p)}`, label: 'Profil posła (dawne kadencje)' };
+  }
+  return null;
+}
+
+function officeCard(ctx, office, today) {
+  const now = currentHolders(office, today);
+  const last = office.holders.at(-1);
+  const shown = now.length ? now : [];
+  return `<li class="office-card" data-office="${esc(office.id)}">
+      <p class="office-title">${esc(office.title)}</p>
+      ${shown.length ? shown.map((h) => `<p class="office-holder"><span class="avatar avatar-sm person-badge" aria-hidden="true">${esc(initials(h.name))}</span><span>${holderLink(ctx, h)}${h.acting ? ' <small class="muted">p.o.</small>' : ''}<small class="muted">od ${esc(day(h.from))}</small></span></p>`).join('')
+        : `<p class="office-holder muted">brak danych${last ? ` (ostatnio: ${holderLink(ctx, last)})` : ''}</p>`}
+    </li>`;
+}
+
+function govRow(g) {
+  return `<li class="gov-row"><a href="#rzad-${esc(g.id)}"><strong>${esc(g.name)}</strong><small class="muted">${esc(span(g.from, g.to))} · ${g.members.length} ${plural(g.members.length, 'funkcja', 'funkcje', 'funkcji')}</small></a>${g.pm ? `<span class="chip">${esc(g.pm.party ?? '')}</span>` : ''}</li>`;
+}
+
+function memberRows(ctx, members) {
+  return members.map((m) => `<tr><td class="gov-office">${esc(m.office)}</td><td>${holderLink(ctx, m)}${m.party ? ` <small class="muted">(${esc(m.party)})</small>` : ''}</td><td class="num">${esc(day(m.from))}</td><td class="num">${esc(day(m.to)) || '<span class="muted">obecnie</span>'}</td></tr>`).join('');
+}
+
+function sourceNote(ctx) {
+  return `<p class="src panel" data-testid="state-source">Źródło: Wikipedia, artykuły o każdym rządzie III RP i listy urzędników (stan na ${esc(day(ctx.gov.fetchedAt))}). Składy rządów obejmują wszystkie zmiany w czasie kadencji. Rząd Waldemara Pawlaka z 1992 roku nie został powołany, więc go nie ma.</p>`;
+}
+
+/** #panstwo: the hierarchy page. */
+export function renderState(ctx, today) {
+  const g = ctx.gov;
+  if (!g) return '<section data-view="state"><p class="panel">Brak danych o urzędach.</p></section>';
+  const ruling = g.governments.find((x) => !x.to) ?? g.governments.at(-1);
+  const members = currentMembers(ruling, today);
+  const pm = members.filter((m) => /^Prezes Rady Ministrów/.test(m.office));
+  const deputies = members.filter((m) => /^Wiceprezes Rady Ministrów/.test(m.office));
+  const ministers = members.filter((m) => !pm.includes(m) && !deputies.includes(m));
+  return `
+  <section class="feed state" data-view="state">
+    <div class="panel state-head"><h1>Państwo</h1><p class="muted">Najważniejsze urzędy III Rzeczypospolitej, rząd, który rządzi dziś, i wszystkie rządy od 1989 roku. Kliknij osobę, żeby zobaczyć jej profil.</p></div>
+
+    <div class="panel">
+      <h2>Najważniejsze urzędy dziś</h2>
+      <ul class="office-grid" data-testid="office-grid">${g.offices.map((o) => officeCard(ctx, o, today)).join('')}</ul>
+    </div>
+
+    <div class="panel" data-testid="cabinet-now">
+      <h2>Rada Ministrów dziś</h2>
+      <p class="muted"><a href="#rzad-${esc(ruling.id)}">${esc(ruling.name)}</a>, ${esc(span(ruling.from, ruling.to))}</p>
+      <table class="gov-table"><tbody>${memberRows(ctx, [...pm, ...deputies, ...ministers])}</tbody></table>
+    </div>
+
+    <div class="panel">
+      <h2>Rządy III RP</h2>
+      <ol class="gov-list" reversed data-testid="gov-list">${[...g.governments].reverse().map(govRow).join('')}</ol>
+    </div>
+
+    <div class="panel">
+      <h2>Wszyscy na najważniejszych urzędach</h2>
+      ${g.offices.map((o) => `<details class="office-list" data-office="${esc(o.id)}"${o.id === 'prezydent' || o.id === 'premier' ? ' open' : ''}><summary>${esc(o.title)} <small class="muted">${o.holders.length} ${plural(o.holders.length, 'osoba', 'osoby', 'osób')}</small></summary>
+        <ol class="holder-list">${[...o.holders].reverse().map((h) => `<li>${holderLink(ctx, h)}${h.acting ? ' <small class="muted">p.o.</small>' : ''} <small class="muted">${esc(span(h.from, h.to))}</small></li>`).join('')}</ol>
+        ${o.url ? `<p class="src">Lista: <a href="${esc(o.url)}" target="_blank" rel="noopener">Wikipedia</a></p>` : ''}
+      </details>`).join('')}
+    </div>
+    ${sourceNote(ctx)}
+  </section>`;
+}
+
+/** #rzad-<id>: one government with every office held in it. */
+export function renderGovernment(ctx, id) {
+  const g = ctx.gov?.governments.find((x) => x.id === id);
+  if (!g) return '<section data-view="government"><p class="panel">Nie ma takiego rządu.</p></section>';
+  const i = ctx.gov.governments.indexOf(g);
+  const prev = ctx.gov.governments[i - 1];
+  const next = ctx.gov.governments[i + 1];
+  return `
+  <section class="feed state" data-view="government">
+    <div class="panel state-head"><p class="muted"><a href="#panstwo">Państwo</a> · rząd nr ${i + 1} III RP</p><h1>${esc(g.name)}</h1>
+      <p>${esc(span(g.from, g.to))}${g.pm ? ` · premier ${holderLink(ctx, g.pm)}${g.pm.party ? ` (${esc(g.pm.party)})` : ''}` : ''}</p></div>
+    <div class="panel">
+      <table class="gov-table" data-testid="gov-table"><thead><tr><th>Funkcja</th><th>Osoba</th><th class="num">Od</th><th class="num">Do</th></tr></thead><tbody>${memberRows(ctx, g.members)}</tbody></table>
+      <p class="src">Źródło: <a href="${esc(g.url ?? wikiUrl(g.name))}" target="_blank" rel="noopener">Wikipedia, ${esc(g.name)}</a></p>
+    </div>
+    <nav class="panel gov-nav">${prev ? `<a href="#rzad-${esc(prev.id)}">← ${esc(prev.name)}</a>` : '<span></span>'}${next ? `<a href="#rzad-${esc(next.id)}">${esc(next.name)} →</a>` : ''}</nav>
+  </section>`;
+}
+
+/** #urzad-<slug>: a person's state roles. */
+export function renderOfficial(ctx, slug, today) {
+  const p = ctx.gov?.bySlug.get(slug);
+  if (!p) return '<section data-view="official"><p class="panel">Nie ma takiej osoby w danych o urzędach.</p></section>';
+  const govName = (id) => ctx.gov.governments.find((x) => x.id === id);
+  const now = p.roles.filter((r) => r.from <= today && (!r.to || r.to > today));
+  const mp = mpLinkFor(ctx, p.name);
+  return `
+  <section class="feed state" data-view="official">
+    <div class="panel official-head">
+      <span class="avatar avatar-xl person-badge" aria-hidden="true">${esc(initials(p.name))}</span>
+      <div><p class="muted"><a href="#panstwo">Państwo</a></p><h1>${esc(p.name)}</h1>
+        <p>${now.length ? now.map((r) => `<span class="chip chip-now">${esc(r.office)}</span>`).join(' ') : '<span class="muted">Dziś bez funkcji w rządzie i na najważniejszych urzędach</span>'}${p.party ? ` <span class="chip">${esc(p.party)}</span>` : ''}</p>
+        <p class="official-links">${p.wiki ? `<a class="btn" href="${esc(wikiUrl(p.wiki))}" target="_blank" rel="noopener">Wikipedia</a>` : ''}${mp ? ` <a class="btn" href="${esc(mp.href)}" data-testid="official-mp">${esc(mp.label)}</a>` : ''}</p>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Funkcje państwowe</h2>
+      <ol class="role-list" data-testid="role-list">${p.roles.map((r) => {
+        const g = r.gov ? govName(r.gov) : null;
+        return `<li><strong>${esc(r.office)}</strong>${r.party ? ` <small class="muted">(${esc(r.party)})</small>` : ''}<br><small class="muted">${esc(span(r.from, r.to))}${g ? ` · <a href="#rzad-${esc(g.id)}">${esc(g.name)}</a>` : ''}</small></li>`;
+      }).join('')}</ol>
+    </div>
+    ${sourceNote(ctx)}
+  </section>`;
+}
+
+/** Search results among presidents, prime ministers, ministers and other top officials (shown above the MP list). */
+export function renderOfficialMatches(ctx, query) {
+  const found = searchOfficials(ctx.gov, query, 8);
+  if (!found.length) return '';
+  return `<div class="panel official-matches" data-testid="official-matches">
+      <h2>Urzędy państwowe</h2>
+      <ul>${found.map((p) => {
+        const top = p.roles[0];
+        return `<li>${officialLink(p, `<span class="avatar avatar-sm person-badge" aria-hidden="true">${esc(initials(p.name))}</span><span><strong>${esc(p.name)}</strong><small class="muted">${esc(top.office)}, ${esc(years(top.from, top.to))}</small></span>`)}</li>`;
+      }).join('')}</ul>
+    </div>`;
+}

@@ -42,7 +42,7 @@ export const OFFICE_PAGES = [
 
 /** A file-safe slug for a page title (Polish letters folded to ASCII). */
 export function slugify(title) {
-  return title.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L')
+  return title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L')
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 

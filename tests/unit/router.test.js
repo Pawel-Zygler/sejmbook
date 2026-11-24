@@ -50,3 +50,15 @@ describe('changelog route', () => {
     expect(hrefFor({ name: 'changelog' })).toBe('#changelog');
   });
 });
+
+describe('state routes', () => {
+  it('parses and builds #panstwo, #rzad-… and #urzad-…', () => {
+    expect(parseHash('#panstwo')).toEqual({ name: 'state' });
+    expect(parseHash('#rzad-tusk-3')).toEqual({ name: 'government', id: 'tusk-3' });
+    expect(parseHash('#urzad-lech-walesa')).toEqual({ name: 'official', slug: 'lech-walesa' });
+    expect(parseHash('#urzad-Bad')).toEqual({ name: 'notFound', hash: 'urzad-Bad' });
+    expect(hrefFor({ name: 'state' })).toBe('#panstwo');
+    expect(hrefFor({ name: 'government', id: 'buzek' })).toBe('#rzad-buzek');
+    expect(hrefFor({ name: 'official', slug: 'ewa-kopacz' })).toBe('#urzad-ewa-kopacz');
+  });
+});

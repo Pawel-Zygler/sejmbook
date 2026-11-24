@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-panstwo",
+      "date": "2026-11-24",
+      "title": "Prezydenci, premierzy i rządy III RP",
+      "section": "Państwo",
+      "body": "Nowa sekcja Państwo: najważniejsze urzędy, wszystkie 21 rządów od 1989 roku i profile ministrów, premierów i prezydentów.",
+      "link": {
+        "href": "#panstwo",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-feed-sklad",
       "date": "2026-11-24",
       "title": "Start bez rankingu lotów",

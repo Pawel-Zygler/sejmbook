@@ -14,6 +14,7 @@ import termsData from '../../data/terms.json';
 import earlyTermsData from '../../data/early-terms.json';
 import contactsData from '../../data/contacts.json';
 import feedData from '../../data/feed.json';
+import governmentData from '../../data/government.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -28,7 +29,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today: '2026-11-24' });
 });
 afterEach(() => app.destroy());
 
@@ -149,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Start bez rankingu lotów';
-const NEWEST_LINE = 'Start: Start bez rankingu lotów';
+const NEWEST = 'Prezydenci, premierzy i rządy III RP';
+const NEWEST_LINE = 'Państwo: Prezydenci, premierzy i rządy III RP';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -306,7 +307,7 @@ describe('Ranking: Najwięcej partii', () => {
     expect($('[data-testid="parties"]')).toBeNull();
     expect($('#view section').getAttribute('data-view')).toBe('directory');
     expect($('.topnav a[href="#partie"]')).toBeNull();
-    expect($$('.topnav a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#frequent-flyer', '#frekwencja']);
+    expect($$('.topnav a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja']);
     click($('.sidenav a[href="#partie"]'));
     nav('#partie');
     expect($('.sidenav a[data-nav="parties"]').getAttribute('aria-current')).toBe('page');
@@ -325,8 +326,8 @@ describe('Ranking: Najwięcej partii', () => {
     const leaderHref = $('[data-testid="hop-leader"] .hop-leader-name a').getAttribute('href');
     expect(rows[0].querySelector('a').getAttribute('href')).toBe(leaderHref);
   });
-  it('top search hints at searching the Sejm and MPs', () => {
-    expect($('#top-search').getAttribute('placeholder')).toBe('Szukaj w Sejmie, szukaj posła');
+  it('top search hints at searching MPs, ministers and presidents', () => {
+    expect($('#top-search').getAttribute('placeholder')).toBe('Szukaj posła, ministra, prezydenta');
   });
 });
 
@@ -545,5 +546,47 @@ describe('Logo', () => {
   it('shows the tagline under the name', () => {
     expect($('.logo .logo-name').textContent).toBe('sejmbook');
     expect($('[data-testid="logo-tag"]').textContent).toBe('wydarzenia w Rzeczypospolitej');
+  });
+});
+
+describe('Państwo: III RP hierarchy', () => {
+  it('shows today\'s top offices, the cabinet in power and all 21 governments', () => {
+    nav('#panstwo');
+    expect($('.sidenav a[data-nav="state"]').getAttribute('aria-current')).toBe('page');
+    const president = $('[data-office="prezydent"].office-card');
+    expect(president.textContent).toContain('Karol Nawrocki');
+    expect($('[data-office="premier"].office-card').textContent).toContain('Donald Tusk');
+    expect($('[data-testid="cabinet-now"]').textContent).toContain('Trzeci rząd Donalda Tuska');
+    expect($$('[data-testid="gov-list"] li').length).toBe(21);
+    expect($('[data-testid="gov-list"] li').textContent).toContain('Trzeci rząd Donalda Tuska');
+    expect($('details[data-office="prezydent"]').textContent).toContain('Lech Wałęsa');
+  });
+  it('opens a government with every office held in it', () => {
+    nav('#rzad-mazowiecki');
+    expect($('#view h1').textContent).toBe('Rząd Tadeusza Mazowieckiego');
+    expect($('[data-testid="gov-table"]').textContent).toContain('Krzysztof Skubiszewski');
+    expect(document.title).toBe('Rząd Tadeusza Mazowieckiego · Sejmbook');
+  });
+  it('gives presidents and prime ministers profiles with all their roles', () => {
+    nav('#urzad-lech-kaczynski');
+    expect($('#view h1').textContent).toBe('Lech Kaczyński');
+    const roles = $('[data-testid="role-list"]').textContent;
+    expect(roles).toContain('Prezydent RP');
+    expect(roles).toContain('Prezes NIK');
+    expect(roles).toContain('Minister sprawiedliwości');
+  });
+  it('links a minister who was an MP to the MP profile, and the MP profile back', () => {
+    nav('#urzad-wladyslaw-kosiniak-kamysz');
+    const mp = $('[data-testid="official-mp"]');
+    expect(mp.getAttribute('href')).toMatch(/^#posel-\d+$/);
+    nav(mp.getAttribute('href'));
+    expect($('[data-testid="state-roles"] a').getAttribute('href')).toBe('#urzad-wladyslaw-kosiniak-kamysz');
+  });
+  it('finds presidents and prime ministers from the top search', () => {
+    type($('#top-search'), 'kwasniewski');
+    nav('#poslowie');
+    const found = $('[data-testid="official-matches"]');
+    expect(found.textContent).toContain('Aleksander Kwaśniewski');
+    expect(found.textContent).toContain('Prezydent RP');
   });
 });

@@ -5,8 +5,10 @@ import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
 import { renderHome, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
+import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
+import { buildHierarchy } from './lib/government.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -26,13 +28,16 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     contacts: contactsData ?? null,
     // Home feed: President, Prime Minister, Sejm votings (data/feed.json, refreshed by a scheduled workflow).
     feed: feedData ?? null,
+    // III RP state hierarchy: governments since 1989 and top offices (data/government.json, Wikipedia).
+    gov: buildHierarchy(governmentData ?? null),
+    today: today ?? new Date().toISOString().slice(0, 10),
     life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
     media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {} },
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -51,7 +56,10 @@ export function createApp(doc, win, data) {
   function renderDirectoryList() {
     const t = Number(state.directory.term);
     const list = t !== 10 && ctx.terms ? filterTermMps(termMps(ctx.terms, t), state.directory) : filterMps(ctx.mps, state.directory);
-    return renderDirectory(ctx, state.directory, list);
+    const html = renderDirectory(ctx, state.directory, list);
+    // Presidents, prime ministers and ministers are searchable too: matches show above the MP list.
+    const officials = state.directory.query ? renderOfficialMatches(ctx, state.directory.query) : '';
+    return officials ? html.replace('<ul class="mp-grid">', `${officials}<ul class="mp-grid">`) : html;
   }
 
   function render() {
@@ -62,6 +70,9 @@ export function createApp(doc, win, data) {
     else if (r.name === 'profile') html = renderProfile(ctx, r.id);
     else if (r.name === 'person') html = renderPerson(ctx, r.key);
     else if (r.name === 'changelog') html = renderChangelog(ctx);
+    else if (r.name === 'state') html = renderState(ctx, ctx.today);
+    else if (r.name === 'government') html = renderGovernment(ctx, r.id);
+    else if (r.name === 'official') html = renderOfficial(ctx, r.slug, ctx.today);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
     else if (r.name === 'parties') html = renderParties(ctx, state.parties);
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
@@ -74,7 +85,7 @@ export function createApp(doc, win, data) {
       if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     }
     const h1 = view.querySelector('h1');
-    doc.title = (r.name === 'profile' || r.name === 'person') && h1 ? `${h1.textContent} · Sejmbook` : 'Sejmbook';
+    doc.title = (r.name === 'profile' || r.name === 'person' || r.name === 'official' || r.name === 'government') && h1 ? `${h1.textContent} · Sejmbook` : 'Sejmbook';
   }
 
   function go(hash) {

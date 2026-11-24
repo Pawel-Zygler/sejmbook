@@ -4,11 +4,12 @@ export const SHELL_HTML = `
   <div class="topbar-in">
     <a class="logo" href="#start" aria-label="Sejmbook, strona główna"><span class="logo-name">sejmbook</span><span class="logo-tag" data-testid="logo-tag">wydarzenia w Rzeczypospolitej</span></a>
     <label class="top-search" for="top-search"><span class="visually-hidden">Szukaj posła</span>
-      <input id="top-search" type="search" placeholder="Szukaj w Sejmie, szukaj posła" data-action="top-search" autocomplete="off">
+      <input id="top-search" type="search" placeholder="Szukaj posła, ministra, prezydenta" data-action="top-search" autocomplete="off">
     </label>
     <nav class="topnav" aria-label="Główne">
       <a href="#start" data-nav="home">Start</a>
       <a href="#poslowie" data-nav="directory">Posłowie</a>
+      <a href="#panstwo" data-nav="state">Państwo</a>
       <a href="#frequent-flyer" data-nav="flyer" aria-label="Frequent Flyer"><span class="nav-long">Frequent </span>Flyer</a>
       <a href="#frekwencja" data-nav="attendance">Frekwencja</a>
     </nav>
@@ -19,13 +20,14 @@ export const SHELL_HTML = `
   <nav class="sidenav" aria-label="Sekcje">
     <a href="#start" data-nav="home"><span class="ico">⌂</span>Aktualności</a>
     <a href="#poslowie" data-nav="directory"><span class="ico">☷</span>Posłowie X kadencji</a>
+    <a href="#panstwo" data-nav="state"><span class="ico">⚖</span>Państwo i rządy</a>
     <p class="sidenav-label">Rankingi</p>
     <a href="#frequent-flyer" data-nav="flyer"><span class="ico">✈</span>Frequent Flyer</a>
     <a href="#frekwencja" data-nav="attendance"><span class="ico">◔</span>Frekwencja</a>
     <a href="#partie" data-nav="parties"><span class="ico">⇄</span>Najwięcej partii</a>
     <p class="sidenav-label">Serwis</p>
     <a href="#changelog" data-nav="changelog"><span class="ico">✎</span>Changelog</a>
-    <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie. Wkrótce: głosowania i wystąpienia.</p>
+    <p class="sidenav-note">Sejmbook to niezależny dashboard o Sejmie i państwie. Wkrótce: głosowania i wystąpienia.</p>
   </nav>
   <main id="view" tabindex="-1"></main>
   <aside id="aside" aria-label="Kluby"></aside>

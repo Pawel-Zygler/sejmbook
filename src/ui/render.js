@@ -144,6 +144,14 @@ const fmtDay = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
 /** Today's MP with this full name (for photos and profile links), or null. */
 const mpByName = (ctx, name) => ctx.mps.find((m) => m.name === name) ?? null;
 
+/** A link to a person's state profile (Państwo) when they held a top office or sat in a government. */
+export function stateRolesLink(ctx, name) {
+  const fold = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
+  const p = ctx.gov?.byName?.get(fold(name));
+  if (!p) return '';
+  return `<p class="state-roles" data-testid="state-roles"><a class="btn" href="#urzad-${esc(p.slug)}">Funkcje państwowe: ${p.roles.length}</a></p>`;
+}
+
 /** One news list (president / prime minister): latest items, each a dated link to the official page. */
 function officialPost(ctx, sec, { badge, title, limit = 4 }) {
   if (!sec?.items?.length) return '';
@@ -151,10 +159,16 @@ function officialPost(ctx, sec, { badge, title, limit = 4 }) {
   const face = mp ? mpLink(mp, avatar(ctx, mp, 'md')) : `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
   const host = new URL(sec.source).hostname.replace(/^www\./, '');
   return `<article class="post feed-post" data-feed="${esc(title)}">
-      <header class="post-head">${face}<div><strong>${esc(sec.who)}</strong><small>${esc(sec.role)} · oficjalne komunikaty</small></div></header>
+      <header class="post-head">${face}<div><strong>${stateNameLink(ctx, sec.who)}</strong><small>${esc(sec.role)} · oficjalne komunikaty</small></div></header>
       <ul class="feed-list">${sec.items.slice(0, limit).map((it) => `<li><time datetime="${esc(it.date ?? '')}">${esc(fmtDay(it.date))}</time><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>${it.place ? `<small class="muted"> · ${esc(it.place)}</small>` : ''}</li>`).join('')}</ul>
       <footer class="post-foot"><a class="btn" href="${esc(sec.source)}" target="_blank" rel="noopener">Więcej na ${esc(host)}</a></footer>
     </article>`;
+}
+
+function stateNameLink(ctx, name) {
+  const fold = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L').toLowerCase();
+  const p = ctx.gov?.byName?.get(fold(name));
+  return p ? `<a class="official-link" href="#urzad-${esc(p.slug)}">${esc(name)}</a>` : esc(name);
 }
 
 /** Social posts of a politician from a verified public account (Bluesky), with the date of the latest post said openly. */
@@ -509,6 +523,7 @@ export function renderPerson(ctx, key) {
           <h1>${esc(p.name)}</h1>
           <p><span class="muted">Poseł na Sejm RP · ${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</span></p>
           <p class="badge-off">Nie zasiada w Sejmie obecnej kadencji</p>
+          ${stateRolesLink(ctx, p.name)}
         </div>
       </div>
     </div>
@@ -561,6 +576,7 @@ export function renderProfile(ctx, id) {
           <dt>Lotnisko okręgu</dt><dd>${ap ? `${esc(ctx.airports.airports[ap].name)} <span class="muted">(${formatInt(legKm)} km do Warszawy)</span>` : 'brak połączenia lotniczego z Warszawą'}</dd>
         </dl>
         <p class="src">Dane: <a href="${sejmProfileUrl(mp.id)}" target="_blank" rel="noopener">profil na sejm.gov.pl</a> · API Sejmu</p>
+        ${stateRolesLink(ctx, mp.name)}
         ${renderContact(ctx, mp)}
       </aside>
       <div class="feed">

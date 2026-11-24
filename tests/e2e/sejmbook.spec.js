@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Start bez rankingu lotów');
+  await expect(post).toContainText('Prezydenci, premierzy i rządy III RP');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Start bez rankingu lotów');
+  await expect(page.locator('.news-post').first()).toContainText('Prezydenci, premierzy i rządy III RP');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -358,4 +358,22 @@ test('Home feed: President and Prime Minister first', async ({ page }) => {
   await expect(page.locator('#view .feed-post[data-feed="pm"]')).toContainText('Donald Tusk');
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
+test('Państwo: hierarchy, a government, a president profile and search', async ({ page }) => {
+  await page.goto(`${PAGE}#panstwo`);
+  await expect(page.locator('[data-office="prezydent"].office-card')).toContainText('Karol Nawrocki');
+  await expect(page.locator('[data-testid="gov-list"] li')).toHaveCount(21);
+  await page.locator('[data-testid="gov-list"] a', { hasText: 'Rząd Jerzego Buzka' }).click();
+  await expect(page.locator('#view h1')).toHaveText('Rząd Jerzego Buzka');
+  await page.goto(`${PAGE}#urzad-lech-walesa`);
+  await expect(page.locator('[data-testid="role-list"]')).toContainText('Prezydent RP');
+  await page.goto(`${PAGE}#poslowie`);
+  await page.locator('#dir-search').fill('Wałęsa');
+  await expect(page.locator('[data-testid="official-matches"]')).toContainText('Lech Wałęsa');
+  const vw = page.viewportSize().width;
+  for (const h of ['#panstwo', '#rzad-tusk-3', '#urzad-donald-tusk']) {
+    await page.goto(`${PAGE}${h}`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+  }
 });
