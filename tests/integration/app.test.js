@@ -146,7 +146,7 @@ describe('news feed (Aktualności)', () => {
   it('starts the home feed with the newest feature post', () => {
     const first = $('#view .post');
     expect(first.classList.contains('news-post')).toBe(true);
-    expect(first.textContent).toContain('Spektrum partyjne');
+    expect(first.textContent).toContain('Kto zmieniał partie');
     expect($('.news-post[data-news-id="2026-11-24-od-zawsze"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-24-zdjecia"]')).not.toBeNull();
     expect($('.news-post[data-news-id="2026-11-23-podium"]')).not.toBeNull();
@@ -275,5 +275,20 @@ describe('Spektrum partyjne', () => {
     nav(`#posel-${id}`);
     expect($$('[data-testid="spectrum"] .spectrum-seg')).toHaveLength(1);
     expect($('[data-testid="spectrum"]').textContent).toContain('100%');
+  });
+});
+
+describe('Posłowie dashboard', () => {
+  it('opens the Posłowie tab with the most-parties dashboard, ranked high to low', () => {
+    nav('#poslowie');
+    const dash = $('[data-testid="mps-dashboard"]');
+    expect(dash).not.toBeNull();
+    expect(dash.parentElement.firstElementChild).toBe(dash);
+    const counts = $$('[data-testid="mps-dashboard"] .hop-row .hop-count b').map((b) => Number(b.textContent));
+    expect(counts.length).toBeGreaterThan(10);
+    expect(counts).toEqual([...counts].sort((a, b) => b - a));
+    expect(counts[counts.length - 1]).toBeGreaterThanOrEqual(2);
+    const leaderHref = $('[data-testid="hop-leader"] .hop-leader-name a').getAttribute('href');
+    expect($('[data-testid="hop-ranking"] .hop-row a').getAttribute('href')).toBe(leaderHref);
   });
 });

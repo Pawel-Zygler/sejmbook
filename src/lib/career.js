@@ -90,3 +90,40 @@ export function termRanges(nums) {
   }
   return out.join(', ');
 }
+
+/**
+ * The MP's path through parties, in order: consecutive terms in the same camp are merged.
+ * "Niezrzeszeni" is not a party, so it is left out of the path and the count.
+ */
+export function partyPath(careerData, mpId) {
+  const rows = careerData?.career?.[mpId];
+  if (!rows?.length) return null;
+  const path = [];
+  for (const r of [...rows].sort((a, b) => a.term - b.term)) {
+    const fam = clubFamily(r.club, r.clubName);
+    if (fam.id === 'niez') continue;
+    const last = path[path.length - 1];
+    if (last && last.id === fam.id) last.terms.push(r.term);
+    else path.push({ ...fam, terms: [r.term] });
+  }
+  let other = 0;
+  const colors = new Map();
+  for (const p of path) {
+    if (!p.color) p.color = colors.get(p.id) ?? OTHER_COLORS[other++ % OTHER_COLORS.length];
+    colors.set(p.id, p.color);
+  }
+  return { path, count: new Set(path.map((p) => p.id)).size, terms: rows.length };
+}
+
+/**
+ * Ranking of MPs by how many parties they sat in over their Sejm career, most first.
+ * Ties: more terms first, then by name. Only MPs with at least `min` parties.
+ */
+export function partyHoppers(careerData, mps, { min = 2 } = {}) {
+  const out = [];
+  for (const mp of mps) {
+    const pp = partyPath(careerData, mp.id);
+    if (pp && pp.count >= min) out.push({ mp, ...pp });
+  }
+  return out.sort((a, b) => b.count - a.count || b.terms - a.terms || a.mp.name.localeCompare(b.mp.name, 'pl'));
+}

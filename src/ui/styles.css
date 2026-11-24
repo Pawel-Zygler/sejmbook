@@ -270,3 +270,26 @@ h2 { font-size: 1.1rem; }
 .spectrum-legend li { display: flex; align-items: center; gap: 6px; }
 .spectrum-swatch { width: 10px; height: 10px; border-radius: 3px; background: var(--seg); flex: none; }
 .spectrum .src { margin: 10px 0 0; }
+
+/* Posłowie: dashboard "najwięcej partii" */
+.mps-dash { margin-bottom: 16px; }
+.mps-dash h2 { margin: 2px 0 12px; font-size: 1.25rem; }
+.mps-dash .eyebrow { margin: 0; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent, #c8102e); font-weight: 700; }
+.hop-leader { display: flex; gap: 14px; align-items: center; padding: 12px; border-radius: var(--radius); background: var(--accent-soft); margin-bottom: 12px; }
+.hop-leader-name { margin: 0; font-weight: 800; font-size: 1.1rem; }
+.hop-leader-stat { margin: 2px 0 6px; }
+.hop-avatar { flex: none; text-decoration: none; }
+.party-route { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; }
+.party-route li { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; }
+.party-route li + li::before { content: '→'; color: var(--muted); margin-right: 2px; }
+.route-chip { display: inline-block; padding: 1px 8px; border-radius: 999px; color: #fff; background: var(--club); font-weight: 700; font-size: 0.75rem; }
+.hop-list { list-style: none; margin: 0; padding: 0; }
+.hop-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.hop-rank { width: 22px; text-align: right; font-weight: 800; color: var(--muted); flex: none; }
+.hop-main { flex: 1; min-width: 0; }
+.hop-main > a { font-weight: 700; text-decoration: none; }
+.hop-count { flex: none; text-align: right; }
+.hop-count b { font-size: 1.1rem; }
+.hop-count small { display: block; color: var(--muted); font-size: 0.72rem; }
+.hop-more summary { cursor: pointer; padding: 8px 0; font-weight: 700; color: var(--accent, #c8102e); }
+.mps-dash .src { margin: 10px 0 0; }

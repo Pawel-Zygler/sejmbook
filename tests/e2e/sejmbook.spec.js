@@ -97,7 +97,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('home lists feature posts and links to them', async ({ page }) => {
   await page.goto(PAGE);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Spektrum partyjne');
+  await expect(post).toContainText('Kto zmieniał partie');
   await page.locator('.news-post[data-news-id="2026-11-23-artykuly"]').getByRole('link', { name: 'Zobacz ranking' }).click();
   await expect(page.locator('[data-view="flyer"]')).toBeVisible();
 });
@@ -122,7 +122,7 @@ test('Frekwencja tab: ranking with pie icons, sorting and profile card', async (
 
 test('home announces the newest feature first and keeps older posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.news-post').first()).toContainText('Spektrum partyjne');
+  await expect(page.locator('.news-post').first()).toContainText('Kto zmieniał partie');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -184,4 +184,21 @@ test('Spektrum partyjne: bar under the profile card', async ({ page }) => {
   const top = await page.locator('.profile-top').boundingBox();
   expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);
   expect(await panel.locator('.spectrum-seg').count()).toBeGreaterThan(0);
+});
+
+test('Posłowie starts with the most-parties dashboard', async ({ page }) => {
+  await page.goto(`${PAGE}#poslowie`);
+  const dash = page.getByTestId('mps-dashboard');
+  await expect(dash).toBeVisible();
+  await expect(dash).toContainText('Najwięcej partii w karierze posła');
+  const dashBox = await dash.boundingBox();
+  const grid = await page.locator('.mp-grid').boundingBox();
+  expect(dashBox.y).toBeLessThan(grid.y);
+  await expect(dash.getByTestId('hop-ranking').locator('.hop-row')).toHaveCount(10);
+  await dash.locator('.hop-more summary').click();
+  await expect(dash.locator('.hop-more .hop-row').first()).toBeVisible();
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+  await dash.getByTestId('hop-leader').locator('.hop-leader-name a').click();
+  await expect(page.getByTestId('spectrum')).toBeVisible();
 });

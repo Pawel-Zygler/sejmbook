@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { clubFamily, termYears, careerSpectrum, termRanges, romanTerm } from '../../src/lib/career.js';
+import { clubFamily, termYears, careerSpectrum, termRanges, romanTerm, partyPath, partyHoppers } from '../../src/lib/career.js';
 
 const careerData = {
   terms: [
@@ -73,5 +73,32 @@ describe('termRanges', () => {
     expect(termRanges([10, 4, 5, 6, 8])).toBe('IV–VI, VIII, X');
     expect(termRanges([10])).toBe('X');
     expect(romanTerm(13)).toBe('13');
+  });
+});
+
+describe('partyPath and partyHoppers', () => {
+  const data = {
+    terms: [],
+    career: {
+      1: [{ term: 7, club: 'PiS' }, { term: 6, club: 'PO' }, { term: 8, club: 'niez.' }, { term: 9, club: 'PiS' }, { term: 10, club: 'Q', clubName: 'Koło Poselskie Nowe' }],
+      2: [{ term: 9, club: 'PO-KO' }, { term: 10, club: 'KO' }],
+      3: [{ term: 10, club: 'PSL-TD' }, { term: 9, club: 'Lewica' }],
+      4: [{ term: 8, club: 'SLD' }, { term: 9, club: 'PSL' }, { term: 10, club: 'PiS' }],
+    },
+  };
+  it('lists parties in time order, merges repeats, skips niezrzeszeni', () => {
+    const pp = partyPath(data, 1);
+    expect(pp.path.map((p) => p.id)).toEqual(['KO', 'PiS', 'other:Nowe']);
+    expect(pp.path[1].terms).toEqual([7, 9]);
+    expect(pp.path[2].color).toMatch(/^#/);
+    expect(pp.count).toBe(3);
+    expect(pp.terms).toBe(5);
+    expect(partyPath(data, 2).count).toBe(1);
+    expect(partyPath(data, 99)).toBeNull();
+  });
+  it('ranks by number of parties, then terms, then name', () => {
+    const mps = [{ id: 1, name: 'Zenon' }, { id: 2, name: 'Adam' }, { id: 3, name: 'Basia' }, { id: 4, name: 'Celina' }];
+    expect(partyHoppers(data, mps).map((r) => r.mp.id)).toEqual([1, 4, 3]);
+    expect(partyHoppers(data, mps, { min: 1 }).map((r) => r.mp.id)).toEqual([1, 4, 3, 2]);
   });
 });

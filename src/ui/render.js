@@ -1,5 +1,5 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, ageInYear } from '../lib/mps.js';
-import { careerSpectrum, termRanges } from '../lib/career.js';
+import { careerSpectrum, termRanges, partyHoppers } from '../lib/career.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
@@ -123,10 +123,52 @@ function pageBadge() {
 }
 
 /* ---------- Directory ---------- */
+const partyWord = (n) => plural(n, 'partia', 'partie', 'partii');
+
+/** One MP's route through parties: chips in time order, with the terms of each. */
+function partyRoute(steps) {
+  return `<ol class="party-route">${steps.map((s) => `<li><span class="route-chip" style="--club:${esc(s.color)}">${esc(s.label)}</span> <small class="muted">${termRanges(s.terms)}</small></li>`).join('')}</ol>`;
+}
+
+/** Dashboard at the top of "Posłowie": who sat in the most parties during their career. */
+export function renderMpsDashboard(ctx) {
+  const active = ctx.mps.filter((m) => m.active);
+  const list = partyHoppers(ctx.career, active);
+  if (list.length === 0) return '';
+  const top = list[0];
+  const tied = list.filter((r) => r.count === top.count).length - 1;
+  const single = active.filter((m) => (ctx.career?.career?.[m.id] ?? []).length > 0).length - list.length;
+  const rows = (items, from) => items.map((r, i) => `
+        <li class="hop-row" data-mp-id="${r.mp.id}">
+          <span class="hop-rank">${from + i + 1}</span>
+          ${mpLink(r.mp, avatar(ctx, r.mp, 'sm'), 'hop-avatar')}
+          <div class="hop-main">${mpLink(r.mp, esc(r.mp.name))}${partyRoute(r.path)}</div>
+          <span class="hop-count"><b>${r.count}</b> <small>${partyWord(r.count)}</small></span>
+        </li>`).join('');
+  const SHOW = 10;
+  return `
+    <div class="panel mps-dash" data-testid="mps-dashboard">
+      <p class="eyebrow">Dashboard</p>
+      <h2>Najwięcej partii w karierze posła</h2>
+      <div class="hop-leader" data-testid="hop-leader">
+        ${mpLink(top.mp, avatar(ctx, top.mp, 'lg'), 'hop-avatar')}
+        <div>
+          <p class="hop-leader-name">${mpLink(top.mp, esc(top.mp.name))}</p>
+          <p class="hop-leader-stat"><b>${top.count}</b> ${partyWord(top.count)} w ${top.terms} ${plural(top.terms, 'kadencji', 'kadencjach', 'kadencjach')} Sejmu${tied > 0 ? `<span class="muted"> · ex aequo z ${tied} ${plural(tied, 'innym posłem', 'innymi posłami', 'innymi posłami')}</span>` : ''}</p>
+          ${partyRoute(top.path)}
+        </div>
+      </div>
+      <ol class="hop-list" data-testid="hop-ranking">${rows(list.slice(0, SHOW), 0)}</ol>
+      ${list.length > SHOW ? `<details class="hop-more"><summary>Pokaż wszystkich (${list.length})</summary><ol class="hop-list">${rows(list.slice(SHOW), SHOW)}</ol></details>` : ''}
+      <p class="src">${single} ${plural(single, 'poseł był', 'posłów było', 'posłów było')} w Sejmie tylko w jednej partii. Liczymy kluby z każdej kadencji od 1997 r. według API Sejmu (ostatni klub w kadencji); kolejne wcielenia tej samej partii, np. PO i KO, liczymy jako jedną.</p>
+    </div>`;
+}
+
 export function renderDirectory(ctx, state, list) {
   const counts = clubCounts(ctx.mps);
   return `
   <section data-view="directory">
+    ${renderMpsDashboard(ctx)}
     <div class="panel dir-head">
       <h1>Posłowie X kadencji</h1>
       <label class="search-field" for="dir-search"><span class="visually-hidden">Szukaj posła</span>
