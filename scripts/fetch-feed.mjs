@@ -28,42 +28,33 @@ function isoDate(s) {
   return null;
 }
 
-/** Articles on a news list page: links to `pathPrefix…` with a title and, nearby, a date. */
-function newsLinks(html, base, pathPrefix, limit = 8) {
-  const items = [];
-  const seen = new Set();
-  for (const m of html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)) {
-    const href = decode(m[1]);
-    const url = new URL(href, base).toString();
-    if (!new URL(url).pathname.startsWith(pathPrefix) || new URL(url).pathname.replace(/\/$/, '') === pathPrefix.replace(/\/$/, '')) continue;
-    const title = text(m[2]);
-    if (title.length < 15 || seen.has(url)) continue;
-    const around = html.slice(Math.max(0, m.index - 600), m.index + m[0].length + 600);
-    const date = isoDate(text(around));
-    seen.add(url);
-    items.push({ title, url, date });
-    if (items.length >= limit) break;
-  }
-  return items;
-}
-
 const sections = {};
 const log = (k, e) => console.warn(`${k}: ${e.message}`);
 
-// President: prezydent.pl news list.
+// President: prezydent.pl news list (title, date, link).
 try {
   const html = await (await get('https://www.prezydent.pl/aktualnosci', 'text/html')).text();
-  sections.president = { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items: newsLinks(html, 'https://www.prezydent.pl', '/aktualnosci/') };
-  console.log('president', sections.president.items.length, JSON.stringify(sections.president.items.slice(0, 3)));
-  { const i = html.search(/\d{1,2}\.\d{2}\.20\d\d|\d{1,2} (listopada|października|grudnia) 20\d\d/); console.log('PREZ SAMPLE', i, html.slice(Math.max(0, i - 2500), i + 1500).replace(/\s+/g, ' ')); }
+  const items = [];
+  for (const m of html.matchAll(/articles-item__date">\s*([\d.]+)\s*<\/div>[\s\S]*?articles-item__title">[\s\S]*?<a href="([^"]+)">\s*([\s\S]*?)\s*<\/a>/g)) {
+    const url = new URL(decode(m[2]), 'https://www.prezydent.pl').toString();
+    if (items.some((x) => x.url === url)) continue;
+    items.push({ title: text(m[3]), date: isoDate(m[1]), url });
+    if (items.length >= 8) break;
+  }
+  sections.president = { who: 'Karol Nawrocki', role: 'Prezydent RP', source: 'https://www.prezydent.pl/aktualnosci', items };
+  console.log('president', items.length, JSON.stringify(items.slice(0, 3)));
 } catch (e) { log('president', e); }
 
-// Prime Minister: KPRM news on gov.pl.
+// Prime Minister: KPRM events on gov.pl (title, date, place, link).
 try {
   const html = await (await get('https://www.gov.pl/web/premier/wydarzenia', 'text/html')).text();
-  sections.pm = { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items: newsLinks(html, 'https://www.gov.pl', '/web/premier/') };
-  console.log('pm', sections.pm.items.length, JSON.stringify(sections.pm.items.slice(0, 3)));
-  { const i = html.search(/\d{1,2}\.\d{2}\.20\d\d|\d{1,2} (listopada|października|grudnia) 20\d\d/); console.log('KPRM SAMPLE', i, html.slice(Math.max(0, i - 2500), i + 1500).replace(/\s+/g, ' ')); }
+  const items = [];
+  for (const m of html.matchAll(/<span class="date">\s*([\d.]+)\s*<\/span>(?:\s*<span class="location">([^<]*)<\/span>)?[\s\S]*?<div class="title">\s*<a href="([^"]+)">\s*([\s\S]*?)\s*<\/a>/g)) {
+    items.push({ title: text(m[4]), date: isoDate(m[1]), place: m[2] ? text(m[2]) : null, url: new URL(decode(m[3]), 'https://www.gov.pl').toString() });
+    if (items.length >= 8) break;
+  }
+  sections.pm = { who: 'Donald Tusk', role: 'Prezes Rady Ministrów', source: 'https://www.gov.pl/web/premier/wydarzenia', items };
+  console.log('pm', items.length, JSON.stringify(items.slice(0, 3)));
 } catch (e) { log('pm', e); }
 
 // Prime Minister on Bluesky (public API; the account is verified by Bluesky).
