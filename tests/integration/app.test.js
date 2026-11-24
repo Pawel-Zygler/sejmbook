@@ -340,7 +340,8 @@ describe('Communist past mark', () => {
   it('Czarzasty has ☭ next to today\'s club on the profile and in the directory; Tusk does not', () => {
     nav('#posel-58');
     const mark = $('.profile-name [data-testid="red-past"]');
-    expect(mark.textContent).toBe('☭');
+    expect(mark.previousElementSibling.classList.contains('chip')).toBe(true);
+    expect(mark.textContent).toContain('PZPR');
     expect(mark.getAttribute('title')).toContain('PZPR');
     nav('#posel-400');
     expect($('.profile-name [data-testid="red-past"]')).toBeNull();

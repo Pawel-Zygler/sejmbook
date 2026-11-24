@@ -224,6 +224,6 @@ test('Communist past: ☭ next to today\'s club', async ({ page }) => {
   await page.goto(`${PAGE}#posel-58`);
   const mark = page.locator('.profile-name').getByTestId('red-past');
   await expect(mark).toBeVisible();
-  await expect(mark).toHaveText('☭');
+  await expect(mark).toContainText('PZPR');
   await expect(mark).toHaveAttribute('title', /PZPR/);
 });

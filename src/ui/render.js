@@ -38,21 +38,29 @@ export function avatar(ctx, mp, size = 'md') {
   return `<span class="avatar avatar-${size}" style="--club:${esc(c.color)}" aria-hidden="true"><span class="avatar-ini">${esc(initials(mp.name))}</span>${img}</span>`;
 }
 
-/** ☭ next to today's club when the MP was a member of a communist party in the PRL (Wikidata). */
-export function formerCommunistMark(ctx, mp) {
+/**
+ * A second, "former party" chip for MPs who were in a communist party in the PRL (Wikidata):
+ * the party's logo when the build bundled one, otherwise ☭. `compact` shows only the icon.
+ */
+export function formerPartyChip(ctx, mp, compact = false) {
   const cp = mp ? communistPast(ctx.life, mp.id) : null;
   if (!cp) return '';
   const years = cp.from ? ` ${cp.from}–${cp.to ?? ''}` : cp.to ? ` do ${cp.to}` : '';
-  const text = `Były członek ${cp.parties.join(', ')}${years} (Wikidata)`;
-  return `<span class="red-past" data-testid="red-past" title="${esc(text)}" aria-label="${esc(text)}">☭</span>`;
+  const name = cp.parties.join(', ');
+  const text = `Były członek ${name}${years} (Wikidata)`;
+  const logo = clubLogo(ctx, cp.parties[0]);
+  // Logo of the party (when bundled) and the hammer and sickle, as Pawel asked.
+  const icon = `${logo ? `<img class="club-logo" src="${esc(logo)}" alt="">` : ''}<span class="sickle" aria-hidden="true">☭</span>`;
+  return `<span class="chip former-party${compact ? ' logo-only' : ''}" data-testid="red-past" title="${esc(text)}" aria-label="${esc(text)}">${icon}${compact ? '' : `<span class="former-name">${esc(name)}</span>`}</span>`;
 }
 
+/** Today's club; with `mp`, followed by the former-party chip when there is one. */
 export function clubChip(ctx, clubId, mp = null) {
   const c = ctx.clubs.get(clubId) ?? { ...FALLBACK_CLUB, id: clubId, short: clubId };
   const logo = clubLogo(ctx, clubId);
-  const mark = formerCommunistMark(ctx, mp);
-  if (logo) return `<span class="chip has-logo" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="">${esc(c.short)}${mark}</span>`;
-  return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}${mark}</span>`;
+  const former = formerPartyChip(ctx, mp);
+  if (logo) return `<span class="chip has-logo" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="">${esc(c.short)}</span>${former}`;
+  return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}</span>${former}`;
 }
 
 function sourceLinks(sources) {
@@ -205,7 +213,7 @@ export function mpCardMeta(ctx, mp) {
   const logo = clubLogo(ctx, mp.club);
   // With a logo the chip shows only the logo, so long club names do not push the row apart.
   const club = logo
-    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}">${formerCommunistMark(ctx, mp)}</span>`
+    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}"></span>${formerPartyChip(ctx, mp, true)}`
     : clubChip(ctx, mp.club, mp);
   const parts = [
     club,

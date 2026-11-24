@@ -31,6 +31,11 @@ async function loadMedia() {
   for (const ph of index.photos) photos[ph.id] = await uri(ph.file);
   const logos = {};
   for (const l of index.logos) logos[l.id] = await uri(l.file);
+  // Logos of former parties (e.g. PZPR) from the former-party-logos workflow.
+  if (existsSync(p('media/extra/index.json'))) {
+    const extra = JSON.parse(await readFile(p('media/extra/index.json'), 'utf8'));
+    for (const l of extra.logos) logos[l.id] = await uri(l.file);
+  }
   return { photos, logos };
 }
 const media = await loadMedia();
