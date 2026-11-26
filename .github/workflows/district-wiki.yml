@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
     paths: ['scripts/fetch-district-wiki.mjs', '.github/workflows/district-wiki.yml']
+  schedule:
+    - cron: '15 5 1 * *'
 permissions:
   contents: write
 jobs:
@@ -15,11 +17,12 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/fetch-district-wiki.mjs
+      - run: node scripts/build-district-map.mjs
       - name: Commit district articles
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/district-wiki.json
+          git add data/raw/district-wiki.json data/district-map.json
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "Update Sejm constituency articles from Polish Wikipedia"
           git pull --rebase

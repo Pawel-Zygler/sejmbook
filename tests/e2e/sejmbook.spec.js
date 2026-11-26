@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Sortowanie posłów');
+  await expect(post).toContainText('Mapa okręgu wyborczego');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Sortowanie posłów');
+  await expect(page.locator('.news-post').first()).toContainText('Mapa okręgu wyborczego');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -618,5 +618,18 @@ test('Posłowie: sort by votes in the 2023 election', async ({ page }) => {
   await btn.dispatchEvent('click');
   await expect(page.locator('[data-action="dir-sort"][data-sort="votes"][aria-pressed="true"]').first()).toBeAttached();
   await expect(page.locator('.mp-card .mp-card-name').first()).toHaveText('Donald Tusk');
+});
+
+test('Profile: mini map of Poland with the district highlighted', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-33`);
+  const map = page.getByTestId('district-map');
+  await expect(map).toBeVisible();
+  await expect(map).toHaveAttribute('data-district', '24');
+  const box = await map.locator('svg').boundingBox();
+  expect(box.width).toBeGreaterThan(80);
+  expect(box.width).toBeLessThan(200);
+  const on = await map.locator('.dm-on').evaluate((e) => getComputedStyle(e).fill);
+  const land = await map.locator('.dm-land').evaluate((e) => getComputedStyle(e).fill);
+  expect(on).not.toBe(land);
 });
 

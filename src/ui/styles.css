@@ -144,6 +144,12 @@ h2 { font-size: 1.1rem; }
 .about dl { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 12px 0; }
 .about dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-top: 8px; }
 .about dd { margin: 0; }
+/* District mini map: Poland in a quiet tone, the MP's district in the accent colour (Pawel, 2026-11-26) */
+.district-map { margin: 8px 0 2px; width: 132px; max-width: 100%; }
+.district-map svg { display: block; width: 100%; height: auto; }
+.district-map .dm-land { fill: var(--line); stroke: var(--line); stroke-width: .4; stroke-linejoin: round; }
+.district-map .dm-on { fill: var(--accent); stroke: var(--accent); stroke-width: .4; stroke-linejoin: round; }
+.district-map .dm-ring { fill: none; stroke: var(--accent); stroke-width: .9; }
 .profile-cols .feed { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .flight-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
 .flight-stats div { background: var(--surface-2); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; }

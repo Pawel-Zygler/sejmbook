@@ -17,6 +17,7 @@ import feedData from '../../data/feed.json';
 import governmentData from '../../data/government.json';
 import lawData from '../../data/law-votes.json';
 import socialData from '../../data/social.json';
+import districtMapData from '../../data/district-map.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -157,8 +158,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Sortowanie posłów';
-const NEWEST_LINE = 'Posłowie: Sortowanie posłów';
+const NEWEST = 'Mapa okręgu wyborczego';
+const NEWEST_LINE = 'Profile: Mapa okręgu wyborczego';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -873,6 +874,32 @@ describe('Posłowie: sorting, side menu icons', () => {
   });
   it('side menu items have drawn icons, not text symbols', () => {
     for (const ico of $$('.sidenav .ico')) expect(ico.querySelector('svg')).not.toBeNull();
+  });
+});
+
+describe('Profile: mini map of the district', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, districtMapData, today: '2026-11-24' });
+  });
+  it('shows Poland with the MP\'s district highlighted under "Okręg wyborczy"', () => {
+    nav('#posel-33');
+    const mp = mpsData.mps.find((m) => m.id === 33);
+    const fig = $('.about [data-testid="district-map"]');
+    expect(fig.dataset.district).toBe(String(mp.districtNum));
+    expect(fig.closest('dd').previousElementSibling.textContent).toBe('Okręg wyborczy');
+    expect(fig.querySelector('svg').getAttribute('aria-label')).toContain(`nr ${mp.districtNum}`);
+  });
+  it('shows the map on the page of a former MP of a recent term', () => {
+    nav('#poslowie');
+    click($('#aside [data-action="dir-term"][data-term="9"]'));
+    const link = $$('.term-card a.mp-card-link').find((a) => a.getAttribute('href').startsWith('#osoba-'));
+    nav(link.getAttribute('href'));
+    expect($('.about [data-testid="district-map"]')).not.toBeNull();
+  });
+  it('names the border data in the footer', () => {
+    expect($('.foot-src').textContent).toContain('GUGiK');
   });
 });
 

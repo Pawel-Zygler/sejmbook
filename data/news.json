@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-mapa-okregu",
+      "date": "2026-11-26",
+      "title": "Mapa okręgu wyborczego",
+      "section": "Profile",
+      "body": "W profilu posła mała mapa Polski pokazuje jego okręg wyborczy.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-sortowanie-poslow",
       "date": "2026-11-26",
       "title": "Sortowanie posłów",

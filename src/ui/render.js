@@ -11,6 +11,7 @@ import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileLaws } from './law-view.js';
 import { renderProfileLinks } from './profile-links.js';
+import { renderDistrictMap } from './district-map.js';
 import { SORTS, DEFAULT_SORT, sortKeys } from '../lib/dir-sort.js';
 import { tagColors } from '../lib/color.js';
 
@@ -822,7 +823,7 @@ export function renderPerson(ctx, key) {
       <aside class="panel about">
         <h2>Informacje</h2>
         <dl>
-          <dt>Okręg wyborczy</dt><dd>${last?.d ? `nr ${last.d} · ${esc(last.dn ?? '')}` : 'brak danych'}</dd>
+          <dt>Okręg wyborczy</dt><dd>${last?.d ? `nr ${last.d} · ${esc(last.dn ?? '')}${renderDistrictMap(ctx.districtMap, last.d, { term: last.t })}` : 'brak danych'}</dd>
           <dt>${age ? 'Data urodzenia' : 'Rok urodzenia'}</dt><dd>${age ? esc(age) : birthYear ?? 'brak danych'}${birthYear ? ` <span class="muted">(${ageInYear(birthYear, year)} lat)</span>` : ''}</dd>
           <dt>Klub</dt><dd>${esc(lastName ?? 'brak danych')}</dd>
         </dl>
@@ -870,7 +871,7 @@ export function renderProfile(ctx, id) {
       <aside class="panel about">
         <h2>Informacje</h2>
         <dl>
-          <dt>Okręg wyborczy</dt><dd>nr ${mp.districtNum} · ${esc(mp.districtName)}</dd>
+          <dt>Okręg wyborczy</dt><dd>nr ${mp.districtNum} · ${esc(mp.districtName)}${renderDistrictMap(ctx.districtMap, mp.districtNum)}</dd>
           <dt>Województwo</dt><dd>${esc(mp.voivodeship)}</dd>
           <dt>Rok urodzenia</dt><dd>${mp.birthYear} <span class="muted">(${ageInYear(mp.birthYear, year)} lat)</span></dd>
           <dt>Zawód</dt><dd>${esc(mp.profession || 'brak danych')}</dd>
