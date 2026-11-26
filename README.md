@@ -2,6 +2,8 @@
 
 **Wydarzenia w Rzeczypospolitej.** Sejmbook to niezależny serwis w formie mediów społecznościowych, w którym patrzymy, co robią posłowie: jak głosują, ile latają na koszt Sejmu, czy przychodzą na posiedzenia i jakie funkcje pełnili w państwie. Wszystkie liczby pochodzą z oficjalnych lub sprawdzonych źródeł i są podpisane źródłem. Nic nie jest dopisane z głowy.
 
+**Strona:** https://sejmbook.zygler-pawel.workers.dev/ (Cloudflare Workers, wdrażana automatycznie z `main`; każdy pull request dostaje własny podgląd).
+
 ## Sekcje
 - Feed
 - Posłowie
