@@ -158,8 +158,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Nowa karta posła';
-const NEWEST_LINE = 'Posłowie: Nowa karta posła';
+const NEWEST = 'Skład Sejmu na górze';
+const NEWEST_LINE = 'Feed: Skład Sejmu na górze';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -912,6 +912,17 @@ describe('Posłowie: card with the portrait top-left and facts on the right', ()
     expect(facts.slice(0, 3)).toEqual(['mp-card-party', 'mp-card-votes', 'mp-card-district']);
     expect(card.querySelector('.mp-card-facts').nextElementSibling.classList.contains('mp-card-link')).toBe(true);
     expect(card.querySelector('.mp-card-photo').getAttribute('href')).toBe(card.querySelector('.mp-card-link').getAttribute('href'));
+  });
+});
+
+describe('Feed: seats of the Sejm on top', () => {
+  it('shows the "Skład Sejmu" post before the time window and the feed posts', () => {
+    nav('');
+    const view = $('[data-view="home"]');
+    expect(view.firstElementChild.dataset.testid).toBe('seat-post');
+    expect(view.firstElementChild.textContent).toContain('Skład Sejmu');
+    const posts = $$('[data-view="home"] .feed-post');
+    if (posts.length) expect(view.firstElementChild.compareDocumentPosition(posts[0]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 });
 

@@ -377,8 +377,8 @@ export function renderHome(ctx, feedState = {}) {
 
   return `
   <section class="feed" data-view="home">
-    ${renderLiveFeed(ctx, feedState)}
-    <article class="post">
+    <!-- Seats of the Sejm first, above the feed (Pawel, 2026-11-26: "daj to na front"). -->
+    <article class="post seat-post" data-testid="seat-post">
       <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja · dane z API Sejmu, ${esc(ctx.fetchedAt)}</small></div></header>
       <p class="post-text"><b>${active}</b> aktywnych mandatów w ${counts.length} klubach i kołach. Kliknij klub, żeby zobaczyć jego posłów.</p>
       <div class="seat-bar" role="img" aria-label="Podział mandatów między kluby">${bar}</div>
@@ -386,7 +386,7 @@ export function renderHome(ctx, feedState = {}) {
         ${counts.map((c) => `<li><a href="#poslowie" data-action="filter-club" data-club="${esc(c.club)}">${clubChip(ctx, c.club)} <b>${c.count}</b></a></li>`).join('')}
       </ul>
     </article>
-
+    ${renderLiveFeed(ctx, feedState)}
   </section>`;
 }
 

@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-sklad-na-gorze",
+      "date": "2026-11-26",
+      "title": "Skład Sejmu na górze",
+      "section": "Feed",
+      "body": "Podział mandatów między kluby jest teraz na samej górze Feedu.",
+      "link": {
+        "href": "#",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-karta-posla",
       "date": "2026-11-26",
       "title": "Nowa karta posła",

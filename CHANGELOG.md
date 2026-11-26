@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Feed: Skład Sejmu na górze.** Podział mandatów między kluby jest teraz na samej górze Feedu.
 - **Posłowie: Nowa karta posła.** Na liście posłów portret jest w lewym górnym rogu, a obok partia, głosy, okręg i frekwencja.
 - **Profile: Mapa okręgu wyborczego.** W profilu posła mała mapa Polski pokazuje jego okręg wyborczy.
 - **Posłowie: Sortowanie posłów.** Listę posłów posortujesz alfabetycznie, po okręgu, klubie, frekwencji, wieku, głosach w wyborach i liczbie kadencji.
