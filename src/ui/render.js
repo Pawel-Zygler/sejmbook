@@ -691,7 +691,6 @@ export function renderPerson(ctx, key) {
         <div class="profile-name">
           <h1>${esc(p.name)}</h1>
           <p>${lastFam ? `<span class="chip" style="--club:${esc(lastFam.color ?? color)}" title="${esc(lastName ?? '')}">${esc(lastFam.label)}</span> ` : ''}<span class="muted">${esc(lastName ?? 'klub nieznany')}</span></p>
-          <p class="badge-off">Nie zasiada w Sejmie obecnej kadencji · poseł ${nTerms} ${plural(nTerms, 'kadencji', 'kadencji', 'kadencji')}: ${termRanges(p.terms.map((t) => t.t))}</p>
         </div>
       </div>
     </div>

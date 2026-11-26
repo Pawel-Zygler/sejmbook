@@ -479,7 +479,8 @@ describe('renderPerson', () => {
   it('shows terms, clubs, districts and the party route of a former MP', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
     expect(html).toContain('<h1>Jan Były</h1>');
-    expect(html).toContain('poseł 2 kadencji: III–IV');
+    expect(html).not.toContain('Nie zasiada w Sejmie');
+    expect(html).toContain('III–IV <span class="muted">(2)</span>');
     expect(html).toContain('Klub Parlamentarny Unii Wolności');
     expect(html).toContain('2 · Wałbrzych');
     expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
