@@ -1,0 +1,11 @@
+// Cloudflare Workers deploy (Workers Builds): static site from dist/pages, built by `npm run build`.
+// The "previews" block lets `npx wrangler preview` publish a preview for every branch / pull request.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sejmbook",
+  "compatibility_date": "2026-11-23",
+  "assets": {
+    "directory": "./dist/pages"
+  },
+  "previews": {}
+}
