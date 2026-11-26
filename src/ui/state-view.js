@@ -177,9 +177,7 @@ export function renderOfficial(ctx, slug, today) {
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
       ${roleLine(p.roles, today)}
-      ${sp ? `<h3 class="spectrum-h3">Partia w funkcjach państwowych</h3>
-      <p class="muted spectrum-sub">Razem ok. ${yrs(sp.totalYears)} lat w funkcjach z przypisaną partią</p>
-      ${spectrumBar(sp, (x) => `${esc(years(x.from, x.to === today ? null : x.to))}`)}`
+      ${sp ? `<p class="life-first spectrum-text" data-testid="spectrum-text">W funkcjach państwowych: ${sp.parts.map((x) => `<b>ok. ${yrs(x.years)} ${x.years >= 1.5 && x.years < 4.5 ? 'lata' : 'lat'} w ${esc(x.label)}</b> (${esc(years(x.from, x.to === today ? null : x.to))})`).join(', ')}.</p>`
         : '<p class="muted">Bez partii: te funkcje nie mają w źródle przypisanej partii.</p>'}
     </section>
     <div class="profile-cols">
@@ -190,7 +188,6 @@ export function renderOfficial(ctx, slug, today) {
           <dt>Partia</dt><dd>${esc(partyNow ?? 'brak danych')}</dd>
           ${first ? `<dt>Pierwsza funkcja</dt><dd>${esc(first.office)} <span class="muted">(${esc(String(first.from).slice(0, 4))})</span></dd>` : ''}
         </dl>
-        <p class="src">Dane: ${p.wiki ? `<a href="${esc(wikiUrl(p.wiki))}" target="_blank" rel="noopener">Wikipedia</a> · ` : ''}<a href="#panstwo">Państwo</a></p>
         ${mp ? `<p><a class="btn" href="${esc(mp.href)}" data-testid="official-mp">${esc(mp.label)}</a></p>` : ''}
         ${stateRolesLink(ctx, p.name)}
       </aside>

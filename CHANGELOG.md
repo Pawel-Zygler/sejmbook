@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Profile: Prostsze profile, źródła w stopce.** Kariera w Sejmie opisana jednym zdaniem, np. 4 kadencje w PiS, a źródła danych są w stopce zamiast na każdym profilu.
 - **Posłowie: Czytelne partie na kartach posłów.** Zamiast małych logotypów każda karta posła pokazuje teraz nazwę klubu na jego kolorze.
 
 ## 2026-11-24

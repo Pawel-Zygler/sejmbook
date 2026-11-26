@@ -636,14 +636,21 @@ function routeBlock(route) {
   return `<div data-testid="person-route"><h3 class="spectrum-h3">Ścieżka partyjna</h3>${partyRoute(route.path)}<p class="muted">${route.count} ${partyWord(route.count)}${route.jumps ? `, ${route.jumps} ${plural(route.jumps, 'przeskok', 'przeskoki', 'przeskoków')}` : ''}</p></div>`;
 }
 
-/** The "Spektrum partyjne" panel: life line, Sejm clubs by term and the party route (whatever is known). */
-function spectrumPanel(lifeLine, sp, route) {
+/** The Sejm career in words, e.g. "W Sejmie III RP: 4 kadencje w PiS (V–VI, VIII–IX), razem ok. 14 lat." */
+export function spectrumText(sp) {
+  if (!sp?.parts?.length) return '';
+  const parts = [...sp.parts].sort((a, b) => Math.min(...a.terms) - Math.min(...b.terms));
+  const one = (p) => `<b>${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')} w ${esc(p.label)}</b> (${termRanges(p.terms)})`;
+  return `<p class="life-first spectrum-text" data-testid="spectrum-text">W Sejmie III RP: ${parts.map(one).join(', ')}, razem ok. ${fmtYears(sp.totalYears)}.</p>`;
+}
+
+/** The "Spektrum partyjne" panel: the life line and the Sejm career in one sentence. Same on every profile. */
+function spectrumPanel(lifeLine, sp) {
   return `
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
       ${lifeLine}
-      ${sp ? clubSpectrumBlock(sp) : ''}
-      ${routeBlock(route)}
+      ${spectrumText(sp)}
       ${!lifeLine && !sp ? '<p class="muted">Brak danych o klubach tej osoby w Sejmie.</p>' : ''}
     </section>`;
 }
@@ -652,7 +659,7 @@ export function renderCareerSpectrum(ctx, mp) {
   const sp = careerSpectrum(ctx.career, mp.id, ctx.fetchedAt);
   const lifeLine = renderLifeLine(ctx, mp);
   if (!sp && !lifeLine) return '';
-  return spectrumPanel(lifeLine, sp, sp ? partyPath(ctx.career, mp.id) : null);
+  return spectrumPanel(lifeLine, sp);
 }
 
 /**
@@ -694,7 +701,7 @@ export function renderPerson(ctx, key) {
         </div>
       </div>
     </div>
-    ${spectrumPanel(lifeLine, route.path.length ? sp : null, route)}
+    ${spectrumPanel(lifeLine, route.path.length ? sp : null)}
     <div class="profile-cols">
       <aside class="panel about">
         <h2>Informacje</h2>
@@ -702,9 +709,7 @@ export function renderPerson(ctx, key) {
           <dt>Okręg wyborczy</dt><dd>${last?.d ? `nr ${last.d} · ${esc(last.dn ?? '')}` : 'brak danych'}</dd>
           <dt>${age ? 'Data urodzenia' : 'Rok urodzenia'}</dt><dd>${age ? esc(age) : birthYear ?? 'brak danych'}${birthYear ? ` <span class="muted">(${ageInYear(birthYear, year)} lat)</span>` : ''}</dd>
           <dt>Klub</dt><dd>${esc(lastName ?? 'brak danych')}</dd>
-          <dt>Kadencje w Sejmie</dt><dd>${termRanges(p.terms.map((t) => t.t))} <span class="muted">(${nTerms})</span></dd>
         </dl>
-        <p class="src">Dane: API Sejmu i listy posłów w Wikipedii</p>
         ${stateRolesLink(ctx, p.name)}
       </aside>
       <div class="feed">
@@ -715,7 +720,6 @@ export function renderPerson(ctx, key) {
         <thead><tr><th scope="col">Kadencja</th><th scope="col">Klub</th><th scope="col">Okręg</th><th scope="col"><span class="visually-hidden">Źródło</span></th></tr></thead>
         <tbody>${p.terms.map((t) => `<tr data-term="${t.t}"><td><b>${romanTerm(t.t)}</b> <small class="muted">${years(t.t)}</small></td><td>${esc(clubNameIn(ctx.terms, t.t, t.club) ?? t.club ?? '—')}</td><td>${t.d ? `${t.d} · ${esc(t.dn ?? '')}` : '—'}</td><td>${t.src === 'wikipedia' ? `<a href="${esc(wikiListUrl(t.t))}" target="_blank" rel="noopener">Wikipedia</a>` : `<a href="https://api.sejm.gov.pl/sejm/term${t.t}/MP/${t.id}" target="_blank" rel="noopener">API Sejmu</a>`}</td></tr>`).join('')}</tbody>
       </table></div>
-      <p class="src">${esc(termsSourceNote(ctx))}</p>
     </div>
       </div>
     </div>
@@ -757,7 +761,6 @@ export function renderProfile(ctx, id) {
           <dt>Głosy w wyborach 2023</dt><dd>${formatInt(mp.votes)}</dd>
           <dt>Lotnisko okręgu</dt><dd>${ap ? `${esc(ctx.airports.airports[ap].name)} <span class="muted">(${formatInt(legKm)} km do Warszawy)</span>` : 'brak połączenia lotniczego z Warszawą'}</dd>
         </dl>
-        <p class="src">Dane: <a href="${sejmProfileUrl(mp.id)}" target="_blank" rel="noopener">profil na sejm.gov.pl</a> · API Sejmu</p>
         ${stateRolesLink(ctx, mp.name)}
         ${renderContact(ctx, mp)}
       </aside>

@@ -32,4 +32,8 @@ export const SHELL_HTML = `
   <main id="view" tabindex="-1"></main>
   <aside id="aside" aria-label="Kluby"></aside>
 </div>
+<footer class="site-foot" data-testid="site-foot">
+  <p><b>Źródła danych:</b> API Sejmu (posłowie, kadencje III–X, kluby, głosowania, interpelacje), polska Wikipedia (posłowie I–II kadencji, rządy i urzędy III RP), Wikidata (partie i życiorysy), Wikimedia Commons (zdjęcia urzędników), oficjalne strony urzędów (prezydent.pl, gov.pl, senat.gov.pl, nik.gov.pl) i media (loty posłów). Klub posła to ostatni klub w danej kadencji.</p>
+  <p><a href="#mapa">Mapa strony</a> · <a href="#changelog">Changelog</a></p>
+</footer>
 `;

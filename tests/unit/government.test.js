@@ -160,7 +160,8 @@ describe('state views', () => {
     for (const slug of ctx.bySlug ? [...ctx.bySlug.keys()] : [...ctx.gov.bySlug.keys()]) {
       const h = renderOfficial(ctx, slug, '2026-11-24');
       expect(h).toContain('data-testid="spectrum"');
-      expect(h).toMatch(/spectrum-bar|Bez partii/);
+      expect(h).toMatch(/W funkcjach państwowych: <b>ok\. |Bez partii/);
+      expect(h).not.toContain('Dane: ');
     }
   });
   it('uses portraits when the build bundled them', () => {

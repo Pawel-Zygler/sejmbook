@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Czytelne partie na kartach posłów';
-const NEWEST_LINE = 'Posłowie: Czytelne partie na kartach posłów';
+const NEWEST = 'Prostsze profile, źródła w stopce';
+const NEWEST_LINE = 'Profile: Prostsze profile, źródła w stopce';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -289,15 +289,14 @@ describe('Spektrum partyjne', () => {
     expect(panel.previousElementSibling.classList.contains('profile-top')).toBe(true);
     expect(panel.textContent).toContain('Spektrum partyjne');
     expect(panel.textContent).toContain(`${rows.length} kadencj`);
-    const segs = panel.querySelectorAll('.spectrum-seg');
-    expect(segs.length).toBe(panel.querySelectorAll('.spectrum-legend li').length);
-    expect(segs.length).toBeGreaterThan(0);
+    expect(panel.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP: .+, razem ok\. /);
+    expect(panel.querySelector('.spectrum-bar')).toBeNull();
+    expect(panel.querySelector('[data-testid="person-route"]')).toBeNull();
   });
-  it('first-term MPs get a single full bar', () => {
+  it('first-term MPs get one sentence with a single term', () => {
     const id = Object.entries(careerData.career).find(([, r]) => r.length === 1 && r[0].term === 10)[0];
     nav(`#posel-${id}`);
-    expect($$('[data-testid="spectrum"] .spectrum-seg')).toHaveLength(1);
-    expect($('[data-testid="spectrum"]').textContent).toContain('100%');
+    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP: 1 kadencja w .+ \(X\), razem ok\. /);
   });
 });
 
@@ -481,7 +480,9 @@ describe('Profiles of former MPs', () => {
     const leader = $('[data-testid="hop-leader"] .hop-leader-name a');
     expect(leader.getAttribute('href')).toMatch(/^#osoba-\d+-\d+$/);
     nav(leader.getAttribute('href'));
-    expect($$('[data-testid="person-route"] .party-route li').length).toBeGreaterThan(2);
+    expect($('[data-testid="spectrum-text"]').textContent.split(' w ').length).toBeGreaterThan(2);
+    expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
+    expect($('#view').textContent).not.toContain('Dane: API Sejmu');
   });
 });
 

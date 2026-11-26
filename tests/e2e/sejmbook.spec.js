@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Czytelne partie na kartach posłów');
+  await expect(post).toContainText('Prostsze profile, źródła w stopce');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Czytelne partie na kartach posłów');
+  await expect(page.locator('.news-post').first()).toContainText('Prostsze profile, źródła w stopce');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -208,16 +208,16 @@ test('MP cards: a readable party tag under the name, then district and attendanc
   expect(overflow).toBe(0);
 });
 
-test('Spektrum partyjne: bar under the profile card', async ({ page }) => {
+test('Spektrum partyjne: career sentence under the profile card, sources in the footer', async ({ page }) => {
   await page.goto(`${PAGE}#posel-1`);
   const panel = page.getByTestId('spectrum');
   await expect(panel).toBeVisible();
   await expect(panel).toContainText('Spektrum partyjne');
-  const bar = await panel.locator('.spectrum-bar').boundingBox();
-  expect(bar.width).toBeGreaterThan(200);
+  await expect(panel.getByTestId('spectrum-text')).toContainText('W Sejmie III RP:');
+  await expect(panel.locator('.spectrum-bar')).toHaveCount(0);
   const top = await page.locator('.profile-top').boundingBox();
   expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);
-  expect(await panel.locator('.spectrum-seg').count()).toBeGreaterThan(0);
+  await expect(page.getByTestId('site-foot')).toContainText('Źródła danych');
 });
 
 test('Ranking "Najwięcej partii" opens from the side menu', async ({ page, isMobile }) => {
@@ -429,7 +429,7 @@ test('Profiles: officials and former MPs use the MP profile layout', async ({ pa
   await page.goto(`${PAGE}#panstwo`);
   await page.locator('#view a', { hasText: 'Małgorzata Kidawa-Błońska' }).first().click();
   await expect(page.locator('[data-view="person"] .profile-top h1')).toHaveText('Małgorzata Kidawa-Błońska');
-  await expect(page.getByTestId('spectrum').locator('.spectrum-bar')).toBeVisible();
+  await expect(page.getByTestId('spectrum').getByTestId('spectrum-text')).toBeVisible();
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });

@@ -541,3 +541,9 @@ h2 { font-size: 1.1rem; }
 .post-foot-src { justify-content: flex-start; gap: 6px; font-size: 0.82rem; }
 .post-src { color: var(--muted); }
 .person-news { display: grid; gap: 16px; }
+
+/* Stopka: źródła danych, jedna dla całej strony */
+.site-foot { max-width: 1400px; margin: 8px auto 32px; padding: 16px 24px; color: var(--muted); font-size: 0.82rem; line-height: 1.55; border-top: 1px solid var(--line); }
+.site-foot p { margin: 0 0 6px; max-width: 110ch; }
+.site-foot a { color: var(--muted); }
+.spectrum-text { margin-top: 6px; }

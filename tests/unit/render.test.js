@@ -330,13 +330,12 @@ describe('renderCareerSpectrum', () => {
     terms: [{ num: 9, from: '2019-11-12', to: '2023-11-12' }, { num: 10, from: '2023-11-13', to: null }],
     career: { 70: [{ term: 9, club: 'PO-KO', clubName: 'x' }, { term: 10, club: 'PiS', clubName: 'y' }] },
   };
-  it('draws one segment per camp with a legend, without a source footnote', () => {
+  it('describes the Sejm career in one sentence, without a bar or a party route', () => {
     const html = renderCareerSpectrum({ ...ctx, career }, ctx.mpsById.get(70));
     expect(html).toContain('Spektrum partyjne');
-    expect((html.match(/class="spectrum-seg"/g) ?? []).length).toBe(2);
-    expect(html).toContain('KO / PO');
-    expect(html).toContain('kadencja IX');
-    expect(html).toContain('2 kadencje w Sejmie (IX–X)');
+    expect(html).not.toContain('class="spectrum-seg"');
+    expect(html).not.toContain('Ścieżka partyjna');
+    expect(html).toMatch(/W Sejmie III RP: <b>1 kadencja w KO \/ PO<\/b> \(IX\), <b>1 kadencja w PiS<\/b> \(X\), razem ok\. /);
     expect(html).not.toContain('Nie obejmuje Senatu');
   });
   it('without Sejm club data shows only the life line; without a birth year, nothing', () => {
@@ -480,16 +479,17 @@ describe('renderPerson', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
     expect(html).toContain('<h1>Jan Były</h1>');
     expect(html).not.toContain('Nie zasiada w Sejmie');
-    expect(html).toContain('III–IV <span class="muted">(2)</span>');
+    expect(html).not.toContain('<dt>Kadencje w Sejmie</dt>');
+    expect(html).not.toContain('Dane: API Sejmu');
     expect(html).toContain('Klub Parlamentarny Unii Wolności');
     expect(html).toContain('2 · Wałbrzych');
     expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
     expect(html).toContain('03.02.1950');
-    expect(html).toContain('data-testid="person-route"');
+    expect(html).toContain('<b>1 kadencja w UD / UW</b> (III), <b>1 kadencja w KO / PO</b> (IV)');
   });
   it('uses the same layout as the MP profile: header, Spektrum partyjne, Informacje', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
-    for (const part of ['class="profile-top panel"', 'class="panel spectrum" data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>', 'spectrum-bar']) expect(html).toContain(part);
+    for (const part of ['class="profile-top panel"', 'class="panel spectrum" data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>', 'data-testid="spectrum-text"']) expect(html).toContain(part);
     expect(html).toContain('<dt>Okręg wyborczy</dt><dd>nr 2 · Wałbrzych</dd>');
     expect(html).toContain('data-testid="life-line"');
     expect(html).toContain('(76 lat)');

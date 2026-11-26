@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-prostsze-profile",
+      "date": "2026-11-26",
+      "title": "Prostsze profile, źródła w stopce",
+      "section": "Profile",
+      "body": "Kariera w Sejmie opisana jednym zdaniem, np. 4 kadencje w PiS, a źródła danych są w stopce zamiast na każdym profilu.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-partie-na-kartach",
       "date": "2026-11-26",
       "title": "Czytelne partie na kartach posłów",
