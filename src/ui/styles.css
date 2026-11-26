@@ -211,7 +211,7 @@ h2 { font-size: 1.1rem; }
 .art-links a { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line); text-decoration: none; white-space: nowrap; }
 .art-links a:hover { border-color: var(--accent); color: var(--accent); }
 .rank td.arts { min-width: 160px; }
-.rank td:nth-child(2) { min-width: 230px; }
+.rank td:nth-child(2) { min-width: 210px; }
 .news-post { border-left: 4px solid var(--accent); }
 .news-post { display: block; padding-block: 10px; }
 .news-line { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; }
@@ -393,7 +393,7 @@ h2 { font-size: 1.1rem; }
 .rank-who .rank-mp { display: flex; margin-right: 0; }
 .rank-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 4px 0 0 40px; }
 .rank-meta .att-badge { margin-left: 0; }
-@media (min-width: 1300px) { .rank td.arts { min-width: 240px; } .rank td.rank-who { min-width: 300px; } }
+@media (min-width: 1500px) { .rank td.arts { min-width: 200px; } .rank td.rank-who { min-width: 280px; } }
 @media (min-width: 1600px) { .rank td.arts { min-width: 300px; } .rank td.rank-who { min-width: 340px; } }
 
 /* Former MPs' profiles */
@@ -555,3 +555,9 @@ h2 { font-size: 1.1rem; }
 .info-tip-body { display: none; position: absolute; z-index: 40; top: 100%; left: 50%; transform: translateX(-50%); width: max-content; max-width: min(280px, 80vw); padding: 8px 10px; border-radius: 8px; background: var(--card, #fff); border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(0,0,0,.18); color: var(--muted); font-family: inherit; font-size: 0.78rem; font-weight: 400; font-style: normal; line-height: 1.45; text-transform: none; letter-spacing: 0; white-space: normal; }
 .info-tip:hover .info-tip-body, .info-tip:focus-within .info-tip-body { display: block; }
 .aside-box .info-tip-body { left: auto; right: -8px; transform: none; }
+
+/* Frequent Flyer: okrążenia Ziemi, globus z liczbą jak powiadomienie */
+.rank .earth-col { text-align: center; white-space: nowrap; padding-left: 6px; padding-right: 6px; }
+.earth-badge { position: relative; display: inline-block; width: 30px; height: 28px; line-height: 1; }
+.earth-globe { font-size: 24px; line-height: 28px; }
+.earth-n { position: absolute; top: -6px; left: 16px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #e5383b; color: #fff; font: 700 0.68rem/18px system-ui, sans-serif; text-align: center; box-shadow: 0 0 0 2px var(--card, #fff); white-space: nowrap; }

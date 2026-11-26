@@ -126,8 +126,10 @@ describe('Frequent Flyer', () => {
     const ids = new Set(app.ctx.flights.datasets.flatMap((d) => d.entries.map((e) => String(e.mpId))));
     expect(rows().map((tr) => tr.dataset.mpId).sort()).toEqual([...ids].sort());
     expect(rows()[0].textContent).toContain('Grzegorz Napieralski');
-    expect($('.coverage').textContent).toContain('Jeden zbiór');
-    expect($$('[data-testid="all-articles"] li')).toHaveLength(Object.keys(app.ctx.flights.articles).length);
+    expect($('.coverage')).toBeNull();
+    expect($('[data-testid="all-articles"]')).toBeNull();
+    expect(rows().every((tr) => tr.querySelector('.earth-col'))).toBe(true);
+    expect(rows()[0].querySelector('[data-testid="earth-badge"] .earth-n').textContent).toMatch(/^\d+,\d$/);
   });
   it('has no filters', () => {
     expect($('.flyer-side')).toBeNull();
@@ -151,8 +153,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Źródła pod ikonką „i”';
-const NEWEST_LINE = 'Profile: Źródła pod ikonką „i”';
+const NEWEST = 'Okrążenia Ziemi';
+const NEWEST_LINE = 'Frequent Flyer: Okrążenia Ziemi';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

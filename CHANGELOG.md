@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Frequent Flyer: Okrążenia Ziemi.** Nowa kolumna z globusem pokazuje, ile razy poseł okrążyłby Ziemię swoimi lotami, np. 0,3 albo 6,5.
 - **Profile: Źródła pod ikonką „i”.** Źródła danych przy Kontakcie, klubach i partiach bez dat pokazują się dopiero po najechaniu na ikonkę „i”, z linkiem do źródła.
 - **Profile: Prostsze profile, źródła w stopce.** Kariera w Sejmie opisana jednym zdaniem, np. 4 kadencje w PiS, a źródła danych są w stopce zamiast na każdym profilu.
 - **Posłowie: Czytelne partie na kartach posłów.** Zamiast małych logotypów każda karta posła pokazuje teraz nazwę klubu na jego kolorze.

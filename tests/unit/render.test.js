@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, earthLaps, earthBadge, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
 import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
@@ -61,11 +61,14 @@ describe('views', () => {
   it('profile labels inactive mandates', () => {
     expect(renderProfile(ctx, 38)).toContain('zrzekł(a) się mandatu');
   });
-  it('flyer shows the coverage note and sources for every dataset', () => {
+  it('flyer shows no coverage note, source list or article list, and has an earth-laps column', () => {
     for (const d of flightsData.datasets) {
       const html = renderFlyer(ctx, { period: String(d.term), dataset: d.id, sortBy: 'km' });
-      expect(html).toContain(esc(d.coverageNote));
-      for (const s of d.sources) expect(html).toContain(esc(s.url));
+      expect(html).not.toContain(esc(d.coverageNote));
+      expect(html).not.toContain('<h2>Źródła danych</h2>');
+      expect(html).not.toContain('all-articles');
+      expect(html).not.toContain('Krajowe loty posłów na koszt');
+      expect(html).toContain('<th scope="col" class="earth-col">Okrążenia<br>Ziemi</th>');
     }
   });
   it('flyer falls back to the first dataset for an unknown id', () => {
@@ -179,9 +182,8 @@ describe('podium badges', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
     expect(html).not.toContain('flyer-side');
     expect(html).not.toContain('data-action="sort"');
-    expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel coverage"'));
-    expect(html).toContain('Jeden zbiór ze wszystkich opublikowanych list');
-    expect(html).toContain('data-testid="all-articles"');
+    expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel method"'));
+    expect(html).not.toContain('class="panel coverage"');
   });
   it('flyer still renders any dataset (2025: Dowhan leads on km, Kmita on flights)', () => {
     const first = (html) => html.slice(html.indexOf('<tbody>')).match(/data-mp-id="(\d+)"/)[1];
@@ -238,17 +240,14 @@ describe('MP photos', () => {
 });
 
 describe('all articles list', () => {
-  it('lists every known article once, newest first, opening in a new tab', () => {
-    const html = renderAllArticles(flightsData.articles);
-    const ids = [...html.matchAll(/data-article-id="([^"]+)"/g)].map((m) => m[1]);
-    expect(new Set(ids).size).toBe(Object.keys(flightsData.articles).length);
-    const dates = ids.map((id) => flightsData.articles[id].date);
-    expect(dates).toEqual([...dates].sort().reverse());
-    expect(html).toContain('target="_blank"');
-  });
-  it('renders nothing without articles', () => {
-    expect(renderAllArticles({})).toBe('');
-    expect(renderAllArticles()).toBe('');
+  it('earth laps: one decimal, a floor for short distances, nothing without km', () => {
+    expect(earthLaps(40075)).toBe('1,0');
+    expect(earthLaps(12022)).toBe('0,3');
+    expect(earthLaps(1000)).toBe('<0,1');
+    expect(earthLaps(null)).toBeNull();
+    expect(earthBadge(80150)).toContain('<span class="earth-n" aria-hidden="true">2,0</span>');
+    expect(earthBadge(80150)).toContain('🌍');
+    expect(earthBadge(null)).toContain('–');
   });
   it('ranking rows have no captions under the name (route, periods)', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });

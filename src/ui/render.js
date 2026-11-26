@@ -105,10 +105,6 @@ export function clubChip(ctx, clubId, mp = null) {
   return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}</span>${former}`;
 }
 
-function sourceLinks(sources) {
-  return sources.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
-}
-
 /** Compact list of article links (outlet names), each opening in a new tab. */
 export function articleLinks(articles) {
   if (!articles || articles.length === 0) return '<span class="muted">–</span>';
@@ -854,11 +850,11 @@ export function renderFlyer(ctx, state) {
   return `
   <section data-view="flyer" data-dataset="${esc(ds.id)}">
     ${rankingSwitch('flyer')}
-    ${pageHead({ icon: '✈', eyebrow: 'Ranking', title: 'Frequent Flyer', lede: 'Krajowe loty posłów na koszt Kancelarii Sejmu, z danych ujawnionych przez media. Kilometry to szacunek: Sejm nie publikuje tras.' })}
+    ${pageHead({ icon: '✈', eyebrow: 'Ranking', title: 'Frequent Flyer', lede: 'Kilometry to szacunek: Sejm nie publikuje tras.' })}
     <div class="panel rank-panel">
       <div class="table-wrap">
         <table class="rank" data-testid="ranking">
-          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th><th scope="col" class="earth-col">Okrążenia<br>Ziemi</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
           <tbody>
             ${rows.map((r) => {
               const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
@@ -869,6 +865,7 @@ export function renderFlyer(ctx, state) {
                 <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>
                 <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
+                <td class="earth-col">${earthBadge(r.km)}</td>
                 ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
                 <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>
               </tr>`;
@@ -879,33 +876,28 @@ export function renderFlyer(ctx, state) {
     </div>
     <div class="phone-only">${flyerTotals(ctx, state)}</div>
 
-    <div class="panel coverage" role="note">
-      <strong>Zakres danych:</strong> ${esc(ds.coverageNote)} <span class="muted">Okres: ${esc(ds.periodStart)} – ${esc(ds.periodEnd)}.</span>
-    </div>
-
     <div class="panel method">
       <h2>Odznaki podium</h2>
       <p>Pierwsze miejsce dostaje odznakę ${podiumBadge(1)}, drugie ${podiumBadge(2)}, a trzecie ${podiumBadge(3)}. Przy remisie odznakę dostają wszyscy na tym samym miejscu.</p>
       <h2>Jak liczymy kilometry</h2>
       <p>Kancelaria Sejmu ujawnia liczbę lotów i koszt, ale nie trasy. Przyjmujemy, że każdy lot to jeden odcinek między Warszawą (Chopin) a lotniskiem najbliższym okręgowi posła, i liczymy odległość po kole wielkim. Prawdziwy dystans może być inny: posłowie latają też innymi trasami, a ministrowie i wiceministrowie część lotów odbywają służbowo.</p>
       <p>Klub przy nazwisku to klub z dnia ${esc(ctx.fetchedAt)} według API Sejmu, który może różnić się od klubu w okresie objętym danymi.</p>
-      <h2>Źródła danych</h2>
-      <p class="muted">${esc(ds.origin)}.</p>
-      <ul class="sources">${sourceLinks(ds.sources)}</ul>
     </div>
-
-    ${renderAllArticles(ctx.flights.articles)}
   </section>`;
 }
 
-/** Every article about MPs' flights we know of, newest first. */
-export function renderAllArticles(registry = {}) {
-  const list = Object.entries(registry).map(([id, a]) => ({ id, ...a })).sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.outlet.localeCompare(b.outlet, 'pl'));
-  if (!list.length) return '';
-  return `<div class="panel all-articles" data-testid="all-articles">
-      <h2>Wszystkie artykuły o lotach posłów</h2>
-      <ul class="article-list">${list.map((a) => `<li data-article-id="${esc(a.id)}"><span class="art-date">${esc(a.date)}</span> <a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a> <span class="muted">· ${esc(a.outlet)}</span></li>`).join('')}</ul>
-    </div>`;
+/** Laps around the Earth (40 075 km) with one decimal, e.g. "0,3"; under 0,1 shows "<0,1". */
+export function earthLaps(km) {
+  const laps = timesAroundEarth(km);
+  if (laps == null || km <= 0) return null;
+  return laps < 0.05 ? '<0,1' : laps.toFixed(1).replace('.', ',');
+}
+
+/** A globe with the number of laps around the Earth on a small notification-style badge. */
+export function earthBadge(km) {
+  const n = earthLaps(km);
+  if (n == null) return '<span class="muted">–</span>';
+  return `<span class="earth-badge" data-testid="earth-badge" title="${esc(n)} okrążenia Ziemi (obwód 40 075 km)" aria-label="${esc(n)} okrążenia Ziemi"><span class="earth-globe" aria-hidden="true">🌍</span><span class="earth-n" aria-hidden="true">${esc(n)}</span></span>`;
 }
 
 const ROMAN_NUM = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];

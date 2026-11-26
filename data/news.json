@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-okrazenia-ziemi",
+      "date": "2026-11-26",
+      "title": "Okrążenia Ziemi",
+      "section": "Frequent Flyer",
+      "body": "Nowa kolumna z globusem pokazuje, ile razy poseł okrążyłby Ziemię swoimi lotami, np. 0,3 albo 6,5.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-zrodla-ikonka",
       "date": "2026-11-26",
       "title": "Źródła pod ikonką „i”",

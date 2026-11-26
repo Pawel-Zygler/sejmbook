@@ -32,10 +32,9 @@ test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', asyn
   await expect(rows.first().getByTestId('parts')).toHaveCount(0);
   await expect(page.getByRole('tab')).toHaveCount(0);
   await expect(page.locator('[data-action="sort"]')).toHaveCount(0);
-  await expect(page.locator('.coverage')).toContainText('Jeden zbiór');
-  const list = page.getByTestId('all-articles').locator('li');
-  expect(await list.count()).toBeGreaterThan(15);
-  await expect(list.first().locator('a')).toHaveAttribute('target', '_blank');
+  await expect(page.locator('.coverage')).toHaveCount(0);
+  await expect(page.getByTestId('all-articles')).toHaveCount(0);
+  await expect(rows.first().getByTestId('earth-badge')).toBeVisible();
 });
 
 test('clicking an MP in the ranking opens the profile', async ({ page }) => {
@@ -105,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Źródła pod ikonką „i”');
+  await expect(post).toContainText('Okrążenia Ziemi');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Źródła pod ikonką „i”');
+  await expect(page.locator('.news-post').first()).toContainText('Okrążenia Ziemi');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
