@@ -463,10 +463,13 @@ const sinceYear = (ctx) => (ctx.terms?.terms?.[0]?.from ?? '1997').slice(0, 4);
 /** Card of an MP of an earlier term: initials (or today's photo for current MPs), that term's club and district. */
 function termCard(ctx, m) {
   const now = m.current ? ctx.mpsById.get(m.current) : null;
-  const face = `${now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg', govPhoto(ctx, m.name))}<span class="mp-card-name">${esc(m.name)}</span>`;
-  const district = m.districtNum ? `<span class="mp-card-district" title="okręg ${m.districtNum} · ${esc(m.districtName ?? '')}">okr. ${m.districtNum}</span>` : '';
-  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${now ? mpLink(now, face, 'mp-card-link') : `<a class="mp-card-link" href="#osoba-${esc(m.person)}">${face}</a>`}
-    ${termClubChip(m)}${district ? `<span class="mp-card-meta" data-testid="mp-card-meta">${district}</span>` : ''}
+  const face = now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg', govPhoto(ctx, m.name));
+  const href = now ? hrefFor({ name: 'profile', id: now.id }) : `#osoba-${esc(m.person)}`;
+  const facts = [
+    `<span class="mp-card-party">${termClubChip(m)}</span>`,
+    m.districtNum ? cardDistrict(m.districtNum, m.districtName) : '',
+  ];
+  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${cardShell(href, face, m.name, facts.join(''))}
     <small class="muted term-card-terms">${now?.active ? 'dziś w Sejmie · ' : ''}kadencje ${termRanges(m.terms)}</small></li>`;
 }
 
@@ -577,23 +580,28 @@ export function renderDirectory(ctx, state, list) {
   </section>`;
 }
 
-/** The party tag on its own line under the name, then district • attendance. */
+const cardDistrict = (num, name) => `<span class="mp-card-district" title="okręg wyborczy nr ${num} · ${esc(name ?? '')}">okr. ${num}${name ? ` · ${esc(name)}` : ''}</span>`;
+
+/** Card layout (Pawel, 2026-11-26): portrait in the top-left corner, facts on the right from the top, name at the bottom. */
+const cardShell = (href, face, name, facts) => `<a class="mp-card-photo" href="${href}" tabindex="-1" aria-hidden="true">${face}</a>
+    <div class="mp-card-facts" data-testid="mp-card-meta">${facts}</div>
+    <a class="mp-card-link" href="${href}"><span class="mp-card-name">${esc(name)}</span></a>`;
+
+/** Facts on the right of the card, top to bottom: party tag (with a PZPR mark), votes in 2023, district, attendance. */
 export function mpCardMeta(ctx, mp) {
-  const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
   const c = clubOf(ctx, mp);
-  const parts = [
-    `<span class="mp-card-district" title="okręg ${mp.districtNum} · ${esc(mp.districtName)}">okr. ${mp.districtNum}</span>`,
+  const votes = Number.isFinite(mp.votes) ? `<span class="mp-card-votes" title="głosy w wyborach do Sejmu 2023">${formatInt(mp.votes)} ${plural(mp.votes, 'głos', 'głosy', 'głosów')}</span>` : '';
+  return [
+    `<span class="mp-card-party">${clubTag(c.short, c.color, c.name)}${formerPartyChip(ctx, mp, true)}</span>`,
+    votes,
+    cardDistrict(mp.districtNum, mp.districtName),
     attendanceBadge(ctx, mp.id, 16),
-  ].filter(Boolean);
-  return `${clubTag(c.short, c.color, c.name)}<span class="mp-card-meta" data-testid="mp-card-meta">${parts.join(sep)}</span>`;
+  ].join('');
 }
 
 function mpCard(ctx, mp) {
   const off = inactiveLabel(mp);
-  // A former communist party (PZPR) sits in the card's top-left corner (Pawel, 2026-11-24).
-  const corner = formerPartyChip(ctx, mp, true);
-  return `<li class="mp-card${off ? ' inactive' : ''}">${corner ? `<span class="card-corner">${corner}</span>` : ''}${mpLink(mp, `${avatar(ctx, mp, 'lg')}<span class="mp-card-name">${esc(mp.name)}</span>`, 'mp-card-link')}
-    ${mpCardMeta(ctx, mp)}
+  return `<li class="mp-card${off ? ' inactive' : ''}">${cardShell(hrefFor({ name: 'profile', id: mp.id }), avatar(ctx, mp, 'lg'), mp.name, mpCardMeta(ctx, mp))}
     ${off ? `<span class="badge-off">${esc(off)}</span>` : ''}</li>`;
 }
 

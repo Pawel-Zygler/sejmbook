@@ -158,8 +158,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Mapa okręgu wyborczego';
-const NEWEST_LINE = 'Profile: Mapa okręgu wyborczego';
+const NEWEST = 'Nowa karta posła';
+const NEWEST_LINE = 'Posłowie: Nowa karta posła';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -409,8 +409,8 @@ describe('Communist past mark', () => {
     nav('#posel-400');
     expect($('.profile-name [data-testid="red-past"]')).toBeNull();
     nav('#poslowie');
-    const marked = $$('.mp-card > .card-corner [data-testid="red-past"]').length;
-    expect($$('.mp-card-meta [data-testid="red-past"]')).toHaveLength(0);
+    const marked = $$('.mp-card .mp-card-party [data-testid="red-past"]').length;
+    expect($$('.mp-card [data-testid="red-past"]')).toHaveLength(marked);
     const expected = app.ctx.mps.filter((m) => m.active && lifeData.mps[m.id]?.parties.some((p) => /Zjednoczona Partia Robotnicza/.test(p.label))).length;
     expect(marked).toBe(expected);
     expect(marked).toBeGreaterThan(0);
@@ -900,6 +900,18 @@ describe('Profile: mini map of the district', () => {
   });
   it('names the border data in the footer', () => {
     expect($('.foot-src').textContent).toContain('GUGiK');
+  });
+});
+
+describe('Posłowie: card with the portrait top-left and facts on the right', () => {
+  beforeEach(() => nav('#poslowie'));
+  it('puts the photo first, then party, votes, district and attendance, then the name', () => {
+    const card = $('.mp-card');
+    expect(card.firstElementChild.classList.contains('mp-card-photo')).toBe(true);
+    const facts = [...card.querySelector('.mp-card-facts').children].map((e) => e.className.split(' ')[0]);
+    expect(facts.slice(0, 3)).toEqual(['mp-card-party', 'mp-card-votes', 'mp-card-district']);
+    expect(card.querySelector('.mp-card-facts').nextElementSibling.classList.contains('mp-card-link')).toBe(true);
+    expect(card.querySelector('.mp-card-photo').getAttribute('href')).toBe(card.querySelector('.mp-card-link').getAttribute('href'));
   });
 });
 

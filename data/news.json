@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-karta-posla",
+      "date": "2026-11-26",
+      "title": "Nowa karta posła",
+      "section": "Posłowie",
+      "body": "Na liście posłów portret jest w lewym górnym rogu, a obok partia, głosy, okręg i frekwencja.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-mapa-okregu",
       "date": "2026-11-26",
       "title": "Mapa okręgu wyborczego",

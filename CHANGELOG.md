@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Posłowie: Nowa karta posła.** Na liście posłów portret jest w lewym górnym rogu, a obok partia, głosy, okręg i frekwencja.
 - **Profile: Mapa okręgu wyborczego.** W profilu posła mała mapa Polski pokazuje jego okręg wyborczy.
 - **Posłowie: Sortowanie posłów.** Listę posłów posortujesz alfabetycznie, po okręgu, klubie, frekwencji, wieku, głosach w wyborach i liczbie kadencji.
 - **Profile: Podgląd linków posła.** Po najechaniu na ikonkę strony Sejmu lub sociala przy nazwisku posła pojawia się okienko z podglądem.

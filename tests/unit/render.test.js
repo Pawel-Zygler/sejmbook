@@ -276,18 +276,17 @@ describe('bundled media', () => {
 });
 
 describe('mpCardMeta', () => {
-  it('puts the party tag on its own line, then district and attendance separated by a dot', () => {
+  it('lists, top to bottom: party tag, votes in 2023, district, attendance', () => {
     const mp = ctx.mpsById.get(70);
     const html = mpCardMeta(ctx, mp);
-    expect(html).toContain('class="mp-card-meta"');
-    expect(html).toContain(`>okr. ${mp.districtNum}</span>`);
-    expect(html).toContain(`title="okręg ${mp.districtNum} · ${mp.districtName}"`);
-    expect(html.indexOf('club-tag')).toBeLessThan(html.indexOf('mp-card-meta'));
-    const row = html.slice(html.indexOf('mp-card-meta'));
-    expect(row).not.toContain('club-tag');
-    const dots = row.match(/class="meta-dot"/g) ?? [];
-    expect(dots.length).toBe(row.includes('att-badge') ? 1 : 0);
-    expect(html.replace(/<[^>]*>/g, '')).not.toMatch(/ [–-] /);
+    const at = (s) => html.indexOf(s);
+    expect(at('club-tag')).toBeGreaterThan(-1);
+    expect(at('club-tag')).toBeLessThan(at('mp-card-votes'));
+    expect(at('mp-card-votes')).toBeLessThan(at('mp-card-district'));
+    if (html.includes('att-badge')) expect(at('mp-card-district')).toBeLessThan(at('att-badge'));
+    expect(html).toContain(`>okr. ${mp.districtNum} · ${mp.districtName}</span>`);
+    expect(html).toMatch(/\d głos(y|ów)?<\/span>/);
+    expect(html).not.toContain('meta-dot');
   });
 });
 

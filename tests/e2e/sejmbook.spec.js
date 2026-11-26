@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Mapa okręgu wyborczego');
+  await expect(post).toContainText('Nowa karta posła');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Mapa okręgu wyborczego');
+  await expect(page.locator('.news-post').first()).toContainText('Nowa karta posła');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -176,13 +176,11 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });
 
-test('MP cards: a readable party tag under the name, then district and attendance in one row', async ({ page }) => {
+test('MP cards: portrait top-left, party tag top-right, then votes, district, attendance; name below', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   const card = page.locator('.mp-card').first();
   const tag = card.getByTestId('club-tag');
-  const meta = card.getByTestId('mp-card-meta');
   await expect(tag).toBeVisible();
-  await expect(meta).toBeVisible();
   // Text, not a tiny logo: at least 12px type and 20px tall, inside the card.
   const style = await tag.evaluate((el) => { const s = getComputedStyle(el); return { size: parseFloat(s.fontSize), bg: s.backgroundColor, color: s.color }; });
   expect(style.size).toBeGreaterThanOrEqual(12);
@@ -190,18 +188,25 @@ test('MP cards: a readable party tag under the name, then district and attendanc
   const box = await tag.boundingBox();
   expect(box.height).toBeGreaterThanOrEqual(20);
   await expect(tag.locator('img')).toHaveCount(0);
+  const c = await card.boundingBox();
+  const photo = await card.locator('.mp-card-photo .avatar').boundingBox();
   const name = await card.locator('.mp-card-name').boundingBox();
-  const row = await meta.boundingBox();
-  expect(box.y).toBeGreaterThanOrEqual(name.y + name.height - 1);
-  expect(row.y).toBeGreaterThanOrEqual(box.y + box.height - 1);
-  const tops = await meta.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().top + c.getBoundingClientRect().height / 2)));
-  expect(Math.max(...tops) - Math.min(...tops)).toBeLessThanOrEqual(3);
-  const cardBox = await card.boundingBox();
-  expect(row.width).toBeLessThanOrEqual(cardBox.width);
+  const votes = await card.locator('.mp-card-votes').boundingBox();
+  const district = await card.locator('.mp-card-district').boundingBox();
+  const att = await card.getByTestId('att-badge').boundingBox();
+  expect(photo.x - c.x).toBeLessThan(24);
+  expect(photo.y - c.y).toBeLessThan(24);
+  expect(c.x + c.width - (box.x + box.width)).toBeLessThan(24);
+  expect(box.y - c.y).toBeLessThan(24);
+  expect(box.x).toBeGreaterThan(photo.x + photo.width);
+  expect(votes.y).toBeGreaterThan(box.y);
+  expect(district.y).toBeGreaterThan(votes.y);
+  expect(att.y).toBeGreaterThan(district.y);
+  expect(name.y).toBeGreaterThanOrEqual(photo.y + photo.height - 1);
   // Every tag in the grid fits its card, the longest club names included.
-  const overflow = await page.locator('.mp-card').evaluateAll((cards) => cards.filter((c) => {
-    const t = c.querySelector('.club-tag');
-    return t && t.getBoundingClientRect().right > c.getBoundingClientRect().right;
+  const overflow = await page.locator('.mp-card').evaluateAll((cards) => cards.filter((el) => {
+    const t = el.querySelector('.club-tag');
+    return t && t.getBoundingClientRect().right > el.getBoundingClientRect().right;
   }).length);
   expect(overflow).toBe(0);
 });
