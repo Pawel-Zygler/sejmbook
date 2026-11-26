@@ -82,17 +82,34 @@ const BAD = {
   Q7075: 'biblioteka', Q131569: 'trybunał', Q1802419: 'wydział', Q4671277: 'instytucja akademicka',
 };
 const orgQids = [...new Set([...qidOfTarget.values(), ...Object.values(life.mps).flatMap((e) => (e.orgs ?? []).map((o) => o.qid)).filter(Boolean)])];
-const verdict = new Map();
-for (let i = 0; i < orgQids.length; i += 60) {
-  const values = orgQids.slice(i, i + 60).map((q) => `wd:${q}`).join(' ');
-  const q = `SELECT ?item (SAMPLE(?bad) AS ?b) WHERE { VALUES ?item { ${values} } ?item wdt:P31/wdt:P279* wd:Q43229 . OPTIONAL { VALUES ?bad { ${Object.keys(BAD).map((k) => `wd:${k}`).join(' ')} } ?item wdt:P31/wdt:P279* ?bad . } } GROUP BY ?item`;
-  const r = await getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` });
+const sparql = (q) => getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', signal: AbortSignal.timeout(90000), headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` });
+const id = (uri) => uri.split('/').pop();
+// a) What each item is (P31).
+const classesOf = new Map();
+for (let i = 0; i < orgQids.length; i += 200) {
+  const r = await sparql(`SELECT ?item ?c WHERE { VALUES ?item { ${orgQids.slice(i, i + 200).map((q) => `wd:${q}`).join(' ')} } ?item wdt:P31 ?c . }`);
   for (const b of r.results?.bindings ?? []) {
-    const item = b.item.value.split('/').pop();
-    const bad = b.b?.value.split('/').pop();
-    verdict.set(item, bad ? BAD[bad] : 'ok');
+    const k = id(b.item.value);
+    if (!classesOf.has(k)) classesOf.set(k, []);
+    classesOf.get(k).push(id(b.c.value));
   }
-  await sleep(1200);
+  await sleep(800);
+}
+// b) Every superclass of those classes (P279*), so both checks are done here.
+const classes = [...new Set([...classesOf.values()].flat())];
+console.log(`${orgQids.length} items, ${classes.length} classes`);
+const supers = new Map(classes.map((c) => [c, new Set([c])]));
+for (let i = 0; i < classes.length; i += 40) {
+  const r = await sparql(`SELECT ?c ?s WHERE { VALUES ?c { ${classes.slice(i, i + 40).map((q) => `wd:${q}`).join(' ')} } ?c wdt:P279* ?s . }`);
+  for (const b of r.results?.bindings ?? []) supers.get(id(b.c.value))?.add(id(b.s.value));
+  if (i % 400 === 0) console.log(`classes ${i}/${classes.length}`);
+  await sleep(800);
+}
+const verdict = new Map();
+for (const q of orgQids) {
+  const all = new Set((classesOf.get(q) ?? []).flatMap((c) => [...(supers.get(c) ?? [])]));
+  const bad = Object.keys(BAD).find((k) => all.has(k));
+  verdict.set(q, bad ? BAD[bad] : all.has('Q43229') ? 'ok' : 'nie organizacja');
 }
 console.log(`${orgQids.length} items checked, ${[...verdict.values()].filter((v) => v === 'ok').length} accepted`);
 
