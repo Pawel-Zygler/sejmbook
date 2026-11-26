@@ -6,6 +6,7 @@ import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
+import { tagColors } from '../lib/color.js';
 
 export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -76,6 +77,15 @@ export function formerPartyChip(ctx, mp, compact = false) {
   // Logo of the party (when bundled) and the hammer and sickle, as Pawel asked.
   const icon = `${logo ? `<img class="club-logo" src="${esc(logo)}" alt="">` : ''}<span class="sickle" aria-hidden="true">☭</span>`;
   return `<span class="chip former-party${compact ? ' logo-only' : ''}" data-testid="red-past" title="${esc(text)}" aria-label="${esc(text)}">${icon}${compact ? '' : `<span class="former-name">${esc(name)}</span>`}</span>`;
+}
+
+/**
+ * Solid party tag for MP cards: the club's short name on its party colour, in a text colour
+ * that passes WCAG AA (Pawel, 2026-11-26: the small logos were unreadable).
+ */
+export function clubTag(label, color, title = label) {
+  const { bg, ink } = tagColors(color, FALLBACK_CLUB.color);
+  return `<span class="club-tag" data-testid="club-tag" style="--tag-bg:${esc(bg)};--tag-ink:${esc(ink)}" title="${esc(title)}">${esc(label)}</span>`;
 }
 
 /** Today's club; with `mp`, followed by the former-party chip when there is one. */
@@ -382,7 +392,7 @@ export function termPicker(ctx, state) {
 function termClubChip(m) {
   const name = m.clubName ?? m.club ?? 'brak klubu';
   const color = clubFamily(m.club, m.clubName).color ?? FALLBACK_CLUB.color;
-  return `<span class="chip" style="--club:${esc(color)}" title="${esc(name)}">${esc(m.club ?? '—')}</span>`;
+  return clubTag(m.club ?? '—', color, name);
 }
 
 /** Term picker, club filter and the "expired mandates" switch; shown in the sidebar (and folded under the search on phones). */
@@ -422,10 +432,9 @@ export function termInfo(ctx, num) {
 function termCard(ctx, m) {
   const now = m.current ? ctx.mpsById.get(m.current) : null;
   const face = `${now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg', govPhoto(ctx, m.name))}<span class="mp-card-name">${esc(m.name)}</span>`;
-  const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
-  const meta = [termClubChip(m), m.districtNum ? `<span class="mp-card-district" title="okręg ${m.districtNum} · ${esc(m.districtName ?? '')}">okr. ${m.districtNum}</span>` : ''].filter(Boolean).join(sep);
+  const district = m.districtNum ? `<span class="mp-card-district" title="okręg ${m.districtNum} · ${esc(m.districtName ?? '')}">okr. ${m.districtNum}</span>` : '';
   return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${now ? mpLink(now, face, 'mp-card-link') : `<a class="mp-card-link" href="#osoba-${esc(m.person)}">${face}</a>`}
-    <span class="mp-card-meta" data-testid="mp-card-meta">${meta}</span>
+    ${termClubChip(m)}${district ? `<span class="mp-card-meta" data-testid="mp-card-meta">${district}</span>` : ''}
     <small class="muted term-card-terms">${now?.active ? 'dziś w Sejmie · ' : ''}kadencje ${termRanges(m.terms)}</small></li>`;
 }
 
@@ -539,21 +548,15 @@ export function renderDirectory(ctx, state, list) {
   </section>`;
 }
 
-/** One row under the photo: club • district • attendance, separated by dots. */
+/** The party tag on its own line under the name, then district • attendance. */
 export function mpCardMeta(ctx, mp) {
   const sep = '<span class="meta-dot" aria-hidden="true">•</span>';
-  const c = ctx.clubs.get(mp.club) ?? { ...FALLBACK_CLUB, id: mp.club, short: mp.club };
-  const logo = clubLogo(ctx, mp.club);
-  // With a logo the chip shows only the logo, so long club names do not push the row apart.
-  const club = logo
-    ? `<span class="chip has-logo logo-only" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="${esc(c.short)}"></span>`
-    : clubChip(ctx, mp.club);
+  const c = clubOf(ctx, mp);
   const parts = [
-    club,
     `<span class="mp-card-district" title="okręg ${mp.districtNum} · ${esc(mp.districtName)}">okr. ${mp.districtNum}</span>`,
     attendanceBadge(ctx, mp.id, 16),
   ].filter(Boolean);
-  return `<span class="mp-card-meta" data-testid="mp-card-meta">${parts.join(sep)}</span>`;
+  return `${clubTag(c.short, c.color, c.name)}<span class="mp-card-meta" data-testid="mp-card-meta">${parts.join(sep)}</span>`;
 }
 
 function mpCard(ctx, mp) {
