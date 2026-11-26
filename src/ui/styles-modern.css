@@ -156,3 +156,8 @@
 @media (max-width: 520px) {
   :root[data-ui="modern"] .foot-in { padding: 24px 18px 18px; border-radius: 20px; }
 }
+
+/* Profile: votes on taxes */
+:root[data-ui="modern"] .tax-law { border-radius: 14px; }
+:root[data-ui="modern"] .tax-bar { height: 12px; }
+:root[data-ui="modern"] .tax-group h3 { font-family: var(--font-display); letter-spacing: 0.08em; }

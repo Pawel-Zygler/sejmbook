@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Linia życia w dwóch widokach');
+  await expect(post).toContainText('Głosowania nad podatkami');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Linia życia w dwóch widokach');
+  await expect(page.locator('.news-post').first()).toContainText('Głosowania nad podatkami');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -516,6 +516,26 @@ test.describe('modern look', () => {
     await page.goto(PAGE);
     expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(18, 17, 16)');
   });
+});
+
+test('Profile: tax votes card under attendance opens the list of laws, in both skins', async ({ page }) => {
+  for (const ui of ['classic', 'modern']) {
+    await page.goto(PAGE);
+    await page.evaluate((v) => localStorage.setItem('sejmbook-ui', v), ui);
+    await page.goto(`${PAGE}#posel-70`);
+    const card = page.locator('[data-testid="profile-taxes"]');
+    await expect(card).toBeVisible();
+    await expect(card.locator('[data-testid="tax-sum-raise"]')).toContainText(/\d+ ustaw/);
+    await expect(card.locator('[data-testid="tax-sum-cut"]')).toContainText(/\d+ ustaw/);
+    const list = card.locator('[data-testid="tax-raise"] details');
+    await expect(list.locator('li.tax-law').first()).toBeHidden();
+    await list.locator('summary').click();
+    await expect(list.locator('li.tax-law').first()).toBeVisible();
+    await expect(list.locator('li.tax-law a.tax-law-title').first()).toHaveAttribute('href', /sejm\.gov\.pl\/Sejm10\.nsf\/PrzebiegProc/);
+    const box = await card.boundingBox();
+    const vw = page.viewportSize().width;
+    expect(box.x + box.width).toBeLessThanOrEqual(vw + 1);
+  }
 });
 
 test('Life line: two views in tabs, the choice is remembered', async ({ page }) => {

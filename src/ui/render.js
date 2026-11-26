@@ -7,6 +7,7 @@ import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryFor
 import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
+import { renderProfileTaxes } from './tax-view.js';
 import { tagColors } from '../lib/color.js';
 
 export function esc(s) {
@@ -843,6 +844,7 @@ export function renderProfile(ctx, id) {
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
+        ${renderProfileTaxes(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>
     </div>

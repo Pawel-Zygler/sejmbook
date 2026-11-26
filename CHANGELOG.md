@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Posłowie: Głosowania nad podatkami.** Na profilu posła, pod frekwencją, widać jak głosował nad każdą podwyżką i obniżką podatków w X kadencji.
 - **Profile: Linia życia w dwóch widokach.** Linię życia posła można oglądać jako oś czasu albo listę kroków; zakładki są nad linią, a wybór zostaje zapamiętany.
 - **Profile: Bio posła prozą.** Pod linią życia jest teraz krótkie bio w zdaniach: kiedy i jak zaczęła się działalność polityczna oraz ile kadencji i w jakich klubach.
 - **Serwis: Nowy nagłówek i stopka.** Nowoczesny wygląd ma zwykłe menu w nagłówku zamiast rzędu filtrów, a oba wyglądy mają pełną stopkę z linkami do wszystkich sekcji.
