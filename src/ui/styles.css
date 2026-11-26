@@ -568,3 +568,27 @@ h2 { font-size: 1.1rem; }
 .earth-badge { position: relative; display: inline-block; width: 30px; height: 28px; line-height: 1; }
 .earth-globe { font-size: 24px; line-height: 28px; }
 .earth-n { position: absolute; top: -6px; left: 16px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #e5383b; color: #fff; font: 700 0.68rem/18px system-ui, sans-serif; text-align: center; box-shadow: 0 0 0 2px var(--card, #fff); white-space: nowrap; }
+
+/* ---------- Profile: votes on tax raises and cuts ---------- */
+.tax-post { --tax-y: var(--accent); --tax-n: #4b5563; --tax-a: #c9b28f; --tax-x: var(--line); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tax-post { --tax-n: #9aa4b2; --tax-a: #7a6a52; } }
+:root[data-theme="dark"] .tax-post { --tax-n: #9aa4b2; --tax-a: #7a6a52; }
+.tax-post .post-head strong { font-size: 1.05rem; }
+.tax-group { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
+.tax-group h3 { margin: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.tax-sum { margin: 0; font-weight: 600; }
+.tax-bar { display: flex; height: 10px; border-radius: 99px; overflow: hidden; gap: 2px; background: var(--surface-2); }
+.tax-seg { min-width: 4px; }
+.tax-v-Y { background: var(--tax-y); color: var(--accent-ink); }
+.tax-v-N { background: var(--tax-n); color: #fff; }
+.tax-v-A { background: var(--tax-a); color: #1c1305; }
+.tax-v-X { background: var(--tax-x); color: var(--ink); }
+.tax-list summary { cursor: pointer; font-size: 0.9rem; color: var(--accent); font-weight: 600; padding: 4px 0; }
+.tax-list ol { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.tax-law { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 8px; background: var(--surface-2); }
+.tax-law-top { display: flex; gap: 8px; align-items: center; font-size: 0.8rem; color: var(--muted); }
+.tax-vote { display: inline-block; padding: 1px 8px; border-radius: 99px; font-weight: 700; font-size: 0.75rem; }
+.tax-flag { font-weight: 700; color: var(--warn-ink); background: var(--warn-bg); padding: 1px 6px; border-radius: 6px; }
+.tax-law-title { font-weight: 600; color: inherit; overflow-wrap: anywhere; }
+.tax-law-why { font-size: 0.85rem; }
+.tax-law-meta { font-size: 0.75rem; color: var(--muted); }

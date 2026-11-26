@@ -135,3 +135,8 @@
 :root[data-ui="modern"] .cover { height: 200px; }
 @media (max-width: 520px) { :root[data-ui="modern"] .cover { height: 130px; } }
 @media (prefers-reduced-motion: reduce) { :root[data-ui="modern"] .mp-card { transition: none; } }
+
+/* Profile: votes on taxes */
+:root[data-ui="modern"] .tax-law { border-radius: 14px; }
+:root[data-ui="modern"] .tax-bar { height: 12px; }
+:root[data-ui="modern"] .tax-group h3 { font-family: var(--font-display); letter-spacing: 0.08em; }

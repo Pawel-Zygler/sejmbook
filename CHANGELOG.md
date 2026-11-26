@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Posłowie: Głosowania nad podatkami.** Na profilu posła, pod frekwencją, widać jak głosował nad każdą podwyżką i obniżką podatków w X kadencji.
 - **Serwis: Drugi, nowoczesny wygląd.** Przełącznik „Klasyczny / Nowoczesny” w górnym pasku zmienia wygląd całej strony, a wybór zostaje zapamiętany.
 - **Frequent Flyer: Okrążenia Ziemi.** Nowa kolumna z globusem pokazuje, ile razy poseł okrążyłby Ziemię swoimi lotami, np. 0,3 albo 6,5.
 - **Profile: Źródła pod ikonką „i”.** Źródła danych przy Kontakcie, klubach i partiach bez dat pokazują się dopiero po najechaniu na ikonkę „i”, z linkiem do źródła.

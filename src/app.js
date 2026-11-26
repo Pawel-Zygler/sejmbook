@@ -10,7 +10,7 @@ import { buildHierarchy } from './lib/government.js';
 import { renderSitemap } from './ui/sitemap-view.js';
 import { readSkin, saveSkin, applySkin } from './lib/ui-skin.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -22,6 +22,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     fetchedAt: mpsData.fetchedAt,
     news: newsData?.posts ?? [],
     attendance: attendanceData ?? null,
+    // Final votes on laws that raised or cut taxes in the X term (data/tax-votes.json, API Sejmu).
+    taxes: taxData ?? null,
     career: careerData ?? null,
     // Every MP of every term the Sejm API covers (III–X), grouped into people.
     terms: allTerms,

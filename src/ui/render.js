@@ -6,6 +6,7 @@ import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
+import { renderProfileTaxes } from './tax-view.js';
 import { tagColors } from '../lib/color.js';
 
 export function esc(s) {
@@ -765,6 +766,7 @@ export function renderProfile(ctx, id) {
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
+        ${renderProfileTaxes(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>
     </div>

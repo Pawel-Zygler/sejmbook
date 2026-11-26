@@ -12,6 +12,7 @@ import earlyTermsData from '../data/early-terms.json';
 import contactsData from '../data/contacts.json';
 import feedData from '../data/feed.json';
 import governmentData from '../data/government.json';
+import taxData from '../data/tax-votes.json';
 import { createApp } from './app.js';
 
-createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, mediaData: window.__SEJM_MEDIA__ });
+createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, mediaData: window.__SEJM_MEDIA__ });
