@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Serwis: Drugi, nowoczesny wygląd.** Przełącznik „Klasyczny / Nowoczesny” w górnym pasku zmienia wygląd całej strony, a wybór zostaje zapamiętany.
 - **Profile: Prostsze profile, źródła w stopce.** Kariera w Sejmie opisana jednym zdaniem, np. 4 kadencje w PiS, a źródła danych są w stopce zamiast na każdym profilu.
 - **Posłowie: Czytelne partie na kartach posłów.** Zamiast małych logotypów każda karta posła pokazuje teraz nazwę klubu na jego kolorze.
 
