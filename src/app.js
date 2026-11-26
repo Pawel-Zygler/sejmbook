@@ -3,6 +3,7 @@ import { termMps, indexPeople } from './lib/career.js';
 import { mergeEarlyTerms } from './lib/early-terms.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
+import { mergeSocial } from './lib/social.js';
 import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
@@ -12,7 +13,7 @@ import { readSkin, saveSkin, applySkin } from './lib/ui-skin.js';
 import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, socialData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -39,7 +40,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     // III RP state hierarchy: governments since 1989 and top offices (data/government.json, Wikipedia).
     gov: buildHierarchy(governmentData ?? null),
     today: today ?? new Date().toISOString().slice(0, 10),
-    life: mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null),
+    // Party years (Wikidata + Wikipedia infobox) and social activity (data/social.json) per MP.
+    life: mergeSocial(mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null), socialData ?? null),
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
     media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {}, gov: mediaData?.gov ?? {} },
   };

@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Bez ramki „Kluby i koła”');
+  await expect(post).toContainText('Działalność społeczna i linki posła');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Bez ramki „Kluby i koła”');
+  await expect(page.locator('.news-post').first()).toContainText('Działalność społeczna i linki posła');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -569,4 +569,17 @@ for (const skin of ['classic', 'modern']) {
     if (page.viewportSize().width >= 1280) await expect(page.locator('#aside')).toBeVisible();
   });
 }
+
+test('profile: round links next to the name (Sejm page first) and the social activity lane', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-33`);
+  const links = page.locator('.profile-title .profile-link');
+  await expect(links.first()).toHaveAttribute('data-kind', 'sejm');
+  expect(await links.count()).toBeGreaterThan(2);
+  const h1 = await page.locator('.profile-title h1').boundingBox();
+  const first = await links.first().boundingBox();
+  if (page.viewportSize().width >= 800) expect(Math.abs((first.y + first.height / 2) - (h1.y + h1.height / 2))).toBeLessThan(h1.height / 2);
+  expect(first.width).toBeGreaterThanOrEqual(30);
+  await expect(page.locator('[data-testid="life-line"] [data-lane="social"]')).toBeVisible();
+  await expect(page.getByTestId('social-text')).toContainText('Młodzież Wszechpolska');
+});
 

@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Profile: Działalność społeczna i linki posła.** Na osi życia posła jest linia „Działalność społeczna”, a obok nazwiska okrągłe linki: strona w Sejmie, sociale i e-mail.
 - **Serwis: Bez ramki „Kluby i koła”.** Zniknęła boczna ramka z klubami, więc Feed i profile są szersze. Kluby nadal filtrujesz w zakładce Posłowie.
 - **Profile: Ustawy w jednej linii, szerszy profil.** Na profilu posła każda ustawa zajmuje jedną linię, a feed jest szerszy, bo bez kolumny klubów.
 - **Posłowie: Wyszukiwarka głosowań posła.** Na profilu posła wyszukasz każdą ustawę X kadencji i zobaczysz, czy głosował za, przeciw, wstrzymał się, czy go nie było.

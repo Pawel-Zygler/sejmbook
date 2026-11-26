@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-dzialalnosc-spoleczna",
+      "date": "2026-11-26",
+      "title": "Działalność społeczna i linki posła",
+      "section": "Profile",
+      "body": "Na osi życia posła jest linia „Działalność społeczna”, a obok nazwiska okrągłe linki: strona w Sejmie, sociale i e-mail.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-bez-klubow-z-boku",
       "date": "2026-11-26",
       "title": "Bez ramki „Kluby i koła”",

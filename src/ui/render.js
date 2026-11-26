@@ -10,6 +10,7 @@ import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileLaws } from './law-view.js';
+import { renderProfileLinks } from './profile-links.js';
 import { tagColors } from '../lib/color.js';
 
 export function esc(s) {
@@ -609,14 +610,21 @@ export function careerSentence(sp) {
 }
 
 const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
-const LANE_WORD = { opposition: 'Opozycja w PRL', parties: 'Partia', sejm: 'Sejm' };
+const LANE_WORD = { opposition: 'Opozycja w PRL', social: 'Działalność społeczna', parties: 'Partia', sejm: 'Sejm' };
+
+/** Social activity in prose: "Działalność społeczna: Młodzież Wszechpolska w latach 1997–2005, KoLiber od 2001 oraz ZHR." */
+export function socialText(tl) {
+  const dated = (tl.social ?? []).map((s) => `<b>${esc(s.label)}</b> ${s.since ? `od ${s.from}` : s.from === s.to ? `w ${s.from}` : `w latach ${s.from}–${s.to}`}`);
+  const all = [...dated, ...(tl.socialUndated ?? []).map((l) => `<b>${esc(l)}</b>`)];
+  return all.length ? `Działalność społeczna: ${listPl(all, 'oraz')}.` : '';
+}
 
 /** Every stretch of the life line in time order, with its lane, for the "Kroki" view. */
 function lifeStretches(tl) {
   return tl.lanes.flatMap((l) => l.items.map((it) => ({ ...it, lane: l.id })))
     .sort((a, b) => a.from - b.from || (a.lane === 'sejm') - (b.lane === 'sejm'));
 }
-const stretchYears = (it) => (it.uncertain ? 'w PRL, lata nieznane' : it.open ? `${it.from}–dziś` : it.from === it.to ? `${it.to}` : `${it.from}–${it.to}`);
+const stretchYears = (it) => (it.uncertain ? 'w PRL, lata nieznane' : it.since ? `od ${it.from}` : it.open ? `${it.from}–dziś` : it.from === it.to ? `${it.to}` : `${it.from}–${it.to}`);
 const stretchTitle = (it) => {
   if (it.lane === 'parties') return (it.full ?? it.label).replace(/, lata członkostwa nieznane$/, '');
   if (it.lane === 'sejm' && it.terms?.length) return `${it.label.split(' · ')[0]}, ${it.terms.length === 1 ? 'kadencja' : 'kadencje'} ${termRanges(it.terms)}`;
@@ -665,7 +673,7 @@ export function renderLifeLine(ctx, mp, sp = null) {
   const lane = (l) => `
         <div class="life-lane" data-lane="${l.id}">
           <span class="life-lane-label">${esc(l.label)}</span>
-          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
+          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${stretchYears(it)}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
   const qid = ctx.life?.mps?.[mp.id]?.qid;
@@ -673,7 +681,10 @@ export function renderLifeLine(ctx, mp, sp = null) {
     ? infoTip(`Partie i organizacje bez dat w Wikidata: ${tl.undated.join(', ')}.`, qid ? `https://www.wikidata.org/wiki/${qid}` : '')
     : '';
   const career = careerSentence(sp);
-  const first = [firstActivityText(tl), career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
+  const social = socialText(tl);
+  const socialTitle = ctx.life?.mps?.[mp.id]?.socialTitle;
+  const socialTip = social ? infoTip('Działalność społeczna: zdania o członkostwie i funkcjach w organizacjach z artykułu w polskiej Wikipedii oraz Wikidata (P463).', socialTitle ? `https://pl.wikipedia.org/wiki/${encodeURIComponent(socialTitle.replace(/ /g, '_'))}` : '', 'Źródło') : '';
+  const first = [firstActivityText(tl), social ? `<span data-testid="social-text">${social}${socialTip ? ` ${socialTip}` : ''}</span>` : '', career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
   const ticks = decades(tl);
   return `
       ${lifeTabs()}
@@ -820,7 +831,7 @@ export function renderProfile(ctx, id) {
       <div class="profile-id">
         ${avatar(ctx, mp, 'xl')}
         <div class="profile-name">
-          <h1>${esc(mp.name)}</h1>
+          <div class="profile-title"><h1>${esc(mp.name)}</h1>${renderProfileLinks(ctx.contacts?.mps?.[mp.id] ?? null, sejmProfileUrl(mp.id))}</div>
           <p>${clubChip(ctx, mp.club, mp)} <span class="muted">${esc(club.name)}</span></p>
           ${off ? `<p class="badge-off">${esc(off)}</p>` : ''}
         </div>

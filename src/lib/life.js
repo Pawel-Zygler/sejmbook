@@ -3,6 +3,9 @@
 import { clubFamily, termRanges } from './career.js';
 
 export const III_RP_START = 1989;
+/** Colour of the "Działalność społeczna" lane. */
+export const SOCIAL_COLOR = '#2a9d8f';
+const NOT_SOCIAL = /^(komisja|rada nadzorcza|.*towarzystwo funduszy|koalicja|trzecia droga|lewica\b|zjednoczona prawica|akcja wyborcza|blok\b|porozumienie wyborcze|polska$|polska rzeczpospolita ludowa$)/i;
 
 // PRL-era parties are checked first, because e.g. "Zjednoczone Stronnictwo Ludowe" would otherwise match PSL.
 const PRL_PARTIES = [
@@ -67,6 +70,22 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     opposition.push({ label: o.label, color: '#d4202c', from: clamp(o.from), to: clamp(Math.max(o.to ?? III_RP_START, o.from)), prl: true });
   }
 
+  // Social activity (data/social.json: Polish Wikipedia + Wikidata P463). PRL opposition goes to its own lane.
+  const social = [];
+  const socialUndated = [];
+  for (const o of entry?.social ?? []) {
+    if (isOpposition(o.label) && o.from && o.from <= III_RP_START) {
+      if (!opposition.some((x) => x.label === o.label)) opposition.push({ label: o.label, color: '#d4202c', from: clamp(o.from), to: clamp(Math.max(o.to ?? III_RP_START, o.from)), prl: true });
+      continue;
+    }
+    // Safety net: electoral coalitions and clubs belong to "Partie" and "Sejm", not here.
+    if (NOT_SOCIAL.test(o.label)) continue;
+    if (o.from == null || o.from > now) { socialUndated.push(o.label); continue; }
+    social.push({ label: o.label, color: SOCIAL_COLOR, from: clamp(o.from), to: clamp(Math.max(o.to ?? o.from, o.from)), since: o.to == null, prl: o.from < III_RP_START });
+  }
+  social.sort((a, b) => a.from - b.from || a.to - b.to);
+  opposition.sort((a, b) => a.from - b.from);
+
   const termsByNum = new Map((career?.terms ?? []).map((t) => [t.num, t]));
   const sejm = [];
   for (const r of [...(career?.career?.[mp.id] ?? [])].sort((a, b) => a.term - b.term)) {
@@ -94,10 +113,12 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     prlUnknown: parties.filter((x) => x.uncertain && (first == null || first >= III_RP_START)).map((x) => x.label.replace(' (lata nieznane)', '')),
     lanes: [
       { id: 'opposition', label: 'Opozycja w PRL', items: opposition },
+      { id: 'social', label: 'Działalność społeczna', items: social },
       { id: 'parties', label: 'Partie', items: parties },
       { id: 'sejm', label: 'Sejm', items: sejm.map((s) => ({ ...s, label: `${s.label} · ${termRanges(s.terms)}` })) },
     ].filter((l) => l.items.length),
     undated: [...new Set(undated)],
+    social, socialUndated: [...new Set(socialUndated)],
     hasWikidata: Boolean(entry),
   };
 }

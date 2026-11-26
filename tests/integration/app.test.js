@@ -16,6 +16,7 @@ import contactsData from '../../data/contacts.json';
 import feedData from '../../data/feed.json';
 import governmentData from '../../data/government.json';
 import lawData from '../../data/law-votes.json';
+import socialData from '../../data/social.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -147,8 +148,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Bez ramki „Kluby i koła”';
-const NEWEST_LINE = 'Serwis: Bez ramki „Kluby i koła”';
+const NEWEST = 'Działalność społeczna i linki posła';
+const NEWEST_LINE = 'Profile: Działalność społeczna i linki posła';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -800,6 +801,34 @@ describe('Profile: search every law the MP voted on', () => {
     click($('[data-action="law-vote"][data-vote="all"]'));
     click($('[data-action="law-more"]'));
     expect($$('[data-testid="profile-laws"] .tax-law').length).toBeGreaterThan(30);
+  });
+});
+
+describe('Profile: round links next to the name, social activity on the life line', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, socialData, today: '2026-11-24' });
+  });
+
+  it('puts the Sejm page first and e-mail last, in the same line as the name', () => {
+    nav('#posel-33');
+    const links = $$('.profile-title [data-testid="profile-links"] .profile-link');
+    expect(links[0].dataset.kind).toBe('sejm');
+    expect(links[0].getAttribute('href')).toContain('posel.xsp?id=033');
+    expect(links.at(-1).dataset.kind).toBe('email');
+    expect(links.at(-1).getAttribute('href')).toBe(`mailto:${contactsData.mps[33].email}`);
+    for (const a of links) expect(a.getAttribute('aria-label')).toBeTruthy();
+    expect(links.some((a) => a.dataset.kind === 'website' && /sejm\.gov\.pl/.test(a.href))).toBe(false);
+  });
+
+  it('draws a "Działalność społeczna" lane for MPs with dated activity and says it in the bio', () => {
+    nav('#posel-33');
+    const lane = $('[data-testid="life-line"] [data-lane="social"]');
+    expect(lane).not.toBeNull();
+    expect(lane.querySelector('.life-lane-label').textContent).toBe('Działalność społeczna');
+    expect($('[data-testid="social-text"]').textContent).toMatch(/^Działalność społeczna: .*Młodzież Wszechpolska/);
+    expect($('[data-testid="life-steps"]').textContent).toContain('Działalność społeczna: Młodzież Wszechpolska');
   });
 });
 

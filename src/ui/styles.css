@@ -657,3 +657,12 @@ h2 { font-size: 1.1rem; }
 }
 .law-more { margin-top: 10px; }
 .law-empty { margin: 6px 0; }
+
+/* Round icon links next to the MP's name */
+.profile-title { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.profile-title h1 { margin: 0; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.profile-link { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); transition: background .15s, color .15s, border-color .15s; }
+.profile-link svg { width: 18px; height: 18px; }
+.profile-link:hover, .profile-link:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.profile-link[data-kind="sejm"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
