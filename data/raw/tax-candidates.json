@@ -1,0 +1,1666 @@
+{
+ "source": "https://api.sejm.gov.pl/sejm/term10/processes",
+ "fetchedAt": "2026-11-26",
+ "candidates": [
+  {
+   "process": "188",
+   "title": "o zmianie ustawy o pomocy obywatelom Ukrainy w związku z konfliktem zbrojnym na terytorium tego państwa, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o pomocy obywatelom Ukrainy w związku z konfliktem zbrojnym na terytorium tego państwa, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "description": null,
+   "dzu": "Dz.U. 2024 poz. 232",
+   "eli": "DU/2024/232",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 5,
+    "votingNumber": 28,
+    "date": "2024-02-09",
+    "yes": 414,
+    "no": 15,
+    "abstain": 1,
+    "notParticipating": 28,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "242",
+   "title": "o zmianie ustawy o rachunkowości oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o rachunkowości oraz niektórych innych ustaw",
+   "description": "projekt dotyczy nałożenia na duże wielonarodowe przedsiębiorstwa obowiązku publicznego ujawnienia sprawozdania związanego z podatkiem dochodowym płaconym w poszczególnych krajach, w których prowadzą one działalność",
+   "dzu": "Dz.U. 2024 poz. 619",
+   "eli": "DU/2024/619",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 8,
+    "votingNumber": 7,
+    "date": "2024-03-20",
+    "yes": 431,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 28,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "277",
+   "title": "o zmianie ustawy o ochronie zdrowia przed następstwami używania tytoniu i wyrobów tytoniowych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o ochronie zdrowia przed następstwami używania tytoniu i wyrobów tytoniowych",
+   "description": "projekt dotyczy umożliwienia podmiotom dokonującym obrotu wyrobami tytoniowymi niebędącymi wyrobami akcyzowymi stosowania na opakowaniach jednostkowych tych wyrobów zabezpieczeń",
+   "dzu": "Dz.U. 2024 poz. 649",
+   "eli": "DU/2024/649",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 9,
+    "votingNumber": 26,
+    "date": "2024-04-12",
+    "yes": 426,
+    "no": 14,
+    "abstain": 2,
+    "notParticipating": 15,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "341",
+   "title": "zmieniająca ustawę o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy zmieniającej ustawę o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "description": "projekt dotyczy przesunięcia terminu wdrożenia Krajowego Systemu e-Faktur (KSeF) z 1 lipca 2024 roku na 1 lutego 2026 roku",
+   "dzu": "Dz.U. 2024 poz. 852",
+   "eli": "DU/2024/852",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 11,
+    "votingNumber": 18,
+    "date": "2024-05-09",
+    "yes": 237,
+    "no": 183,
+    "abstain": 20,
+    "notParticipating": 19,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "311",
+   "title": "o zmianie ustawy o wymianie informacji podatkowych z innymi państwami oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o wymianie informacji podatkowych z innymi państwami oraz niektórych innych ustaw",
+   "description": "projekt dotyczy dostosowania polskiego prawa do unijnych przepisów, które dotyczą współpracy administracyjnej w dziedzinie opodatkowania;  zwalczania oszustw podatkowych, poprzez zapewnienie wspólnej dla wszystkich państw UE sprawozdawczości finansowej, dotyczącej raportowania dochodów, uzyskiwanych za pośrednictwem platform cyfrowych\n\n",
+   "dzu": "Dz.U. 2024 poz. 879",
+   "eli": "DU/2024/879",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 12,
+    "votingNumber": 13,
+    "date": "2024-05-23",
+    "yes": 236,
+    "no": 192,
+    "abstain": 0,
+    "notParticipating": 31,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "601",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych oraz niektórych innych ustaw",
+   "description": "projekt dotyczy wprowadzenia możliwości wyboru kasowego rozliczania przychodów i kosztów uzyskania przychodów (tzw. kasowego PIT) przez przedsiębiorców prowadzących działalność gospodarczą w niewielkich rozmiarach",
+   "dzu": "Dz.U. 2024 poz. 1593",
+   "eli": "DU/2024/1593",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 18,
+    "votingNumber": 36,
+    "date": "2024-09-27",
+    "yes": 410,
+    "no": 0,
+    "abstain": 18,
+    "notParticipating": 31,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "622",
+   "title": "o dochodach jednostek samorządu terytorialnego",
+   "projectTitle": "Rządowy projekt ustawy o dochodach jednostek samorządu terytorialnego",
+   "description": "projekt dotyczy zmiany w zakresie dochodów JST z tytułu udziału w podatkach dochodowych (podatku dochodowym od osób fizycznych oraz podatku dochodowym od osób prawnych); określenia potrzeb finansowych JST oraz oparcia ich finansowania na dochodach własnych; wydzielenia miast na prawach powiatu, jako oddzielnej kategorii JST w ramach systemu dochodów samorządu terytorialnego; wprowadzenia jednej rezerwy uzupełniającej dochody jednostek samorządu terytorialnego",
+   "dzu": "Dz.U. 2024 poz. 1572",
+   "eli": "DU/2024/1572",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 18,
+    "votingNumber": 59,
+    "date": "2024-10-01",
+    "yes": 231,
+    "no": 1,
+    "abstain": 184,
+    "notParticipating": 43,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "673",
+   "title": "o zmianie niektórych ustaw w celu wsparcia przedsiębiorców zatrudniających żołnierzy Obrony Terytorialnej lub żołnierzy Aktywnej Rezerwy",
+   "projectTitle": "Rządowy projekt ustawy o zmianie niektórych ustaw w celu wsparcia przedsiębiorców zatrudniających żołnierzy Obrony Terytorialnej lub żołnierzy Aktywnej Rezerwy",
+   "description": "projekt dotyczy wprowadzenia preferencji podatkowych dla przedsiębiorców zatrudniających pracowników, którzy są jednocześnie żołnierzami OT i żołnierzami AR, wprowadzenia preferencji dla przedsiębiorców ubiegających się o udzielenie zamówienia publicznego, którzy przy wykonywaniu tego zlecenia będą zatrudniać pracowników, którzy są jednocześnie żołnierzami WOT i żołnierzami aktywnej rezerwy oraz zastąpienia odprawy wypłacanej pracownikom powołanym do terytorialnej służby wojskowej - świadczeniem początkowym celem podniesienia atrakcyjności terytorialnej służby wojskowej, zwiększenia liczebności Sił Zbrojnych RP oraz zmniejszenia obciążeń dla pracodawców",
+   "dzu": "Dz.U. 2024 poz. 1585",
+   "eli": "DU/2024/1585",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 18,
+    "votingNumber": 121,
+    "date": "2024-10-01",
+    "yes": 409,
+    "no": 0,
+    "abstain": 2,
+    "notParticipating": 48,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "656",
+   "title": "o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "description": "projekt dotyczy dostosowania polskiego prawa do przepisów Unii Europejskiej w zakresie m.in. uproszczenia obowiązków administracyjnych dotyczących VAT dla małych przedsiębiorstw, które prowadzą działalność w różnych państwach unijnych",
+   "dzu": "Dz.U. 2024 poz. 1721",
+   "eli": "DU/2024/1721",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 20,
+    "votingNumber": 11,
+    "date": "2024-10-18",
+    "yes": 230,
+    "no": 197,
+    "abstain": 0,
+    "notParticipating": 32,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "692",
+   "title": "o zmianie ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy zwiększenia stawki podatku akcyzowego na wyroby tytoniowe, wyroby nowatorskie (podgrzewane wyroby tytoniowe) oraz płyn do papierosów elektronicznych; nowe stawki akcyzy mają przede wszystkim ograniczyć konsumpcję wyrobów tytoniowych i ich substytutów, szczególnie przez osoby nieletnie",
+   "dzu": "Dz.U. 2024 poz. 1681",
+   "eli": "DU/2024/1681",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 20,
+    "votingNumber": 21,
+    "date": "2024-10-18",
+    "yes": 236,
+    "no": 188,
+    "abstain": 2,
+    "notParticipating": 33,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "674",
+   "title": "o opodatkowaniu wyrównawczym jednostek składowych grup międzynarodowych i krajowych",
+   "projectTitle": "Rządowy projekt ustawy o opodatkowaniu wyrównawczym jednostek składowych grup międzynarodowych i krajowych",
+   "description": "projekt dotyczy implementacji do polskiego porządku prawnego przepisów dyrektywy Rady (UE) 2022/2523 z dnia 14 grudnia 2022 r. w sprawie zapewnienia globalnego minimalnego poziomu opodatkowania międzynarodowych grup przedsiębiorstw oraz dużych grup krajowych w Unii Europejskiej i wprowadzenia systemu tzw. globalnego podatku minimalnego (zasad GloBE), tj. głównej części tzw. Filaru II OECD",
+   "dzu": "Dz.U. 2024 poz. 1685",
+   "eli": "DU/2024/1685",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 21,
+    "votingNumber": 12,
+    "date": "2024-11-06",
+    "yes": 236,
+    "no": 188,
+    "abstain": 9,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "670",
+   "title": "o ratyfikacji Protokołu między Rządem Rzeczypospolitej Polskiej a Organizacją Bezpieczeństwa i Współpracy w Europie zmieniającego Porozumienie między Rządem Rzeczypospolitej Polskiej a Organizacją Bezpieczeństwa i Współpracy w Europie w sprawie statusu Organizacji Bezpieczeństwa i Współpracy w Europie w Rzeczypospolitej Polskiej, podpisane w Warszawie dnia 28 czerwca 2017 r., podpisanego w Warszawie dnia 5 lipca 2024 r.",
+   "projectTitle": "Rządowy projekt ustawy o ratyfikacji Protokołu między Rządem Rzeczypospolitej Polskiej a Organizacją Bezpieczeństwa i Współpracy w Europie zmieniającego Porozumienie między Rządem Rzeczypospolitej Polskiej a Organizacją Bezpieczeństwa i Współpracy w Europie w sprawie statusu Organizacji Bezpieczeństwa i Współpracy w Europie w Rzeczypospolitej Polskiej, podpisane w Warszawie dnia 28 czerwca 2017 r., podpisanego w Warszawie dnia 5 lipca 2024 r.",
+   "description": "projekt dotyczy wprowadzenia do Porozumienia nowego postanowienia umownego, rozszerzającego zakres przywilejów i immunitetów w odniesieniu do zwolnień podatkowych z tytułu zakupów na cele prywatne przysługujących funkcjonariuszom ODIHR akredytowanym w Rzeczypospolitej Polskiej wskazanym w sekcji 2 Aneksu do Porozumienia (tj. osobom zajmującym szesnaście enumeratywnie wyliczonych stanowisk w strukturze ODIHR)",
+   "dzu": "Dz.U. 2024 poz. 1781",
+   "eli": "DU/2024/1781",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 21,
+    "votingNumber": 77,
+    "date": "2024-11-08",
+    "yes": 420,
+    "no": 23,
+    "abstain": 0,
+    "notParticipating": 17,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "741",
+   "title": "o zmianie ustawy o podatku rolnym, ustawy o podatkach i opłatach lokalnych oraz ustawy o opłacie skarbowej",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku rolnym, ustawy o podatkach i opłatach lokalnych oraz ustawy o opłacie skarbowej",
+   "description": "projekt dotyczy wyeliminowania wątpliwości interpretacyjnych poprzez doprecyzowanie przepisów dotyczących ustawy o podatku rolnym, ustawy o podatkach i opłatach lokalnych oraz ustawy o opłacie skarbowej  oraz doprecyzowanie m.in. zasad opodatkowania podatkiem od nieruchomości garaży w budynkach mieszkalnych i definicji budynku i budowli oraz zakresu zwolnienia z podatku od nieruchomości budowli infrastruktury portowej, a także uszczelnienie zasad poboru opłaty uzdrowiskowej",
+   "dzu": "Dz.U. 2024 poz. 1757",
+   "eli": "DU/2024/1757",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 22,
+    "votingNumber": 13,
+    "date": "2024-11-19",
+    "yes": 231,
+    "no": 43,
+    "abstain": 147,
+    "notParticipating": 39,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "841",
+   "title": "o zmianie ustawy o środkach nadzwyczajnych mających na celu ograniczenie wysokości cen energii elektrycznej oraz wsparciu niektórych odbiorców w 2023 roku oraz w 2024 roku oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o środkach nadzwyczajnych mających na celu ograniczenie wysokości cen energii elektrycznej oraz wsparciu niektórych odbiorców w 2023 roku oraz w 2024 roku oraz niektórych innych ustaw",
+   "description": "projekt dotyczy przedłużenia na 2025 rok działań osłonowych, które mają ochronić gospodarstwa domowe przed wzrostem rachunków za energię elektryczną oraz zawieszenia w 2025 r. poboru tzw. opłaty mocowej a także wprowadzenia przepisów, które zobowiążą przedsiębiorstwa energetyczne do przedłożenia do 30 kwietnia 2025 roku, Prezesowi Urzędu Regulacji Energetyki, wniosków o zmianę taryfy dla energii elektrycznej",
+   "dzu": "Dz.U. 2024 poz. 1831",
+   "eli": "DU/2024/1831",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 22,
+    "votingNumber": 175,
+    "date": "2024-11-27",
+    "yes": 412,
+    "no": 3,
+    "abstain": 14,
+    "notParticipating": 31,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "896",
+   "title": "o zmianie ustawy o podatku od towarów i usług, ustawy o podatku akcyzowym oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług, ustawy o podatku akcyzowym oraz niektórych innych ustaw",
+   "description": "projekt dotyczy doprecyzowania przepisów oraz wprowadzenia ułatwień dotyczących prowadzenia działalności gospodarczej; nowe rozwiązania zakładają m.in. rezygnację z obowiązku integracji kas rejestrujących online z terminalami płatniczymi oraz przedłużenie obowiązywania mechanizmu tzw. odwrotnego obciążenia w VAT",
+   "dzu": "Dz.U. 2025 poz. 222",
+   "eli": "DU/2025/222",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 27,
+    "votingNumber": 21,
+    "date": "2025-01-24",
+    "yes": 420,
+    "no": 1,
+    "abstain": 21,
+    "notParticipating": 18,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "964",
+   "title": "o zmianie ustawy - Ordynacja podatkowa oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Ordynacja podatkowa oraz niektórych innych ustaw",
+   "description": "projekt dotyczy dostosowania polskiego prawa do dwóch wyroków Trybunału Sprawiedliwości Unii Europejskiej (TSUE); nowe przepisy przewidują, że m.in. w procedurze podatkowej i administracyjnej, można będzie nadać pismo do urzędu u dowolnego operatora pocztowego, a nie jak do tej pory tylko za pośrednictwem Poczty Polskiej",
+   "dzu": "Dz.U. 2025 poz. 497",
+   "eli": "DU/2025/497",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 29,
+    "votingNumber": 8,
+    "date": "2025-02-20",
+    "yes": 238,
+    "no": 181,
+    "abstain": 9,
+    "notParticipating": 32,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "981",
+   "title": "o zmianie ustawy o podatku akcyzowym, ustawy o zdrowiu publicznym oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym, ustawy o zdrowiu publicznym oraz niektórych innych ustaw",
+   "description": "projekt dotyczy opodatkowania substytutów tradycyjnych wyrobów tytoniowych oraz urządzeń do waporyzacji, czyli wielorazowych papierosów elektronicznych, podgrzewaczy do wyrobów nowatorskich oraz urządzeń wielofunkcyjnych",
+   "dzu": "Dz.U. 2025 poz. 340",
+   "eli": "DU/2025/340",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 29,
+    "votingNumber": 7,
+    "date": "2025-02-20",
+    "yes": 242,
+    "no": 191,
+    "abstain": 1,
+    "notParticipating": 26,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1231",
+   "title": "o zmianie ustawy o Krajowej Administracji Skarbowej oraz ustawy o podatku od towarów i usług",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o Krajowej Administracji Skarbowej oraz ustawy o podatku od towarów i usług",
+   "description": "projekt dotyczy wprowadzenia nowych przepisów umożliwiających kontrolowanemu przedsiębiorcy dobrowolne złożenie korekty deklaracji podatkowej, która częściowo uwzględnia błędy wykryte podczas kontroli celno-skarbowej. Przyjęte rozwiązania mają także doprecyzować wątpliwości interpretacyjne zgłaszane przez przedsiębiorców dotyczące deklaracji podatkowej, która składana jest po wszczęciu lub po zakończeniu kontroli celno-skarbowej. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 894",
+   "eli": "DU/2025/894",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 37,
+    "votingNumber": 10,
+    "date": "2025-06-24",
+    "yes": 416,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 44,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1232",
+   "title": "o zmianie ustawy o podatku od towarów i usług",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług",
+   "description": "projekt dotyczy propozycji podwyższenia od 1 stycznia 2026 roku limitu tzw. zwolnienia podmiotowego w VAT z 200 tys. zł do 240 tys. zł. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 896",
+   "eli": "DU/2025/896",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 37,
+    "votingNumber": 15,
+    "date": "2025-06-24",
+    "yes": 415,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 45,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1233",
+   "title": "o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy likwidacji obowiązku sporządzania i publikowania informacji o realizowanej strategii podatkowej przez największych podatników CIT. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1074",
+   "eli": "DU/2025/1074",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 37,
+    "votingNumber": 45,
+    "date": "2025-06-25",
+    "yes": 227,
+    "no": 198,
+    "abstain": 1,
+    "notParticipating": 34,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1281",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy wprowadzenia łagodniejszych zasad zwrotu podatku w przypadku uchylenia decyzji o wsparciu w Polskiej Strefie Inwestycji (PSI) lub zezwolenia na działalność w Specjalnych Strefach Ekonomicznych (SSE). Przyjęte rozwiązania przewidują także ograniczenie obowiązku składania informacji o wspólnikach spółki jawnej oraz wprowadzenie korzystnych zmian dla podatkowych grup kapitałowych. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1022",
+   "eli": "DU/2025/1022",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 37,
+    "votingNumber": 46,
+    "date": "2025-06-25",
+    "yes": 422,
+    "no": 6,
+    "abstain": 0,
+    "notParticipating": 32,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1282",
+   "title": "o zmianie ustawy o podatku od spadków i darowizn",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od spadków i darowizn",
+   "description": "projekt dotyczy zmiany zasady rozliczania podatku w przypadku świadczeń powtarzających się, takich jak renty. Dzięki przyjętym rozwiązaniom, nie trzeba będzie co miesiąc składać zeznania podatkowego w tej sprawie. Nowe przepisy przewidują ponadto ułatwienia przy dokonywaniu obrotu majątkiem, który pochodzi m.in. ze spadku. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1064",
+   "eli": "DU/2025/1064",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 37,
+    "votingNumber": 47,
+    "date": "2025-06-25",
+    "yes": 429,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 31,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1280",
+   "title": "o zmianie ustawy o weteranach działań poza granicami państwa, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o finansach publicznych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o weteranach działań poza granicami państwa, ustawy o podatku dochodowym od osób fizycznych i ustawy o finansach publicznych",
+   "description": "projekt dotyczy systemowego zabezpieczenia kwestii dochodzenia rekompensat z tytułu doznanego uszczerbku na zdrowiu i zakłada objęcie uprawnieniem do ubiegania się o przyznanie rekompensaty w związku z uszczerbkiem na zdrowiu  związanym z udziałem w działaniach poza granicami państwa przez wszystkich weteranów poszkodowanych",
+   "dzu": "Dz.U. 2025 poz. 1180",
+   "eli": "DU/2025/1180",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 38,
+    "votingNumber": 15,
+    "date": "2025-07-09",
+    "yes": 435,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 25,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1313",
+   "title": "o zmianie ustawy - Kodeks karny skarbowy oraz ustawy - Ordynacja podatkowa",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Kodeks karny skarbowy oraz ustawy - Ordynacja podatkowa",
+   "description": "projekt dotyczy uproszczenia administracyjnych obowiązków podatkowych oraz złagodzenia kar za przestępstwa skarbowe, które nie powodują bezpośrednich strat w podatkach. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": null,
+   "eli": null,
+   "veto": true,
+   "signed": false,
+   "vote": {
+    "sitting": 39,
+    "votingNumber": 53,
+    "date": "2025-07-25",
+    "yes": 258,
+    "no": 177,
+    "abstain": 0,
+    "notParticipating": 25,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1388",
+   "title": "o zmianie ustawy - Prawo energetyczne oraz niektórych innych ustaw",
+   "projectTitle": "Poselski projekt ustawy o zmianie ustawy - Prawo energetyczne oraz niektórych innych ustaw",
+   "description": "projekt dotyczy usunięcia luk w prawie, które utrudniają albo wręcz uniemożliwiają podział spółki publicznej przez wyodrębnienie wobec niedostosowania ustaw podatkowych i ustawy o rachunkowości do nowych form reorganizacji korporacyjnych; usunięcia luk w prawie, które uniemożliwiają podział przedsiębiorstwa energetycznego zajmującego się obrotem energią elektryczną lub gazem, skutkując problemami zarówno dla samych spółek, ich akcjonariuszy, a także wytwórców energii elektrycznej w odnawialnych źródłach energii o mocy do 0,5 MW",
+   "dzu": "Dz.U. 2025 poz. 1218",
+   "eli": "DU/2025/1218",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 39,
+    "votingNumber": 80,
+    "date": "2025-07-25",
+    "yes": 232,
+    "no": 192,
+    "abstain": 5,
+    "notParticipating": 31,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1407",
+   "title": "o zmianie ustawy o podatku od towarów i usług oraz ustawy o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw\n",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług oraz zmieniającej ustawę o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "description": "projekt dotyczy wprowadzenia i uproszczenia Krajowego Systemu e-Faktur (KSeF), czyli specjalnego systemu elektronicznego do wystawiania i odbierania faktur, co w praktyce oznacza odejście od papierowych faktur i oszczędności dla przedsiębiorców oraz skrócenie o 1/3 podstawowego terminu zwrotu VAT z 60 do 40 dni",
+   "dzu": "Dz.U. 2025 poz. 1203",
+   "eli": "DU/2025/1203",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 39,
+    "votingNumber": 62,
+    "date": "2025-07-25",
+    "yes": 239,
+    "no": 182,
+    "abstain": 11,
+    "notParticipating": 28,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1265",
+   "title": "o zmianie ustawy - Ordynacja podatkowa",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Ordynacja podatkowa",
+   "description": "projekt dotyczy wzmocnienia ochrony praw i interesów podatnika poprzez wprowadzenie zasady domniemania niewinności, co oznacza, że w postępowaniach podatkowych, które rozpoczynane są z urzędu, niedające się usunąć wątpliwości dotyczące stanu faktycznego, będą rozstrzygane na korzyść podatników; Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1417",
+   "eli": "DU/2025/1417",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 40,
+    "votingNumber": 87,
+    "date": "2025-09-12",
+    "yes": 427,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 33,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1428",
+   "title": "o zmianie ustawy o zwrocie podatku akcyzowego zawartego w cenie oleju napędowego wykorzystywanego do produkcji rolnej",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o zwrocie podatku akcyzowego zawartego w cenie oleju napędowego wykorzystywanego do produkcji rolnej",
+   "description": "projekt dotyczy uproszczenia procedury ubiegania się o zwrot podatku akcyzowego w odniesieniu do bydła, świń, owiec, kóz i koni, w przypadku prowadzenia przez producenta rolnego produkcji rolnej, któremu równocześnie przysługuje zwrot części podatku akcyzowego zawartego w cenie paliwa zakupionego do tej produkcji na powierzchni co najmniej 1 ha użytków rolnych. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1415",
+   "eli": "DU/2025/1415",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 40,
+    "votingNumber": 95,
+    "date": "2025-09-12",
+    "yes": 431,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 29,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1439",
+   "title": "o zmianie ustawy - Ordynacja podatkowa",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Ordynacja podatkowa",
+   "description": "projekt dotyczy dodania regulacji, która zapewni nienaliczanie odsetek za zwłokę, jeżeli kontrola podatkowa albo kontrola celno-skarbowa będą trwały dłużej niż 6 miesięcy - od dnia następnego po tym okresie aż do jej zakończenia. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1414",
+   "eli": "DU/2025/1414",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 40,
+    "votingNumber": 90,
+    "date": "2025-09-12",
+    "yes": 423,
+    "no": 1,
+    "abstain": 4,
+    "notParticipating": 32,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1441",
+   "title": "o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy modyfikacji brzmienia art. 24o ustawy CIT, oznaczającej likwidację obowiązku składania przez spółkę holdingową oświadczenia o zamiarze skorzystania ze zwolnienia z CIT dochodów ze zbycia udziałów (akcji), jako warunku uprawniającego do skorzystania ze zwolnienia. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1426",
+   "eli": "DU/2025/1426",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 40,
+    "votingNumber": 85,
+    "date": "2025-09-12",
+    "yes": 429,
+    "no": 1,
+    "abstain": 0,
+    "notParticipating": 30,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1449",
+   "title": "o zmianie ustawy o Centralnej Ewidencji i Informacji o Działalności Gospodarczej i Punkcie Informacji dla Przedsiębiorcy oraz ustawy o podatku od towarów i usług",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o Centralnej Ewidencji i Informacji o Działalności Gospodarczej i Punkcie Informacji dla Przedsiębiorcy oraz ustawy o podatku od towarów i usług",
+   "description": "projekt dotyczy wprowadzenia przepisów umożliwiających weryfikację wiarygodności kontrahenta, dzięki możliwości sprawdzenia on-line, czy jest on ujęty w wykazie podatników VAT. Będzie to możliwe na portalu biznes.gov.pl w ramach istniejącej wyszukiwarki firm, gdzie zostaną udostępnione dane z wykazu podatników VAT. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1541",
+   "eli": "DU/2025/1541",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 40,
+    "votingNumber": 23,
+    "date": "2025-09-12",
+    "yes": 435,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 25,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1752",
+   "title": "o zmianie ustawy o podatku dochodowym od osób prawnych i ustawy o podatku od niektórych instytucji finansowych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób prawnych i ustawy o podatku od niektórych instytucji finansowych",
+   "description": "projekt dotyczy podniesienia podatku CIT dla banków krajowych i zagranicznych",
+   "dzu": "Dz.U. 2025 poz. 1658",
+   "eli": "DU/2025/1658",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 43,
+    "votingNumber": 47,
+    "date": "2025-10-17",
+    "yes": 238,
+    "no": 187,
+    "abstain": 18,
+    "notParticipating": 17,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1753",
+   "title": "o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy doprecyzowania i uszczelnienia przepisów podatkowych dotyczących fundacji rodzinnych. Nowe przepisy mają zabezpieczyć działanie fundacji rodzinnych w zgodzie z ich pierwotnym celem, jakim jest zarządzanie majątkiem i planowanie sukcesji. Chodzi o to, aby uniknąć realizacji agresywnych strategii podatkowych.",
+   "dzu": null,
+   "eli": null,
+   "veto": true,
+   "signed": false,
+   "vote": {
+    "sitting": 43,
+    "votingNumber": 49,
+    "date": "2025-10-17",
+    "yes": 233,
+    "no": 199,
+    "abstain": 3,
+    "notParticipating": 25,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1824",
+   "title": "o zmianie ustawy o dochodach jednostek samorządu terytorialnego",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o dochodach jednostek samorządu terytorialnego",
+   "description": "projekt dotyczy wykorzystania zaktualizowanych danych podatkowych z tytułu podatku dochodowego od osób prawnych do obliczenia dochodów jednostek samorządu terytorialnego",
+   "dzu": "Dz.U. 2025 poz. 1659",
+   "eli": "DU/2025/1659",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 26,
+    "date": "2025-11-05",
+    "yes": 434,
+    "no": 3,
+    "abstain": 1,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1826",
+   "title": "o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy dostosowania przepisów CIT do orzeczeń Trybunału Sprawiedliwości Unii Europejskiej dotyczących zagranicznych funduszy inwestycyjnych i emerytalnych. Chodzi m.in. o rozszerzenie preferencji podatkowych na fundusze z państw spoza UE, przy zachowaniu zabezpieczeń przed nadużywaniem prawa do zwolnienia podatkowego.",
+   "dzu": "Dz.U. 2025 poz. 1657",
+   "eli": "DU/2025/1657",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 39,
+    "date": "2025-11-06",
+    "yes": 230,
+    "no": 193,
+    "abstain": 0,
+    "notParticipating": 37,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1728",
+   "title": "o zmianie ustawy o podatku od towarów i usług",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług",
+   "description": "projekt dotyczy umożliwienia przedsiębiorcom, którzy posiadają pozwolenie na stosowanie zgłoszenia uproszczonego i stosują to uproszczenie, nadal rozliczania podatku VAT, związanego z importem towarów, bezpośrednio w deklaracji podatkowej. Przyjęte przepisy są konieczne, ponieważ po wprowadzeniu nowego systemu celnego AIS/IMPORT PLUS, niektóre firmy stosujące zgłoszenie uproszczone zostały de facto pozbawione takiej możliwości. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1811",
+   "eli": "DU/2025/1811",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 56,
+    "date": "2025-11-07",
+    "yes": 442,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 18,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1729",
+   "title": "o zmianie ustawy o doradztwie podatkowym oraz ustawy - Prawo o postępowaniu przed sądami administracyjnymi",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o doradztwie podatkowym oraz ustawy - Prawo o postępowaniu przed sądami administracyjnymi",
+   "description": "projekt dotyczy dostosowania do obecnych uwarunkowań prawnych i rynkowych przepisów dotyczących doradztwa podatkowego, doprecyzowania przepisów, które umożliwią doradcom podatkowym udzielanie porad, opinii i wyjaśnień dotyczących opłat stosowanych w Ordynacji podatkowej, możliwe będzie wykonywanie czynności doradztwa podatkowego na podstawie umowy cywilnoprawnej. Rozwiązanie wpłynie na zwiększenie elastyczności w podejmowaniu pracy przez doradców i wyrównanie możliwości na rynku świadczonych usług. Doradcy podatkowi będą mogli reprezentować klientów przed organami administracji i sądami, usprawniony zostanie proces egzaminacyjny na doradcę podatkowego.",
+   "dzu": "Dz.U. 2025 poz. 1882",
+   "eli": "DU/2025/1882",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 52,
+    "date": "2025-11-07",
+    "yes": 247,
+    "no": 177,
+    "abstain": 19,
+    "notParticipating": 17,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1798",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy uproszczenia przepisów podatkowych dotyczących przyspieszonej amortyzacji, co wpłynie pozytywnie na większe możliwości inwestycyjne w gminach o wysokim bezrobociu. Firmy będą mogły szybciej rozliczyć koszty budowy budynków i budowli zlokalizowanych na takich obszarach. Jedynym warunkiem skorzystania pozostanie przepis, który wymaga, aby gmina znajdowała się w powiecie lub mieście na prawach powiatu, gdzie przeciętny poziom bezrobocia wynosi co najmniej 120% przeciętnej stopy bezrobocia w kraju",
+   "dzu": "Dz.U. 2025 poz. 1817",
+   "eli": "DU/2025/1817",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 53,
+    "date": "2025-11-07",
+    "yes": 441,
+    "no": 2,
+    "abstain": 0,
+    "notParticipating": 17,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1825",
+   "title": "o zmianie ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy aktualizacji tzw. \"akcyzowej mapy drogowej\" poprzez podwyżkę stawek akcyzy na alkohol etylowy, piwo, wino, napoje fermentowane i wyroby pośrednie: w 2026 r. o 15% w stosunku do stawek z 2025 r., a w 2027 r. o 10% r/r.",
+   "dzu": null,
+   "eli": null,
+   "veto": true,
+   "signed": false,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 75,
+    "date": "2025-11-07",
+    "yes": 245,
+    "no": 198,
+    "abstain": 1,
+    "notParticipating": 16,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1836",
+   "title": "o zmianie ustawy o zdrowiu publicznym oraz ustawy o podatku dochodowym od osób fizycznych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o zdrowiu publicznym oraz ustawy o podatku dochodowym od osób fizycznych",
+   "description": "projekt dotyczy podwyższenia opłaty cukrowej, aby zniechęcić do kupowania słodkich i energetycznych napojów, a tym samym ograniczyć m.in. otyłość i cukrzycę. Stawki zostaną podniesione m.in. z 0,50 zł do 0,70 zł za litr napoju z cukrem do 5 g w litrze lub słodzikiem i z 0,10 zł do 1,00 zł za dodatek kofeiny lub tauryny",
+   "dzu": null,
+   "eli": null,
+   "veto": true,
+   "signed": false,
+   "vote": {
+    "sitting": 44,
+    "votingNumber": 89,
+    "date": "2025-11-07",
+    "yes": 246,
+    "no": 199,
+    "abstain": 0,
+    "notParticipating": 15,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1835",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych",
+   "description": "projekt dotyczy rozliczenia podatkowego, do którego będzie można zaliczać wydatki na zakup papierów wartościowych, które zostały umorzone przez Bankowy Fundusz Gwarancyjny (BFG). Dzięki rozwiązaniu, inwestorzy będą mogli częściowo zrekompensować stratę, która wynikła z umorzenia takich papierów, np. akcji. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1838",
+   "eli": "DU/2025/1838",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 45,
+    "votingNumber": 36,
+    "date": "2025-11-21",
+    "yes": 431,
+    "no": 6,
+    "abstain": 0,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1837",
+   "title": "o zmianie ustawy o podatku od spadków i darowizn",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od spadków i darowizn",
+   "description": "projekt dotyczy uproszczenia procedur oraz ochrony spadkobierców przed utratą zwolnień podatkowych. Dzięki proponowanemu rozwiązaniu, możliwe będzie przywrócenie terminu na zgłoszenie nabytego majątku przez członków najbliższej rodziny, jeśli wykażą, że jego przekroczenie nastąpiło bez ich winy. Dotyczy to także zgłoszenia nabycia firmy osoby fizycznej po jej śmierci przez nabywców przedsiębiorstwa. Ponadto, doprecyzowany zostaje moment powstania obowiązku podatkowego przy nabyciu spadku. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1854",
+   "eli": "DU/2025/1854",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 45,
+    "votingNumber": 45,
+    "date": "2025-11-21",
+    "yes": 440,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 20,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1838",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych",
+   "description": "projekt dotyczy podwyższenia limitu przychodów, warunkującego wybór kasowego PIT, o którym mowa w art. 14c ust. 1 pkt 1 ustawy z dnia 26 lipca 1991 r. o podatku  dochodowym od osób fizycznych (Dz. U. z 2025 r. poz. 163, z późn. zm.), z 1 mln zł do 2 mln zł. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2025 poz. 1858",
+   "eli": "DU/2025/1858",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 45,
+    "votingNumber": 38,
+    "date": "2025-11-21",
+    "yes": 439,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 21,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1858",
+   "title": "o zmianie ustawy o zaopatrzeniu emerytalnym funkcjonariuszy Policji, Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Służby Kontrwywiadu Wojskowego, Służby Wywiadu Wojskowego, Centralnego Biura Antykorupcyjnego, Straży Granicznej, Straży Marszałkowskiej, Służby Ochrony Państwa, Państwowej Straży Pożarnej, Służby Celno-Skarbowej i Służby Więziennej oraz ich rodzin oraz ustawy o Krajowej Administracji Skarbowej",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o zaopatrzeniu emerytalnym funkcjonariuszy Policji, Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Służby Kontrwywiadu Wojskowego, Służby Wywiadu Wojskowego, Centralnego Biura Antykorupcyjnego, Straży Granicznej, Straży Marszałkowskiej, Służby Ochrony Państwa, Państwowej Straży Pożarnej, Służby Celno-Skarbowej i Służby Więziennej oraz ich rodzin oraz ustawy o Krajowej Administracji Skarbowej",
+   "description": "projekt dotyczy wyrównania uprawnień emerytalnych funkcjonariuszy Służby Celno-Skarbowej oraz byłych funkcjonariuszy Służby Celnej. Chodzi o okresy związane z przekształceniami organizacyjnymi w administracji podatkowej, celnej i skarbowej.",
+   "dzu": "Dz.U. 2025 poz. 1820",
+   "eli": "DU/2025/1820",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 45,
+    "votingNumber": 129,
+    "date": "2025-11-21",
+    "yes": 439,
+    "no": 0,
+    "abstain": 1,
+    "notParticipating": 20,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1881",
+   "title": "o zmianie ustawy o podatku od wydobycia niektórych kopalin oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od wydobycia niektórych kopalin oraz niektórych innych ustaw",
+   "description": "projekt dotyczy zmian w opodatkowaniu wydobycia miedzi i srebra. W latach 2026-2028 zostanie obniżony współczynnik we wzorach służących do obliczania podatku od wydobycia tych kopalin, a od 2029 roku firmy będą mogły odliczać od podatku część wydatków na nowe inwestycje.",
+   "dzu": "Dz.U. 2025 poz. 1804",
+   "eli": "DU/2025/1804",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 45,
+    "votingNumber": 105,
+    "date": "2025-11-21",
+    "yes": 420,
+    "no": 0,
+    "abstain": 15,
+    "notParticipating": 25,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1930",
+   "title": "o zmianie ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy Zastąpienia starych kodów Polskiej Klasyfikacji Działalności nowymi (PKD 2025 zamiast PKD 2007). PKD to system kodów określający, czym zajmuje się dana firma  np. produkcją, handlem czy usługami. Nowe przepisy zapewnią ciągłość prawa i bezpieczeństwo podatkowe przedsiębiorców.",
+   "dzu": "Dz.U. 2025 poz. 1813",
+   "eli": "DU/2025/1813",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 45,
+    "votingNumber": 112,
+    "date": "2025-11-21",
+    "yes": 434,
+    "no": 3,
+    "abstain": 0,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1880",
+   "title": "o zmianie ustawy o funkcjonowaniu górnictwa węgla kamiennego oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o funkcjonowaniu górnictwa węgla kamiennego oraz ustawy o podatku dochodowym od osób fizycznych",
+   "description": "projekt dotyczy umożliwienia spółkom górniczym stopniową likwidację kopalń przy wsparciu finansowym państwa. Dla pracowników sektora przewidziany jest pakiet świadczeń osłonowych, takich jak urlopy górnicze czy jednorazowe odprawy. Ponadto, przyjęte rozwiązania rozszerzają planowany system wsparcia państwa na rynek węgla kamiennego, w tym węgla koksującego.",
+   "dzu": "Dz.U. 2025 poz. 1822",
+   "eli": "DU/2025/1822",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 46,
+    "votingNumber": 45,
+    "date": "2025-12-04",
+    "yes": 241,
+    "no": 6,
+    "abstain": 186,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1996",
+   "title": "o zmianie ustawy o dokumentach publicznych oraz ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o dokumentach publicznych oraz ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy utrzymania stabilnego i prawidłowego funkcjonowania systemu bezpieczeństwa dokumentów publicznych poprzez dostosowanie przepisów prawa do aktualnych realiów i umożliwienia przyznania podmiotowi prawa handlowego, tj. Polskiej Wytwórni Papierów Wartościowych Spółce Akcyjnej z siedzibą w Warszawie, prawa wyłącznego do wytwarzania określonych dokumentów publicznych",
+   "dzu": "Dz.U. 2025 poz. 1881",
+   "eli": "DU/2025/1881",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 46,
+    "votingNumber": 28,
+    "date": "2025-12-04",
+    "yes": 432,
+    "no": 1,
+    "abstain": 0,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "1348",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych",
+   "projectTitle": "Poselski projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych",
+   "description": "projekt dotyczy rozszerzenia zwolnienia podatkowego na nagrody rzeczowe przyznawane medalistom igrzysk olimpijskich, paraolimpijskich i igrzysk głuchych przez uprawnione organizacje sportowe oraz dodanie finalistów igrzysk Olimpiad Specjalnych do adresatów normy",
+   "dzu": "Dz.U. 2026 poz. 424",
+   "eli": "DU/2026/424",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 51,
+    "votingNumber": 76,
+    "date": "2026-02-13",
+    "yes": 422,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 38,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2106",
+   "title": "o zmianie ustawy o wymianie informacji podatkowych z innymi państwami oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o wymianie informacji podatkowych z innymi państwami oraz niektórych innych ustaw",
+   "description": "projekt dotyczy wprowadzenia zasad dotyczących raportowania i automatycznej wymiany informacji podatkowych o transakcjach z wykorzystaniem kryptoaktywów. Wymiana tych informacji ma służyć zwalczaniu oszustw i unikania opodatkowania. Nowe prawo dostosowuje polskie przepisy do rozwiązań, które obowiązują w Unii Europejskiej. Nowe przepisy obejmują również rozwiązania, które wynikają z międzynarodowych standardów opracowanych przez OECD. Projekt umożliwi ponadto centralne składanie deklaracji na potrzeby tzw. opodatkowania wyrównawczego (central filing). Deklaracja ta będzie składana w całej UE na podstawie określonego wzoru.",
+   "dzu": "Dz.U. 2026 poz. 347",
+   "eli": "DU/2026/347",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 51,
+    "votingNumber": 71,
+    "date": "2026-02-13",
+    "yes": 403,
+    "no": 20,
+    "abstain": 0,
+    "notParticipating": 37,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2390",
+   "title": "o zmianie ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy wprowadzenia podstawy prawnej do obniżenia stawek akcyzy w drodze rozporządzenia ministra właściwego do spraw finansów publicznych",
+   "dzu": "Dz.U. 2026 poz. 414",
+   "eli": "DU/2026/414",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 54,
+    "votingNumber": 21,
+    "date": "2026-03-27",
+    "yes": 436,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 24,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2272",
+   "title": "o zmianie ustawy o systemie monitorowania drogowego  i kolejowego przewozu towarów oraz obrotu paliwami opałowymi oraz niektórych  innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o systemie monitorowania drogowego  i kolejowego przewozu towarów oraz obrotu paliwami opałowymi oraz niektórych  innych ustaw",
+   "description": "projekt dotyczy uszczelnienia systemu podatkowego (dot. produkcji i sprzedaży betonu towarowego); rozszerzenia systemu SENT, obsługiwanego przez Krajową Administrację Skarbową",
+   "dzu": null,
+   "eli": null,
+   "veto": true,
+   "signed": false,
+   "vote": {
+    "sitting": 55,
+    "votingNumber": 39,
+    "date": "2026-04-17",
+    "yes": 236,
+    "no": 194,
+    "abstain": 0,
+    "notParticipating": 30,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2319",
+   "title": "o zmianie ustawy o postępowaniu egzekucyjnym w administracji",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o postępowaniu egzekucyjnym w administracji",
+   "description": "projekt dotyczy uruchomienia portalu eLicytacje, prowadzonego przez Krajową Administrację Skarbową. Będzie to elektroniczny systemem sprzedaży m.in. ruchomości (np. samochodów) i nieruchomości należących do dłużników podatkowych. Portal pozwoli na przeprowadzanie licytacji i sprzedaży z wolnej ręki online, zwiększając dostęp do informacji i zapewniając większą przejrzystość procesów egzekucyjnych.",
+   "dzu": "Dz.U. 2026 poz. 739",
+   "eli": "DU/2026/739",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 55,
+    "votingNumber": 12,
+    "date": "2026-04-17",
+    "yes": 438,
+    "no": 1,
+    "abstain": 0,
+    "notParticipating": 21,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2352",
+   "title": "o zmianie ustawy - Ordynacja podatkowa",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Ordynacja podatkowa",
+   "description": "projekt dotyczy dostosowania stanu prawnego do sytuacji, w której interpretacje indywidualne wydawane przez poszczególnych wójtów, burmistrzów i prezydentów miast będą zamieszczane (w formie zanonimizowanej) w jednej, wspólnej i powszechnie dostępnej bazie interpretacji podatkowych, tj. w Biuletynie Informacji Publicznej na stronie podmiotowej urzędu obsługującego ministra właściwego do spraw finansów publicznych - aktualnie funkcję tę pełni dedykowany System Informacji Celno-Skarbowej EUREKA. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2026 poz. 825",
+   "eli": "DU/2026/825",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 56,
+    "votingNumber": 14,
+    "date": "2026-04-30",
+    "yes": 440,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 19,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2287",
+   "title": "o zmianie ustawy - Ordynacja podatkowa oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Ordynacja podatkowa oraz niektórych innych ustaw",
+   "description": "projekt dotyczy m.in.: wprowadzenia uproszczeń dotyczących schematów podatkowych (MDR), czyli określonych działań podatkowych, które trzeba zgłaszać do urzędu; ułatwiona zostaje płatność podatków np.: każdy będzie mógł zapłacić podatek za podatnika - do 5 tys. zł.; zmniejszą się formalności podatkowe: nowe przepisy zakładają m.in., że jeśli nadpłata podatku wynika z korekty deklaracji, urząd sam ją rozliczy. Oznacza to, że wyjaśnienie od podatnika będzie wymagane tylko wtedy, gdy nadpłata przekroczy 10 tys. zł., ponadto, urząd skarbowy będzie mógł skorygować drobne błędy w deklaracji podatkowej do 10 tys. zł bez zbędnej korespondencji z podatnikiem; ułatwiony zostaje zwrot opłaty skarbowej; Wprowadzone zostają jasne zasady oprocentowania zwrotu opłaty skarbowej, co poprawi ochronę podatnika; wprowadzony zostaje szerszy dostęp do akt podatkowych dla Rzecznika Praw Obywatelskich oraz Rzecznika Małych i Średnich Przedsiębiorstw; usprawnione zostają przepisy w Kodeksie karnym skarbowym",
+   "dzu": "Dz.U. 2026 poz. 846",
+   "eli": "DU/2026/846",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 57,
+    "votingNumber": 49,
+    "date": "2026-05-15",
+    "yes": 243,
+    "no": 0,
+    "abstain": 194,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2288",
+   "title": "o zmianie ustawy - Ordynacja podatkowa oraz ustawy - Kodeks karny skarbowy",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy - Ordynacja podatkowa oraz ustawy - Kodeks karny skarbowy",
+   "description": "projekt dotyczy zmian w Ordynacji podatkowej w obszarze instytucji przedawnienia; ponadto m.in.: uchylenia art. 44 § 2 Kodeksu karnego skarbowego, zawierającego przesłankę przedawnienia karalności czynu także w przypadku przedawnienia należności publicznoprawnej w związku z projektowanym uchyleniem art. 70 § 6 pkt 1 Ordynacji podatkowej",
+   "dzu": null,
+   "eli": null,
+   "veto": true,
+   "signed": false,
+   "vote": {
+    "sitting": 57,
+    "votingNumber": 107,
+    "date": "2026-05-15",
+    "yes": 241,
+    "no": 199,
+    "abstain": 0,
+    "notParticipating": 20,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2445",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "description": "projekt dotyczy wydłużenia na stałe terminu na przesyłanie Jednolitego Pliku Kontrolnego, w związku z tym podatnicy będą mogli przesyłać księgi rachunkowe, w tym ewidencję środków trwałych i wartości niematerialnych, do końca siódmego miesiąca po zakończeniu roku podatkowego",
+   "dzu": "Dz.U. 2026 poz. 779",
+   "eli": "DU/2026/779",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 57,
+    "votingNumber": 50,
+    "date": "2026-05-15",
+    "yes": 439,
+    "no": 0,
+    "abstain": 0,
+    "notParticipating": 21,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2457",
+   "title": "o zmianie ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy obciążenia akcyzą e-papierosów w takiej samej wysokości, w jakiej obciążone są e-papierosy z grzałką elektryczną",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 57,
+    "votingNumber": 47,
+    "date": "2026-05-15",
+    "yes": 231,
+    "no": 23,
+    "abstain": 174,
+    "notParticipating": 32,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2489",
+   "title": "o zmianie ustawy o podatku od spadków i darowizn",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od spadków i darowizn",
+   "description": "projekt dotyczy wydłużenia o rok zwolnienia od podatku od spadków i darowizn dla środków przeznaczonych na usuwanie skutków powodzi, jaka miała miejsce we wrześniu 2024 r.",
+   "dzu": "Dz.U. 2026 poz. 775",
+   "eli": "DU/2026/775",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 57,
+    "votingNumber": 48,
+    "date": "2026-05-15",
+    "yes": 437,
+    "no": 0,
+    "abstain": 1,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2549",
+   "title": "o zmianie niektórych ustaw w celu wsparcia przedsiębiorstw żeglugowych oraz stworzenia warunków  ich funkcjonowania pod polską banderą",
+   "projectTitle": "Rządowy projekt ustawy o zmianie niektórych ustaw w celu wsparcia przedsiębiorstw żeglugowych oraz stworzenia warunków  ich funkcjonowania pod polską banderą",
+   "description": "projekt dotyczy przywrócenia możliwości korzystania z podatku tonażowego przez przedsiębiorców żeglugowych, zwolnienia dochodów marynarzy z podatku PIT niezależnie od obywatelstwa marynarza oraz liczby dni przepracowanych w roku, rozwiązania problemu zaopatrywania statków w produkty lecznicze i wyroby medyczne, które są obowiązkowym wyposażeniem apteczek okrętowych oraz wdrożenia do polskiego prawa poprawki (z 2022 r.) do Konwencji o pracy na morzu (z 2006 r.) oraz doprecyzowania niektórych przepisów ustawy (z 15 sierpnia 2015 r.) o pracy na morzu. Projekt realizuje priorytet polityki Rady Ministrów.",
+   "dzu": "Dz.U. 2026 poz. 1079",
+   "eli": "DU/2026/1079",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 60,
+    "votingNumber": 43,
+    "date": "2026-06-19",
+    "yes": 431,
+    "no": 0,
+    "abstain": 4,
+    "notParticipating": 25,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2684",
+   "title": "o podatku od nadzwyczajnych zysków osiągniętych w okresie od marca do grudnia 2026 r. ze zbycia paliw ciekłych",
+   "projectTitle": "Rządowy projekt ustawy o podatku od nadzwyczajnych zysków ze zbycia paliw ciekłych osiągniętych w okresie od marca do grudnia 2026 r.",
+   "description": "projekt dotyczy wprowadzenia czasowego podatku od nadzwyczajnych zysków osiąganych przez przedsiębiorstwa zajmujące się produkcją i handlem paliwami sprowadzanymi z zagranicy. Nowe przepisy mają pomóc sfinansować działania chroniące przed skutkami gwałtownego wzrostu cen paliw wywołanego kryzysem na światowych rynkach energii.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 60,
+    "votingNumber": 23,
+    "date": "2026-06-19",
+    "yes": 231,
+    "no": 201,
+    "abstain": 1,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2580",
+   "title": "o osobistych kontach inwestycyjnych",
+   "projectTitle": "Rządowy projekt ustawy o osobistych kontach inwestycyjnych",
+   "description": "projekt dotyczy wprowadzenia nowych, dobrowolnych i bezpłatnych narzędzi do oszczędzania oraz inwestowania - Osobiste Konto Inwestycyjne (OKI). Rozwiązanie umożliwi inwestowanie w akcje, obligacje oraz inne instrumenty finansowe z pełnym zwolnieniem od podatku dochodowego do 100 tys. zł. Dla aktywów oszczędnościowych, takich jak lokaty czy obligacje oszczędnościowe, zwolnienie wyniesie do 25 tys. zł. Projekt stanowi realizację priorytetów rządu. Nowe przepisy zaczną obowiązywać od 2027 roku.",
+   "dzu": "Dz.U. 2026 poz. 1098",
+   "eli": "DU/2026/1098",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 61,
+    "votingNumber": 21,
+    "date": "2026-07-03",
+    "yes": 427,
+    "no": 5,
+    "abstain": 1,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2677",
+   "title": "o zmianie ustawy o podatku od towarów i usług oraz ustawy o zasadach ewidencji i identyfikacji podatników i płatników",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług oraz ustawy o zasadach ewidencji i identyfikacji podatników i płatników",
+   "description": "projekt dotyczy wprowadzenia rozwiązań ograniczających część obowiązków administracyjnych dla przedsiębiorców, które ułatwią prowadzenie działalności m.in. poprzez likwidację wybranych obowiązków administracyjnych, tj.: (1) zniesienie obowiązku składania oddzielnej informacji o spisie z natury; (2) rezygnację z obowiązku wykazywania w JPK_VAT podstawy opodatkowania przy zakupach od podatników spoza terytorium Polski, towarów i usług objętych zwolnieniem z podatku; (3) likwidację obowiązku zapłaty VAT w ciągu 14 dni przy zakupie środka transportu z innego państwa UE; (4) ograniczenie naliczania odsetek od VAT przy imporcie w sytuacjach, gdy opóźnienie płatności jest niezależne od podatnika",
+   "dzu": "Dz.U. 2026 poz. 1270",
+   "eli": "DU/2026/1270",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 62,
+    "votingNumber": 15,
+    "date": "2026-07-17",
+    "yes": 420,
+    "no": 21,
+    "abstain": 0,
+    "notParticipating": 19,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2033",
+   "title": "o zmianie ustawy o podatkach i opłatach lokalnych, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku od czynności cywilnoprawnych",
+   "projectTitle": "Poselski projekt ustawy o zmianie ustawy o podatkach i opłatach lokalnych oraz ustawy o dochodach jednostek samorządu terytorialnego",
+   "description": "projekt dotyczy likwidacji dotychczasowej opłaty miejscowej i wprowadzenia nowej opłaty lokalnej - opłaty turystycznej. Opłata turystyczna będzie mogła być wprowadzona przez każdą gminę, w której osoby fizyczne zatrzymują się na pobyt w celach turystycznych, wypoczynkowych lub szkoleniowych",
+   "dzu": "Dz.U. 2026 poz. 1354",
+   "eli": "DU/2026/1354",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 132,
+    "date": "2026-09-18",
+    "yes": 269,
+    "no": 141,
+    "abstain": 28,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2127",
+   "title": "o zmianie ustawy o podatkach i opłatach lokalnych, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku od czynności cywilnoprawnych",
+   "projectTitle": "Poselski projekt ustawy o zmianie ustawy o podatkach i opłatach lokalnych oraz ustawy o dochodach jednostek samorządu terytorialnego",
+   "description": "projekt dotyczy likwidacji dotychczasowej opłaty miejscowej i wprowadzenia nowej opłaty turystycznej, przy jednoczesnym zachowaniu bez zmian opłaty uzdrowiskowej",
+   "dzu": "Dz.U. 2026 poz. 1354",
+   "eli": "DU/2026/1354",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 132,
+    "date": "2026-09-18",
+    "yes": 269,
+    "no": 141,
+    "abstain": 28,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2837",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy uproszczenia obowiązków informacyjnych dla przedsiębiorców dotyczących cen transferowych, czyli rozliczeń pomiędzy firmami należącymi do tej samej grupy kapitałowej. Nowe rozwiązania ograniczą obowiązki administracyjne, zmniejszą koszty prowadzenia działalności gospodarczej i ułatwią wywiązywanie się z obowiązków sprawozdawczych. Nowe przepisy realizują działania deregulacyjne rządu",
+   "dzu": "Dz.U. 2026 poz. 1371",
+   "eli": "DU/2026/1371",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 83,
+    "date": "2026-09-18",
+    "yes": 296,
+    "no": 141,
+    "abstain": 1,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2838",
+   "title": "o zmianie ustawy o podatku od towarów i usług",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług",
+   "description": "projekt dotyczy nowelizacji obowiązujących przepisów ustawy o VAT w związku ze zmianami przepisów unijnych dotyczących zniesienia zwolnienia z należności celnych przesyłek o wartości do 150 euro. Nowe przepisy realizują działania deregulacyjne rządu.",
+   "dzu": "Dz.U. 2026 poz. 1446",
+   "eli": "DU/2026/1446",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 84,
+    "date": "2026-09-18",
+    "yes": 393,
+    "no": 2,
+    "abstain": 16,
+    "notParticipating": 49,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2839",
+   "title": "o zmianie ustawy o podatku akcyzowym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym",
+   "description": "projekt dotyczy wprowadzenia jednolitych zasad opodatkowania papierosów elektronicznych oraz urządzeń do waporyzacji, czyli urządzeń przeznaczonych do podgrzewania płynów lub innych wyrobów wykorzystywanych do inhalacji",
+   "dzu": "Dz.U. 2026 poz. 1398",
+   "eli": "DU/2026/1398",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 85,
+    "date": "2026-09-18",
+    "yes": 242,
+    "no": 21,
+    "abstain": 165,
+    "notParticipating": 32,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2872",
+   "title": "o zmianie ustawy o podatkach i opłatach lokalnych, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku od czynności cywilnoprawnych",
+   "projectTitle": "Poselski projekt ustawy o zmianie ustawy o podatkach i opłatach lokalnych oraz o zmianie niektórych innych ustaw",
+   "description": "projekt dotyczy wprowadzenia opłaty turystyczno-rekompensacyjnej w miejsce opłaty miejscowej",
+   "dzu": "Dz.U. 2026 poz. 1354",
+   "eli": "DU/2026/1354",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 132,
+    "date": "2026-09-18",
+    "yes": 269,
+    "no": 141,
+    "abstain": 28,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3099",
+   "title": "o zmianie ustawy o podatkach i opłatach lokalnych, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku od czynności cywilnoprawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatkach i opłatach lokalnych, ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku od czynności cywilnoprawnych",
+   "description": "projekt dotyczy podwyższenia z 1 tys. zł do 3 tys. zł limitu zwolnienia z podatku od czynności cywilnoprawnych przy sprzedaży rzeczy ruchomych. Chodzi np. o odsprzedawane przez osoby prywatne meble, telefony, komputery czy sprzęt AGD. Nowe przepisy wprowadzają także zmiany dotyczące opłaty miejscowej i opłaty uzdrowiskowej.",
+   "dzu": "Dz.U. 2026 poz. 1354",
+   "eli": "DU/2026/1354",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 132,
+    "date": "2026-09-18",
+    "yes": 269,
+    "no": 141,
+    "abstain": 28,
+    "notParticipating": 22,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3100",
+   "title": "o podatku od nadzwyczajnych zysków osiągniętych w okresie od marca do grudnia 2026 r. ze zbycia paliw ciekłych",
+   "projectTitle": "Rządowy projekt ustawy o podatku od nadzwyczajnych zysków osiągniętych w okresie od marca do grudnia 2026 r. ze zbycia paliw ciekłych",
+   "description": "projekt dotyczy wprowadzenia czasowego podatku od nadzwyczajnych zysków osiąganych przez przedsiębiorstwa zajmujące się produkcją i handlem paliwami sprowadzanymi z zagranicy. Nowe przepisy pomogą sfinansować rządowe działania, które mają chronić obywateli przed skutkami wzrostu cen paliw wywołanego kryzysem na światowych rynkach energii, czyli tzw. CPN.",
+   "dzu": "Dz.U. 2026 poz. 1287",
+   "eli": "DU/2026/1287",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 65,
+    "votingNumber": 115,
+    "date": "2026-09-18",
+    "yes": 237,
+    "no": 202,
+    "abstain": 1,
+    "notParticipating": 20,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "2007",
+   "title": "o zmianie ustawy o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi oraz ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych",
+   "projectTitle": "Poselski projekt ustawy o zmianie ustawy o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi oraz ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych",
+   "description": "projekt dotyczy ograniczenia nadmiernej dostępności alkoholu i przeciwdziałanie jego promocji poprzez m.in całkowity zakaz reklamy i promocji wszystkich napojów alkoholowych, w tym piwa; zakaz sprzedaży alkoholu na stacjach paliw, w zakładach leczniczych oraz w godzinach nocnych na terenie całego kraju (22-6), wprowadzenie obowiązku weryfikacji wieku przy zakupie; zakaz sprzedaży alkoholu poniżej sumy podatku akcyzowego i VAT; uregulowanie sprzedaży internetowej wyłącznie z odbiorem osobistym po okazaniu dokumentu tożsamości",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 66,
+    "votingNumber": 156,
+    "date": "2026-10-08",
+    "yes": 400,
+    "no": 29,
+    "abstain": 4,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3074",
+   "title": "o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "description": "projekt dotyczy usprawnienia zasad rozliczania VAT przy sprzedaży on-line towarów i usług w innych państwach Unii Europejskiej. Zmiany mają ułatwić przedsiębiorcom korzystanie z unijnego systemu OSS, ograniczyć obowiązki związane z rejestracją VAT w różnych krajach UE oraz doprecyzować przepisy dotyczące sprzedaży wysyłkowej.",
+   "dzu": "Dz.U. 2026 poz. 1509",
+   "eli": "DU/2026/1509",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 66,
+    "votingNumber": 113,
+    "date": "2026-10-08",
+    "yes": 284,
+    "no": 0,
+    "abstain": 135,
+    "notParticipating": 41,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3135",
+   "title": "o zmianie ustawy o podatku od towarów i usług",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług",
+   "description": "projekt dotyczy zlikwidowania preferencyjnego opodatkowania napojów będących bezalkoholowymi odpowiednikami napojów alkoholowych, jak również napojów energetyzujących; podwyższenia stawki VAT do 23% na określone napoje bezalkoholowe, które zawierają w swoim składzie co najmniej 20% soku owocowego, warzywnego lub owocowo-warzywnego",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 60,
+    "date": "2026-10-22",
+    "yes": 233,
+    "no": 74,
+    "abstain": 133,
+    "notParticipating": 20,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3136",
+   "title": "o zmianie ustawy o podatku akcyzowym oraz ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku akcyzowym oraz ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych",
+   "description": "projekt dotyczy podwyżki stawek akcyzy w 2027 r. na alkohol etylowy, piwo, wino, napoje fermentowane i wyroby pośrednie; przeznaczenia dodatkowych wpływów z akcyzy na zwiększenie dotacji podmiotowej dla Narodowego Funduszu Zdrowia, a tym samym na finansowanie świadczeń opieki zdrowotnej",
+   "dzu": "Dz.U. 2026 poz. 1540",
+   "eli": "DU/2026/1540",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 63,
+    "date": "2026-10-22",
+    "yes": 377,
+    "no": 59,
+    "abstain": 1,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3137",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "description": "projekt dotyczy ujednolicenia m.in. zasad opodatkowania świadczeń na zaspokojenie potrzeb rodziny, rozszerzenia zwolnienia podatkowego dla organizacji pozarządowych oraz doprecyzowania zasad obliczania daniny solidarnościowej",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 50,
+    "date": "2026-10-22",
+    "yes": 230,
+    "no": 206,
+    "abstain": 1,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3147",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "description": "projekt dotyczy podniesienia pierwszego progu podatkowego do 130 tys. zł oraz wprowadzenie 24% stawki dla dochodów powyżej 130 tys. zł do 150 tys. zł., trzecia, najwyższa stawka 32% będzie dotyczyć dochodów powyżej 150 tys. zł.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 42,
+    "date": "2026-10-22",
+    "yes": 240,
+    "no": 58,
+    "abstain": 135,
+    "notParticipating": 27,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3148",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych",
+   "description": "projekt dotyczy uszczelnienia zasad opodatkowania fundacji rodzinnych i ograniczenia możliwości wykorzystywania preferencji podatkowych niezgodnie z celem, dla którego powstała ta instytucja. Nowe przepisy obejmą m.in. dochody zagraniczne, krótkoterminowy najem nieruchomości oraz sprzedaż majątku wniesionego do fundacji. Jednocześnie projekt rozszerza zwolnienie z PIT na świadczenia otrzymywane przez dzieci i wnuki rodzeństwa fundatora oraz dzieci i wnuki jego pasierba.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 52,
+    "date": "2026-10-22",
+    "yes": 362,
+    "no": 60,
+    "abstain": 3,
+    "notParticipating": 35,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3149",
+   "title": "o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne",
+   "description": "projekt dotyczy m.in. przedłużenia na kolejne 10 lat ulgi podatkowej na robotyzację, zwiększenia o 100% ulgi dla honorowych dawców krwi oraz likwidacji ulgi na internet.",
+   "dzu": "Dz.U. 2026 poz. 1541",
+   "eli": "DU/2026/1541",
+   "veto": false,
+   "signed": true,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 48,
+    "date": "2026-10-22",
+    "yes": 371,
+    "no": 8,
+    "abstain": 58,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3155",
+   "title": "o zmianie ustawy o zdrowiu publicznym",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o zdrowiu publicznym",
+   "description": "projekt dotyczy zwiększenia skuteczności poboru opłaty od środków spożywczych (tzw. opłaty cukrowej) przez rozszerzenie katalogu napojów objętych opłatą oraz aktualizację jej wysokości. Projektowane zmiany umożliwią również zwiększenie przychodów Narodowego Funduszu Zdrowia, które zostaną przeznaczone na działania edukacyjne i profilaktyczne oraz na finansowanie świadczeń opieki zdrowotnej, w szczególności w zakresie leczenia chorób związanych z nieprawidłowymi\nnawykami żywieniowymi, takich jak nadwaga i otyłość.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 65,
+    "date": "2026-10-22",
+    "yes": 233,
+    "no": 76,
+    "abstain": 128,
+    "notParticipating": 23,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3159",
+   "title": "o wsparciu przedsiębiorców sektorów energochłonnych z tytułu ponoszenia kosztów energii elektrycznej",
+   "projectTitle": "Rządowy projekt ustawy o wsparciu przedsiębiorców sektorów energochłonnych z tytułu ponoszenia kosztów energii elektrycznej",
+   "description": "projekt dotyczy wprowadzenia programu wsparcia dla przedsiębiorstw energochłonnych, który pozwoli czasowo obniżyć koszty energii elektrycznej. Firmy korzystające z pomocy będą jednocześnie zobowiązane do inwestowania w zieloną transformację, czyli m.in. w odnawialne źródła energii, magazyny energii, poprawę efektywności energetycznej i elektryfikację. Źródłem finansowania mają być m.in. dodatkowe wpływy z czasowego podwyższenia podatku CIT dla największych firm z wybranych segmentów sektora energetycznego i paliwowego.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 67,
+    "votingNumber": 121,
+    "date": "2026-10-22",
+    "yes": 230,
+    "no": 64,
+    "abstain": 145,
+    "notParticipating": 21,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3245",
+   "title": "o zmianie ustawy o podatku od towarów i usług oraz ustawy o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług oraz ustawy o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw",
+   "description": "projekt dotyczy odroczenia do końca 2027 r. nakładania kar pieniężnych za błędy związane z Krajowym Systemem e-Faktur (KSeF). Chodzi także o przedłużenie o 3,5 roku mechanizmu odwrotnego obciążenia VAT dla gazu, energii elektrycznej i uprawnień do emisji gazów cieplarnianych. Proponowane przepisy ułatwią przedsiębiorcom dostosowanie się do nowego systemu oraz zapewnią większą przewidywalność prowadzenia działalności gospodarczej.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 68,
+    "votingNumber": 65,
+    "date": "2026-11-06",
+    "yes": 437,
+    "no": 1,
+    "abstain": 1,
+    "notParticipating": 21,
+    "decision": "uchwalono"
+   }
+  },
+  {
+   "process": "3138",
+   "title": "o zmianie ustawy o podatku dochodowym od osób prawnych oraz ustawy o portach i przystaniach morskich",
+   "projectTitle": "Rządowy projekt ustawy o zmianie ustawy o podatku dochodowym od osób prawnych oraz ustawy o portach i przystaniach morskich",
+   "description": "projekt dotyczy dostosowania zasad korzystania ze zwolnienia podatkowego przez podmioty zarządzające portami morskimi do wymogów unijnego prawa pomocy publicznej. Zwolnieniem zostaną objęte m.in. wydatki na: budowę, wymianę i modernizację infrastruktury portowej oraz infrastruktury zapewniającej dostęp do portów od strony morza i lądu, pogłębianie, planowanie tych inwestycji, zadania o charakterze niegospodarczym, m.in. związane z bezpieczeństwem ruchu morskiego, ochroną przeciwpożarową i ochroną portów.",
+   "dzu": null,
+   "eli": null,
+   "veto": false,
+   "signed": false,
+   "vote": {
+    "sitting": 69,
+    "votingNumber": 64,
+    "date": "2026-11-19",
+    "yes": 231,
+    "no": 136,
+    "abstain": 55,
+    "notParticipating": 38,
+    "decision": "uchwalono"
+   }
+  }
+ ]
+}
