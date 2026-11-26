@@ -9,6 +9,7 @@ import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } 
 import { buildHierarchy } from './lib/government.js';
 import { renderSitemap } from './ui/sitemap-view.js';
 import { readSkin, saveSkin, applySkin } from './lib/ui-skin.js';
+import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 
 export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
@@ -91,6 +92,7 @@ export function createApp(doc, win, data) {
       a.classList.toggle('on', on);
       if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     }
+    applyLifeView(doc, lifeView);
     const h1 = view.querySelector('h1');
     doc.title = (r.name === 'profile' || r.name === 'person' || r.name === 'official' || r.name === 'government') && h1 ? `${h1.textContent} · Sejmbook` : 'Sejmbook';
   }
@@ -129,6 +131,7 @@ export function createApp(doc, win, data) {
   let storage = null;
   try { storage = win.localStorage ?? null; } catch { /* storage blocked */ }
   let skin = applySkin(doc, readSkin(storage));
+  let lifeView = applyLifeView(doc, readLifeView(storage));
 
   function onClick(e) {
     const el = e.target.closest('[data-action]');
@@ -137,6 +140,11 @@ export function createApp(doc, win, data) {
     if (action === 'ui-skin') {
       skin = applySkin(doc, el.dataset.skin);
       saveSkin(storage, skin);
+      return;
+    }
+    if (action === 'life-view') {
+      lifeView = applyLifeView(doc, el.dataset.life);
+      saveLifeView(storage, lifeView);
       return;
     }
     if (action === 'theme') {

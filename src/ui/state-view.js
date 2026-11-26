@@ -1,6 +1,6 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
-import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead } from './render.js';
+import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl } from './render.js';
 import { clubFamily } from '../lib/career.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
 import { personKey, roleSpectrum } from '../lib/career.js';
@@ -122,7 +122,7 @@ const yearOf = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ?
  * The life line of an official, in the same look as on MP profiles: their state roles over time since 1989,
  * government roles in one lane and the top offices in another, coloured by party.
  */
-export function roleLine(roles, today) {
+export function roleLine(roles, today, more = '') {
   const now = yearOf(today);
   const items = roles.map((r) => ({ r, from: yearOf(r.from), to: yearOf(r.to ?? today) })).filter((x) => x.from != null && x.to != null);
   if (!items.length) return '';
@@ -146,7 +146,7 @@ export function roleLine(roles, today) {
         </div>
         <div class="life-axis"><span>${start}</span><span>${String(today).slice(0, 4)}</span></div>
       </div>
-      <p class="life-first" data-testid="life-first">Pierwsza funkcja państwowa: <b>${String(first.r.from).slice(0, 4)}</b> (${esc(first.r.office)}).</p>`;
+      <p class="life-first bio" data-testid="life-first">Pierwsza funkcja państwowa w roku <b>${String(first.r.from).slice(0, 4)}</b>: ${esc(first.r.office)}.${more ? ` ${more}` : ''}</p>`;
 }
 
 /** #urzad-<slug>: a person who never sat in the Sejm, in the same layout as an MP profile. */
@@ -161,6 +161,10 @@ export function renderOfficial(ctx, slug, today) {
   const partyNow = [...p.roles].find((r) => r.party)?.party ?? p.party;
   const yrs = (y) => `${Math.round(y * 10) / 10}`.replace('.', ',');
   const news = personNewsPost(ctx, p.name);
+  const roleText = sp
+    ? `<span data-testid="spectrum-text">W funkcjach państwowych ${listPl(sp.parts.map((x) => `ok. ${yrs(x.years)} ${x.years >= 1.5 && x.years < 4.5 ? 'lata' : 'lat'} w <b>${esc(x.label)}</b> (${esc(years(x.from, x.to === today ? null : x.to))})`))}.</span>`
+    : '';
+  const line = roleLine(p.roles, today, roleText);
   return `
   <section data-view="official" data-official="${esc(p.slug)}">
     <div class="profile-top panel">
@@ -176,9 +180,8 @@ export function renderOfficial(ctx, slug, today) {
     </div>
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
-      ${roleLine(p.roles, today)}
-      ${sp ? `<p class="life-first spectrum-text" data-testid="spectrum-text">W funkcjach państwowych: ${sp.parts.map((x) => `<b>ok. ${yrs(x.years)} ${x.years >= 1.5 && x.years < 4.5 ? 'lata' : 'lat'} w ${esc(x.label)}</b> (${esc(years(x.from, x.to === today ? null : x.to))})`).join(', ')}.</p>`
-        : '<p class="muted">Bez partii: te funkcje nie mają w źródle przypisanej partii.</p>'}
+      ${line || (roleText ? `<p class="life-first bio">${roleText}</p>` : '')}
+      ${sp ? '' : '<p class="muted">Bez partii: te funkcje nie mają w źródle przypisanej partii.</p>'}
     </section>
     <div class="profile-cols">
       <aside class="panel about">

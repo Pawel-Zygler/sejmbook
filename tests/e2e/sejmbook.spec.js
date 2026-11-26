@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 
 test('home feed shows the seat bar, without Frequent Flyer posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.logo .logo-name')).toHaveText('sejmbook');
+  await expect(page.locator('.topbar .logo .logo-name')).toHaveText('sejmbook');
   await expect(page.locator('[data-testid="logo-tag"]')).toHaveText('wydarzenia w Rzeczypospolitej');
   await expect(page.locator('.mini-rank')).toHaveCount(0);
   await expect(page.locator('#view')).not.toContainText('Rekord kadencji');
@@ -212,7 +212,8 @@ test('Spektrum partyjne: career sentence under the profile card, sources in the 
   const panel = page.getByTestId('spectrum');
   await expect(panel).toBeVisible();
   await expect(panel).toContainText('Spektrum partyjne');
-  await expect(panel.getByTestId('spectrum-text')).toContainText('W Sejmie III RP:');
+  await expect(panel.getByTestId('spectrum-text')).toContainText('W Sejmie III RP');
+  await expect(panel.getByTestId('life-first')).toContainText('Pierwsza aktywność polityczna w wieku');
   await expect(panel.locator('.spectrum-bar')).toHaveCount(0);
   const top = await page.locator('.profile-top').boundingBox();
   expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);
@@ -480,18 +481,24 @@ test('Interface switch: modern look on, remembered after reload, then back to cl
 test.describe('modern look', () => {
   test.beforeEach(async ({ page }) => { await page.addInitScript(() => { try { localStorage.setItem('sejmbook-ui', 'modern'); } catch { /* ignore */ } }); });
 
-  test('section chips are the navigation, the header card holds the search', async ({ page }) => {
+  test('a normal header: section links and search in the header card, no chip row, a full footer', async ({ page }) => {
     await page.goto(PAGE);
-    await expect(page.locator('.topnav')).toBeHidden();
-    const chips = page.locator('.sidenav');
-    await expect(chips).toBeVisible();
-    await expect(chips.locator('a.on')).toHaveText(/Feed$/);
+    const nav = page.locator('.topnav');
+    await expect(nav).toBeVisible();
+    await expect(page.locator('.sidenav')).toBeHidden();
+    await expect(nav.locator('a.on')).toHaveText('Feed');
+    const textTransform = await nav.locator('a').first().evaluate((el) => getComputedStyle(el).textTransform);
+    expect(textTransform).toBe('none');
     await expect(page.locator('#top-search')).toBeVisible();
-    await chips.getByRole('link', { name: 'Frequent Flyer' }).click();
+    const foot = page.getByTestId('site-foot');
+    await expect(foot.locator('.foot-col a')).toHaveCount(8);
+    await expect(foot).toContainText('Źródła danych');
+    await nav.getByRole('link', { name: 'Frequent Flyer' }).click();
     await expect(page).toHaveURL(/#frequent-flyer$/);
     await expect(page.getByTestId('page-head')).toBeVisible();
     const hero = await page.getByTestId('page-head').evaluate((el) => getComputedStyle(el).backgroundImage);
     expect(hero).toContain('gradient');
+    await expect(page.getByTestId('rank-switch')).toBeVisible();
     await page.locator('#top-search').fill('mejza');
     await expect(page.locator('.mp-card')).toHaveCount(1);
   });
@@ -529,4 +536,20 @@ test('Profile: tax votes card under attendance opens the list of laws, in both s
     const vw = page.viewportSize().width;
     expect(box.x + box.width).toBeLessThanOrEqual(vw + 1);
   }
+});
+
+test('Life line: two views in tabs, the choice is remembered', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-390`);
+  const panel = page.getByTestId('spectrum');
+  await expect(panel.getByTestId('life-line')).toBeVisible();
+  await expect(panel.getByTestId('life-steps')).toBeHidden();
+  await panel.getByRole('button', { name: 'Kroki' }).click();
+  await expect(panel.getByTestId('life-steps')).toBeVisible();
+  await expect(panel.getByTestId('life-line')).toBeHidden();
+  await expect(panel.getByRole('button', { name: 'Etapy' })).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByTestId('spectrum').getByTestId('life-steps')).toBeVisible();
+  await page.getByTestId('spectrum').getByRole('button', { name: 'Oś czasu' }).click();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(0);
 });

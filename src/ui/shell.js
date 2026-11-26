@@ -37,7 +37,32 @@ export const SHELL_HTML = `
   <aside id="aside" aria-label="Kluby"></aside>
 </div>
 <footer class="site-foot" data-testid="site-foot">
-  <p><b>Źródła danych:</b> API Sejmu (posłowie, kadencje III–X, kluby, głosowania, interpelacje), polska Wikipedia (posłowie I–II kadencji, rządy i urzędy III RP), Wikidata (partie i życiorysy), Wikimedia Commons (zdjęcia urzędników), oficjalne strony urzędów (prezydent.pl, gov.pl, senat.gov.pl, nik.gov.pl) i media (loty posłów). Klub posła to ostatni klub w danej kadencji.</p>
-  <p><a href="#mapa">Mapa strony</a> · <a href="#changelog">Changelog</a></p>
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#start" aria-label="Sejmbook, strona główna"><span class="logo-name">sejmbook</span><span class="logo-tag">wydarzenia w Rzeczypospolitej</span></a>
+        <p>Co robią posłowie, rząd i urzędy III RP. Tylko oficjalne i sprawdzone źródła.</p>
+      </div>
+      <nav class="foot-col" aria-label="Sekcje w stopce">
+        <p class="foot-h">Sekcje</p>
+        <a href="#start">Feed</a>
+        <a href="#poslowie">Posłowie</a>
+        <a href="#panstwo">Państwo i rządy</a>
+      </nav>
+      <nav class="foot-col" aria-label="Rankingi w stopce">
+        <p class="foot-h">Rankingi</p>
+        <a href="#frequent-flyer">Frequent Flyer</a>
+        <a href="#frekwencja">Frekwencja</a>
+        <a href="#partie">Najwięcej partii</a>
+      </nav>
+      <nav class="foot-col" aria-label="Serwis w stopce">
+        <p class="foot-h">Serwis</p>
+        <a href="#changelog">Changelog</a>
+        <a href="#mapa">Mapa strony</a>
+      </nav>
+    </div>
+    <p class="foot-src"><b>Źródła danych:</b> API Sejmu (posłowie, kadencje III–X, kluby, głosowania, interpelacje), polska Wikipedia (posłowie I–II kadencji, rządy i urzędy III RP), Wikidata (partie i życiorysy), Wikimedia Commons (zdjęcia urzędników), oficjalne strony urzędów (prezydent.pl, gov.pl, senat.gov.pl, nik.gov.pl) i media (loty posłów). Klub posła to ostatni klub w danej kadencji.</p>
+    <p class="foot-bottom">Sejmbook · wydarzenia w Rzeczypospolitej</p>
+  </div>
 </footer>
 `;

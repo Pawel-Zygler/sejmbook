@@ -240,6 +240,13 @@ describe('Frekwencja', () => {
     expect(card.querySelector('[data-testid="tax-cut"] details')).not.toBeNull();
     expect(card.textContent).not.toContain('Źródło:');
   });
+  it('every MP profile has the tax votes card (e.g. Krzysztof Bosak), also without any recorded vote', () => {
+    const missing = app.ctx.mps.filter((m) => { nav(`#posel-${m.id}`); return !$('[data-testid="profile-taxes"]'); }).map((m) => m.id);
+    expect(missing).toEqual([]);
+    const bosak = app.ctx.mps.find((m) => m.name.includes('Krzysztof') && m.name.includes('Bosak'));
+    nav(`#posel-${bosak.id}`);
+    expect($('[data-testid="tax-sum-raise"]').textContent).toMatch(/^\d+ ustaw/);
+  }, 60000);
   it('Frequent Flyer rows and directory cards carry the pie badge', () => {
     nav('#frequent-flyer');
     expect($$('[data-testid="ranking"] tbody tr [data-testid="att-badge"]').length).toBeGreaterThan(20);
@@ -309,14 +316,18 @@ describe('Spektrum partyjne', () => {
     expect(panel.previousElementSibling.classList.contains('profile-top')).toBe(true);
     expect(panel.textContent).toContain('Spektrum partyjne');
     expect(panel.textContent).toContain(`${rows.length} kadencj`);
-    expect(panel.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP: .+, razem ok\. /);
+    const bio = panel.querySelector('[data-testid="life-first"]');
+    expect(bio.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP \d+ kadencj.+, razem ok\. /);
+    expect(bio.textContent).toMatch(/^Pierwsza aktywność polityczna /);
+    expect(panel.querySelectorAll('[data-testid="spectrum-text"]')).toHaveLength(1);
     expect(panel.querySelector('.spectrum-bar')).toBeNull();
     expect(panel.querySelector('[data-testid="person-route"]')).toBeNull();
   });
   it('first-term MPs get one sentence with a single term', () => {
     const id = Object.entries(careerData.career).find(([, r]) => r.length === 1 && r[0].term === 10)[0];
     nav(`#posel-${id}`);
-    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP: 1 kadencja w .+ \(X\), razem ok\. /);
+    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP 1 kadencja \(X\) w .+, razem ok\. /);
+    expect($('[data-testid="life-first"]').textContent).toMatch(/w roku 2023, jako nowy członek .+ w Sejmie\./);
   });
 });
 
@@ -377,11 +388,30 @@ describe('Spektrum partyjne: life line', () => {
   });
 });
 
+describe('Life line views (tabs)', () => {
+  it('switches every life line between the time axis, steps and stages', () => {
+    nav('#posel-390');
+    const root = document.documentElement;
+    expect(root.dataset.life).toBe('os');
+    const tabs = $$('[data-testid="life-tabs"] [data-action="life-view"]');
+    expect(tabs.map((b) => b.textContent)).toEqual(['Oś czasu', 'Kroki']);
+    expect($('[data-testid="life-stages"]')).toBeNull();
+    click($('[data-action="life-view"][data-life="kroki"]'));
+    expect(root.dataset.life).toBe('kroki');
+    expect($('[data-action="life-view"][data-life="kroki"]').getAttribute('aria-pressed')).toBe('true');
+    expect($$('[data-testid="life-steps"] .life-step').length).toBeGreaterThan(4);
+    nav('#posel-1');
+    expect($('[data-action="life-view"][data-life="kroki"]').getAttribute('aria-pressed')).toBe('true');
+    click($('[data-action="life-view"][data-life="os"]'));
+    expect(root.dataset.life).toBe('os');
+  });
+});
+
 describe('Spektrum partyjne: PZPR without dates', () => {
   it('Włodzimierz Czarzasty: hatched PZPR span and first activity in the PRL', () => {
     nav('#posel-58');
     expect($('[data-lane="parties"] .life-seg.uncertain').textContent).toContain('PZPR');
-    expect($('[data-testid="life-first"]').textContent).toContain('jeszcze w PRL (PZPR; lata nieznane)');
+    expect($('[data-testid="life-first"]').textContent).toContain('Pierwsza aktywność polityczna jeszcze w PRL: PZPR (lata nieznane).');
   });
 });
 
@@ -502,6 +532,7 @@ describe('Profiles of former MPs', () => {
     nav(leader.getAttribute('href'));
     expect($('[data-testid="spectrum-text"]').textContent.split(' w ').length).toBeGreaterThan(2);
     expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
+    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']);
     expect($('#view').textContent).not.toContain('Dane: API Sejmu');
   });
 });

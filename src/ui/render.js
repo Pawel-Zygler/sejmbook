@@ -4,6 +4,7 @@ import { currentHolders, currentMembers } from '../lib/government.js';
 import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
+import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
@@ -575,8 +576,87 @@ export function plural(n, one, few, many) {
 const fmtYears = (y) => `${y.toFixed(1).replace('.', ',').replace(/,0$/, '')} ${y >= 1.5 && y < 4.5 ? 'lata' : 'lat'}`;
 
 /** "Spektrum partyjne": a bar showing how the MP's years in the Sejm split between clubs. */
-/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms. */
-export function renderLifeLine(ctx, mp) {
+const UNKNOWN_CLUB = /^nieznany klub$/i;
+/** "w PiS", or "w nieznanym klubie" when the source has no club. */
+const inClub = (label) => (UNKNOWN_CLUB.test(label) ? 'w <b>nieznanym klubie</b>' : `w <b>${esc(label)}</b>`);
+
+/** Polish list: "a", "a i b", "a, b i c". */
+export const listPl = (xs) => (xs.length < 2 ? (xs[0] ?? '') : `${xs.slice(0, -1).join(', ')} i ${xs.at(-1)}`);
+
+/** The first political activity in prose, e.g. "Pierwsza aktywność polityczna w wieku 58 lat, w roku 2019, jako nowy członek KO / PO w Sejmie." */
+export function firstActivityText(tl) {
+  if (tl.prlUnknown.length) return `Pierwsza aktywność polityczna <b>jeszcze w PRL</b>: ${esc(listPl(tl.prlUnknown))} (lata nieznane).`;
+  if (tl.firstYear == null) return '';
+  const what = tl.firstKind === 'sejm'
+    ? (UNKNOWN_CLUB.test(tl.firstLabel) ? 'jako nowy członek Sejmu' : `jako nowy członek ${esc(tl.firstLabel)} w Sejmie`)
+    : tl.firstKind === 'opposition' ? `w opozycji: ${esc(tl.firstLabel)}` : `jako członek partii ${esc(tl.firstLabel)}`;
+  return `Pierwsza aktywność polityczna w wieku ${tl.firstYear - tl.birth} lat, w roku <b>${tl.firstYear}</b>${tl.firstInPrl ? ', jeszcze w PRL' : ''}, ${what}.`;
+}
+
+/** The Sejm career in prose, e.g. "W Sejmie III RP 2 kadencje (IX–X), obie w KO / PO, razem ok. 7 lat." */
+export function careerSentence(sp) {
+  if (!sp?.parts?.length) return '';
+  const n = sp.terms?.length ?? sp.parts.reduce((s, p) => s + p.terms.length, 0);
+  const kad = (k) => `${k} ${plural(k, 'kadencja', 'kadencje', 'kadencji')}`;
+  const total = `razem ok. ${fmtYears(sp.totalYears)}`;
+  if (sp.parts.length === 1) {
+    const p = sp.parts[0];
+    const all = n === 1 ? '' : n === 2 ? 'obie ' : 'wszystkie ';
+    return `W Sejmie III RP <b>${kad(n)}</b> (${termRanges(p.terms)})${n === 1 ? ' ' : `, ${all}`}${inClub(p.label)}, ${total}.`;
+  }
+  const parts = [...sp.parts].sort((a, b) => Math.min(...a.terms) - Math.min(...b.terms));
+  return `W Sejmie III RP <b>${kad(n)}</b>: ${listPl(parts.map((p) => `${p.terms.length} ${inClub(p.label)} (${termRanges(p.terms)})`))}, ${total}.`;
+}
+
+const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
+const LANE_WORD = { opposition: 'Opozycja w PRL', parties: 'Partia', sejm: 'Sejm' };
+
+/** Every stretch of the life line in time order, with its lane, for the "Kroki" view. */
+function lifeStretches(tl) {
+  return tl.lanes.flatMap((l) => l.items.map((it) => ({ ...it, lane: l.id })))
+    .sort((a, b) => a.from - b.from || (a.lane === 'sejm') - (b.lane === 'sejm'));
+}
+const stretchYears = (it) => (it.uncertain ? 'w PRL, lata nieznane' : it.open ? `${it.from}–dziś` : it.from === it.to ? `${it.to}` : `${it.from}–${it.to}`);
+const stretchTitle = (it) => {
+  if (it.lane === 'parties') return (it.full ?? it.label).replace(/, lata członkostwa nieznane$/, '');
+  if (it.lane === 'sejm' && it.terms?.length) return `${it.label.split(' · ')[0]}, ${it.terms.length === 1 ? 'kadencja' : 'kadencje'} ${termRanges(it.terms)}`;
+  return it.label;
+};
+
+/** "Kroki": the life as a vertical list of dated steps (birth, 1989, each membership and Sejm stretch). */
+export function lifeSteps(tl) {
+  const steps = [{ year: tl.birth, title: 'Urodzenie', note: '', color: 'var(--muted)', kind: 'birth' }];
+  if (tl.bornInPrl) steps.push({ year: tl.prlEnd, title: 'Początek III RP', note: `w wieku ${tl.prlEnd - tl.birth} lat`, color: 'var(--accent)', kind: 'rp' });
+  for (const it of lifeStretches(tl)) {
+    steps.push({
+      year: it.uncertain ? null : it.from,
+      title: `${LANE_WORD[it.lane]}: ${stretchTitle(it)}`,
+      note: it.uncertain ? 'w PRL, lata nieznane' : `${stretchYears(it)} · od ${it.from - tl.birth}. roku życia`,
+      color: it.color, kind: it.lane, uncertain: it.uncertain,
+    });
+  }
+  steps.sort((a, b) => (a.year ?? tl.prlEnd - 0.5) - (b.year ?? tl.prlEnd - 0.5));
+  return `<ol class="life-steps">${steps.map((s) => `<li class="life-step" data-kind="${s.kind}"><span class="life-step-year">${s.year ?? 'PRL'}</span><span class="life-step-dot${s.uncertain ? ' uncertain' : ''}" style="--seg:${esc(s.color)}"></span><span class="life-step-text"><b>${esc(s.title)}</b>${s.note ? `<span class="muted">${esc(s.note)}</span>` : ''}</span></li>`).join('')}
+        <li class="life-step" data-kind="now"><span class="life-step-year">${tl.now}</span><span class="life-step-dot" style="--seg:var(--line)"></span><span class="life-step-text"><b>Dziś</b><span class="muted">${tl.now - tl.birth} lat</span></span></li></ol>`;
+}
+
+/** Decade marks for the "Oś czasu" view, skipping those too close to the ends or to 1989. */
+function decades(tl) {
+  const out = [];
+  for (let y = Math.ceil((tl.birth + 1) / 10) * 10; y < tl.now; y += 10) {
+    if (y - tl.birth < 4 || tl.now - y < 4 || (tl.bornInPrl && Math.abs(y - tl.prlEnd) < 4)) continue;
+    out.push(y);
+  }
+  return out;
+}
+
+/** Tabs that switch every life line between the three views. */
+function lifeTabs() {
+  return `<div class="life-tabs" role="group" aria-label="Widok linii życia" data-testid="life-tabs">${LIFE_VIEWS.map((v) => `<button type="button" data-action="life-view" data-life="${v}" aria-pressed="${v === DEFAULT_LIFE_VIEW}">${LIFE_VIEW_LABEL[v]}</button>`).join('')}</div>`;
+}
+
+/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms; under it a short bio in prose. */
+export function renderLifeLine(ctx, mp, sp = null) {
   const now = Number(ctx.fetchedAt.slice(0, 4));
   const tl = lifeTimeline(ctx, mp, now);
   if (!tl) return '';
@@ -585,30 +665,30 @@ export function renderLifeLine(ctx, mp) {
   const lane = (l) => `
         <div class="life-lane" data-lane="${l.id}">
           <span class="life-lane-label">${esc(l.label)}</span>
-          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
+          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
   const qid = ctx.life?.mps?.[mp.id]?.qid;
   const undatedTip = tl.undated.length
     ? infoTip(`Partie i organizacje bez dat w Wikidata: ${tl.undated.join(', ')}.`, qid ? `https://www.wikidata.org/wiki/${qid}` : '')
     : '';
-  const first = tl.prlUnknown.length
-    ? `Pierwsza aktywność polityczna: <b>jeszcze w PRL</b> (${tl.prlUnknown.map(esc).join(', ')}; lata nieznane).`
-    : tl.firstYear != null
-    ? `Pierwsza aktywność polityczna: <b>${tl.firstYear}</b> (${esc(tl.firstWhat)}), w wieku ${tl.firstYear - tl.birth} lat${tl.firstInPrl ? ', jeszcze w PRL' : ''}.`
-    : '';
+  const career = careerSentence(sp);
+  const first = [firstActivityText(tl), career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
+  const ticks = decades(tl);
   return `
-      <div class="life" data-testid="life-line">
+      ${lifeTabs()}
+      <div class="life-v life-v-os life" data-testid="life-line">
         <div class="life-eras" aria-hidden="true">
           ${tl.bornInPrl ? `<span class="life-era prl" style="left:0;width:${prlW}%">PRL</span>` : ''}
           <span class="life-era rp" style="left:${tl.bornInPrl ? prlW : 0}%;width:${(100 - Number(prlW)).toFixed(2)}%">III RP</span>
         </div>
         <div class="life-lanes">${tl.lanes.map(lane).join('')}
-          ${tl.bornInPrl ? `<div class="life-overlay"><span class="life-1989" style="left:${left(tl.prlEnd)}%" title="4 czerwca 1989: początek III RP"></span></div>` : ''}
+          <div class="life-overlay">${ticks.map((y) => `<span class="life-decade" style="left:${left(y)}%"></span>`).join('')}${tl.bornInPrl ? `<span class="life-1989" style="left:${left(tl.prlEnd)}%" title="4 czerwca 1989: początek III RP"></span>` : ''}</div>
         </div>
-        <div class="life-axis"><span>ur. ${tl.birth}</span>${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
+        <div class="life-axis"><span>ur. ${tl.birth}</span>${ticks.map((y) => `<span class="life-axis-tick" style="left:${left(y)}%">${y}</span>`).join('')}${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
-      ${first || undatedTip ? `<p class="life-first" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
+      <div class="life-v life-v-kroki" data-testid="life-steps">${lifeSteps(tl)}</div>
+      ${first || undatedTip ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 
 const spPct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
@@ -635,28 +715,26 @@ function routeBlock(route) {
   return `<div data-testid="person-route"><h3 class="spectrum-h3">Ścieżka partyjna</h3>${partyRoute(route.path)}<p class="muted">${route.count} ${partyWord(route.count)}${route.jumps ? `, ${route.jumps} ${plural(route.jumps, 'przeskok', 'przeskoki', 'przeskoków')}` : ''}</p></div>`;
 }
 
-/** The Sejm career in words, e.g. "W Sejmie III RP: 4 kadencje w PiS (V–VI, VIII–IX), razem ok. 14 lat." */
+/** The Sejm career on its own, for profiles without a life line (no birth year). */
 export function spectrumText(sp) {
-  if (!sp?.parts?.length) return '';
-  const parts = [...sp.parts].sort((a, b) => Math.min(...a.terms) - Math.min(...b.terms));
-  const one = (p) => `<b>${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')} w ${esc(p.label)}</b> (${termRanges(p.terms)})`;
-  return `<p class="life-first spectrum-text" data-testid="spectrum-text">W Sejmie III RP: ${parts.map(one).join(', ')}, razem ok. ${fmtYears(sp.totalYears)}.</p>`;
+  const s = careerSentence(sp);
+  return s ? `<p class="life-first bio" data-testid="spectrum-text">${s}</p>` : '';
 }
 
-/** The "Spektrum partyjne" panel: the life line and the Sejm career in one sentence. Same on every profile. */
+/** The "Spektrum partyjne" panel: the life line with a short bio in prose under it. Same on every profile. */
 function spectrumPanel(lifeLine, sp) {
   return `
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
       ${lifeLine}
-      ${spectrumText(sp)}
+      ${lifeLine.includes('data-testid="spectrum-text"') ? '' : spectrumText(sp)}
       ${!lifeLine && !sp ? '<p class="muted">Brak danych o klubach tej osoby w Sejmie.</p>' : ''}
     </section>`;
 }
 
 export function renderCareerSpectrum(ctx, mp) {
   const sp = careerSpectrum(ctx.career, mp.id, ctx.fetchedAt);
-  const lifeLine = renderLifeLine(ctx, mp);
+  const lifeLine = renderLifeLine(ctx, mp, sp);
   if (!sp && !lifeLine) return '';
   return spectrumPanel(lifeLine, sp);
 }
@@ -687,7 +765,7 @@ export function renderPerson(ctx, key) {
   const year = Number(ctx.fetchedAt.slice(0, 4));
   // The same life line as on an MP profile, from this person's terms (no Wikidata parties for earlier MPs).
   const lifeCtx = { ...ctx, life: null, career: { terms: [...info.values()], career: { person: rows } } };
-  const lifeLine = birthYear ? renderLifeLine(lifeCtx, { id: 'person', birthYear }) : '';
+  const lifeLine = birthYear ? renderLifeLine(lifeCtx, { id: 'person', birthYear }, route.path.length ? sp : null) : '';
   return `
   <section data-view="person" data-person="${esc(key)}">
     <div class="profile-top panel">
