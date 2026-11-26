@@ -1,1 +1,156 @@
-{ "rule": "", "laws": [] }
+{
+ "rule": "Liczą się ustawy uchwalone przez Sejm X kadencji w III czytaniu (głosowanie nad całością projektu), także zawetowane lub jeszcze nieopublikowane. Podwyżka: nowy podatek, wyższa stawka, szersza podstawa opodatkowania albo likwidacja lub zawężenie ulgi czy zwolnienia. Obniżka: niższa stawka, nowa lub szersza ulga albo zwolnienie, wyższy próg lub limit. Podatki to także akcyza, VAT, cła i opłata cukrowa oraz opłaty lokalne; nie liczymy składek (np. zdrowotnej) ani opłaty mocowej. Pomijamy zmiany proceduralne, sprawozdawcze, terminy, KSeF, kary i kontrolę. Jeśli opis projektu w API Sejmu wymienia zmiany w obu kierunkach, ustawa jest mieszana i nie wchodzi do żadnej z dwóch statystyk.",
+ "criteriaSource": "opis projektu (pole description) w API Sejmu: https://api.sejm.gov.pl/sejm/term10/processes/{nr}",
+ "laws": [
+  {
+   "process": "692",
+   "direction": "raise",
+   "reason": "podwyżka akcyzy na papierosy, tytoń podgrzewany i płyny do e-papierosów"
+  },
+  {
+   "process": "674",
+   "direction": "raise",
+   "reason": "nowy podatek: globalny podatek minimalny (opodatkowanie wyrównawcze) dla dużych grup"
+  },
+  {
+   "process": "981",
+   "direction": "raise",
+   "reason": "akcyza na urządzenia do waporyzacji i substytuty wyrobów tytoniowych"
+  },
+  {
+   "process": "1752",
+   "direction": "raise",
+   "reason": "wyższy CIT dla banków"
+  },
+  {
+   "process": "1753",
+   "direction": "raise",
+   "reason": "uszczelnienie opodatkowania fundacji rodzinnych"
+  },
+  {
+   "process": "1825",
+   "direction": "raise",
+   "reason": "podwyżka akcyzy na alkohol o 15% w 2026 r. i 10% w 2027 r."
+  },
+  {
+   "process": "1836",
+   "direction": "raise",
+   "reason": "podwyżka opłaty cukrowej"
+  },
+  {
+   "process": "2457",
+   "direction": "raise",
+   "reason": "akcyza na e-papierosy jak na e-papierosy z grzałką"
+  },
+  {
+   "process": "2684",
+   "direction": "raise",
+   "reason": "nowy podatek od nadzwyczajnych zysków ze sprzedaży paliw (pierwsza ustawa)"
+  },
+  {
+   "process": "3100",
+   "direction": "raise",
+   "reason": "nowy podatek od nadzwyczajnych zysków ze sprzedaży paliw"
+  },
+  {
+   "process": "3135",
+   "direction": "raise",
+   "reason": "VAT 23% na wybrane napoje (koniec preferencyjnej stawki)"
+  },
+  {
+   "process": "3136",
+   "direction": "raise",
+   "reason": "podwyżka akcyzy na alkohol w 2027 r."
+  },
+  {
+   "process": "3155",
+   "direction": "raise",
+   "reason": "więcej napojów objętych opłatą cukrową i aktualizacja jej wysokości"
+  },
+  {
+   "process": "673",
+   "direction": "cut",
+   "reason": "preferencje podatkowe dla firm zatrudniających żołnierzy WOT i Aktywnej Rezerwy"
+  },
+  {
+   "process": "1232",
+   "direction": "cut",
+   "reason": "wyższy limit zwolnienia z VAT: z 200 do 240 tys. zł"
+  },
+  {
+   "process": "1281",
+   "direction": "cut",
+   "reason": "łagodniejszy zwrot podatku po utracie zwolnienia w SSE/PSI, korzystniejsze zasady dla PGK"
+  },
+  {
+   "process": "1798",
+   "direction": "cut",
+   "reason": "łatwiejszy dostęp do przyspieszonej amortyzacji w gminach o wysokim bezrobociu"
+  },
+  {
+   "process": "1826",
+   "direction": "cut",
+   "reason": "zwolnienie z CIT rozszerzone na fundusze spoza UE"
+  },
+  {
+   "process": "1835",
+   "direction": "cut",
+   "reason": "odliczenie w PIT strat na papierach umorzonych przez BFG"
+  },
+  {
+   "process": "1837",
+   "direction": "cut",
+   "reason": "spadkobiercy nie tracą zwolnienia z podatku przez niezawinione spóźnienie"
+  },
+  {
+   "process": "1881",
+   "direction": "cut",
+   "reason": "niższy podatek od wydobycia miedzi i srebra w latach 2026–2028"
+  },
+  {
+   "process": "1348",
+   "direction": "cut",
+   "reason": "zwolnienie z PIT nagród rzeczowych dla medalistów igrzysk"
+  },
+  {
+   "process": "2390",
+   "direction": "cut",
+   "reason": "podstawa do obniżania stawek akcyzy rozporządzeniem"
+  },
+  {
+   "process": "2489",
+   "direction": "cut",
+   "reason": "przedłużenie zwolnienia z podatku od spadków i darowizn dla powodzian"
+  },
+  {
+   "process": "2549",
+   "direction": "cut",
+   "reason": "powrót podatku tonażowego, zwolnienie z PIT dochodów marynarzy"
+  },
+  {
+   "process": "2580",
+   "direction": "cut",
+   "reason": "Osobiste Konta Inwestycyjne zwolnione z podatku od zysków"
+  },
+  {
+   "process": "3147",
+   "direction": "cut",
+   "reason": "pierwszy próg PIT podniesiony do 130 tys. zł, stawka 24% między 130 a 150 tys. zł"
+  },
+  {
+   "process": "2033",
+   "direction": "mixed",
+   "reason": "nowa opłata turystyczna w miejsce miejscowej (każda gmina może ją wprowadzić) i wyższy limit zwolnienia z PCC (z 1 do 3 tys. zł); wspólne głosowanie nad drukami 2033, 2127, 2872 i 3099"
+  },
+  {
+   "process": "3148",
+   "direction": "mixed",
+   "reason": "uszczelnienie opodatkowania fundacji rodzinnych, a jednocześnie szersze zwolnienie z PIT dla części rodziny fundatora"
+  },
+  {
+   "process": "3149",
+   "direction": "mixed",
+   "reason": "dłuższa ulga na robotyzację i wyższa ulga dla krwiodawców, ale likwidacja ulgi internetowej"
+  }
+ ]
+}
