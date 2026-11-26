@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Feed jak w serwisie społecznościowym';
-const NEWEST_LINE = 'Feed: Feed jak w serwisie społecznościowym';
+const NEWEST = 'Czytelne partie na kartach posłów';
+const NEWEST_LINE = 'Posłowie: Czytelne partie na kartach posłów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -445,7 +445,7 @@ describe('Posłowie: all terms', () => {
     expect(cards.length).toBe(termsData.people.filter((p) => p.terms.some((t) => t.t === 3)).length);
     click($('#aside button.filter[data-club="UW"]'));
     expect($$('.term-card').length).toBe(termsData.people.filter((p) => p.terms.some((t) => t.t === 3 && t.club === 'UW')).length);
-    expect($('.term-card .chip').getAttribute('title')).toBe('Klub Parlamentarny Unii Wolności');
+    expect($('.term-card .club-tag').getAttribute('title')).toBe('Klub Parlamentarny Unii Wolności');
     click($('#aside [data-action="dir-term"][data-term="10"]'));
     expect($$('.mp-card').length).toBe(app.ctx.mps.filter((m) => m.active).length);
     expect($('.term-card')).toBeNull();

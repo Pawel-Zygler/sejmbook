@@ -4,7 +4,8 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
 const ctx = createContext({ mpsData, clubsData, flightsData, airportsData });
@@ -276,28 +277,51 @@ describe('bundled media', () => {
 });
 
 describe('mpCardMeta', () => {
-  it('puts club, district and attendance in one row separated by dots', () => {
+  it('puts the party tag on its own line, then district and attendance separated by a dot', () => {
     const mp = ctx.mpsById.get(70);
     const html = mpCardMeta(ctx, mp);
     expect(html).toContain('class="mp-card-meta"');
     expect(html).toContain(`>okr. ${mp.districtNum}</span>`);
     expect(html).toContain(`title="okręg ${mp.districtNum} · ${mp.districtName}"`);
-    expect(html.indexOf('chip')).toBeLessThan(html.indexOf('mp-card-district'));
-    const dots = html.match(/class="meta-dot"/g) ?? [];
-    expect(dots.length).toBe(html.includes('att-badge') ? 2 : 1);
+    expect(html.indexOf('club-tag')).toBeLessThan(html.indexOf('mp-card-meta'));
+    const row = html.slice(html.indexOf('mp-card-meta'));
+    expect(row).not.toContain('club-tag');
+    const dots = row.match(/class="meta-dot"/g) ?? [];
+    expect(dots.length).toBe(row.includes('att-badge') ? 1 : 0);
     expect(html.replace(/<[^>]*>/g, '')).not.toMatch(/ [–-] /);
   });
 });
 
-describe('mpCardMeta with logos', () => {
-  it('shows only the club logo (name in alt and title) when there is one', () => {
+describe('mpCardMeta party tag', () => {
+  it('shows the club short name as text (never the tiny logo), with the full name in the title', () => {
     const withMedia = { ...ctx, media: { photos: {}, logos: { KO: 'data:image/png;base64,BBB' } } };
     const ko = [...ctx.mpsById.values()].find((m) => m.club === 'KO');
     const html = mpCardMeta(withMedia, ko);
-    expect(html).toContain('class="chip has-logo logo-only"');
-    expect(html).toContain('alt="KO"');
-    const pis = [...ctx.mpsById.values()].find((m) => m.club === 'PiS');
-    expect(mpCardMeta(withMedia, pis)).not.toContain('logo-only');
+    expect(html).not.toContain('<img');
+    expect(html).toMatch(/class="club-tag"[^>]*>KO<\/span>/);
+    expect(html).toContain(`title="${ctx.clubs.get('KO').name}"`);
+  });
+  it('gives every club, Niezrzeszeni included, a tag with readable (AA) text', () => {
+    for (const c of ctx.clubs.values()) {
+      const mp = [...ctx.mpsById.values()].find((m) => m.club === c.id);
+      if (!mp) continue;
+      const html = mpCardMeta(ctx, mp);
+      const [, bg, ink] = html.match(/--tag-bg:(#[0-9a-f]{6});--tag-ink:(#[0-9a-f]{6})/);
+      expect(contrast(bg, ink), c.short).toBeGreaterThanOrEqual(4.5);
+      expect(html).toContain(`>${c.short}</span>`);
+    }
+  });
+});
+
+describe('clubTag', () => {
+  it('escapes the label and title and falls back to grey for a missing colour', () => {
+    const html = clubTag('<X>', null, 'A "B"');
+    expect(html).toContain('&lt;X&gt;');
+    expect(html).toContain('title="A &quot;B&quot;"');
+    expect(html).toContain('--tag-bg:#6a717a;--tag-ink:#ffffff');
+  });
+  it('uses dark text on yellow (Polska 2050)', () => {
+    expect(clubTag('Polska 2050', '#d9a400')).toContain('--tag-bg:#d9a400;--tag-ink:#14161a');
   });
 });
 

@@ -105,7 +105,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Feed jak w serwisie społecznościowym');
+  await expect(post).toContainText('Czytelne partie na kartach posłów');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -138,7 +138,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Feed jak w serwisie społecznościowym');
+  await expect(page.locator('.news-post').first()).toContainText('Czytelne partie na kartach posłów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -178,17 +178,34 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });
 
-test('MP cards: club, district and attendance in one row under the photo', async ({ page }) => {
+test('MP cards: a readable party tag under the name, then district and attendance in one row', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   const card = page.locator('.mp-card').first();
+  const tag = card.getByTestId('club-tag');
   const meta = card.getByTestId('mp-card-meta');
+  await expect(tag).toBeVisible();
   await expect(meta).toBeVisible();
+  // Text, not a tiny logo: at least 12px type and 20px tall, inside the card.
+  const style = await tag.evaluate((el) => { const s = getComputedStyle(el); return { size: parseFloat(s.fontSize), bg: s.backgroundColor, color: s.color }; });
+  expect(style.size).toBeGreaterThanOrEqual(12);
+  expect(style.bg).not.toBe(style.color);
+  const box = await tag.boundingBox();
+  expect(box.height).toBeGreaterThanOrEqual(20);
+  await expect(tag.locator('img')).toHaveCount(0);
+  const name = await card.locator('.mp-card-name').boundingBox();
+  const row = await meta.boundingBox();
+  expect(box.y).toBeGreaterThanOrEqual(name.y + name.height - 1);
+  expect(row.y).toBeGreaterThanOrEqual(box.y + box.height - 1);
   const tops = await meta.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().top + c.getBoundingClientRect().height / 2)));
   expect(Math.max(...tops) - Math.min(...tops)).toBeLessThanOrEqual(3);
-  const photo = await card.locator('.avatar').boundingBox();
-  const row = await meta.boundingBox();
-  expect(row.y).toBeGreaterThan(photo.y + photo.height);
-  expect(row.width).toBeLessThanOrEqual((await card.boundingBox()).width);
+  const cardBox = await card.boundingBox();
+  expect(row.width).toBeLessThanOrEqual(cardBox.width);
+  // Every tag in the grid fits its card, the longest club names included.
+  const overflow = await page.locator('.mp-card').evaluateAll((cards) => cards.filter((c) => {
+    const t = c.querySelector('.club-tag');
+    return t && t.getBoundingClientRect().right > c.getBoundingClientRect().right;
+  }).length);
+  expect(overflow).toBe(0);
 });
 
 test('Spektrum partyjne: bar under the profile card', async ({ page }) => {

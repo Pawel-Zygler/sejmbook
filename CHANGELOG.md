@@ -2,6 +2,10 @@
 
 Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
 
+## 2026-11-26
+
+- **Posłowie: Czytelne partie na kartach posłów.** Zamiast małych logotypów każda karta posła pokazuje teraz nazwę klubu na jego kolorze.
+
 ## 2026-11-24
 
 - **Feed: Feed jak w serwisie społecznościowym.** Każdy komunikat, głosowanie i interpelacja to osobny wpis od osoby, która go opublikowała, ułożony chronologicznie.

@@ -280,8 +280,9 @@ h2 { font-size: 1.1rem; }
 .chip.has-logo::before { display: none; }
 .club-logo { width: 16px; height: 16px; object-fit: contain; flex: none; border-radius: 3px; background: #fff; }
 .club-logo-lg { width: 22px; height: 22px; margin-right: 8px; vertical-align: middle; }
-.mp-card-meta .chip.logo-only { padding: 2px 4px; }
-.mp-card-meta .chip.logo-only .club-logo { width: 20px; height: 20px; }
+/* MP cards: solid party tag (short name on the party colour, AA contrast computed in lib/color.js) */
+.club-tag { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: var(--tag-bg, #6a717a); color: var(--tag-ink, #fff); font-size: 0.8rem; font-weight: 700; line-height: 1.25; letter-spacing: 0.01em; padding: 3px 10px; border-radius: 6px; }
+.mp-card .club-tag { margin-top: -2px; }
 
 /* Spektrum partyjne */
 .spectrum { margin-bottom: 16px; }

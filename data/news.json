@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-partie-na-kartach",
+      "date": "2026-11-26",
+      "title": "Czytelne partie na kartach posłów",
+      "section": "Posłowie",
+      "body": "Zamiast małych logotypów każda karta posła pokazuje teraz nazwę klubu na jego kolorze.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-24-feed-wpisy",
       "date": "2026-11-24",
       "title": "Feed jak w serwisie społecznościowym",
