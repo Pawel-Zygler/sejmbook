@@ -67,7 +67,7 @@ export function renderProfileAttendance(ctx, mp) {
     </div>
     ${cur?.strip ? dayStrip(att.days, cur.strip) : ''}
     ${multi ? `<ul class="att-terms">${termRows}</ul>` : ''}
-    <footer class="post-foot"><a class="btn" href="${hrefFor({ name: 'attendance' })}">Ranking frekwencji</a><span class="src">Źródło: <a href="https://api.sejm.gov.pl/sejm/term10/votings" target="_blank" rel="noopener">API Sejmu, głosowania</a></span></footer>
+    <footer class="post-foot"><a class="btn" href="${hrefFor({ name: 'attendance' })}">Ranking frekwencji</a></footer>
   </article>`;
 }
 

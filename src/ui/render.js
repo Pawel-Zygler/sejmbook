@@ -16,6 +16,15 @@ const FALLBACK_CLUB = { id: '?', short: '?', name: 'Nieznany klub', color: '#7d8
 const clubOf = (ctx, mp) => ctx.clubs.get(mp.club) ?? { ...FALLBACK_CLUB, id: mp.club, short: mp.club };
 
 /**
+ * A small "i" icon that shows where data comes from on hover or focus, with a link to the source.
+ * Keeps source notes out of sight until someone asks for them.
+ */
+export function infoTip(text, href = '', label = 'Źródło') {
+  const link = href ? ` <a href="${esc(href)}" target="_blank" rel="noopener">${esc(hostOf(href) || 'źródło')}</a>` : '';
+  return `<span class="info-tip" tabindex="0" role="button" aria-label="${esc(label)}" data-testid="info-tip"><span class="info-tip-i" aria-hidden="true">i</span><span class="info-tip-body" role="tooltip">${esc(text)}${link}</span></span>`;
+}
+
+/**
  * "Kontakt": only official or sourced data. E-mail from the Sejm API, Facebook from Wikidata (P2013).
  * Phone and office addresses are not in the Sejm's open data, so we say so and link the MP's page on sejm.gov.pl.
  */
@@ -26,14 +35,13 @@ export function renderContact(ctx, mp) {
   const page = sejmProfileUrl(mp.id);
   return `
         <div class="contact" data-testid="contact">
-          <h2>Kontakt</h2>
+          <h2>Kontakt ${infoTip(`E-mail z API Sejmu${fb.length ? ', Facebook z Wikidanych' : ''}${ctx.contacts?.fetchedAt ? `, stan na ${ctx.contacts.fetchedAt}` : ''}.`, `https://api.sejm.gov.pl/sejm/term10/MP/${mp.id}`)}</h2>
           <dl>
             <dt>E-mail</dt><dd data-testid="contact-email">${c?.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : none}</dd>
             <dt>Facebook</dt><dd data-testid="contact-fb">${fb.length ? fb.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https:\/\/www\.facebook\.com\//, 'fb.com/'))}</a>`).join('<br>') : none}</dd>
             <dt>Telefon</dt><dd data-testid="contact-phone"><span class="muted">brak w otwartych danych Sejmu</span></dd>
             <dt>Biuro poselskie</dt><dd data-testid="contact-office"><span class="muted">brak w otwartych danych Sejmu;</span> adresy i telefony biur są na <a href="${esc(page)}" target="_blank" rel="noopener">stronie posła w serwisie Sejmu</a> (sekcja „Biura Poselskie”)</dd>
           </dl>
-          <p class="src">Źródła: e-mail z API Sejmu${fb.length ? ', Facebook z Wikidanych' : ''}${ctx.contacts?.fetchedAt ? `, stan na ${esc(ctx.contacts.fetchedAt)}` : ''}.</p>
         </div>`;
 }
 
@@ -592,6 +600,10 @@ export function renderLifeLine(ctx, mp) {
           <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
+  const qid = ctx.life?.mps?.[mp.id]?.qid;
+  const undatedTip = tl.undated.length
+    ? infoTip(`Partie i organizacje bez dat w Wikidata: ${tl.undated.join(', ')}.`, qid ? `https://www.wikidata.org/wiki/${qid}` : '')
+    : '';
   const first = tl.prlUnknown.length
     ? `Pierwsza aktywność polityczna: <b>jeszcze w PRL</b> (${tl.prlUnknown.map(esc).join(', ')}; lata nieznane).`
     : tl.firstYear != null
@@ -608,8 +620,7 @@ export function renderLifeLine(ctx, mp) {
         </div>
         <div class="life-axis"><span>ur. ${tl.birth}</span>${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
-      ${first ? `<p class="life-first" data-testid="life-first">${first}</p>` : ''}
-      ${tl.undated.length ? `<p class="muted life-undated">Bez dat w Wikidata: ${tl.undated.map(esc).join(', ')}.</p>` : ''}`;
+      ${first || undatedTip ? `<p class="life-first" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 
 const spPct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
@@ -767,9 +778,7 @@ export function renderProfile(ctx, id) {
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
-        ${history.length === 0
-          ? `<article class="post"><p class="post-text">Brak tego posła w opublikowanych zestawieniach lotów. To nie znaczy, że nie latał: media ujawniły tylko czołówki rankingów.</p></article>`
-          : history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
+        ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>
     </div>
   </section>`;
@@ -943,10 +952,10 @@ export function renderAside(ctx, route = null, state = null) {
   if (route?.name === 'directory' && state) return `<div class="panel aside-box aside-filters" data-testid="aside-filters"><h2>Filtry</h2>${directoryFilters(ctx, state.directory)}</div>`;
   if (route?.name === 'flyer' && state) return flyerTotals(ctx, state.flyer);
   const counts = clubCounts(ctx.mps);
-  return `<div class="panel aside-box"><h2>Kluby i koła</h2><ul class="aside-clubs">
+  return `<div class="panel aside-box"><h2>Kluby i koła ${infoTip(`API Sejmu, stan na ${ctx.fetchedAt}.`, 'https://api.sejm.gov.pl/sejm/term10/clubs')}</h2><ul class="aside-clubs">
     ${counts.map((c) => {
       const club = ctx.clubs.get(c.club) ?? FALLBACK_CLUB;
       return `<li><a href="#poslowie" data-action="filter-club" data-club="${esc(c.club)}">${clubLogo(ctx, c.club) ? `<img class="club-logo club-logo-lg" src="${esc(clubLogo(ctx, c.club))}" alt="">` : `<span class="dot" style="--club:${esc(club.color)}"></span>`}${esc(club.short)}</a><b>${c.count}</b></li>`;
     }).join('')}
-  </ul><p class="src">API Sejmu, stan na ${esc(ctx.fetchedAt)}</p></div>`;
+  </ul></div>`;
 }

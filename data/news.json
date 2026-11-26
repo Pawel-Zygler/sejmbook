@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-zrodla-ikonka",
+      "date": "2026-11-26",
+      "title": "Źródła pod ikonką „i”",
+      "section": "Profile",
+      "body": "Źródła danych przy Kontakcie, klubach i partiach bez dat pokazują się dopiero po najechaniu na ikonkę „i”, z linkiem do źródła.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-prostsze-profile",
       "date": "2026-11-26",
       "title": "Prostsze profile, źródła w stopce",

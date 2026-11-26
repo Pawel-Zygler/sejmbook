@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Prostsze profile, źródła w stopce';
-const NEWEST_LINE = 'Profile: Prostsze profile, źródła w stopce';
+const NEWEST = 'Źródła pod ikonką „i”';
+const NEWEST_LINE = 'Profile: Źródła pod ikonką „i”';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -220,6 +220,7 @@ describe('Frekwencja', () => {
     expect(card).not.toBeNull();
     expect(card.querySelectorAll('.day').length).toBe(attendanceData.days.length);
     expect(card.querySelector('.post-head').textContent).not.toContain('API Sejmu');
+    expect(card.textContent).not.toContain('Źródło:');
   });
   it('Frequent Flyer rows and directory cards carry the pie badge', () => {
     nav('#frequent-flyer');

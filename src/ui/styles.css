@@ -547,3 +547,11 @@ h2 { font-size: 1.1rem; }
 .site-foot p { margin: 0 0 6px; max-width: 110ch; }
 .site-foot a { color: var(--muted); }
 .spectrum-text { margin-top: 6px; }
+
+/* Ikonka "i": źródło po najechaniu lub fokusie, z linkiem */
+.info-tip { position: relative; display: inline-flex; vertical-align: middle; margin-left: 4px; cursor: help; outline: none; }
+.info-tip-i { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--muted); color: var(--muted); font: italic 600 11px/14px Georgia, serif; text-align: center; }
+.info-tip:hover .info-tip-i, .info-tip:focus-visible .info-tip-i { color: var(--text, inherit); border-color: currentColor; }
+.info-tip-body { display: none; position: absolute; z-index: 40; top: 100%; left: 50%; transform: translateX(-50%); width: max-content; max-width: min(280px, 80vw); padding: 8px 10px; border-radius: 8px; background: var(--card, #fff); border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(0,0,0,.18); color: var(--muted); font-family: inherit; font-size: 0.78rem; font-weight: 400; font-style: normal; line-height: 1.45; text-transform: none; letter-spacing: 0; white-space: normal; }
+.info-tip:hover .info-tip-body, .info-tip:focus-within .info-tip-body { display: block; }
+.aside-box .info-tip-body { left: auto; right: -8px; transform: none; }

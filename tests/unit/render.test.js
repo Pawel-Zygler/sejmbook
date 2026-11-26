@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
 import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
@@ -50,8 +50,10 @@ describe('views', () => {
     expect(html).toContain('2026 (do 1 listopada)');
     expect(html).toMatch(/≈\s40\s595/); // 115 × 353 km
   });
-  it('profile explains missing flight data instead of implying zero', () => {
-    expect(renderProfile(ctx, 400)).toContain('To nie znaczy, że nie latał');
+  it('profile without flight data shows no flight post and no note about it', () => {
+    const html = renderProfile(ctx, 400);
+    expect(html).not.toContain('zestawieniach lotów');
+    expect(html).not.toContain('flight-post');
   });
   it('profile notes districts without an airport', () => {
     expect(renderProfile(ctx, 400)).toContain('brak połączenia lotniczego z Warszawą');
@@ -461,6 +463,8 @@ describe('renderContact', () => {
     expect(html).toContain('href="mailto:Jan.Nowak@sejm.pl"');
     expect(html).toContain('>fb.com/jan.nowak</a>');
     expect(html).toContain('Facebook z Wikidanych, stan na 2026-11-24');
+    expect(html).toContain('data-testid="info-tip"');
+    expect(html).not.toContain('<p class="src">Źródła:');
     expect(html).toContain('posel.xsp?id=007&amp;type=A');
   });
   it('says "brak danych" when there is nothing', () => {
@@ -636,3 +640,22 @@ describe('portraits of state officials', () => {
   });
 });
 
+
+describe('infoTip', () => {
+  it('hides the source behind an "i" icon with a link', () => {
+    const h = infoTip('API Sejmu, stan na 2026-11-23.', 'https://api.sejm.gov.pl/sejm/term10/clubs');
+    expect(h).toContain('data-testid="info-tip"');
+    expect(h).toContain('tabindex="0"');
+    expect(h).toContain('<span class="info-tip-body" role="tooltip">API Sejmu, stan na 2026-11-23. <a href="https://api.sejm.gov.pl/sejm/term10/clubs" target="_blank" rel="noopener">api.sejm.gov.pl</a></span>');
+  });
+  it('escapes text and works without a link', () => {
+    const h = infoTip('<b>x</b>');
+    expect(h).toContain('&lt;b&gt;x&lt;/b&gt;');
+    expect(h).not.toContain('<a ');
+  });
+  it('the club list keeps its source in the icon, not in a visible line', () => {
+    const h = renderAside(ctx);
+    expect(h).toMatch(/<h2>Kluby i koła <span class="info-tip"/);
+    expect(h).not.toContain('<p class="src">');
+  });
+});
