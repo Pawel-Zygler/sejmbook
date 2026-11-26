@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-wyszukiwarka-glosowan",
+      "date": "2026-11-26",
+      "title": "Wyszukiwarka głosowań posła",
+      "section": "Posłowie",
+      "body": "Na profilu posła wyszukasz każdą ustawę X kadencji i zobaczysz, czy głosował za, przeciw, wstrzymał się, czy go nie było.",
+      "link": {
+        "href": "#posel-32",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-bio-slownie",
       "date": "2026-11-26",
       "title": "Bio słowami, nie cyframi",

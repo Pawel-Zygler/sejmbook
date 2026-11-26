@@ -9,6 +9,7 @@ import { listPl, ageWords, aboutYears, termsWords, termOrdinals } from '../lib/p
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
+import { renderProfileLaws } from './law-view.js';
 import { tagColors } from '../lib/color.js';
 
 export function esc(s) {
@@ -844,6 +845,7 @@ export function renderProfile(ctx, id) {
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
         ${renderProfileTaxes(ctx, mp, { infoTip })}
+        ${renderProfileLaws(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>
     </div>

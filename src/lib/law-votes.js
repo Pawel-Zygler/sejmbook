@@ -13,7 +13,7 @@ export function finalVote(proc) {
     if (st.stageType !== 'SejmReading' || !/III czytanie/.test(st.stageName ?? '')) continue;
     for (const ch of st.children ?? []) {
       const v = ch.voting;
-      if (v && /całość projektu/i.test(`${v.description ?? ''} ${v.topic ?? ''}`)) {
+      if (v && /całoś(ć|cią) projektu/i.test(`${v.description ?? ''} ${v.topic ?? ''}`)) {
         return { sitting: v.sitting, votingNumber: v.votingNumber, date: String(v.date).slice(0, 10), yes: v.yes, no: v.no, abstain: v.abstain, decision: st.decision ?? null };
       }
     }

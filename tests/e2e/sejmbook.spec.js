@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Bio słowami, nie cyframi');
+  await expect(post).toContainText('Wyszukiwarka głosowań posła');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Bio słowami, nie cyframi');
+  await expect(page.locator('.news-post').first()).toContainText('Wyszukiwarka głosowań posła');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -533,3 +533,21 @@ test('Life line: two views in tabs, the choice is remembered', async ({ page }) 
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);
 });
+
+test('profile: search every law the MP voted on, za or przeciw', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-32`);
+  const card = page.getByTestId('profile-laws');
+  await expect(card).toBeVisible();
+  await expect(card.locator('.tax-law')).toHaveCount(30);
+  await card.getByRole('searchbox').fill('podatku');
+  await expect(card.locator('.tax-law').first()).toContainText(/podatk/i);
+  await card.locator('[data-action="law-vote"][data-vote="N"]').click();
+  const rows = card.locator('.tax-law');
+  expect(await rows.count()).toBeGreaterThan(0);
+  await expect(rows.first().locator('.tax-vote')).toHaveText('przeciw');
+  await expect(card.getByRole('searchbox')).toHaveValue('podatku');
+  const box = await card.boundingBox();
+  const vw = page.viewportSize().width;
+  expect(box.x + box.width).toBeLessThanOrEqual(vw + 1);
+});
+

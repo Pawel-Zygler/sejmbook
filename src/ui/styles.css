@@ -637,3 +637,10 @@ h2 { font-size: 1.1rem; }
 .tax-law-title { font-weight: 600; color: inherit; overflow-wrap: anywhere; }
 .tax-law-why { font-size: 0.85rem; }
 .tax-law-meta { font-size: 0.75rem; color: var(--muted); }
+
+/* Law search on the profile (under the tax card) */
+.law-search { display: block; margin: 4px 0 10px; }
+.law-filters { margin-bottom: 10px; }
+.law-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.law-more { margin-top: 10px; }
+.law-empty { margin: 6px 0; }

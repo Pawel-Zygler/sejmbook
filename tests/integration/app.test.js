@@ -15,6 +15,7 @@ import earlyTermsData from '../../data/early-terms.json';
 import contactsData from '../../data/contacts.json';
 import feedData from '../../data/feed.json';
 import governmentData from '../../data/government.json';
+import lawData from '../../data/law-votes.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -153,8 +154,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Bio słowami, nie cyframi';
-const NEWEST_LINE = 'Profile: Bio słowami, nie cyframi';
+const NEWEST = 'Wyszukiwarka głosowań posła';
+const NEWEST_LINE = 'Posłowie: Wyszukiwarka głosowań posła';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -755,3 +756,49 @@ describe('Interface switch: classic and modern look', () => {
     expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
   });
 });
+
+describe('Profile: search every law the MP voted on', () => {
+  let app2;
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app2 = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, lawData, today: '2026-11-24' });
+    app = app2;
+    nav('#posel-32');
+  });
+
+  it('shows the card with hundreds of laws, newest first, each with the vote', () => {
+    const card = $('[data-testid="profile-laws"]');
+    expect(card).not.toBeNull();
+    expect(lawData.laws.length).toBeGreaterThan(300);
+    const items = card.querySelectorAll('.tax-law');
+    expect(items.length).toBe(30);
+    const dates = [...items].map((li) => li.querySelector('time').textContent);
+    expect([...dates].sort().reverse()).toEqual(dates);
+    expect(items[0].querySelector('.tax-vote').textContent).toMatch(/^(za|przeciw|wstrzymał\(a\) się|nieobecny\/a)$/);
+  });
+
+  it('filters by typed words (diacritics ignored) and keeps focus in the field', () => {
+    const input = $('[data-action="law-search"]');
+    input.focus();
+    type(input, 'podatku dochodowym');
+    expect(document.activeElement).toBe(input);
+    const titles = $$('[data-testid="profile-laws"] .tax-law-title').map((a) => a.textContent.toLowerCase());
+    expect(titles.length).toBeGreaterThan(0);
+    for (const t of titles) expect(t).toMatch(/podatku dochodowym/);
+    type(input, 'zzzz nic');
+    expect($('[data-testid="law-empty"]').textContent).toContain('zzzz nic');
+  });
+
+  it('shows only votes against after clicking Przeciw, and pages with Pokaż więcej', () => {
+    click($('[data-action="law-vote"][data-vote="N"]'));
+    const items = $$('[data-testid="profile-laws"] .tax-law');
+    expect(items.length).toBeGreaterThan(0);
+    for (const li of items) expect(li.dataset.vote).toBe('N');
+    expect($('[data-action="law-vote"][data-vote="N"]').getAttribute('aria-pressed')).toBe('true');
+    click($('[data-action="law-vote"][data-vote="all"]'));
+    click($('[data-action="law-more"]'));
+    expect($$('[data-testid="profile-laws"] .tax-law').length).toBeGreaterThan(30);
+  });
+});
+

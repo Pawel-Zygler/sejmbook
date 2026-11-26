@@ -10,8 +10,9 @@ import { buildHierarchy } from './lib/government.js';
 import { renderSitemap } from './ui/sitemap-view.js';
 import { readSkin, saveSkin, applySkin } from './lib/ui-skin.js';
 import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
+import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -25,6 +26,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     attendance: attendanceData ?? null,
     // Final votes on laws that raised or cut taxes in the X term (data/tax-votes.json, API Sejmu).
     taxes: taxData ?? null,
+    // Every final vote on a whole law in the X term, per MP (data/law-votes.json, API Sejmu).
+    laws: lawData ?? null,
     career: careerData ?? null,
     // Every MP of every term the Sejm API covers (III–X), grouped into people.
     terms: allTerms,
@@ -147,6 +150,14 @@ export function createApp(doc, win, data) {
       saveLifeView(storage, lifeView);
       return;
     }
+    if (action === 'law-vote' || action === 'law-more') {
+      const card = el.closest('[data-testid="profile-laws"]');
+      if (!card) return;
+      if (action === 'law-vote') { card.dataset.vote = el.dataset.vote; card.dataset.limit = String(LAW_PAGE); }
+      else card.dataset.limit = String((Number(card.dataset.limit) || LAW_PAGE) + LAW_PAGE * 3);
+      refreshLawCard(ctx, card);
+      return;
+    }
     if (action === 'theme') {
       theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length];
       applyTheme(theme);
@@ -191,6 +202,9 @@ export function createApp(doc, win, data) {
       const again = doc.getElementById('dir-search');
       again.focus();
       try { again.setSelectionRange(pos, pos); } catch { /* not all inputs support it */ }
+    } else if (el.dataset.action === 'law-search') {
+      const card = el.closest('[data-testid="profile-laws"]');
+      if (card) { card.dataset.limit = String(LAW_PAGE); refreshLawCard(ctx, card); }
     } else if (el.dataset.action === 'top-search') {
       state.directory.query = el.value;
       state.directory.club = '';
