@@ -61,7 +61,7 @@ export const SHELL_HTML = `
         <a href="#mapa">Mapa strony</a>
       </nav>
     </div>
-    <p class="foot-src"><b>Źródła danych:</b> API Sejmu (posłowie, kadencje III–X, kluby, głosowania, interpelacje), polska Wikipedia (posłowie I–II kadencji, rządy i urzędy III RP), Wikidata (partie i życiorysy), Wikimedia Commons (zdjęcia urzędników), oficjalne strony urzędów (prezydent.pl, gov.pl, senat.gov.pl, nik.gov.pl) i media (loty posłów). Klub posła to ostatni klub w danej kadencji.</p>
+    <p class="foot-src"><b>Źródła danych:</b> API Sejmu (posłowie, kadencje III–X, kluby, głosowania, interpelacje), polska Wikipedia (posłowie I–II kadencji, rządy i urzędy III RP), Wikidata (partie, życiorysy i konta w mediach społecznościowych), polska Wikipedia (działalność społeczna posłów), Wikimedia Commons (zdjęcia urzędników), oficjalne strony urzędów (prezydent.pl, gov.pl, senat.gov.pl, nik.gov.pl) i media (loty posłów). Klub posła to ostatni klub w danej kadencji.</p>
     <p class="foot-bottom">Sejmbook · wydarzenia w Rzeczypospolitej</p>
   </div>
 </footer>

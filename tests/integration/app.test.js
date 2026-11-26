@@ -130,6 +130,12 @@ describe('Frequent Flyer', () => {
     expect($('.flyer-side')).toBeNull();
     expect($('[data-view="flyer"] [data-action="pick-period"], [data-view="flyer"] [data-action="pick-dataset"], [data-view="flyer"] [data-action="sort"]')).toBeNull();
   });
+  it('the Frekwencja page has no source list in the page body (sources are in the footer)', () => {
+    nav('#frekwencja');
+    expect($('#view .sources')).toBeNull();
+    expect($('#view').textContent).not.toContain('API Sejmu: głosowania X kadencji');
+    expect($('.foot-src').textContent).toContain('głosowania');
+  });
   it('lists sources with external links', () => {
     for (const a of $$('.sources a')) {
       expect(a.getAttribute('target')).toBe('_blank');

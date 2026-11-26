@@ -162,8 +162,6 @@ export function renderAttendance(ctx, state, helpers) {
       <h2>Jak liczymy frekwencję</h2>
       <p>Dla każdego dnia, w którym Sejm głosował, dzielimy liczbę głosowań, w których poseł oddał głos, przez liczbę głosowań tego dnia. Frekwencja posła to średnia z tych dziennych wyników. Dni, w których nie miał jeszcze mandatu albo już go nie miał, pomijamy.</p>
       <p>${escHtml(att.coverageNote)}</p>
-      <h2>Źródło</h2>
-      <ul class="sources"><li><a href="https://api.sejm.gov.pl/sejm/term10/votings" target="_blank" rel="noopener">API Sejmu: głosowania X kadencji</a> (stan na ${escHtml(att.fetchedAt)})</li></ul>
     </div>
   </section>`;
 }
