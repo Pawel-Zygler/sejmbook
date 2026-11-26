@@ -41,8 +41,9 @@ describe('home', () => {
     expect($('.seat-bar')).not.toBeNull();
     expect($('[data-nav="home"]').getAttribute('aria-current')).toBe('page');
   });
-  it('fills the club column', () => {
-    expect($$('#aside .aside-clubs li').length).toBe(12);
+  it('has no "Kluby i koła" box and uses the full width', () => {
+    expect($('#aside .aside-clubs')).toBeNull();
+    expect(document.documentElement.dataset.aside).toBe('off');
   });
 });
 
@@ -78,14 +79,6 @@ describe('directory', () => {
   });
 });
 
-describe('club links from the aside', () => {
-  it('open the directory filtered to that club', () => {
-    click($('#aside a[data-club="PSL-TD"]'));
-    expect(window.location.hash).toBe('#poslowie');
-    window.dispatchEvent(new HashChangeEvent('hashchange'));
-    expect($$('.mp-card').length).toBe(app.ctx.mps.filter((m) => m.active && m.club === 'PSL-TD').length);
-  });
-});
 
 describe('top search', () => {
   it('jumps to the directory with the query', () => {
@@ -154,8 +147,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Ustawy w jednej linii, szerszy profil';
-const NEWEST_LINE = 'Profile: Ustawy w jednej linii, szerszy profil';
+const NEWEST = 'Bez ramki „Kluby i koła”';
+const NEWEST_LINE = 'Serwis: Bez ramki „Kluby i koła”';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -281,7 +274,6 @@ describe('bundled media', () => {
     nav('#posel-70');
     expect($('.avatar-xl img').getAttribute('src')).toBe('data:image/jpeg;base64,AAA');
     expect($('.profile .chip.has-logo img, .chip.has-logo img').getAttribute('src')).toBe('data:image/png;base64,BBB');
-    expect($('#aside img.club-logo-lg').getAttribute('src')).toBe('data:image/png;base64,BBB');
   });
 });
 
@@ -443,9 +435,12 @@ describe('Sidebar per page', () => {
     expect($('#aside [data-testid="sum-flights"]').textContent).toMatch(/\d/);
     expect($('#aside [data-testid="sum-km"]').textContent).toContain('≈');
   });
-  it('other pages keep the club list', () => {
+  it('other pages have no right column', () => {
     nav('#start');
-    expect($$('#aside .aside-clubs li').length).toBeGreaterThan(5);
+    expect($('#aside').innerHTML.trim()).toBe('');
+    expect(document.documentElement.dataset.aside).toBe('off');
+    nav('#frequent-flyer');
+    expect(document.documentElement.dataset.aside).toBe('on');
   });
 });
 

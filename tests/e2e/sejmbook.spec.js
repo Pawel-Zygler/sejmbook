@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Ustawy w jednej linii, szerszy profil');
+  await expect(post).toContainText('Bez ramki „Kluby i koła”');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Ustawy w jednej linii, szerszy profil');
+  await expect(page.locator('.news-post').first()).toContainText('Bez ramki „Kluby i koła”');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -166,7 +166,6 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   const logo = page.locator('.profile .chip.has-logo img.club-logo, .chip.has-logo img.club-logo').first();
   await expect(logo).toBeVisible();
   expect(await logo.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
-  await expect(page.locator('#aside img.club-logo-lg').first()).toHaveAttribute('src', /^data:image\/png;base64,/);
 
   // A photo that fails to load is removed and the initials stay.
   await page.unroute(/api\.sejm\.gov\.pl\/.*\/photo/);
@@ -563,6 +562,9 @@ for (const skin of ['classic', 'modern']) {
     await expect(page.locator('#aside')).toBeHidden();
     const feed = await page.locator('.profile-cols .feed').boundingBox();
     if (page.viewportSize().width >= 1280) expect(feed.width).toBeGreaterThan(skin === 'classic' ? 600 : 820);
+    await expect(page.locator('#view')).not.toContainText('Kluby i koła');
+    await page.goto(PAGE);
+    await expect(page.locator('#aside')).toBeHidden();
     await page.goto(`${PAGE}#poslowie`);
     if (page.viewportSize().width >= 1280) await expect(page.locator('#aside')).toBeVisible();
   });

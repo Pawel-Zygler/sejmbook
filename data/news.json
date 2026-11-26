@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-bez-klubow-z-boku",
+      "date": "2026-11-26",
+      "title": "Bez ramki „Kluby i koła”",
+      "section": "Serwis",
+      "body": "Zniknęła boczna ramka z klubami, więc Feed i profile są szersze. Kluby nadal filtrujesz w zakładce Posłowie.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-ustawy-jedna-linia",
       "date": "2026-11-26",
       "title": "Ustawy w jednej linii, szerszy profil",

@@ -650,10 +650,10 @@ h2 { font-size: 1.1rem; }
 .law-vote-link { font-size: 0.75rem; color: var(--muted); }
 @media (max-width: 520px) { .law-row time, .law-vote-link { display: none; } .law-row .tax-vote { min-width: 0; } }
 
-/* Profiles: wider feed, the clubs column is hidden there (Pawel, 2026-11-26) */
+/* Pages without a right column (profiles, feed, …) use the full width (Pawel, 2026-11-26) */
+:root[data-aside="off"] #aside { display: none; }
 @media (min-width: 1101px) {
-  :root[data-route="profile"] .layout, :root[data-route="person"] .layout { grid-template-columns: 220px minmax(0, 1fr); }
-  :root[data-route="profile"] #aside, :root[data-route="person"] #aside { display: none; }
+  :root[data-aside="off"] .layout { grid-template-columns: 220px minmax(0, 1fr); }
 }
 .law-more { margin-top: 10px; }
 .law-empty { margin: 6px 0; }

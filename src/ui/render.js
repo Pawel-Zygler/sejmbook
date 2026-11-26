@@ -1015,11 +1015,6 @@ export function renderNotFound(hash) {
 export function renderAside(ctx, route = null, state = null) {
   if (route?.name === 'directory' && state) return `<div class="panel aside-box aside-filters" data-testid="aside-filters"><h2>Filtry</h2>${directoryFilters(ctx, state.directory)}</div>`;
   if (route?.name === 'flyer' && state) return flyerTotals(ctx, state.flyer);
-  const counts = clubCounts(ctx.mps);
-  return `<div class="panel aside-box"><h2>Kluby i koła ${infoTip(`API Sejmu, stan na ${ctx.fetchedAt}.`, 'https://api.sejm.gov.pl/sejm/term10/clubs')}</h2><ul class="aside-clubs">
-    ${counts.map((c) => {
-      const club = ctx.clubs.get(c.club) ?? FALLBACK_CLUB;
-      return `<li><a href="#poslowie" data-action="filter-club" data-club="${esc(c.club)}">${clubLogo(ctx, c.club) ? `<img class="club-logo club-logo-lg" src="${esc(clubLogo(ctx, c.club))}" alt="">` : `<span class="dot" style="--club:${esc(club.color)}"></span>`}${esc(club.short)}</a><b>${c.count}</b></li>`;
-    }).join('')}
-  </ul></div>`;
+  // The "Kluby i koła" box was removed (Pawel, 2026-11-26: "usuń to"); other pages use the full width.
+  return '';
 }

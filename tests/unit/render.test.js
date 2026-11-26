@@ -93,8 +93,9 @@ describe('views', () => {
     expect(html).not.toContain('460 posłów');
     expect((html.match(/class="mp-card[ "]/g) ?? []).length).toBe(460);
   });
-  it('aside lists clubs with counts', () => {
-    expect(renderAside(ctx)).toMatch(/KO<\/a><b>\d+<\/b>/);
+  it('aside has no "Kluby i koła" box outside the directory and Frequent Flyer', () => {
+    expect(renderAside(ctx)).toBe('');
+    expect(renderAside(ctx, { name: 'profile' })).toBe('');
   });
 });
 
@@ -272,11 +273,6 @@ describe('bundled media', () => {
     expect(clubChip(withMedia, 'PiS')).not.toContain('<img');
     expect(clubLogo({ clubs: ctx.clubs }, 'KO')).toBeNull();
   });
-  it('the club list in the aside uses logos too', () => {
-    const html = renderAside(withMedia);
-    expect(html).toContain('club-logo-lg');
-    expect(html).toContain('class="dot"');
-  });
 });
 
 describe('mpCardMeta', () => {
@@ -413,7 +409,7 @@ describe('page-specific sidebar', () => {
     expect(directoryFilters(ctx, st.directory, 'phone')).toContain('id="dir-inactive-phone"');
     expect(renderAside(ctx, { name: 'flyer' }, st)).toBe(flyerTotals(ctx, st.flyer));
     expect(flyerTotals(ctx, st.flyer)).toContain('data-testid="sum-km"');
-    expect(renderAside(ctx, { name: 'home' }, st)).toContain('Kluby i koła');
+    expect(renderAside(ctx, { name: 'home' }, st)).toBe('');
   });
 });
 
@@ -656,11 +652,7 @@ describe('infoTip', () => {
     expect(h).toContain('&lt;b&gt;x&lt;/b&gt;');
     expect(h).not.toContain('<a ');
   });
-  it('the club list keeps its source in the icon, not in a visible line', () => {
-    const h = renderAside(ctx);
-    expect(h).toMatch(/<h2>Kluby i koła <span class="info-tip"/);
-    expect(h).not.toContain('<p class="src">');
-  });
+
 });
 
 describe('bio in prose', () => {
