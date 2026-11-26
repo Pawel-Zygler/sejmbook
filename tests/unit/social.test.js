@@ -45,6 +45,15 @@ describe('social activity from Polish Wikipedia', () => {
     expect(c.map((x) => x.target)).not.toContain('Marsz Niepodległości');
   });
 
+  it('skips what others reported, and takes years from the comma clause of the organisation', () => {
+    const t = `'''Jan''' (ur. 1982) – polski polityk, w latach 2005–2006 prezes [[Młodzież Wszechpolska|Młodzieży Wszechpolskiej]], poseł na Sejm (od 2019).
+W 2025 [[Stowarzyszenie „Nigdy Więcej”]] opublikowało raport, w którym członkiem nazwano go.
+Z listy [[Akcja Wyborcza Solidarność|AWS]] był członkiem rady powiatu.`;
+    const c = socialCandidates(t, 2026);
+    expect(c.map((x) => x.target)).toEqual(['Młodzież Wszechpolska']);
+    expect(c[0]).toMatchObject({ from: 2005, to: 2006 });
+  });
+
   it('shortens disambiguated titles', () => {
     expect(orgName('Młodzież Wszechpolska (1989)')).toBe('Młodzież Wszechpolska');
   });

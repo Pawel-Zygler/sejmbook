@@ -6,7 +6,9 @@
 // Only links that Wikidata says are organisations, and not parties, companies, schools, offices or media,
 // are kept (scripts/fetch-social.mjs). The parsing here is pure and unit-tested.
 
-const ROLE = /członk|członek|działa(ł|ła|cz|lność|jąc)|należ(ał|ała|y)|współzałoż|założy(ł|ciel)|współtwor|prezes|przewodnicząc|przewodniczył|wiceprzewodnicz|wiceprezes|sekretarz|skarbnik|aktywist|zaangażowa|harcerz|harcerk|harcerstw|instruktor|koordynator|wolontariusz|wolontariusz|wstąpił|związał(a)? się|kierował|stał(a)? na czele|lider|liderk|szef|pełnił(a)? funkcj|zasiada|współpracował|udziela(ł|ła) się|aktywn/i;
+const ROLE = /członk(iem|kinią|owie|ostw)|członek|działał(a)?\s+(w|na rzecz)|działacz|należał(a)?\s+do|współzałoż|założy(ł|ła|ciel)|współtworzył|prezes|przewodnicząc|przewodniczył|wiceprzewodnicz|wiceprezes|sekretarz|skarbnik|wstąpił(a)?\s+do|harcerz|harcerk|instruktor|wolontariusz|aktywist|stał(a)?\s+na\s+czele|kierował(a)?|pełnił(a)?\s+funkcj|zasiadał(a)?\s+w|był(a)?\s+(jednym|jedną)\s+z\s+(założycieli|liderów|liderek)/i;
+// Sentences about what others said or did (reports, accusations, appointments by someone else) are skipped.
+const REPORTED = /opublikował|raport|według|zdaniem|oskarż|pozwał|pozew|uznał(o|a|y)?\s|skrytykował|krytyk|wpisał(o|a)?|umieścił(o|a)?|powołał(a)?\s+go|powołał(a)?\s+ją|wybrał(a|o)?\s+go|wybrał(a|o)?\s+ją|z\s+listy|kandydował|kandydowała|startował|startowała/i;
 
 /** Wikitext → plain text with [[links]] kept: no refs, templates, tables, files, comments, quotes, headings, end sections. */
 export function cleanWikitext(text) {
@@ -32,7 +34,7 @@ export function yearsIn(text, maxYear = new Date().getFullYear()) {
 }
 
 const LINK = /\[\[([^|\]#]+)(?:#[^|\]]*)?(?:\|([^\]]+))?\]\]/g;
-const CLAUSE = /;|,\s*(?:a|następnie|potem|później|zaś|natomiast)\s|\s(?:oraz|a także|następnie)\s/;
+const CLAUSE = /;|,|\s–\s|\s(?:oraz|a także|następnie)\s/;
 
 /**
  * Organisation candidates from an article: every link in a sentence about membership or a role,
@@ -48,10 +50,10 @@ export function socialCandidates(wikitext, maxYear) {
     for (const sentence of tokenized.split(/(?<=[.!?])\s+(?=[A-ZĄĆĘŁŃÓŚŹŻ„⟦])/)) {
       if (!sentence.includes('⟦')) continue;
       const plain = (s) => s.replace(/⟦(\d+)⟧/g, (_, i) => links[i].label);
+      if (REPORTED.test(plain(sentence))) continue;
       const clauses = sentence.split(CLAUSE);
       for (const clause of clauses) {
-        const role = ROLE.test(plain(clause)) || ROLE.test(plain(sentence));
-        if (!role) continue;
+        if (!ROLE.test(plain(clause))) continue;
         for (const [, i] of clause.matchAll(/⟦(\d+)⟧/g)) {
           const l = links[Number(i)];
           if (/^[a-z]{2,3}:|^(wikt|s|d|commons):/i.test(l.target)) continue;

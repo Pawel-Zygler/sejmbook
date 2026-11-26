@@ -80,6 +80,9 @@ const BAD = {
   Q15265344: 'media', Q16917: 'szpital', Q41487: 'sąd', Q176799: 'wojsko', Q245065: 'międzyrządowa', Q484652: 'międzynarodowa urzędowa',
   Q1752346: 'koło poselskie', Q2061186: 'koalicja wyborcza', Q1127126: 'koalicja wyborcza', Q31855: 'instytut badawczy', Q33506: 'muzeum',
   Q7075: 'biblioteka', Q131569: 'trybunał', Q1802419: 'wydział', Q4671277: 'instytucja akademicka',
+  Q6256: 'państwo', Q3624078: 'państwo', Q7275: 'państwo', Q3024240: 'państwo', Q1048835: 'jednostka terytorialna', Q56061: 'jednostka terytorialna',
+  Q4164871: 'stanowisko', Q294414: 'urząd', Q30461: 'stanowisko', Q7188: 'rząd', Q9174: 'religia', Q49773: 'ruch społeczny',
+  Q7257: 'ideologia', Q12909644: 'ideologia', Q848197: 'klub poselski', Q1140229: 'koalicja', Q2367225: 'koalicja',
 };
 const orgQids = [...new Set([...qidOfTarget.values(), ...Object.values(life.mps).flatMap((e) => (e.orgs ?? []).map((o) => o.qid)).filter(Boolean)])];
 const sparql = (q) => getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', signal: AbortSignal.timeout(90000), headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` });
@@ -123,7 +126,7 @@ for (const [id, e] of Object.entries(life.mps)) {
   for (const x of c?.items ?? []) {
     const qid = qidOfTarget.get(x.target) ?? null;
     const v = qid ? verdict.get(qid) ?? 'nie organizacja' : 'brak w Wikidata';
-    review.push({ target: x.target, qid, verdict: v, from: x.from, to: x.to, sentence: x.sentence });
+    review.push({ target: x.target, qid, verdict: v, classes: classesOf.get(qid)?.slice(0, 4) ?? [], from: x.from, to: x.to, sentence: x.sentence });
     if (v === 'ok') items.push({ label: orgName(nameOfTarget.get(x.target) ?? x.target), qid, from: x.from, to: x.to, src: 'plwiki' });
   }
   for (const o of e.orgs ?? []) {
