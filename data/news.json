@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-linia-zycia-widoki",
+      "date": "2026-11-26",
+      "title": "Linia życia w trzech widokach",
+      "section": "Profile",
+      "body": "Linię życia posła można oglądać jako oś czasu, listę kroków albo karty etapów; zakładki są nad linią, a wybór zostaje zapamiętany.",
+      "link": {
+        "href": "#posel-390",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-bio-proza",
       "date": "2026-11-26",
       "title": "Bio posła prozą",

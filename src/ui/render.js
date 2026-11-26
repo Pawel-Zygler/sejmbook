@@ -4,6 +4,7 @@ import { currentHolders, currentMembers } from '../lib/government.js';
 import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
+import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { tagColors } from '../lib/color.js';
@@ -606,6 +607,67 @@ export function careerSentence(sp) {
   return `W Sejmie III RP <b>${kad(n)}</b>: ${listPl(parts.map((p) => `${p.terms.length} ${inClub(p.label)} (${termRanges(p.terms)})`))}, ${total}.`;
 }
 
+const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
+const LANE_WORD = { opposition: 'Opozycja w PRL', parties: 'Partia', sejm: 'Sejm' };
+
+/** Every stretch of the life line in time order, with its lane, for the "Kroki" and "Etapy" views. */
+function lifeStretches(tl) {
+  return tl.lanes.flatMap((l) => l.items.map((it) => ({ ...it, lane: l.id })))
+    .sort((a, b) => a.from - b.from || (a.lane === 'sejm') - (b.lane === 'sejm'));
+}
+const stretchYears = (it) => (it.uncertain ? 'w PRL, lata nieznane' : it.open ? `${it.from}–dziś` : it.from === it.to ? `${it.to}` : `${it.from}–${it.to}`);
+const stretchTitle = (it) => {
+  if (it.lane === 'parties') return (it.full ?? it.label).replace(/, lata członkostwa nieznane$/, '');
+  if (it.lane === 'sejm' && it.terms?.length) return `${it.label.split(' · ')[0]}, ${it.terms.length === 1 ? 'kadencja' : 'kadencje'} ${termRanges(it.terms)}`;
+  return it.label;
+};
+
+/** "Kroki": the life as a vertical list of dated steps (birth, 1989, each membership and Sejm stretch). */
+export function lifeSteps(tl) {
+  const steps = [{ year: tl.birth, title: 'Urodzenie', note: '', color: 'var(--muted)', kind: 'birth' }];
+  if (tl.bornInPrl) steps.push({ year: tl.prlEnd, title: 'Początek III RP', note: `w wieku ${tl.prlEnd - tl.birth} lat`, color: 'var(--accent)', kind: 'rp' });
+  for (const it of lifeStretches(tl)) {
+    steps.push({
+      year: it.uncertain ? null : it.from,
+      title: `${LANE_WORD[it.lane]}: ${stretchTitle(it)}`,
+      note: it.uncertain ? 'w PRL, lata nieznane' : `${stretchYears(it)} · od ${it.from - tl.birth}. roku życia`,
+      color: it.color, kind: it.lane, uncertain: it.uncertain,
+    });
+  }
+  steps.sort((a, b) => (a.year ?? tl.prlEnd - 0.5) - (b.year ?? tl.prlEnd - 0.5));
+  return `<ol class="life-steps">${steps.map((s) => `<li class="life-step" data-kind="${s.kind}"><span class="life-step-year">${s.year ?? 'PRL'}</span><span class="life-step-dot${s.uncertain ? ' uncertain' : ''}" style="--seg:${esc(s.color)}"></span><span class="life-step-text"><b>${esc(s.title)}</b>${s.note ? `<span class="muted">${esc(s.note)}</span>` : ''}</span></li>`).join('')}
+        <li class="life-step" data-kind="now"><span class="life-step-year">${tl.now}</span><span class="life-step-dot" style="--seg:var(--line)"></span><span class="life-step-text"><b>Dziś</b><span class="muted">${tl.now - tl.birth} lat</span></span></li></ol>`;
+}
+
+/** "Etapy": one card per stretch, with its length, under a one-line summary of the whole life. */
+export function lifeStages(tl) {
+  const list = lifeStretches(tl);
+  const start = tl.firstYear;
+  const summary = start != null
+    ? `${yearsWord(tl.now - tl.birth)} życia, w tym <b>${yearsWord(tl.now - start)} w polityce</b> (od ${start})`
+    : `${yearsWord(tl.now - tl.birth)} życia`;
+  const card = (it) => {
+    const len = it.uncertain ? '' : yearsWord(Math.max(1, (it.open ? tl.now : it.to) - it.from));
+    return `<li class="life-stage" style="--seg:${esc(it.color)}"><span class="life-stage-kind">${esc(LANE_WORD[it.lane])}</span><b>${esc(stretchTitle(it))}</b><span class="muted">${esc(stretchYears(it))}${len ? ` · ${len}` : ''}</span></li>`;
+  };
+  return `<p class="life-stages-sum">${summary}.</p><ul class="life-stages">${list.map(card).join('')}</ul>`;
+}
+
+/** Decade marks for the "Oś czasu" view, skipping those too close to the ends or to 1989. */
+function decades(tl) {
+  const out = [];
+  for (let y = Math.ceil((tl.birth + 1) / 10) * 10; y < tl.now; y += 10) {
+    if (y - tl.birth < 4 || tl.now - y < 4 || (tl.bornInPrl && Math.abs(y - tl.prlEnd) < 4)) continue;
+    out.push(y);
+  }
+  return out;
+}
+
+/** Tabs that switch every life line between the three views. */
+function lifeTabs() {
+  return `<div class="life-tabs" role="group" aria-label="Widok linii życia" data-testid="life-tabs">${LIFE_VIEWS.map((v) => `<button type="button" data-action="life-view" data-life="${v}" aria-pressed="${v === DEFAULT_LIFE_VIEW}">${LIFE_VIEW_LABEL[v]}</button>`).join('')}</div>`;
+}
+
 /** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms; under it a short bio in prose. */
 export function renderLifeLine(ctx, mp, sp = null) {
   const now = Number(ctx.fetchedAt.slice(0, 4));
@@ -616,7 +678,7 @@ export function renderLifeLine(ctx, mp, sp = null) {
   const lane = (l) => `
         <div class="life-lane" data-lane="${l.id}">
           <span class="life-lane-label">${esc(l.label)}</span>
-          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
+          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
   const qid = ctx.life?.mps?.[mp.id]?.qid;
@@ -625,17 +687,21 @@ export function renderLifeLine(ctx, mp, sp = null) {
     : '';
   const career = careerSentence(sp);
   const first = [firstActivityText(tl), career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
+  const ticks = decades(tl);
   return `
-      <div class="life" data-testid="life-line">
+      ${lifeTabs()}
+      <div class="life-v life-v-os life" data-testid="life-line">
         <div class="life-eras" aria-hidden="true">
           ${tl.bornInPrl ? `<span class="life-era prl" style="left:0;width:${prlW}%">PRL</span>` : ''}
           <span class="life-era rp" style="left:${tl.bornInPrl ? prlW : 0}%;width:${(100 - Number(prlW)).toFixed(2)}%">III RP</span>
         </div>
         <div class="life-lanes">${tl.lanes.map(lane).join('')}
-          ${tl.bornInPrl ? `<div class="life-overlay"><span class="life-1989" style="left:${left(tl.prlEnd)}%" title="4 czerwca 1989: początek III RP"></span></div>` : ''}
+          <div class="life-overlay">${ticks.map((y) => `<span class="life-decade" style="left:${left(y)}%"></span>`).join('')}${tl.bornInPrl ? `<span class="life-1989" style="left:${left(tl.prlEnd)}%" title="4 czerwca 1989: początek III RP"></span>` : ''}</div>
         </div>
-        <div class="life-axis"><span>ur. ${tl.birth}</span>${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
+        <div class="life-axis"><span>ur. ${tl.birth}</span>${ticks.map((y) => `<span class="life-axis-tick" style="left:${left(y)}%">${y}</span>`).join('')}${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
+      <div class="life-v life-v-kroki" data-testid="life-steps">${lifeSteps(tl)}</div>
+      <div class="life-v life-v-etapy" data-testid="life-stages">${lifeStages(tl)}</div>
       ${first || undatedTip ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 
