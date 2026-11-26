@@ -157,8 +157,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Podgląd linków posła';
-const NEWEST_LINE = 'Profile: Podgląd linków posła';
+const NEWEST = 'Sortowanie posłów';
+const NEWEST_LINE = 'Posłowie: Sortowanie posłów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -844,6 +844,35 @@ describe('Profile: round links next to the name, social activity on the life lin
     expect(lane.querySelector('.life-lane-label').textContent).toBe('Działalność społeczna');
     expect($('[data-testid="social-text"]').textContent).toMatch(/^Działalność społeczna: .*Młodzież Wszechpolska/);
     expect($('[data-testid="life-steps"]').textContent).toContain('Działalność społeczna: Młodzież Wszechpolska');
+  });
+});
+
+describe('Posłowie: sorting, side menu icons', () => {
+  beforeEach(() => nav('#poslowie'));
+  const names = () => $$('.mp-card .mp-card-name').map((e) => e.textContent);
+  it('sorts by district, then reverses on a second click', () => {
+    click($('#aside [data-action="dir-sort"][data-sort="district"]'));
+    const nums = $$('.mp-card .mp-card-district').map((e) => Number(e.textContent.replace(/\D/g, '')));
+    expect(nums[0]).toBe(1);
+    expect(nums).toEqual([...nums].sort((a, b) => a - b));
+    expect($('#aside [data-action="dir-sort"][data-sort="district"]').getAttribute('aria-pressed')).toBe('true');
+    click($('#aside [data-action="dir-sort"][data-sort="district"]'));
+    expect(Number($$('.mp-card .mp-card-district')[0].textContent.replace(/\D/g, ''))).toBe(41);
+  });
+  it('sorts by attendance, highest first, and keeps the search', () => {
+    type($('#dir-search'), 'an');
+    const before = names().length;
+    click($('#aside [data-action="dir-sort"][data-sort="attendance"]'));
+    expect(names()).toHaveLength(before);
+    const pct = $$('.mp-card [data-testid="att-badge"] span').map((e) => parseFloat(e.textContent.replace(',', '.')));
+    expect(pct).toEqual([...pct].sort((a, b) => b - a));
+  });
+  it('offers only name, district, club and terms for an earlier term', () => {
+    click($('#aside [data-action="dir-term"][data-term="3"]'));
+    expect($$('#aside [data-action="dir-sort"]').map((b) => b.dataset.sort)).toEqual(['name', 'district', 'club', 'terms']);
+  });
+  it('side menu items have drawn icons, not text symbols', () => {
+    for (const ico of $$('.sidenav .ico')) expect(ico.querySelector('svg')).not.toBeNull();
   });
 });
 

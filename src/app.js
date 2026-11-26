@@ -12,6 +12,7 @@ import { renderSitemap } from './ui/sitemap-view.js';
 import { readSkin, saveSkin, applySkin } from './lib/ui-skin.js';
 import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
+import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
 export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, socialData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
@@ -56,7 +57,7 @@ export function createApp(doc, win, data) {
   const aside = doc.getElementById('aside');
   const state = {
     route: parseHash(win.location.hash),
-    directory: { query: '', club: '', includeInactive: false, term: 10 },
+    directory: { query: '', club: '', includeInactive: false, term: 10, sort: 'name', dir: 'asc' },
     parties: { scope: 'all' },
     // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
     flyer: { period: 'all', dataset: null, sortBy: 'km' },
@@ -67,7 +68,10 @@ export function createApp(doc, win, data) {
 
   function renderDirectoryList() {
     const t = Number(state.directory.term);
-    const list = t !== 10 && ctx.terms ? filterTermMps(termMps(ctx.terms, t), state.directory) : filterMps(ctx.mps, state.directory);
+    const past = t !== 10 && ctx.terms;
+    const found = past ? filterTermMps(termMps(ctx.terms, t), state.directory) : filterMps(ctx.mps, state.directory);
+    const key = sortKeys(Boolean(past)).includes(state.directory.sort) ? state.directory.sort : 'name';
+    const list = sortMps(ctx, found, key, key === state.directory.sort ? state.directory.dir : undefined);
     const html = renderDirectory(ctx, state.directory, list);
     // Presidents, prime ministers and ministers are searchable too: matches show above the MP list.
     const officials = state.directory.query ? renderOfficialMatches(ctx, state.directory.query) : '';
@@ -174,6 +178,9 @@ export function createApp(doc, win, data) {
       state.directory.club = el.dataset.club;
       state.directory.query = '';
       go('#poslowie');
+    } else if (action === 'dir-sort') {
+      Object.assign(state.directory, nextSort(state.directory, el.dataset.sort));
+      render();
     } else if (action === 'dir-term') {
       e.preventDefault();
       state.directory.term = Number(el.dataset.term);

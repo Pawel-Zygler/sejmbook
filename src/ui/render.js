@@ -11,6 +11,7 @@ import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileLaws } from './law-view.js';
 import { renderProfileLinks } from './profile-links.js';
+import { SORTS, DEFAULT_SORT, sortKeys } from '../lib/dir-sort.js';
 import { tagColors } from '../lib/color.js';
 
 export function esc(s) {
@@ -434,7 +435,17 @@ export function directoryFilters(ctx, state, where = 'aside') {
         <button type="button" class="filter ${state.club === '' ? 'on' : ''}" data-action="filter-club" data-club="" aria-pressed="${state.club === ''}">Wszystkie</button>
         ${counts.map((c) => `<button type="button" class="filter ${state.club === c.club ? 'on' : ''}" data-action="filter-club" data-club="${esc(c.club)}" aria-pressed="${state.club === c.club}">${esc(label(c.club))} <span>${c.count}</span></button>`).join('')}
       </div>
-      ${past ? '' : `<label class="toggle" for="${id}"><input id="${id}" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>`}`;
+      ${past ? '' : `<label class="toggle" for="${id}"><input id="${id}" type="checkbox" data-action="toggle-inactive" ${state.includeInactive ? 'checked' : ''}> Pokaż też posłów, których mandat wygasł</label>`}
+      ${sortButtons(state, past)}`;
+}
+
+/** "Sortuj": one button per key; the chosen one shows its direction and flips it when clicked again. */
+export function sortButtons(state, past) {
+  const cur = SORTS[state.sort] && sortKeys(past).includes(state.sort) ? state.sort : DEFAULT_SORT;
+  const dir = cur === state.sort ? state.dir ?? SORTS[cur].dir : SORTS[cur].dir;
+  const arrow = (k) => (k === 'name' ? (dir === 'asc' ? 'A–Z' : 'Z–A') : dir === 'asc' ? '↑' : '↓');
+  return `<p class="filters-label">Sortuj</p>
+      <div class="filters dir-sort" role="group" aria-label="Sortowanie" data-testid="dir-sort">${sortKeys(past).map((k) => `<button type="button" class="filter ${k === cur ? 'on' : ''}" data-action="dir-sort" data-sort="${k}" aria-pressed="${k === cur}"${k === cur ? ` data-dir="${dir}"` : ''}>${SORTS[k].label}${k === cur ? ` <span aria-label="${dir === 'asc' ? 'rosnąco' : 'malejąco'}">${arrow(k)}</span>` : ''}</button>`).join('')}</div>`;
 }
 
 /** Where the term lists come from, for the notes under lists and profiles. */

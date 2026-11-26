@@ -39,6 +39,10 @@
 
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+/* Footer stays at the bottom of the window on short pages (Pawel, 2026-11-26) */
+body { min-height: calc(100vh - 16px); min-height: calc(100dvh - 16px); display: flex; flex-direction: column; }
+body > .layout { flex: 1 0 auto; width: 100%; }
+body > .site-foot { flex: none; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
 a { color: inherit; }
 h1, h2 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
@@ -69,7 +73,10 @@ h2 { font-size: 1.1rem; }
 .sidenav a { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 8px; text-decoration: none; font-weight: 600; }
 .sidenav a:hover { background: var(--surface-2); }
 .sidenav a.on { background: var(--accent-soft); color: var(--accent); }
-.ico { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); font-size: 14px; }
+.ico { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); transition: background .15s, color .15s, border-color .15s; }
+.ico svg { width: 20px; height: 20px; }
+.sidenav a:hover .ico { color: var(--ink); }
+.sidenav a.on .ico { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .sidenav-label { margin: 16px 12px 4px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 #aside { position: sticky; top: 76px; align-self: start; }
 

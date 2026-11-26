@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Podgląd linków posła');
+  await expect(post).toContainText('Sortowanie posłów');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Podgląd linków posła');
+  await expect(page.locator('.news-post').first()).toContainText('Sortowanie posłów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -599,5 +599,24 @@ test('profile: hovering the Sejm and X icons shows a preview card', async ({ pag
   await expect(page.getByTestId('link-preview-x')).toContainText('@krzysztofbosak');
   await page.mouse.move(5, 5);
   await expect(page.getByTestId('link-preview-x')).toBeHidden();
+});
+
+test('footer sits at the bottom of the window on a short page', async ({ page }) => {
+  await page.setViewportSize({ width: page.viewportSize().width, height: 2400 });
+  await page.goto(`${PAGE}#posel-9999`);
+  const foot = await page.getByTestId('site-foot').boundingBox();
+  const vh = page.viewportSize().height;
+  const docH = await page.evaluate(() => document.documentElement.scrollHeight);
+  expect(docH).toBeLessThanOrEqual(vh + 1);
+  expect(Math.round(foot.y + foot.height)).toBeGreaterThanOrEqual(vh - 20);
+});
+
+test('Posłowie: sort by votes in the 2023 election', async ({ page }) => {
+  await page.goto(`${PAGE}#poslowie`);
+  if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
+  const btn = page.locator('[data-action="dir-sort"][data-sort="votes"]:visible').first();
+  await btn.dispatchEvent('click');
+  await expect(page.locator('[data-action="dir-sort"][data-sort="votes"][aria-pressed="true"]').first()).toBeAttached();
+  await expect(page.locator('.mp-card .mp-card-name').first()).toHaveText('Donald Tusk');
 });
 
