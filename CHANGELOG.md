@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Profile: Ustawy w jednej linii, szerszy profil.** Na profilu posła każda ustawa zajmuje jedną linię, a feed jest szerszy, bo bez kolumny klubów.
 - **Posłowie: Wyszukiwarka głosowań posła.** Na profilu posła wyszukasz każdą ustawę X kadencji i zobaczysz, czy głosował za, przeciw, wstrzymał się, czy go nie było.
 - **Profile: Bio słowami, nie cyframi.** Bio posła pisze liczby słowami, np. „dwie kadencje, dziewiąta i dziesiąta, razem około siedmiu lat”.
 - **Posłowie: Głosowania nad podatkami.** Na profilu posła, pod frekwencją, widać jak głosował nad każdą podwyżką i obniżką podatków w X kadencji.

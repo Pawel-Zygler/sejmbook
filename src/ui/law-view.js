@@ -9,11 +9,8 @@ export const LAW_PAGE = 30;
 const voteChip = (code) => `<span class="tax-vote tax-v-${code === '-' ? 'X' : code}">${esc(VOTE_LABEL[code])}</span>`;
 
 function lawRow({ law, vote }) {
-  return `<li class="tax-law" data-process="${esc(law.process)}" data-vote="${vote === '-' ? 'X' : vote}">
-    <div class="tax-law-top">${voteChip(vote)}<time datetime="${esc(law.date)}">${esc(law.date)}</time>${law.passed === false ? '<span class="tax-flag">odrzucona</span>' : ''}</div>
-    <a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener">${esc(law.title)}</a>
-    <span class="tax-law-meta"><a href="${esc(votingUrl(law))}" target="_blank" rel="noopener">głosowanie nr ${law.votingNumber}, pos. ${law.sitting}</a>${law.dzu ? ` · ${esc(law.dzu)}` : ''}</span>
-  </li>`;
+  // One line per law (Pawel, 2026-11-26): the title is cut with "…" and shown whole on hover.
+  return `<li class="tax-law law-row" data-process="${esc(law.process)}" data-vote="${vote === '-' ? 'X' : vote}">${voteChip(vote)}<time datetime="${esc(law.date)}">${esc(law.date)}</time>${law.passed === false ? '<span class="tax-flag">odrzucona</span>' : ''}<a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener" title="${esc(`Ustawa ${law.title}${law.dzu ? ` (${law.dzu})` : ''}`)}">${esc(law.title)}</a><a class="law-vote-link" href="${esc(votingUrl(law))}" target="_blank" rel="noopener" title="${esc(`Głosowanie nr ${law.votingNumber}, posiedzenie ${law.sitting}`)}">głos. ${law.votingNumber}/${law.sitting}</a></li>`;
 }
 
 /** Filter chips, the count and the list for the current query; the part that is redrawn while typing. */

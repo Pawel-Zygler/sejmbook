@@ -89,6 +89,8 @@ export function createApp(doc, win, data) {
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
+    // Profiles use the full width (the clubs column is hidden there, see styles.css).
+    doc.documentElement.dataset.route = r.name;
     aside.innerHTML = renderAside(ctx, r, state);
     for (const a of doc.querySelectorAll('[data-nav]')) {
       const on = a.dataset.nav === NAV_FOR[r.name];

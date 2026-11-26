@@ -72,6 +72,9 @@ describe('law search card', () => {
     expect(h).toContain('odrzucona');
     expect(h).toContain('NrPosiedzenia=30&amp;NrGlosowania=7');
     expect(h).toContain('stan na 2026-11-26');
+    // One line per law: the row has no line breaks inside, the full title is in the tooltip.
+    for (const li of h.match(/<li class="tax-law law-row"[\s\S]*?<\/li>/g)) expect(li).not.toContain('\n');
+    expect(h).toContain('title="Ustawa o zmianie ustawy o podatku akcyzowym (Dz.U. 2025 poz. 1)"');
   });
 
   it('is left out without data or without any vote of the MP', () => {
@@ -84,7 +87,7 @@ describe('law search card', () => {
     expect(renderLawResults(data, 2, { query: 'xyz' })).toContain('Brak ustaw pasujących do „xyz”');
     const many = { mps: [1], laws: Array.from({ length: LAW_PAGE + 5 }, (_, i) => ({ process: String(i), title: `ustawa ${i}`, date: '2025-01-01', sitting: 1, votingNumber: i, v: 'Y' })) };
     const h = renderLawResults(many, 1);
-    expect(h.match(/class="tax-law"/g)).toHaveLength(LAW_PAGE);
+    expect(h.match(/class="tax-law law-row"/g)).toHaveLength(LAW_PAGE);
     expect(h).toContain('Pokaż więcej (5)');
   });
 

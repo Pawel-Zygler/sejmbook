@@ -161,3 +161,7 @@
 :root[data-ui="modern"] .tax-law { border-radius: 14px; }
 :root[data-ui="modern"] .tax-bar { height: 12px; }
 :root[data-ui="modern"] .tax-group h3 { font-family: var(--font-display); letter-spacing: 0.08em; }
+
+/* Profiles: wider feed, the clubs column is hidden there */
+:root[data-ui="modern"][data-route="profile"] .layout, :root[data-ui="modern"][data-route="person"] .layout { grid-template-columns: minmax(0, 1fr); }
+:root[data-ui="modern"][data-route="profile"] #aside, :root[data-ui="modern"][data-route="person"] #aside { display: none; }

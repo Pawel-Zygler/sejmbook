@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Wyszukiwarka głosowań posła');
+  await expect(post).toContainText('Ustawy w jednej linii, szerszy profil');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Wyszukiwarka głosowań posła');
+  await expect(page.locator('.news-post').first()).toContainText('Ustawy w jednej linii, szerszy profil');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -549,5 +549,22 @@ test('profile: search every law the MP voted on, za or przeciw', async ({ page }
   const box = await card.boundingBox();
   const vw = page.viewportSize().width;
   expect(box.x + box.width).toBeLessThanOrEqual(vw + 1);
+  // Every law takes exactly one line.
+  const heights = await rows.evaluateAll((els) => els.map((e) => e.querySelector('.tax-law-title').getClientRects().length));
+  for (const h of heights) expect(h).toBe(1);
+  const rowH = await rows.evaluateAll((els) => Math.max(...els.map((e) => e.getBoundingClientRect().height)));
+  expect(rowH).toBeLessThan(48);
 });
+
+for (const skin of ['classic', 'modern']) {
+  test(`profile uses the full width, without the clubs column (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => localStorage.setItem('sejmbook-ui', s), skin);
+    await page.goto(`${PAGE}#posel-32`);
+    await expect(page.locator('#aside')).toBeHidden();
+    const feed = await page.locator('.profile-cols .feed').boundingBox();
+    if (page.viewportSize().width >= 1280) expect(feed.width).toBeGreaterThan(skin === 'classic' ? 600 : 820);
+    await page.goto(`${PAGE}#poslowie`);
+    if (page.viewportSize().width >= 1280) await expect(page.locator('#aside')).toBeVisible();
+  });
+}
 

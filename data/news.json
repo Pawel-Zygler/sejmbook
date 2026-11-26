@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-ustawy-jedna-linia",
+      "date": "2026-11-26",
+      "title": "Ustawy w jednej linii, szerszy profil",
+      "section": "Profile",
+      "body": "Na profilu posła każda ustawa zajmuje jedną linię, a feed jest szerszy, bo bez kolumny klubów.",
+      "link": {
+        "href": "#posel-32",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-wyszukiwarka-glosowan",
       "date": "2026-11-26",
       "title": "Wyszukiwarka głosowań posła",

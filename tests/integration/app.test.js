@@ -154,8 +154,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Wyszukiwarka głosowań posła';
-const NEWEST_LINE = 'Posłowie: Wyszukiwarka głosowań posła';
+const NEWEST = 'Ustawy w jednej linii, szerszy profil';
+const NEWEST_LINE = 'Profile: Ustawy w jednej linii, szerszy profil';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -765,6 +765,12 @@ describe('Profile: search every law the MP voted on', () => {
     app2 = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, lawData, today: '2026-11-24' });
     app = app2;
     nav('#posel-32');
+  });
+
+  it('marks the route on the page root, so profiles can hide the clubs column and use the full width', () => {
+    expect(document.documentElement.dataset.route).toBe('profile');
+    nav('#poslowie');
+    expect(document.documentElement.dataset.route).toBe('directory');
   });
 
   it('shows the card with hundreds of laws, newest first, each with the vote', () => {
