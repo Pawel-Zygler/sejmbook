@@ -1,1 +1,6007 @@
-{"source":null,"fetchedAt":null,"mps":{}}
+{
+ "source": "https://pl.wikipedia.org (artykuły posłów: zdania o członkostwie i funkcjach w organizacjach) + https://www.wikidata.org (P463)",
+ "fetchedAt": "2026-11-26",
+ "mps": {
+  "1": {
+   "title": "Andrzej Adamczyk",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "2": {
+   "title": "Piotr Adamowicz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "3": {
+   "title": "Adam Andruszkiewicz",
+   "items": [
+    {
+     "label": "Młodzież Wszechpolska",
+     "qid": "Q1461181",
+     "from": 2015,
+     "to": 2016,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "8": {
+   "title": "Bartosz Arłukowicz",
+   "items": [
+    {
+     "label": "Lewica i Demokraci",
+     "qid": "Q1632729",
+     "from": 2006,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2007,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lewica",
+     "qid": "Q1822051",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "9": {
+   "title": "Marek Ast",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "10": {
+   "title": "Urszula Augustyn",
+   "items": [
+    {
+     "label": "Katolicyzm",
+     "qid": "Q1841",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Fundacja Opoka",
+     "qid": "Q11798689",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "11": {
+   "title": "Piotr Babinetz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2022,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Instytut Współpracy Polsko-Węgierskiej im. Wacława Felczaka",
+     "qid": "Q65192650",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Liga Republikańska",
+     "qid": "Q11756666",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "12": {
+   "title": "Ryszard Bartosik",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2010,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy Rolników Indywidualnych „Solidarność”",
+     "qid": "Q2646070",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "14": {
+   "title": "Barbara Bartuś",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "15": {
+   "title": "Paweł Bejda",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2012,
+     "to": 2014,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "18": {
+   "title": "Marek Biernacki",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1999,
+     "to": 2001,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": 1999,
+     "to": 2001,
+     "src": "plwiki"
+    },
+    {
+     "label": "Białoruś",
+     "qid": "Q184",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Państwo Islamskie",
+     "qid": "Q2429253",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prawica Narodowa",
+     "qid": "Q11826756",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Młodej Polski",
+     "qid": "Q1230056",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "20": {
+   "title": "Mariusz Błaszczak",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "21": {
+   "title": "Mateusz Bochenek",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "24": {
+   "title": "Jacek Bogucki",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "28": {
+   "title": "Kamil Bortniczuk",
+   "items": [
+    {
+     "label": "Światowa Agencja Antydopingowa",
+     "qid": "Q749394",
+     "from": 2019,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "29": {
+   "title": "Piotr Borys",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "30": {
+   "title": "Bożena Borys-Szopa",
+   "items": [
+    {
+     "label": "Polskie Towarzystwo Legislacji",
+     "qid": "Q15618125",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "31": {
+   "title": "Marcin Bosacki",
+   "items": [
+    {
+     "label": "Kanada",
+     "qid": "Q16",
+     "from": 2013,
+     "to": 2016,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2013,
+     "to": 2016,
+     "src": "plwiki"
+    },
+    {
+     "label": "Szkolne Koła Oporu Społecznego",
+     "qid": "Q9351494",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "33": {
+   "title": "Krzysztof Bosak",
+   "items": [
+    {
+     "label": "Południowa Afryka",
+     "qid": "Q258",
+     "from": 1993,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Nigdy Więcej”",
+     "qid": "Q19669353",
+     "from": 1993,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Młodzież Wszechpolska",
+     "qid": "Q1461181",
+     "from": 2000,
+     "to": 2006,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "34": {
+   "title": "Grzegorz Braun",
+   "items": [
+    {
+     "label": "Instytut Monitorowania Mediów",
+     "qid": "Q11713126",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie Demagog",
+     "qid": "Q118133347",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Judaizm",
+     "qid": "Q9268",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Solidarność Polsko-Czesko-Słowacka",
+     "qid": "Q9339353",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "35": {
+   "title": "Krzysztof Brejza",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "36": {
+   "title": "Agnieszka Buczyńska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2022,
+     "to": 2025,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "37": {
+   "title": "Waldemar Buda",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "38": {
+   "title": "Borys Budka",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2011,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "39": {
+   "title": "Elżbieta Burkiewicz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "42": {
+   "title": "Zbigniew Chmielowiec",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "43": {
+   "title": "Artur Chojecki (polityk)",
+   "items": [
+    {
+     "label": "Akcja Katolicka",
+     "qid": "Q482027",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "46": {
+   "title": "Tadeusz Chrzan",
+   "items": [
+    {
+     "label": "Związek Powiatów Polskich",
+     "qid": "Q9392412",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "47": {
+   "title": "Alicja Chybicka",
+   "items": [
+    {
+     "label": "Polskie Towarzystwo Pediatryczne",
+     "qid": "Q11822799",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Fundacja Mam Marzenie",
+     "qid": "Q9264428",
+     "from": 2012,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "49": {
+   "title": "Janusz Cichoń",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1998,
+     "to": 2001,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "50": {
+   "title": "Krzysztof Ciecióra",
+   "items": [
+    {
+     "label": "Parlament Studentów Rzeczypospolitej Polskiej",
+     "qid": "Q11811715",
+     "from": 2010,
+     "to": 2014,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2021,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "52": {
+   "title": "Michał Cieślak (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2022,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "53": {
+   "title": "Żaneta Cwalina-Śliwowska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2026,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "56": {
+   "title": "Przemysław Czarnek",
+   "items": [
+    {
+     "label": "KIK Lublin",
+     "qid": "Q11732939",
+     "from": 2015,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polonia",
+     "qid": "Q1758764",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Teksas",
+     "qid": "Q1439",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polskie Towarzystwo Gimnastyczne „Sokół”",
+     "qid": "Q1703457",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Vade Mecum",
+     "qid": "Q110459951",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Włochy",
+     "qid": "Q38",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Nauczycielstwa Polskiego",
+     "qid": "Q245110",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Zwolnieni z Teorii",
+     "qid": "Q26831177",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "58": {
+   "title": "Włodzimierz Czarzasty",
+   "items": [
+    {
+     "label": "Stowarzyszenie „Ordynacka”",
+     "qid": "Q9346234",
+     "from": 1999,
+     "to": 2005,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Europejska",
+     "qid": "Q61467361",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ogólnopolskie Towarzystwo Ochrony Ptaków",
+     "qid": "Q11796883",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Socjalistyczny Związek Studentów Polskich",
+     "qid": "Q9339079",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Zrzeszenie Studentów Polskich",
+     "qid": "Q2867653",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "59": {
+   "title": "Jacek Czerniak",
+   "items": [
+    {
+     "label": "Lewica i Demokraci",
+     "qid": "Q1632729",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2010,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "61": {
+   "title": "Anita Czerwińska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2022,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "62": {
+   "title": "Katarzyna Czochara",
+   "items": [
+    {
+     "label": "Solidarność Walcząca",
+     "qid": "Q5447928",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "63": {
+   "title": "Sławomir Ćwik",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "68": {
+   "title": "Andrzej Domański",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Młode Centrum",
+     "qid": "Q8058009",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "VeloFunds Towarzystwo Funduszy Inwestycyjnych",
+     "qid": "Q11792620",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "70": {
+   "title": "Robert Dowhan",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "ZKŻ Zielona Góra",
+     "qid": "Q136258",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "71": {
+   "title": "Przemysław Drabek",
+   "items": [
+    {
+     "label": "Rada nadzorcza",
+     "qid": "Q759969",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "76": {
+   "title": "Agnieszka Dziemianowicz-Bąk",
+   "items": [
+    {
+     "label": "Kampania Przeciw Homofobii",
+     "qid": "Q396875",
+     "from": 2020,
+     "to": 2020,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Nauczycielstwa Polskiego",
+     "qid": "Q245110",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "77": {
+   "title": "Magdalena Filiks",
+   "items": [
+    {
+     "label": "Komitet Obrony Demokracji",
+     "qid": "Q21705863",
+     "from": 2015,
+     "to": 2019,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "78": {
+   "title": "Magdalena Filipek-Sobczak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicze Hufce Pracy",
+     "qid": "Q11795698",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "79": {
+   "title": "Radosław Fogiel",
+   "items": [
+    {
+     "label": "Europejscy Młodzi Konserwatyści",
+     "qid": "Q5413448",
+     "from": 2017,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "81": {
+   "title": "Roman Fritz",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1987,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "82": {
+   "title": "Joanna Frydrych",
+   "items": [
+    {
+     "label": "Karpaty Krosno",
+     "qid": "Q11736513",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "83": {
+   "title": "Konrad Frysztak",
+   "items": [
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "86": {
+   "title": "Aleksandra Gajewska (ur. 1989)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "87": {
+   "title": "Kinga Gajewska",
+   "items": [
+    {
+     "label": "Polski Związek Motorowy",
+     "qid": "Q7226009",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "89": {
+   "title": "Kamila Gasiuk-Pihowicz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Europejska",
+     "qid": "Q61467361",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Młode Centrum",
+     "qid": "Q8058009",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "90": {
+   "title": "Krzysztof Gawkowski",
+   "items": [
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Federacja Młodych Socjaldemokratów",
+     "qid": "Q9258331",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "91": {
+   "title": "Zdzisław Gawlik",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2012,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "92": {
+   "title": "Andrzej Gawron (polityk)",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "95": {
+   "title": "Anna Gembicka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "99": {
+   "title": "Szymon Giżyński",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1997,
+     "to": 1998,
+     "src": "plwiki"
+    },
+    {
+     "label": "Katolickie Stowarzyszenie „Civitas Christiana”",
+     "qid": "Q11737440",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Pax”",
+     "qid": "Q1151389",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "100": {
+   "title": "Piotr Gliński",
+   "items": [
+    {
+     "label": "Polskie Towarzystwo Socjologiczne",
+     "qid": "Q7209992",
+     "from": 2005,
+     "to": 2011,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": 2010,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akademia Rozwoju Filantropii w Polsce",
+     "qid": "Q9143086",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Międzynarodowe Stowarzyszenie Socjologiczne",
+     "qid": "Q1666924",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Społeczny Instytut Ekologiczny",
+     "qid": "Q9340572",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Stowarzyszenie Klon/Jawor",
+     "qid": "Q9346210",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Stowarzyszenie Polska Jest Najważniejsza",
+     "qid": "Q110386800",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Stowarzyszenie Wolnego Słowa",
+     "qid": "Q9346302",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "102": {
+   "title": "Piotr Głowski",
+   "items": [
+    {
+     "label": "Austria",
+     "qid": "Q40",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "103": {
+   "title": "Marta Golbik",
+   "items": [
+    {
+     "label": "Polskie Towarzystwo Ekonomiczne",
+     "qid": "Q11822756",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "105": {
+   "title": "Kazimierz Gołojuch",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Federacja Stowarzyszeń Rodzin Katolickich",
+     "qid": "Q11822147",
+     "from": 2004,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "109": {
+   "title": "Mariusz Gosek",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "110": {
+   "title": "Daria Gosek-Popiołek",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Feminizm",
+     "qid": "Q7252",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kuźnica",
+     "qid": "Q11751485",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Manifa",
+     "qid": "Q11767081",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "111": {
+   "title": "Małgorzata Gosiewska",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "112": {
+   "title": "Piotr Górnikiewicz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2026,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "113": {
+   "title": "Agnieszka Górska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "114": {
+   "title": "Krzysztof Grabczuk",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2002,
+     "to": 2006,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Komitet Olimpijski",
+     "qid": "Q2610864",
+     "from": 2005,
+     "to": 2009,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Zapaśniczy",
+     "qid": "Q11822643",
+     "from": 2005,
+     "to": 2008,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "117": {
+   "title": "Michał Gramatyka",
+   "items": [
+    {
+     "label": "Perły i Łotry",
+     "qid": "Q11826747",
+     "from": 1998,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "118": {
+   "title": "Małgorzata Gromadzka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koło gospodyń wiejskich",
+     "qid": "Q11744726",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "119": {
+   "title": "Marek Gróbarczyk",
+   "items": [
+    {
+     "label": "Rada nadzorcza",
+     "qid": "Q759969",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "120": {
+   "title": "Andrzej Grzyb (poseł)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1989,
+     "to": 1991,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "121": {
+   "title": "Andrzej Gut-Mostowy",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Klub Inteligencji Katolickiej",
+     "qid": "Q1776549",
+     "from": 2005,
+     "to": 2009,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Związek Podhalan",
+     "qid": "Q9392390",
+     "from": 2005,
+     "to": 2009,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "122": {
+   "title": "Kazimierz Gwiazdowski",
+   "items": [
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": 1991,
+     "to": 1996,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "126": {
+   "title": "Agnieszka Hanajczyk",
+   "items": [
+    {
+     "label": "Liga Kobiet Polskich",
+     "qid": "Q11756635",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "128": {
+   "title": "Paulina Hennig-Kloska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "129": {
+   "title": "Krzysztof Hetman",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2010,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "133": {
+   "title": "Szymon Hołownia",
+   "items": [
+    {
+     "label": "Złote Tarasy",
+     "qid": "Q249065",
+     "from": 2007,
+     "to": 2012,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Demokracja parlamentarna",
+     "qid": "Q3043547",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Malteser Hilfsdienst",
+     "qid": "Q1318397",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Zambia",
+     "qid": "Q953",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "136": {
+   "title": "Paweł Hreniak",
+   "items": [
+    {
+     "label": "Zakład Narodowy im. Ossolińskich",
+     "qid": "Q2034617",
+     "from": 2016,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicze Hufce Pracy",
+     "qid": "Q11795698",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "137": {
+   "title": "Paweł Jabłoński",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "138": {
+   "title": "Klaudia Jachira",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Duchowieństwo",
+     "qid": "Q177826",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "141": {
+   "title": "Michał Jaros",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 2003,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2018,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Europejska",
+     "qid": "Q61467361",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Czerwony Krzyż",
+     "qid": "Q6127600",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "142": {
+   "title": "Patryk Jaskulski",
+   "items": [
+    {
+     "label": "Nowa Generacja",
+     "qid": "Q135964770",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "144": {
+   "title": "Dariusz Joński",
+   "items": [
+    {
+     "label": "Federacja Młodych Socjaldemokratów",
+     "qid": "Q9258331",
+     "from": 2003,
+     "to": 2006,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "147": {
+   "title": "Filip Kaczyński",
+   "items": [
+    {
+     "label": "Forum Młodych PiS",
+     "qid": "Q6503147",
+     "from": 2017,
+     "to": 2021,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+     "qid": "Q9392377",
+     "from": 2021,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "150": {
+   "title": "Sebastian Kaleta",
+   "items": [
+    {
+     "label": "Komisja do spraw reprywatyzacji nieruchomości warszawskich",
+     "qid": "Q30909012",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "151": {
+   "title": "Mariusz Kałużny",
+   "items": [
+    {
+     "label": "Legia Chełmża",
+     "qid": "Q11753717",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "152": {
+   "title": "Mariusz Kamiński",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1984,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Antykomunizm",
+     "qid": "Q182121",
+     "from": 1993,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Liga Republikańska",
+     "qid": "Q11756666",
+     "from": 1993,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Rada nadzorcza",
+     "qid": "Q759969",
+     "from": 2003,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Opozycja polityczna w PRL",
+     "qid": "Q96480380",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "154": {
+   "title": "Jan Kanthak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2021,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "156": {
+   "title": "Jacek Karnowski (polityk)",
+   "items": [
+    {
+     "label": "Ruch Młodej Polski",
+     "qid": "Q1230056",
+     "from": 1986,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1998,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Koszykówki",
+     "qid": "Q3741220",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Światowy Związek Żołnierzy Armii Krajowej",
+     "qid": "Q9396283",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Wodne Ochotnicze Pogotowie Ratunkowe",
+     "qid": "Q9376234",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Związek Miast Polskich",
+     "qid": "Q9392349",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "157": {
+   "title": "Iwona Karolewska",
+   "items": [
+    {
+     "label": "Fundacja im. Stefana Batorego",
+     "qid": "Q4308487",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Towarzystwo Przyjaciół Dolnej Wisły",
+     "qid": "Q9360514",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "159": {
+   "title": "Henryk Kiepura",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2014,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Młodzieży Wiejskiej",
+     "qid": "Q9392362",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+     "qid": "Q9392377",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "161": {
+   "title": "Katarzyna Kierzek-Koperska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "162": {
+   "title": "Dariusz Klimczak",
+   "items": [
+    {
+     "label": "Forum Młodych Ludowców",
+     "qid": "Q9261859",
+     "from": 2002,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2009,
+     "to": 2018,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "165": {
+   "title": "Łukasz Kmita",
+   "items": [
+    {
+     "label": "Katolicyzm",
+     "qid": "Q1841",
+     "from": 2006,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Harcerstwa Rzeczypospolitej",
+     "qid": "Q7438352",
+     "from": 2023,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "166": {
+   "title": "Michał Kobosko",
+   "items": [
+    {
+     "label": "Fundacja im. Lesława A. Pagi",
+     "qid": "Q9264519",
+     "from": 2000,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2009,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "168": {
+   "title": "Ewa Kołodziej",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "170": {
+   "title": "Michał Kołodziejczak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2025,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "171": {
+   "title": "Rafał Komarewicz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2022,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "172": {
+   "title": "Maciej Konieczny",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Młodzi Socjaliści",
+     "qid": "Q8058433",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch alterglobalistyczny",
+     "qid": "Q2385364",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "174": {
+   "title": "Władysław Kosiniak-Kamysz",
+   "items": [
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Forum Młodych Ludowców",
+     "qid": "Q9261859",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Ludowe Zespoły Sportowe",
+     "qid": "Q6699027",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polski Komitet Olimpijski",
+     "qid": "Q2610864",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "175": {
+   "title": "Tomasz Kostuś",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2010,
+     "to": 2014,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "177": {
+   "title": "Katarzyna Kotula",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ogólnopolski Strajk Kobiet",
+     "qid": "Q9254008",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "178": {
+   "title": "Paweł Kowal",
+   "items": [
+    {
+     "label": "Klub Jagielloński",
+     "qid": "Q11740224",
+     "from": 1996,
+     "to": 1998,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Stowarzyszenie „Wspólnota Polska”",
+     "qid": "Q1342099",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Światowy Związek Żołnierzy Armii Krajowej",
+     "qid": "Q9396283",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": 2008,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "179": {
+   "title": "Henryk Kowalczyk",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": 1981,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akcja Katolicka",
+     "qid": "Q482027",
+     "from": 1999,
+     "to": 2003,
+     "src": "plwiki"
+    },
+    {
+     "label": "Diecezja płocka",
+     "qid": "Q874721",
+     "from": 1999,
+     "to": 2003,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Wspólnota Polska”",
+     "qid": "Q1342099",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "180": {
+   "title": "Janusz Kowalski (polityk)",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2014,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Fundacja Narodowa",
+     "qid": "Q48845303",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "183": {
+   "title": "Stefan Krajewski (ur. 1981)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2018,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "185": {
+   "title": "Leonard Krasulski",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "188": {
+   "title": "Robert Kropiwnicki",
+   "items": [
+    {
+     "label": "Komisja do spraw reprywatyzacji nieruchomości warszawskich",
+     "qid": "Q30909012",
+     "from": 2017,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "189": {
+   "title": "Piotr Król",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "190": {
+   "title": "Wojciech Król (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "191": {
+   "title": "Anna Krupka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "195": {
+   "title": "Adam Krzemiński (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Jurand Ciechanów",
+     "qid": "Q11764946",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Społeczne Towarzystwo Oświatowe",
+     "qid": "Q9340538",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "197": {
+   "title": "Krzysztof Kubów",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "198": {
+   "title": "Anita Kucharska-Dziedzic",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2021,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "199": {
+   "title": "Marek Kuchciński",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy Rolników Indywidualnych „Solidarność”",
+     "qid": "Q2646070",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie Dziennikarzy Polskich",
+     "qid": "Q9346181",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "200": {
+   "title": "Paweł Kukiz",
+   "items": [
+    {
+     "label": "Hak",
+     "qid": "Q9285019",
+     "from": 1982,
+     "to": 1984,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Aya RL",
+     "qid": "Q9163123",
+     "from": 1983,
+     "to": 2011,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Piersi",
+     "qid": "Q11816670",
+     "from": 1984,
+     "to": 2013,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Emigranci",
+     "qid": "Q9253434",
+     "from": 1989,
+     "to": 1993,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Młodzież Wszechpolska",
+     "qid": "Q1461181",
+     "from": 2010,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kukiz i Piersi",
+     "qid": "Q48840823",
+     "from": 2014,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Demokracja Bezpośrednia",
+     "qid": "Q130556302",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Yugopolis",
+     "qid": "Q9383579",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "201": {
+   "title": "Marcin Kulasek",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2016,
+     "to": 2021,
+     "src": "plwiki"
+    },
+    {
+     "label": "Federacja Młodych Socjaldemokratów",
+     "qid": "Q9258331",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "202": {
+   "title": "Maria Kurowska (samorządowiec)",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1989,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2010,
+     "src": "plwiki"
+    },
+    {
+     "label": "Towarzystwo Przyjaciół Dzieci",
+     "qid": "Q16611224",
+     "from": 2009,
+     "to": 2009,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Motorowy",
+     "qid": "Q7226009",
+     "from": 2015,
+     "to": 2015,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "203": {
+   "title": "Władysław Kurowski",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "212": {
+   "title": "Izabela Leszczyna",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2013,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2013,
+     "to": 2015,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "213": {
+   "title": "Joanna Lichocka",
+   "items": [
+    {
+     "label": "Stowarzyszenie Dziennikarzy Polskich",
+     "qid": "Q9346181",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "214": {
+   "title": "Krzysztof Lipiec",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Socjalistyczny Związek Studentów Polskich",
+     "qid": "Q9339079",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "215": {
+   "title": "Łukasz Litewka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2026,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "216": {
+   "title": "Grzegorz Lorek",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "217": {
+   "title": "Radosław Lubczyk",
+   "items": [
+    {
+     "label": "Wielim Szczecinek",
+     "qid": "Q9372754",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "219": {
+   "title": "Adam Luboński",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Wielkopolski Związek Piłki Nożnej",
+     "qid": "Q9373085",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "221": {
+   "title": "Alicja Łepkowska-Gołaś",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "222": {
+   "title": "Dorota Łoboda",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2018,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kongres Kobiet",
+     "qid": "Q11742425",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Ogólnopolski Strajk Kobiet",
+     "qid": "Q9254008",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Rada Konsultacyjna",
+     "qid": "Q101080530",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "226": {
+   "title": "Antoni Macierewicz",
+   "items": [
+    {
+     "label": "Komitet Obrony Robotników",
+     "qid": "Q1779995",
+     "from": 1968,
+     "to": 1989,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Komitet Samoobrony Społecznej „KOR”",
+     "qid": "Q5152957",
+     "from": 1968,
+     "to": 1989,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": 1968,
+     "to": 1989,
+     "src": "plwiki"
+    },
+    {
+     "label": "Chile",
+     "qid": "Q298",
+     "from": 1973,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "1 Warszawska Drużyna Harcerska im. Romualda Traugutta Czarna Jedynka",
+     "qid": "Q9130595",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Afganistan",
+     "qid": "Q889",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Czerwiec 1976",
+     "qid": "Q47074338",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Karta 77",
+     "qid": "Q729362",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Krajowa Komisja Porozumiewawcza",
+     "qid": "Q6971854",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Razem Polsce",
+     "qid": "Q11833916",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Katolicko-Narodowy",
+     "qid": "Q751684",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stany Zjednoczone",
+     "qid": "Q30",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Zrzeszenie Studentów Polskich",
+     "qid": "Q2867653",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "231": {
+   "title": "Arkadiusz Marchewka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "232": {
+   "title": "Jagna Marczułajtis-Walczak",
+   "items": [
+    {
+     "label": "Koalicja Europejska",
+     "qid": "Q61467361",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "233": {
+   "title": "Dorota Marek",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "235": {
+   "title": "Jerzy Materna",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Łowiecki",
+     "qid": "Q11822644",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "236": {
+   "title": "Grzegorz Matusiak",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1989,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2010,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Hokeja na Lodzie",
+     "qid": "Q29584",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "238": {
+   "title": "Marek Matuszewski",
+   "items": [
+    {
+     "label": "Polski Związek Hokeja na Lodzie",
+     "qid": "Q29584",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Włókniarz Zgierz",
+     "qid": "Q28675956",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "239": {
+   "title": "Paulina Matysiak",
+   "items": [
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "242": {
+   "title": "Anna Milczanowska",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "243": {
+   "title": "Daniel Milewski",
+   "items": [
+    {
+     "label": "Forum Młodych PiS",
+     "qid": "Q6503147",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "246": {
+   "title": "Mateusz Morawiecki",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Solidarność Walcząca",
+     "qid": "Q5447928",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "247": {
+   "title": "Jan Mosiński",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1990,
+     "to": 2015,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1990,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Komisja do spraw reprywatyzacji nieruchomości warszawskich",
+     "qid": "Q30909012",
+     "from": 2017,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "248": {
+   "title": "Michał Moskal",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 2015,
+     "to": 2017,
+     "src": "plwiki"
+    },
+    {
+     "label": "Forum Młodych PiS",
+     "qid": "Q6503147",
+     "from": 2020,
+     "to": 2025,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "249": {
+   "title": "Czesław Mroczek (polityk)",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "253": {
+   "title": "Arkadiusz Mularczyk",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2005,
+     "to": 2024,
+     "src": "plwiki"
+    },
+    {
+     "label": "Sąd okręgowy",
+     "qid": "Q25212275",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Zjednoczona Prawica",
+     "qid": "Q71261190",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "255": {
+   "title": "Piotr Müller",
+   "items": [
+    {
+     "label": "Polska Komisja Akredytacyjna",
+     "qid": "Q11822189",
+     "from": 2013,
+     "to": 2014,
+     "src": "plwiki"
+    },
+    {
+     "label": "Rada Główna Nauki i Szkolnictwa Wyższego",
+     "qid": "Q11833345",
+     "from": 2013,
+     "to": 2014,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    },
+    {
+     "label": "Parlament Studentów Rzeczypospolitej Polskiej",
+     "qid": "Q11811715",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "256": {
+   "title": "Arkadiusz Myrcha",
+   "items": [
+    {
+     "label": "Elana Toruń",
+     "qid": "Q2090343",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Komisja do spraw reprywatyzacji nieruchomości warszawskich",
+     "qid": "Q30909012",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "257": {
+   "title": "Grzegorz Napieralski",
+   "items": [
+    {
+     "label": "Lewica",
+     "qid": "Q1822051",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lewica i Demokraci",
+     "qid": "Q1632729",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2008,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "258": {
+   "title": "Dorota Niedziela",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2021,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2021,
+     "to": 2025,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "259": {
+   "title": "Jacek Niedźwiedzki (badmintonista)",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2018,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "261": {
+   "title": "Jolanta Niezgodzka",
+   "items": [
+    {
+     "label": "Fundacja im. Stefana Batorego",
+     "qid": "Q4308487",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kongres Kobiet",
+     "qid": "Q11742425",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "263": {
+   "title": "Barbara Nowacka",
+   "items": [
+    {
+     "label": "Młodzi Socjaliści",
+     "qid": "Q8058433",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Feminizm",
+     "qid": "Q7252",
+     "from": 2015,
+     "to": 2017,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2015,
+     "to": 2017,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2017,
+     "src": "plwiki"
+    },
+    {
+     "label": "Federacja na rzecz Kobiet i Planowania Rodziny",
+     "qid": "Q9258352",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "266": {
+   "title": "Wanda Nowicka",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": 1981,
+     "src": "plwiki"
+    },
+    {
+     "label": "Federacja na rzecz Kobiet i Planowania Rodziny",
+     "qid": "Q9258352",
+     "from": 1991,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Feminizm",
+     "qid": "Q7252",
+     "from": 1991,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1991,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kobiety na Falach",
+     "qid": "Q1716735",
+     "from": 2003,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kongres Kobiet",
+     "qid": "Q11742425",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "267": {
+   "title": "Urszula Nowogórska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2014,
+     "to": 2018,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "268": {
+   "title": "Mirosława Nykiel",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1997,
+     "to": 1997,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "269": {
+   "title": "Marcin Ociepa",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Rzeczypospolitej",
+     "qid": "Q7438352",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "270": {
+   "title": "Marzena Okła-Drewnowicz",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2021,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2021,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Towarzystwo Przyjaciół Dzieci",
+     "qid": "Q16611224",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "271": {
+   "title": "Barbara Okuła",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "272": {
+   "title": "Barbara Oliwiecka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "274": {
+   "title": "Paweł Olszewski (polityk)",
+   "items": [
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": 2002,
+     "to": 2003,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "276": {
+   "title": "Łukasz Osmalak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2026,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "278": {
+   "title": "Jacek Osuch",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "279": {
+   "title": "Jacek Ozdoba",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "280": {
+   "title": "Teresa Pamuła",
+   "items": [
+    {
+     "label": "Klub Inteligencji Katolickiej",
+     "qid": "Q1776549",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "281": {
+   "title": "Paweł Papke",
+   "items": [
+    {
+     "label": "Polski Związek Piłki Siatkowej",
+     "qid": "Q11822628",
+     "from": 2015,
+     "to": 2016,
+     "src": "plwiki"
+    },
+    {
+     "label": "Reprezentacja Polski w piłce siatkowej mężczyzn",
+     "qid": "Q1631106",
+     "from": 2015,
+     "to": 2016,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "282": {
+   "title": "Urszula Pasławska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2012,
+     "src": "plwiki"
+    },
+    {
+     "label": "Diecezja mazurska",
+     "qid": "Q1231924",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kościół Ewangelicko-Augsburski w Rzeczypospolitej Polskiej",
+     "qid": "Q1379796",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Łowiecki",
+     "qid": "Q11822644",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "283": {
+   "title": "Krzysztof Paszyk",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2014,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2014,
+     "to": 2015,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "284": {
+   "title": "Karolina Pawliczak",
+   "items": [
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "286": {
+   "title": "Ryszard Petru",
+   "items": [
+    {
+     "label": "Towarzystwo Ekonomistów Polskich",
+     "qid": "Q9360418",
+     "from": 2011,
+     "to": 2015,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Forum Obywatelskiego Rozwoju",
+     "qid": "Q9261865",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "287": {
+   "title": "Małgorzata Pępek",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2002,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "288": {
+   "title": "Bolesław Piecha",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": 1964,
+     "to": 1968,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1981,
+     "to": 1982,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2001,
+     "to": 2013,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch antyaborcyjny",
+     "qid": "Q1129261",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "289": {
+   "title": "Grzegorz Piechowiak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2021,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "290": {
+   "title": "Anna Pieczarka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2019,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "295": {
+   "title": "Kazimierz Plocke",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "299": {
+   "title": "Jerzy Polaczek",
+   "items": [
+    {
+     "label": "Opus Dei",
+     "qid": "Q160918",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "302": {
+   "title": "Agnieszka Pomaska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2009,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "304": {
+   "title": "Jacek Protas",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2014,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Dom Warmiński”",
+     "qid": "Q9346155",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "305": {
+   "title": "Marcin Przydacz",
+   "items": [
+    {
+     "label": "Klub Jagielloński",
+     "qid": "Q11740224",
+     "from": 2010,
+     "to": 2014,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "306": {
+   "title": "Grzegorz Puda",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "308": {
+   "title": "Renata Rak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "309": {
+   "title": "Ireneusz Raś",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "310": {
+   "title": "Zbigniew Rau (prawnik)",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Ruch Obywatelski „Polska XXI”",
+     "qid": "Q1782776",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "311": {
+   "title": "Marcin Romanowski",
+   "items": [
+    {
+     "label": "Instytut Wymiaru Sprawiedliwości",
+     "qid": "Q11713255",
+     "from": 2016,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "313": {
+   "title": "Monika Rosa",
+   "items": [
+    {
+     "label": "Młode Centrum",
+     "qid": "Q8058009",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Projekt: Polska",
+     "qid": "Q11827600",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "314": {
+   "title": "Wiesław Różyński",
+   "items": [
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": 2007,
+     "to": 2009,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "315": {
+   "title": "Urszula Rusecka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "319": {
+   "title": "Marek Rząsa",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "320": {
+   "title": "Jarosław Rzepa",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2013,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ludowe Zespoły Sportowe",
+     "qid": "Q6699027",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "324": {
+   "title": "Tadeusz Samborski",
+   "items": [
+    {
+     "label": "Fundacja „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego",
+     "qid": "Q5508924",
+     "from": 1996,
+     "to": 1998,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Stowarzyszeń Regionalnych Rzeczpospolitej Polskiej",
+     "qid": "Q25406438",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Stowarzyszenie Współpracy Polska-Wschód",
+     "qid": "Q123985322",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Związek Młodzieży Wiejskiej",
+     "qid": "Q9392362",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "326": {
+   "title": "Marek Sawicki",
+   "items": [
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+     "qid": "Q9392377",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "327": {
+   "title": "Ewa Schädler",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "328": {
+   "title": "Joanna Scheuring-Wielgus",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "329": {
+   "title": "Anna Schmidt",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "330": {
+   "title": "Łukasz Schreiber",
+   "items": [
+    {
+     "label": "Rada Ministrów w Polsce",
+     "qid": "Q1338983",
+     "from": 2026,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "331": {
+   "title": "Jarosław Sellin",
+   "items": [
+    {
+     "label": "Ruch Młodej Polski",
+     "qid": "Q1230056",
+     "from": 1983,
+     "to": 1989,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Generalny Konserwator Zabytków",
+     "qid": "Q9266821",
+     "from": 1998,
+     "to": 1999,
+     "src": "plwiki"
+    },
+    {
+     "label": "Opus Dei",
+     "qid": "Q160918",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Obywatelski „Polska XXI”",
+     "qid": "Q1782776",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "333": {
+   "title": "Edward Siarka",
+   "items": [
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": 1994,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+     "qid": "Q9392377",
+     "from": 2010,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Zjednoczona Prawica",
+     "qid": "Q71261190",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "334": {
+   "title": "Krystyna Sibińska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "335": {
+   "title": "Czesław Siekierski",
+   "items": [
+    {
+     "label": "Związek Młodzieży Wiejskiej",
+     "qid": "Q9392362",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "337": {
+   "title": "Tomasz Siemoniak",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2000,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "338": {
+   "title": "Bartłomiej Sienkiewicz",
+   "items": [
+    {
+     "label": "Ruch Wolność i Pokój",
+     "qid": "Q9323608",
+     "from": 1988,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "339": {
+   "title": "Arkadiusz Sikora",
+   "items": [
+    {
+     "label": "Śląsk Wrocław",
+     "qid": "Q3025349",
+     "from": 2013,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "343": {
+   "title": "Sławomir Skwarek",
+   "items": [
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "344": {
+   "title": "Waldemar Sługocki",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2011,
+     "to": 2015,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "345": {
+   "title": "Weronika Smarduch",
+   "items": [
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "346": {
+   "title": "Kazimierz Smoliński",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Klub Inteligencji Katolickiej",
+     "qid": "Q1776549",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "347": {
+   "title": "Anna Sobolak",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "348": {
+   "title": "Krzysztof Sobolewski",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2021,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "349": {
+   "title": "Artur Soboń",
+   "items": [
+    {
+     "label": "Vade Mecum",
+     "qid": "Q110459951",
+     "from": 1998,
+     "to": 1999,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2019,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "351": {
+   "title": "Zbigniew Sosnowski (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2008,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+     "qid": "Q9392377",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "352": {
+   "title": "Marek Sowa",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2006,
+     "to": 2010,
+     "src": "plwiki"
+    },
+    {
+     "label": "Finlandia",
+     "qid": "Q33",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "355": {
+   "title": "Mirosława Stachowiak-Różecka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "359": {
+   "title": "Mirosław Suchoń",
+   "items": [
+    {
+     "label": "Młode Centrum",
+     "qid": "Q8058009",
+     "from": 2001,
+     "to": 2006,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Projekt: Polska",
+     "qid": "Q11827600",
+     "from": 2001,
+     "to": 2006,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "360": {
+   "title": "Marek Suski",
+   "items": [
+    {
+     "label": "Światowy Związek Żołnierzy Armii Krajowej",
+     "qid": "Q9396283",
+     "from": 2006,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2017,
+     "to": 2019,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "362": {
+   "title": "Artur Szałabawka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2014,
+     "to": 2015,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "363": {
+   "title": "Wojciech Szarama",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "364": {
+   "title": "Wiesław Szczepański",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2004,
+     "to": 2005,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "365": {
+   "title": "Michał Szczerba",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": 2002,
+     "to": 2007,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Katolicyzm",
+     "qid": "Q1841",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "366": {
+   "title": "Krzysztof Szczucki",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "367": {
+   "title": "Józefa Szczurek-Żelazko",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "368": {
+   "title": "Paweł Szefernaker",
+   "items": [
+    {
+     "label": "Forum Młodych PiS",
+     "qid": "Q6503147",
+     "from": 2015,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": 2015,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Europejscy Młodzi Konserwatyści",
+     "qid": "Q5413448",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "369": {
+   "title": "Andrzej Szejna",
+   "items": [
+    {
+     "label": "Parlament Studentów Rzeczypospolitej Polskiej",
+     "qid": "Q11811715",
+     "from": 1997,
+     "to": 1999,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2003,
+     "to": 2004,
+     "src": "plwiki"
+    },
+    {
+     "label": "Fundacja Aleksandra Kwaśniewskiego „Amicus Europae”",
+     "qid": "Q24945940",
+     "from": 2022,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Białoruś",
+     "qid": "Q184",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Izrael",
+     "qid": "Q801",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Agencja Inwestycji i Handlu",
+     "qid": "Q11822104",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "370": {
+   "title": "Andrzej Szewiński",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "371": {
+   "title": "Adam Szłapka",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2019,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Młode Centrum",
+     "qid": "Q8058009",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Projekt: Polska",
+     "qid": "Q11827600",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "372": {
+   "title": "Henryk Szopiński",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "373": {
+   "title": "Paweł Szrot",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2020,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": 2016,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "374": {
+   "title": "Krystyna Szumilas",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2011,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "375": {
+   "title": "Stanisław Szwed (ur. 1955)",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "377": {
+   "title": "Tomasz Szymański",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2011,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "381": {
+   "title": "Andrzej Śliwka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "382": {
+   "title": "Paweł Śliz",
+   "items": [
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "383": {
+   "title": "Krzysztof Śmiszek",
+   "items": [
+    {
+     "label": "Polskie Towarzystwo Prawa Antydyskryminacyjnego",
+     "qid": "Q24940979",
+     "from": 2019,
+     "to": 2024,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Kampania Przeciw Homofobii",
+     "qid": "Q396875",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prawa człowieka",
+     "qid": "Q8458",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "384": {
+   "title": "Jacek Świat",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "385": {
+   "title": "Apoloniusz Tajner",
+   "items": [
+    {
+     "label": "Polski Związek Narciarski",
+     "qid": "Q11822624",
+     "from": 1994,
+     "to": 2004,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Komitet Olimpijski",
+     "qid": "Q2610864",
+     "from": 1999,
+     "to": 2004,
+     "src": "plwiki"
+    },
+    {
+     "label": "Reprezentacja Polski w skokach narciarskich",
+     "qid": "Q9307092",
+     "from": 1999,
+     "to": 2004,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "386": {
+   "title": "Krzysztof Tchórzewski (polityk)",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1981,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "387": {
+   "title": "Robert Telus",
+   "items": [
+    {
+     "label": "Akcja Katolicka",
+     "qid": "Q482027",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy Rolników Indywidualnych „Solidarność”",
+     "qid": "Q2646070",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "388": {
+   "title": "Ryszard Terlecki",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Komitet Obrony Robotników",
+     "qid": "Q1779995",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Studencki Komitet Solidarności w Krakowie",
+     "qid": "Q684410",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "389": {
+   "title": "Tadeusz Tomaszewski (poseł)",
+   "items": [
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": 1971,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ludowe Zespoły Sportowe",
+     "qid": "Q6699027",
+     "from": 1976,
+     "to": 1994,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Socjalistycznej Młodzieży Polskiej",
+     "qid": "Q7209985",
+     "from": 1976,
+     "to": 1994,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polski Komitet Olimpijski",
+     "qid": "Q2610864",
+     "from": 2013,
+     "to": 2017,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Motorowy",
+     "qid": "Q7226009",
+     "from": 2017,
+     "to": 2020,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "390": {
+   "title": "Jacek Tomczak (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": 2024,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lechia",
+     "qid": "Q11753565",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "392": {
+   "title": "Cezary Tomczyk",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2020,
+     "to": 2021,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2020,
+     "to": 2021,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "393": {
+   "title": "Stanisław Tomczyszyn",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2007,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "394": {
+   "title": "Małgorzata Tracz",
+   "items": [
+    {
+     "label": "Kongres Kobiet",
+     "qid": "Q11742425",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "398": {
+   "title": "Sylwester Tułajew",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "399": {
+   "title": "Witold Tumanowicz",
+   "items": [
+    {
+     "label": "Młodzież Wszechpolska",
+     "qid": "Q1461181",
+     "from": 2011,
+     "to": 2013,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2011,
+     "to": 2015,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "400": {
+   "title": "Donald Tusk",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2025,
+     "to": 2025,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lechia Gdańsk",
+     "qid": "Q734785",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Polska Rzeczpospolita Ludowa",
+     "qid": "Q211274",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "401": {
+   "title": "Stanisław Tyszka",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "402": {
+   "title": "Katarzyna Ueberhan",
+   "items": [
+    {
+     "label": "Antyrasizm",
+     "qid": "Q582965",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Feminizm",
+     "qid": "Q7252",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kongres Kobiet",
+     "qid": "Q11742425",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Manifa",
+     "qid": "Q11767081",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Marsz Równości w Poznaniu",
+     "qid": "Q11770503",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ogólnopolski Strajk Kobiet",
+     "qid": "Q9254008",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "403": {
+   "title": "Jarosław Urbaniak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2010,
+     "to": 2014,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "404": {
+   "title": "Piotr Uruski",
+   "items": [
+    {
+     "label": "Polski Związek Hokeja na Lodzie",
+     "qid": "Q29584",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polskie Towarzystwo Gimnastyczne „Sokół”",
+     "qid": "Q1703457",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Towarzystwo Gimnastyczne „Sokół” w Sanoku",
+     "qid": "Q16611192",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "406": {
+   "title": "Jarosław Wałęsa",
+   "items": [
+    {
+     "label": "Polski Związek Lekkiej Atletyki",
+     "qid": "Q3092102",
+     "from": 2010,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "407": {
+   "title": "Marcin Warchoł",
+   "items": [
+    {
+     "label": "Ius et Lex",
+     "qid": "Q11714301",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "408": {
+   "title": "Robert Wardzała",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "409": {
+   "title": "Robert Warwas",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "413": {
+   "title": "Maciej Wąsik",
+   "items": [
+    {
+     "label": "Liga Republikańska",
+     "qid": "Q11756666",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "414": {
+   "title": "Marta Wcisło",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2019,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "416": {
+   "title": "Marek Wesoły (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "417": {
+   "title": "Joanna Wicha",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "418": {
+   "title": "Patryk Wicher",
+   "items": [
+    {
+     "label": "Forum Młodych PiS",
+     "qid": "Q6503147",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "419": {
+   "title": "Dariusz Wieczorek (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1998,
+     "to": 2001,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Sąd rejonowy",
+     "qid": "Q110615488",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Ordynacka”",
+     "qid": "Q9346234",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Zrzeszenie Studentów Polskich",
+     "qid": "Q2867653",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "423": {
+   "title": "Teresa Wilk (polityk)",
+   "items": [
+    {
+     "label": "Komitet Ochrony Praw Dziecka",
+     "qid": "Q11741793",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "424": {
+   "title": "Przemysław Wipler",
+   "items": [
+    {
+     "label": "Opus Dei",
+     "qid": "Q160918",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Rada nadzorcza",
+     "qid": "Q759969",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Stowarzyszenie „Republikanie”",
+     "qid": "Q29413547",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "426": {
+   "title": "Adrian Witczak",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "428": {
+   "title": "Elżbieta Witek",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Rada Dialogu Społecznego",
+     "qid": "Q24074191",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "430": {
+   "title": "Kamil Wnuk",
+   "items": [
+    {
+     "label": "Forum dla Zagłębia Dąbrowskiego",
+     "qid": "Q105315720",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "432": {
+   "title": "Agnieszka Wojciechowska van Heukelom",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1989,
+     "to": 1990,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Opozycja polityczna w PRL",
+     "qid": "Q96480380",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Obrony Praw Człowieka i Obywatela",
+     "qid": "Q6926637",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "433": {
+   "title": "Agata Wojtyszek",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "434": {
+   "title": "Bogusław Wołoszański",
+   "items": [
+    {
+     "label": "Kampania wrześniowa",
+     "qid": "Q150812",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "435": {
+   "title": "Michał Woś",
+   "items": [
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Instytut Wymiaru Sprawiedliwości",
+     "qid": "Q11713255",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "436": {
+   "title": "Grzegorz Woźniak (polityk)",
+   "items": [
+    {
+     "label": "Ludowe Zespoły Sportowe",
+     "qid": "Q6699027",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "437": {
+   "title": "Tadeusz Woźniak (polityk)",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1981,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": 1990,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Liga Krajowa",
+     "qid": "Q11756638",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Zjednoczona Prawica",
+     "qid": "Q71261190",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "439": {
+   "title": "Maciej Wróbel",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "440": {
+   "title": "Bartłomiej Wróblewski",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": 1980,
+     "to": 1993,
+     "src": "plwiki"
+    },
+    {
+     "label": "Chrobria",
+     "qid": "Q11690252",
+     "from": 1995,
+     "to": 2009,
+     "src": "plwiki"
+    },
+    {
+     "label": "Lechia",
+     "qid": "Q11753565",
+     "from": 1995,
+     "to": 2009,
+     "src": "plwiki"
+    },
+    {
+     "label": "Fundacja Redemptoris Missio",
+     "qid": "Q65174265",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polskie Towarzystwo Prawa Konstytucyjnego",
+     "qid": "Q11822802",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "441": {
+   "title": "Paweł Zalewski (polityk)",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 1991,
+     "to": 1993,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Obywatelski „Polska XXI”",
+     "qid": "Q1782776",
+     "from": 2008,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "444": {
+   "title": "Bartosz Zawieja",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "446": {
+   "title": "Sławomir Zawiślak",
+   "items": [
+    {
+     "label": "Światowy Związek Żołnierzy Armii Krajowej",
+     "qid": "Q9396283",
+     "from": 1998,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "450": {
+   "title": "Zbigniew Ziejewski",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2014,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "452": {
+   "title": "Jarosław Zieliński (polityk)",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1981,
+     "to": 1986,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1986,
+     "to": 2005,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "455": {
+   "title": "Tomasz Zimoch",
+   "items": [
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "456": {
+   "title": "Zbigniew Ziobro",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Komenda Główna Policji",
+     "qid": "Q7209967",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "459": {
+   "title": "Bożena Żelazowska",
+   "items": [
+    {
+     "label": "Generalny Konserwator Zabytków",
+     "qid": "Q9266821",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ochotnicza straż pożarna w Polsce",
+     "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Młodzieży Wiejskiej",
+     "qid": "Q9392362",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "461": {
+   "title": "Anna Baluch",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "462": {
+   "title": "Magdalena Łośko",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "463": {
+   "title": "Monika Pawłowska",
+   "items": [
+    {
+     "label": "Lewica",
+     "qid": "Q66807204",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "464": {
+   "title": "Alicja Łuczak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Nauczycielstwa Polskiego",
+     "qid": "Q245110",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "466": {
+   "title": "Paweł Masełko",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2018,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "468": {
+   "title": "Lidia Czechak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2018,
+     "to": 2024,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "469": {
+   "title": "Barbara Grygorcewicz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2024,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "470": {
+   "title": "Bożenna Hołownia",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "471": {
+   "title": "Urszula Koszutska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "475": {
+   "title": "Katarzyna Królak",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "478": {
+   "title": "Jerzy Meysztowicz",
+   "items": [
+    {
+     "label": "Towarzystwo Sportowe Wisła Kraków",
+     "qid": "Q9353834",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "479": {
+   "title": "Krzysztof Mieszkowski",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "483": {
+   "title": "Magdalena Roguska",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2024,
+     "to": 2025,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "485": {
+   "title": "Krzysztof Szymański (ur. 1990)",
+   "items": [
+    {
+     "label": "Młodzież Wszechpolska",
+     "qid": "Q1461181",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "486": {
+   "title": "Włodzimierz Tomaszewski",
+   "items": [
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2000,
+     "to": 2001,
+     "src": "plwiki"
+    },
+    {
+     "label": "Prezydent Rzeczypospolitej Polskiej",
+     "qid": "Q1054799",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Unia Metropolii Polskich",
+     "qid": "Q10517775",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "488": {
+   "title": "Jarosław Krajewski",
+   "items": [
+    {
+     "label": "Forum Młodych PiS",
+     "qid": "Q6503147",
+     "from": 2002,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "489": {
+   "title": "Bożena Lisowska",
+   "items": [
+    {
+     "label": "Koalicja Obywatelska",
+     "qid": "Q1021144",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "490": {
+   "title": "Michał Połuboczek",
+   "items": [
+    {
+     "label": "Stowarzyszenie „Republikanie”",
+     "qid": "Q29413547",
+     "from": 2013,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "492": {
+   "title": "Rafał Romanowski",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2015,
+     "to": 2020,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "493": {
+   "title": "Henryk Smolarz",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2008,
+     "to": 2011,
+     "src": "plwiki"
+    },
+    {
+     "label": "Trzecia Droga",
+     "qid": "Q118905408",
+     "from": 2023,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "495": {
+   "title": "Michał Jach",
+   "items": [
+    {
+     "label": "Obywatelstwo",
+     "qid": "Q42138",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Młodzieży Socjalistycznej",
+     "qid": "Q9392360",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "496": {
+   "title": "Bogumiła Olbryś",
+   "items": [
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2025,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "497": {
+   "title": "Tomasz Rzymkowski",
+   "items": [
+    {
+     "label": "Vade Mecum",
+     "qid": "Q110459951",
+     "from": 2008,
+     "to": 2010,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska",
+     "qid": "Q36",
+     "from": 2021,
+     "to": 2023,
+     "src": "plwiki"
+    }
+   ]
+  }
+ }
+}
