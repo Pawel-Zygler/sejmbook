@@ -2,6 +2,7 @@
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
 import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl } from './render.js';
 import { clubFamily } from '../lib/career.js';
+import { aboutYears } from '../lib/pl-words.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
 import { personKey, roleSpectrum } from '../lib/career.js';
 
@@ -162,7 +163,7 @@ export function renderOfficial(ctx, slug, today) {
   const yrs = (y) => `${Math.round(y * 10) / 10}`.replace('.', ',');
   const news = personNewsPost(ctx, p.name);
   const roleText = sp
-    ? `<span data-testid="spectrum-text">W funkcjach państwowych ${listPl(sp.parts.map((x) => `ok. ${yrs(x.years)} ${x.years >= 1.5 && x.years < 4.5 ? 'lata' : 'lat'} w <b>${esc(x.label)}</b> (${esc(years(x.from, x.to === today ? null : x.to))})`))}.</span>`
+    ? `<span data-testid="spectrum-text">W funkcjach państwowych ${listPl(sp.parts.map((x) => `${aboutYears(x.years)} w <b>${esc(x.label)}</b>, ${x.to === today ? `od ${String(x.from).slice(0, 4)} do dziś` : `w latach ${esc(years(x.from, x.to))}`}`), 'oraz')}.</span>`
     : '';
   const line = roleLine(p.roles, today, roleText);
   return `

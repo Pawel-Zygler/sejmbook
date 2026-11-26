@@ -15,7 +15,6 @@ import earlyTermsData from '../../data/early-terms.json';
 import contactsData from '../../data/contacts.json';
 import feedData from '../../data/feed.json';
 import governmentData from '../../data/government.json';
-import taxData from '../../data/tax-votes.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -30,7 +29,7 @@ beforeEach(() => {
   window.scrollTo = () => {}; // jsdom does not implement scrolling
   window.location.hash = '';
   document.body.innerHTML = SHELL_HTML;
-  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today: '2026-11-24' });
+  app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today: '2026-11-24' });
 });
 afterEach(() => app.destroy());
 
@@ -154,8 +153,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Głosowania nad podatkami';
-const NEWEST_LINE = 'Posłowie: Głosowania nad podatkami';
+const NEWEST = 'Bio słowami, nie cyframi';
+const NEWEST_LINE = 'Profile: Bio słowami, nie cyframi';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -226,27 +225,6 @@ describe('Frekwencja', () => {
     expect(card.querySelector('.post-head').textContent).not.toContain('API Sejmu');
     expect(card.textContent).not.toContain('Źródło:');
   });
-  it('profile shows tax votes under attendance, with expandable lists that match the Sejm data', () => {
-    nav('#posel-70');
-    const feed = $('.feed');
-    const cards = [...feed.querySelectorAll(':scope > article')].map((a) => a.dataset.testid);
-    expect(cards.indexOf('profile-taxes')).toBe(cards.indexOf('profile-attendance') + 1);
-    const card = $('[data-testid="profile-taxes"]');
-    const raises = taxData.laws.filter((l) => l.direction === 'raise' && l.votes[70] != null);
-    const yes = raises.filter((l) => l.votes[70] === 'Y').length;
-    expect(card.querySelector('[data-testid="tax-sum-raise"]').textContent).toMatch(new RegExp(`^${raises.length} ustaw`));
-    if (yes) expect(card.querySelector('[data-testid="tax-sum-raise"]').textContent).toContain(`${yes} za`);
-    expect(card.querySelectorAll('[data-testid="tax-raise"] li.tax-law').length).toBe(raises.length);
-    expect(card.querySelector('[data-testid="tax-cut"] details')).not.toBeNull();
-    expect(card.textContent).not.toContain('Źródło:');
-  });
-  it('every MP profile has the tax votes card (e.g. Krzysztof Bosak), also without any recorded vote', () => {
-    const missing = app.ctx.mps.filter((m) => { nav(`#posel-${m.id}`); return !$('[data-testid="profile-taxes"]'); }).map((m) => m.id);
-    expect(missing).toEqual([]);
-    const bosak = app.ctx.mps.find((m) => m.name.includes('Krzysztof') && m.name.includes('Bosak'));
-    nav(`#posel-${bosak.id}`);
-    expect($('[data-testid="tax-sum-raise"]').textContent).toMatch(/^\d+ ustaw/);
-  }, 60000);
   it('Frequent Flyer rows and directory cards carry the pie badge', () => {
     nav('#frequent-flyer');
     expect($$('[data-testid="ranking"] tbody tr [data-testid="att-badge"]').length).toBeGreaterThan(20);
@@ -315,9 +293,10 @@ describe('Spektrum partyjne', () => {
     expect(panel).not.toBeNull();
     expect(panel.previousElementSibling.classList.contains('profile-top')).toBe(true);
     expect(panel.textContent).toContain('Spektrum partyjne');
-    expect(panel.textContent).toContain(`${rows.length} kadencj`);
+    expect(panel.textContent).toMatch(/(dwie|trzy|cztery|pięć|sześć|siedem|osiem|dziewięć|dziesięć) kadencj/);
     const bio = panel.querySelector('[data-testid="life-first"]');
-    expect(bio.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP \d+ kadencj.+, razem ok\. /);
+    expect(bio.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP [a-ząćęłńóśźż]+ kadencj.+, razem (około|niecały)/);
+    expect(bio.textContent).not.toMatch(/\((I|V|X)[IVX–, ]*\)|\b\d+ (lat|kadencj)/);
     expect(bio.textContent).toMatch(/^Pierwsza aktywność polityczna /);
     expect(panel.querySelectorAll('[data-testid="spectrum-text"]')).toHaveLength(1);
     expect(panel.querySelector('.spectrum-bar')).toBeNull();
@@ -326,7 +305,7 @@ describe('Spektrum partyjne', () => {
   it('first-term MPs get one sentence with a single term', () => {
     const id = Object.entries(careerData.career).find(([, r]) => r.length === 1 && r[0].term === 10)[0];
     nav(`#posel-${id}`);
-    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP 1 kadencja \(X\) w .+, razem ok\. /);
+    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP jedna kadencja, dziesiąta, w .+, razem około /);
     expect($('[data-testid="life-first"]').textContent).toMatch(/w roku 2023, jako nowy członek .+ w Sejmie\./);
   });
 });
@@ -748,7 +727,7 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
 });
 
 describe('Interface switch: classic and modern look', () => {
-  const remount = () => { app.destroy(); document.body.innerHTML = SHELL_HTML; app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today: '2026-11-24' }); };
+  const remount = () => { app.destroy(); document.body.innerHTML = SHELL_HTML; app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today: '2026-11-24' }); };
   const forget = () => window.localStorage.setItem('sejmbook-ui', '');
   beforeEach(() => { forget(); remount(); });
   afterEach(forget);

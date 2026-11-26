@@ -338,7 +338,8 @@ describe('renderCareerSpectrum', () => {
     expect(html).toContain('Spektrum partyjne');
     expect(html).not.toContain('class="spectrum-seg"');
     expect(html).not.toContain('Ścieżka partyjna');
-    expect(html).toMatch(/W Sejmie III RP <b>2 kadencje<\/b>: 1 w <b>KO \/ PO<\/b> \(IX\) i 1 w <b>PiS<\/b> \(X\), razem ok\. /);
+    expect(html).toContain('W Sejmie III RP <b>dwie kadencje</b>: dziewiąta w <b>KO / PO</b> oraz dziesiąta w <b>PiS</b>, razem około ');
+    expect(html).not.toMatch(/\((IX|X)\)/);
     expect(html).not.toContain('Nie obejmuje Senatu');
   });
   it('without Sejm club data shows only the life line; without a birth year, nothing', () => {
@@ -490,8 +491,8 @@ describe('renderPerson', () => {
     expect(html).toContain('2 · Wałbrzych');
     expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
     expect(html).toContain('03.02.1950');
-    expect(html).toContain('1 w <b>UD / UW</b> (III) i 1 w <b>KO / PO</b> (IV)');
-    expect(html).toContain('Pierwsza aktywność polityczna w wieku 47 lat, w roku <b>1997</b>, jako nowy członek UD / UW w Sejmie.');
+    expect(html).toContain('trzecia w <b>UD / UW</b> oraz czwarta w <b>KO / PO</b>');
+    expect(html).toContain('Pierwsza aktywność polityczna w wieku czterdziestu siedmiu lat, w roku <b>1997</b>, jako nowy członek UD / UW w Sejmie.');
   });
   it('uses the same layout as the MP profile: header, Spektrum partyjne, Informacje', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
@@ -672,23 +673,25 @@ describe('bio in prose', () => {
   it('first activity: Sejm, party, opposition, PRL without years', () => {
     const base = { birth: 1961, prlUnknown: [], firstInPrl: false };
     expect(firstActivityText({ ...base, firstYear: 2019, firstKind: 'sejm', firstLabel: 'KO / PO' }))
-      .toBe('Pierwsza aktywność polityczna w wieku 58 lat, w roku <b>2019</b>, jako nowy członek KO / PO w Sejmie.');
+      .toBe('Pierwsza aktywność polityczna w wieku pięćdziesięciu ośmiu lat, w roku <b>2019</b>, jako nowy członek KO / PO w Sejmie.');
     expect(firstActivityText({ ...base, firstYear: 2001, firstKind: 'party', firstLabel: 'Prawo i Sprawiedliwość' }))
-      .toBe('Pierwsza aktywność polityczna w wieku 40 lat, w roku <b>2001</b>, jako członek partii Prawo i Sprawiedliwość.');
+      .toBe('Pierwsza aktywność polityczna w wieku czterdziestu lat, w roku <b>2001</b>, jako członek partii Prawo i Sprawiedliwość.');
     expect(firstActivityText({ ...base, firstYear: 1980, firstInPrl: true, firstKind: 'opposition', firstLabel: 'NSZZ Solidarność' }))
-      .toBe('Pierwsza aktywność polityczna w wieku 19 lat, w roku <b>1980</b>, jeszcze w PRL, w opozycji: NSZZ Solidarność.');
+      .toBe('Pierwsza aktywność polityczna w wieku dziewiętnastu lat, w roku <b>1980</b>, jeszcze w PRL, w opozycji: NSZZ Solidarność.');
     expect(firstActivityText({ ...base, prlUnknown: ['PZPR'] })).toBe('Pierwsza aktywność polityczna <b>jeszcze w PRL</b>: PZPR (lata nieznane).');
     expect(firstActivityText({ ...base, firstYear: null })).toBe('');
   });
   it('career: one club, one term, several clubs', () => {
     expect(careerSentence({ terms: [9, 10], totalYears: 7, parts: [{ label: 'KO / PO', terms: [9, 10] }] }))
-      .toBe('W Sejmie III RP <b>2 kadencje</b> (IX–X), obie w <b>KO / PO</b>, razem ok. 7 lat.');
+      .toBe('W Sejmie III RP <b>dwie kadencje</b>, dziewiąta i dziesiąta, obie w <b>KO / PO</b>, razem około siedmiu lat.');
     expect(careerSentence({ terms: [10], totalYears: 3, parts: [{ label: 'PiS', terms: [10] }] }))
-      .toBe('W Sejmie III RP <b>1 kadencja</b> (X) w <b>PiS</b>, razem ok. 3 lata.');
+      .toBe('W Sejmie III RP <b>jedna kadencja</b>, dziesiąta, w <b>PiS</b>, razem około trzech lat.');
     expect(careerSentence({ terms: [5, 6, 8, 9], totalYears: 14, parts: [{ label: 'PiS', terms: [5, 6, 8, 9] }] }))
-      .toContain('<b>4 kadencje</b> (V–VI, VIII–IX), wszystkie w <b>PiS</b>');
+      .toContain('<b>cztery kadencje</b>, piąta, szósta, ósma i dziewiąta, wszystkie w <b>PiS</b>, razem około czternastu lat.');
+    expect(careerSentence({ terms: [5, 6, 7, 8, 9, 10], totalYears: 21.1, parts: [{ label: 'PiS', terms: [5] }, { label: 'KO / PO', terms: [6, 7] }, { label: 'PSL', terms: [8, 9, 10] }] }))
+      .toBe('W Sejmie III RP <b>sześć kadencji</b>: piąta w <b>PiS</b>, szósta i siódma w <b>KO / PO</b> oraz od ósmej do dziesiątej w <b>PSL</b>, razem około dwudziestu jeden lat.');
     expect(careerSentence(null)).toBe('');
-    expect(careerSentence({ terms: [7], totalYears: 4, parts: [{ label: 'Nieznany klub', terms: [7] }] })).toContain('(VII) w <b>nieznanym klubie</b>');
+    expect(careerSentence({ terms: [7], totalYears: 4, parts: [{ label: 'Nieznany klub', terms: [7] }] })).toContain('siódma, w <b>nieznanym klubie</b>');
     expect(firstActivityText({ birth: 1970, prlUnknown: [], firstYear: 2011, firstKind: 'sejm', firstLabel: 'Nieznany klub' })).toContain('jako nowy członek Sejmu.');
   });
 });

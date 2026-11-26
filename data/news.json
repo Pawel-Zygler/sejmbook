@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-bio-slownie",
+      "date": "2026-11-26",
+      "title": "Bio słowami, nie cyframi",
+      "section": "Profile",
+      "body": "Bio posła pisze liczby słowami, np. „dwie kadencje, dziewiąta i dziesiąta, razem około siedmiu lat”.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-podatki",
       "date": "2026-11-26",
       "title": "Głosowania nad podatkami",

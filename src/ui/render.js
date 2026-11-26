@@ -5,6 +5,7 @@ import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPar
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
+import { listPl, ageWords, aboutYears, termsWords, termOrdinals } from '../lib/pl-words.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
@@ -580,8 +581,7 @@ const UNKNOWN_CLUB = /^nieznany klub$/i;
 /** "w PiS", or "w nieznanym klubie" when the source has no club. */
 const inClub = (label) => (UNKNOWN_CLUB.test(label) ? 'w <b>nieznanym klubie</b>' : `w <b>${esc(label)}</b>`);
 
-/** Polish list: "a", "a i b", "a, b i c". */
-export const listPl = (xs) => (xs.length < 2 ? (xs[0] ?? '') : `${xs.slice(0, -1).join(', ')} i ${xs.at(-1)}`);
+export { listPl };
 
 /** The first political activity in prose, e.g. "Pierwsza aktywność polityczna w wieku 58 lat, w roku 2019, jako nowy członek KO / PO w Sejmie." */
 export function firstActivityText(tl) {
@@ -590,22 +590,21 @@ export function firstActivityText(tl) {
   const what = tl.firstKind === 'sejm'
     ? (UNKNOWN_CLUB.test(tl.firstLabel) ? 'jako nowy członek Sejmu' : `jako nowy członek ${esc(tl.firstLabel)} w Sejmie`)
     : tl.firstKind === 'opposition' ? `w opozycji: ${esc(tl.firstLabel)}` : `jako członek partii ${esc(tl.firstLabel)}`;
-  return `Pierwsza aktywność polityczna w wieku ${tl.firstYear - tl.birth} lat, w roku <b>${tl.firstYear}</b>${tl.firstInPrl ? ', jeszcze w PRL' : ''}, ${what}.`;
+  return `Pierwsza aktywność polityczna w wieku ${ageWords(tl.firstYear - tl.birth)}, w roku <b>${tl.firstYear}</b>${tl.firstInPrl ? ', jeszcze w PRL' : ''}, ${what}.`;
 }
 
-/** The Sejm career in prose, e.g. "W Sejmie III RP 2 kadencje (IX–X), obie w KO / PO, razem ok. 7 lat." */
+/** The Sejm career in prose, numbers in words, e.g. "W Sejmie III RP dwie kadencje, dziewiąta i dziesiąta, obie w KO / PO, razem około siedmiu lat." */
 export function careerSentence(sp) {
   if (!sp?.parts?.length) return '';
   const n = sp.terms?.length ?? sp.parts.reduce((s, p) => s + p.terms.length, 0);
-  const kad = (k) => `${k} ${plural(k, 'kadencja', 'kadencje', 'kadencji')}`;
-  const total = `razem ok. ${fmtYears(sp.totalYears)}`;
+  const total = `razem ${aboutYears(sp.totalYears)}`;
   if (sp.parts.length === 1) {
     const p = sp.parts[0];
     const all = n === 1 ? '' : n === 2 ? 'obie ' : 'wszystkie ';
-    return `W Sejmie III RP <b>${kad(n)}</b> (${termRanges(p.terms)})${n === 1 ? ' ' : `, ${all}`}${inClub(p.label)}, ${total}.`;
+    return `W Sejmie III RP <b>${termsWords(n)}</b>, ${termOrdinals(p.terms)}, ${all}${inClub(p.label)}, ${total}.`;
   }
   const parts = [...sp.parts].sort((a, b) => Math.min(...a.terms) - Math.min(...b.terms));
-  return `W Sejmie III RP <b>${kad(n)}</b>: ${listPl(parts.map((p) => `${p.terms.length} ${inClub(p.label)} (${termRanges(p.terms)})`))}, ${total}.`;
+  return `W Sejmie III RP <b>${termsWords(n)}</b>: ${listPl(parts.map((p) => `${termOrdinals(p.terms)} ${inClub(p.label)}`), 'oraz')}, ${total}.`;
 }
 
 const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
