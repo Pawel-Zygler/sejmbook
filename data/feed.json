@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-26T01:47:12.278Z",
+ "fetchedAt": "2026-11-26T12:33:33.170Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
@@ -9,6 +9,12 @@
     "title": "Prezydent RP spotkał się z przedstawicielami chilijskiej Polonii w Santiago de Chile",
     "date": "2026-11-25",
     "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-spotkal-sie-z-przedstawicielami-chilijskiej-polonii-w-santiago-de-chile,130766",
+    "seenAt": "2026-11-25T23:59:59.000Z"
+   },
+   {
+    "title": "Wystąpienie Prezydenta RP podczas spotkania z Polonią w Santiago de Chile",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/wystapienie-prezydenta-rp-podczas-spotkania-z-polonia-w-santiago-de-chile-,130801",
     "seenAt": "2026-11-25T23:59:59.000Z"
    },
    {
@@ -42,16 +48,10 @@
     "seenAt": "2026-11-25T23:59:59.000Z"
    },
    {
-    "title": "Buenos Aires. Spotkanie Prezydentów Polski i Argentyny [PL/EN]",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/buenos-aires-spotkanie-prezydentow-polski-i-argentyny,130662",
-    "seenAt": "2026-11-24T20:10:13.747Z"
-   },
-   {
-    "title": "Konsultacje dotyczące zmian w systemie podatkowym",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/konsultacje-dotyczace-zmian-w-systemie-podatkowym,130655",
-    "seenAt": "2026-11-24T20:10:13.747Z"
+    "title": "List na uroczystości barbórkowe w Polskiej Spółce Gazownictwa w Poznaniu",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-uroczystosci-barborkowe-w-polskiej-spolce-gazownictwa-w-poznaniu,130790",
+    "seenAt": "2026-11-25T23:59:59.000Z"
    }
   ]
  },
@@ -3048,6 +3048,12 @@
    "source": "https://www.gov.pl/web/cyfryzacja/wiadomosci",
    "items": [
     {
+     "title": "CYBERczwartki: Fakty i mity. Cyberbezpieczeństwo to nie tylko odpowiedzialność zespołów IT",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/cyfryzacja/cyberczwartki-fakty-i-mity-cyberbezpieczenstwo-to-nie-tylko-odpowiedzialnosc-zespolow-it",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
      "title": "Dołącz do Polskiego Stoiska Narodowego na MWC Barcelona 2027",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/cyfryzacja/dolacz-do-polskiego-stoiska-narodowego-na-mwc-barcelona-2027",
@@ -3069,12 +3075,6 @@
      "title": "HackNation 2026: 600 projektów i 15 zwycięskich zespołów. Innowacje dla administracji publicznej",
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/cyfryzacja/hacknation-2026-600-projektow-i-15-zwycieskich-zespolow-innowacje-dla-administracji-publicznej",
-     "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Polska w światowej czołówce e-administracji",
-     "date": "2026-11-23",
-     "url": "https://www.gov.pl/web/cyfryzacja/polska-w-swiatowej-czolowce-e-administracji",
      "seenAt": "2026-11-23T23:59:59.000Z"
     }
    ]
@@ -3124,6 +3124,12 @@
    "source": "https://www.gov.pl/web/energia/wiadomosci",
    "items": [
     {
+     "title": "Maksymalna cena detaliczna paliw obowiązująca 27 listopada 2026 r.",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-27-listopada-2026-r",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
      "title": "Maksymalna cena detaliczna paliw obowiązująca 26 listopada 2026 r.",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-26-listopada-2026-r",
@@ -3145,12 +3151,6 @@
      "title": "Polska wzmacnia bezpieczeństwo energetyczne regionu. Zakończył się 7. szczyt P-TEC",
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/energia/polska-wzmacnia-bezpieczenstwo-energetyczne-regionu-zakonczyl-sie-7-szczyt-p-tec",
-     "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Maksymalna cena detaliczna paliw obowiązująca 24 listopada 2026 r.",
-     "date": "2026-11-23",
-     "url": "https://www.gov.pl/web/energia/maksymalna-cena-detaliczna-paliw-obowiazujaca-24-listopada-2026-r",
      "seenAt": "2026-11-23T23:59:59.000Z"
     }
    ]
@@ -3200,6 +3200,18 @@
    "source": "https://www.gov.pl/web/fundusze-regiony/komunikaty",
    "items": [
     {
+     "title": "Fundusze Norweskie i EOG: startuje projekt w programie „Sprawy wewnętrzne”",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/fundusze-regiony/fundusze-norweskie-i-eog-startuje-projekt-w-programie-sprawy-wewnetrzne",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
+     "title": "Komisja Europejska dała zgodę na finansowanie technologii obronnych z FWTK",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/fundusze-regiony/komisja-europejska-dala-zgode-na-finansowanie-technologii-obronnych-z-fwtk",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
      "title": "Wojewódzki Szpital Psychiatryczny w Gdańsku zyskał nowe oddziały dzienne",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/fundusze-regiony/wojewodzki-szpital-psychiatryczny-w-gdansku-zyskal-nowe-oddzialy-dzienne",
@@ -3216,18 +3228,6 @@
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/fundusze-regiony/16wojewodztw-wspolny-cel--zaczynamy-od-pomorza",
      "seenAt": "2026-11-25T17:14:29.097Z"
-    },
-    {
-     "title": "Nowe miejsca opieki na polsko-ukraińskim pograniczu",
-     "date": "2026-11-25",
-     "url": "https://www.gov.pl/web/fundusze-regiony/nowe-miejsca-opieki-na-polsko-ukrainskim-pograniczu",
-     "seenAt": "2026-11-25T17:14:29.097Z"
-    },
-    {
-     "title": "Za blisko 260 mln zł z funduszy europejskich powstanie trasa tramwajowa w Gdańsku",
-     "date": "2026-11-21",
-     "url": "https://www.gov.pl/web/fundusze-regiony/za-blisko-260-mln-zl-z-funduszy-europejskich-powstanie-trasa-tramwajowa-w-gdansku",
-     "seenAt": "2026-11-21T23:59:59.000Z"
     }
    ]
   },
@@ -3276,6 +3276,12 @@
    "source": "https://www.gov.pl/web/klimat/wiadomosci",
    "items": [
     {
+     "title": "3 mld zł na modernizację energetyczną placówek edukacyjnych i szpitali",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/klimat/3-mld-zl-na-modernizacje-energetyczna-placowek-edukacyjnych-i-szpitali",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
      "title": "Spotkanie kierownictwa MKiŚ z sektorem NGO – bilans działań, otwarty dialog, nagrody dla liderów klimatycznych",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/klimat/spotkanie-kierownictwa-mkis-z-sektorem-ngo--bilans-dzialan-otwarty-dialog-nagrody-dla-liderow-klimatycznych",
@@ -3298,12 +3304,6 @@
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/klimat/cop31-polska-za-sprawiedliwa-transformacja-i-utrzymaniem-zobowiazan-klimatycznych",
      "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Miliard złotych na magazyny ciepła w ciepłownictwie systemowym. Ruszają nabory wniosków",
-     "date": "2026-11-16",
-     "url": "https://www.gov.pl/web/klimat/miliard-zlotych-na-magazyny-ciepla-w-cieplownictwie-systemowym-ruszaja-nabory-wnioskow",
-     "seenAt": "2026-11-16T23:59:59.000Z"
     }
    ]
   },
@@ -3313,6 +3313,12 @@
    "office": "Minister kultury",
    "source": "https://www.gov.pl/web/kultura/aktualnosci",
    "items": [
+    {
+     "title": "34. Targi Książki Historycznej – święto pasjonatów historii",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/kultura/34-targi-ksiazki-historycznej--swieto-pasjonatow-historii",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
     {
      "title": "Muzeum Powstania Wielkopolskiego 1918-1919 w Poznaniu – nowa nazwa Wielkopolskiego Muzeum Niepodległości",
      "date": "2026-11-25",
@@ -3335,12 +3341,6 @@
      "title": "Rozmawiamy o przyszłości kultury w Europie - za nami Rada UE w Brukseli",
      "date": "2026-11-20",
      "url": "https://www.gov.pl/web/kultura/rozmawiamy-o-przyszlosci-kultury-w-europie--za-nami-rada-ue-w-brukseli",
-     "seenAt": "2026-11-20T23:59:59.000Z"
-    },
-    {
-     "title": "10. Forum Prawa Autorskiego - rozmawiamy o ochronie twórców i wyzwaniach cyfrowej rzeczywistości",
-     "date": "2026-11-20",
-     "url": "https://www.gov.pl/web/kultura/10-forum-prawa-autorskiego--rozmawiamy-o-ochronie-tworcow-i-wyzwaniach-cyfrowej-rzeczywistosci",
      "seenAt": "2026-11-20T23:59:59.000Z"
     }
    ]
@@ -3574,6 +3574,12 @@
    "source": "https://www.gov.pl/web/sprawiedliwosc/aktualnosci-wydarzenia",
    "items": [
     {
+     "title": "Zdrowie psychiczne nieletnich – lepsza opieka nad wychowankami i wsparcie dla pracowników placówek",
+     "date": "2026-11-25",
+     "url": "https://www.gov.pl/web/sprawiedliwosc/zdrowie-psychiczne-nieletnich--lepsza-opieka-nad-wychowankami-i-wsparcie-dla-pracownikow-placowek",
+     "seenAt": "2026-11-25T23:59:59.000Z"
+    },
+    {
      "title": "Projekt PLENTIFUL wsparciem polskiego wymiaru sprawiedliwości w sprawach międzynarodowych",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/sprawiedliwosc/projekt-plentiful-wsparciem-polskiego-wymiaru-sprawiedliwosci-w-sprawach-miedzynarodowych",
@@ -3596,12 +3602,6 @@
      "date": "2026-11-24",
      "url": "https://www.gov.pl/web/sprawiedliwosc/rozwoj-mediacji-w-polsce---spotkanie-sedziow-koordynatorow",
      "seenAt": "2026-11-24T20:10:13.747Z"
-    },
-    {
-     "title": "Ministerstwo Sprawiedliwości w dialogu z kuratorami sądowymi",
-     "date": "2026-11-24",
-     "url": "https://www.gov.pl/web/sprawiedliwosc/ministerstwo-sprawiedliwosci-w-dialogu-z-kuratorami-sadowymi",
-     "seenAt": "2026-11-24T20:10:13.747Z"
     }
    ]
   },
@@ -3612,10 +3612,22 @@
    "source": "https://www.gov.pl/web/mswia/aktualnosci",
    "items": [
     {
+     "title": "Blisko 40 mln zł dla Państwowego Instytutu Medycznego MSWiA na zwiększenie ochrony zdrowia w sytuacja kryzysowych. W PIM MSWiA podpisano umowę na pozyskanie Funduszy Norweskich",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/mswia/blisko-40-mln-zl-dla-panstwowego-instytutu-medycznego-mswia",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
      "title": "Ponad 68 mln zł i realizacja w rok. Nowy budynek Państwowego Instytutu Medycznego MSWiA oddany do użytku",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/mswia/ponad-68-mln-zl-i-realizacja-w-rok-nowy-budynek-panstwowego-instytutu-medycznego-mswia-oddany-do-uzytku",
      "seenAt": "2026-11-25T17:14:29.097Z"
+    },
+    {
+     "title": "Strategiczne wyzwania resortowego zespołu ds. sztucznej inteligencji",
+     "date": "2026-11-24",
+     "url": "https://www.gov.pl/web/mswia/strategiczne-wyzwania-resortowego-zespolu-ds-sztucznej-inteligencji",
+     "seenAt": "2026-11-24T23:59:59.000Z"
     },
     {
      "title": "Wizyta kierownictwa MSWiA w Helsinkach: Budujemy partnerstwo strategiczne na rzecz bezpieczeństwa regionu",
@@ -3628,18 +3640,6 @@
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/mswia/dzialania-mswia-na-rzecz-bezpieczenstwa-podsumowanie-trzeciego-tygodnia-listopada",
      "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Czasowe i terytorialne zawieszenie prawa do azylu przy granicy polsko-białoruskiej przedłużone o następne 60 dni",
-     "date": "2026-11-16",
-     "url": "https://www.gov.pl/web/mswia/czasowe-i-terytorialne-zawieszenie-prawa-do-azylu-przy-granicy-polsko-bialoruskiej-przedluzone-o-nastepne-60-dni4",
-     "seenAt": "2026-11-16T23:59:59.000Z"
-    },
-    {
-     "title": "Polska przystąpi do systemu ETIAS, odprawa ze służbami po zamachu w Krakowie i bezpieczny przebieg Marszu Niepodległości. Podsumowanie drugiego tygodnia listopada w MSWiA",
-     "date": "2026-11-16",
-     "url": "https://www.gov.pl/web/mswia/polska-przystapi-do-systemu-etias-odprawa-ze-sluzbami-po-zamachu-w-krakowie-i-bezpieczny-przebieg-marszu-niepodleglosci-podsumowanie-drugiego-tygodnia-listopada-w-mswia",
-     "seenAt": "2026-11-16T23:59:59.000Z"
     }
    ]
   },
@@ -3649,6 +3649,12 @@
    "office": "Minister spraw zagranicznych",
    "source": "https://www.gov.pl/web/dyplomacja/aktualnosci",
    "items": [
+    {
+     "title": "Exposé polonijne ministra spraw zagranicznych Radosława Sikorskiego",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/dyplomacja/expose-polonijne-ministra-spraw-zagranicznych-radoslawa-sikorskiego",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
     {
      "title": "Komunikat ws. wezwania Ambasadora Federacji Rosyjskiej do MSZ",
      "date": "2026-11-24",
@@ -3672,12 +3678,6 @@
      "date": "2026-11-20",
      "url": "https://www.gov.pl/web/dyplomacja/oswiadczenia-msz-w-zwiazku-z-atrybucja-przez-danie-rosyjskim-sluzbom-specjalnym-proby-zamachu-na-obywatela-stanow-zjednoczonych-i-ukrainy-na-terenie-danii",
      "seenAt": "2026-11-20T23:59:59.000Z"
-    },
-    {
-     "title": "Dr Elżbieta Mikos-Skuza ponownie wybrana do Międzynarodowej Komisji Humanitarnej do spraw Ustalania Faktów",
-     "date": "2026-11-20",
-     "url": "https://www.gov.pl/web/dyplomacja/dr-elzbieta-mikos-skuza-ponownie-wybrana-do-miedzynarodowej-komisji-humanitarnej-do-spraw-ustalania-faktow",
-     "seenAt": "2026-11-20T23:59:59.000Z"
     }
    ]
   },
@@ -3687,6 +3687,18 @@
    "office": "Minister zdrowia",
    "source": "https://www.gov.pl/web/zdrowie/wiadomosci",
    "items": [
+    {
+     "title": "Minister Zdrowia uhonorował nauczycieli akademickich",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/zdrowie/minister-zdrowia-uhonorowal-nauczycieli-akademickich",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
+     "title": "Historyczny dzień dla bezpieczeństwa lekowego Europy",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/zdrowie/historyczny-dzien-dla-bezpieczenstwa-lekowego-europy",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
     {
      "title": "Ostatni wniosek o płatność oceniony. Komisja Europejska pozytywnie o realizacji KPO w ochronie zdrowia",
      "date": "2026-11-24",
@@ -3704,18 +3716,6 @@
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/zdrowie/rozprawa-przed-sadem-apelacyjnym-w-brukseli-w-sprawie-wniosku-o-wstrzymanie-wykonania-wyroku-dotyczacego-szczepionek-przeciwko-covid-19",
      "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Eksperci: Bezpiecznej alternatywy dla papierosów nie ma. Nikotyna zmienia formę, ale nadal uzależnia",
-     "date": "2026-11-19",
-     "url": "https://www.gov.pl/web/zdrowie/eksperci-bezpiecznej-alternatywy-dla-papierosow-nie-ma-nikotyna-zmienia-forme-ale-nadal-uzaleznia",
-     "seenAt": "2026-11-19T23:59:59.000Z"
-    },
-    {
-     "title": "Zmiany dla pacjentów ponad podziałami. Sejm, bez głosu sprzeciwu, uchwalił nowelizację ustawy refundacyjnej",
-     "date": "2026-11-19",
-     "url": "https://www.gov.pl/web/zdrowie/zmiany-dla-pacjentow-ponad-podzialami-sejm-bez-glosu-sprzeciwu-uchwalil-nowelizacje-ustawy-refundacyjnej",
-     "seenAt": "2026-11-19T23:59:59.000Z"
     }
    ]
   },
@@ -3725,6 +3725,12 @@
    "office": "marszalek-senatu",
    "source": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/",
    "items": [
+    {
+     "title": "Exposé ministra spraw zagranicznych na temat polityki polonijnej",
+     "date": "2026-11-26",
+     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17951,expos-ministra-spraw-zagranicznych-na-temat-polityki-polonijnej.html",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
     {
      "title": "Spotkanie marszałek Senatu i przewodniczącego Izby Deputowanych Luksemburga",
      "date": "2026-11-24",
@@ -3748,12 +3754,6 @@
      "date": "2026-11-19",
      "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17930,spotkanie-marszalek-senatu-z-mlodymi-polakami-z-wielkiej-brytanii.html",
      "seenAt": "2026-11-19T23:59:59.000Z"
-    },
-    {
-     "title": "Senacka uroczystość przekazania archiwum Henryka i Ludwiki Wujców do zasobu Archiwum Akt Nowych",
-     "date": "2026-11-19",
-     "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17928,senacka-uroczystosc-przekazania-archiwum-henryka-i-ludwiki-wujcow-do-zasobu-archiwum-akt-nowych.html",
-     "seenAt": "2026-11-19T23:59:59.000Z"
     }
    ]
   },
@@ -3763,6 +3763,12 @@
    "office": "prezes-nik",
    "source": "https://www.nik.gov.pl/aktualnosci/",
    "items": [
+    {
+     "title": "Duże opóźnienia reformy zagospodarowania przestrzennego",
+     "date": "2026-11-26",
+     "url": "https://www.nik.gov.pl/komunikaty/duze-opoznienia-reformy-zagospodarowania-przestrzennego/",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
     {
      "title": "Międzynarodowy Dzień Eliminacji Przemocy wobec Kobiet - „Zapewnić sprawiedliwość. Chronić osoby doznające przemocy. Położyć kres bezkarności”",
      "date": "2026-11-25",
@@ -3786,12 +3792,6 @@
      "date": "2026-11-20",
      "url": "https://www.nik.gov.pl/aktualnosci/z-archiwum-nik-co-stalo-sie-z-majatkiem-hrabiego-potockiego.html",
      "seenAt": "2026-11-20T23:59:59.000Z"
-    },
-    {
-     "title": "Film zniknął z czatu. Czy przemoc się skończyła?",
-     "date": "2026-11-19",
-     "url": "https://www.nik.gov.pl/aktualnosci/film-zniknal-z-czatu-czy-przemoc-sie-skonczyla.html",
-     "seenAt": "2026-11-19T23:59:59.000Z"
     }
    ]
   }
