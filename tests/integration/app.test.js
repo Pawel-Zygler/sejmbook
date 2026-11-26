@@ -153,8 +153,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Drugi, nowoczesny wygląd';
-const NEWEST_LINE = 'Serwis: Drugi, nowoczesny wygląd';
+const NEWEST = 'Nowy nagłówek i stopka';
+const NEWEST_LINE = 'Serwis: Nowy nagłówek i stopka';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -487,6 +487,7 @@ describe('Profiles of former MPs', () => {
     nav(leader.getAttribute('href'));
     expect($('[data-testid="spectrum-text"]').textContent.split(' w ').length).toBeGreaterThan(2);
     expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
+    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']);
     expect($('#view').textContent).not.toContain('Dane: API Sejmu');
   });
 });

@@ -50,32 +50,44 @@
 :root[data-ui="modern"] h1 { font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; }
 :root[data-ui="modern"] h2 { font-weight: 700; letter-spacing: -0.01em; font-size: 1.06rem; }
 
-/* Floating header card: logo + switches on one row, search full width below */
+/* Floating header card: logo, normal top navigation, search and switches in one row (two rows on phones) */
 :root[data-ui="modern"] .topbar { background: transparent; border-bottom: 0; padding: 12px max(12px, env(safe-area-inset-right, 0px)) 0 max(12px, env(safe-area-inset-left, 0px)); top: env(safe-area-inset-top, 0px); }
 :root[data-ui="modern"] .topbar-in { background: var(--surface); border-radius: 20px; box-shadow: var(--m-lift); max-width: 1240px; flex-wrap: wrap; row-gap: 10px; padding: 12px 16px; }
 :root[data-ui="modern"] .logo-name { color: var(--ink); font-weight: 700; letter-spacing: -0.05em; font-size: 1.55rem; }
 :root[data-ui="modern"] .logo-tag { font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem; }
-:root[data-ui="modern"] .topnav { display: none; }
-:root[data-ui="modern"] .ui-switch { margin-left: auto; }
-:root[data-ui="modern"] .top-search { display: block; order: 10; flex: 1 1 100%; max-width: none; }
-:root[data-ui="modern"] .top-search input { background: var(--bg); border: 1px solid var(--line); padding: 10px 18px; }
+:root[data-ui="modern"] .topbar-in { flex-wrap: nowrap; gap: 20px; padding: 10px 14px 10px 20px; }
+:root[data-ui="modern"] .topnav { display: flex; order: 2; margin-left: 4px; gap: 2px; }
+:root[data-ui="modern"] .topnav a { padding: 8px 12px; border-radius: 999px; color: var(--muted); font-weight: 500; font-size: 0.95rem; letter-spacing: -0.005em; }
+:root[data-ui="modern"] .topnav a:hover { background: var(--m-chip); color: var(--ink); }
+:root[data-ui="modern"] .topnav a.on { color: var(--ink); background: var(--m-chip); box-shadow: none; border-radius: 999px; font-weight: 600; }
+:root[data-ui="modern"] .top-search { display: block; order: 3; flex: 1 1 200px; max-width: 280px; margin-left: auto; }
+:root[data-ui="modern"] .top-search input { background: var(--bg); border: 1px solid var(--line); padding: 9px 16px; }
+:root[data-ui="modern"] .ui-switch { order: 4; }
+:root[data-ui="modern"] .theme-btn { order: 5; }
 :root[data-ui="modern"] .ui-switch { background: var(--bg); border-color: var(--line); }
 :root[data-ui="modern"] .ui-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); box-shadow: none; }
 :root[data-ui="modern"] .theme-btn { background: transparent; border-color: transparent; }
 :root[data-ui="modern"] .theme-btn:hover { border-color: var(--line); }
 
-/* Section chips instead of the left column: one scrollable row of uppercase pills */
+/* No left column and no chip row: the header navigation and the footer carry every link */
 :root[data-ui="modern"] .layout { max-width: 1240px; grid-template-columns: minmax(0, 1fr) 290px; gap: 20px; padding-top: 16px; }
-:root[data-ui="modern"] .sidenav { grid-column: 1 / -1; position: static; display: flex; flex-direction: row; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
-:root[data-ui="modern"] .sidenav::-webkit-scrollbar { display: none; }
-:root[data-ui="modern"] .sidenav .ico, :root[data-ui="modern"] .sidenav-label { display: none; }
-:root[data-ui="modern"] .sidenav a { flex: none; padding: 8px 16px; border-radius: 999px; background: var(--m-chip); box-shadow: var(--m-ring); color: var(--muted); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-:root[data-ui="modern"] .sidenav a:hover { color: var(--ink); background: var(--surface); }
-:root[data-ui="modern"] .sidenav a.on { background: var(--ink); color: var(--bg); box-shadow: none; }
-:root[data-ui="modern"] #aside { top: 150px; }
+:root[data-ui="modern"] .sidenav { display: none; }
+:root[data-ui="modern"] #aside { top: 96px; }
 
-/* The phone-only ranking switch repeats the chip row, so the modern look leaves it out */
-:root[data-ui="modern"] .rank-switch { display: none; }
+/* Rankings: plain text tabs above every ranking page, at all widths */
+:root[data-ui="modern"] .rank-switch { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; margin: 0 0 14px; padding: 0 4px; border-bottom: 1px solid var(--line); }
+:root[data-ui="modern"] .rank-switch a { flex: none; padding: 8px 0 10px; background: none; border: 0; border-radius: 0; text-decoration: none; color: var(--muted); font-weight: 500; font-size: 0.95rem; }
+:root[data-ui="modern"] .rank-switch a:hover { color: var(--ink); }
+:root[data-ui="modern"] .rank-switch a.on { color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--ink); background: none; }
+
+/* Footer: a wide card like the header */
+:root[data-ui="modern"] .site-foot { background: transparent; border-top: 0; padding: 0 max(12px, env(safe-area-inset-right, 0px)) 16px max(12px, env(safe-area-inset-left, 0px)); }
+:root[data-ui="modern"] .foot-in { max-width: 1240px; background: var(--surface); border-radius: 24px; box-shadow: var(--m-lift); padding: 32px 28px 22px; }
+:root[data-ui="modern"] .foot-h { font-weight: 500; letter-spacing: 0.12em; font-size: 0.66rem; color: var(--muted); }
+:root[data-ui="modern"] .foot-col a { color: var(--ink); font-weight: 500; }
+:root[data-ui="modern"] .foot-col a:hover { color: var(--ink); }
+:root[data-ui="modern"] .site-foot .logo-name { color: var(--ink); font-weight: 700; letter-spacing: -0.05em; font-size: 1.55rem; }
+:root[data-ui="modern"] .site-foot .logo-tag { font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem; }
 
 /* Cards */
 :root[data-ui="modern"] .panel, :root[data-ui="modern"] .post { border: 0; box-shadow: var(--m-lift); border-radius: var(--radius); padding: 20px 22px; }
@@ -114,14 +126,20 @@
 :root[data-ui="modern"] .rank .pos { color: var(--muted); font-weight: 700; }
 :root[data-ui="modern"] .bar { background: var(--ink); }
 
-/* Phones: the chip row stays (it is the navigation), the right column folds away as in the classic look */
-@media (max-width: 1100px) {
+/* Narrower screens: search moves under the navigation; phones get logo + switches, then a scrollable nav row */
+@media (max-width: 1180px) {
   :root[data-ui="modern"] .layout { grid-template-columns: minmax(0, 1fr); }
+  :root[data-ui="modern"] .topbar-in { flex-wrap: wrap; row-gap: 8px; }
+  :root[data-ui="modern"] .top-search { order: 10; flex: 1 1 100%; max-width: none; margin-left: 0; }
+  :root[data-ui="modern"] .ui-switch { margin-left: auto; }
 }
 @media (max-width: 820px) {
-  :root[data-ui="modern"] .sidenav { display: flex; }
   :root[data-ui="modern"] .top-search { display: block; }
   :root[data-ui="modern"] .topbar { position: static; }
+  :root[data-ui="modern"] .topnav { order: 9; flex: 1 1 100%; margin: 0 -6px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  :root[data-ui="modern"] .topnav::-webkit-scrollbar { display: none; }
+  :root[data-ui="modern"] .topnav a { flex: none; padding: 7px 11px; font-size: 0.9rem; }
+  :root[data-ui="modern"] .nav-long { display: inline; }
 }
 @media (max-width: 520px) {
   :root[data-ui="modern"] .topbar { padding-inline: 8px; padding-top: 8px; }
@@ -135,3 +153,6 @@
 :root[data-ui="modern"] .cover { height: 200px; }
 @media (max-width: 520px) { :root[data-ui="modern"] .cover { height: 130px; } }
 @media (prefers-reduced-motion: reduce) { :root[data-ui="modern"] .mp-card { transition: none; } }
+@media (max-width: 520px) {
+  :root[data-ui="modern"] .foot-in { padding: 24px 18px 18px; border-radius: 20px; }
+}

@@ -543,9 +543,18 @@ h2 { font-size: 1.1rem; }
 .person-news { display: grid; gap: 16px; }
 
 /* Stopka: źródła danych, jedna dla całej strony */
-.site-foot { max-width: 1400px; margin: 8px auto 32px; padding: 16px 24px; color: var(--muted); font-size: 0.82rem; line-height: 1.55; border-top: 1px solid var(--line); }
-.site-foot p { margin: 0 0 6px; max-width: 110ch; }
-.site-foot a { color: var(--muted); }
+.site-foot { margin-top: 24px; background: var(--surface); border-top: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; line-height: 1.55; }
+.foot-in { max-width: 1600px; margin: 0 auto; padding: 32px max(24px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px)); }
+.foot-grid { display: grid; grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(140px, 1fr)); gap: 24px 32px; }
+.foot-brand p { margin: 10px 0 0; max-width: 36ch; }
+.foot-col { display: flex; flex-direction: column; gap: 8px; }
+.foot-h { margin: 0 0 2px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); }
+.foot-col a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.foot-col a:hover { color: var(--accent); text-decoration: underline; }
+.foot-src { margin: 28px 0 0; padding-top: 18px; border-top: 1px solid var(--line); font-size: 0.8rem; }
+.foot-bottom { margin: 12px 0 0; font-size: 0.78rem; }
+@media (max-width: 820px) { .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .foot-brand { grid-column: 1 / -1; } }
+@media (max-width: 480px) { .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .spectrum-text { margin-top: 6px; }
 
 /* Interface switch (classic / modern) in the top bar */
@@ -568,3 +577,11 @@ h2 { font-size: 1.1rem; }
 .earth-badge { position: relative; display: inline-block; width: 30px; height: 28px; line-height: 1; }
 .earth-globe { font-size: 24px; line-height: 28px; }
 .earth-n { position: absolute; top: -6px; left: 16px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #e5383b; color: #fff; font: 700 0.68rem/18px system-ui, sans-serif; text-align: center; box-shadow: 0 0 0 2px var(--card, #fff); white-space: nowrap; }
+
+/* Classic header on phones: logo and switches on top, the section links in their own full-width row */
+@media (max-width: 520px) {
+  :root:not([data-ui="modern"]) .topbar-in { flex-wrap: wrap; row-gap: 2px; padding-bottom: 0; }
+  :root:not([data-ui="modern"]) .ui-switch { margin-left: auto; }
+  :root:not([data-ui="modern"]) .topnav { order: 9; flex: 1 1 100%; margin: 0 -7px; }
+  :root:not([data-ui="modern"]) .nav-long { display: inline; }
+}

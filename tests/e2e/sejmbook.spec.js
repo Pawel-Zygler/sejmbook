@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 
 test('home feed shows the seat bar, without Frequent Flyer posts', async ({ page }) => {
   await page.goto(PAGE);
-  await expect(page.locator('.logo .logo-name')).toHaveText('sejmbook');
+  await expect(page.locator('.topbar .logo .logo-name')).toHaveText('sejmbook');
   await expect(page.locator('[data-testid="logo-tag"]')).toHaveText('wydarzenia w Rzeczypospolitej');
   await expect(page.locator('.mini-rank')).toHaveCount(0);
   await expect(page.locator('#view')).not.toContainText('Rekord kadencji');
@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Drugi, nowoczesny wygląd');
+  await expect(post).toContainText('Nowy nagłówek i stopka');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Drugi, nowoczesny wygląd');
+  await expect(page.locator('.news-post').first()).toContainText('Nowy nagłówek i stopka');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -480,18 +480,24 @@ test('Interface switch: modern look on, remembered after reload, then back to cl
 test.describe('modern look', () => {
   test.beforeEach(async ({ page }) => { await page.addInitScript(() => { try { localStorage.setItem('sejmbook-ui', 'modern'); } catch { /* ignore */ } }); });
 
-  test('section chips are the navigation, the header card holds the search', async ({ page }) => {
+  test('a normal header: section links and search in the header card, no chip row, a full footer', async ({ page }) => {
     await page.goto(PAGE);
-    await expect(page.locator('.topnav')).toBeHidden();
-    const chips = page.locator('.sidenav');
-    await expect(chips).toBeVisible();
-    await expect(chips.locator('a.on')).toHaveText(/Feed$/);
+    const nav = page.locator('.topnav');
+    await expect(nav).toBeVisible();
+    await expect(page.locator('.sidenav')).toBeHidden();
+    await expect(nav.locator('a.on')).toHaveText('Feed');
+    const textTransform = await nav.locator('a').first().evaluate((el) => getComputedStyle(el).textTransform);
+    expect(textTransform).toBe('none');
     await expect(page.locator('#top-search')).toBeVisible();
-    await chips.getByRole('link', { name: 'Frequent Flyer' }).click();
+    const foot = page.getByTestId('site-foot');
+    await expect(foot.locator('.foot-col a')).toHaveCount(8);
+    await expect(foot).toContainText('Źródła danych');
+    await nav.getByRole('link', { name: 'Frequent Flyer' }).click();
     await expect(page).toHaveURL(/#frequent-flyer$/);
     await expect(page.getByTestId('page-head')).toBeVisible();
     const hero = await page.getByTestId('page-head').evaluate((el) => getComputedStyle(el).backgroundImage);
     expect(hero).toContain('gradient');
+    await expect(page.getByTestId('rank-switch')).toBeVisible();
     await page.locator('#top-search').fill('mejza');
     await expect(page.locator('.mp-card')).toHaveCount(1);
   });
