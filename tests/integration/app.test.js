@@ -132,6 +132,9 @@ describe('Frequent Flyer', () => {
   });
   it('the Frekwencja page has no source list in the page body (sources are in the footer)', () => {
     nav('#frekwencja');
+    expect($('#view .method')).toBeNull();
+    expect($$('#view .stats .stat')).toHaveLength(1);
+    expect($('[data-view="attendance"] .page-head h1 .info-tip').textContent).toContain('Dla każdego dnia, w którym Sejm głosował');
     expect($('#view .sources')).toBeNull();
     expect($('#view').textContent).not.toContain('API Sejmu: głosowania X kadencji');
     expect($('.foot-src').textContent).toContain('głosowania');
@@ -325,7 +328,8 @@ describe('Ranking: Najwięcej partii', () => {
     expect(counts).toEqual([...counts].sort((a, b) => b - a));
     expect(counts[counts.length - 1]).toBeGreaterThanOrEqual(2);
     // All MPs since 1997: the record holder may no longer be in the Sejm (then there is no profile link).
-    expect($('[data-testid="hop-leader"]').textContent).toContain('Rekordzista skoczek');
+    expect($('[data-testid="hop-leader"]').textContent).toContain('Najwięcej partii');
+    expect($('[data-view="parties"]').textContent).not.toMatch(/skocz/i);
     expect($('[data-testid="hop-ranking"] .hop-row').dataset.person).toBe($('[data-testid="hop-leader"] .hop-leader-name').textContent.trim());
     expect($$('[data-testid="hop-ranking"] .hop-row').length).toBeGreaterThan(100);
     click($('[data-action="hop-scope"][data-scope="current"]'));

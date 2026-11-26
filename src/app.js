@@ -4,7 +4,7 @@ import { mergeEarlyTerms } from './lib/early-terms.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
 import { mergeSocial } from './lib/social.js';
-import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch } from './ui/render.js';
+import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch, infoTip } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
 import { buildHierarchy } from './lib/government.js';
@@ -88,7 +88,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'official') html = renderOfficial(ctx, r.slug, ctx.today);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
     else if (r.name === 'parties') html = renderParties(ctx, state.parties);
-    else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch });
+    else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch, infoTip });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
     doc.documentElement.dataset.route = r.name;

@@ -236,7 +236,7 @@ test('Ranking "Najwięcej partii" opens from the side menu', async ({ page, isMo
   expect(await panel.getByTestId('hop-ranking').locator('.hop-row').count()).toBeGreaterThan(10);
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
-  await expect(panel.getByTestId('hop-leader')).toContainText('Rekordzista skoczek');
+  await expect(panel.getByTestId('hop-leader')).toContainText('Najwięcej partii');
   await panel.locator('[data-action="hop-scope"][data-scope="current"]').click();
   await panel.getByTestId('hop-leader').locator('.hop-leader-name a').click();
   await expect(page.getByTestId('spectrum')).toBeVisible();

@@ -164,3 +164,5 @@
 
 /* Pages without a right column use the full width */
 :root[data-ui="modern"][data-aside="off"] .layout { grid-template-columns: minmax(0, 1fr); }
+
+:root[data-ui="modern"] .page-head:has(.info-tip)::after { top: 0; font-size: 7rem; line-height: 1; }

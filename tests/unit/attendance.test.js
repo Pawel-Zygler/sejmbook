@@ -163,7 +163,8 @@ describe('views', () => {
   it('ranking view lists rows, average, club average and method', () => {
     const html = renderAttendance(ctx, { order: 'desc', club: '' }, helpers);
     expect(html.match(/<tr data-mp-id=/g)).toHaveLength(3);
-    expect(html).toContain('Jak liczymy frekwencję');
+    expect(html).not.toContain('Jak liczymy frekwencję');
+    expect(html).not.toMatch(/Dni głosowań w X kadencji|Głosowań w X kadencji|Dane do/);
     expect(html).toContain('(2 kad.)');
     const clubHtml = renderAttendance(ctx, { order: 'asc', club: 'X' }, helpers);
     expect(clubHtml).toContain('Średnia w klubie X');

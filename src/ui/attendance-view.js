@@ -106,7 +106,9 @@ function renderClubAttendance(ctx, state, allRows, clubChip) {
 export function renderAttendance(ctx, state, helpers) {
   const att = ctx.attendance;
   if (!att) return `<section data-view="attendance" class="panel"><h1>Frekwencja</h1><p>Dane o frekwencji nie są jeszcze dostępne.</p></section>`;
-  const { avatar, clubChip, rankingSwitch = () => '' } = helpers;
+  const { avatar, clubChip, rankingSwitch = () => '', infoTip = () => '' } = helpers;
+  // How attendance is counted, behind the "i" icon on the page header (Pawel, 2026-11-26).
+  const method = `Dla każdego dnia, w którym Sejm głosował, dzielimy liczbę głosowań, w których poseł oddał głos, przez liczbę głosowań tego dnia. Frekwencja posła to średnia z tych dziennych wyników. Dni, w których nie miał jeszcze mandatu albo już go nie miał, pomijamy. ${att.coverageNote ?? ''}`.trim();
   const rows = attendanceRanking(ctx.mps, att, { order: state.order, club: state.club });
   const allRows = state.club ? attendanceRanking(ctx.mps, att, {}) : rows;
   const avg = sejmAverage(allRows);
@@ -118,14 +120,11 @@ export function renderAttendance(ctx, state, helpers) {
     ${rankingSwitch('attendance')}
     <div class="panel page-head att-hero" data-icon="◔" data-testid="page-head">
       <p class="eyebrow">Ranking</p>
-      <h1>Frekwencja</h1>
+      <h1>Frekwencja ${infoTip(method, 'https://api.sejm.gov.pl/sejm/term10/votings', 'Jak liczymy')}</h1>
       <p class="lede">Jak często posłowie biorą udział w głosowaniach. Dla każdego dnia posiedzeń liczymy, w ilu głosowaniach poseł wziął udział, a potem uśredniamy te dzienne wyniki.</p>
     </div>
     <div class="stats">
       <div class="stat"><span>Średnia frekwencja posła</span><b data-testid="att-avg">${formatPct(avg)}</b></div>
-      <div class="stat"><span>Dni głosowań w X kadencji</span><b>${att.days.length}</b></div>
-      <div class="stat"><span>Głosowań w X kadencji</span><b>${formatInt(att.votingsTotal)}</b></div>
-      <div class="stat"><span>Dane do</span><b>${escHtml(att.days[att.days.length - 1])}</b></div>
     </div>
     <div class="att-tabs" role="tablist" aria-label="Frekwencja">
       <button type="button" role="tab" class="filter ${state.view !== 'clubs' ? 'on' : ''}" data-action="att-view" data-view="mps" aria-selected="${state.view !== 'clubs'}">Posłowie</button>
@@ -158,10 +157,5 @@ export function renderAttendance(ctx, state, helpers) {
         </table>
       </div>
     </div>`}
-    <div class="panel method">
-      <h2>Jak liczymy frekwencję</h2>
-      <p>Dla każdego dnia, w którym Sejm głosował, dzielimy liczbę głosowań, w których poseł oddał głos, przez liczbę głosowań tego dnia. Frekwencja posła to średnia z tych dziennych wyników. Dni, w których nie miał jeszcze mandatu albo już go nie miał, pomijamy.</p>
-      <p>${escHtml(att.coverageNote)}</p>
-    </div>
   </section>`;
 }

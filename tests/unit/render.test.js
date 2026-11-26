@@ -426,7 +426,8 @@ describe('all terms (data/terms.json)', () => {
   };
   it('finds the record "skoczek" among all MPs, also those no longer in the Sejm', () => {
     const html = renderParties({ ...ctx, terms }, { scope: 'all' });
-    expect(html).toContain('Rekordzista skoczek');
+    expect(html).toContain('<p class="eyebrow">Najwięcej partii</p>');
+    expect(html).not.toContain('Szukamy');
     expect(html).toContain('<a class="hop-name" href="#osoba-3-1">Jan Skoczek</a>');
     expect(html).toContain('<b>3</b> partie, 3 przeskoki w 4 kadencjach Sejmu');
     expect(html).toContain('href="#posel-1"');

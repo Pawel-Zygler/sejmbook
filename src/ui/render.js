@@ -504,7 +504,7 @@ export function renderParties(ctx, state = { scope: 'all' }) {
     single = active.filter((m) => (ctx.career?.career?.[m.id] ?? []).length > 0).length - list.length;
   }
   const head = `<p class="eyebrow">Ranking</p><h1>Najwięcej partii</h1>
-      <p class="lede">${all ? 'Kto ze wszystkich posłów III RP był w największej liczbie partii. Szukamy rekordzisty skoczka.' : 'Którzy posłowie byli w największej liczbie partii w swojej karierze w Sejmie.'}</p>`;
+      <p class="lede">${all ? 'Kto ze wszystkich posłów III RP był w największej liczbie partii.' : 'Którzy posłowie byli w największej liczbie partii w swojej karierze w Sejmie.'}</p>`;
   const hopHead = 'panel mps-dash page-head" data-icon="⇄';
   const tabs = all ? `<div class="att-tabs" role="group" aria-label="Kogo pokazać">
         <button type="button" class="filter ${state.scope !== 'current' ? 'on' : ''}" data-action="hop-scope" data-scope="all" aria-pressed="${state.scope !== 'current'}">Wszyscy od ${sinceYear(ctx)}</button>
@@ -531,7 +531,7 @@ export function renderParties(ctx, state = { scope: 'all' }) {
       <div class="hop-leader" data-testid="hop-leader">
         ${face(top, 'lg')}
         <div>
-          ${all && state.scope !== 'current' ? '<p class="eyebrow">Rekordzista skoczek</p>' : ''}
+          ${all && state.scope !== 'current' ? '<p class="eyebrow">Najwięcej partii</p>' : ''}
           <p class="hop-leader-name">${name(top)}</p>
           <p class="hop-leader-stat"><b>${top.count}</b> ${partyWord(top.count)}${top.jumps != null ? `, ${top.jumps} ${jumpWord(top.jumps)}` : ''} w ${top.terms} ${termWordIn(top.terms)} Sejmu${tied > 0 ? `<span class="muted"> · ex aequo z ${tied} ${plural(tied, 'innym posłem', 'innymi posłami', 'innymi posłami')}</span>` : ''}</p>
           ${partyRoute(top.path)}
