@@ -50,7 +50,8 @@ describe('directory', () => {
 
   it('lists all 460 active MPs', () => {
     expect($$('.mp-card')).toHaveLength(460);
-    expect($('[data-testid="result-count"]').textContent).toBe('460 posłów');
+    expect($('[data-testid="result-count"]')).toBeNull();
+    expect($('[data-testid="term-info"]')).toBeNull();
   });
   it('searches without diacritics and keeps focus in the field', () => {
     type($('#dir-search'), 'mejza');
@@ -439,9 +440,9 @@ describe('Frekwencja: clubs', () => {
 describe('Posłowie: all terms', () => {
   it('switches to an earlier term and back', () => {
     nav('#poslowie');
-    expect($('[data-testid="term-info"]').textContent).toContain('X kadencja');
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('10');
     click($('#aside [data-action="dir-term"][data-term="3"]'));
-    expect($('[data-testid="term-info"]').textContent).toContain('III kadencja · 20.10.1997');
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('3');
     const cards = $$('.term-card');
     expect(cards.length).toBe(termsData.people.filter((p) => p.terms.some((t) => t.t === 3)).length);
     click($('#aside button.filter[data-club="UW"]'));
@@ -516,7 +517,7 @@ describe('Terms I and II (Wikipedia)', () => {
     nav('#poslowie');
     expect($$('#aside [data-action="dir-term"]').map((b) => b.dataset.term)).toEqual(['10', '9', '8', '7', '6', '5', '4', '3', '2', '1']);
     click($('#aside [data-action="dir-term"][data-term="1"]'));
-    expect($('[data-testid="term-info"]').textContent).toContain('I kadencja · 25.11.1991 – 31.05.1993');
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('1');
     expect($$('.term-card').length).toBe(earlyTermsData.terms[0].mps.length);
     expect($('[data-view="directory"] .src').textContent).toContain('polska Wikipedia');
     const tusk = $$('.term-card').find((c) => c.textContent.includes('Bronisław Geremek'));

@@ -307,7 +307,7 @@ test('Posłowie: earlier terms of the Sejm', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
   await page.locator('[data-action="dir-term"][data-term="3"]:visible').click();
-  await expect(page.getByTestId('term-info')).toContainText('III kadencja');
+  await expect(page.locator('[data-action="dir-term"][aria-pressed="true"]').first()).toHaveAttribute('data-term', '3');
   expect(await page.locator('.term-card').count()).toBeGreaterThan(400);
   await page.locator('#dir-search').fill('Buzek');
   await expect(page.locator('.term-card').first()).toContainText('Buzek');
@@ -369,7 +369,7 @@ test('Posłowie: term I (1991–1993) from Wikipedia', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
   await page.locator('[data-action="dir-term"][data-term="1"]:visible').click();
-  await expect(page.getByTestId('term-info')).toContainText('I kadencja · 25.11.1991');
+  await expect(page.locator('[data-action="dir-term"][aria-pressed="true"]').first()).toHaveAttribute('data-term', '1');
   expect(await page.locator('.term-card').count()).toBeGreaterThan(450);
 });
 

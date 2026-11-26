@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
 import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
@@ -84,9 +84,11 @@ describe('views', () => {
   it('directory shows an empty state', () => {
     expect(renderDirectory(ctx, { query: 'zzz', club: '', includeInactive: false }, [])).toContain('Nikt nie pasuje');
   });
-  it('directory shows result count with correct plural', () => {
+  it('directory shows the cards without a count line above them', () => {
     const list = filterMps(ctx.mps, {});
-    expect(renderDirectory(ctx, { query: '', club: '', includeInactive: false }, list)).toContain('460 posłów');
+    const html = renderDirectory(ctx, { query: '', club: '', includeInactive: false }, list);
+    expect(html).not.toContain('460 posłów');
+    expect((html.match(/class="mp-card[ "]/g) ?? []).length).toBe(460);
   });
   it('aside lists clubs with counts', () => {
     expect(renderAside(ctx)).toMatch(/KO<\/a><b>\d+<\/b>/);
@@ -441,13 +443,13 @@ describe('all terms (data/terms.json)', () => {
   it('lists the MPs of an earlier term with that term\'s club and district', () => {
     const st = { query: '', club: '', includeInactive: false, term: 3 };
     expect(termPicker({ ...ctx, terms }, st)).toContain('data-term="3" aria-pressed="true"');
-    expect(termInfo({ ...ctx, terms }, 3)).toBe('III kadencja · 20.10.1997 – 18.10.2001 · 3 posłów w ciągu kadencji');
     const f = directoryFilters({ ...ctx, terms }, st);
     expect(f).toContain('data-club="UW"');
     expect(f).not.toContain('dir-inactive');
     const list = [{ key: '3-5', id: 5, name: 'Anna Dwa', lastName: 'Dwa', club: 'UW', clubName: 'Klub Parlamentarny Unii Wolności', districtNum: 2, districtName: 'Wałbrzych', current: 1, terms: [3, 10] }];
     const html = renderDirectory({ ...ctx, terms }, st, list);
-    expect(html).toContain('data-testid="term-info"');
+    expect(html).not.toContain('data-testid="term-info"');
+    expect(html).not.toContain('data-testid="result-count"');
     expect(html).toContain('title="Klub Parlamentarny Unii Wolności"');
     expect(html).toContain('href="#posel-1"');
     expect(html).toContain('kadencje III, X');

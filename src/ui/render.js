@@ -429,12 +429,6 @@ export function termsSourceNote(ctx) {
 const sinceYear = (ctx) => (ctx.terms?.terms?.[0]?.from ?? '1997').slice(0, 4);
 
 /** "III kadencja · 20.10.1997 – 18.10.2001 · 482 posłów" */
-export function termInfo(ctx, num) {
-  const t = (ctx.terms?.terms ?? []).find((x) => x.num === num);
-  if (!t) return '';
-  const d = (s) => s.split('-').reverse().join('.');
-  return `${romanTerm(num)} kadencja · ${d(t.from)} – ${t.to ? d(t.to) : 'dziś'} · ${t.mps} ${plural(t.mps, 'poseł', 'posłów', 'posłów')} w ciągu kadencji`;
-}
 
 /** Card of an MP of an earlier term: initials (or today's photo for current MPs), that term's club and district. */
 function termCard(ctx, m) {
@@ -537,7 +531,6 @@ export function renderDirectory(ctx, state, list) {
   const past = isPastTerm(ctx, state);
   const num = Number(state.term ?? CURRENT_TERM);
   const clubLabel = past ? state.club : (ctx.clubs.get(state.club) ?? FALLBACK_CLUB).short;
-  const info = ctx.terms?.terms?.length ? termInfo(ctx, num) : '';
   return `
   <section data-view="directory">
     <div class="panel dir-head">
@@ -546,8 +539,6 @@ export function renderDirectory(ctx, state, list) {
         <input id="dir-search" type="search" placeholder="Szukaj posła po nazwisku, okręgu${past ? '' : ' lub województwie'}" value="${esc(state.query)}" data-action="search" autocomplete="off">
       </label>
       <details class="phone-only dir-filters-phone"><summary>Filtry${past ? `: ${romanTerm(num)} kadencja` : ''}${state.club ? `${past ? ', ' : ': '}${esc(clubLabel)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
-      ${info ? `<p class="term-info" data-testid="term-info">${esc(info)}</p>` : ''}
-      <p class="result-count" data-testid="result-count">${list.length} ${plural(list.length, 'poseł', 'posłów', 'posłów')}</p>
     </div>
     <ul class="mp-grid">
       ${list.length === 0 ? `<li class="empty">Nikt nie pasuje do tego wyszukiwania. Spróbuj innego nazwiska albo wybierz „Wszystkie”.</li>` : list.map((mp) => (past ? termCard(ctx, mp) : mpCard(ctx, mp))).join('')}
