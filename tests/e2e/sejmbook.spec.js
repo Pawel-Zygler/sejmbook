@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Nowy nagłówek i stopka');
+  await expect(post).toContainText('Bio posła prozą');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Nowy nagłówek i stopka');
+  await expect(page.locator('.news-post').first()).toContainText('Bio posła prozą');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -212,7 +212,8 @@ test('Spektrum partyjne: career sentence under the profile card, sources in the 
   const panel = page.getByTestId('spectrum');
   await expect(panel).toBeVisible();
   await expect(panel).toContainText('Spektrum partyjne');
-  await expect(panel.getByTestId('spectrum-text')).toContainText('W Sejmie III RP:');
+  await expect(panel.getByTestId('spectrum-text')).toContainText('W Sejmie III RP');
+  await expect(panel.getByTestId('life-first')).toContainText('Pierwsza aktywność polityczna w wieku');
   await expect(panel.locator('.spectrum-bar')).toHaveCount(0);
   const top = await page.locator('.profile-top').boundingBox();
   expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);

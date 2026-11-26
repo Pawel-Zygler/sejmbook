@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-26
 
+- **Profile: Bio posła prozą.** Pod linią życia jest teraz krótkie bio w zdaniach: kiedy i jak zaczęła się działalność polityczna oraz ile kadencji i w jakich klubach.
 - **Serwis: Nowy nagłówek i stopka.** Nowoczesny wygląd ma zwykłe menu w nagłówku zamiast rzędu filtrów, a oba wyglądy mają pełną stopkę z linkami do wszystkich sekcji.
 - **Serwis: Drugi, nowoczesny wygląd.** Przełącznik „Klasyczny / Nowoczesny” w górnym pasku zmienia wygląd całej strony, a wybór zostaje zapamiętany.
 - **Frequent Flyer: Okrążenia Ziemi.** Nowa kolumna z globusem pokazuje, ile razy poseł okrążyłby Ziemię swoimi lotami, np. 0,3 albo 6,5.

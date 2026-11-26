@@ -574,8 +574,40 @@ export function plural(n, one, few, many) {
 const fmtYears = (y) => `${y.toFixed(1).replace('.', ',').replace(/,0$/, '')} ${y >= 1.5 && y < 4.5 ? 'lata' : 'lat'}`;
 
 /** "Spektrum partyjne": a bar showing how the MP's years in the Sejm split between clubs. */
-/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms. */
-export function renderLifeLine(ctx, mp) {
+const UNKNOWN_CLUB = /^nieznany klub$/i;
+/** "w PiS", or "w nieznanym klubie" when the source has no club. */
+const inClub = (label) => (UNKNOWN_CLUB.test(label) ? 'w <b>nieznanym klubie</b>' : `w <b>${esc(label)}</b>`);
+
+/** Polish list: "a", "a i b", "a, b i c". */
+export const listPl = (xs) => (xs.length < 2 ? (xs[0] ?? '') : `${xs.slice(0, -1).join(', ')} i ${xs.at(-1)}`);
+
+/** The first political activity in prose, e.g. "Pierwsza aktywność polityczna w wieku 58 lat, w roku 2019, jako nowy członek KO / PO w Sejmie." */
+export function firstActivityText(tl) {
+  if (tl.prlUnknown.length) return `Pierwsza aktywność polityczna <b>jeszcze w PRL</b>: ${esc(listPl(tl.prlUnknown))} (lata nieznane).`;
+  if (tl.firstYear == null) return '';
+  const what = tl.firstKind === 'sejm'
+    ? (UNKNOWN_CLUB.test(tl.firstLabel) ? 'jako nowy członek Sejmu' : `jako nowy członek ${esc(tl.firstLabel)} w Sejmie`)
+    : tl.firstKind === 'opposition' ? `w opozycji: ${esc(tl.firstLabel)}` : `jako członek partii ${esc(tl.firstLabel)}`;
+  return `Pierwsza aktywność polityczna w wieku ${tl.firstYear - tl.birth} lat, w roku <b>${tl.firstYear}</b>${tl.firstInPrl ? ', jeszcze w PRL' : ''}, ${what}.`;
+}
+
+/** The Sejm career in prose, e.g. "W Sejmie III RP 2 kadencje (IX–X), obie w KO / PO, razem ok. 7 lat." */
+export function careerSentence(sp) {
+  if (!sp?.parts?.length) return '';
+  const n = sp.terms?.length ?? sp.parts.reduce((s, p) => s + p.terms.length, 0);
+  const kad = (k) => `${k} ${plural(k, 'kadencja', 'kadencje', 'kadencji')}`;
+  const total = `razem ok. ${fmtYears(sp.totalYears)}`;
+  if (sp.parts.length === 1) {
+    const p = sp.parts[0];
+    const all = n === 1 ? '' : n === 2 ? 'obie ' : 'wszystkie ';
+    return `W Sejmie III RP <b>${kad(n)}</b> (${termRanges(p.terms)})${n === 1 ? ' ' : `, ${all}`}${inClub(p.label)}, ${total}.`;
+  }
+  const parts = [...sp.parts].sort((a, b) => Math.min(...a.terms) - Math.min(...b.terms));
+  return `W Sejmie III RP <b>${kad(n)}</b>: ${listPl(parts.map((p) => `${p.terms.length} ${inClub(p.label)} (${termRanges(p.terms)})`))}, ${total}.`;
+}
+
+/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms; under it a short bio in prose. */
+export function renderLifeLine(ctx, mp, sp = null) {
   const now = Number(ctx.fetchedAt.slice(0, 4));
   const tl = lifeTimeline(ctx, mp, now);
   if (!tl) return '';
@@ -591,11 +623,8 @@ export function renderLifeLine(ctx, mp) {
   const undatedTip = tl.undated.length
     ? infoTip(`Partie i organizacje bez dat w Wikidata: ${tl.undated.join(', ')}.`, qid ? `https://www.wikidata.org/wiki/${qid}` : '')
     : '';
-  const first = tl.prlUnknown.length
-    ? `Pierwsza aktywność polityczna: <b>jeszcze w PRL</b> (${tl.prlUnknown.map(esc).join(', ')}; lata nieznane).`
-    : tl.firstYear != null
-    ? `Pierwsza aktywność polityczna: <b>${tl.firstYear}</b> (${esc(tl.firstWhat)}), w wieku ${tl.firstYear - tl.birth} lat${tl.firstInPrl ? ', jeszcze w PRL' : ''}.`
-    : '';
+  const career = careerSentence(sp);
+  const first = [firstActivityText(tl), career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
   return `
       <div class="life" data-testid="life-line">
         <div class="life-eras" aria-hidden="true">
@@ -607,7 +636,7 @@ export function renderLifeLine(ctx, mp) {
         </div>
         <div class="life-axis"><span>ur. ${tl.birth}</span>${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
-      ${first || undatedTip ? `<p class="life-first" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
+      ${first || undatedTip ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 
 const spPct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
@@ -634,28 +663,26 @@ function routeBlock(route) {
   return `<div data-testid="person-route"><h3 class="spectrum-h3">Ścieżka partyjna</h3>${partyRoute(route.path)}<p class="muted">${route.count} ${partyWord(route.count)}${route.jumps ? `, ${route.jumps} ${plural(route.jumps, 'przeskok', 'przeskoki', 'przeskoków')}` : ''}</p></div>`;
 }
 
-/** The Sejm career in words, e.g. "W Sejmie III RP: 4 kadencje w PiS (V–VI, VIII–IX), razem ok. 14 lat." */
+/** The Sejm career on its own, for profiles without a life line (no birth year). */
 export function spectrumText(sp) {
-  if (!sp?.parts?.length) return '';
-  const parts = [...sp.parts].sort((a, b) => Math.min(...a.terms) - Math.min(...b.terms));
-  const one = (p) => `<b>${p.terms.length} ${plural(p.terms.length, 'kadencja', 'kadencje', 'kadencji')} w ${esc(p.label)}</b> (${termRanges(p.terms)})`;
-  return `<p class="life-first spectrum-text" data-testid="spectrum-text">W Sejmie III RP: ${parts.map(one).join(', ')}, razem ok. ${fmtYears(sp.totalYears)}.</p>`;
+  const s = careerSentence(sp);
+  return s ? `<p class="life-first bio" data-testid="spectrum-text">${s}</p>` : '';
 }
 
-/** The "Spektrum partyjne" panel: the life line and the Sejm career in one sentence. Same on every profile. */
+/** The "Spektrum partyjne" panel: the life line with a short bio in prose under it. Same on every profile. */
 function spectrumPanel(lifeLine, sp) {
   return `
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
       ${lifeLine}
-      ${spectrumText(sp)}
+      ${lifeLine.includes('data-testid="spectrum-text"') ? '' : spectrumText(sp)}
       ${!lifeLine && !sp ? '<p class="muted">Brak danych o klubach tej osoby w Sejmie.</p>' : ''}
     </section>`;
 }
 
 export function renderCareerSpectrum(ctx, mp) {
   const sp = careerSpectrum(ctx.career, mp.id, ctx.fetchedAt);
-  const lifeLine = renderLifeLine(ctx, mp);
+  const lifeLine = renderLifeLine(ctx, mp, sp);
   if (!sp && !lifeLine) return '';
   return spectrumPanel(lifeLine, sp);
 }
@@ -686,7 +713,7 @@ export function renderPerson(ctx, key) {
   const year = Number(ctx.fetchedAt.slice(0, 4));
   // The same life line as on an MP profile, from this person's terms (no Wikidata parties for earlier MPs).
   const lifeCtx = { ...ctx, life: null, career: { terms: [...info.values()], career: { person: rows } } };
-  const lifeLine = birthYear ? renderLifeLine(lifeCtx, { id: 'person', birthYear }) : '';
+  const lifeLine = birthYear ? renderLifeLine(lifeCtx, { id: 'person', birthYear }, route.path.length ? sp : null) : '';
   return `
   <section data-view="person" data-person="${esc(key)}">
     <div class="profile-top panel">

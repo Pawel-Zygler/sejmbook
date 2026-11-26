@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-bio-proza",
+      "date": "2026-11-26",
+      "title": "Bio posła prozą",
+      "section": "Profile",
+      "body": "Pod linią życia jest teraz krótkie bio w zdaniach: kiedy i jak zaczęła się działalność polityczna oraz ile kadencji i w jakich klubach.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-naglowek-stopka",
       "date": "2026-11-26",
       "title": "Nowy nagłówek i stopka",

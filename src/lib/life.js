@@ -82,11 +82,15 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
 
   const starts = [...parties.filter((x) => !x.uncertain), ...opposition, ...sejm].map((x) => x.from);
   const first = starts.length ? Math.min(...starts) : null;
+  const firstOpp = first == null ? null : opposition.find((x) => x.from === first);
+  const firstParty = first == null || firstOpp ? null : parties.find((x) => !x.uncertain && x.from === first);
+  const firstKind = first == null ? null : firstOpp ? 'opposition' : firstParty ? 'party' : 'sejm';
   const firstWhat = first == null ? null
-    : (opposition.find((x) => x.from === first)?.label ?? parties.find((x) => x.from === first)?.full ?? `Sejm (${sejm[0].label})`);
+    : (firstOpp?.label ?? firstParty?.full ?? `Sejm (${sejm[0].label})`);
+  const firstLabel = first == null ? null : (firstOpp?.label ?? firstParty?.full ?? sejm[0].label);
   return {
     birth, now, prlEnd: III_RP_START, bornInPrl: birth < III_RP_START,
-    firstYear: first, firstWhat, firstInPrl: first != null && first < III_RP_START,
+    firstYear: first, firstWhat, firstKind, firstLabel, firstInPrl: first != null && first < III_RP_START,
     prlUnknown: parties.filter((x) => x.uncertain && (first == null || first >= III_RP_START)).map((x) => x.label.replace(' (lata nieznane)', '')),
     lanes: [
       { id: 'opposition', label: 'Opozycja w PRL', items: opposition },

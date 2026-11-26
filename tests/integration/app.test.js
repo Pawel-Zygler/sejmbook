@@ -153,8 +153,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Nowy nagłówek i stopka';
-const NEWEST_LINE = 'Serwis: Nowy nagłówek i stopka';
+const NEWEST = 'Bio posła prozą';
+const NEWEST_LINE = 'Profile: Bio posła prozą';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -294,14 +294,18 @@ describe('Spektrum partyjne', () => {
     expect(panel.previousElementSibling.classList.contains('profile-top')).toBe(true);
     expect(panel.textContent).toContain('Spektrum partyjne');
     expect(panel.textContent).toContain(`${rows.length} kadencj`);
-    expect(panel.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP: .+, razem ok\. /);
+    const bio = panel.querySelector('[data-testid="life-first"]');
+    expect(bio.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP \d+ kadencj.+, razem ok\. /);
+    expect(bio.textContent).toMatch(/^Pierwsza aktywność polityczna /);
+    expect(panel.querySelectorAll('[data-testid="spectrum-text"]')).toHaveLength(1);
     expect(panel.querySelector('.spectrum-bar')).toBeNull();
     expect(panel.querySelector('[data-testid="person-route"]')).toBeNull();
   });
   it('first-term MPs get one sentence with a single term', () => {
     const id = Object.entries(careerData.career).find(([, r]) => r.length === 1 && r[0].term === 10)[0];
     nav(`#posel-${id}`);
-    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP: 1 kadencja w .+ \(X\), razem ok\. /);
+    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP 1 kadencja \(X\) w .+, razem ok\. /);
+    expect($('[data-testid="life-first"]').textContent).toMatch(/w roku 2023, jako nowy członek .+ w Sejmie\./);
   });
 });
 
@@ -366,7 +370,7 @@ describe('Spektrum partyjne: PZPR without dates', () => {
   it('Włodzimierz Czarzasty: hatched PZPR span and first activity in the PRL', () => {
     nav('#posel-58');
     expect($('[data-lane="parties"] .life-seg.uncertain').textContent).toContain('PZPR');
-    expect($('[data-testid="life-first"]').textContent).toContain('jeszcze w PRL (PZPR; lata nieznane)');
+    expect($('[data-testid="life-first"]').textContent).toContain('Pierwsza aktywność polityczna jeszcze w PRL: PZPR (lata nieznane).');
   });
 });
 

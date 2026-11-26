@@ -160,7 +160,7 @@ describe('state views', () => {
     for (const slug of ctx.bySlug ? [...ctx.bySlug.keys()] : [...ctx.gov.bySlug.keys()]) {
       const h = renderOfficial(ctx, slug, '2026-11-24');
       expect(h).toContain('data-testid="spectrum"');
-      expect(h).toMatch(/W funkcjach państwowych: <b>ok\. |Bez partii/);
+      expect(h).toMatch(/W funkcjach państwowych ok\. |Bez partii/);
       expect(h).not.toContain('Dane: ');
     }
   });
@@ -183,7 +183,8 @@ describe('official life line and the sitemap', () => {
     ], '2026-11-24');
     expect(html).toContain('data-lane="gov"');
     expect(html).toContain('data-lane="office"');
-    expect(html).toContain('Pierwsza funkcja państwowa: <b>2005</b> (Minister)');
+    expect(html).toContain('Pierwsza funkcja państwowa w roku <b>2005</b>: Minister.');
+    expect(roleLine([{ office: 'Minister', party: 'PiS', gov: 'g1', from: '2005-10-31', to: '2007-11-16' }], '2026-11-24', 'Dalej.')).toContain('Minister. Dalej.</p>');
     expect(html).toContain('life-seg open');
     expect(roleLine([], '2026-11-24')).toBe('');
   });
