@@ -50,6 +50,23 @@ export function renderContact(ctx, mp) {
         </div>`;
 }
 
+/** Hover card for the MP's page on sejm.gov.pl, from the same official data (the page itself cannot be shown in a frame). */
+export function sejmPreview(ctx, mp, club) {
+  const email = ctx.contacts?.mps?.[mp.id]?.email;
+  const terms = (ctx.career?.career?.[mp.id] ?? []).map((r) => r.term);
+  const att = attendanceBadge(ctx, mp.id, 16);
+  const url = sejmProfileUrl(mp.id);
+  return `<div class="lp-head">${avatar(ctx, mp, 'md')}<div><b>${esc(mp.name)}</b><small>sejm.gov.pl · Poseł na Sejm X kadencji</small></div></div>
+    <dl class="lp-facts">
+      <dt>Klub</dt><dd>${esc(club.name)}</dd>
+      <dt>Okręg</dt><dd>nr ${mp.districtNum} · ${esc(mp.districtName)}</dd>
+      ${terms.length ? `<dt>W Sejmie</dt><dd>${termsWords(terms.length)} (${termRanges(terms)})</dd>` : ''}
+      ${att ? `<dt>Frekwencja</dt><dd>${att}</dd>` : ''}
+      ${email ? `<dt>E-mail</dt><dd>${esc(email)}</dd>` : ''}
+    </dl>
+    <a class="lp-open" href="${esc(url)}" target="_blank" rel="noopener">Otwórz stronę posła w serwisie Sejmu</a>`;
+}
+
 export function sejmProfileUrl(mpId) {
   return `https://www.sejm.gov.pl/Sejm10.nsf/posel.xsp?id=${String(mpId).padStart(3, '0')}&type=A`;
 }
@@ -831,7 +848,7 @@ export function renderProfile(ctx, id) {
       <div class="profile-id">
         ${avatar(ctx, mp, 'xl')}
         <div class="profile-name">
-          <div class="profile-title"><h1>${esc(mp.name)}</h1>${renderProfileLinks(ctx.contacts?.mps?.[mp.id] ?? null, sejmProfileUrl(mp.id))}</div>
+          <div class="profile-title"><h1>${esc(mp.name)}</h1>${renderProfileLinks(ctx.contacts?.mps?.[mp.id] ?? null, sejmProfileUrl(mp.id), { sejmPreview: sejmPreview(ctx, mp, club), who: mp.name })}</div>
           <p>${clubChip(ctx, mp.club, mp)} <span class="muted">${esc(club.name)}</span></p>
           ${off ? `<p class="badge-off">${esc(off)}</p>` : ''}
         </div>

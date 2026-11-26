@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { profileLinks, renderProfileLinks, LINK_KINDS } from '../../src/ui/profile-links.js';
+import { profileLinks, renderProfileLinks, LINK_KINDS, handleOf, socialPreview } from '../../src/ui/profile-links.js';
 
 const SEJM = 'https://www.sejm.gov.pl/Sejm10.nsf/posel.xsp?id=033&type=A';
 
@@ -18,11 +18,30 @@ describe('round icon links next to the MP name', () => {
   it('renders round links with a name for each, external ones in a new tab', () => {
     const h = renderProfileLinks({ email: 'Jan.Nowak@sejm.pl', youtube: ['https://www.youtube.com/channel/UC1'] }, SEJM);
     expect(h).toContain('data-testid="profile-links"');
-    expect(h).toMatch(/data-kind="sejm" href="https:\/\/www\.sejm\.gov\.pl[^"]+" target="_blank" rel="noopener" title="Strona posła w serwisie Sejmu"/);
+    expect(h).toMatch(/data-kind="sejm" href="https:\/\/www\.sejm\.gov\.pl[^"]+" target="_blank" rel="noopener" aria-label="Strona posła w serwisie Sejmu" title="Strona posła w serwisie Sejmu"/);
     expect(h).toContain('aria-label="YouTube"');
     expect(h).toContain('title="E-mail: Jan.Nowak@sejm.pl"');
     expect(h).not.toMatch(/data-kind="email"[^>]*target=/);
-    expect((h.match(/<svg/g) ?? []).length).toBe(3);
+    expect(h).toContain('data-testid="link-preview-youtube"');
+  });
+
+  it('shows a preview card on hover: the Sejm card passed in, social cards with the account and an open button', () => {
+    const h = renderProfileLinks({ email: 'a@sejm.pl', x: ['https://x.com/krzysztofbosak'] }, SEJM, { sejmPreview: '<p>SEJM CARD</p>', who: 'Krzysztof Bosak' });
+    expect(h).toMatch(/<span class="lp-wrap"><a class="profile-link" data-kind="sejm"[^>]*aria-describedby="lp-0"[\s\S]*?<div class="link-preview" role="tooltip" id="lp-0" data-testid="link-preview-sejm"><p>SEJM CARD<\/p>/);
+    expect(h).toContain('data-testid="link-preview-x"');
+    expect(h).toContain('@krzysztofbosak');
+    expect(h).toContain('Otwórz na x.com');
+    expect(h).not.toContain('link-preview-email');
+  });
+
+  it('reads the account name from profile URLs', () => {
+    expect(handleOf('https://x.com/krzysztofbosak')).toBe('@krzysztofbosak');
+    expect(handleOf('https://www.instagram.com/jan_nowak/')).toBe('@jan_nowak');
+    expect(handleOf('https://www.tiktok.com/@jan')).toBe('@jan');
+    expect(handleOf('https://www.facebook.com/100044167702312')).toBe('');
+    expect(handleOf('https://www.youtube.com/channel/UCjMm9zT3dgmRfgnz2oLnNWw')).toBe('');
+    expect(handleOf('nie url')).toBe('');
+    expect(socialPreview('facebook', 'https://www.facebook.com/100044167702312', 'Jan Nowak')).toContain('Jan Nowak');
   });
 
   it('has an icon and a Polish name for every kind', () => {

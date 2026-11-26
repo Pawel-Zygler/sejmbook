@@ -148,8 +148,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Działalność społeczna i linki posła';
-const NEWEST_LINE = 'Profile: Działalność społeczna i linki posła';
+const NEWEST = 'Podgląd linków posła';
+const NEWEST_LINE = 'Profile: Podgląd linków posła';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -820,6 +820,11 @@ describe('Profile: round links next to the name, social activity on the life lin
     expect(links.at(-1).getAttribute('href')).toBe(`mailto:${contactsData.mps[33].email}`);
     for (const a of links) expect(a.getAttribute('aria-label')).toBeTruthy();
     expect(links.some((a) => a.dataset.kind === 'website' && /sejm\.gov\.pl/.test(a.href))).toBe(false);
+    const card = $('[data-testid="link-preview-sejm"]');
+    expect(card.textContent).toContain('Krzysztof Bosak');
+    expect(card.textContent).toMatch(/Okręg\s*nr \d+/);
+    expect(card.querySelector('a.lp-open').getAttribute('href')).toContain('posel.xsp?id=033');
+    expect($('[data-testid="link-preview-x"]').textContent).toContain('@krzysztofbosak');
   });
 
   it('draws a "Działalność społeczna" lane for MPs with dated activity and says it in the bio', () => {

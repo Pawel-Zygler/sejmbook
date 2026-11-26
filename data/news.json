@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-podglad-linkow",
+      "date": "2026-11-26",
+      "title": "Podgląd linków posła",
+      "section": "Profile",
+      "body": "Po najechaniu na ikonkę strony Sejmu lub sociala przy nazwisku posła pojawia się okienko z podglądem.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-dzialalnosc-spoleczna",
       "date": "2026-11-26",
       "title": "Działalność społeczna i linki posła",

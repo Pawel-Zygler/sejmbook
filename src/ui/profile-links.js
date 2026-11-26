@@ -37,14 +37,45 @@ export function profileLinks(contact, sejmUrl) {
   return out;
 }
 
-/** Row of round icons; each has its name as tooltip and accessible label. */
-export function renderProfileLinks(contact, sejmUrl) {
+/** "@krzysztofbosak" from a profile URL, or '' when the URL has no readable name (e.g. a numeric Facebook id). */
+export function handleOf(href) {
+  try {
+    const u = new URL(href);
+    const seg = u.pathname.split('/').filter(Boolean);
+    const last = (seg[0] === 'channel' || seg[0] === 'in' || seg[0] === 'profile' ? seg[1] : seg[0]) ?? '';
+    const name = decodeURIComponent(last).replace(/^@/, '');
+    if (!name || /^\d+$/.test(name) || /^UC[\w-]{20,}$/.test(name)) return '';
+    return `@${name}`;
+  } catch { return ''; }
+}
+
+const SOCIAL_NOTE = {
+  x: 'X nie pozwala pokazywać wpisów na innych stronach bez płatnego dostępu, więc tutaj ich nie ma.',
+  facebook: 'Facebook nie pozwala pokazywać profilu na innych stronach, więc tutaj go nie ma.',
+  instagram: 'Instagram nie pozwala pokazywać profilu na innych stronach, więc tutaj go nie ma.',
+};
+
+/** Hover card for a social account: network, name, and a button that opens it. */
+export function socialPreview(kind, href, who = '') {
+  const k = LINK_KINDS[kind];
+  const handle = handleOf(href);
+  const host = (() => { try { return new URL(href).hostname.replace(/^www\./, ''); } catch { return ''; } })();
+  return `<div class="lp-head"><span class="lp-icon" data-kind="${kind}">${k.icon}</span><div><b>${esc(k.label)}</b><small>${esc(handle || who || host)}</small></div></div>
+    <p class="lp-note">${esc(SOCIAL_NOTE[kind] ?? 'Ten serwis nie pozwala pokazywać swoich stron w okienku na innych stronach.')}</p>
+    <a class="lp-open" href="${esc(href)}" target="_blank" rel="noopener">Otwórz na ${esc(host || k.label)}</a>`;
+}
+
+/** Row of round icons; each has its name as accessible label and, when given, a preview card on hover or focus. */
+export function renderProfileLinks(contact, sejmUrl, { sejmPreview = '', who = '' } = {}) {
   const links = profileLinks(contact, sejmUrl);
   if (!links.length) return '';
-  return `<nav class="profile-links" aria-label="Linki posła" data-testid="profile-links">${links.map((l) => {
+  return `<nav class="profile-links" aria-label="Linki posła" data-testid="profile-links">${links.map((l, i) => {
     const k = LINK_KINDS[l.kind];
     const name = l.text ? `${k.label}: ${l.text}` : k.label;
     const ext = l.kind === 'email' ? '' : ' target="_blank" rel="noopener"';
-    return `<a class="profile-link" data-kind="${l.kind}" href="${esc(l.href)}"${ext} title="${esc(name)}" aria-label="${esc(name)}">${k.icon}</a>`;
+    const preview = l.kind === 'sejm' ? sejmPreview : l.kind === 'email' ? '' : socialPreview(l.kind, l.href, who);
+    const id = `lp-${i}`;
+    const a = `<a class="profile-link" data-kind="${l.kind}" href="${esc(l.href)}"${ext} aria-label="${esc(name)}"${preview ? ` aria-describedby="${id}"` : ` title="${esc(name)}"`}>${k.icon}</a>`;
+    return preview ? `<span class="lp-wrap">${a}<div class="link-preview" role="tooltip" id="${id}" data-testid="link-preview-${l.kind}">${preview}</div></span>` : a;
   }).join('')}</nav>`;
 }

@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Działalność społeczna i linki posła');
+  await expect(post).toContainText('Podgląd linków posła');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Działalność społeczna i linki posła');
+  await expect(page.locator('.news-post').first()).toContainText('Podgląd linków posła');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -581,5 +581,23 @@ test('profile: round links next to the name (Sejm page first) and the social act
   expect(first.width).toBeGreaterThanOrEqual(30);
   await expect(page.locator('[data-testid="life-line"] [data-lane="social"]')).toBeVisible();
   await expect(page.getByTestId('social-text')).toContainText('Młodzież Wszechpolska');
+});
+
+test('profile: hovering the Sejm and X icons shows a preview card', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'hover cards are for mouse; on phones the icon opens the page');
+  await page.goto(`${PAGE}#posel-33`);
+  const sejmCard = page.getByTestId('link-preview-sejm');
+  await expect(sejmCard).toBeHidden();
+  await page.locator('.profile-link[data-kind="sejm"]').hover();
+  await expect(sejmCard).toBeVisible();
+  await expect(sejmCard).toContainText('Krzysztof Bosak');
+  const box = await sejmCard.boundingBox();
+  expect(box.width).toBeGreaterThan(300);
+  expect(box.x).toBeGreaterThanOrEqual(0);
+  await page.locator('.profile-link[data-kind="x"]').hover();
+  await expect(page.getByTestId('link-preview-x')).toBeVisible();
+  await expect(page.getByTestId('link-preview-x')).toContainText('@krzysztofbosak');
+  await page.mouse.move(5, 5);
+  await expect(page.getByTestId('link-preview-x')).toBeHidden();
 });
 
