@@ -19,7 +19,8 @@ const result = await build({
   legalComments: 'none',
 });
 const js = result.outputFiles[0].text.replace(/<\/script/gi, '<\\/script');
-const css = await readFile(p('src/ui/styles.css'), 'utf8');
+// The modern skin lives in its own file, every rule scoped to :root[data-ui="modern"].
+const css = `${await readFile(p('src/ui/styles.css'), 'utf8')}\n${await readFile(p('src/ui/styles-modern.css'), 'utf8')}`;
 
 // Photos and club logos downloaded by the "media" workflow are inlined as data: URLs,
 // so they show everywhere (also where pages may not load images from other sites).
@@ -52,7 +53,7 @@ const head = `<title>Sejmbook</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Sejmbook: profile posłów X kadencji i ranking Frequent Flyer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
 <style>${css}</style>`;
 
 const fragment = `${head}\n${SHELL_HTML}\n${mediaScript}<script>${js}</script>\n`;

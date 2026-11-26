@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Okrążenia Ziemi');
+  await expect(post).toContainText('Drugi, nowoczesny wygląd');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Okrążenia Ziemi');
+  await expect(page.locator('.news-post').first()).toContainText('Drugi, nowoczesny wygląd');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -453,4 +453,60 @@ test('Feed: office releases and MP acts; sitemap from the side menu or the feed 
     await page.goto(`${PAGE}${h}`);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
   }
+});
+
+// Two interface versions (Pawel, 2026-11-26): classic and modern, switched in the top bar and remembered.
+test('Interface switch: modern look on, remembered after reload, then back to classic', async ({ page }) => {
+  await page.goto(`${PAGE}#frequent-flyer`);
+  const root = page.locator('html');
+  await expect(root).toHaveAttribute('data-ui', 'classic');
+  const classicBg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  const sw = page.getByTestId('ui-switch');
+  await expect(sw).toBeVisible();
+  await sw.locator('[data-skin="modern"]').click();
+  await expect(root).toHaveAttribute('data-ui', 'modern');
+  await expect(sw.locator('[data-skin="modern"]')).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).not.toBe(classicBg);
+  // Same data in both looks.
+  expect(await page.locator('[data-testid="ranking"] tbody tr').count()).toBeGreaterThan(20);
+  await page.reload();
+  await expect(root).toHaveAttribute('data-ui', 'modern');
+  await page.getByTestId('ui-switch').locator('[data-skin="classic"]').click();
+  await expect(root).toHaveAttribute('data-ui', 'classic');
+  await page.reload();
+  await expect(root).toHaveAttribute('data-ui', 'classic');
+});
+
+test.describe('modern look', () => {
+  test.beforeEach(async ({ page }) => { await page.addInitScript(() => { try { localStorage.setItem('sejmbook-ui', 'modern'); } catch { /* ignore */ } }); });
+
+  test('section chips are the navigation, the header card holds the search', async ({ page }) => {
+    await page.goto(PAGE);
+    await expect(page.locator('.topnav')).toBeHidden();
+    const chips = page.locator('.sidenav');
+    await expect(chips).toBeVisible();
+    await expect(chips.locator('a.on')).toHaveText(/Feed$/);
+    await expect(page.locator('#top-search')).toBeVisible();
+    await chips.getByRole('link', { name: 'Frequent Flyer' }).click();
+    await expect(page).toHaveURL(/#frequent-flyer$/);
+    await expect(page.getByTestId('page-head')).toBeVisible();
+    const hero = await page.getByTestId('page-head').evaluate((el) => getComputedStyle(el).backgroundImage);
+    expect(hero).toContain('gradient');
+    await page.locator('#top-search').fill('mejza');
+    await expect(page.locator('.mp-card')).toHaveCount(1);
+  });
+
+  for (const hash of ['', '#poslowie', '#frequent-flyer', '#frekwencja', '#posel-70', '#panstwo']) {
+    test(`no horizontal page scroll at ${hash || 'home'}`, async ({ page }) => {
+      await page.goto(`${PAGE}${hash}`);
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      expect(overflow).toBeLessThanOrEqual(0);
+    });
+  }
+
+  test('dark mode uses the modern dark palette', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.goto(PAGE);
+    expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(18, 17, 16)');
+  });
 });

@@ -13,6 +13,10 @@ export const SHELL_HTML = `
       <a href="#frequent-flyer" data-nav="flyer" aria-label="Frequent Flyer"><span class="nav-long">Frequent </span>Flyer</a>
       <a href="#frekwencja" data-nav="attendance">Frekwencja</a>
     </nav>
+    <div class="ui-switch" role="group" aria-label="Wersja wyglądu" data-testid="ui-switch">
+      <button type="button" data-action="ui-skin" data-skin="classic" aria-pressed="true" title="Klasyczny wygląd"><span class="ui-long">Klasyczny</span><span class="ui-short" aria-hidden="true">1</span></button>
+      <button type="button" data-action="ui-skin" data-skin="modern" aria-pressed="false" title="Nowoczesny wygląd"><span class="ui-long">Nowoczesny</span><span class="ui-short" aria-hidden="true">2</span></button>
+    </div>
     <button type="button" class="theme-btn" data-action="theme" data-testid="theme-btn" aria-label="Motyw: automatyczny" title="Motyw: automatyczny"></button>
   </div>
 </header>

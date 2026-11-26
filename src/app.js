@@ -8,6 +8,7 @@ import { renderAttendance } from './ui/attendance-view.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
 import { buildHierarchy } from './lib/government.js';
 import { renderSitemap } from './ui/sitemap-view.js';
+import { readSkin, saveSkin, applySkin } from './lib/ui-skin.js';
 
 export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
@@ -122,10 +123,20 @@ export function createApp(doc, win, data) {
   try { theme = THEMES.includes(win.localStorage?.getItem('sejmbook-theme')) ? win.localStorage.getItem('sejmbook-theme') : 'auto'; } catch { /* storage blocked */ }
   applyTheme(theme);
 
+  // Interface version: classic or modern (switch in the top bar), remembered like the theme.
+  let storage = null;
+  try { storage = win.localStorage ?? null; } catch { /* storage blocked */ }
+  let skin = applySkin(doc, readSkin(storage));
+
   function onClick(e) {
     const el = e.target.closest('[data-action]');
     if (!el || el.matches('input')) return;
     const action = el.dataset.action;
+    if (action === 'ui-skin') {
+      skin = applySkin(doc, el.dataset.skin);
+      saveSkin(storage, skin);
+      return;
+    }
     if (action === 'theme') {
       theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length];
       applyTheme(theme);
@@ -215,6 +226,7 @@ export function createApp(doc, win, data) {
     ctx,
     state,
     render,
+    get skin() { return skin; },
     destroy() {
       doc.removeEventListener('toggle', onToggle, true);
       doc.removeEventListener('error', onPhotoError, true);

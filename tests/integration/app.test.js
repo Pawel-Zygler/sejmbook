@@ -153,8 +153,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Okrążenia Ziemi';
-const NEWEST_LINE = 'Frequent Flyer: Okrążenia Ziemi';
+const NEWEST = 'Drugi, nowoczesny wygląd';
+const NEWEST_LINE = 'Serwis: Drugi, nowoczesny wygląd';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -698,5 +698,35 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     const news = $('[data-testid="person-news"]');
     expect(news.textContent).toContain('Ministerstwo Obrony Narodowej');
     expect(news.querySelectorAll('article.feed-post').length).toBeGreaterThan(0);
+  });
+});
+
+describe('Interface switch: classic and modern look', () => {
+  const remount = () => { app.destroy(); document.body.innerHTML = SHELL_HTML; app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today: '2026-11-24' }); };
+  const forget = () => window.localStorage.setItem('sejmbook-ui', '');
+  beforeEach(() => { forget(); remount(); });
+  afterEach(forget);
+
+  it('starts classic, switches to modern and back, keeping the page and its data', () => {
+    const root = document.documentElement;
+    expect(root.getAttribute('data-ui')).toBe('classic');
+    nav('#frequent-flyer');
+    const rows = $$('[data-testid="ranking"] tbody tr').length;
+    click($('[data-action="ui-skin"][data-skin="modern"]'));
+    expect(root.getAttribute('data-ui')).toBe('modern');
+    expect(app.skin).toBe('modern');
+    expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
+    expect($('[data-skin="classic"]').getAttribute('aria-pressed')).toBe('false');
+    expect($('[data-view="flyer"]')).not.toBeNull();
+    expect($$('[data-testid="ranking"] tbody tr').length).toBe(rows);
+    click($('[data-action="ui-skin"][data-skin="classic"]'));
+    expect(root.getAttribute('data-ui')).toBe('classic');
+  });
+  it('remembers the choice across visits', () => {
+    click($('[data-action="ui-skin"][data-skin="modern"]'));
+    expect(window.localStorage.getItem('sejmbook-ui')).toBe('modern');
+    remount();
+    expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
+    expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
   });
 });

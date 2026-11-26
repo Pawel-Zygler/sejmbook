@@ -1,0 +1,137 @@
+/* Modern skin (Pawel, 2026-11-26): a second look inspired by nextwork.ai — warm paper canvas, a floating header card,
+   uppercase pill chips, big tight headlines, soft ringed cards and dusk-gradient page heroes.
+   Every rule is scoped to :root[data-ui="modern"], so the classic look is untouched (a unit test checks this). */
+:root[data-ui="modern"] {
+  --bg: #f8f5f1;
+  --surface: #fdfbf9;
+  --surface-2: #f4eeeb;
+  --ink: #1b1918;
+  --muted: #6c615c;
+  --line: #e6dfda;
+  --accent: #1b1918;
+  --accent-ink: #ffffff;
+  --accent-soft: #ece5e0;
+  --warn-bg: #f4ece2;
+  --warn-ink: #5a4632;
+  --font-display: "Hanken Grotesk", "Geist", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", "Geist", "Segoe UI", system-ui, sans-serif;
+  --radius: 22px;
+  --m-ring: 0 0 0 1px rgba(26, 26, 26, 0.07);
+  --m-lift: 0 0 0 1px rgba(26, 26, 26, 0.07), 0 12px 28px -14px rgba(58, 44, 36, 0.22);
+  --m-hero: linear-gradient(160deg, #b7a7a0 0%, #8a766f 32%, #5b4a46 62%, #2f2725 100%);
+  --m-hero-ink: #f9f5f2;
+  --m-glass: rgba(255, 255, 255, 0.14);
+  --m-chip: #f4eeeb;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-ui="modern"]:not([data-theme="light"]) {
+    --bg: #121110; --surface: #1b1918; --surface-2: #26231f; --ink: #f4eee9; --muted: #a39890;
+    --line: #322d29; --accent: #f4eee9; --accent-ink: #1b1918; --accent-soft: #2c2824;
+    --warn-bg: #2a241e; --warn-ink: #e9d6bf;
+    --m-ring: 0 0 0 1px rgba(255, 255, 255, 0.07);
+    --m-lift: 0 0 0 1px rgba(255, 255, 255, 0.07), 0 16px 32px -16px rgba(0, 0, 0, 0.7);
+    --m-hero: linear-gradient(160deg, #5d4f4a 0%, #3e3330 40%, #241e1c 75%, #161312 100%);
+    --m-chip: #26231f;
+  }
+}
+:root[data-ui="modern"][data-theme="dark"] {
+    --bg: #121110; --surface: #1b1918; --surface-2: #26231f; --ink: #f4eee9; --muted: #a39890;
+    --line: #322d29; --accent: #f4eee9; --accent-ink: #1b1918; --accent-soft: #2c2824;
+    --warn-bg: #2a241e; --warn-ink: #e9d6bf;
+    --m-ring: 0 0 0 1px rgba(255, 255, 255, 0.07);
+    --m-lift: 0 0 0 1px rgba(255, 255, 255, 0.07), 0 16px 32px -16px rgba(0, 0, 0, 0.7);
+    --m-hero: linear-gradient(160deg, #5d4f4a 0%, #3e3330 40%, #241e1c 75%, #161312 100%);
+    --m-chip: #26231f;
+}
+
+/* Type */
+:root[data-ui="modern"] body { font-size: 16px; -webkit-font-smoothing: antialiased; }
+:root[data-ui="modern"] body::before { background: var(--bg); }
+:root[data-ui="modern"] h1 { font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; }
+:root[data-ui="modern"] h2 { font-weight: 700; letter-spacing: -0.01em; font-size: 1.06rem; }
+
+/* Floating header card: logo + switches on one row, search full width below */
+:root[data-ui="modern"] .topbar { background: transparent; border-bottom: 0; padding: 12px max(12px, env(safe-area-inset-right, 0px)) 0 max(12px, env(safe-area-inset-left, 0px)); top: env(safe-area-inset-top, 0px); }
+:root[data-ui="modern"] .topbar-in { background: var(--surface); border-radius: 20px; box-shadow: var(--m-lift); max-width: 1240px; flex-wrap: wrap; row-gap: 10px; padding: 12px 16px; }
+:root[data-ui="modern"] .logo-name { color: var(--ink); font-weight: 700; letter-spacing: -0.05em; font-size: 1.55rem; }
+:root[data-ui="modern"] .logo-tag { font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem; }
+:root[data-ui="modern"] .topnav { display: none; }
+:root[data-ui="modern"] .ui-switch { margin-left: auto; }
+:root[data-ui="modern"] .top-search { display: block; order: 10; flex: 1 1 100%; max-width: none; }
+:root[data-ui="modern"] .top-search input { background: var(--bg); border: 1px solid var(--line); padding: 10px 18px; }
+:root[data-ui="modern"] .ui-switch { background: var(--bg); border-color: var(--line); }
+:root[data-ui="modern"] .ui-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); box-shadow: none; }
+:root[data-ui="modern"] .theme-btn { background: transparent; border-color: transparent; }
+:root[data-ui="modern"] .theme-btn:hover { border-color: var(--line); }
+
+/* Section chips instead of the left column: one scrollable row of uppercase pills */
+:root[data-ui="modern"] .layout { max-width: 1240px; grid-template-columns: minmax(0, 1fr) 290px; gap: 20px; padding-top: 16px; }
+:root[data-ui="modern"] .sidenav { grid-column: 1 / -1; position: static; display: flex; flex-direction: row; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+:root[data-ui="modern"] .sidenav::-webkit-scrollbar { display: none; }
+:root[data-ui="modern"] .sidenav .ico, :root[data-ui="modern"] .sidenav-label { display: none; }
+:root[data-ui="modern"] .sidenav a { flex: none; padding: 8px 16px; border-radius: 999px; background: var(--m-chip); box-shadow: var(--m-ring); color: var(--muted); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+:root[data-ui="modern"] .sidenav a:hover { color: var(--ink); background: var(--surface); }
+:root[data-ui="modern"] .sidenav a.on { background: var(--ink); color: var(--bg); box-shadow: none; }
+:root[data-ui="modern"] #aside { top: 150px; }
+
+/* The phone-only ranking switch repeats the chip row, so the modern look leaves it out */
+:root[data-ui="modern"] .rank-switch { display: none; }
+
+/* Cards */
+:root[data-ui="modern"] .panel, :root[data-ui="modern"] .post { border: 0; box-shadow: var(--m-lift); border-radius: var(--radius); padding: 20px 22px; }
+:root[data-ui="modern"] .post-foot { border-top-color: var(--line); }
+:root[data-ui="modern"] .mp-card, :root[data-ui="modern"] .stat, :root[data-ui="modern"] .empty { border: 0; box-shadow: var(--m-lift); border-radius: 18px; }
+:root[data-ui="modern"] .mp-card { padding: 20px 12px; transition: transform .15s ease, box-shadow .15s ease; }
+:root[data-ui="modern"] .mp-card:hover { transform: translateY(-2px); }
+:root[data-ui="modern"] .flight-stats div { border-radius: 14px; }
+:root[data-ui="modern"] .stat b { font-size: 1.7rem; letter-spacing: -0.03em; }
+:root[data-ui="modern"] .news-post { border-left: 0; }
+
+/* Page heads become dusk-gradient heroes with a glass eyebrow pill */
+:root[data-ui="modern"] .page-head { background: var(--m-hero); color: var(--m-hero-ink); padding: 56px 28px 28px; border-radius: 24px; }
+:root[data-ui="modern"] .page-head::after { color: #fff; opacity: 0.1; font-size: 9rem; top: -10px; right: 12px; }
+:root[data-ui="modern"] .page-head h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--m-hero-ink); }
+:root[data-ui="modern"] .page-head .lede, :root[data-ui="modern"] .page-head .muted { color: rgba(249, 245, 242, 0.82); }
+:root[data-ui="modern"] .page-head a { color: var(--m-hero-ink); }
+:root[data-ui="modern"] .page-head .eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--m-glass); color: var(--m-hero-ink); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 999px; padding: 4px 12px; font-weight: 500; letter-spacing: 0.12em; font-size: 0.66rem; margin-bottom: 12px; backdrop-filter: blur(6px); }
+:root[data-ui="modern"] .page-head .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+:root[data-ui="modern"] .page-head .filter, :root[data-ui="modern"] .page-head .tab, :root[data-ui="modern"] .page-head .chip { background: var(--m-glass); color: var(--m-hero-ink); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+:root[data-ui="modern"] .page-head .filter.on, :root[data-ui="modern"] .page-head .tab.on { background: var(--m-hero-ink); color: #1b1918; }
+:root[data-ui="modern"] .eyebrow { color: var(--muted); font-weight: 500; letter-spacing: 0.12em; }
+
+/* Pills: filters, tabs, feed window, buttons */
+:root[data-ui="modern"] .filter, :root[data-ui="modern"] .tab, :root[data-ui="modern"] .feed-window .chip { border: 0; box-shadow: var(--m-ring); background: var(--m-chip); border-radius: 999px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; }
+:root[data-ui="modern"] .filter.on, :root[data-ui="modern"] .tab.on, :root[data-ui="modern"] .feed-window .chip.on { background: var(--ink); color: var(--bg); box-shadow: none; }
+:root[data-ui="modern"] .feed-window .chip::before { display: none; }
+:root[data-ui="modern"] .chip { border-radius: 999px; }
+:root[data-ui="modern"] .btn { border-radius: 999px; padding: 9px 18px; background: var(--ink); color: var(--bg); box-shadow: inset 0 -2px 0 rgba(10, 13, 18, 0.12); }
+:root[data-ui="modern"] .art-links a { border-radius: 999px; border: 0; box-shadow: var(--m-ring); }
+
+/* Tables: airy rows, ranks in the display face */
+:root[data-ui="modern"] .rank th { font-weight: 500; letter-spacing: 0.1em; font-size: 0.66rem; }
+:root[data-ui="modern"] .rank td { padding: 12px 8px; }
+:root[data-ui="modern"] .rank tbody tr:hover td { background: var(--surface-2); }
+:root[data-ui="modern"] .rank .pos { color: var(--muted); font-weight: 700; }
+:root[data-ui="modern"] .bar { background: var(--ink); }
+
+/* Phones: the chip row stays (it is the navigation), the right column folds away as in the classic look */
+@media (max-width: 1100px) {
+  :root[data-ui="modern"] .layout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 820px) {
+  :root[data-ui="modern"] .sidenav { display: flex; }
+  :root[data-ui="modern"] .top-search { display: block; }
+  :root[data-ui="modern"] .topbar { position: static; }
+}
+@media (max-width: 520px) {
+  :root[data-ui="modern"] .topbar { padding-inline: 8px; padding-top: 8px; }
+  :root[data-ui="modern"] .topbar-in { padding: 10px 12px; border-radius: 18px; }
+  :root[data-ui="modern"] .page-head { padding: 40px 18px 20px; }
+  :root[data-ui="modern"] .panel, :root[data-ui="modern"] .post { padding: 16px; }
+  :root[data-ui="modern"] .logo-tag { display: none; }
+}
+/* Profile card: the cover runs edge to edge, so the card keeps no padding at any width */
+:root[data-ui="modern"] .panel.profile-top { padding: 0; }
+:root[data-ui="modern"] .cover { height: 200px; }
+@media (max-width: 520px) { :root[data-ui="modern"] .cover { height: 130px; } }
+@media (prefers-reduced-motion: reduce) { :root[data-ui="modern"] .mp-card { transition: none; } }
