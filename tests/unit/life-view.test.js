@@ -1,23 +1,25 @@
 import { describe, it, expect } from 'vitest';
 import { JSDOM } from 'jsdom';
 import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_KEY, LIFE_VIEW_LABEL, normalizeLifeView, readLifeView, saveLifeView, applyLifeView } from '../../src/lib/life-view.js';
-import { lifeSteps, lifeStages } from '../../src/ui/render.js';
+import { lifeSteps } from '../../src/ui/render.js';
 
 const memory = (init = {}) => ({ m: { ...init }, getItem(k) { return this.m[k] ?? null; }, setItem(k, v) { this.m[k] = v; } });
 
 describe('life line views', () => {
-  it('has three views with Polish tab labels, the time axis by default', () => {
-    expect(LIFE_VIEWS).toEqual(['os', 'kroki', 'etapy']);
+  it('has two views with Polish tab labels, the time axis by default (Etapy removed)', () => {
+    expect(LIFE_VIEWS).toEqual(['os', 'kroki']);
     expect(DEFAULT_LIFE_VIEW).toBe('os');
-    expect(LIFE_VIEW_LABEL).toEqual({ os: 'Oś czasu', kroki: 'Kroki', etapy: 'Etapy' });
+    expect(LIFE_VIEW_LABEL).toEqual({ os: 'Oś czasu', kroki: 'Kroki' });
+    expect(normalizeLifeView('etapy')).toBe('os');
     expect(normalizeLifeView('kroki')).toBe('kroki');
     expect(normalizeLifeView('nope')).toBe('os');
   });
   it('remembers the choice and survives broken storage', () => {
     const s = memory();
-    expect(saveLifeView(s, 'etapy')).toBe(true);
-    expect(s.m[LIFE_VIEW_KEY]).toBe('etapy');
-    expect(readLifeView(s)).toBe('etapy');
+    expect(saveLifeView(s, 'kroki')).toBe(true);
+    expect(s.m[LIFE_VIEW_KEY]).toBe('kroki');
+    expect(readLifeView(s)).toBe('kroki');
+    expect(readLifeView(memory({ [LIFE_VIEW_KEY]: 'etapy' }))).toBe('os');
     const broken = { getItem() { throw new Error('blocked'); }, setItem() { throw new Error('blocked'); } };
     expect(readLifeView(broken)).toBe('os');
     expect(saveLifeView(broken, 'kroki')).toBe(false);
@@ -42,7 +44,7 @@ const TL = {
   ],
 };
 
-describe('"Kroki" and "Etapy" views', () => {
+describe('"Kroki" view', () => {
   it('Kroki: birth, 1989 and every stretch as dated steps, then today', () => {
     const h = lifeSteps(TL);
     const years = [...h.matchAll(/life-step-year">([^<]+)</g)].map((m) => m[1]);
@@ -52,12 +54,5 @@ describe('"Kroki" and "Etapy" views', () => {
     expect(h).toContain('<b>Partia: PZPR</b><span class="muted">w PRL, lata nieznane</span>');
     expect(h).toContain('<b>Sejm: PSL, kadencje VIII–X</b>');
     expect(h).toContain('<b>Dziś</b><span class="muted">53 lat</span>');
-  });
-  it('Etapy: a summary line and one card per stretch with its length', () => {
-    const h = lifeStages(TL);
-    expect(h).toContain('53 lata życia, w tym <b>38 lat w polityce</b> (od 1988).');
-    expect(h).toContain('<b>Polska Plus</b><span class="muted">2010 · 1 rok</span>');
-    expect(h).toContain('<b>PSL, kadencje VIII–X</b><span class="muted">2015–2026 · 11 lat</span>');
-    expect((h.match(/class="life-stage"/g) ?? []).length).toBe(4);
   });
 });

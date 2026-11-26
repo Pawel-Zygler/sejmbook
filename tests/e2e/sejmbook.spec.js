@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Linia życia w trzech widokach');
+  await expect(post).toContainText('Linia życia w dwóch widokach');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Linia życia w trzech widokach');
+  await expect(page.locator('.news-post').first()).toContainText('Linia życia w dwóch widokach');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -518,7 +518,7 @@ test.describe('modern look', () => {
   });
 });
 
-test('Life line: three views in tabs, the choice is remembered', async ({ page }) => {
+test('Life line: two views in tabs, the choice is remembered', async ({ page }) => {
   await page.goto(`${PAGE}#posel-390`);
   const panel = page.getByTestId('spectrum');
   await expect(panel.getByTestId('life-line')).toBeVisible();
@@ -526,10 +526,9 @@ test('Life line: three views in tabs, the choice is remembered', async ({ page }
   await panel.getByRole('button', { name: 'Kroki' }).click();
   await expect(panel.getByTestId('life-steps')).toBeVisible();
   await expect(panel.getByTestId('life-line')).toBeHidden();
-  await panel.getByRole('button', { name: 'Etapy' }).click();
-  await expect(panel.getByTestId('life-stages')).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'Etapy' })).toHaveCount(0);
   await page.reload();
-  await expect(page.getByTestId('spectrum').getByTestId('life-stages')).toBeVisible();
+  await expect(page.getByTestId('spectrum').getByTestId('life-steps')).toBeVisible();
   await page.getByTestId('spectrum').getByRole('button', { name: 'Oś czasu' }).click();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);

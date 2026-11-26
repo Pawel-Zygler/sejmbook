@@ -153,8 +153,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Linia życia w trzech widokach';
-const NEWEST_LINE = 'Profile: Linia życia w trzech widokach';
+const NEWEST = 'Linia życia w dwóch widokach';
+const NEWEST_LINE = 'Profile: Linia życia w dwóch widokach';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -372,7 +372,8 @@ describe('Life line views (tabs)', () => {
     const root = document.documentElement;
     expect(root.dataset.life).toBe('os');
     const tabs = $$('[data-testid="life-tabs"] [data-action="life-view"]');
-    expect(tabs.map((b) => b.textContent)).toEqual(['Oś czasu', 'Kroki', 'Etapy']);
+    expect(tabs.map((b) => b.textContent)).toEqual(['Oś czasu', 'Kroki']);
+    expect($('[data-testid="life-stages"]')).toBeNull();
     click($('[data-action="life-view"][data-life="kroki"]'));
     expect(root.dataset.life).toBe('kroki');
     expect($('[data-action="life-view"][data-life="kroki"]').getAttribute('aria-pressed')).toBe('true');

@@ -1,9 +1,10 @@
-// Three ways to draw the life line (Pawel, 2026-11-26: "make it more readable, a few versions in tabs so I can judge").
+// Ways to draw the life line (Pawel, 2026-11-26: "make it more readable, a few versions in tabs so I can judge";
+// the third view, "Etapy", was dropped the same evening).
 // The choice is one switch for every profile and is remembered per browser, like the interface version.
-export const LIFE_VIEWS = ['os', 'kroki', 'etapy'];
+export const LIFE_VIEWS = ['os', 'kroki'];
 export const DEFAULT_LIFE_VIEW = 'os';
 export const LIFE_VIEW_KEY = 'sejmbook-life';
-export const LIFE_VIEW_LABEL = { os: 'Oś czasu', kroki: 'Kroki', etapy: 'Etapy' };
+export const LIFE_VIEW_LABEL = { os: 'Oś czasu', kroki: 'Kroki' };
 
 /** Any stored or requested value → a known view. */
 export function normalizeLifeView(value) {

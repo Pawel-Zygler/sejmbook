@@ -610,7 +610,7 @@ export function careerSentence(sp) {
 const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
 const LANE_WORD = { opposition: 'Opozycja w PRL', parties: 'Partia', sejm: 'Sejm' };
 
-/** Every stretch of the life line in time order, with its lane, for the "Kroki" and "Etapy" views. */
+/** Every stretch of the life line in time order, with its lane, for the "Kroki" view. */
 function lifeStretches(tl) {
   return tl.lanes.flatMap((l) => l.items.map((it) => ({ ...it, lane: l.id })))
     .sort((a, b) => a.from - b.from || (a.lane === 'sejm') - (b.lane === 'sejm'));
@@ -637,20 +637,6 @@ export function lifeSteps(tl) {
   steps.sort((a, b) => (a.year ?? tl.prlEnd - 0.5) - (b.year ?? tl.prlEnd - 0.5));
   return `<ol class="life-steps">${steps.map((s) => `<li class="life-step" data-kind="${s.kind}"><span class="life-step-year">${s.year ?? 'PRL'}</span><span class="life-step-dot${s.uncertain ? ' uncertain' : ''}" style="--seg:${esc(s.color)}"></span><span class="life-step-text"><b>${esc(s.title)}</b>${s.note ? `<span class="muted">${esc(s.note)}</span>` : ''}</span></li>`).join('')}
         <li class="life-step" data-kind="now"><span class="life-step-year">${tl.now}</span><span class="life-step-dot" style="--seg:var(--line)"></span><span class="life-step-text"><b>Dziś</b><span class="muted">${tl.now - tl.birth} lat</span></span></li></ol>`;
-}
-
-/** "Etapy": one card per stretch, with its length, under a one-line summary of the whole life. */
-export function lifeStages(tl) {
-  const list = lifeStretches(tl);
-  const start = tl.firstYear;
-  const summary = start != null
-    ? `${yearsWord(tl.now - tl.birth)} życia, w tym <b>${yearsWord(tl.now - start)} w polityce</b> (od ${start})`
-    : `${yearsWord(tl.now - tl.birth)} życia`;
-  const card = (it) => {
-    const len = it.uncertain ? '' : yearsWord(Math.max(1, (it.open ? tl.now : it.to) - it.from));
-    return `<li class="life-stage" style="--seg:${esc(it.color)}"><span class="life-stage-kind">${esc(LANE_WORD[it.lane])}</span><b>${esc(stretchTitle(it))}</b><span class="muted">${esc(stretchYears(it))}${len ? ` · ${len}` : ''}</span></li>`;
-  };
-  return `<p class="life-stages-sum">${summary}.</p><ul class="life-stages">${list.map(card).join('')}</ul>`;
 }
 
 /** Decade marks for the "Oś czasu" view, skipping those too close to the ends or to 1989. */
@@ -701,7 +687,6 @@ export function renderLifeLine(ctx, mp, sp = null) {
         <div class="life-axis"><span>ur. ${tl.birth}</span>${ticks.map((y) => `<span class="life-axis-tick" style="left:${left(y)}%">${y}</span>`).join('')}${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
       <div class="life-v life-v-kroki" data-testid="life-steps">${lifeSteps(tl)}</div>
-      <div class="life-v life-v-etapy" data-testid="life-stages">${lifeStages(tl)}</div>
       ${first || undatedTip ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 

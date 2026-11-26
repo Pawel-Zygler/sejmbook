@@ -586,12 +586,12 @@ h2 { font-size: 1.1rem; }
   :root:not([data-ui="modern"]) .nav-long { display: inline; }
 }
 
-/* Linia życia: trzy widoki w zakładkach (oś czasu, kroki, etapy) */
+/* Linia życia: dwa widoki w zakładkach (oś czasu, kroki) */
 .life-tabs { display: inline-flex; gap: 2px; padding: 3px; margin: 2px 0 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
 .life-tabs button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; cursor: pointer; }
 .life-tabs button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
 .life-v { display: none; }
-:root:not([data-life]) .life-v-os, :root[data-life="os"] .life-v-os, :root[data-life="kroki"] .life-v-kroki, :root[data-life="etapy"] .life-v-etapy { display: block; }
+:root:not([data-life]) .life-v-os, :root[data-life="os"] .life-v-os, :root[data-life="kroki"] .life-v-kroki { display: block; }
 /* Oś czasu: większe paski i podpisy, dekady zamiast kresek co rok */
 .life-v-os .life-lane { min-height: 32px; }
 .life-v-os .life-lane-label { font-size: 0.78rem; font-weight: 600; }
@@ -612,10 +612,4 @@ h2 { font-size: 1.1rem; }
 .life-step-dot.uncertain { background: repeating-linear-gradient(135deg, var(--seg) 0 3px, color-mix(in srgb, var(--seg) 45%, #fff) 3px 6px); }
 .life-step-text { display: flex; flex-direction: column; line-height: 1.35; }
 .life-step-text .muted { font-size: 0.82rem; }
-/* Etapy */
-.life-stages-sum { margin: 0 0 10px; }
-.life-stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
-.life-stage { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); border-left: 5px solid var(--seg); line-height: 1.35; }
-.life-stage-kind { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; }
-.life-stage .muted { font-size: 0.82rem; }
 .life-seg.narrow > span { display: none; }
