@@ -4,7 +4,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, termInfo, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, renderAllArticles, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, renderParties, articleLinks, earthLaps, earthBadge, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
 import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
@@ -50,8 +50,10 @@ describe('views', () => {
     expect(html).toContain('2026 (do 1 listopada)');
     expect(html).toMatch(/≈\s40\s595/); // 115 × 353 km
   });
-  it('profile explains missing flight data instead of implying zero', () => {
-    expect(renderProfile(ctx, 400)).toContain('To nie znaczy, że nie latał');
+  it('profile without flight data shows no flight post and no note about it', () => {
+    const html = renderProfile(ctx, 400);
+    expect(html).not.toContain('zestawieniach lotów');
+    expect(html).not.toContain('flight-post');
   });
   it('profile notes districts without an airport', () => {
     expect(renderProfile(ctx, 400)).toContain('brak połączenia lotniczego z Warszawą');
@@ -59,11 +61,14 @@ describe('views', () => {
   it('profile labels inactive mandates', () => {
     expect(renderProfile(ctx, 38)).toContain('zrzekł(a) się mandatu');
   });
-  it('flyer shows the coverage note and sources for every dataset', () => {
+  it('flyer shows no coverage note, source list or article list, and has an earth-laps column', () => {
     for (const d of flightsData.datasets) {
       const html = renderFlyer(ctx, { period: String(d.term), dataset: d.id, sortBy: 'km' });
-      expect(html).toContain(esc(d.coverageNote));
-      for (const s of d.sources) expect(html).toContain(esc(s.url));
+      expect(html).not.toContain(esc(d.coverageNote));
+      expect(html).not.toContain('<h2>Źródła danych</h2>');
+      expect(html).not.toContain('all-articles');
+      expect(html).not.toContain('Krajowe loty posłów na koszt');
+      expect(html).toContain('<th scope="col" class="earth-col">Okrążenia<br>Ziemi</th>');
     }
   });
   it('flyer falls back to the first dataset for an unknown id', () => {
@@ -82,9 +87,11 @@ describe('views', () => {
   it('directory shows an empty state', () => {
     expect(renderDirectory(ctx, { query: 'zzz', club: '', includeInactive: false }, [])).toContain('Nikt nie pasuje');
   });
-  it('directory shows result count with correct plural', () => {
+  it('directory shows the cards without a count line above them', () => {
     const list = filterMps(ctx.mps, {});
-    expect(renderDirectory(ctx, { query: '', club: '', includeInactive: false }, list)).toContain('460 posłów');
+    const html = renderDirectory(ctx, { query: '', club: '', includeInactive: false }, list);
+    expect(html).not.toContain('460 posłów');
+    expect((html.match(/class="mp-card[ "]/g) ?? []).length).toBe(460);
   });
   it('aside lists clubs with counts', () => {
     expect(renderAside(ctx)).toMatch(/KO<\/a><b>\d+<\/b>/);
@@ -175,9 +182,8 @@ describe('podium badges', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
     expect(html).not.toContain('flyer-side');
     expect(html).not.toContain('data-action="sort"');
-    expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel coverage"'));
-    expect(html).toContain('Jeden zbiór ze wszystkich opublikowanych list');
-    expect(html).toContain('data-testid="all-articles"');
+    expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel method"'));
+    expect(html).not.toContain('class="panel coverage"');
   });
   it('flyer still renders any dataset (2025: Dowhan leads on km, Kmita on flights)', () => {
     const first = (html) => html.slice(html.indexOf('<tbody>')).match(/data-mp-id="(\d+)"/)[1];
@@ -234,17 +240,14 @@ describe('MP photos', () => {
 });
 
 describe('all articles list', () => {
-  it('lists every known article once, newest first, opening in a new tab', () => {
-    const html = renderAllArticles(flightsData.articles);
-    const ids = [...html.matchAll(/data-article-id="([^"]+)"/g)].map((m) => m[1]);
-    expect(new Set(ids).size).toBe(Object.keys(flightsData.articles).length);
-    const dates = ids.map((id) => flightsData.articles[id].date);
-    expect(dates).toEqual([...dates].sort().reverse());
-    expect(html).toContain('target="_blank"');
-  });
-  it('renders nothing without articles', () => {
-    expect(renderAllArticles({})).toBe('');
-    expect(renderAllArticles()).toBe('');
+  it('earth laps: one decimal, a floor for short distances, nothing without km', () => {
+    expect(earthLaps(40075)).toBe('1,0');
+    expect(earthLaps(12022)).toBe('0,3');
+    expect(earthLaps(1000)).toBe('<0,1');
+    expect(earthLaps(null)).toBeNull();
+    expect(earthBadge(80150)).toContain('<span class="earth-n" aria-hidden="true">2,0</span>');
+    expect(earthBadge(80150)).toContain('🌍');
+    expect(earthBadge(null)).toContain('–');
   });
   it('ranking rows have no captions under the name (route, periods)', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
@@ -439,13 +442,13 @@ describe('all terms (data/terms.json)', () => {
   it('lists the MPs of an earlier term with that term\'s club and district', () => {
     const st = { query: '', club: '', includeInactive: false, term: 3 };
     expect(termPicker({ ...ctx, terms }, st)).toContain('data-term="3" aria-pressed="true"');
-    expect(termInfo({ ...ctx, terms }, 3)).toBe('III kadencja · 20.10.1997 – 18.10.2001 · 3 posłów w ciągu kadencji');
     const f = directoryFilters({ ...ctx, terms }, st);
     expect(f).toContain('data-club="UW"');
     expect(f).not.toContain('dir-inactive');
     const list = [{ key: '3-5', id: 5, name: 'Anna Dwa', lastName: 'Dwa', club: 'UW', clubName: 'Klub Parlamentarny Unii Wolności', districtNum: 2, districtName: 'Wałbrzych', current: 1, terms: [3, 10] }];
     const html = renderDirectory({ ...ctx, terms }, st, list);
-    expect(html).toContain('data-testid="term-info"');
+    expect(html).not.toContain('data-testid="term-info"');
+    expect(html).not.toContain('data-testid="result-count"');
     expect(html).toContain('title="Klub Parlamentarny Unii Wolności"');
     expect(html).toContain('href="#posel-1"');
     expect(html).toContain('kadencje III, X');
@@ -461,6 +464,8 @@ describe('renderContact', () => {
     expect(html).toContain('href="mailto:Jan.Nowak@sejm.pl"');
     expect(html).toContain('>fb.com/jan.nowak</a>');
     expect(html).toContain('Facebook z Wikidanych, stan na 2026-11-24');
+    expect(html).toContain('data-testid="info-tip"');
+    expect(html).not.toContain('<p class="src">Źródła:');
     expect(html).toContain('posel.xsp?id=007&amp;type=A');
   });
   it('says "brak danych" when there is nothing', () => {
@@ -636,3 +641,22 @@ describe('portraits of state officials', () => {
   });
 });
 
+
+describe('infoTip', () => {
+  it('hides the source behind an "i" icon with a link', () => {
+    const h = infoTip('API Sejmu, stan na 2026-11-23.', 'https://api.sejm.gov.pl/sejm/term10/clubs');
+    expect(h).toContain('data-testid="info-tip"');
+    expect(h).toContain('tabindex="0"');
+    expect(h).toContain('<span class="info-tip-body" role="tooltip">API Sejmu, stan na 2026-11-23. <a href="https://api.sejm.gov.pl/sejm/term10/clubs" target="_blank" rel="noopener">api.sejm.gov.pl</a></span>');
+  });
+  it('escapes text and works without a link', () => {
+    const h = infoTip('<b>x</b>');
+    expect(h).toContain('&lt;b&gt;x&lt;/b&gt;');
+    expect(h).not.toContain('<a ');
+  });
+  it('the club list keeps its source in the icon, not in a visible line', () => {
+    const h = renderAside(ctx);
+    expect(h).toMatch(/<h2>Kluby i koła <span class="info-tip"/);
+    expect(h).not.toContain('<p class="src">');
+  });
+});

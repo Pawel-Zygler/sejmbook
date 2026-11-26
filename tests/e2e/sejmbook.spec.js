@@ -32,10 +32,9 @@ test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', asyn
   await expect(rows.first().getByTestId('parts')).toHaveCount(0);
   await expect(page.getByRole('tab')).toHaveCount(0);
   await expect(page.locator('[data-action="sort"]')).toHaveCount(0);
-  await expect(page.locator('.coverage')).toContainText('Jeden zbiór');
-  const list = page.getByTestId('all-articles').locator('li');
-  expect(await list.count()).toBeGreaterThan(15);
-  await expect(list.first().locator('a')).toHaveAttribute('target', '_blank');
+  await expect(page.locator('.coverage')).toHaveCount(0);
+  await expect(page.getByTestId('all-articles')).toHaveCount(0);
+  await expect(rows.first().getByTestId('earth-badge')).toBeVisible();
 });
 
 test('clicking an MP in the ranking opens the profile', async ({ page }) => {
@@ -218,6 +217,11 @@ test('Spektrum partyjne: career sentence under the profile card, sources in the 
   const top = await page.locator('.profile-top').boundingBox();
   expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);
   await expect(page.getByTestId('site-foot')).toContainText('Źródła danych');
+  const tip = page.getByTestId('contact').getByTestId('info-tip');
+  await expect(tip.locator('.info-tip-body')).toBeHidden();
+  await tip.focus();
+  await expect(tip.locator('.info-tip-body')).toBeVisible();
+  await expect(tip.locator('.info-tip-body a')).toHaveAttribute('href', /api\.sejm\.gov\.pl/);
 });
 
 test('Ranking "Najwięcej partii" opens from the side menu', async ({ page, isMobile }) => {
@@ -302,7 +306,7 @@ test('Posłowie: earlier terms of the Sejm', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
   await page.locator('[data-action="dir-term"][data-term="3"]:visible').click();
-  await expect(page.getByTestId('term-info')).toContainText('III kadencja');
+  await expect(page.locator('[data-action="dir-term"][aria-pressed="true"]').first()).toHaveAttribute('data-term', '3');
   expect(await page.locator('.term-card').count()).toBeGreaterThan(400);
   await page.locator('#dir-search').fill('Buzek');
   await expect(page.locator('.term-card').first()).toContainText('Buzek');
@@ -364,7 +368,7 @@ test('Posłowie: term I (1991–1993) from Wikipedia', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
   await page.locator('[data-action="dir-term"][data-term="1"]:visible').click();
-  await expect(page.getByTestId('term-info')).toContainText('I kadencja · 25.11.1991');
+  await expect(page.locator('[data-action="dir-term"][aria-pressed="true"]').first()).toHaveAttribute('data-term', '1');
   expect(await page.locator('.term-card').count()).toBeGreaterThan(450);
 });
 

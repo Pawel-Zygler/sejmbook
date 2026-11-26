@@ -16,6 +16,15 @@ const FALLBACK_CLUB = { id: '?', short: '?', name: 'Nieznany klub', color: '#7d8
 const clubOf = (ctx, mp) => ctx.clubs.get(mp.club) ?? { ...FALLBACK_CLUB, id: mp.club, short: mp.club };
 
 /**
+ * A small "i" icon that shows where data comes from on hover or focus, with a link to the source.
+ * Keeps source notes out of sight until someone asks for them.
+ */
+export function infoTip(text, href = '', label = 'Źródło') {
+  const link = href ? ` <a href="${esc(href)}" target="_blank" rel="noopener">${esc(hostOf(href) || 'źródło')}</a>` : '';
+  return `<span class="info-tip" tabindex="0" role="button" aria-label="${esc(label)}" data-testid="info-tip"><span class="info-tip-i" aria-hidden="true">i</span><span class="info-tip-body" role="tooltip">${esc(text)}${link}</span></span>`;
+}
+
+/**
  * "Kontakt": only official or sourced data. E-mail from the Sejm API, Facebook from Wikidata (P2013).
  * Phone and office addresses are not in the Sejm's open data, so we say so and link the MP's page on sejm.gov.pl.
  */
@@ -26,14 +35,13 @@ export function renderContact(ctx, mp) {
   const page = sejmProfileUrl(mp.id);
   return `
         <div class="contact" data-testid="contact">
-          <h2>Kontakt</h2>
+          <h2>Kontakt ${infoTip(`E-mail z API Sejmu${fb.length ? ', Facebook z Wikidanych' : ''}${ctx.contacts?.fetchedAt ? `, stan na ${ctx.contacts.fetchedAt}` : ''}.`, `https://api.sejm.gov.pl/sejm/term10/MP/${mp.id}`)}</h2>
           <dl>
             <dt>E-mail</dt><dd data-testid="contact-email">${c?.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : none}</dd>
             <dt>Facebook</dt><dd data-testid="contact-fb">${fb.length ? fb.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https:\/\/www\.facebook\.com\//, 'fb.com/'))}</a>`).join('<br>') : none}</dd>
             <dt>Telefon</dt><dd data-testid="contact-phone"><span class="muted">brak w otwartych danych Sejmu</span></dd>
             <dt>Biuro poselskie</dt><dd data-testid="contact-office"><span class="muted">brak w otwartych danych Sejmu;</span> adresy i telefony biur są na <a href="${esc(page)}" target="_blank" rel="noopener">stronie posła w serwisie Sejmu</a> (sekcja „Biura Poselskie”)</dd>
           </dl>
-          <p class="src">Źródła: e-mail z API Sejmu${fb.length ? ', Facebook z Wikidanych' : ''}${ctx.contacts?.fetchedAt ? `, stan na ${esc(ctx.contacts.fetchedAt)}` : ''}.</p>
         </div>`;
 }
 
@@ -95,10 +103,6 @@ export function clubChip(ctx, clubId, mp = null) {
   const former = formerPartyChip(ctx, mp);
   if (logo) return `<span class="chip has-logo" style="--club:${esc(c.color)}" title="${esc(c.name)}"><img class="club-logo" src="${esc(logo)}" alt="">${esc(c.short)}</span>${former}`;
   return `<span class="chip" style="--club:${esc(c.color)}" title="${esc(c.name)}">${esc(c.short)}</span>${former}`;
-}
-
-function sourceLinks(sources) {
-  return sources.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('');
 }
 
 /** Compact list of article links (outlet names), each opening in a new tab. */
@@ -421,12 +425,6 @@ export function termsSourceNote(ctx) {
 const sinceYear = (ctx) => (ctx.terms?.terms?.[0]?.from ?? '1997').slice(0, 4);
 
 /** "III kadencja · 20.10.1997 – 18.10.2001 · 482 posłów" */
-export function termInfo(ctx, num) {
-  const t = (ctx.terms?.terms ?? []).find((x) => x.num === num);
-  if (!t) return '';
-  const d = (s) => s.split('-').reverse().join('.');
-  return `${romanTerm(num)} kadencja · ${d(t.from)} – ${t.to ? d(t.to) : 'dziś'} · ${t.mps} ${plural(t.mps, 'poseł', 'posłów', 'posłów')} w ciągu kadencji`;
-}
 
 /** Card of an MP of an earlier term: initials (or today's photo for current MPs), that term's club and district. */
 function termCard(ctx, m) {
@@ -529,7 +527,6 @@ export function renderDirectory(ctx, state, list) {
   const past = isPastTerm(ctx, state);
   const num = Number(state.term ?? CURRENT_TERM);
   const clubLabel = past ? state.club : (ctx.clubs.get(state.club) ?? FALLBACK_CLUB).short;
-  const info = ctx.terms?.terms?.length ? termInfo(ctx, num) : '';
   return `
   <section data-view="directory">
     <div class="panel dir-head">
@@ -538,8 +535,6 @@ export function renderDirectory(ctx, state, list) {
         <input id="dir-search" type="search" placeholder="Szukaj posła po nazwisku, okręgu${past ? '' : ' lub województwie'}" value="${esc(state.query)}" data-action="search" autocomplete="off">
       </label>
       <details class="phone-only dir-filters-phone"><summary>Filtry${past ? `: ${romanTerm(num)} kadencja` : ''}${state.club ? `${past ? ', ' : ': '}${esc(clubLabel)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
-      ${info ? `<p class="term-info" data-testid="term-info">${esc(info)}</p>` : ''}
-      <p class="result-count" data-testid="result-count">${list.length} ${plural(list.length, 'poseł', 'posłów', 'posłów')}</p>
     </div>
     <ul class="mp-grid">
       ${list.length === 0 ? `<li class="empty">Nikt nie pasuje do tego wyszukiwania. Spróbuj innego nazwiska albo wybierz „Wszystkie”.</li>` : list.map((mp) => (past ? termCard(ctx, mp) : mpCard(ctx, mp))).join('')}
@@ -592,6 +587,10 @@ export function renderLifeLine(ctx, mp) {
           <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${it.from}–${it.open ? 'dziś' : it.to}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
+  const qid = ctx.life?.mps?.[mp.id]?.qid;
+  const undatedTip = tl.undated.length
+    ? infoTip(`Partie i organizacje bez dat w Wikidata: ${tl.undated.join(', ')}.`, qid ? `https://www.wikidata.org/wiki/${qid}` : '')
+    : '';
   const first = tl.prlUnknown.length
     ? `Pierwsza aktywność polityczna: <b>jeszcze w PRL</b> (${tl.prlUnknown.map(esc).join(', ')}; lata nieznane).`
     : tl.firstYear != null
@@ -608,8 +607,7 @@ export function renderLifeLine(ctx, mp) {
         </div>
         <div class="life-axis"><span>ur. ${tl.birth}</span>${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
-      ${first ? `<p class="life-first" data-testid="life-first">${first}</p>` : ''}
-      ${tl.undated.length ? `<p class="muted life-undated">Bez dat w Wikidata: ${tl.undated.map(esc).join(', ')}.</p>` : ''}`;
+      ${first || undatedTip ? `<p class="life-first" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 
 const spPct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
@@ -767,9 +765,7 @@ export function renderProfile(ctx, id) {
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
-        ${history.length === 0
-          ? `<article class="post"><p class="post-text">Brak tego posła w opublikowanych zestawieniach lotów. To nie znaczy, że nie latał: media ujawniły tylko czołówki rankingów.</p></article>`
-          : history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
+        ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>
     </div>
   </section>`;
@@ -854,11 +850,11 @@ export function renderFlyer(ctx, state) {
   return `
   <section data-view="flyer" data-dataset="${esc(ds.id)}">
     ${rankingSwitch('flyer')}
-    ${pageHead({ icon: '✈', eyebrow: 'Ranking', title: 'Frequent Flyer', lede: 'Krajowe loty posłów na koszt Kancelarii Sejmu, z danych ujawnionych przez media. Kilometry to szacunek: Sejm nie publikuje tras.' })}
+    ${pageHead({ icon: '✈', eyebrow: 'Ranking', title: 'Frequent Flyer', lede: 'Kilometry to szacunek: Sejm nie publikuje tras.' })}
     <div class="panel rank-panel">
       <div class="table-wrap">
         <table class="rank" data-testid="ranking">
-          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th><th scope="col" class="earth-col">Okrążenia<br>Ziemi</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
           <tbody>
             ${rows.map((r) => {
               const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
@@ -869,6 +865,7 @@ export function renderFlyer(ctx, state) {
                 <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>
                 <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
+                <td class="earth-col">${earthBadge(r.km)}</td>
                 ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
                 <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>
               </tr>`;
@@ -879,33 +876,28 @@ export function renderFlyer(ctx, state) {
     </div>
     <div class="phone-only">${flyerTotals(ctx, state)}</div>
 
-    <div class="panel coverage" role="note">
-      <strong>Zakres danych:</strong> ${esc(ds.coverageNote)} <span class="muted">Okres: ${esc(ds.periodStart)} – ${esc(ds.periodEnd)}.</span>
-    </div>
-
     <div class="panel method">
       <h2>Odznaki podium</h2>
       <p>Pierwsze miejsce dostaje odznakę ${podiumBadge(1)}, drugie ${podiumBadge(2)}, a trzecie ${podiumBadge(3)}. Przy remisie odznakę dostają wszyscy na tym samym miejscu.</p>
       <h2>Jak liczymy kilometry</h2>
       <p>Kancelaria Sejmu ujawnia liczbę lotów i koszt, ale nie trasy. Przyjmujemy, że każdy lot to jeden odcinek między Warszawą (Chopin) a lotniskiem najbliższym okręgowi posła, i liczymy odległość po kole wielkim. Prawdziwy dystans może być inny: posłowie latają też innymi trasami, a ministrowie i wiceministrowie część lotów odbywają służbowo.</p>
       <p>Klub przy nazwisku to klub z dnia ${esc(ctx.fetchedAt)} według API Sejmu, który może różnić się od klubu w okresie objętym danymi.</p>
-      <h2>Źródła danych</h2>
-      <p class="muted">${esc(ds.origin)}.</p>
-      <ul class="sources">${sourceLinks(ds.sources)}</ul>
     </div>
-
-    ${renderAllArticles(ctx.flights.articles)}
   </section>`;
 }
 
-/** Every article about MPs' flights we know of, newest first. */
-export function renderAllArticles(registry = {}) {
-  const list = Object.entries(registry).map(([id, a]) => ({ id, ...a })).sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.outlet.localeCompare(b.outlet, 'pl'));
-  if (!list.length) return '';
-  return `<div class="panel all-articles" data-testid="all-articles">
-      <h2>Wszystkie artykuły o lotach posłów</h2>
-      <ul class="article-list">${list.map((a) => `<li data-article-id="${esc(a.id)}"><span class="art-date">${esc(a.date)}</span> <a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a> <span class="muted">· ${esc(a.outlet)}</span></li>`).join('')}</ul>
-    </div>`;
+/** Laps around the Earth (40 075 km) with one decimal, e.g. "0,3"; under 0,1 shows "<0,1". */
+export function earthLaps(km) {
+  const laps = timesAroundEarth(km);
+  if (laps == null || km <= 0) return null;
+  return laps < 0.05 ? '<0,1' : laps.toFixed(1).replace('.', ',');
+}
+
+/** A globe with the number of laps around the Earth on a small notification-style badge. */
+export function earthBadge(km) {
+  const n = earthLaps(km);
+  if (n == null) return '<span class="muted">–</span>';
+  return `<span class="earth-badge" data-testid="earth-badge" title="${esc(n)} okrążenia Ziemi (obwód 40 075 km)" aria-label="${esc(n)} okrążenia Ziemi"><span class="earth-globe" aria-hidden="true">🌍</span><span class="earth-n" aria-hidden="true">${esc(n)}</span></span>`;
 }
 
 const ROMAN_NUM = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
@@ -943,10 +935,10 @@ export function renderAside(ctx, route = null, state = null) {
   if (route?.name === 'directory' && state) return `<div class="panel aside-box aside-filters" data-testid="aside-filters"><h2>Filtry</h2>${directoryFilters(ctx, state.directory)}</div>`;
   if (route?.name === 'flyer' && state) return flyerTotals(ctx, state.flyer);
   const counts = clubCounts(ctx.mps);
-  return `<div class="panel aside-box"><h2>Kluby i koła</h2><ul class="aside-clubs">
+  return `<div class="panel aside-box"><h2>Kluby i koła ${infoTip(`API Sejmu, stan na ${ctx.fetchedAt}.`, 'https://api.sejm.gov.pl/sejm/term10/clubs')}</h2><ul class="aside-clubs">
     ${counts.map((c) => {
       const club = ctx.clubs.get(c.club) ?? FALLBACK_CLUB;
       return `<li><a href="#poslowie" data-action="filter-club" data-club="${esc(c.club)}">${clubLogo(ctx, c.club) ? `<img class="club-logo club-logo-lg" src="${esc(clubLogo(ctx, c.club))}" alt="">` : `<span class="dot" style="--club:${esc(club.color)}"></span>`}${esc(club.short)}</a><b>${c.count}</b></li>`;
     }).join('')}
-  </ul><p class="src">API Sejmu, stan na ${esc(ctx.fetchedAt)}</p></div>`;
+  </ul></div>`;
 }

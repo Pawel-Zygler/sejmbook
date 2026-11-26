@@ -50,7 +50,8 @@ describe('directory', () => {
 
   it('lists all 460 active MPs', () => {
     expect($$('.mp-card')).toHaveLength(460);
-    expect($('[data-testid="result-count"]').textContent).toBe('460 posłów');
+    expect($('[data-testid="result-count"]')).toBeNull();
+    expect($('[data-testid="term-info"]')).toBeNull();
   });
   it('searches without diacritics and keeps focus in the field', () => {
     type($('#dir-search'), 'mejza');
@@ -125,8 +126,10 @@ describe('Frequent Flyer', () => {
     const ids = new Set(app.ctx.flights.datasets.flatMap((d) => d.entries.map((e) => String(e.mpId))));
     expect(rows().map((tr) => tr.dataset.mpId).sort()).toEqual([...ids].sort());
     expect(rows()[0].textContent).toContain('Grzegorz Napieralski');
-    expect($('.coverage').textContent).toContain('Jeden zbiór');
-    expect($$('[data-testid="all-articles"] li')).toHaveLength(Object.keys(app.ctx.flights.articles).length);
+    expect($('.coverage')).toBeNull();
+    expect($('[data-testid="all-articles"]')).toBeNull();
+    expect(rows().every((tr) => tr.querySelector('.earth-col'))).toBe(true);
+    expect(rows()[0].querySelector('[data-testid="earth-badge"] .earth-n').textContent).toMatch(/^\d+,\d$/);
   });
   it('has no filters', () => {
     expect($('.flyer-side')).toBeNull();
@@ -220,6 +223,7 @@ describe('Frekwencja', () => {
     expect(card).not.toBeNull();
     expect(card.querySelectorAll('.day').length).toBe(attendanceData.days.length);
     expect(card.querySelector('.post-head').textContent).not.toContain('API Sejmu');
+    expect(card.textContent).not.toContain('Źródło:');
   });
   it('Frequent Flyer rows and directory cards carry the pie badge', () => {
     nav('#frequent-flyer');
@@ -438,9 +442,9 @@ describe('Frekwencja: clubs', () => {
 describe('Posłowie: all terms', () => {
   it('switches to an earlier term and back', () => {
     nav('#poslowie');
-    expect($('[data-testid="term-info"]').textContent).toContain('X kadencja');
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('10');
     click($('#aside [data-action="dir-term"][data-term="3"]'));
-    expect($('[data-testid="term-info"]').textContent).toContain('III kadencja · 20.10.1997');
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('3');
     const cards = $$('.term-card');
     expect(cards.length).toBe(termsData.people.filter((p) => p.terms.some((t) => t.t === 3)).length);
     click($('#aside button.filter[data-club="UW"]'));
@@ -515,7 +519,7 @@ describe('Terms I and II (Wikipedia)', () => {
     nav('#poslowie');
     expect($$('#aside [data-action="dir-term"]').map((b) => b.dataset.term)).toEqual(['10', '9', '8', '7', '6', '5', '4', '3', '2', '1']);
     click($('#aside [data-action="dir-term"][data-term="1"]'));
-    expect($('[data-testid="term-info"]').textContent).toContain('I kadencja · 25.11.1991 – 31.05.1993');
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('1');
     expect($$('.term-card').length).toBe(earlyTermsData.terms[0].mps.length);
     expect($('[data-view="directory"] .src').textContent).toContain('polska Wikipedia');
     const tusk = $$('.term-card').find((c) => c.textContent.includes('Bronisław Geremek'));
