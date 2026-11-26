@@ -10,9 +10,13 @@ async function getJson(url) {
   for (let i = 1; ; i++) {
     try {
       const res = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (res.status === 429) { // rate limited: wait as long as asked (or longer each time) and try again
+        const wait = Number(res.headers.get('retry-after')) || 15 * i;
+        throw Object.assign(new Error('HTTP 429'), { wait: wait * 1000 });
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.json();
-    } catch (e) { if (i >= 5) throw e; await sleep(1500 * i); }
+    } catch (e) { if (i >= 8) throw e; await sleep(e.wait ?? 2000 * i); }
   }
 }
 const search = async (q) => (await getJson(`${API}?action=query&list=search&srlimit=5&format=json&srsearch=${encodeURIComponent(q)}`)).query?.search?.map((x) => x.title) ?? [];
@@ -30,11 +34,17 @@ for (const q of ['Okręgi wyborcze do Sejmu Rzeczypospolitej Polskiej', 'okręgi
   await sleep(500);
 }
 for (let n = 1; n <= 41; n++) {
-  const titles = await search(`Okręg wyborczy nr ${n} Sejm`);
-  const t = titles.find((x) => new RegExp(`^Okręg wyborczy nr ${n}\\b`).test(x) && /Sejm/i.test(x)) ?? titles.find((x) => new RegExp(`^Okręg wyborczy nr ${n}\\b`).test(x));
-  out.districts[n] = t ? await text(t) : { candidates: titles };
-  console.log(n, t ?? `? ${titles.join(' | ')}`);
-  await sleep(600);
+  // The articles have a fixed title; search only when it is missing.
+  let page = await text(`Okręg wyborczy nr ${n} do Sejmu Rzeczypospolitej Polskiej`);
+  if (!page) {
+    await sleep(2000);
+    const titles = await search(`Okręg wyborczy nr ${n} Sejm`);
+    const t = titles.find((x) => new RegExp(`^Okręg wyborczy nr ${n}\\b`).test(x));
+    page = t ? await text(t) : { candidates: titles };
+  }
+  out.districts[n] = page;
+  console.log(n, page.title ?? `? ${page.candidates?.join(' | ')}`);
+  await sleep(2500);
 }
 await mkdir(new URL('../data/raw/', import.meta.url), { recursive: true });
 await writeFile(new URL('../data/raw/district-wiki.json', import.meta.url), JSON.stringify(out, null, 1) + '\n');
