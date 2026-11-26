@@ -150,8 +150,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Feed jak w serwisie społecznościowym';
-const NEWEST_LINE = 'Feed: Feed jak w serwisie społecznościowym';
+const NEWEST = 'Czytelne partie na kartach posłów';
+const NEWEST_LINE = 'Posłowie: Czytelne partie na kartach posłów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
