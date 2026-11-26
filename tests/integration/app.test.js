@@ -219,6 +219,7 @@ describe('Frekwencja', () => {
     const card = $('[data-testid="profile-attendance"]');
     expect(card).not.toBeNull();
     expect(card.querySelectorAll('.day').length).toBe(attendanceData.days.length);
+    expect(card.querySelector('.post-head').textContent).not.toContain('API Sejmu');
   });
   it('Frequent Flyer rows and directory cards carry the pie badge', () => {
     nav('#frequent-flyer');

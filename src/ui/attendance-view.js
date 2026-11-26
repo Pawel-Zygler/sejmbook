@@ -59,7 +59,7 @@ export function renderProfileAttendance(ctx, mp) {
     .map(([t, v]) => `<li><span>${romanTerm(Number(t))} kadencja</span>${pieIcon(v.mean, 16)}<b>${formatPct(v.mean)}</b><small class="muted">${v.days} dni</small></li>`)
     .join('');
   return `<article class="post att-post" data-testid="profile-attendance">
-    <header class="post-head">${pieIcon(cur?.mean ?? all.mean, 44)}<div><strong>Frekwencja na głosowaniach</strong><small>Średnia z frekwencji dziennej · API Sejmu</small></div></header>
+    <header class="post-head">${pieIcon(cur?.mean ?? all.mean, 44)}<div><strong>Frekwencja na głosowaniach</strong></div></header>
     <div class="flight-stats">
       ${cur ? `<div><b>${formatPct(cur.mean)}</b><span>X kadencja (${cur.days} dni)</span></div>` : ''}
       ${multi || !cur ? `<div><b>${formatPct(all.mean)}</b><span>wszystkie kadencje w danych (${all.days} dni)</span></div>` : ''}
