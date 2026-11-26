@@ -1,15 +1,45 @@
 {
- "fetchedAt": "2026-11-25T17:14:29.097Z",
+ "fetchedAt": "2026-11-26T01:47:12.278Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
   "source": "https://www.prezydent.pl/aktualnosci",
   "items": [
    {
+    "title": "Prezydent RP spotkał się z przedstawicielami chilijskiej Polonii w Santiago de Chile",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-spotkal-sie-z-przedstawicielami-chilijskiej-polonii-w-santiago-de-chile,130766",
+    "seenAt": "2026-11-25T23:59:59.000Z"
+   },
+   {
+    "title": "Odznaczenia dla osób zasłużonych dla rozwoju relacji polsko–chilijskich",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/aktualnosci/odznaczenia/odznaczenia-dla-osob-zasluzonych-dla-rozwoju-relacji-polskochilijskich,130556",
+    "seenAt": "2026-11-25T23:59:59.000Z"
+   },
+   {
+    "title": "Prezydent RP składa wizytę w Chile",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/chile,130737",
+    "seenAt": "2026-11-25T23:59:59.000Z"
+   },
+   {
+    "title": "Minister Leśkiewicz w wywiadzie dla portalu Tysol.pl",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/minister-leskiewicz-w-wywiadzie-dla-portalu-tysolpl,130739",
+    "seenAt": "2026-11-25T23:59:59.000Z"
+   },
+   {
     "title": "Do uczestników XXII Kongresu Gmin Wiejskich w Jachrance",
     "date": "2026-11-25",
     "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/do-uczestnikow-xxii-kongresu-gmin-wiejskich-w-jachrance,130729",
     "seenAt": "2026-11-25T17:14:29.097Z"
+   },
+   {
+    "title": "Minister Rabenda o zawieszeniu rozmów w sprawie Trybunału Konstytucyjnego",
+    "date": "2026-11-25",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/minister-rabenda-radio-maryja,130752",
+    "seenAt": "2026-11-25T23:59:59.000Z"
    },
    {
     "title": "Buenos Aires. Spotkanie Prezydentów Polski i Argentyny [PL/EN]",
@@ -21,36 +51,6 @@
     "title": "Konsultacje dotyczące zmian w systemie podatkowym",
     "date": "2026-11-24",
     "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/konsultacje-dotyczace-zmian-w-systemie-podatkowym,130655",
-    "seenAt": "2026-11-24T20:10:13.747Z"
-   },
-   {
-    "title": "Spotkanie z delegacją protestujących branży drzewno–meblarskiej",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/spotkanie-z-delegacja-protestujacych-branzy-drzewno-meblarskiej,130678",
-    "seenAt": "2026-11-24T20:10:13.747Z"
-   },
-   {
-    "title": "Rada Rodziny i Demografii o opiece nad dziećmi do 3. roku życia oraz zmianach w prawie rodzinnym",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/rada-rodziny-i-demografii-o-opiece-nad-dziecmi-do-3-roku-zycia-oraz-zmianach-w-prawie-rodzinnym,130653",
-    "seenAt": "2026-11-24T20:10:13.747Z"
-   },
-   {
-    "title": "Komisja konkursowa wyłoniła laureatów!",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/komisja-konkursowa-wylonila-laureatow,130658",
-    "seenAt": "2026-11-24T20:10:13.747Z"
-   },
-   {
-    "title": "Do uczestników gali Polregio SA z okazji Święta Kolejarza",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/do-uczestnikow-gali-polregio-sa-z-okazji-swieta-kolejarza,130577",
-    "seenAt": "2026-11-24T20:10:13.747Z"
-   },
-   {
-    "title": "Gala z okazji Święta Kolejarza z udziałem doradcy Beaty Kempy",
-    "date": "2026-11-24",
-    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-doradcow/gala-z-okazji-swieta-kolejarza-z-udzialem-doradcy-beaty-kempy,130610",
     "seenAt": "2026-11-24T20:10:13.747Z"
    }
   ]
@@ -130,7 +130,7 @@
     "date": "2025-12-04",
     "time": "2025-12-04T11:55:35.545Z",
     "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m75w2vof7c25",
-    "likes": 404,
+    "likes": 405,
     "reposts": 72
    },
    {
@@ -138,7 +138,7 @@
     "date": "2025-10-20",
     "time": "2025-10-20T08:43:03.855Z",
     "url": "https://bsky.app/profile/donald-tusk.bsky.social/post/3m3mgd7eyxk23",
-    "likes": 477,
+    "likes": 478,
     "reposts": 79
    },
    {
@@ -3352,6 +3352,12 @@
    "source": "https://www.gov.pl/web/nauka/wiadomosci",
    "items": [
     {
+     "title": "Polska nauka dla innowacyjnej gospodarki",
+     "date": "2026-11-25",
+     "url": "https://www.gov.pl/web/nauka/polska-nauka-dla-innowacyjnej-gospodarki",
+     "seenAt": "2026-11-25T23:59:59.000Z"
+    },
+    {
      "title": "Nauka ma kobiecy głos – znamy nazwiska laureatek 26. edycji programu L'Oréal-UNESCO Dla Kobiet i Nauki",
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/nauka/nauka-ma-kobiecy-glos--znamy-nazwiska-laureatek-26-edycji-programu-loral-unesco-dla-kobiet-i-nauki",
@@ -3374,12 +3380,6 @@
      "date": "2026-11-16",
      "url": "https://www.gov.pl/web/nauka/rozpoczynamy-tydzien-walki-z-dezinformacja-naukowa",
      "seenAt": "2026-11-16T23:59:59.000Z"
-    },
-    {
-     "title": "Nowy potencjał dla polskiej gospodarki, nauki i obronności. Powstaje Łukasiewicz - Małopolski Instytut Technologiczny",
-     "date": "2026-11-12",
-     "url": "https://www.gov.pl/web/nauka/nowy-potencjal-dla-polskiej-gospodarki-nauki-i-obronnosci-powstaje-lukasiewicz--malopolski-instytut-technologiczny",
-     "seenAt": "2026-11-12T23:59:59.000Z"
     }
    ]
   },
