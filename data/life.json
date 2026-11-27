@@ -870,6 +870,18 @@
    ],
    "orgs": []
   },
+  "27": {
+   "qid": "Q21282008",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "28": {
    "qid": "Q60833165",
    "parties": [
@@ -1538,43 +1550,6 @@
    ],
    "orgs": []
   },
-  "73": {
-   "qid": "Q11778705",
-   "parties": [
-    {
-     "qid": "Q156874",
-     "label": "Prawo i Sprawiedliwość",
-     "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q7333478",
-     "label": "Przymierze Prawicy",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": [
-    {
-     "qid": "Q1342099",
-     "label": "Stowarzyszenie „Wspólnota Polska”",
-     "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q9360457",
-     "label": "Towarzystwo Miłośników Lwowa i Kresów Południowo-Wschodnich",
-     "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q7438352",
-     "label": "Związek Harcerstwa Rzeczypospolitej",
-     "from": null,
-     "to": null
-    }
-   ]
-  },
   "75": {
    "qid": "Q1681725",
    "parties": [
@@ -1891,6 +1866,18 @@
     {
      "qid": "Q156868",
      "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "97": {
+   "qid": "Q55937",
+   "parties": [
+    {
+     "qid": "Q687574",
+     "label": "Liga Polskich Rodzin",
      "from": null,
      "to": null
     }
@@ -2543,6 +2530,30 @@
    ],
    "orgs": []
   },
+  "139": {
+   "qid": "Q21282044",
+   "parties": [
+    {
+     "qid": "Q94518282",
+     "label": "Federacja dla Rzeczypospolitej",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q20740347",
+     "label": "Kukiz’15",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q537303",
+     "label": "Polska Zjednoczona Partia Robotnicza",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "140": {
    "qid": "Q11768918",
    "parties": [
@@ -2653,14 +2664,8 @@
    "orgs": []
   },
   "148": {
-   "qid": "Q2757",
+   "qid": "Q55917",
    "parties": [
-    {
-     "qid": "Q11795487",
-     "label": "Obywatelski Klub Parlamentarny",
-     "from": null,
-     "to": null
-    },
     {
      "qid": "Q1475388",
      "label": "Porozumienie Centrum",
@@ -2671,13 +2676,25 @@
      "qid": "Q156874",
      "label": "Prawo i Sprawiedliwość",
      "from": null,
-     "to": 2006
+     "to": null
+    },
+    {
+     "qid": "Q1271959",
+     "label": "Ruch Odbudowy Polski",
+     "from": null,
+     "to": null
     }
    ],
    "orgs": [
     {
      "qid": "Q19159587",
      "label": "Jarosław i Lech Kaczyńscy",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q7557985",
+     "label": "Komitet Obywatelski \"Solidarność\"",
      "from": null,
      "to": null
     },
@@ -3426,37 +3443,6 @@
     }
    ]
   },
-  "196": {
-   "qid": "Q1607519",
-   "parties": [
-    {
-     "qid": "Q156868",
-     "label": "Platforma Obywatelska",
-     "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q2307945",
-     "label": "Unia Wolności",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": [
-    {
-     "qid": "Q1003",
-     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
-     "from": 1980,
-     "to": null
-    },
-    {
-     "qid": "Q11742425",
-     "label": "Kongres Kobiet",
-     "from": null,
-     "to": null
-    }
-   ]
-  },
   "197": {
    "qid": "Q21282066",
    "parties": [
@@ -3638,11 +3624,6 @@
      "to": null
     }
    ],
-   "orgs": []
-  },
-  "205": {
-   "qid": "Q21282069",
-   "parties": [],
    "orgs": []
   },
   "206": {
@@ -4140,24 +4121,6 @@
      "to": null
     }
    ]
-  },
-  "240": {
-   "qid": "Q105087004",
-   "parties": [
-    {
-     "qid": "Q109860076",
-     "label": "Partia Republikańska",
-     "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q29413547",
-     "label": "Stowarzyszenie „Republikanie”",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": []
   },
   "242": {
    "qid": "Q9155500",
@@ -5010,6 +4973,30 @@
     }
    ]
   },
+  "296": {
+   "qid": "Q123119054",
+   "parties": [],
+   "orgs": []
+  },
+  "297": {
+   "qid": "Q73024554",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": [
+    {
+     "qid": "Q48864588",
+     "label": "Związek Piłsudczyków RP Towarzystwo Pamięci Józefa Piłsudskiego",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
   "298": {
    "qid": "Q103056893",
    "parties": [
@@ -5293,6 +5280,11 @@
      "to": null
     }
    ],
+   "orgs": []
+  },
+  "321": {
+   "qid": "Q21282117",
+   "parties": [],
    "orgs": []
   },
   "322": {
@@ -5795,36 +5787,6 @@
    ],
    "orgs": []
   },
-  "353": {
-   "qid": "Q71516894",
-   "parties": [
-    {
-     "qid": "Q156874",
-     "label": "Prawo i Sprawiedliwość",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": []
-  },
-  "354": {
-   "qid": "Q72386631",
-   "parties": [
-    {
-     "qid": "Q42715155",
-     "label": "Porozumienie",
-     "from": 2018,
-     "to": 2023
-    },
-    {
-     "qid": "Q218477",
-     "label": "Polskie Stronnictwo Ludowe",
-     "from": 2023,
-     "to": null
-    }
-   ],
-   "orgs": []
-  },
   "355": {
    "qid": "Q21282125",
    "parties": [
@@ -6169,18 +6131,6 @@
     {
      "qid": "Q156874",
      "label": "Prawo i Sprawiedliwość",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": []
-  },
-  "376": {
-   "qid": "Q123173424",
-   "parties": [
-    {
-     "qid": "Q100979832",
-     "label": "Polska 2050",
      "from": null,
      "to": null
     }
@@ -7223,6 +7173,36 @@
     }
    ]
   },
+  "442": {
+   "qid": "Q21157896",
+   "parties": [
+    {
+     "qid": "Q1409821",
+     "label": "Wolność i Równość",
+     "from": 2005,
+     "to": 2005
+    },
+    {
+     "qid": "Q21006495",
+     "label": "Partia Razem",
+     "from": 2015,
+     "to": null
+    },
+    {
+     "qid": "Q210431",
+     "label": "Polska Partia Socjalistyczna",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q1506868",
+     "label": "Unia Pracy",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "443": {
    "qid": "Q440778",
    "parties": [
@@ -7238,6 +7218,24 @@
   "444": {
    "qid": "Q123115428",
    "parties": [],
+   "orgs": []
+  },
+  "445": {
+   "qid": "Q47484353",
+   "parties": [
+    {
+     "qid": "Q21006495",
+     "label": "Partia Razem",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q199007",
+     "label": "Zieloni",
+     "from": null,
+     "to": null
+    }
+   ],
    "orgs": []
   },
   "446": {
@@ -7276,6 +7274,18 @@
     {
      "qid": "Q156868",
      "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "449": {
+   "qid": "Q11818289",
+   "parties": [
+    {
+     "qid": "Q218477",
+     "label": "Polskie Stronnictwo Ludowe",
      "from": null,
      "to": null
     }
@@ -7400,25 +7410,6 @@
     }
    ],
    "orgs": []
-  },
-  "460": {
-   "qid": "Q73683838",
-   "parties": [
-    {
-     "qid": "Q107418166",
-     "label": "Nowa Lewica",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": [
-    {
-     "qid": "Q9397734",
-     "label": "Żydowska Ogólnopolska Organizacja Młodzieżowa",
-     "from": null,
-     "to": null
-    }
-   ]
   },
   "461": {
    "qid": "Q123920903",
@@ -7570,31 +7561,6 @@
     }
    ],
    "orgs": []
-  },
-  "472": {
-   "qid": "Q126916157",
-   "parties": [
-    {
-     "qid": "Q107418166",
-     "label": "Nowa Lewica",
-     "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q953174",
-     "label": "Sojusz Lewicy Demokratycznej",
-     "from": null,
-     "to": null
-    }
-   ],
-   "orgs": [
-    {
-     "qid": "Q11822626",
-     "label": "Polski Związek Niewidomych",
-     "from": null,
-     "to": null
-    }
-   ]
   },
   "473": {
    "qid": "Q127269974",
