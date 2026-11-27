@@ -228,7 +228,7 @@
      "src": "wikidata"
     },
     {
-     "label": "Sekretarz redakcji katolickiego",
+     "label": "Sekretarz redakcji",
      "qid": null,
      "role": null,
      "from": null,
@@ -376,7 +376,7 @@
    "revid": 80922396,
    "items": [
     {
-     "label": "Własne gospodarstwo rolnego.",
+     "label": "Własne gospodarstwo rolne",
      "qid": null,
      "role": null,
      "from": 1989,
@@ -626,7 +626,7 @@
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Przedsiębiorstwo zajmujące",
+     "label": "Przedsiębiorstwo",
      "qid": null,
      "role": null,
      "from": null,
@@ -640,7 +640,7 @@
    "revid": 80772173,
    "items": [
     {
-     "label": "Własne przedsiębiorstwo mc",
+     "label": "Własne przedsiębiorstwo",
      "qid": null,
      "role": null,
      "from": 2004,
@@ -1000,7 +1000,7 @@
    "revid": 80065571,
    "items": [
     {
-     "label": "Własna firma zajmująca się",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": 2001,
@@ -1086,7 +1086,7 @@
    "revid": 80115241,
    "items": [
     {
-     "label": "Własne przedsiębiorstwo działające w",
+     "label": "Własne przedsiębiorstwo",
      "qid": null,
      "role": null,
      "from": 2012,
@@ -1290,7 +1290,7 @@
    "revid": 79785348,
    "items": [
     {
-     "label": "Własne przedsiębiorstwo działające w",
+     "label": "Własne przedsiębiorstwo",
      "qid": null,
      "role": null,
      "from": null,
@@ -1822,20 +1822,6 @@
      "from": null,
      "to": null,
      "src": "plwiki,wikidata"
-    }
-   ]
-  },
-  "Ewa Kołodziej": {
-   "qid": "Q9256715",
-   "revid": 80042638,
-   "items": [
-    {
-     "label": "Asystentka parlamentarna",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -2628,7 +2614,7 @@
    "revid": 80884384,
    "items": [
     {
-     "label": "Własna kancelaria podatkowa pod nazwą",
+     "label": "Własna kancelaria podatkowa",
      "qid": null,
      "role": null,
      "from": 2021,
@@ -2663,14 +2649,6 @@
    "qid": "Q11771436",
    "revid": 80772225,
    "items": [
-    {
-     "label": "Menedżer odpowiedzialny za",
-     "qid": null,
-     "role": null,
-     "from": 1992,
-     "to": 1995,
-     "src": "plwiki"
-    },
     {
      "label": "Erste Bank Polska",
      "qid": "Q806653",
@@ -2935,26 +2913,12 @@
     }
    ]
   },
-  "Krzysztof Paszyk": {
-   "qid": "Q19690215",
-   "revid": 80340593,
-   "items": [
-    {
-     "label": "Asystent posłów",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Ryszard Petru": {
    "qid": "Q9324899",
    "revid": 81186875,
    "items": [
     {
-     "label": "Ekonomista ds",
+     "label": "Ekonomista",
      "qid": null,
      "role": null,
      "from": 2001,
@@ -3289,20 +3253,6 @@
     }
    ]
   },
-  "Jarosław Sachajko": {
-   "qid": "Q21282117",
-   "revid": 79215288,
-   "items": [
-    {
-     "label": "Asystent techniczny",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Wojciech Saługa": {
    "qid": "Q164525",
    "revid": 80586292,
@@ -3615,20 +3565,6 @@
     }
    ]
   },
-  "Agnieszka Soin": {
-   "qid": "Q65162977",
-   "revid": 78866660,
-   "items": [
-    {
-     "label": "Doradca personalny",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Magdalena Sroka (ur. 1979)": {
    "qid": "Q72386631",
    "revid": 81155002,
@@ -3653,20 +3589,6 @@
      "role": null,
      "from": 2005,
      "to": 2007,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Franciszek Sterczewski": {
-   "qid": "Q73681986",
-   "revid": 80272008,
-   "items": [
-    {
-     "label": "Koordynator ds",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -3726,7 +3648,7 @@
    "revid": 80772245,
    "items": [
     {
-     "label": "Ekspert ds",
+     "label": "Ekspert",
      "qid": null,
      "role": null,
      "from": 2009,
@@ -3842,7 +3764,7 @@
    "revid": 79861075,
    "items": [
     {
-     "label": "Przedstawiciel techniczno-handlowy polskiego",
+     "label": "Przedstawiciel techniczno-handlowy",
      "qid": null,
      "role": null,
      "from": null,
@@ -4820,14 +4742,6 @@
    "revid": 81186811,
    "items": [
     {
-     "label": "Informatyka",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Instytut Meteorologii i Gospodarki Wodnej",
      "qid": "Q11713124",
      "role": null,
@@ -4843,20 +4757,6 @@
    "items": [
     {
      "label": "Psycholog",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Piotr Kowal": {
-   "qid": "Q126916157",
-   "revid": 80961048,
-   "items": [
-    {
-     "label": "Pełnomocnik zarządu ds",
      "qid": null,
      "role": null,
      "from": null,
@@ -4946,7 +4846,7 @@
      "src": "plwiki"
     },
     {
-     "label": "Własne przedsiębiorstwo usługowe w",
+     "label": "Własne przedsiębiorstwo usługowe",
      "qid": null,
      "role": null,
      "from": null,
@@ -5241,20 +5141,6 @@
     }
    ]
   },
-  "Andrzej Aumiller": {
-   "qid": "Q4759578",
-   "revid": 79836551,
-   "items": [
-    {
-     "label": "Dyrektor ds",
-     "qid": null,
-     "role": null,
-     "from": 2005,
-     "to": 2006,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Tadeusz Badach": {
    "qid": "Q9354051",
    "revid": 79850897,
@@ -5274,7 +5160,7 @@
    "revid": 78343571,
    "items": [
     {
-     "label": "Własna kancelaria specjalizująca się w",
+     "label": "Własna kancelaria",
      "qid": null,
      "role": null,
      "from": null,
@@ -5969,14 +5855,6 @@
    "qid": "Q462233",
    "revid": 79833759,
    "items": [
-    {
-     "label": "Specjalistka ds",
-     "qid": null,
-     "role": null,
-     "from": 1968,
-     "to": 1977,
-     "src": "plwiki"
-    },
     {
      "label": "J.W. Construction Holding",
      "qid": "Q11715031",
@@ -6940,14 +6818,6 @@
      "from": null,
      "to": null,
      "src": "plwiki"
-    },
-    {
-     "label": "Specjalista najpierw",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -7446,7 +7316,7 @@
    "revid": 80532275,
    "items": [
     {
-     "label": "Własne przedsiębiorstwo pphu",
+     "label": "Własne przedsiębiorstwo",
      "qid": null,
      "role": null,
      "from": 1989,
@@ -7916,14 +7786,6 @@
    "revid": 81069671,
    "items": [
     {
-     "label": "Dyrektor ds",
-     "qid": null,
-     "role": null,
-     "from": 1993,
-     "to": 1995,
-     "src": "plwiki"
-    },
-    {
      "label": "Związek Socjalistycznej Młodzieży Polskiej",
      "qid": "Q7209985",
      "role": null,
@@ -7943,14 +7805,6 @@
      "role": null,
      "from": 1982,
      "to": 1990,
-     "src": "plwiki"
-    },
-    {
-     "label": "Specjalista handlowy",
-     "qid": null,
-     "role": null,
-     "from": 1990,
-     "to": 1992,
      "src": "plwiki"
     }
    ]
@@ -8018,20 +7872,6 @@
     {
      "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
      "qid": "Q9392377",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Marek Domin": {
-   "qid": "Q11768098",
-   "revid": 79839467,
-   "items": [
-    {
-     "label": "Pełnomocnik ds",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -8456,7 +8296,7 @@
    "revid": 79831430,
    "items": [
     {
-     "label": "Firma produkująca",
+     "label": "Firma",
      "qid": null,
      "role": null,
      "from": null,
@@ -8712,7 +8552,7 @@
    "revid": 79839496,
    "items": [
     {
-     "label": "Nauczycielka języka polskiego",
+     "label": "Nauczycielka języka",
      "qid": null,
      "role": null,
      "from": null,
@@ -9110,7 +8950,7 @@
    "revid": 77617436,
    "items": [
     {
-     "label": "Nauczycielka języka polskiego",
+     "label": "Nauczycielka języka",
      "qid": null,
      "role": null,
      "from": null,
@@ -10659,20 +10499,6 @@
     }
    ]
   },
-  "Ewa Janik (ur. 1947)": {
-   "qid": "Q11697407",
-   "revid": 79835558,
-   "items": [
-    {
-     "label": "Kierownik działu",
-     "qid": null,
-     "role": null,
-     "from": 1970,
-     "to": 1986,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Grzegorz Janik (polityk)": {
    "qid": "Q382840",
    "revid": 79860471,
@@ -10747,14 +10573,6 @@
    "qid": "Q9389691",
    "revid": 79836434,
    "items": [
-    {
-     "label": "Specjalista techniczny",
-     "qid": null,
-     "role": null,
-     "from": 1970,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Huta Aluminium Konin",
      "qid": "Q16558776",
@@ -11101,20 +10919,6 @@
     }
    ]
   },
-  "Mieczysław Jedoń": {
-   "qid": "Q11779782",
-   "revid": 79833895,
-   "items": [
-    {
-     "label": "Kierownik marketingu",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Sławomir Jeneralski": {
    "qid": "Q7667222",
    "revid": 80959954,
@@ -11322,7 +11126,7 @@
    "revid": 80499367,
    "items": [
     {
-     "label": "Własna firma z zakresu",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": 2011,
@@ -11708,20 +11512,6 @@
      "from": null,
      "to": null,
      "src": "plwiki,wikidata"
-    }
-   ]
-  },
-  "Tomasz Karwowski": {
-   "qid": "Q9359399",
-   "revid": 79834805,
-   "items": [
-    {
-     "label": "Asystent posłów",
-     "qid": null,
-     "role": null,
-     "from": 1993,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -12488,14 +12278,6 @@
      "from": 1952,
      "to": null,
      "src": "plwiki"
-    },
-    {
-     "label": "Kancelarię.",
-     "qid": null,
-     "role": null,
-     "from": 1990,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -12589,20 +12371,6 @@
    "items": [
     {
      "label": "Nauczyciel",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Wiesław Kossakowski": {
-   "qid": "Q9373518",
-   "revid": 79839639,
-   "items": [
-    {
-     "label": "Pełnomocnik ds",
      "qid": null,
      "role": null,
      "from": null,
@@ -12788,7 +12556,7 @@
    "revid": 79862179,
    "items": [
     {
-     "label": "Własna kancelaria prawna w",
+     "label": "Własna kancelaria prawna",
      "qid": null,
      "role": null,
      "from": 1989,
@@ -13484,7 +13252,7 @@
    "revid": 80344852,
    "items": [
     {
-     "label": "Nauczycielka języka polskiego",
+     "label": "Nauczycielka języka",
      "qid": null,
      "role": null,
      "from": null,
@@ -14034,7 +13802,7 @@
    "revid": 79839709,
    "items": [
     {
-     "label": "Własna firma usług",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": null,
@@ -14084,19 +13852,11 @@
    "revid": 81090941,
    "items": [
     {
-     "label": "Własne biuro tłumaczeń.",
+     "label": "Własne biuro tłumaczeń",
      "qid": null,
      "role": null,
      "from": 1994,
      "to": 2002,
-     "src": "plwiki"
-    },
-    {
-     "label": "Asystent przewodniczącego rady",
-     "qid": null,
-     "role": null,
-     "from": 1997,
-     "to": 2005,
      "src": "plwiki"
     },
     {
@@ -15489,20 +15249,6 @@
     }
    ]
   },
-  "Elżbieta Michalak": {
-   "qid": "Q9253203",
-   "revid": 79839823,
-   "items": [
-    {
-     "label": "Statystyka",
-     "qid": null,
-     "role": null,
-     "from": 1977,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Marek Michalik": {
    "qid": "Q11768316",
    "revid": 76512488,
@@ -15648,20 +15394,6 @@
     {
      "label": "Chemar",
      "qid": "Q9189404",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Piotr Misiło": {
-   "qid": "Q21282092",
-   "revid": 79329910,
-   "items": [
-    {
-     "label": "Dyrektor generalny jednego",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -16326,14 +16058,6 @@
      "from": 1980,
      "to": 1989,
      "src": "plwiki"
-    },
-    {
-     "label": "Firm",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -16868,7 +16592,7 @@
    "revid": 80094665,
    "items": [
     {
-     "label": "Nauczycielka języka polskiego",
+     "label": "Nauczycielka języka",
      "qid": null,
      "role": null,
      "from": null,
@@ -18066,7 +17790,7 @@
    "revid": 79861664,
    "items": [
     {
-     "label": "Własna firma medyczna i",
+     "label": "Własna firma medyczna",
      "qid": null,
      "role": null,
      "from": null,
@@ -18466,20 +18190,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    }
-   ]
-  },
-  "Sławomir Rogucki": {
-   "qid": "Q2382672",
-   "revid": 79842373,
-   "items": [
-    {
-     "label": "Etatowy związkowiec",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -18898,7 +18608,7 @@
      "src": "wikidata"
     },
     {
-     "label": "Własna firma z",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": null,
@@ -19119,20 +18829,6 @@
      "role": null,
      "from": 1976,
      "to": 1982,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Roman Sasin": {
-   "qid": "Q65163442",
-   "revid": 73412592,
-   "items": [
-    {
-     "label": "Kierownik działu",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -20096,14 +19792,6 @@
    "revid": 79860875,
    "items": [
     {
-     "label": "Inspektor ds",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Spółdzielnia",
      "qid": "Q4539",
      "role": null,
@@ -20906,14 +20594,6 @@
    "revid": 80948480,
    "items": [
     {
-     "label": "Dyrektor generalny",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
@@ -21214,7 +20894,7 @@
    "revid": 79836582,
    "items": [
     {
-     "label": "Własna firma zajmującej się",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": null,
@@ -21249,14 +20929,6 @@
    "qid": "Q9359751",
    "revid": 80343382,
    "items": [
-    {
-     "label": "Specjalista ds",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Własna działalność gospodarcza",
      "qid": null,
@@ -21748,20 +21420,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    }
-   ]
-  },
-  "Jan Tomaszewski (piłkarz)": {
-   "qid": "Q269275",
-   "revid": 81293062,
-   "items": [
-    {
-     "label": "Specjalista ds",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -23634,14 +23292,6 @@
    "revid": 79836116,
    "items": [
     {
-     "label": "Dyrektor generalny",
-     "qid": null,
-     "role": null,
-     "from": 1991,
-     "to": 1993,
-     "src": "plwiki"
-    },
-    {
      "label": "Przedsiębiorstwo tekstylne",
      "qid": null,
      "role": null,
@@ -23720,15 +23370,7 @@
    "revid": 79846342,
    "items": [
     {
-     "label": "Kierownik działu",
-     "qid": null,
-     "role": null,
-     "from": 1990,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Nauczyciel języka polskiego",
+     "label": "Nauczyciel języka",
      "qid": null,
      "role": null,
      "from": null,
@@ -24068,7 +23710,7 @@
      "src": "plwiki"
     },
     {
-     "label": "Firma zajmująca",
+     "label": "Firma",
      "qid": null,
      "role": null,
      "from": 1993,
@@ -25306,7 +24948,7 @@
    "revid": 81154538,
    "items": [
     {
-     "label": "Własna firma działająca na",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": null,
@@ -25708,14 +25350,6 @@
      "from": 1975,
      "to": 1988,
      "src": "plwiki,wikidata"
-    },
-    {
-     "label": "Dyrektor generalny",
-     "qid": null,
-     "role": null,
-     "from": 1989,
-     "to": null,
-     "src": "plwiki"
     },
     {
      "label": "Fundacja „Polsko-Niemieckie Pojednanie”",
@@ -28096,7 +27730,6 @@
   "mp:160": "Marcin Kierwiński",
   "mp:163": "Joanna Kluzik-Rostkowska",
   "mp:166": "Michał Kobosko",
-  "mp:168": "Ewa Kołodziej",
   "mp:173": "Zbigniew Konwiński",
   "mp:174": "Władysław Kosiniak-Kamysz",
   "mp:175": "Tomasz Kostuś",
@@ -28145,7 +27778,6 @@
   "mp:273": "Dorota Olko",
   "mp:276": "Łukasz Osmalak",
   "mp:280": "Teresa Pamuła",
-  "mp:283": "Krzysztof Paszyk",
   "mp:286": "Ryszard Petru",
   "mp:291": "Katarzyna Piekarska",
   "mp:293": "Lucjan Pietrzczyk",
@@ -28160,7 +27792,6 @@
   "mp:313": "Monika Rosa",
   "mp:315": "Urszula Rusecka",
   "mp:316": "Grzegorz Rusiecki",
-  "mp:321": "Jarosław Sachajko",
   "mp:323": "Wojciech Saługa",
   "mp:324": "Tadeusz Samborski",
   "mp:325": "Jacek Sasin",
@@ -28177,10 +27808,8 @@
   "mp:339": "Arkadiusz Sikora",
   "mp:344": "Waldemar Sługocki",
   "mp:347": "Anna Sobolak",
-  "mp:350": "Agnieszka Soin",
   "mp:354": "Magdalena Sroka (ur. 1979)",
   "mp:355": "Mirosława Stachowiak-Różecka",
-  "mp:357": "Franciszek Sterczewski",
   "mp:360": "Marek Suski",
   "mp:363": "Wojciech Szarama",
   "mp:364": "Wiesław Szczepański",
@@ -28239,7 +27868,6 @@
   "mp:469": "Barbara Grygorcewicz",
   "mp:470": "Bożenna Hołownia",
   "mp:471": "Urszula Koszutska",
-  "mp:472": "Piotr Kowal",
   "mp:476": "Wioletta Kulpa",
   "mp:479": "Krzysztof Mieszkowski",
   "mp:480": "Anna Paluch",
@@ -28262,7 +27890,6 @@
   "osoba:5-465": "Iwona Arent",
   "osoba:1-11": "Wojciech Arkuszewski",
   "osoba:8-14": "Joanna Augustynowska",
-  "osoba:2-8": "Andrzej Aumiller",
   "osoba:4-8": "Tadeusz Badach",
   "osoba:8-487": "Maciej Badora",
   "osoba:3-11": "Leszek Balcerowicz",
@@ -28408,7 +28035,6 @@
   "osoba:2-77": "Krzysztof Dołowy",
   "osoba:2-78": "Alfred Domagalski",
   "osoba:1-83": "Zdzisław Domański",
-  "osoba:1-84": "Marek Domin",
   "osoba:3-74": "Ludwik Dorn",
   "osoba:6-66": "Marzenna Drab",
   "osoba:1-86": "Zdzisław Dubiella",
@@ -28546,7 +28172,6 @@
   "osoba:3-128": "Kazimierz Janiak (ur. 1959)",
   "osoba:4-129": "Marian Janicki (polityk)",
   "osoba:3-129": "Ewa Janik (ur. 1948)",
-  "osoba:4-130": "Ewa Janik (ur. 1947)",
   "osoba:4-131": "Ewa Janik (ur. 1948)",
   "osoba:5-119": "Grzegorz Janik (polityk)",
   "osoba:3-131": "Jacek Janiszewski",
@@ -28570,7 +28195,6 @@
   "osoba:1-141": "Ryszard Jastrzębski",
   "osoba:2-138": "Teresa Jasztal",
   "osoba:6-469": "Andrzej Jaworski (polityk)",
-  "osoba:2-139": "Mieczysław Jedoń",
   "osoba:5-126": "Sławomir Jeneralski",
   "osoba:4-144": "Wiesław Jędrusik",
   "osoba:7-146": "Mariusz Orion Jędrysek",
@@ -28603,7 +28227,6 @@
   "osoba:6-148": "Włodzimierz Karpiński",
   "osoba:5-139": "Włodzimierz Karpiński",
   "osoba:5-140": "Karol Karski (prawnik)",
-  "osoba:1-155": "Tomasz Karwowski",
   "osoba:2-158": "Jacek Kasprzyk (polityk)",
   "osoba:2-159": "Paweł Kasprzyk",
   "osoba:5-142": "Marek Kawa",
@@ -28652,7 +28275,6 @@
   "osoba:1-173": "Janusz Korwin-Mikke",
   "osoba:4-181": "Leszek Korzeniowski",
   "osoba:1-174": "Bruno Kosak",
-  "osoba:2-175": "Wiesław Kossakowski",
   "osoba:6-465": "Wojciech Kossakowski",
   "osoba:5-165": "Jacek Kościelniak",
   "osoba:7-188": "Roman Kotliński",
@@ -28792,7 +28414,6 @@
   "osoba:4-243": "Antoni Mężydło",
   "osoba:2-244": "Andrzej Micewski",
   "osoba:4-244": "Aldona Michalak",
-  "osoba:1-244": "Elżbieta Michalak",
   "osoba:1-247": "Marek Michalik",
   "osoba:2-246": "Marian Michalski",
   "osoba:2-247": "Waldemar Michna",
@@ -28801,7 +28422,6 @@
   "osoba:8-339": "Joanna Mihułka-Petru",
   "osoba:5-231": "Krzysztof Mikuła",
   "osoba:5-232": "Henryk Milcarz",
-  "osoba:8-253": "Piotr Misiło",
   "osoba:1-250": "Jan Mizikowski",
   "osoba:4-250": "Jerzy Młynarczyk",
   "osoba:1-251": "Piotr Mochnaczewski",
@@ -28952,7 +28572,6 @@
   "osoba:1-315": "Janusz Rewiński",
   "osoba:4-330": "Renata Rochnowska",
   "osoba:2-331": "Stanisław Rogowski",
-  "osoba:1-316": "Sławomir Rogucki",
   "osoba:5-311": "Józef Rojek (polityk)",
   "osoba:2-332": "Marek Rojszyk",
   "osoba:2-333": "Andrzej Rokicki (polityk)",
@@ -28985,7 +28604,6 @@
   "osoba:4-479": "Leszek Samborski",
   "osoba:1-327": "Marek Samborski",
   "osoba:2-342": "Kazimierz Sas",
-  "osoba:8-498": "Roman Sasin",
   "osoba:4-341": "Jacek Sauk",
   "osoba:3-328": "Grzegorz Schetyna",
   "osoba:1-328": "Grzegorz Schreiber",
@@ -29027,7 +28645,6 @@
   "osoba:7-359": "Anna Sobecka",
   "osoba:3-347": "Anna Sobecka",
   "osoba:1-349": "Zbigniew Sobotka",
-  "osoba:8-502": "Agnieszka Soin",
   "osoba:4-489": "Mariola Sokołowska",
   "osoba:3-467": "Grażyna Sołtyk (ur. 1948)",
   "osoba:8-357": "Bogusław Sonik",
@@ -29134,7 +28751,6 @@
   "osoba:6-390": "Piotr Tomański",
   "osoba:6-391": "Irena Tomaszak-Zesiuk",
   "osoba:3-394": "Ewa Tomaszewska",
-  "osoba:7-400": "Jan Tomaszewski (piłkarz)",
   "osoba:4-464": "Ryszard Tomczyk (polityk)",
   "osoba:4-407": "Bogusława Towalewska",
   "osoba:8-407": "Rafał Trzaskowski",
