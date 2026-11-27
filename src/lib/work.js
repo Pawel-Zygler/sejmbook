@@ -36,7 +36,34 @@ const AS_ROLE = re('\\b(?:[Jj]ako|na\\s+stanowisku)\\s+([a-ząćęłńóśźż-]
 // A job without a linked employer: "prowadził własną kancelarię adwokacką", "pracował jako lekarz".
 const OWN_BUSINESS = re('prowadził(?:a)?\\s+(własn\\S+\\s+)?(działalność\\s+gospodarczą|firmę(?:\\s+[a-ząćęłńóśźż]+)?|kancelarię(?:\\s+[a-ząćęłńóśźż]+)?|praktykę\\s+[a-ząćęłńóśźż]+|gospodarstwo\\s+(?:rolne|ogrodnicze|sadownicze)|przedsiębiorstwo(?:\\s+[a-ząćęłńóśźż]+)?|aptekę|gabinet(?:\\s+[a-ząćęłńóśźż]+)?)', 'i');
 const AS_JOB = re('(?:[Pp]racował(?:a)?|[Zz]atrudnion[ya]|[Pp]racowała)\\s+(?:m\\.in\\.\\s+)?(?:jako|w\\s+zawodzie)\\s+([a-ząćęłńóśźż-]+(?:\\s+(?!w\\b|we\\b|na\\b|i\\b|oraz\\b|do\\b|od\\b|z\\b|ze\\b|przy\\b|dla\\b|u\\b|a\\b)[a-ząćęłńóśźż-]+){0,2})', '');
+// Sentences about relatives ("Matka … pracowała jako sekretarka", "Ich syn … pracował w Gazecie Wyborczej").
+const RELATIVE = re('\\b(matk\\S*|ojc\\S*|ojciec|brat\\S*|siostr\\S*|żon\\S*|mąż|męża|mężem|syn|syna|synem|synowie|córk\\S*|dziad\\S*|bab\\S*|teś\\S*|teściow\\S*|rodzic\\S*|rodzin\\S*|wnu\\S*|stryj\\S*|wuj\\S*|ciotk\\S*|kuzyn\\S*|bratan\\S*|siostrzen\\S*|małżon\\S*|partner\\S*|dzieci|dzieckiem|przodk\\S*)\\b', 'i');
+// Sections about private life, works, honours and election results are not the CV.
+const SKIP_SECTION = /^==+\s*(życie prywatne|życie osobiste|rodzina|odznaczenia|ordery|wyróżnienia|nagrody|wyniki wyborcze|publikacje|twórczość|filmografia|wybrane publikacje|kontrowersje)\s*==+\s*$/i;
+// "Dyrektor" alone says nothing: a bare position is kept only with an employer.
+const GENERIC = re('^(dyrektor\\S*|kierowni\\S*|prezes\\S*|wiceprezes\\S*|członek|członkini|specjalist\\S*|asystent\\S*|doradc\\S*|konsultant\\S*|pracowni\\S*|zastępc\\S*|menedżer\\S*|manager\\S*|szef\\S*|starszy|główny|kierownik|referent\\S*|urzędni\\S*|inspektor\\S*|naczelni\\S*|koordynator\\S*|sekretar\\S*|wolontariusz\\S*|stażyst\\S*)$', 'i');
+// "właściciel kancelarii doradztwa podatkowego", "założył firmę …" without a link.
+const OWNER = re('(?:właściciel(?:em|ką|ka)?|współwłaściciel(?:em|ką|ka)?|założył(?:a)?|współzałożył(?:a)?|otworzył(?:a)?)\\s+(własn\\S+\\s+)?(kancelari\\S*(?:\\s+[a-ząćęłńóśźż]+){0,3}|firm\\S*(?:\\s+[a-ząćęłńóśźż]+){0,2}|spółk\\S*(?:\\s+[a-ząćęłńóśźż]+){0,2}|przedsiębiorstw\\S*(?:\\s+[a-ząćęłńóśźż]+){0,2}|gospodarstw\\S*\\s+(?:rolne\\S*|ogrodnicz\\S*|sadownicz\\S*)|aptek\\S*|gabinet\\S*(?:\\s+[a-ząćęłńóśźż]+)?|biur\\S*\\s+(?:rachunkow\\S*|projektow\\S*|tłumacze\\S*|podróży|architektoniczn\\S*))', '');
 const NOT_A_JOB = re('^(poseł|posłanka|senator|minister|wiceminister|radny|radna|asystent posła|doradca ministra|polityk|działacz|działaczka|wolontariusz|wolontariuszka)\\b', 'i');
+
+const HEAD = [[/^kancelari[ię]$/, 'kancelaria', 'f'], [/^firm[yę]$/, 'firma', 'f'], [/^spółk[ię]$/, 'spółka', 'f'], [/^aptek[ię]$/, 'apteka', 'f'],
+  [/^przedsiębiorstw[ao]$/, 'przedsiębiorstwo', 'n'], [/^gospodarstw[ao]$/, 'gospodarstwo', 'n'], [/^biur[ao]$/, 'biuro', 'n'], [/^gabinet(u)?$/, 'gabinet', 'm']];
+/** The adjective right after the head noun, back in the nominative: "piwowarskiej" → "piwowarska", "rolnego" → "rolne". */
+function adjective(w, gender) {
+  if (gender === 'f') return w.replace(/(sk|ck)iej$/, '$1a').replace(/(n|w|ln|ow)ej$/, '$1a').replace(/ą$/, 'a');
+  if (gender === 'n') return w.replace(/ego$/, 'e');
+  return w.replace(/(k|g)iego$/, '$1i').replace(/ego$/, 'y');
+}
+/** "kancelarii doradztwa podatkowego" → "Własna kancelaria doradztwa podatkowego"; "firmy piwowarskiej" → "Własna firma piwowarska". */
+export function ownerLabel(what) {
+  const words = String(what).toLowerCase().trim().split(/\s+/);
+  const h = HEAD.find(([r]) => r.test(words[0]));
+  if (!h) return cap(words.join(' '));
+  const [, noun, gender] = h;
+  const rest = words.slice(1);
+  if (rest.length && /(iej|nej|wej|ą|ego)$/.test(rest[0])) rest[0] = adjective(rest[0], gender);
+  return `${gender === 'f' ? 'Własna' : gender === 'n' ? 'Własne' : 'Własny'} ${[noun, ...rest].join(' ')}`;
+}
 
 /** "własną kancelarię adwokacką" → "Własna kancelaria adwokacka"; jobs as written, first letter capitalised. */
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -52,7 +79,13 @@ export function ownBusinessLabel(own, what) {
  * plus own businesses and "pracował jako …" without a link; with the years of the clause (or else the sentence).
  */
 export function workCandidates(wikitext, maxYear) {
-  const text = cleanWikitext(wikitext);
+  const kept = [];
+  let skip = false;
+  for (const line of String(wikitext ?? '').split('\n')) {
+    if (/^==+[^=].*==+\s*$/.test(line)) skip = SKIP_SECTION.test(line.trim());
+    if (!skip) kept.push(line);
+  }
+  const text = cleanWikitext(kept.join('\n'));
   const out = [];
   for (const para of text.split(/\n+/)) {
     if (/^\s*[*#|!]/.test(para)) continue; // lists and tables: works, awards, results
@@ -61,14 +94,15 @@ export function workCandidates(wikitext, maxYear) {
     for (const sentence of tokenized.split(/(?<=[.!?])\s+(?=[A-ZĄĆĘŁŃÓŚŹŻ„⟦])/)) {
       const plain = (s) => s.replace(/⟦(\d+)⟧/g, (_, i) => links[i].label);
       const ps = plain(sentence);
-      if (!WORK.test(ps)) continue;
+      if (!WORK.test(ps) && !OWNER.test(ps)) continue;
+      if (RELATIVE.test(ps)) continue;
       const clauses = sentence.split(CLAUSE);
       // A clause like "a od 2001 w ⟦TVN⟧" continues the job of the clause before it.
       let carry = false;
       for (const clause of clauses) {
         if (!clause.trim()) continue;
         const pc = plain(clause);
-        const isWork = WORK.test(pc);
+        const isWork = WORK.test(pc) || OWNER.test(pc);
         if (EDUCATION.test(pc) || POLITICAL.test(pc)) { carry = false; continue; }
         const continued = !isWork && carry && /⟦\d+⟧/.test(clause) && pc.trim().length < 80;
         if (!isWork && !continued) { carry = false; continue; }
@@ -88,8 +122,10 @@ export function workCandidates(wikitext, maxYear) {
         if (linked) continue;
         const own = OWN_BUSINESS.exec(pc);
         if (own) { out.push({ kind: 'own', target: null, label: ownBusinessLabel(Boolean(own[1]), own[2]), role: null, ...y, sentence: sentenceText }); continue; }
+        const owner = OWNER.exec(pc);
+        if (owner) { out.push({ kind: 'own', target: null, label: ownerLabel(owner[2]), role: null, ...y, sentence: sentenceText }); continue; }
         const job = AS_JOB.exec(pc)?.[1];
-        if (job && !NOT_A_JOB.test(job)) out.push({ kind: 'job', target: null, label: cap(job), role: null, ...y, sentence: sentenceText });
+        if (job && !NOT_A_JOB.test(job) && !GENERIC.test(job)) out.push({ kind: 'job', target: null, label: cap(job), role: null, ...y, sentence: sentenceText });
       }
     }
   }

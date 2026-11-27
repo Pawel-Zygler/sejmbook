@@ -7,7 +7,7 @@ import careerData from '../../data/career.json';
 import governmentData from '../../data/government.json';
 import termsData from '../../data/terms.json';
 import earlyTermsData from '../../data/early-terms.json';
-import { workCandidates, ownBusinessLabel, employerVerdict, wdYear, wdDate, sameBirth, sameName, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
+import { workCandidates, ownBusinessLabel, ownerLabel, employerVerdict, wdYear, wdDate, sameBirth, sameName, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
 import { lifeTimeline } from '../../src/lib/life.js';
 import { createContext } from '../../src/app.js';
 import { renderProfile, renderPerson, workText, workTip, workLine, lifeSteps } from '../../src/ui/render.js';
@@ -49,6 +49,41 @@ describe('workCandidates', () => {
   });
   it('drops a role that is a political function', () => {
     expect(workCandidates('Pracował jako poseł w [[Instytut X]] w 1999.', 2026)[0]).toMatchObject({ target: 'Instytut X', role: null });
+  });
+});
+
+describe('workCandidates: what is not the person\'s own CV', () => {
+  const c = workCandidates(`== Życiorys ==
+W 2012 założył kancelarię doradztwa podatkowego. Jest właścicielem firmy piwowarskiej.
+Pracował jako dyrektor. Od 2005 pracował w [[Polsat]].
+Matka, Ewa, pracowała jako sekretarka w [[Akademia Medyczna w Gdańsku|gdańskiej Akademii Medycznej]].
+Ich syn Michał pracował w [[Gazeta Wyborcza|Gazecie Wyborczej]].
+== Życie prywatne ==
+Pracował w [[Firma Prywatna]] w 2001.
+== Działalność ==
+Pracował w [[TVN]] w 2010.`, 2026).map((x) => [x.label, x.from]);
+  it('skips relatives and the private-life section, keeps the sections after it', () => {
+    expect(c).toContainEqual(['Polsat', 2005]);
+    expect(c).toContainEqual(['TVN', 2010]);
+    expect(c.map((x) => x[0])).not.toContain('gdańskiej Akademii Medycznej');
+    expect(c.map((x) => x[0])).not.toContain('Gazecie Wyborczej');
+    expect(c.map((x) => x[0])).not.toContain('Firma Prywatna');
+  });
+  it('drops a bare position without an employer and keeps founded or owned businesses', () => {
+    expect(c.map((x) => x[0])).not.toContain('Dyrektor');
+    expect(c).toContainEqual(['Własna kancelaria doradztwa podatkowego', 2012]);
+    expect(c).toContainEqual(['Własna firma piwowarska', null]);
+  });
+});
+
+describe('ownerLabel', () => {
+  it('puts the business back in the nominative', () => {
+    expect(ownerLabel('gospodarstwa rolnego')).toBe('Własne gospodarstwo rolne');
+    expect(ownerLabel('gabinetu stomatologicznego')).toBe('Własny gabinet stomatologiczny');
+    expect(ownerLabel('kancelarii adwokackiej')).toBe('Własna kancelaria adwokacka');
+    expect(ownerLabel('biura rachunkowego')).toBe('Własne biuro rachunkowe');
+    expect(ownerLabel('spółki')).toBe('Własna spółka');
+    expect(ownerLabel('sklepu')).toBe('Sklepu');
   });
 });
 
