@@ -91,3 +91,17 @@ export function inWindow(items, windowId, now) {
   const from = now - w.hours * 3600e3;
   return items.filter((it) => { const t = Date.parse(itemTime(it)); return Number.isFinite(t) && t >= from; });
 }
+
+/**
+ * Sections that failed to fetch this run keep what the previous run had (real items, only older), so a site that is
+ * briefly down does not wipe its posts from the feed. The same for single offices. Keys: president, pm, pmSocial, sejm,
+ * offices, mpActs.
+ */
+export function keepPrevious(sections, previous) {
+  const out = { ...sections };
+  for (const k of ['president', 'pm', 'pmSocial', 'sejm', 'mpActs']) if (!out[k] && previous?.[k]) out[k] = previous[k];
+  const now = new Set((out.offices ?? []).map((o) => o.id));
+  const kept = (previous?.offices ?? []).filter((o) => !now.has(o.id));
+  if (kept.length) out.offices = [...(out.offices ?? []), ...kept];
+  return out;
+}

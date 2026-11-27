@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { votingUrl, summarizeVoting, againstClub, withSeenAt, itemTime, inWindow, FEED_WINDOWS } from '../../src/lib/feed.js';
+import { votingUrl, summarizeVoting, againstClub, withSeenAt, itemTime, inWindow, FEED_WINDOWS, keepPrevious } from '../../src/lib/feed.js';
 
 const API = {
   sitting: 69, votingNumber: 153, date: '2026-11-19T13:43:55', title: 'Pkt. 43', topic: 'wniosek', description: 'opis', kind: 'ELECTRONIC', majorityType: 'SIMPLE_MAJORITY',
@@ -60,6 +60,17 @@ describe('feed times', () => {
     expect(inWindow(items, '3d', now)).toHaveLength(2);
     expect(inWindow(items, 'all', now)).toHaveLength(4);
     expect(FEED_WINDOWS.map((w) => w.id)).toEqual(['6h', '24h', '3d', 'all']);
+  });
+});
+
+describe('keepPrevious (regression: prezydent.pl down wiped the President from the feed, 2026-11-27)', () => {
+  it('keeps sections and offices that failed this run, never overwrites fresh ones', () => {
+    const prev = { president: { items: [1] }, pm: { items: ['old'] }, offices: [{ id: 'senat', items: [1] }, { id: 'mf', items: ['old'] }] };
+    const out = keepPrevious({ pm: { items: ['new'] }, offices: [{ id: 'mf', items: ['new'] }] }, prev);
+    expect(out.president).toEqual({ items: [1] });
+    expect(out.pm.items).toEqual(['new']);
+    expect(out.offices.map((o) => [o.id, o.items[0]])).toEqual([['mf', 'new'], ['senat', 1]]);
+    expect(keepPrevious({}, null)).toEqual({});
   });
 });
 

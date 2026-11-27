@@ -4,9 +4,9 @@
 // - Prime Minister Donald Tusk: news on gov.pl/web/premier (KPRM) and his Bluesky posts (account verified by Bluesky)
 // - Sejm: latest votings from the Sejm API
 // - Ministries (gov.pl), the Senate and NIK: their press releases; MPs: interpellations and written questions (API Sejmu)
-// Runs in GitHub Actions on a schedule. Anything that fails is left out, never invented.
+// Runs in GitHub Actions on a schedule. Nothing is invented: a source that fails keeps its items from the previous run.
 import { readFile, writeFile } from 'node:fs/promises';
-import { summarizeVoting, withSeenAt } from '../src/lib/feed.js';
+import { summarizeVoting, withSeenAt, keepPrevious } from '../src/lib/feed.js';
 import { MINISTRIES, OFFICES, PARSERS, parseGovPl, newest, mpAct } from '../src/lib/feed-sources.js';
 
 const UA = 'sejmbook-data-fetch/1.0 (GitHub Actions; open data project)';
@@ -136,4 +136,5 @@ try {
   console.log('mpActs', acts.length, JSON.stringify(acts.slice(0, 2)));
 } catch (e) { log('mpActs', e); }
 
-await writeFile(out, JSON.stringify({ fetchedAt: nowIso, ...sections }, null, 1) + '\n');
+// A source that failed this run keeps its previous items instead of vanishing from the feed.
+await writeFile(out, JSON.stringify({ fetchedAt: nowIso, ...keepPrevious(sections, previous) }, null, 1) + '\n');
