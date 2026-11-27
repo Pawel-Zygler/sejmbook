@@ -63,9 +63,12 @@ export function withSeenAt(items, previous, nowIso) {
   const prev = new Map((previous ?? []).map((x) => [x.url, x.seenAt]));
   return items.map((it) => {
     let seen = prev.get(it.url) ?? nowIso;
-    const endOfDay = it.date ? `${it.date}T23:59:59.000Z` : null;
+    // A date after the day we first saw the item is a typo at the source (gov.pl printed 2027-11-27 on 2026-11-27):
+    // use the day we saw it instead, so the feed stays in order.
+    const date = it.date && it.date > seen.slice(0, 10) ? seen.slice(0, 10) : it.date;
+    const endOfDay = date ? `${date}T23:59:59.000Z` : null;
     if (endOfDay && endOfDay < seen) seen = endOfDay;
-    return { ...it, seenAt: seen };
+    return { ...it, ...(date !== it.date ? { date } : {}), seenAt: seen };
   });
 }
 
