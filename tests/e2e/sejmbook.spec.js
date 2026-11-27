@@ -704,7 +704,7 @@ for (const skin of ['classic', 'modern']) {
     await expect(card.getByTestId('latin-pillar-1').locator('.latin-law').first()).toBeVisible();
     const box = await card.boundingBox();
     expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
-    await page.goto(`${PAGE}#posel-32`);
+    await page.goto(`${PAGE}#posel-2`); // KO: not in the pilot yet
     await expect(page.getByTestId('profile-taxes')).toBeVisible();
     await expect(page.getByTestId('profile-latin')).toHaveCount(0);
   });

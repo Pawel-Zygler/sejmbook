@@ -13,12 +13,12 @@ const DIR_LABEL = { zgodna: 'zgodna', niezgodna: 'niezgodna', sporna: 'sporna, n
 const SOURCE_LABEL = { manual: '', tax: 'z karty podatkowej', dereg: 'automatycznie: deregulacja' };
 
 /**
- * MPs who see the card for now. Pawel, 2026-11-27: first one MP, then all MPs, then state officials.
- * null = every MP.
+ * Clubs whose MPs see the card for now. Pawel, 2026-11-27: first Krzysztof Bosak, then "posłowie Lewicy i cała
+ * Konfederacja" (also the Korona circle), later all MPs, then state officials. null = every MP.
  */
-export const LATIN_PILOT_IDS = [33];
+export const LATIN_PILOT_CLUBS = ['Lewica', 'Konfederacja', 'Konfederacja_KP'];
 
-export const latinVisibleFor = (mpId, pilot = LATIN_PILOT_IDS) => pilot == null || pilot.includes(mpId);
+export const latinVisibleFor = (mp, pilot = LATIN_PILOT_CLUBS) => pilot == null || pilot.includes(mp?.club);
 
 function scoreBar(score) {
   if (score == null) return '';
@@ -63,9 +63,9 @@ function personPillar(def, p, tip) {
 }
 
 /** Experimental profile card: how the MP's votes fit four Koneczny pillars, 0–100, with every law listed. */
-export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_IDS } = {}) {
+export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS } = {}) {
   const data = ctx.latin;
-  if (!data?.laws?.length || !latinVisibleFor(mp.id, pilot)) return '';
+  if (!data?.laws?.length || !latinVisibleFor(mp, pilot)) return '';
   const days = ctx.kpi?.mps?.[mp.id]?.days;
   const r = mpLatin(data, ctx.laws, mp.id, { attendancePct: days && days[1] ? (100 * days[0]) / days[1] : null });
   if (!r) return '';

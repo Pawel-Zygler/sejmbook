@@ -1045,10 +1045,18 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     for (const li of items.slice(0, 20)) expect(['zgodna', 'niezgodna', 'sporna']).toContain(li.dataset.direction);
   });
 
-  it('is not shown on other profiles yet', () => {
-    nav('#posel-32');
-    expect($('[data-testid="profile-taxes"]')).not.toBeNull();
-    expect($('[data-testid="profile-latin"]')).toBeNull();
+  it('shows for every MP of Lewica and of the whole Konfederacja, and not for other clubs yet', () => {
+    for (const club of ['Lewica', 'Konfederacja', 'Konfederacja_KP']) {
+      const mp = mpsData.mps.find((m) => m.active && m.club === club);
+      nav(`#posel-${mp.id}`);
+      expect($('[data-testid="profile-latin"]'), club).not.toBeNull();
+    }
+    for (const club of ['KO', 'PiS']) {
+      const mp = mpsData.mps.find((m) => m.active && m.club === club);
+      nav(`#posel-${mp.id}`);
+      expect($('[data-testid="profile-taxes"]')).not.toBeNull();
+      expect($('[data-testid="profile-latin"]'), club).toBeNull();
+    }
   });
 
   it('stays after switching to the modern look', () => {

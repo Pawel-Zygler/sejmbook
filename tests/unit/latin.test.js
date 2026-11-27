@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS } from '../../src/lib/latin.js';
-import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_IDS } from '../../src/ui/latin-view.js';
+import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS } from '../../src/ui/latin-view.js';
 import cls from '../../data/latin-classification.json';
 import latinData from '../../data/latin.json';
 import lawData from '../../data/law-votes.json';
@@ -88,7 +88,7 @@ describe('mpLatin', () => {
 
 describe('renderProfileLatin', () => {
   const ctx = { latin: latinData, laws: lawData, kpi: { mps: { 33: { days: [90, 100] } } } };
-  const html = renderProfileLatin(ctx, { id: 33 }, { infoTip: (t, h, l) => `<i data-tip="${l}">${t.length}</i>` });
+  const html = renderProfileLatin(ctx, { id: 33, club: 'Konfederacja' }, { infoTip: (t, h, l) => `<i data-tip="${l}">${t.length}</i>` });
   it('is marked experimental, with a ribbon, a disclaimer and four pillars', () => {
     expect(html).toContain('data-experimental="true"');
     expect(html).toContain('data-testid="latin-experimental"');
@@ -100,13 +100,15 @@ describe('renderProfileLatin', () => {
   it('never names another civilisation', () => {
     expect(html.toLowerCase()).not.toMatch(/żydowsk|bizantyjsk|bramińsk|turańsk|arabsk/);
   });
-  it('shows only for pilot MPs (first Krzysztof Bosak)', () => {
-    expect(LATIN_PILOT_IDS).toEqual([33]);
-    expect(renderProfileLatin(ctx, { id: 32 })).toBe('');
-    expect(latinVisibleFor(32, null)).toBe(true);
-    expect(renderProfileLatin(ctx, { id: 32 }, { pilot: null })).toContain('profile-latin');
+  it('shows only for pilot clubs: Lewica and the whole Konfederacja (club and Korona circle)', () => {
+    expect(LATIN_PILOT_CLUBS).toEqual(['Lewica', 'Konfederacja', 'Konfederacja_KP']);
+    expect(renderProfileLatin(ctx, { id: 2, club: 'KO' })).toBe('');
+    expect(latinVisibleFor({ club: 'Lewica' })).toBe(true);
+    expect(latinVisibleFor({ club: 'PiS' })).toBe(false);
+    expect(latinVisibleFor({ club: 'PiS' }, null)).toBe(true);
+    expect(renderProfileLatin(ctx, { id: 2, club: 'KO' }, { pilot: null })).toContain('profile-latin');
   });
-  it('renders nothing without data', () => expect(renderProfileLatin({ latin: null }, { id: 33 })).toBe(''));
+  it('renders nothing without data', () => expect(renderProfileLatin({ latin: null }, { id: 33, club: 'Konfederacja' })).toBe(''));
 });
 
 describe('data contract: Latin civilisation card', () => {

@@ -4,7 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
-- **Profile: Zgodność z cywilizacją łacińską (eksperyment).** Eksperymentalna karta na profilu Krzysztofa Bosaka ocenia głosowania według czterech zasad Konecznego, w skali 0–100.
+- **Profile: Zgodność z cywilizacją łacińską (eksperyment).** Eksperymentalna karta na profilach posłów Lewicy i Konfederacji ocenia głosowania według czterech zasad Konecznego, w skali 0–100.
 - **Profile: Bez karty aktywności.** Z profilu posła zniknęła karta „Aktywność i skuteczność”.
 - **Posłowie: Praca zawodowa.** Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.
 - **Profile: Aktywność i skuteczność posła.** Na profilu posła nowa karta: obecność, wystąpienia, interpelacje i skuteczność ustawodawcza na tle całego Sejmu.
