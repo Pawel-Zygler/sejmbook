@@ -1,60 +1,5 @@
 {
- "fetchedAt": "2026-11-27T21:55:38.616Z",
- "president": {
-  "who": "Karol Nawrocki",
-  "role": "Prezydent RP",
-  "source": "https://www.prezydent.pl/aktualnosci",
-  "items": [
-   {
-    "title": "List na uroczystości barbórkowe w Instytucie Techniki Górniczej KOMAG w Gliwicach",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-uroczystosci-barborkowe-w-instytucie-techniki-gorniczej-komag-w-gliwicach,130796",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Prezydent RP odwiedził kopalnię odkrywkową Sierra Gorda",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-odwiedzil-kopalnie-odkrywkowa-sierra-gorda,130921",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Decyzje Prezydenta RP w sprawie pięciu ustaw",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/prawo/ustawy-zawetowane/decyzje-prezydenta-rp-w-sprawie-ustaw,130915",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Spotkanie z uczniami szkół polskich z Chicago",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/spotkanie-z-uczniami-szkol-polskich-z-chicago,130940",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "List na centralne obchody barbórkowe KGHM Polska Miedź w Głogowie",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-centralne-obchody-barborkowe-kghm-polska-miedz-w-glogowie,130897",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "List na ceremonię pogrzebową szczątków żołnierzy WP poległych w obronie Ojczyzny w 1939 r.",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-ceremonie-pogrzebowa-szczatkow-zolnierzy-wojska-polskiego-poleglych-w-obronie-ojczyzny-w-1939-roku,130804",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Prezydent: Chcemy budować bliższe relacje z Ameryką Łacińską i Karaibami [PL/EN]",
-    "date": "2026-11-26",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/wyklad-w-siedzibie-komisji-gospodarczej-onz-ds-ameryki-lacinskiej-i-karaibow,130877",
-    "seenAt": "2026-11-26T23:51:23.505Z"
-   },
-   {
-    "title": "Rozmowy Prezydentów Polski i Chile",
-    "date": "2026-11-26",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/rozmowy-prezydentow-polski-i-chile,130840",
-    "seenAt": "2026-11-26T23:51:23.505Z"
-   }
-  ]
- },
+ "fetchedAt": "2026-11-27T23:00:28.791Z",
  "pm": {
   "who": "Donald Tusk",
   "role": "Prezes Rady Ministrów",
@@ -4079,6 +4024,61 @@
     ],
     "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4262",
     "seenAt": "2026-11-25T23:59:59.000Z"
+   }
+  ]
+ },
+ "president": {
+  "who": "Karol Nawrocki",
+  "role": "Prezydent RP",
+  "source": "https://www.prezydent.pl/aktualnosci",
+  "items": [
+   {
+    "title": "List na uroczystości barbórkowe w Instytucie Techniki Górniczej KOMAG w Gliwicach",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-uroczystosci-barborkowe-w-instytucie-techniki-gorniczej-komag-w-gliwicach,130796",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Prezydent RP odwiedził kopalnię odkrywkową Sierra Gorda",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-odwiedzil-kopalnie-odkrywkowa-sierra-gorda,130921",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Decyzje Prezydenta RP w sprawie pięciu ustaw",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/prawo/ustawy-zawetowane/decyzje-prezydenta-rp-w-sprawie-ustaw,130915",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Spotkanie z uczniami szkół polskich z Chicago",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/spotkanie-z-uczniami-szkol-polskich-z-chicago,130940",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "List na centralne obchody barbórkowe KGHM Polska Miedź w Głogowie",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-centralne-obchody-barborkowe-kghm-polska-miedz-w-glogowie,130897",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "List na ceremonię pogrzebową szczątków żołnierzy WP poległych w obronie Ojczyzny w 1939 r.",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-ceremonie-pogrzebowa-szczatkow-zolnierzy-wojska-polskiego-poleglych-w-obronie-ojczyzny-w-1939-roku,130804",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Prezydent: Chcemy budować bliższe relacje z Ameryką Łacińską i Karaibami [PL/EN]",
+    "date": "2026-11-26",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/wyklad-w-siedzibie-komisji-gospodarczej-onz-ds-ameryki-lacinskiej-i-karaibow,130877",
+    "seenAt": "2026-11-26T23:51:23.505Z"
+   },
+   {
+    "title": "Rozmowy Prezydentów Polski i Chile",
+    "date": "2026-11-26",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/rozmowy-prezydentow-polski-i-chile,130840",
+    "seenAt": "2026-11-26T23:51:23.505Z"
    }
   ]
  }
