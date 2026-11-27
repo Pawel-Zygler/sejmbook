@@ -7,6 +7,8 @@ import lawData from '../../data/law-votes.json';
 import taxData from '../../data/tax-votes.json';
 import descriptions from '../../data/raw/law-descriptions.json';
 import mpsData from '../../data/mps.json';
+import sovCls from '../../data/sovereignty-classification.json';
+import { buildSovLaws, mpSov, SOV_POINTS, SOV_DIRECTIONS } from '../../src/lib/sovereignty.js';
 
 // Tiny fixture: MPs 1, 2 (club A), 3 (club B); four laws.
 const lawVotes = {
@@ -166,8 +168,8 @@ describe('ranking: bands, sorting, clubs', () => {
   });
   it('club averages, best first', () => {
     expect(clubLatin(results)).toEqual([
-      { club: 'A', n: 2, total: 77, p1: 70, p2: 83, p3: 100, p4: 70 },
-      { club: 'B', n: 3, total: 37, p1: 32, p2: 38, p3: 35, p4: 42 },
+      { club: 'A', n: 2, total: 77, p1: 70, p2: 83, p3: 100, p4: 70, sov: null },
+      { club: 'B', n: 3, total: 37, p1: 32, p2: 38, p3: 35, p4: 42, sov: null },
     ]);
   });
 });
@@ -228,5 +230,45 @@ describe('distribution chart', () => {
     expect(p1).toContain('Rozkład: Etyka');
     expect(p1).toContain('2 posłowie, oś');
     expect(latinDistChart([])).toBe('');
+  });
+});
+
+// Pawel, 2026-11-27: separate indicator — deepens EU / external powers or keeps them in Poland.
+describe('Suwerenność kompetencji', () => {
+  const lv = { mps: [1, 2, 3], laws: [
+    { process: 'a', title: 'o zmianie ustawy o wodzie', date: '2025-01-02', votingNumber: 1, v: 'YN-' },
+    { process: 'b', title: 'o ratyfikacji Umowy z Peru', date: '2025-01-03', votingNumber: 1, v: 'YYY' },
+    { process: 'c', title: 'o wypowiedzeniu konwencji', date: '2025-01-04', votingNumber: 1, v: 'YNA' },
+    { process: 'd', title: 'o KRS', date: '2025-01-05', votingNumber: 1, v: 'YNY' },
+    { process: 'e', title: 'o prezydencji', date: '2025-01-06', votingNumber: 1, v: 'YNY' },
+  ] };
+  const descs = { laws: { a: { description: 'projekt dotyczy wdrożenia dyrektywy (UE) 2020/2184' }, b: { description: 'wdrożenie dyrektywy UE' }, e: { description: 'wdrożenia rozwiązań UE' } } };
+  const cls = { implementationPattern: sovCls.implementationPattern, euPattern: sovCls.euPattern, laws: [
+    { process: 'c', direction: 'zatrzymuje', reason: 'r' }, { process: 'd', direction: 'sporna', reason: 'r' }, { process: 'e', direction: 'pomijana', reason: 'r' }] };
+  it('auto: laws implementing EU law give powers away; ratifications and "pomijana" are left out; hand list wins', () => {
+    const laws = buildSovLaws(cls, lv, descs);
+    expect(laws.map((l) => [l.process, l.direction, l.source])).toEqual([['d', 'sporna', 'manual'], ['c', 'zatrzymuje', 'manual'], ['a', 'oddaje', 'auto']]);
+    expect(() => buildSovLaws({ laws: [{ process: 'a', direction: 'x' }] }, lv, {})).toThrow(RangeError);
+  });
+  it('scores: against giving away = 1, for = 0, abstain 0.5; absences and contested laws skipped', () => {
+    const sov = { laws: buildSovLaws(cls, lv, descs) };
+    expect(mpSov(sov, lv, 1)).toMatchObject({ score: 50, voted: 2, contested: 1 });
+    expect(mpSov(sov, lv, 2)).toMatchObject({ score: 50, voted: 2 });
+    expect(mpSov(sov, lv, 3)).toMatchObject({ score: 50, voted: 1, absent: 1 });
+    expect(SOV_POINTS.N.oddaje).toBe(1);
+    expect(mpSov(null, lv, 1)).toBeNull();
+  });
+  it('data: shipped in latin.json, every hand entry has a known direction, KRS laws are contested', () => {
+    expect(latinData.sovereignty.laws.length).toBeGreaterThan(40);
+    for (const l of sovCls.laws) expect(SOV_DIRECTIONS).toContain(l.direction);
+    expect(latinData.sovereignty.laws.find((l) => l.process === '906').direction).toBe('oddaje');
+    expect(latinData.sovereignty.laws.find((l) => l.process === '219').direction).toBe('sporna');
+    expect(latinData.sovereignty.laws.some((l) => l.process === '347')).toBe(false);
+    expect(latinData.sovereignty.laws.some((l) => /^o ratyfikacji Umowy między Rzecząpospolitą Polską a Republiką/.test(l.title))).toBe(false);
+  });
+  it('is a separate sort key and column; not part of the total', () => {
+    const r = { total: 70, pillars: [], sov: { score: 12 } };
+    expect(sortValue(r, 'sov')).toBe(12);
+    expect(sortValue({ total: 1, pillars: [] }, 'sov')).toBeNull();
   });
 });

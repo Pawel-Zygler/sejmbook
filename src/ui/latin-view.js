@@ -2,6 +2,7 @@ import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sort
 import { hrefFor } from '../lib/router.js';
 import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
 import { formatPct } from '../lib/kpi.js';
+import { mpSov } from '../lib/sovereignty.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const plural = (n, one, few, many) => {
@@ -10,8 +11,8 @@ const plural = (n, one, few, many) => {
   return d >= 2 && d <= 4 && (h < 12 || h > 14) ? few : many;
 };
 const lawsWord = (n) => `${n} ${plural(n, 'ustawa', 'ustawy', 'ustaw')}`;
-const DIR_LABEL = { zgodna: 'zgodna', niezgodna: 'niezgodna', sporna: 'sporna, nieliczona' };
-const SOURCE_LABEL = { manual: '', tax: 'z karty podatkowej', dereg: 'automatycznie: deregulacja' };
+const DIR_LABEL = { zgodna: 'zgodna', niezgodna: 'niezgodna', sporna: 'sporna, nieliczona', oddaje: 'oddaje kompetencje', zatrzymuje: 'zatrzymuje w Polsce' };
+const SOURCE_LABEL = { manual: '', tax: 'z karty podatkowej', dereg: 'automatycznie: deregulacja', auto: 'automatycznie' };
 
 /**
  * Clubs whose MPs see the card. Pawel, 2026-11-27: first Krzysztof Bosak, then Lewica and the whole Konfederacja,
@@ -27,7 +28,11 @@ export function attendancePctFor(ctx, mpId) {
   return days && days[1] ? (100 * days[0]) / days[1] : null;
 }
 
-export const latinFor = (ctx, mpId) => (ctx.latin?.laws?.length ? mpLatin(ctx.latin, ctx.laws, mpId, { attendancePct: attendancePctFor(ctx, mpId) }) : null);
+export function latinFor(ctx, mpId) {
+  if (!ctx.latin?.laws?.length) return null;
+  const r = mpLatin(ctx.latin, ctx.laws, mpId, { attendancePct: attendancePctFor(ctx, mpId) });
+  return r && { ...r, sov: mpSov(ctx.latin.sovereignty, ctx.laws, mpId) };
+}
 
 /** Results of every active MP, computed once per context: [{ mp, r }]. */
 const resultsCache = new WeakMap();
@@ -82,6 +87,20 @@ function personPillar(def, p, tip) {
   </section>`;
 }
 
+/** Separate indicator inside the card: EU and external bodies vs Poland. Not part of the total. */
+function sovSection(def, s, tip) {
+  if (!def || !s) return '';
+  const sum = s.voted
+    ? `${s.score}/100 z ${s.voted} ${plural(s.voted, 'głosu', 'głosów', 'głosów')}${s.absent ? `, ${s.absent} ${plural(s.absent, 'nieobecność', 'nieobecności', 'nieobecności')}` : ''}${s.contested ? `, ${s.contested} spornych` : ''}`
+    : 'brak głosów w tych ustawach';
+  return `<section class="latin-sov" data-testid="latin-sov">
+    <h3><span>${esc(def.title)} <em class="muted">· osobny wskaźnik</em> ${tip(`${def.question} ${def.scoring} ${def.disclaimer}`, 'https://api.sejm.gov.pl/sejm/term10/processes', 'Suwerenność: jak liczymy')}</span><b class="latin-pillar-score" data-testid="latin-sov-score">${s.score ?? '–'}</b></h3>
+    ${scoreBar(s.score)}
+    <p class="latin-sum">${esc(sum)}. 100 = kompetencje zostają w Polsce, 0 = przechodzą do UE lub organów zewnętrznych.</p>
+    ${s.items.length ? `<details class="tax-list"><summary>Pokaż ${lawsWord(s.items.length)}</summary><ol>${s.items.map(lawItem).join('')}</ol></details>` : ''}
+  </section>`;
+}
+
 /** Experimental profile card: how the MP's votes fit four Koneczny pillars, 0–100, with every law listed. */
 export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS } = {}) {
   const data = ctx.latin;
@@ -103,12 +122,13 @@ export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS
       <span class="latin-level latin-level-${r.level.id}" data-testid="latin-level">${esc(r.level.label)}</span>
     </div>
     ${pillars.join('')}
+    ${sovSection(data.sovereignty, r.sov, tip)}
     <p class="latin-note" data-testid="latin-disclaimer">${esc(data.disclaimer)}</p>
   </article>`;
 }
 
-const SORT_LABEL = { total: 'Wynik', p1: '1. Etyka nad państwem', p2: '2. Własność', p3: '3. Rodzina', p4: '4. Personalizm' };
-const COL_LABEL = { p1: 'Etyka', p2: 'Własność', p3: 'Rodzina', p4: 'Person.' };
+const SORT_LABEL = { total: 'Wynik', p1: '1. Etyka nad państwem', p2: '2. Własność', p3: '3. Rodzina', p4: '4. Personalizm', sov: 'Suwerenność (osobno)' };
+const COL_LABEL = { p1: 'Etyka', p2: 'Własność', p3: 'Rodzina', p4: 'Person.', sov: 'Suwer.' };
 
 /** Score with its band colour: "82" in a pill, and a thin bar under it. */
 export function latinScore(score) {
@@ -170,7 +190,7 @@ export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch
       <span class="latin-ribbon latin-ribbon-inline" data-testid="latin-experimental">Eksperymentalne</span>
       <p class="eyebrow">Ranking</p>
       <h1>Cywilizacja łacińska ${data ? infoTip(`${data.disclaimer} ${data.scoring}`, 'https://api.sejm.gov.pl/sejm/term10/votings', 'Jak liczymy') : ''}</h1>
-      <p class="lede">Jak głosowania posłów X kadencji wypadają według czterech zasad Feliksa Konecznego: etyka nad państwem, własność i swoboda umów, rodzina i wychowanie, personalizm. Skala 0–100.</p>
+      <p class="lede">Jak głosowania posłów X kadencji wypadają według czterech zasad Feliksa Konecznego: etyka nad państwem, własność i swoboda umów, rodzina i wychowanie, personalizm. Skala 0–100. Osobno: suwerenność kompetencji, czyli czy poseł głosuje za przenoszeniem kompetencji do UE i organów zewnętrznych, czy za zatrzymaniem ich w Polsce.</p>
     </div>${body}</section>`;
   const all = latinResults(ctx);
   if (!all.length) return head('<div class="panel"><p>Wyniki nie są jeszcze dostępne.</p></div>');
@@ -183,13 +203,14 @@ export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch
   </div>`;
   const stats = `<div class="stats">
       <div class="stat"><span>Średni wynik posła</span><b data-testid="latin-avg">${avg}</b></div>
+      ${data.sovereignty ? `<div class="stat"><span>Średnia suwerenność (osobno)</span><b data-testid="latin-sov-avg">${(() => { const v = all.map((x) => x.r.sov?.score).filter((x) => x != null); return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : '–'; })()}</b></div>` : ''}
       <div class="stat"><span>Ustaw w ocenie</span><b>${data.laws.filter((l) => l.direction !== 'sporna').length}</b></div>
     </div>`;
   if (state.view === 'clubs') {
     const cl = clubLatin(all);
     return head(`${stats}${tabs}<div class="panel"><div class="table-wrap"><table class="rank latin-rank" data-testid="latin-clubs">
-      <thead><tr><th scope="col">#</th><th scope="col">Klub</th><th scope="col" class="num">Wynik</th>${Object.values(COL_LABEL).map((l) => `<th scope="col" class="num">${l}</th>`).join('')}<th scope="col" class="num">Posłów</th></tr></thead>
-      <tbody>${cl.map((c, i) => `<tr data-club="${esc(c.club)}"><td class="pos">${i + 1}</td><td><button type="button" class="linklike" data-action="latin-club" data-club="${esc(c.club)}" data-view="mps">${clubChip(ctx, c.club)}</button></td><td class="num">${latinScore(c.total)}</td>${['p1', 'p2', 'p3', 'p4'].map((k) => `<td class="num">${c[k] ?? '–'}</td>`).join('')}<td class="num">${c.n}</td></tr>`).join('')}</tbody>
+      <thead><tr><th scope="col">#</th><th scope="col">Klub</th><th scope="col" class="num">Wynik</th>${Object.entries(COL_LABEL).map(([k, l]) => `<th scope="col" class="num${k === 'sov' ? ' latin-sov-col' : ''}">${l}</th>`).join('')}<th scope="col" class="num">Posłów</th></tr></thead>
+      <tbody>${cl.map((c, i) => `<tr data-club="${esc(c.club)}"><td class="pos">${i + 1}</td><td><button type="button" class="linklike" data-action="latin-club" data-club="${esc(c.club)}" data-view="mps">${clubChip(ctx, c.club)}</button></td><td class="num">${latinScore(c.total)}</td>${['p1', 'p2', 'p3', 'p4', 'sov'].map((k) => `<td class="num${k === 'sov' ? ' latin-sov-col' : ''}">${c[k] ?? '–'}</td>`).join('')}<td class="num">${c.n}</td></tr>`).join('')}</tbody>
     </table></div><p class="src">Średnia klubu to średnia wyników jego obecnych posłów. Kliknij klub, żeby zobaczyć jego posłów.</p></div>`);
   }
   const clubName = (c) => esc(ctx.clubs.get(c)?.short ?? c);
@@ -214,13 +235,14 @@ export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch
       </div>
       <div class="table-wrap">
         <table class="rank latin-rank" data-testid="latin-ranking">
-          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Wynik</th>${Object.entries(COL_LABEL).map(([k, l]) => `<th scope="col" class="num${state.sortBy === k ? ' sorted' : ''}">${l}</th>`).join('')}</tr></thead>
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Wynik</th>${Object.entries(COL_LABEL).map(([k, l]) => `<th scope="col" class="num${state.sortBy === k ? ' sorted' : ''}${k === 'sov' ? ' latin-sov-col' : ''}"${k === 'sov' ? ' title="Suwerenność kompetencji: osobny wskaźnik, nie wchodzi do wyniku"' : ''}>${l}</th>`).join('')}</tr></thead>
           <tbody>
             ${rows.map((x) => `<tr data-mp-id="${x.mp.id}" data-band="${bandOf(x.r.total)}">
               <td class="pos">${x.rank}</td>
               <td><a class="rank-mp" href="${hrefFor({ name: 'profile', id: x.mp.id })}">${avatar(ctx, x.mp, 'sm')}<span>${esc(x.mp.name)}</span></a> ${clubChip(ctx, x.mp.club, x.mp)}</td>
               <td class="num" data-testid="latin-row-total">${latinScore(x.r.total)}</td>
               ${[1, 2, 3, 4].map((id) => `<td class="num">${x.r.pillars.find((p) => p.id === id)?.score ?? '–'}</td>`).join('')}
+              <td class="num latin-sov-col" data-testid="latin-row-sov">${x.r.sov?.score ?? '–'}</td>
             </tr>`).join('')}
           </tbody>
         </table>

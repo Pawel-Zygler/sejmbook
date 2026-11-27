@@ -5,17 +5,21 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { buildLatinLaws, clubIndependence } from '../src/lib/latin.js';
+import { buildSovLaws } from '../src/lib/sovereignty.js';
 
 const root = new URL('..', import.meta.url);
 const read = async (rel) => (existsSync(new URL(rel, root)) ? JSON.parse(await readFile(new URL(rel, root), 'utf8')) : null);
 
 export async function buildLatin() {
-  const [cls, lawVotes, taxVotes, descriptions, mps] = await Promise.all(['data/latin-classification.json', 'data/law-votes.json', 'data/tax-votes.json', 'data/raw/law-descriptions.json', 'data/mps.json'].map(read));
+  const [cls, lawVotes, taxVotes, descriptions, mps, sovCls] = await Promise.all(['data/latin-classification.json', 'data/law-votes.json', 'data/tax-votes.json', 'data/raw/law-descriptions.json', 'data/mps.json', 'data/sovereignty-classification.json'].map(read));
   const laws = buildLatinLaws(cls, lawVotes, taxVotes, descriptions);
   const independence = {};
   for (const [id, s] of Object.entries(clubIndependence(lawVotes, mps.mps))) independence[id] = { diff: s.diff, n: s.n, pct: +s.pct.toFixed(2), percentile: +s.percentile.toFixed(1) };
   const { laws: _drop, deregulationPattern, ...meta } = cls;
-  const out = { ...meta, fetchedAt: lawVotes.fetchedAt, laws, independence };
+  // Separate indicator "Suwerenność kompetencji" (Pawel, 2026-11-27), shipped in the same file.
+  const { laws: _s, implementationPattern, euPattern, ...sovMeta } = sovCls ?? {};
+  const sovereignty = sovCls ? { ...sovMeta, laws: buildSovLaws(sovCls, lawVotes, descriptions) } : null;
+  const out = { ...meta, fetchedAt: lawVotes.fetchedAt, laws, independence, sovereignty };
   await writeFile(new URL('data/latin.json', root), JSON.stringify(out) + '\n');
   return out;
 }
@@ -23,5 +27,5 @@ export async function buildLatin() {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const out = await buildLatin();
   const by = (k) => out.laws.reduce((a, l) => ((a[l[k]] = (a[l[k]] ?? 0) + 1), a), {});
-  console.log(`${out.laws.length} laws`, by('pillar'), by('direction'), by('source'), `${Object.keys(out.independence).length} MPs with independence`);
+  console.log(`${out.laws.length} laws`, by('pillar'), by('direction'), by('source'), `${Object.keys(out.independence).length} MPs with independence`, 'sovereignty', out.sovereignty?.laws.length, out.sovereignty?.laws.reduce((a, l) => ((a[l.direction] = (a[l.direction] ?? 0) + 1), a), {}));
 }

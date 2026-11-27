@@ -139,11 +139,12 @@ export const RANK_BANDS = [
   { id: '0', min: 0, label: 'poniżej 40' },
 ];
 export const bandOf = (score) => (score == null ? null : RANK_BANDS.find((b) => score >= b.min).id);
-export const LATIN_SORTS = ['total', 'p1', 'p2', 'p3', 'p4'];
+export const LATIN_SORTS = ['total', 'p1', 'p2', 'p3', 'p4', 'sov'];
 
-/** Score of one result for a sort key: 'total' or 'p1'..'p4'. */
+/** Score of one result for a sort key: 'total', 'p1'..'p4' or 'sov' (separate indicator "Suwerenność kompetencji"). */
 export function sortValue(r, key) {
   if (key === 'total') return r.total;
+  if (key === 'sov') return r.sov?.score ?? null;
   const id = Number(String(key).slice(1));
   return r.pillars.find((p) => p.id === id)?.score ?? null;
 }
@@ -180,7 +181,7 @@ export function clubLatin(results) {
   }
   const avg = (arr) => (arr.length ? Math.round(arr.reduce((s, v) => s + v, 0) / arr.length) : null);
   return [...by]
-    .map(([club, rs]) => ({ club, n: rs.length, total: avg(rs.map((r) => r.total)), ...Object.fromEntries([1, 2, 3, 4].map((id) => [`p${id}`, avg(rs.map((r) => sortValue(r, `p${id}`)).filter((v) => v != null))])) }))
+    .map(([club, rs]) => ({ club, n: rs.length, total: avg(rs.map((r) => r.total)), ...Object.fromEntries(['p1', 'p2', 'p3', 'p4', 'sov'].map((k) => [k, avg(rs.map((r) => sortValue(r, k)).filter((v) => v != null))])) }))
     .sort((a, b) => b.total - a.total || a.club.localeCompare(b.club));
 }
 

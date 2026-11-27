@@ -758,9 +758,9 @@ h2 { font-size: 1.1rem; }
 .latin-level-mid { background: var(--lab-mid); }
 .latin-level-low { background: var(--lab-low); }
 :root:not([data-theme="light"]) .latin-level { color: var(--lab-ink); }
-.latin-pillar { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
-.latin-pillar h3 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
-.latin-pillar h3 > span { flex: 1 1 auto; min-width: 0; }
+.latin-pillar, .latin-sov { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
+.latin-pillar h3, .latin-sov h3 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+.latin-pillar h3 > span, .latin-sov h3 > span { flex: 1 1 auto; min-width: 0; }
 .latin-pillar-score { font-size: 1.1rem; color: var(--lab); }
 .latin-bar { height: 8px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
 .latin-bar i { display: block; height: 100%; background: var(--lab); border-radius: 99px; }
@@ -819,3 +819,9 @@ h2 { font-size: 1.1rem; }
 .lh-key i { display: inline-block; width: 12px; height: 10px; margin-right: 6px; vertical-align: -1px; }
 .lh-key-mid { background: var(--lab-soft); border: 1px dashed var(--lab); }
 .lh-key-med { width: 0 !important; height: 12px !important; border-left: 2px solid var(--ink); }
+
+/* Separate indicator "Suwerenność kompetencji": dashed top line on the card, a divider before its column in tables */
+.latin-sov { border-top-style: dashed; margin-top: 4px; }
+.latin-sov h3 em { font-style: normal; font-weight: 500; }
+.latin-dir-oddaje { color: var(--lab-low); } .latin-dir-zatrzymuje { color: var(--lab-hi); }
+.latin-rank .latin-sov-col { border-left: 1px dashed var(--line); }
