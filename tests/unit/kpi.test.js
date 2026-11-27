@@ -103,3 +103,31 @@ describe('formatting', () => {
     expect(formatPct(null)).toBe('–');
   });
 });
+
+import { renderProfileKpi, compareBars } from '../../src/ui/kpi-view.js';
+
+describe('KPI card view', () => {
+  const tip = (text, href, label) => `<span data-testid="info-tip" aria-label="${label}">${text}</span>`;
+  it('renders four tiles, each with an info button, and the signed bills', () => {
+    const html = renderProfileKpi({ kpi: { ...DATA, fetchedAt: '2026-11-27' } }, { id: 7 }, { infoTip: tip });
+    expect(html.match(/class="kpi-tile"/g)).toHaveLength(4);
+    expect(html.match(/aria-label="Jak liczymy"/g)).toHaveLength(4);
+    expect(html).toContain('2,1× średnia');
+    expect(html).toContain('powyżej średniej');
+    expect(html).toContain('Sejm uchwalił 1 z 2 podpisanych projektów');
+    expect(html).toContain('PrzebiegProc.xsp?nr=2');
+    expect(html).toContain('5 nieobecności usprawiedliwionych');
+    expect(html).toContain('stan na 2026-11-27');
+  });
+  it('handles an MP without bills or activity, and missing data', () => {
+    const html = renderProfileKpi({ kpi: DATA }, { id: 8 });
+    expect(html).toContain('nie podpisał(a) żadnego poselskiego projektu ustawy');
+    expect(html).not.toContain('class="tax-list kpi-bills"');
+    expect(renderProfileKpi({ kpi: null }, { id: 7 })).toBe('');
+  });
+  it('draws bars on one scale', () => {
+    expect(compareBars(50, 100, { valueLabel: '50', benchLabel: '100' })).toContain('width:50.0%');
+    expect(compareBars(90, 80, { rate: true })).toContain('width:90.0%');
+    expect(compareBars(null, 1)).toBe('');
+  });
+});
