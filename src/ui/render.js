@@ -381,7 +381,7 @@ export function renderHome(ctx, feedState = {}) {
   <section class="feed" data-view="home">
     <!-- Seats of the Sejm first, above the feed (Pawel, 2026-11-26: "daj to na front"). -->
     <article class="post seat-post" data-testid="seat-post">
-      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja · dane z API Sejmu, ${esc(ctx.fetchedAt)}</small></div></header>
+      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja ${infoTip(`Dane z API Sejmu, stan na ${ctx.fetchedAt}.`, 'https://api.sejm.gov.pl/sejm/term10/MP')}</small></div></header>
       <p class="post-text"><b>${active}</b> aktywnych mandatów w ${counts.length} klubach i kołach. Kliknij klub, żeby zobaczyć jego posłów.</p>
       <div class="seat-bar" role="img" aria-label="Podział mandatów między kluby">${bar}</div>
       <ul class="club-legend">
