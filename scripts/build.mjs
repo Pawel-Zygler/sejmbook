@@ -6,12 +6,15 @@ import { existsSync } from 'node:fs';
 import { SHELL_HTML } from '../src/ui/shell.js';
 import { changelogMarkdown } from '../src/lib/changelog.js';
 import { buildLatin } from './build-latin.mjs';
+import { buildDeclarations } from './build-declarations.mjs';
 
 const root = new URL('..', import.meta.url);
 const p = (rel) => new URL(rel, root);
 
 // The experimental Koneczny card follows the latest votes and classification.
 await buildLatin();
+// "Współczynnik deklaracji": postulates of the 2023 committees vs the MPs' votes.
+await buildDeclarations();
 
 const result = await build({
   entryPoints: [p('src/main.js').pathname],

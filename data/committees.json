@@ -1,0 +1,3001 @@
+{
+ "source": "https://api.sejm.gov.pl/sejm/term10/votings",
+ "fetchedAt": "2026-11-27",
+ "note": "Klub posła w pierwszym głosowaniu nad całością ustawy, w którym brał udział (API Sejmu).",
+ "mps": {
+  "1": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "2": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "3": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "4": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "5": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "6": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "7": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "8": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "9": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "10": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "11": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "12": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "13": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "14": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "15": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "16": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "17": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "18": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "19": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "20": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "21": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "22": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "23": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "24": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "25": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "26": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "27": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "28": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "29": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "30": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "31": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "32": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "33": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "34": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "35": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "36": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "37": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "38": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "39": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "40": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "41": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "42": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "43": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "44": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "45": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "46": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "47": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "48": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "49": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "50": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "51": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "52": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "53": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "54": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "55": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "56": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "57": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "58": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "59": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "60": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "61": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "62": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "63": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "64": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "65": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "66": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "67": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "68": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "69": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "70": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "71": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "72": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "73": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "74": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "75": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "76": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "77": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "78": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "79": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "80": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "81": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "82": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "83": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "84": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "85": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "86": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "87": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "88": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "89": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "90": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "91": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "92": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "93": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "94": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "95": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "96": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "97": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "98": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "99": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "100": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "101": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "102": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "103": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "104": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "105": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "106": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "107": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "108": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "109": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "110": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "111": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "112": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "113": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "114": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "115": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "116": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "117": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "118": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "119": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "120": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "121": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "122": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "123": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "124": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "125": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "126": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "127": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "128": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "129": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "130": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "131": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "132": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "133": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "134": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "135": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "136": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "137": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "138": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "139": {
+   "club": "Kukiz15",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "140": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "141": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "142": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "143": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "144": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "145": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "146": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "147": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "148": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "149": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "150": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "151": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "152": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "153": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "154": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "155": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "156": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "157": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "158": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "159": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "160": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "161": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "162": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "163": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "164": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "165": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "166": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "167": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "168": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "169": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "170": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "171": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "172": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "173": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "174": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "175": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "176": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "177": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "178": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "179": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "180": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "181": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "182": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "183": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "184": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "185": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "186": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "187": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "188": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "189": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "190": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "191": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "192": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "193": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "194": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "195": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "196": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "197": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "198": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "199": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "200": {
+   "club": "Kukiz15",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "201": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "202": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "203": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "204": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "205": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "206": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "207": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "208": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "209": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "210": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "211": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "212": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "213": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "214": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "215": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "216": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "217": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "218": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "219": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "220": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "221": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "222": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "223": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "224": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "225": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "226": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "227": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "228": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "229": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "230": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "231": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "232": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "233": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "234": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "235": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "236": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "237": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "238": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "239": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "240": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "241": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "242": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "243": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "244": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "245": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "246": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "247": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "248": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "249": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "250": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "251": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "252": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "253": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "254": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "255": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "256": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "257": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "258": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "259": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "260": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "261": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "262": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "263": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "264": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "265": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "266": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "267": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "268": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "269": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "270": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "271": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "272": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "273": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "274": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "275": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "276": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "277": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "278": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "279": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "280": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "281": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "282": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "283": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "284": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "285": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "286": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "287": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "288": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "289": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "290": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "291": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "292": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "293": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "294": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "295": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "296": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "297": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "298": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "299": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "300": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "301": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "302": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "303": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "304": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "305": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "306": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "307": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "308": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "309": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "310": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "311": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "312": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "313": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "314": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "315": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "316": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "317": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "318": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "319": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "320": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "321": {
+   "club": "Kukiz15",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "322": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "323": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "324": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "325": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "326": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "327": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "328": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "329": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "330": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "331": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "332": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "333": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "334": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "335": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "336": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "337": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "338": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "339": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "340": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "341": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "342": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "343": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "344": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "345": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "346": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "347": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "348": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "349": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "350": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "351": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "352": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "353": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "354": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "355": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "356": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "357": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "358": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "359": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "360": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "361": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "362": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "363": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "364": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "365": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "366": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "367": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "368": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "369": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "370": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "371": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "372": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "373": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "374": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "375": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "376": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "377": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "378": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "379": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "380": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "381": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "382": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "383": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "384": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "385": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "386": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "387": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "388": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "389": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "390": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "391": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "392": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "393": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "394": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "395": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "396": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "397": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "398": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "399": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "400": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "401": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "402": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "403": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "404": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "405": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "406": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "407": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "408": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "409": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "410": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "411": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "412": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "413": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "414": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "415": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "416": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "417": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "418": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "419": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "420": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "421": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "422": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "423": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "424": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "425": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "426": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "427": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "428": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "429": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "430": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "431": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "432": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "433": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "434": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "435": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "436": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "437": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "438": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "439": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "440": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "441": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "442": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "443": {
+   "club": "Konfederacja",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "444": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "445": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "446": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "447": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "448": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "449": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "450": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "451": {
+   "club": "KO",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "452": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "453": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "454": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "455": {
+   "club": "Polska2050-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "456": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "457": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "458": {
+   "club": "PiS",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "459": {
+   "club": "PSL-TD",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "460": {
+   "club": "Lewica",
+   "date": "2023-11-29",
+   "sitting": 1,
+   "votingNumber": 35
+  },
+  "461": {
+   "club": "PiS",
+   "date": "2023-12-19",
+   "sitting": 1,
+   "votingNumber": 120
+  },
+  "462": {
+   "club": "KO",
+   "date": "2024-01-26",
+   "sitting": 4,
+   "votingNumber": 5
+  },
+  "463": {
+   "club": "niez.",
+   "date": "2024-03-07",
+   "sitting": 7,
+   "votingNumber": 11
+  },
+  "464": {
+   "club": "KO",
+   "date": "2024-04-26",
+   "sitting": 10,
+   "votingNumber": 8
+  },
+  "465": {
+   "club": "KO",
+   "date": "2024-05-09",
+   "sitting": 11,
+   "votingNumber": 13
+  },
+  "466": {
+   "club": "KO",
+   "date": "2024-05-09",
+   "sitting": 11,
+   "votingNumber": 13
+  },
+  "467": {
+   "club": "KO",
+   "date": "2024-05-23",
+   "sitting": 12,
+   "votingNumber": 5
+  },
+  "468": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "469": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "470": {
+   "club": "Polska2050-TD",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "471": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "472": {
+   "club": "Lewica",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "473": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "474": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "475": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "476": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "477": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "478": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "479": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "480": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "481": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "482": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "483": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "484": {
+   "club": "Lewica",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "485": {
+   "club": "Konfederacja",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "486": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "487": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "488": {
+   "club": "PiS",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "489": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "490": {
+   "club": "Konfederacja",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "491": {
+   "club": "KO",
+   "date": "2024-06-28",
+   "sitting": 14,
+   "votingNumber": 6
+  },
+  "492": {
+   "club": "PiS",
+   "date": "2024-07-24",
+   "sitting": 16,
+   "votingNumber": 6
+  },
+  "493": {
+   "club": "PSL-TD",
+   "date": "2024-07-24",
+   "sitting": 16,
+   "votingNumber": 6
+  },
+  "494": {
+   "club": "KO",
+   "date": "2024-11-06",
+   "sitting": 21,
+   "votingNumber": 12
+  },
+  "495": {
+   "club": "PiS",
+   "date": "2025-09-12",
+   "sitting": 40,
+   "votingNumber": 18
+  },
+  "496": {
+   "club": "PiS",
+   "date": "2025-09-12",
+   "sitting": 40,
+   "votingNumber": 18
+  },
+  "497": {
+   "club": "niez.",
+   "date": "2025-09-12",
+   "sitting": 40,
+   "votingNumber": 18
+  },
+  "498": {
+   "club": "PiS",
+   "date": "2025-09-12",
+   "sitting": 40,
+   "votingNumber": 18
+  },
+  "499": {
+   "club": "Lewica",
+   "date": "2026-05-15",
+   "sitting": 57,
+   "votingNumber": 45
+  }
+ }
+}

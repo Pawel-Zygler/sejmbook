@@ -65,7 +65,9 @@ export function withSeenAt(items, previous, nowIso) {
     let seen = prev.get(it.url) ?? nowIso;
     const endOfDay = it.date ? `${it.date}T23:59:59.000Z` : null;
     if (endOfDay && endOfDay < seen) seen = endOfDay;
-    return { ...it, seenAt: seen };
+    // A date after the day we first saw the item is a typo on the source page (gov.pl once showed 2027 for 2026).
+    const date = it.date && it.date > seen.slice(0, 10) ? seen.slice(0, 10) : it.date;
+    return { ...it, date, seenAt: seen };
   });
 }
 

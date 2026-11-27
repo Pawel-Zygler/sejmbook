@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-wspolczynnik-deklaracji",
+      "date": "2026-11-27",
+      "title": "Współczynnik deklaracji",
+      "section": "Profile",
+      "body": "Na profilu posła sprawdzisz, czy głosował tak, jak jego komitet obiecywał w kampanii 2023.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz przykład"
+      }
+    },
+    {
       "id": "2026-11-27-konieczny-ostrzej",
       "date": "2026-11-27",
       "title": "Ranking Konecznego: ostrzejsze zasady",
