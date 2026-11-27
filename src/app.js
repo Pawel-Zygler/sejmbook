@@ -7,6 +7,7 @@ import { mergeWikiParties } from './lib/life.js';
 import { mergeSocial } from './lib/social.js';
 import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch, infoTip } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
+import { renderLatinRanking } from './ui/latin-view.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
 import { buildHierarchy } from './lib/government.js';
 import { renderSitemap } from './ui/sitemap-view.js';
@@ -59,7 +60,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', sitemap: 'sitemap', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', sitemap: 'sitemap', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties', latin: 'latin' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -73,6 +74,7 @@ export function createApp(doc, win, data) {
     // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
     flyer: { period: 'all', dataset: null, sortBy: 'km' },
     attendance: { order: 'desc', club: '', view: 'mps' },
+    latin: { order: 'desc', club: '', band: 'all', sortBy: 'total', view: 'mps' },
     // Feed time window (Pawel, 2026-11-24: the feed shows the last hours first).
     feed: { window: '24h' },
   };
@@ -104,6 +106,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
     else if (r.name === 'parties') html = renderParties(ctx, state.parties);
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch, infoTip });
+    else if (r.name === 'latin') html = renderLatinRanking(ctx, state.latin, { avatar, clubChip, rankingSwitch, infoTip });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
     doc.documentElement.dataset.route = r.name;
@@ -208,6 +211,14 @@ export function createApp(doc, win, data) {
       render();
     } else if (action === 'att-view') {
       state.attendance.view = el.dataset.view;
+      render();
+    } else if (action === 'latin-order' || action === 'latin-sort' || action === 'latin-band' || action === 'latin-view') {
+      const key = { 'latin-order': 'order', 'latin-sort': 'sortBy', 'latin-band': 'band', 'latin-view': 'view' }[action];
+      state.latin[key] = el.dataset[{ order: 'order', sortBy: 'sort', band: 'band', view: 'view' }[key]];
+      render();
+    } else if (action === 'latin-club') {
+      state.latin.club = el.dataset.club;
+      if (el.dataset.view) state.latin.view = el.dataset.view;
       render();
     } else if (action === 'att-club') {
       state.attendance.club = el.dataset.club;

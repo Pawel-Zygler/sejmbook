@@ -715,6 +715,7 @@ h2 { font-size: 1.1rem; }
 .profile-link { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); transition: background .15s, color .15s, border-color .15s; }
 .profile-link svg { width: 18px; height: 18px; }
 .profile-link:hover, .profile-link:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.profile-link[data-search="true"] { border-style: dashed; background: transparent; color: var(--muted); }
 .profile-link[data-kind="sejm"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
 
 /* Hover / focus preview cards for the round links */
@@ -772,3 +773,24 @@ h2 { font-size: 1.1rem; }
 .latin-law .tax-law-top { flex-wrap: wrap; }
 .latin-note { margin: 0; padding: 8px 10px; border-radius: 8px; background: var(--lab-soft); border-left: 3px solid var(--lab); font-size: 0.8rem; color: var(--muted); }
 @media (max-width: 520px) { .latin-ribbon { position: static; align-self: flex-start; } .latin-post .post-head { padding-right: 0; } }
+
+/* Ranking page "Cywilizacja łacińska" (#konieczny, Pawel 2026-11-27): experimental, bands 90 / 60 / 40 */
+.latin-page { --lab: #6b3fa0; --lab-soft: rgba(107, 63, 160, 0.07); --lab-ink: #ffffff; --l90: #2f7d4f; --l60: #6f9a3a; --l40: #b8860b; --l0: #b23a3a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .latin-page { --lab: #b48ef0; --lab-soft: rgba(180, 142, 240, 0.08); --lab-ink: #1a1024; --l90: #6fd39a; --l60: #b5d86a; --l40: #f0b84a; --l0: #ff8a8a; } }
+:root[data-theme="dark"] .latin-page { --lab: #b48ef0; --lab-soft: rgba(180, 142, 240, 0.08); --lab-ink: #1a1024; --l90: #6fd39a; --l60: #b5d86a; --l40: #f0b84a; --l0: #ff8a8a; }
+.latin-head { position: relative; border: 1px dashed var(--lab); background: repeating-linear-gradient(-45deg, var(--lab-soft) 0 12px, transparent 12px 24px), var(--surface); }
+.latin-ribbon-inline { position: static; display: inline-block; margin-bottom: 6px; }
+.latin-page .latin-ribbon { background: var(--lab); color: var(--lab-ink); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 99px; }
+.latin-page .rank-tools { flex-wrap: wrap; }
+.latin-score { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; min-width: 3em; }
+.latin-score b { font-variant-numeric: tabular-nums; }
+.latin-score i { display: block; height: 4px; border-radius: 99px; background: currentColor; align-self: stretch; max-width: 100%; }
+.latin-score.band-l90 { color: var(--l90); } .latin-score.band-l60 { color: var(--l60); } .latin-score.band-l40 { color: var(--l40); } .latin-score.band-l0 { color: var(--l0); }
+.latin-rank th.sorted { color: var(--lab); }
+.latin-dist { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.latin-dist-bar { display: flex; height: 14px; border-radius: 99px; overflow: hidden; gap: 2px; background: var(--surface-2); }
+.latin-dist-bar span { min-width: 4px; }
+.latin-dist-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; }
+.latin-dist-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.latin-dist .band-l90 { background: var(--l90); } .latin-dist .band-l60 { background: var(--l60); } .latin-dist .band-l40 { background: var(--l40); } .latin-dist .band-l0 { background: var(--l0); }
+.latin-page .latin-note { margin: 12px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--lab-soft); border-left: 3px solid var(--lab); font-size: 0.8rem; color: var(--muted); }

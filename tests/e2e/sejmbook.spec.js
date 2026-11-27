@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Zgodność z cywilizacją łacińską');
+  await expect(post).toContainText('LinkedIn przy nazwisku posła');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Zgodność z cywilizacją łacińską');
+  await expect(page.locator('.news-post').first()).toContainText('LinkedIn przy nazwisku posła');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -495,7 +495,7 @@ test.describe('modern look', () => {
     expect(textTransform).toBe('none');
     await expect(page.locator('#top-search')).toBeVisible();
     const foot = page.getByTestId('site-foot');
-    await expect(foot.locator('.foot-col a')).toHaveCount(8);
+    await expect(foot.locator('.foot-col a')).toHaveCount(9);
     await expect(foot).toContainText('Źródła danych');
     await nav.getByRole('link', { name: 'Frequent Flyer' }).click();
     await expect(page).toHaveURL(/#frequent-flyer$/);
@@ -704,8 +704,73 @@ for (const skin of ['classic', 'modern']) {
     await expect(card.getByTestId('latin-pillar-1').locator('.latin-law').first()).toBeVisible();
     const box = await card.boundingBox();
     expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
-    await page.goto(`${PAGE}#posel-2`); // KO: not in the pilot yet
-    await expect(page.getByTestId('profile-taxes')).toBeVisible();
-    await expect(page.getByTestId('profile-latin')).toHaveCount(0);
+    await page.goto(`${PAGE}#posel-2`); // KO: every MP has the card now
+    await expect(page.getByTestId('profile-latin')).toBeVisible();
+  });
+
+  test(`ranking "Cywilizacja łacińska": table, bands, no sideways scroll (${skin})`, async ({ page, isMobile }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#frequent-flyer`);
+    if (isMobile || skin === 'modern') await page.getByTestId('rank-switch').getByRole('link', { name: 'Cywilizacja łacińska' }).click(); // modern has no side menu
+    else await page.locator('.sidenav a[href="#konieczny"]').click();
+    await expect(page.locator('[data-view="latin"] h1')).toContainText('Cywilizacja łacińska');
+    await expect(page.getByTestId('latin-experimental')).toBeVisible();
+    await expect(page.getByTestId('latin-dist')).toBeVisible();
+    const rows = page.locator('[data-testid="latin-ranking"] tbody tr');
+    expect(await rows.count()).toBeGreaterThan(400);
+    await page.locator('[data-action="latin-band"][data-band="40"]').click();
+    for (const b of await rows.evaluateAll((els) => els.map((e) => e.dataset.band))) expect(b).toBe('40');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  });
+}
+
+// Regression (Pawel, 2026-11-27, modern look): the preview cards by the name covered the "Spektrum partyjne" card.
+// In the modern look they open beside the icon, inside the profile header, and never past the window's right edge.
+for (const width of [1400, 1000, 920]) {
+  test(`profile: link previews stay in the header and in the window, modern look (${width}px)`, async ({ page, isMobile }) => {
+    test.skip(isMobile, 'hover cards are for mouse; on phones the icon opens the page');
+    await page.setViewportSize({ width, height: 900 });
+    await page.addInitScript(() => { try { localStorage.setItem('sejmbook-ui', 'modern'); } catch { /* ignore */ } });
+    await page.goto(`${PAGE}#posel-33`);
+    const head = await page.locator('[data-view="profile"] .profile-top').boundingBox();
+    for (const kind of await page.locator('.profile-links .lp-wrap .profile-link').evaluateAll((els) => els.map((e) => e.dataset.kind))) {
+      await page.locator(`.profile-link[data-kind="${kind}"]`).hover();
+      const card = page.getByTestId(`link-preview-${kind}`);
+      await expect(card).toBeVisible();
+      await page.waitForTimeout(350);
+      const box = await card.boundingBox();
+      expect(box.y + box.height, kind).toBeLessThanOrEqual(head.y + head.height);
+      expect(box.x + box.width, kind).toBeLessThanOrEqual(width);
+      expect(box.x, kind).toBeGreaterThanOrEqual(0);
+      await page.mouse.move(5, 5);
+    }
+  });
+}
+
+test('profile: the Sejm preview button can be reached with the mouse, modern look', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'hover cards are for mouse');
+  await page.addInitScript(() => { try { localStorage.setItem('sejmbook-ui', 'modern'); } catch { /* ignore */ } });
+  await page.goto(`${PAGE}#posel-33`);
+  await page.locator('.profile-link[data-kind="sejm"]').hover();
+  const open = page.getByTestId('link-preview-sejm').locator('.lp-open');
+  await expect(open).toBeVisible();
+  await open.hover();
+  await expect(open).toBeVisible();
+});
+
+// Pawel, 2026-11-27: LinkedIn as another social icon by the name, in both looks.
+for (const skin of ['classic', 'modern']) {
+  test(`profile: LinkedIn icon by the name, confirmed or a marked search (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#posel-106`);
+    const confirmed = page.locator('.profile-link[data-kind="linkedin"]');
+    await expect(confirmed).toBeVisible();
+    await expect(confirmed).toHaveAttribute('href', /linkedin\.com\/in\//);
+    await expect(confirmed).not.toHaveAttribute('data-search', 'true');
+    await page.goto(`${PAGE}#posel-33`);
+    const search = page.locator('.profile-link[data-kind="linkedin"]');
+    await expect(search).toBeVisible();
+    await expect(search).toHaveAttribute('data-search', 'true');
+    await expect(search).toHaveAttribute('href', /linkedin\.com\/search\/results\/people\/\?keywords=Krzysztof%20Bosak/);
   });
 }

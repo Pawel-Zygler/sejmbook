@@ -21,8 +21,14 @@ export const LINK_KINDS = {
 };
 const SOCIAL_ORDER = ['facebook', 'instagram', 'x', 'youtube', 'tiktok', 'bluesky', 'threads', 'linkedin', 'website'];
 
-/** The links to show, in order: Sejm page, social accounts, website, e-mail last. */
-export function profileLinks(contact, sejmUrl) {
+/** LinkedIn people search for a name: shown when Wikidata has no confirmed profile (Pawel, 2026-11-27). */
+export const linkedinSearch = (name) => `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(name)}`;
+
+/**
+ * The links to show, in order: Sejm page, social accounts, website, e-mail last. LinkedIn is always there when `who`
+ * is given: the confirmed profile from Wikidata, or else a search by name marked `search: true`.
+ */
+export function profileLinks(contact, sejmUrl, { who = '' } = {}) {
   const out = [];
   if (sejmUrl) out.push({ kind: 'sejm', href: sejmUrl });
   for (const k of SOCIAL_ORDER) {
@@ -32,6 +38,7 @@ export function profileLinks(contact, sejmUrl) {
       if (k === 'website' && /^https:\/\/([^/]*\.)?(sejm|senat)\.gov\.pl\//i.test(href)) continue;
       out.push({ kind: k, href });
     }
+    if (k === 'linkedin' && who && !out.some((l) => l.kind === 'linkedin')) out.push({ kind: 'linkedin', href: linkedinSearch(who), search: true });
   }
   if (contact?.email) out.push({ kind: 'email', href: `mailto:${contact.email}`, text: contact.email });
   return out;
@@ -55,6 +62,13 @@ const SOCIAL_NOTE = {
   instagram: 'Instagram nie pozwala pokazywać profilu na innych stronach, więc tutaj go nie ma.',
 };
 
+/** Hover card for the LinkedIn search: says plainly that no profile is confirmed. */
+export function linkedinSearchPreview(who) {
+  return `<div class="lp-head"><span class="lp-icon" data-kind="linkedin">${LINK_KINDS.linkedin.icon}</span><div><b>LinkedIn</b><small>wyszukiwanie: ${esc(who)}</small></div></div>
+    <p class="lp-note">Nie znamy potwierdzonego profilu tej osoby na LinkedIn (Wikidata go nie podaje). Przycisk otwiera wyszukiwarkę LinkedIn z imieniem i nazwiskiem; wyniki mogą dotyczyć innych osób.</p>
+    <a class="lp-open" href="${esc(linkedinSearch(who))}" target="_blank" rel="noopener">Szukaj na LinkedIn</a>`;
+}
+
 /** Hover card for a social account: network, name, and a button that opens it. */
 export function socialPreview(kind, href, who = '') {
   const k = LINK_KINDS[kind];
@@ -67,15 +81,15 @@ export function socialPreview(kind, href, who = '') {
 
 /** Row of round icons; each has its name as accessible label and, when given, a preview card on hover or focus. */
 export function renderProfileLinks(contact, sejmUrl, { sejmPreview = '', who = '' } = {}) {
-  const links = profileLinks(contact, sejmUrl);
+  const links = profileLinks(contact, sejmUrl, { who });
   if (!links.length) return '';
   return `<nav class="profile-links" aria-label="Linki posła" data-testid="profile-links">${links.map((l, i) => {
     const k = LINK_KINDS[l.kind];
-    const name = l.text ? `${k.label}: ${l.text}` : k.label;
+    const name = l.search ? `${k.label}: szukaj ${who}` : l.text ? `${k.label}: ${l.text}` : k.label;
     const ext = l.kind === 'email' ? '' : ' target="_blank" rel="noopener"';
-    const preview = l.kind === 'sejm' ? sejmPreview : l.kind === 'email' ? '' : socialPreview(l.kind, l.href, who);
+    const preview = l.kind === 'sejm' ? sejmPreview : l.kind === 'email' ? '' : l.search ? linkedinSearchPreview(who) : socialPreview(l.kind, l.href, who);
     const id = `lp-${i}`;
-    const a = `<a class="profile-link" data-kind="${l.kind}" href="${esc(l.href)}"${ext} aria-label="${esc(name)}"${preview ? ` aria-describedby="${id}"` : ` title="${esc(name)}"`}>${k.icon}</a>`;
+    const a = `<a class="profile-link" data-kind="${l.kind}"${l.search ? ' data-search="true"' : ''} href="${esc(l.href)}"${ext} aria-label="${esc(name)}"${preview ? ` aria-describedby="${id}"` : ` title="${esc(name)}"`}>${k.icon}</a>`;
     return preview ? `<span class="lp-wrap">${a}<div class="link-preview" role="tooltip" id="${id}" data-testid="link-preview-${l.kind}">${preview}</div></span>` : a;
   }).join('')}</nav>`;
 }

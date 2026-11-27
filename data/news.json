@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-linkedin",
+      "date": "2026-11-27",
+      "title": "LinkedIn przy nazwisku posła",
+      "section": "Profile",
+      "body": "Przy nazwisku jest teraz ikona LinkedIn: potwierdzony profil z Wikidata albo wyszukiwanie po imieniu i nazwisku."
+    },
+    {
+      "id": "2026-11-27-ranking-konieczny",
+      "date": "2026-11-27",
+      "title": "Ranking: cywilizacja łacińska",
+      "section": "Rankingi",
+      "body": "Nowy eksperymentalny ranking posłów według czterech zasad Konecznego, a karta jest teraz na profilu każdego posła.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-27-cywilizacja-lacinska",
       "date": "2026-11-27",
       "title": "Zgodność z cywilizacją łacińską (eksperyment)",

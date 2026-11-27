@@ -1,4 +1,5 @@
-import { mpLatin } from '../lib/latin.js';
+import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS } from '../lib/latin.js';
+import { hrefFor } from '../lib/router.js';
 import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
 import { formatPct } from '../lib/kpi.js';
 
@@ -13,12 +14,31 @@ const DIR_LABEL = { zgodna: 'zgodna', niezgodna: 'niezgodna', sporna: 'sporna, n
 const SOURCE_LABEL = { manual: '', tax: 'z karty podatkowej', dereg: 'automatycznie: deregulacja' };
 
 /**
- * Clubs whose MPs see the card for now. Pawel, 2026-11-27: first Krzysztof Bosak, then "posłowie Lewicy i cała
- * Konfederacja" (also the Korona circle), later all MPs, then state officials. null = every MP.
+ * Clubs whose MPs see the card. Pawel, 2026-11-27: first Krzysztof Bosak, then Lewica and the whole Konfederacja,
+ * then "dodaj tą kartę koniecznego dla wszystkich posłów" (null = every MP). State officials come next.
  */
-export const LATIN_PILOT_CLUBS = ['Lewica', 'Konfederacja', 'Konfederacja_KP'];
+export const LATIN_PILOT_CLUBS = null;
 
 export const latinVisibleFor = (mp, pilot = LATIN_PILOT_CLUBS) => pilot == null || pilot.includes(mp?.club);
+
+/** Attendance % for pillar 4: sitting days with ≥ 1 vote / sitting days with votings during the mandate (data/kpi.json). */
+export function attendancePctFor(ctx, mpId) {
+  const days = ctx.kpi?.mps?.[mpId]?.days;
+  return days && days[1] ? (100 * days[0]) / days[1] : null;
+}
+
+export const latinFor = (ctx, mpId) => (ctx.latin?.laws?.length ? mpLatin(ctx.latin, ctx.laws, mpId, { attendancePct: attendancePctFor(ctx, mpId) }) : null);
+
+/** Results of every active MP, computed once per context: [{ mp, r }]. */
+const resultsCache = new WeakMap();
+export function latinResults(ctx) {
+  let out = resultsCache.get(ctx);
+  if (!out) {
+    out = ctx.mps.filter((m) => m.active !== false).map((mp) => ({ mp, r: latinFor(ctx, mp.id) })).filter((x) => x.r);
+    resultsCache.set(ctx, out);
+  }
+  return out;
+}
 
 function scoreBar(score) {
   if (score == null) return '';
@@ -66,8 +86,7 @@ function personPillar(def, p, tip) {
 export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS } = {}) {
   const data = ctx.latin;
   if (!data?.laws?.length || !latinVisibleFor(mp, pilot)) return '';
-  const days = ctx.kpi?.mps?.[mp.id]?.days;
-  const r = mpLatin(data, ctx.laws, mp.id, { attendancePct: days && days[1] ? (100 * days[0]) / days[1] : null });
+  const r = latinFor(ctx, mp.id);
   if (!r) return '';
   const tip = (text, href = '', label = 'Jak liczymy') => (infoTip ? infoTip(text, href, label) : '');
   const defs = new Map(data.pillars.map((d) => [d.id, d]));
@@ -86,4 +105,91 @@ export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS
     ${pillars.join('')}
     <p class="latin-note" data-testid="latin-disclaimer">${esc(data.disclaimer)}</p>
   </article>`;
+}
+
+const SORT_LABEL = { total: 'Wynik', p1: '1. Etyka nad państwem', p2: '2. Własność', p3: '3. Rodzina', p4: '4. Personalizm' };
+const COL_LABEL = { p1: 'Etyka', p2: 'Własność', p3: 'Rodzina', p4: 'Person.' };
+
+/** Score with its band colour: "82" in a pill, and a thin bar under it. */
+export function latinScore(score) {
+  if (score == null) return '<span class="muted">–</span>';
+  return `<span class="latin-score band-l${bandOf(score)}"><b>${score}</b><i style="width:${Math.max(0, Math.min(100, score))}%"></i></span>`;
+}
+
+/** Stacked bar: how many MPs fall into each band. */
+function bandBar(counts) {
+  const total = RANK_BANDS.reduce((s, b) => s + counts[b.id], 0) || 1;
+  return `<div class="latin-dist" data-testid="latin-dist">
+    <div class="latin-dist-bar" aria-hidden="true">${RANK_BANDS.filter((b) => counts[b.id]).map((b) => `<span class="band-l${b.id}" style="flex:${counts[b.id]}"></span>`).join('')}</div>
+    <ul class="latin-dist-legend">${RANK_BANDS.map((b) => `<li><i class="band-l${b.id}"></i>${esc(b.label)}: <b data-testid="latin-band-${b.id}">${counts[b.id]}</b> <span class="muted">(${Math.round((100 * counts[b.id]) / total)}%)</span></li>`).join('')}</ul>
+  </div>`;
+}
+
+const btn = (action, attr, value, on, label) => `<button type="button" class="filter ${on ? 'on' : ''}" data-action="${action}" data-${attr}="${esc(value)}" aria-pressed="${on}">${label}</button>`;
+
+/** Ranking page "Konieczny" (#konieczny): every MP's score, bands 90/60/40, club filter, sort by total or pillar. */
+export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch = () => '', infoTip = () => '' } = {}) {
+  const data = ctx.latin;
+  const head = (body) => `<section data-view="latin" class="latin-page">${rankingSwitch('latin')}
+    <div class="panel page-head latin-head" data-icon="✠" data-testid="page-head">
+      <span class="latin-ribbon latin-ribbon-inline" data-testid="latin-experimental">Eksperymentalne</span>
+      <p class="eyebrow">Ranking</p>
+      <h1>Cywilizacja łacińska ${data ? infoTip(`${data.disclaimer} ${data.scoring}`, 'https://api.sejm.gov.pl/sejm/term10/votings', 'Jak liczymy') : ''}</h1>
+      <p class="lede">Jak głosowania posłów X kadencji wypadają według czterech zasad Feliksa Konecznego: etyka nad państwem, własność i swoboda umów, rodzina i wychowanie, personalizm. Skala 0–100.</p>
+    </div>${body}</section>`;
+  const all = latinResults(ctx);
+  if (!all.length) return head('<div class="panel"><p>Wyniki nie są jeszcze dostępne.</p></div>');
+  const { rows, counts } = rankLatin(all, state);
+  const avg = Math.round(all.reduce((s, x) => s + x.r.total, 0) / all.length);
+  const clubs = [...new Set(all.map((x) => x.mp.club))].sort((a, b) => all.filter((x) => x.mp.club === b).length - all.filter((x) => x.mp.club === a).length);
+  const tabs = `<div class="att-tabs" role="tablist" aria-label="Widok">
+    <button type="button" role="tab" class="filter ${state.view !== 'clubs' ? 'on' : ''}" data-action="latin-view" data-view="mps" aria-selected="${state.view !== 'clubs'}">Posłowie</button>
+    <button type="button" role="tab" class="filter ${state.view === 'clubs' ? 'on' : ''}" data-action="latin-view" data-view="clubs" aria-selected="${state.view === 'clubs'}">Kluby</button>
+  </div>`;
+  const stats = `<div class="stats">
+      <div class="stat"><span>Średni wynik posła</span><b data-testid="latin-avg">${avg}</b></div>
+      <div class="stat"><span>Ustaw w ocenie</span><b>${data.laws.filter((l) => l.direction !== 'sporna').length}</b></div>
+    </div>`;
+  if (state.view === 'clubs') {
+    const cl = clubLatin(all);
+    return head(`${stats}${tabs}<div class="panel"><div class="table-wrap"><table class="rank latin-rank" data-testid="latin-clubs">
+      <thead><tr><th scope="col">#</th><th scope="col">Klub</th><th scope="col" class="num">Wynik</th>${Object.values(COL_LABEL).map((l) => `<th scope="col" class="num">${l}</th>`).join('')}<th scope="col" class="num">Posłów</th></tr></thead>
+      <tbody>${cl.map((c, i) => `<tr data-club="${esc(c.club)}"><td class="pos">${i + 1}</td><td><button type="button" class="linklike" data-action="latin-club" data-club="${esc(c.club)}" data-view="mps">${clubChip(ctx, c.club)}</button></td><td class="num">${latinScore(c.total)}</td>${['p1', 'p2', 'p3', 'p4'].map((k) => `<td class="num">${c[k] ?? '–'}</td>`).join('')}<td class="num">${c.n}</td></tr>`).join('')}</tbody>
+    </table></div><p class="src">Średnia klubu to średnia wyników jego obecnych posłów. Kliknij klub, żeby zobaczyć jego posłów.</p></div>`);
+  }
+  const clubName = (c) => esc(ctx.clubs.get(c)?.short ?? c);
+  return head(`${stats}${tabs}
+    <div class="panel">
+      ${bandBar(counts)}
+      <div class="rank-tools"><span>Przedział:</span>
+        ${btn('latin-band', 'band', 'all', state.band === 'all', `Wszyscy (${counts.all})`)}
+        ${RANK_BANDS.map((b) => btn('latin-band', 'band', b.id, state.band === b.id, `${esc(b.label)} (${counts[b.id]})`)).join('')}
+      </div>
+      <div class="rank-tools"><span>Sortuj:</span>
+        ${Object.entries(SORT_LABEL).map(([k, l]) => btn('latin-sort', 'sort', k, state.sortBy === k, esc(l))).join('')}
+      </div>
+      <div class="rank-tools"><span>Kolejność:</span>
+        ${btn('latin-order', 'order', 'desc', state.order === 'desc', 'Najwyższy')}
+        ${btn('latin-order', 'order', 'asc', state.order === 'asc', 'Najniższy')}
+      </div>
+      <div class="filters" role="group" aria-label="Filtr klubu">
+        ${btn('latin-club', 'club', '', state.club === '', 'Wszystkie')}
+        ${clubs.map((c) => btn('latin-club', 'club', c, state.club === c, clubName(c))).join('')}
+      </div>
+      <div class="table-wrap">
+        <table class="rank latin-rank" data-testid="latin-ranking">
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Wynik</th>${Object.entries(COL_LABEL).map(([k, l]) => `<th scope="col" class="num${state.sortBy === k ? ' sorted' : ''}">${l}</th>`).join('')}</tr></thead>
+          <tbody>
+            ${rows.map((x) => `<tr data-mp-id="${x.mp.id}" data-band="${bandOf(x.r.total)}">
+              <td class="pos">${x.rank}</td>
+              <td><a class="rank-mp" href="${hrefFor({ name: 'profile', id: x.mp.id })}">${avatar(ctx, x.mp, 'sm')}<span>${esc(x.mp.name)}</span></a> ${clubChip(ctx, x.mp.club, x.mp)}</td>
+              <td class="num" data-testid="latin-row-total">${latinScore(x.r.total)}</td>
+              ${[1, 2, 3, 4].map((id) => `<td class="num">${x.r.pillars.find((p) => p.id === id)?.score ?? '–'}</td>`).join('')}
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+      ${rows.length ? '' : '<p class="muted" data-testid="latin-empty">Nikt nie pasuje do wybranych filtrów.</p>'}
+      <p class="latin-note">${esc(data.disclaimer)}</p>
+    </div>`);
 }

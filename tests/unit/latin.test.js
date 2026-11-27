@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS } from '../../src/lib/latin.js';
-import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS } from '../../src/ui/latin-view.js';
+import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS } from '../../src/lib/latin.js';
+import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS, renderLatinRanking, latinResults, latinScore, attendancePctFor } from '../../src/ui/latin-view.js';
 import cls from '../../data/latin-classification.json';
 import latinData from '../../data/latin.json';
 import lawData from '../../data/law-votes.json';
@@ -100,13 +100,12 @@ describe('renderProfileLatin', () => {
   it('never names another civilisation', () => {
     expect(html.toLowerCase()).not.toMatch(/żydowsk|bizantyjsk|bramińsk|turańsk|arabsk/);
   });
-  it('shows only for pilot clubs: Lewica and the whole Konfederacja (club and Korona circle)', () => {
-    expect(LATIN_PILOT_CLUBS).toEqual(['Lewica', 'Konfederacja', 'Konfederacja_KP']);
-    expect(renderProfileLatin(ctx, { id: 2, club: 'KO' })).toBe('');
-    expect(latinVisibleFor({ club: 'Lewica' })).toBe(true);
-    expect(latinVisibleFor({ club: 'PiS' })).toBe(false);
-    expect(latinVisibleFor({ club: 'PiS' }, null)).toBe(true);
-    expect(renderProfileLatin(ctx, { id: 2, club: 'KO' }, { pilot: null })).toContain('profile-latin');
+  it('shows for every MP (Pawel, 2026-11-27: "dla wszystkich posłów"); a pilot list still limits it', () => {
+    expect(LATIN_PILOT_CLUBS).toBeNull();
+    expect(renderProfileLatin(ctx, { id: 2, club: 'KO' })).toContain('profile-latin');
+    expect(latinVisibleFor({ club: 'PiS' })).toBe(true);
+    expect(latinVisibleFor({ club: 'PiS' }, ['Lewica'])).toBe(false);
+    expect(renderProfileLatin(ctx, { id: 2, club: 'KO' }, { pilot: ['Lewica'] })).toBe('');
   });
   it('renders nothing without data', () => expect(renderProfileLatin({ latin: null }, { id: 33, club: 'Konfederacja' })).toBe(''));
 });
@@ -136,5 +135,67 @@ describe('data contract: Latin civilisation card', () => {
   it('covers every pillar 1–3 and Krzysztof Bosak gets a score', () => {
     for (const p of [1, 2, 3]) expect(latinData.laws.filter((l) => l.pillar === p).length).toBeGreaterThan(5);
     expect(mpLatin(latinData, lawData, 33)?.total).toBeGreaterThan(0);
+  });
+});
+
+describe('ranking: bands, sorting, clubs', () => {
+  const r = (total, p) => ({ total, pillars: [1, 2, 3, 4].map((id, i) => ({ id, score: p[i] })) });
+  const results = [
+    { mp: { id: 1, name: 'Anna', club: 'A' }, r: r(92, [90, 95, 100, 80]) },
+    { mp: { id: 2, name: 'Bartek', club: 'A' }, r: r(61, [50, 70, null, 60]) },
+    { mp: { id: 3, name: 'Celina', club: 'B' }, r: r(45, [40, 50, 30, 60]) },
+    { mp: { id: 4, name: 'Darek', club: 'B' }, r: r(20, [10, 20, 30, 20]) },
+    { mp: { id: 5, name: 'Ala', club: 'B' }, r: r(45, [45, 45, 45, 45]) },
+  ];
+  it('bands 90 / 60 / 40 / below', () => {
+    expect([bandOf(90), bandOf(89), bandOf(60), bandOf(59), bandOf(40), bandOf(39), bandOf(null)]).toEqual(['90', '60', '60', '40', '40', '0', null]);
+    expect(RANK_BANDS.map((b) => b.label)).toEqual(['90 i więcej', '60–89', '40–59', 'poniżej 40']);
+  });
+  it('sorts by total, best first, ties by name, with ranks', () => {
+    const { rows, counts } = rankLatin(results);
+    expect(rows.map((x) => [x.rank, x.mp.id])).toEqual([[1, 1], [2, 2], [3, 5], [4, 3], [5, 4]]);
+    expect(counts).toEqual({ all: 5, 90: 1, 60: 1, 40: 2, 0: 1 });
+  });
+  it('filters by band and club, sorts lowest first or by a pillar (missing values last)', () => {
+    expect(rankLatin(results, { band: '40' }).rows.map((x) => x.mp.id)).toEqual([5, 3]);
+    expect(rankLatin(results, { club: 'B', order: 'asc' }).rows.map((x) => x.mp.id)).toEqual([4, 5, 3]);
+    expect(rankLatin(results, { club: 'B' }).counts.all).toBe(3);
+    expect(rankLatin(results, { sortBy: 'p3' }).rows.map((x) => x.mp.id)).toEqual([1, 5, 3, 4, 2]);
+    expect(sortValue(results[0].r, 'p2')).toBe(95);
+    expect(() => rankLatin(results, { sortBy: 'x' })).toThrow(RangeError);
+  });
+  it('club averages, best first', () => {
+    expect(clubLatin(results)).toEqual([
+      { club: 'A', n: 2, total: 77, p1: 70, p2: 83, p3: 100, p4: 70 },
+      { club: 'B', n: 3, total: 37, p1: 32, p2: 38, p3: 35, p4: 42 },
+    ]);
+  });
+});
+
+describe('ranking page', () => {
+  const ctx = { latin: latinData, laws: lawData, kpi: { mps: {} }, mps: mpsData.mps, clubs: new Map() };
+  const helpers = { avatar: () => '', clubChip: (c, club) => `<i>${club}</i>`, infoTip: () => '<i class="tip"></i>' };
+  const state = { order: 'desc', club: '', band: 'all', sortBy: 'total', view: 'mps' };
+  it('lists every active MP with a score, marked experimental, with band counts', () => {
+    const html = renderLatinRanking(ctx, state, helpers);
+    const active = mpsData.mps.filter((m) => m.active !== false).length;
+    expect(latinResults(ctx).length).toBe(active);
+    expect((html.match(/data-mp-id=/g) ?? []).length).toBe(active);
+    expect(html).toContain('data-testid="latin-experimental"');
+    for (const b of ['90', '60', '40', '0']) expect(html).toContain(`data-testid="latin-band-${b}"`);
+    expect(html).toContain('nie neutralna ocena');
+  });
+  it('club view and empty filter', () => {
+    expect(renderLatinRanking(ctx, { ...state, view: 'clubs' }, helpers)).toContain('data-testid="latin-clubs"');
+    expect(renderLatinRanking(ctx, { ...state, club: 'nikt' }, helpers)).toContain('data-testid="latin-empty"');
+  });
+  it('says when there is no data', () => {
+    expect(renderLatinRanking({ ...ctx, latin: null, mps: [] }, state, helpers)).toContain('nie są jeszcze dostępne');
+  });
+  it('score pill carries its band; attendance from KPI days', () => {
+    expect(latinScore(91)).toContain('band-l90');
+    expect(latinScore(null)).toContain('–');
+    expect(attendancePctFor({ kpi: { mps: { 1: { days: [9, 10] } } } }, 1)).toBe(90);
+    expect(attendancePctFor({}, 1)).toBeNull();
   });
 });

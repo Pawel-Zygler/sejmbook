@@ -4,6 +4,8 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
+- **Profile: LinkedIn przy nazwisku posła.** Przy nazwisku jest teraz ikona LinkedIn: potwierdzony profil z Wikidata albo wyszukiwanie po imieniu i nazwisku.
+- **Rankingi: Ranking: cywilizacja łacińska.** Nowy eksperymentalny ranking posłów według czterech zasad Konecznego, a karta jest teraz na profilu każdego posła.
 - **Profile: Zgodność z cywilizacją łacińską (eksperyment).** Eksperymentalna karta na profilach posłów Lewicy i Konfederacji ocenia głosowania według czterech zasad Konecznego, w skali 0–100.
 - **Profile: Bez karty aktywności.** Z profilu posła zniknęła karta „Aktywność i skuteczność”.
 - **Posłowie: Praca zawodowa.** Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.

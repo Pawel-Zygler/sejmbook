@@ -34,6 +34,7 @@ export function renderSitemap(ctx) {
         ${link('#frequent-flyer', 'Frequent Flyer', 'loty na koszt Sejmu')}
         ${link('#frekwencja', 'Frekwencja', 'obecność na głosowaniach')}
         ${link('#partie', 'Najwięcej partii', 'kto zmieniał kluby')}
+        ${link('#konieczny', 'Cywilizacja łacińska', 'eksperyment: cztery zasady Konecznego')}
       </ul></div>
       <div class="panel"><h2>Serwis</h2><ul>
         ${link('#changelog', 'Changelog', 'każda zmiana w jednym zdaniu')}

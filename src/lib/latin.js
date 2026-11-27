@@ -130,3 +130,56 @@ export function mpLatin(latin, lawVotes, mpId, { attendancePct = null } = {}) {
   const total = scored.reduce((a, p) => a + p.score, 0) / scored.length;
   return { total: round(total), level: levelOf(round(total)), pillars: out.map((p) => ({ ...p, score: round(p.score) })) };
 }
+
+/** Bands of the ranking page (Pawel, 2026-11-27: "którzy posłowie mają 90%, którzy 60%, którzy 40%"). */
+export const RANK_BANDS = [
+  { id: '90', min: 90, label: '90 i więcej' },
+  { id: '60', min: 60, label: '60–89' },
+  { id: '40', min: 40, label: '40–59' },
+  { id: '0', min: 0, label: 'poniżej 40' },
+];
+export const bandOf = (score) => (score == null ? null : RANK_BANDS.find((b) => score >= b.min).id);
+export const LATIN_SORTS = ['total', 'p1', 'p2', 'p3', 'p4'];
+
+/** Score of one result for a sort key: 'total' or 'p1'..'p4'. */
+export function sortValue(r, key) {
+  if (key === 'total') return r.total;
+  const id = Number(String(key).slice(1));
+  return r.pillars.find((p) => p.id === id)?.score ?? null;
+}
+
+/**
+ * Ranking rows from [{ mp, r }] (r = mpLatin result): filtered by club and band, sorted by `sortBy`
+ * ('total' or 'p1'..'p4') in `order`; ties by name. Rows without a value for the sort key go last.
+ * Each row gets `rank` = position in the filtered list. Also returns per-band counts for the club filter.
+ */
+export function rankLatin(results, { order = 'desc', club = '', band = 'all', sortBy = 'total' } = {}) {
+  if (!LATIN_SORTS.includes(sortBy)) throw new RangeError(`Unknown sort: ${sortBy}`);
+  const inClub = results.filter((x) => !club || x.mp.club === club);
+  const counts = { all: inClub.length };
+  for (const b of RANK_BANDS) counts[b.id] = inClub.filter((x) => bandOf(x.r.total) === b.id).length;
+  const dir = order === 'asc' ? 1 : -1;
+  const rows = inClub
+    .filter((x) => band === 'all' || bandOf(x.r.total) === band)
+    .sort((a, b) => {
+      const va = sortValue(a.r, sortBy), vb = sortValue(b.r, sortBy);
+      if (va == null || vb == null) return va == null && vb == null ? 0 : va == null ? 1 : -1;
+      return dir * (va - vb) || a.mp.name.localeCompare(b.mp.name, 'pl');
+    })
+    .map((x, i) => ({ ...x, rank: i + 1 }));
+  return { rows, counts };
+}
+
+/** Club averages of the total and each pillar, best first: [{ club, n, total, p1..p4 }]. */
+export function clubLatin(results) {
+  const by = new Map();
+  for (const x of results) {
+    const a = by.get(x.mp.club) ?? [];
+    a.push(x.r);
+    by.set(x.mp.club, a);
+  }
+  const avg = (arr) => (arr.length ? Math.round(arr.reduce((s, v) => s + v, 0) / arr.length) : null);
+  return [...by]
+    .map(([club, rs]) => ({ club, n: rs.length, total: avg(rs.map((r) => r.total)), ...Object.fromEntries([1, 2, 3, 4].map((id) => [`p${id}`, avg(rs.map((r) => sortValue(r, `p${id}`)).filter((v) => v != null))])) }))
+    .sort((a, b) => b.total - a.total || a.club.localeCompare(b.club));
+}

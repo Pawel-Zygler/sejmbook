@@ -163,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Zgodność z cywilizacją łacińską (eksperyment)';
-const NEWEST_LINE = 'Profile: Zgodność z cywilizacją łacińską (eksperyment)';
+const NEWEST = 'LinkedIn przy nazwisku posła';
+const NEWEST_LINE = 'Profile: LinkedIn przy nazwisku posła';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -516,7 +516,7 @@ describe('Profiles of former MPs', () => {
     nav(leader.getAttribute('href'));
     expect($('[data-testid="spectrum"] [data-lane="sejm"] .life-seg, [data-testid="spectrum"] [data-testid="spectrum-text"]')).not.toBeNull();
     expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
-    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']);
+    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#changelog', '#mapa']);
     expect($('#view').textContent).not.toContain('Dane: API Sejmu');
   });
 });
@@ -711,7 +711,7 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     for (const h of hrefs) { nav(h); expect($('#view').textContent).not.toContain('Nie ma takiej strony'); }
   });
   it('gives every section page the same header', () => {
-    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']) {
+    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#changelog', '#mapa']) {
       nav(h);
       const head = $('#view .page-head');
       expect(head, h).not.toBeNull();
@@ -1046,18 +1046,43 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     for (const li of items.slice(0, 20)) expect(['zgodna', 'niezgodna', 'sporna']).toContain(li.dataset.direction);
   });
 
-  it('shows for every MP of Lewica and of the whole Konfederacja, and not for other clubs yet', () => {
-    for (const club of ['Lewica', 'Konfederacja', 'Konfederacja_KP']) {
+  it('shows for every MP, whatever the club (Pawel, 2026-11-27)', () => {
+    for (const club of ['KO', 'PiS', 'Lewica', 'Konfederacja', 'PSL-TD']) {
       const mp = mpsData.mps.find((m) => m.active && m.club === club);
       nav(`#posel-${mp.id}`);
       expect($('[data-testid="profile-latin"]'), club).not.toBeNull();
     }
-    for (const club of ['KO', 'PiS']) {
-      const mp = mpsData.mps.find((m) => m.active && m.club === club);
-      nav(`#posel-${mp.id}`);
-      expect($('[data-testid="profile-taxes"]')).not.toBeNull();
-      expect($('[data-testid="profile-latin"]'), club).toBeNull();
-    }
+  });
+
+  it('ranking page from the side menu: every MP, filters by band and club, sorts by pillar, club view', () => {
+    nav('#konieczny');
+    expect($('.sidenav a[data-nav="latin"]').getAttribute('aria-current')).toBe('page');
+    expect($('[data-view="latin"] h1').textContent).toContain('Cywilizacja łacińska');
+    expect($('[data-testid="latin-experimental"]')).not.toBeNull();
+    const rows = () => $$('[data-testid="latin-ranking"] tbody tr');
+    expect(rows().length).toBe(mpsData.mps.filter((m) => m.active).length);
+    const totals = rows().map((tr) => Number(tr.querySelector('[data-testid="latin-row-total"] b').textContent));
+    expect(totals).toEqual([...totals].sort((x, y) => y - x));
+    click($('[data-action="latin-band"][data-band="40"]'));
+    for (const tr of rows()) expect(tr.dataset.band).toBe('40');
+    click($('[data-action="latin-band"][data-band="all"]'));
+    click($('[data-action="latin-club"][data-club="Lewica"]'));
+    expect(rows().length).toBe(mpsData.mps.filter((m) => m.active && m.club === 'Lewica').length);
+    click($('[data-action="latin-sort"][data-sort="p3"]'));
+    expect($('[data-action="latin-sort"][data-sort="p3"]').getAttribute('aria-pressed')).toBe('true');
+    click($('[data-action="latin-order"][data-order="asc"]'));
+    const first = Number(rows()[0].children[5].textContent), last = Number(rows().at(-1).children[5].textContent);
+    expect(first).toBeLessThanOrEqual(last);
+    click($('[data-action="latin-view"][data-view="clubs"]'));
+    expect($$('[data-testid="latin-clubs"] tbody tr').length).toBeGreaterThan(5);
+    click($('[data-testid="latin-clubs"] [data-action="latin-club"][data-club="KO"]'));
+    expect(rows().every((tr) => mpsData.mps.find((m) => m.id === Number(tr.dataset.mpId)).club === 'KO')).toBe(true);
+  });
+
+  it('is linked from the sitemap and the footer', () => {
+    nav('#mapa');
+    expect($('[data-testid="sitemap"] a[href="#konieczny"]')).not.toBeNull();
+    expect($('[data-testid="site-foot"] a[href="#konieczny"]')).not.toBeNull();
   });
 
   it('stays after switching to the modern look', () => {
