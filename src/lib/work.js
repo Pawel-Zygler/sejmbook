@@ -41,7 +41,10 @@ const RELATIVE = re('\\b(matk\\S*|ojc\\S*|ojciec|brat\\S*|siostr\\S*|żon\\S*|m�
 // Sections about private life, works, honours and election results are not the CV.
 const SKIP_SECTION = /^==+\s*(życie prywatne|życie osobiste|rodzina|odznaczenia|ordery|wyróżnienia|nagrody|wyniki wyborcze|publikacje|twórczość|filmografia|wybrane publikacje|kontrowersje)\s*==+\s*$/i;
 // "Dyrektor" alone says nothing: a bare position is kept only with an employer.
-const GENERIC = re('^(dyrektor\\S*|kierowni\\S*|prezes\\S*|wiceprezes\\S*|członek|członkini|specjalist\\S*|asystent\\S*|doradc\\S*|konsultant\\S*|pracowni\\S*|zastępc\\S*|menedżer\\S*|manager\\S*|szef\\S*|starszy|główny|kierownik|referent\\S*|urzędni\\S*|inspektor\\S*|naczelni\\S*|koordynator\\S*|sekretar\\S*|wolontariusz\\S*|stażyst\\S*)$', 'i');
+const GENERIC_WORD = '(dyrektor\\S*|kierowni\\S*|prezes\\S*|wiceprezes\\S*|członek|członkini|specjalist\\S*|asystent\\S*|doradc\\S*|konsultant\\S*|pracowni\\S*|zastępc\\S*|menedżer\\S*|manager\\S*|szef\\S*|starszy|główny|kierownik|referent\\S*|urzędni\\S*|inspektor\\S*|naczelni\\S*|koordynator\\S*|sekretar\\S*|wolontariusz\\S*|stażyst\\S*|pełnomocni\\S*|wicedyrektor\\S*|zastępczyni)';
+const GENERIC = re(`^${GENERIC_WORD}$`, 'i');
+// A bare position with one more word ("Kierownik działu", "Dyrektor generalny") still names no employer.
+const GENERIC_PAIR = re(`^${GENERIC_WORD}\\s+(działu|generaln\\S*|naczeln\\S*|zarządu|biura|wydziału|oddziału|handlow\\S*|techniczn\\S*|finansow\\S*|zakładu|firmy|spółki|departamentu|referatu|sekcji|zespołu|projektu|projektów|wykonawcz\\S*|operacyjn\\S*|marketingu|sprzedaży|personaln\\S*|wojewódzk\\S*)$`, 'i');
 // "właściciel kancelarii doradztwa podatkowego", "założył firmę …" without a link.
 const OWNER = re('(?:właściciel(?:em|ką|ka)?|współwłaściciel(?:em|ką|ka)?|założył(?:a)?|współzałożył(?:a)?|otworzył(?:a)?)\\s+(własn\\S+\\s+)?(kancelari\\S*(?:\\s+[a-ząćęłńóśźż]+){0,3}|firm\\S*(?:\\s+[a-ząćęłńóśźż]+){0,2}|spółk\\S*(?:\\s+[a-ząćęłńóśźż]+){0,2}|przedsiębiorstw\\S*(?:\\s+[a-ząćęłńóśźż]+){0,2}|gospodarstw\\S*\\s+(?:rolne\\S*|ogrodnicz\\S*|sadownicz\\S*)|aptek\\S*|gabinet\\S*(?:\\s+[a-ząćęłńóśźż]+)?|biur\\S*\\s+(?:rachunkow\\S*|projektow\\S*|tłumacze\\S*|podróży|architektoniczn\\S*))', '');
 const NOT_A_JOB = re('^(poseł|posłanka|senator|minister|wiceminister|radny|radna|asystent posła|doradca ministra|polityk|działacz|działaczka|wolontariusz|wolontariuszka)\\b', 'i');
@@ -63,6 +66,21 @@ export function ownerLabel(what) {
   const rest = words.slice(1);
   if (rest.length && /(iej|nej|wej|ą|ego)$/.test(rest[0])) rest[0] = adjective(rest[0], gender);
   return `${gender === 'f' ? 'Własna' : gender === 'n' ? 'Własne' : 'Własny'} ${[noun, ...rest].join(' ')}`;
+}
+
+// Words a job label must not end with: prepositions, "ds.", participles cut off from their object.
+const DANGLING = /^(ds|w|we|i|z|ze|za|do|na|o|od|się|pod|nazwą|nazwie|zajmując\S*|działając\S*|specjalizując\S*|produkując\S*|odpowiedzialn\S*|jednego|jednej|najpierw|różnych|kilkunastu|kilku|zakresu|mc|pphu|polskiego|katolickiego|lokalnej|usług)$/i;
+const POLITICAL_JOB = /asystent\S*\s+(pos|parlament|przewodnicz|senator|eurodeput)|parlamentarn|związkowiec|poselsk|radnego|radnej/i;
+const SUBJECT = /^(informatyka|statystyka|ekonomika|fizyka|chemia|matematyka|historia)$/i;
+/** A job label as shown: trailing "ds.", prepositions and cut-off words removed; null when nothing real is left. */
+export function cleanJobLabel(label) {
+  const words = String(label ?? '').replace(/[.,;:]+$/, '').trim().split(/\s+/).filter(Boolean);
+  while (words.length > 1 && DANGLING.test(words.at(-1))) words.pop();
+  const out = words.join(' ').replace(/ rolnego$/, ' rolne');
+  if (GENERIC_PAIR.test(out)) return null;
+  if (words.length === 1 && (out.length < 5 || /[ęą]$/.test(out) || SUBJECT.test(out))) return null;
+  if (!out || GENERIC.test(out) || POLITICAL_JOB.test(out) || NOT_A_JOB.test(out)) return null;
+  return out;
 }
 
 /** "własną kancelarię adwokacką" → "Własna kancelaria adwokacka"; jobs as written, first letter capitalised. */
@@ -121,11 +139,12 @@ export function workCandidates(wikitext, maxYear) {
         }
         if (linked) continue;
         const own = OWN_BUSINESS.exec(pc);
-        if (own) { out.push({ kind: 'own', target: null, label: ownBusinessLabel(Boolean(own[1]), own[2]), role: null, ...y, sentence: sentenceText }); continue; }
-        const owner = OWNER.exec(pc);
-        if (owner) { out.push({ kind: 'own', target: null, label: ownerLabel(owner[2]), role: null, ...y, sentence: sentenceText }); continue; }
-        const job = AS_JOB.exec(pc)?.[1];
-        if (job && !NOT_A_JOB.test(job) && !GENERIC.test(job)) out.push({ kind: 'job', target: null, label: cap(job), role: null, ...y, sentence: sentenceText });
+        const ownLabel = own ? ownBusinessLabel(Boolean(own[1]), own[2]) : null;
+        const owner = own ? null : OWNER.exec(pc);
+        const business = cleanJobLabel(ownLabel ?? (owner ? ownerLabel(owner[2]) : null));
+        if (own || owner) { if (business) out.push({ kind: 'own', target: null, label: business, role: null, ...y, sentence: sentenceText }); continue; }
+        const job = cleanJobLabel(AS_JOB.exec(pc)?.[1]);
+        if (job) out.push({ kind: 'job', target: null, label: cap(job), role: null, ...y, sentence: sentenceText });
       }
     }
   }

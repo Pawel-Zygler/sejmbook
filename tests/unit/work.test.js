@@ -7,7 +7,7 @@ import careerData from '../../data/career.json';
 import governmentData from '../../data/government.json';
 import termsData from '../../data/terms.json';
 import earlyTermsData from '../../data/early-terms.json';
-import { workCandidates, ownBusinessLabel, ownerLabel, employerVerdict, wdYear, wdDate, sameBirth, sameName, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
+import { workCandidates, ownBusinessLabel, ownerLabel, cleanJobLabel, employerVerdict, wdYear, wdDate, sameBirth, sameName, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
 import { lifeTimeline } from '../../src/lib/life.js';
 import { createContext } from '../../src/app.js';
 import { renderProfile, renderPerson, workText, workTip, workLine, lifeSteps } from '../../src/ui/render.js';
@@ -73,6 +73,17 @@ Pracował w [[TVN]] w 2010.`, 2026).map((x) => [x.label, x.from]);
     expect(c.map((x) => x[0])).not.toContain('Dyrektor');
     expect(c).toContainEqual(['Własna kancelaria doradztwa podatkowego', 2012]);
     expect(c).toContainEqual(['Własna firma piwowarska', null]);
+  });
+});
+
+describe('cleanJobLabel', () => {
+  it('cuts dangling words and drops labels that name no real job', () => {
+    expect(cleanJobLabel('Własna kancelaria podatkowa pod nazwą')).toBe('Własna kancelaria podatkowa');
+    expect(cleanJobLabel('Własne przedsiębiorstwo działające w')).toBe('Własne przedsiębiorstwo');
+    expect(cleanJobLabel('Własne gospodarstwo rolnego.')).toBe('Własne gospodarstwo rolne');
+    expect(cleanJobLabel('Doradca podatkowy')).toBe('Doradca podatkowy');
+    expect(cleanJobLabel('Kierownik działu produkcji')).toBe('Kierownik działu produkcji');
+    for (const bad of ['Dyrektor ds', 'Pełnomocnik ds', 'Kierownik działu', 'Dyrektor generalny', 'Firm', 'Kancelarię.', 'Informatyka', 'Asystent posłów', 'Etatowy związkowiec', 'Menedżer odpowiedzialny za', 'Poseł', null, '']) expect(cleanJobLabel(bad)).toBeNull();
   });
 });
 
