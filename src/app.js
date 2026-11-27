@@ -15,7 +15,7 @@ import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, socialData, districtMapData, bioData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, socialData, workData, districtMapData, bioData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -50,6 +50,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     life: mergeBio(mergeSocial(mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null), socialData ?? null), bioData ?? null),
     // Opposition, Round Table and offices of officials (data/bio.json), by plwiki title.
     bio: bioData ?? null,
+    // Professional experience of everyone with a profile (data/work.json: Polish Wikipedia + Wikidata P108).
+    work: workData ?? null,
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.
     media: { photos: mediaData?.photos ?? {}, logos: mediaData?.logos ?? {}, gov: mediaData?.gov ?? {} },
   };

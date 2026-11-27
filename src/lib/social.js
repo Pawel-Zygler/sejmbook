@@ -27,7 +27,7 @@ export function yearsIn(text, maxYear = new Date().getFullYear()) {
   const t = String(text ?? '');
   let m;
   if ((m = /(\d{4})\s*(?:r\.\s*)?[–—-]\s*(\d{4})/.exec(t)) && ok(+m[1]) && ok(+m[2]) && +m[2] >= +m[1]) return { from: +m[1], to: +m[2] };
-  if ((m = /\bod\s+(?:roku\s+)?(\d{4})(?:\s*(?:r\.|roku))?(?:\s+do\s+(?:roku\s+)?(\d{4}))?/.exec(t)) && ok(+m[1])) return { from: +m[1], to: m[2] && ok(+m[2]) ? +m[2] : null };
+  if ((m = /\bod\s+(?:roku\s+)?(\d{4})(?:\s*(?:r\.|roku))?(?:\s+do\s+(?:roku\s+)?(\d{4}))?/i.exec(t)) && ok(+m[1])) return { from: +m[1], to: m[2] && ok(+m[2]) ? +m[2] : null };
   if ((m = /\b(?:w|we|z|na początku|pod koniec)\s+(?:roku\s+)?(\d{4})\b/i.exec(t)) && ok(+m[1])) return { from: +m[1], to: null };
   if ((m = /\((\d{4})\)/.exec(t)) && ok(+m[1])) return { from: +m[1], to: +m[1] };
   return { from: null, to: null };

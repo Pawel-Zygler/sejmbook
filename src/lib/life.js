@@ -2,6 +2,7 @@
 // party and opposition memberships (Wikidata, data/life.json) and Sejm terms with clubs (data/career.json).
 import { oppositionItems, POSTS_COLOR } from './bio.js';
 import { clubFamily, termRanges } from './career.js';
+import { WORK_COLOR, WORK_LABEL } from './work.js';
 
 export const III_RP_START = 1989;
 /** Colour of the "Działalność społeczna" lane. */
@@ -92,6 +93,16 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     if (opposition.some((x) => fold(x.label).includes(base) || base.includes(fold(x.label)))) continue;
     opposition.push(o);
   }
+
+  // Professional experience (data/work.json: Polish Wikipedia + Wikidata P108), passed in as mp.work.
+  const work = [];
+  const workUndated = [];
+  for (const w of mp.work ?? []) {
+    const label = w.label;
+    if (w.from == null || w.from > now) { workUndated.push(w); continue; }
+    work.push({ label, role: w.role ?? null, full: w.role ? `${label} (${w.role})` : label, color: WORK_COLOR, from: clamp(w.from), to: clamp(Math.max(w.to ?? w.from, w.from)), since: w.to == null, prl: w.from < III_RP_START });
+  }
+  work.sort((a, b) => a.from - b.from || a.to - b.to);
   opposition.sort((a, b) => a.from - b.from);
   // Public offices (Wikidata P39), e.g. minister, senator, member of the European Parliament.
   const posts = (entry?.bio?.posts ?? []).filter((p) => p.from <= now).map((p) => ({ label: p.label, full: p.label, color: POSTS_COLOR, from: clamp(p.from), to: clamp(Math.max(p.to ?? now, p.from)), open: p.to == null, prl: p.from < III_RP_START }));
@@ -124,12 +135,14 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     lanes: [
       { id: 'opposition', label: 'Opozycja w PRL', items: opposition },
       { id: 'social', label: 'Działalność społeczna', items: social },
+      { id: 'work', label: WORK_LABEL, items: work },
       { id: 'posts', label: 'Stanowiska', items: posts },
       { id: 'parties', label: 'Partie', items: parties },
       { id: 'sejm', label: 'Sejm', items: sejm.map((s) => ({ ...s, label: `${s.label} · ${termRanges(s.terms)}` })) },
     ].filter((l) => l.items.length),
     undated: [...new Set(undated)],
     social, socialUndated: [...new Set(socialUndated)],
+    work, workUndated,
     hasWikidata: Boolean(entry),
   };
 }

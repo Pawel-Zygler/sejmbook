@@ -21,6 +21,7 @@ import taxData from '../../data/tax-votes.json';
 import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
 import bioData from '../../data/bio.json';
+import workData from '../../data/work.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -161,8 +162,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Aktywność i skuteczność posła';
-const NEWEST_LINE = 'Profile: Aktywność i skuteczność posła';
+const NEWEST = 'Praca zawodowa';
+const NEWEST_LINE = 'Posłowie: Praca zawodowa';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -970,6 +971,36 @@ describe('Life line: PRL opposition, Round Table and offices (Wikipedia categori
   });
 });
 
+
+describe('Praca zawodowa: professional experience on the life line', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, socialData, bioData, workData, today: '2026-11-27' });
+  });
+
+  it('an MP profile has the lane, with every job and the source in its "i"', () => {
+    nav('#posel-148');
+    const lane = $('[data-testid="life-line"] [data-lane="work"]');
+    expect(lane.querySelector('.life-lane-label').textContent).toContain('Praca zawodowa');
+    expect(lane.querySelector('.life-seg[title^="Biblioteka Uniwersytecka w Warszawie"]')).not.toBeNull();
+    expect(lane.querySelector('.info-tip-body').textContent).toMatch(/^Praca zawodowa: .*Biblioteka Uniwersytecka w Warszawie/);
+    expect(lane.querySelector('.info-tip-body a').getAttribute('href')).toContain('pl.wikipedia.org/wiki/Jaros%C5%82aw_Kaczy%C5%84ski');
+    expect($('[data-testid="life-steps"]').textContent).toContain('Praca zawodowa: Biblioteka Uniwersytecka w Warszawie');
+  });
+
+  it('an official who never sat in the Sejm has the lane and the jobs in words', () => {
+    nav('#urzad-karol-nawrocki');
+    expect($('[data-view="official"] [data-lane="work"] .life-seg[title^="Instytut Pamięci Narodowej"]')).not.toBeNull();
+    expect($('[data-testid="work-text"]').textContent).toContain('Instytut Pamięci Narodowej');
+  });
+
+  it('the data covers most profiles and every person has a source article', () => {
+    const keys = Object.keys(workData.index);
+    expect(keys.length).toBeGreaterThan(1000);
+    for (const k of keys) expect(workData.people[workData.index[k]].items.length).toBeGreaterThan(0);
+  });
+});
 
 describe('Profile: KPI card (aktywność i skuteczność)', () => {
   beforeEach(() => {

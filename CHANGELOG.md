@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
+- **Posłowie: Praca zawodowa.** Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.
 - **Profile: Aktywność i skuteczność posła.** Na profilu posła nowa karta: obecność, wystąpienia, interpelacje i skuteczność ustawodawcza na tle całego Sejmu.
 - **Profile: Opozycja w PRL i stanowiska.** Linia życia pokazuje opozycję w PRL, Okrągły Stół, internowanie i pełnione stanowiska, także u urzędników.
 - **Posłowie: Posłowie wszystkich kadencji.** Na liście posłów filtr „Wszystkie” pokazuje każdego posła III RP raz.

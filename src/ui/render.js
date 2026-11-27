@@ -1,6 +1,7 @@
 import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCounts, ageInYear } from '../lib/mps.js';
 import { againstClub, inWindow, itemTime, FEED_WINDOWS } from '../lib/feed.js';
 import { currentHolders, currentMembers } from '../lib/government.js';
+import { workFor } from '../lib/work.js';
 import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, termList, ALL_TERMS, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast, partyStyle } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
@@ -649,13 +650,40 @@ export function careerSentence(sp) {
 }
 
 const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
-const LANE_WORD = { opposition: 'Opozycja w PRL', social: 'Działalność społeczna', parties: 'Partia', sejm: 'Sejm' };
+const LANE_WORD = { opposition: 'Opozycja w PRL', social: 'Działalność społeczna', work: 'Praca zawodowa', parties: 'Partia', sejm: 'Sejm' };
 
 /** Social activity in prose: "Działalność społeczna: Młodzież Wszechpolska w latach 1997–2005, KoLiber od 2001 oraz ZHR." */
 export function socialText(tl) {
   const dated = (tl.social ?? []).map((s) => `<b>${esc(s.label)}</b> ${s.since ? `od ${s.from}` : s.from === s.to ? `w ${s.from}` : `w latach ${s.from}–${s.to}`}`);
   const all = [...dated, ...(tl.socialUndated ?? []).map((l) => `<b>${esc(l)}</b>`)];
   return all.length ? `Działalność społeczna: ${listPl(all, 'oraz')}.` : '';
+}
+
+/** Professional experience in prose: "Praca zawodowa: The Sunday Telegraph (korespondent) w latach 1986–1989, The Spectator od 1990 oraz lekarz." */
+export function workText(tl) {
+  const name = (w) => `<b>${esc(w.label)}</b>${w.role ? ` (${esc(w.role)})` : ''}`;
+  const dated = (tl.work ?? []).map((w) => `${name(w)} ${w.since ? `od ${w.from}` : w.from === w.to ? `w ${w.from}` : `w latach ${w.from}–${w.to}`}`);
+  const all = [...dated, ...(tl.workUndated ?? []).map(name)];
+  return all.length ? `Praca zawodowa: ${listPl(all, 'oraz')}.` : '';
+}
+
+/** Professional experience in prose alone, for profiles without a birth year (no life line to draw it on). */
+export function workLine(ctx, key) {
+  const job = workFor(ctx.work, key);
+  if (!job) return '';
+  const nowY = Number(String(ctx.fetchedAt ?? ctx.today).slice(0, 4));
+  const dated = job.items.filter((w) => w.from != null && w.from <= nowY).map((w) => ({ ...w, since: w.to == null }));
+  const text = workText({ work: dated, workUndated: job.items.filter((w) => !dated.some((d) => d.label === w.label)) });
+  return `<p class="life-first bio"><span data-testid="work-text">${text} ${workTip(job)}</span></p>`;
+}
+
+/** The "i" next to the professional experience: where it comes from, with a link to the article. */
+export function workTip(w, tl = null) {
+  if (!w) return '';
+  const href = w.title ? `https://pl.wikipedia.org/wiki/${encodeURIComponent(w.title.replace(/ /g, '_'))}` : w.qid ? `https://www.wikidata.org/wiki/${w.qid}` : '';
+  // On the life line the tip also lists every job in words, including those without years (not drawn).
+  const list = tl ? workText(tl).replace(/<[^>]+>/g, '') : '';
+  return infoTip(`${list ? `${list} ` : ''}Źródło: zdania o pracy i pracodawcy podlinkowani w artykule w polskiej Wikipedii oraz Wikidata (P108, pracodawca). Bez funkcji politycznych, które są na innych liniach.`, href, 'Praca zawodowa: źródło');
 }
 
 /** Every stretch of the life line in time order, with its lane, for the "Kroki" view. */
@@ -666,6 +694,7 @@ function lifeStretches(tl) {
 const stretchYears = (it) => (it.uncertain ? 'w PRL, lata nieznane' : it.since ? `od ${it.from}` : it.open ? `${it.from}–dziś` : it.from === it.to ? `${it.to}` : `${it.from}–${it.to}`);
 const stretchTitle = (it) => {
   if (it.lane === 'parties') return (it.full ?? it.label).replace(/, lata członkostwa nieznane$/, '');
+  if (it.lane === 'work') return it.full ?? it.label;
   if (it.lane === 'sejm' && it.terms?.length) return `${it.label.split(' · ')[0]}, ${it.terms.length === 1 ? 'kadencja' : 'kadencje'} ${termRanges(it.terms)}`;
   return it.label;
 };
@@ -727,7 +756,8 @@ const SHOW_LIFE_PROSE = false;
 /** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms. */
 export function renderLifeLine(ctx, mp, sp = null) {
   const now = Number(ctx.fetchedAt.slice(0, 4));
-  const tl = lifeTimeline(ctx, mp, now);
+  const job = workFor(ctx.work, mp.workKey ?? `mp:${mp.id}`);
+  const tl = lifeTimeline(ctx, { ...mp, work: job?.items ?? [] }, now);
   if (!tl) return '';
   const left = (y) => pos(tl, y).toFixed(2);
   const width = (a, b) => Math.max(pos(tl, b) - pos(tl, a), 0.8).toFixed(2);
@@ -736,7 +766,7 @@ export function renderLifeLine(ctx, mp, sp = null) {
     const rows = Math.max(1, ...row);
     return `
         <div class="life-lane" data-lane="${l.id}">
-          <span class="life-lane-label">${esc(l.label)}</span>
+          <span class="life-lane-label">${esc(l.label)}${l.id === 'work' ? ` ${workTip(job, tl)}` : ''}</span>
           <div class="life-track" style="--rows:${rows}">${l.items.map((it, i) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--row:${row[i] - 1};--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${stretchYears(it)}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   };
@@ -749,7 +779,8 @@ export function renderLifeLine(ctx, mp, sp = null) {
   const social = socialText(tl);
   const socialTitle = ctx.life?.mps?.[mp.id]?.socialTitle;
   const socialTip = social ? infoTip('Działalność społeczna: zdania o członkostwie i funkcjach w organizacjach z artykułu w polskiej Wikipedii oraz Wikidata (P463).', socialTitle ? `https://pl.wikipedia.org/wiki/${encodeURIComponent(socialTitle.replace(/ /g, '_'))}` : '', 'Źródło') : '';
-  const first = [firstActivityText(tl), social ? `<span data-testid="social-text">${social}${socialTip ? ` ${socialTip}` : ''}</span>` : '', career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
+  const work = workText(tl);
+  const first = [firstActivityText(tl), social ? `<span data-testid="social-text">${social}${socialTip ? ` ${socialTip}` : ''}</span>` : '', work ? `<span data-testid="work-text">${work} ${workTip(job)}</span>` : '', career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
   const ticks = decades(tl);
   return `
       ${lifeTabs()}
@@ -842,7 +873,7 @@ export function renderPerson(ctx, key) {
   const year = Number(ctx.fetchedAt.slice(0, 4));
   // The same life line as on an MP profile, from this person's terms (no Wikidata parties for earlier MPs).
   const lifeCtx = { ...ctx, life: null, career: { terms: [...info.values()], career: { person: rows } } };
-  const lifeLine = birthYear ? renderLifeLine(lifeCtx, { id: 'person', birthYear }, route.path.length ? sp : null) : '';
+  const lifeLine = birthYear ? renderLifeLine(lifeCtx, { id: 'person', birthYear, workKey: `osoba:${key}` }, route.path.length ? sp : null) : workLine(ctx, `osoba:${key}`);
   return `
   <section data-view="person" data-person="${esc(key)}">
     <div class="profile-top panel">
