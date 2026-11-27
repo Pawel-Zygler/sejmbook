@@ -50,7 +50,34 @@ for (let i = 0; i < mps.length; i += 40) {
   }
   await new Promise((r2) => setTimeout(r2, 800));
 }
-console.log(`matched ${match.size}/${mps.length} on Wikidata`);
+console.log(`matched ${match.size}/${mps.length} on Wikidata by label and birth date`);
+
+// 1b) The rest (76 MPs in Nov 2026, e.g. Jarosław Kaczyński): the exact birth date as a typed date and the
+// surname anywhere in the Polish label. Among several hits, a politician with a plwiki article wins.
+const rest = mps.filter((m) => m.birthDate && !match.has(m.id));
+for (let i = 0; i < rest.length; i += 25) {
+  const batch = rest.slice(i, i + 25);
+  const values = batch.map((m) => `(${m.id} "${m.birthDate}T00:00:00Z"^^xsd:dateTime ${lit(m.lastName.toLowerCase())})`).join('\n');
+  const q = `SELECT ?mp ?item (SAMPLE(?pol) AS ?isPol) (SAMPLE(?art) AS ?hasArt) WHERE {
+    VALUES (?mp ?bd ?last) { ${values} }
+    ?item wdt:P569 ?bd; wdt:P31 wd:Q5; rdfs:label ?l.
+    FILTER(LANG(?l) = "pl" && CONTAINS(LCASE(?l), ?last))
+    OPTIONAL { ?item wdt:P106 wd:Q82955. BIND(1 AS ?pol) }
+    OPTIONAL { ?art schema:about ?item; schema:isPartOf <https://pl.wikipedia.org/> }
+  } GROUP BY ?mp ?item`;
+  let r;
+  try { r = await sparql(q); } catch (e) { console.log('fallback batch failed', e.message); continue; }
+  const best = new Map();
+  for (const b of r.results.bindings) {
+    const id = Number(b.mp.value);
+    const score = (b.isPol ? 2 : 0) + (b.hasArt ? 1 : 0);
+    if (!best.has(id) || score > best.get(id).score) best.set(id, { q: qid(b.item.value), score });
+  }
+  for (const [id, x] of best) match.set(id, x.q);
+  await new Promise((r2) => setTimeout(r2, 800));
+}
+console.log(`matched ${match.size}/${mps.length} on Wikidata in total`);
+console.log('still unmatched:', mps.filter((m) => !match.has(m.id)).map((m) => m.firstLastName).join(', '));
 
 // 2) Party memberships (P102) and organisation memberships (P463), with start/end years.
 const life = {};
