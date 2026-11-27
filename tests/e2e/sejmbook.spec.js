@@ -659,3 +659,25 @@ test('Life line: Jarosław Kaczyński has the PRL opposition lane', async ({ pag
   await expect(page.getByTestId('life-undated')).toContainText(/PC|Porozumienie/);
 });
 
+
+// "Praca zawodowa" (Pawel, 2026-11-27): professional experience as its own lane, in both interface versions.
+for (const skin of ['classic', 'modern']) {
+  test(`Praca zawodowa: lane on an MP profile and on an official's profile (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#posel-148`);
+    const lane = page.locator('[data-testid="life-line"] [data-lane="work"]');
+    await expect(lane).toBeVisible();
+    await expect(lane.locator('.life-lane-label')).toContainText('Praca zawodowa');
+    const segs = lane.locator('.life-seg');
+    expect(await segs.count()).toBeGreaterThan(0);
+    const track = await lane.locator('.life-track').boundingBox();
+    for (const box of await segs.evaluateAll((els) => els.map((e) => { const r = e.getBoundingClientRect(); return { x: r.x, right: r.right }; }))) {
+      expect(box.x).toBeGreaterThanOrEqual(track.x - 1);
+      expect(box.right).toBeLessThanOrEqual(track.x + track.width + 1);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    await page.goto(`${PAGE}#urzad-karol-nawrocki`);
+    await expect(page.locator('[data-view="official"] [data-lane="work"]')).toBeVisible();
+    await expect(page.getByTestId('work-text')).toContainText('Instytut Pamięci Narodowej');
+  });
+}
