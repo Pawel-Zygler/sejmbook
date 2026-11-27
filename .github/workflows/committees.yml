@@ -1,0 +1,26 @@
+name: committees
+# Builds data/committees.json (each MP's club at their first vote = 2023 election list) from the Sejm API.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, 'claude/**']
+    paths: ['scripts/fetch-committees.mjs', '.github/workflows/committees.yml', 'data/law-votes.json']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-committees.mjs
+      - name: Commit committees
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/committees.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update MPs' first clubs (2023 election lists) from the Sejm API"
+          git pull --rebase
+          git push
