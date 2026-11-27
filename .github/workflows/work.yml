@@ -1,0 +1,26 @@
+name: work
+# Builds data/work.json ("Praca zawodowa": professional experience from Polish Wikipedia and Wikidata P108) and commits it.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/fetch-work.mjs', 'src/lib/work.js', '.github/workflows/work.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-work.mjs
+      - name: Commit professional experience
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/work.json data/raw/work-people.json data/raw/work-candidates.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update professional experience from Polish Wikipedia and Wikidata"
+          git pull --rebase
+          git push
