@@ -14,7 +14,7 @@
 import { cleanWikitext, yearsIn, orgName } from './social.js';
 import { personKey } from './career.js';
 
-export const WORK_COLOR = 'var(--cobalt)';
+export const WORK_COLOR = 'var(--accent)'; // signal amber: apart from blue offices, red opposition, teal social activity
 export const WORK_LABEL = 'Praca zawodowa';
 
 // \b in JavaScript knows only ASCII letters, so "pracował\b" never matches; this boundary knows Polish letters.
