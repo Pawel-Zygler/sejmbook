@@ -19,6 +19,7 @@ import lawData from '../../data/law-votes.json';
 import kpiData from '../../data/kpi.json';
 import taxData from '../../data/tax-votes.json';
 import latinData from '../../data/latin.json';
+import voteTallyData from '../../data/vote-tally.json';
 import declarationsData from '../../data/declarations-card.json';
 import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
@@ -164,8 +165,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Cywilizacja łacińska: poprzednie zasady';
-const NEWEST_LINE = 'Rankingi: Cywilizacja łacińska: poprzednie zasady';
+const NEWEST = 'Za i przeciw';
+const NEWEST_LINE = 'Rankingi: Za i przeciw';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -517,7 +518,7 @@ describe('Profiles of former MPs', () => {
     nav(leader.getAttribute('href'));
     expect($('[data-testid="spectrum"] [data-lane="sejm"] .life-seg, [data-testid="spectrum"] [data-testid="spectrum-text"]')).not.toBeNull();
     expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
-    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#changelog', '#mapa']);
+    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#za-przeciw', '#changelog', '#mapa']);
     expect($('#view').textContent).not.toContain('Dane: API Sejmu');
   });
 });
@@ -712,7 +713,7 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     for (const h of hrefs) { nav(h); expect($('#view').textContent).not.toContain('Nie ma takiej strony'); }
   });
   it('gives every section page the same header', () => {
-    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#changelog', '#mapa']) {
+    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#za-przeciw', '#changelog', '#mapa']) {
       nav(h);
       const head = $('#view .page-head');
       expect(head, h).not.toBeNull();
@@ -1210,5 +1211,48 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
     expect($('[data-testid="profile-latin"]')).not.toBeNull();
     click($('[data-action="ui-skin"][data-skin="classic"]'));
+  });
+});
+
+// "Za i przeciw" (Pawel, 2026-11-27): table in the side menu, who voted "za" and who "przeciw" most often.
+describe('Ranking "Za i przeciw"', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, voteTallyData, today: '2026-11-28' });
+  });
+
+  it('is in the side menu under Rankingi, in the ranking switch and the site map', () => {
+    const link = $('.sidenav a[data-nav="votes"]');
+    expect(link.getAttribute('href')).toBe('#za-przeciw');
+    expect(link.textContent.trim()).toBe('Za i przeciw');
+    nav('#za-przeciw');
+    expect(link.getAttribute('aria-current')).toBe('page');
+    expect($('[data-testid="rank-switch"] a[href="#za-przeciw"]').getAttribute('aria-current')).toBe('page');
+    nav('#mapa');
+    expect($('[data-testid="sitemap"] a[href="#za-przeciw"]')).not.toBeNull();
+  });
+
+  it('lists every current MP, most "za" first; "Najczęściej przeciw" re-sorts; a header flips the order; club filter', () => {
+    nav('#za-przeciw');
+    expect($('[data-view="votes"] h1').textContent).toContain('Za i przeciw');
+    const rows = () => $$('[data-testid="votes-ranking"] tbody tr');
+    const num = (tr, id) => Number(tr.querySelector(`[data-testid="${id}"]`).textContent.replace(/\s/g, ''));
+    const withData = mpsData.mps.filter((m) => m.active && voteTallyData.mps[m.id]?.some((n) => n > 0)).length;
+    expect(rows().length).toBe(withData);
+    expect(withData).toBeGreaterThan(440);
+    const yes = rows().map((tr) => num(tr, 'votes-row-yes'));
+    expect(yes).toEqual([...yes].sort((a, b) => b - a));
+    click($('[data-action="votes-preset"][data-preset="no"]'));
+    const no = rows().map((tr) => num(tr, 'votes-row-no'));
+    expect(no).toEqual([...no].sort((a, b) => b - a));
+    expect($('[data-action="votes-preset"][data-preset="no"]').getAttribute('aria-selected')).toBe('true');
+    click($('[data-action="votes-sort"][data-sort="no"]'));
+    expect($('th[aria-sort="ascending"] [data-sort="no"]')).not.toBeNull();
+    const asc = rows().map((tr) => num(tr, 'votes-row-no'));
+    expect(asc).toEqual([...asc].sort((a, b) => a - b));
+    click($('[data-action="votes-club"][data-club="Lewica"]'));
+    expect(rows().length).toBeGreaterThan(0);
+    expect(rows().every((tr) => mpsData.mps.find((m) => m.id === Number(tr.dataset.mpId)).club === 'Lewica')).toBe(true);
   });
 });

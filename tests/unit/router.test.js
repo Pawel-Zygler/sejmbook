@@ -8,6 +8,7 @@ describe('parseHash', () => {
     ['#start', { name: 'home' }],
     ['#poslowie', { name: 'directory' }],
     ['#frequent-flyer', { name: 'flyer' }],
+    ['#za-przeciw', { name: 'votes' }],
     ['#posel-240', { name: 'profile', id: 240 }],
     [undefined, { name: 'home' }],
   ])('%s', (hash, expected) => {
@@ -20,7 +21,7 @@ describe('parseHash', () => {
 });
 
 describe('hrefFor', () => {
-  it.each([{ name: 'home' }, { name: 'directory' }, { name: 'flyer' }, { name: 'profile', id: 7 }])('round-trips %o', (route) => {
+  it.each([{ name: 'home' }, { name: 'directory' }, { name: 'flyer' }, { name: 'votes' }, { name: 'profile', id: 7 }])('round-trips %o', (route) => {
     const parsed = parseHash(hrefFor(route));
     expect(parsed).toEqual(route);
   });

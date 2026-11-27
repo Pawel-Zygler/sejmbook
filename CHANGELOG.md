@@ -2,6 +2,10 @@
 
 Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
 
+## 2026-11-28
+
+- **Rankingi: Za i przeciw.** Nowy ranking: kto w X kadencji najczęściej głosował za, a kto najczęściej przeciw.
+
 ## 2026-11-27
 
 - **Rankingi: Cywilizacja łacińska: poprzednie zasady.** Wynik cywilizacji łacińskiej znów liczy wszystkie ustawy i zwykłą obecność; suwerenność liczymy bez zmian.

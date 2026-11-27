@@ -485,7 +485,7 @@ function partyRoute(steps) {
 
 /** On phones the side menu is hidden; this row links the rankings to each other. */
 export function rankingSwitch(current) {
-  const items = [['#frequent-flyer', 'flyer', 'Frequent Flyer'], ['#frekwencja', 'attendance', 'Frekwencja'], ['#partie', 'parties', 'Najwięcej partii'], ['#konieczny', 'latin', 'Cywilizacja łacińska']];
+  const items = [['#frequent-flyer', 'flyer', 'Frequent Flyer'], ['#frekwencja', 'attendance', 'Frekwencja'], ['#partie', 'parties', 'Najwięcej partii'], ['#konieczny', 'latin', 'Cywilizacja łacińska'], ['#za-przeciw', 'votes', 'Za i przeciw']];
   return `<nav class="rank-switch" aria-label="Rankingi" data-testid="rank-switch">${items.map(([href, id, label]) => `<a href="${href}"${id === current ? ' aria-current="page" class="on"' : ''}>${label}</a>`).join('')}</nav>`;
 }
 

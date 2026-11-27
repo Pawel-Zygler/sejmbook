@@ -202,3 +202,4 @@
 :root[data-ui="modern"] .decl-post .latin-big b { font-family: var(--font-display); letter-spacing: -0.03em; }
 :root[data-ui="modern"] .decl-quote { border-radius: 0 14px 14px 0; }
 :root[data-ui="modern"] .decl-law { border-radius: 14px; }
+:root[data-ui="modern"] .vote-split { height: 6px; border-radius: 999px; }

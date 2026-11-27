@@ -408,6 +408,7 @@ describe('rankingSwitch', () => {
     expect(html).toContain('href="#frequent-flyer"');
     expect(html).toContain('href="#frekwencja"');
     expect(html).toContain('<a href="#partie" aria-current="page" class="on">Najwięcej partii</a>');
+    expect(html).toContain('href="#za-przeciw"');
   });
 });
 

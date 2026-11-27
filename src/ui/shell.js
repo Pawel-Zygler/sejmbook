@@ -30,6 +30,7 @@ export const SHELL_HTML = `
     <a href="#frekwencja" data-nav="attendance"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5V12h8.5"/></svg></span>Frekwencja</a>
     <a href="#partie" data-nav="parties"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></svg></span>Najwięcej partii</a>
     <a href="#konieczny" data-nav="latin"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 9h14"/><path d="M8.5 21h7"/></svg></span>Cywilizacja łacińska</a>
+    <a href="#za-przeciw" data-nav="votes"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v7M3.5 7.5h7"/><path d="M13.5 16.5h7"/><path d="M5 20 19 4"/></svg></span>Za i przeciw</a>
     <p class="sidenav-label">Serwis</p>
     <a href="#changelog" data-nav="changelog"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5V12l3 2"/><circle cx="12" cy="12" r="8.5"/></svg></span>Changelog</a>
     <a href="#mapa" data-nav="sitemap"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3.5" width="6" height="4.5" rx="1"/><rect x="3" y="16" width="6" height="4.5" rx="1"/><rect x="15" y="16" width="6" height="4.5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></svg></span>Mapa strony</a>
@@ -56,6 +57,7 @@ export const SHELL_HTML = `
         <a href="#frekwencja">Frekwencja</a>
         <a href="#partie">Najwięcej partii</a>
         <a href="#konieczny">Cywilizacja łacińska</a>
+        <a href="#za-przeciw">Za i przeciw</a>
       </nav>
       <nav class="foot-col" aria-label="Serwis w stopce">
         <p class="foot-h">Serwis</p>

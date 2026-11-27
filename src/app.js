@@ -8,6 +8,8 @@ import { mergeSocial } from './lib/social.js';
 import { renderHome, renderVotingDetails, renderChangelog, renderPerson, renderParties, renderDirectory, renderProfile, renderFlyer, renderNotFound, renderAside, avatar, clubChip, rankingSwitch, infoTip } from './ui/render.js';
 import { renderAttendance } from './ui/attendance-view.js';
 import { renderLatinRanking } from './ui/latin-view.js';
+import { renderVotes, VOTE_PRESETS } from './ui/votes-view.js';
+import { nextVoteSort } from './lib/vote-tally.js';
 import { renderState, renderGovernment, renderOfficial, renderOfficialMatches } from './ui/state-view.js';
 import { buildHierarchy } from './lib/government.js';
 import { renderSitemap } from './ui/sitemap-view.js';
@@ -16,7 +18,7 @@ import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, declarationsData, socialData, workData, districtMapData, bioData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, voteTallyData, declarationsData, socialData, workData, districtMapData, bioData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -36,6 +38,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     laws: lawData ?? null,
     // Experimental Koneczny card: classified laws and club independence (data/latin.json, built by scripts/build-latin.mjs).
     latin: latinData ?? null,
+    // "Za i przeciw": yes/no/abstain/absent counts per MP over every X-term voting (data/vote-tally.json, API Sejmu).
+    votes: voteTallyData ?? null,
     // "Współczynnik deklaracji": 2023 committee promises vs votes (data/declarations-card.json, scripts/build-declarations.mjs).
     declarations: declarationsData ?? null,
     // Mini map of the 41 Sejm districts (data/district-map.json, GUGiK borders + Wikipedia).
@@ -62,7 +66,7 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
   };
 }
 
-const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', sitemap: 'sitemap', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties', latin: 'latin' };
+const NAV_FOR = { home: 'home', directory: 'directory', profile: 'directory', person: 'directory', changelog: 'changelog', sitemap: 'sitemap', state: 'state', government: 'state', official: 'state', flyer: 'flyer', attendance: 'attendance', parties: 'parties', latin: 'latin', votes: 'votes' };
 
 /** Mount the app into a document. Returns a small handle for tests. */
 export function createApp(doc, win, data) {
@@ -77,6 +81,8 @@ export function createApp(doc, win, data) {
     flyer: { period: 'all', dataset: null, sortBy: 'km' },
     attendance: { order: 'desc', club: '', view: 'mps' },
     latin: { order: 'desc', club: '', band: 'all', sortBy: 'total', view: 'mps' },
+    // "Za i przeciw" (Pawel, 2026-11-27): starts with who voted "za" most often.
+    votes: { sortBy: 'yes', order: 'desc', club: '' },
     // Feed time window (Pawel, 2026-11-24: the feed shows the last hours first).
     feed: { window: '24h' },
   };
@@ -109,6 +115,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'parties') html = renderParties(ctx, state.parties);
     else if (r.name === 'attendance') html = renderAttendance(ctx, state.attendance, { avatar, clubChip, rankingSwitch, infoTip });
     else if (r.name === 'latin') html = renderLatinRanking(ctx, state.latin, { avatar, clubChip, rankingSwitch, infoTip });
+    else if (r.name === 'votes') html = renderVotes(ctx, state.votes, { avatar, clubChip, rankingSwitch, infoTip });
     else html = renderNotFound(r.hash);
     view.innerHTML = html;
     doc.documentElement.dataset.route = r.name;
@@ -221,6 +228,16 @@ export function createApp(doc, win, data) {
     } else if (action === 'latin-club') {
       state.latin.club = el.dataset.club;
       if (el.dataset.view) state.latin.view = el.dataset.view;
+      render();
+    } else if (action === 'votes-sort') {
+      Object.assign(state.votes, nextVoteSort(state.votes, el.dataset.sort));
+      render();
+    } else if (action === 'votes-preset') {
+      const p = VOTE_PRESETS.find((x) => x.id === el.dataset.preset);
+      if (p) Object.assign(state.votes, { sortBy: p.sortBy, order: p.order });
+      render();
+    } else if (action === 'votes-club') {
+      state.votes.club = el.dataset.club;
       render();
     } else if (action === 'att-club') {
       state.attendance.club = el.dataset.club;

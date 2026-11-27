@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Cywilizacja łacińska: poprzednie zasady');
+  await expect(post).toContainText('Za i przeciw');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Cywilizacja łacińska: poprzednie zasady');
+  await expect(page.locator('.news-post').first()).toContainText('Za i przeciw');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -841,3 +841,22 @@ test('ranking "Cywilizacja łacińska": sort by the separate sovereignty indicat
   expect(first).toBeGreaterThanOrEqual(50);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+// "Za i przeciw" (Pawel, 2026-11-27): from the side menu (classic) or the ranking switch, in both looks.
+for (const skin of ['classic', 'modern']) {
+  test(`ranking "Za i przeciw": side menu, sorting, no sideways scroll (${skin})`, async ({ page, isMobile }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#frekwencja`);
+    if (isMobile || skin === 'modern') await page.getByTestId('rank-switch').getByRole('link', { name: 'Za i przeciw' }).click();
+    else await page.locator('.sidenav a[href="#za-przeciw"]').click();
+    await expect(page).toHaveURL(/#za-przeciw$/);
+    await expect(page.locator('[data-view="votes"] h1')).toContainText('Za i przeciw');
+    const rows = page.locator('[data-testid="votes-ranking"] tbody tr');
+    expect(await rows.count()).toBeGreaterThan(440);
+    await expect(rows.first().locator('.vote-split')).toBeVisible();
+    await page.getByRole('tab', { name: 'Najczęściej przeciw' }).click();
+    const no = await rows.locator('[data-testid="votes-row-no"]').evaluateAll((els) => els.map((e) => Number(e.textContent.replace(/\s/g, ''))));
+    expect(no[0]).toBeGreaterThanOrEqual(no.at(-1));
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  });
+}
