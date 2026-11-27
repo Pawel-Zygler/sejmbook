@@ -76,6 +76,33 @@ for (let i = 0; i < rest.length; i += 25) {
   for (const [id, x] of best) match.set(id, x.q);
   await new Promise((r2) => setTimeout(r2, 800));
 }
+// 1c) Still missing (35 MPs, e.g. Sławomir Mentzen, Roman Giertych): Wikidata search by name, then the
+// same birth year and a Polish Wikipedia article. Only one such item is accepted.
+const WDAPI = 'https://www.wikidata.org/w/api.php';
+for (const m of mps.filter((x) => x.birthDate && !match.has(x.id))) {
+  const first = String(m.firstName ?? m.firstLastName).split(' ')[0];
+  const names = [...new Set([m.firstLastName, `${first} ${m.lastName}`])];
+  const ids = new Set();
+  for (const n of names) {
+    try {
+      const r = await getJson(`${WDAPI}?action=wbsearchentities&format=json&language=pl&uselang=pl&type=item&limit=10&search=${encodeURIComponent(n)}`);
+      for (const x of r.search ?? []) ids.add(x.id);
+    } catch (e) { console.log('search failed', n, e.message); }
+    await new Promise((r2) => setTimeout(r2, 300));
+  }
+  if (!ids.size) continue;
+  let ents = {};
+  try { ents = (await getJson(`${WDAPI}?action=wbgetentities&format=json&props=claims|sitelinks&sitefilter=plwiki&ids=${[...ids].slice(0, 50).join('|')}`)).entities ?? {}; } catch { continue; }
+  const y = m.birthDate.slice(0, 4);
+  const hits = Object.values(ents).filter((e) => {
+    const human = (e.claims?.P31 ?? []).some((c) => c.mainsnak?.datavalue?.value?.id === 'Q5');
+    const born = (e.claims?.P569 ?? []).some((c) => String(c.mainsnak?.datavalue?.value?.time ?? '').slice(1, 5) === y);
+    return human && born && e.sitelinks?.plwiki;
+  });
+  if (hits.length === 1) match.set(m.id, hits[0].id);
+  else console.log('no single match for', m.firstLastName, hits.map((h) => h.id).join(','));
+  await new Promise((r2) => setTimeout(r2, 300));
+}
 console.log(`matched ${match.size}/${mps.length} on Wikidata in total`);
 console.log('still unmatched:', mps.filter((m) => !match.has(m.id)).map((m) => m.firstLastName).join(', '));
 
