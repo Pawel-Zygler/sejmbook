@@ -5,7 +5,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, clubTag, renderCareerSpectrum, listPl, firstActivityText, careerSentence, renderParties, articleLinks, earthLaps, earthBadge, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, mpCardSub, clubTag, renderCareerSpectrum, listPl, firstActivityText, careerSentence, renderParties, articleLinks, earthLaps, earthBadge, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
 import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
@@ -276,22 +276,26 @@ describe('bundled media', () => {
   });
 });
 
-describe('mpCardMeta', () => {
-  it('lists, top to bottom: party tag, votes in 2023, district, attendance', () => {
+describe('mpCardMeta / mpCardSub', () => {
+  it('badges: party tag, votes in 2023, attendance; under the name: age, terms, district', () => {
     const mp = ctx.mpsById.get(70);
     const html = mpCardMeta(ctx, mp);
     const at = (s) => html.indexOf(s);
     expect(at('club-tag')).toBeGreaterThan(-1);
     expect(at('club-tag')).toBeLessThan(at('mp-card-votes'));
-    expect(at('mp-card-votes')).toBeLessThan(at('mp-card-district'));
-    if (html.includes('att-badge')) expect(at('mp-card-district')).toBeLessThan(at('att-badge'));
-    expect(html).toContain(`>okr. ${mp.districtNum} · ${mp.districtName}</span>`);
+    if (html.includes('att-badge')) expect(at('mp-card-votes')).toBeLessThan(at('att-badge'));
     expect(html).toMatch(/\d głos(y|ów)?<\/span>/);
     expect(html).not.toContain('meta-dot');
-    expect(html).toContain(`>${2026 - mp.birthYear} `);
-    expect(html).not.toContain('mp-card-terms'); // no career data in this context
-    const withCareer = mpCardMeta({ ...ctx, career: { career: { [mp.id]: [{ term: 9 }, { term: 10 }] } } }, mp);
+    expect(html).not.toContain('mp-card-district');
+    expect(html).not.toContain('mp-card-age');
+    const sub = mpCardSub(ctx, mp);
+    expect(sub).toContain(`>${2026 - mp.birthYear} `);
+    expect(sub).toContain(`>okr. ${mp.districtNum} · ${mp.districtName}</span>`);
+    expect(sub.indexOf('mp-card-age')).toBeLessThan(sub.indexOf('mp-card-district'));
+    expect(sub).not.toContain('mp-card-terms'); // no career data in this context
+    const withCareer = mpCardSub({ ...ctx, career: { career: { [mp.id]: [{ term: 9 }, { term: 10 }] } } }, mp);
     expect(withCareer).toMatch(/data-testid="mp-card-terms"[^>]*>2 kadencje</);
+    expect(withCareer.indexOf('mp-card-terms')).toBeLessThan(withCareer.indexOf('mp-card-district'));
   });
 });
 

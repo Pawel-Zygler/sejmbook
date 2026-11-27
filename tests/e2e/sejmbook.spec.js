@@ -176,7 +176,7 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });
 
-test('MP cards: portrait top-left, name top-right, badges with party, votes, district, attendance, age and terms at the bottom', async ({ page }) => {
+test('MP cards: portrait top-left, name top-right with age, terms and district under it, badges at the bottom', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   const card = page.locator('.mp-card').first();
   const tag = card.getByTestId('club-tag');
@@ -199,9 +199,17 @@ test('MP cards: portrait top-left, name top-right, badges with party, votes, dis
   expect(c.x + c.width - (name.x + name.width)).toBeLessThan(24);
   expect(name.y - c.y).toBeLessThan(24);
   expect(name.x).toBeGreaterThan(photo.x + photo.width);
-  for (const b of [box, votes, district, att]) expect(b.y).toBeGreaterThanOrEqual(photo.y + photo.height - 1);
-  await expect(card.getByTestId('mp-card-age')).toBeVisible();
+  for (const b of [box, votes, att]) expect(b.y).toBeGreaterThanOrEqual(photo.y + photo.height - 1);
+  const age = await card.getByTestId('mp-card-age').boundingBox();
+  const terms = await card.getByTestId('mp-card-terms').boundingBox();
   await expect(card.getByTestId('mp-card-terms')).toContainText('kadencj');
+  expect(age.y).toBeGreaterThan(name.y);
+  expect(terms.y).toBeGreaterThan(age.y);
+  expect(district.y).toBeGreaterThan(terms.y);
+  for (const b of [age, terms, district]) expect(c.x + c.width - (b.x + b.width)).toBeLessThan(24);
+  // Plain text, not badges.
+  const bg = await card.locator('.mp-card-sub > span').evaluateAll((els) => els.map((e) => getComputedStyle(e).borderTopWidth));
+  expect(bg.every((w) => w === '0px')).toBe(true);
   expect(c.y + c.height - (att.y + att.height)).toBeLessThan(60);
   // Every tag in the grid fits its card, the longest club names included.
   const overflow = await page.locator('.mp-card').evaluateAll((cards) => cards.filter((el) => {

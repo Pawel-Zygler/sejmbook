@@ -4,7 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
-- **Posłowie: Nowe karty posłów.** Karty posłów pokazują teraz wiek i liczbę kadencji, data wpisu w Feedzie jest w prawym górnym rogu, a Państwo ma krótszy nagłówek.
+- **Posłowie: Nowe karty posłów.** Na kartach posłów wiek, liczba kadencji i okręg są pod nazwiskiem, data wpisu w Feedzie jest w prawym górnym rogu, a Państwo ma krótszy nagłówek.
 - **Profile: Bez karty aktywności.** Z profilu posła zniknęła karta „Aktywność i skuteczność”.
 - **Posłowie: Praca zawodowa.** Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.
 - **Profile: Aktywność i skuteczność posła.** Na profilu posła nowa karta: obecność, wystąpienia, interpelacje i skuteczność ustawodawcza na tle całego Sejmu.

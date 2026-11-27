@@ -903,10 +903,13 @@ describe('Posłowie: card with the portrait top-left, the name top-right and fac
   it('puts the photo first, then the name, then party, votes, district, attendance, age and terms', () => {
     const card = $('.mp-card');
     expect(card.firstElementChild.classList.contains('mp-card-photo')).toBe(true);
-    expect(card.children[1].classList.contains('mp-card-link')).toBe(true);
+    expect(card.children[1].classList.contains('mp-card-head')).toBe(true);
+    expect(card.children[1].firstElementChild.classList.contains('mp-card-link')).toBe(true);
+    const sub = [...card.querySelector('.mp-card-sub').children].map((e) => e.className.split(' ')[0]);
+    expect(sub).toEqual(['mp-card-age', 'mp-card-terms', 'mp-card-district']);
     const facts = [...card.querySelector('.mp-card-facts').children].map((e) => e.className.split(' ')[0]);
-    expect(facts.slice(0, 3)).toEqual(['mp-card-party', 'mp-card-votes', 'mp-card-district']);
-    expect(facts.slice(-2)).toEqual(['mp-card-age', 'mp-card-terms']);
+    expect(facts.slice(0, 2)).toEqual(['mp-card-party', 'mp-card-votes']);
+    expect(facts).not.toContain('mp-card-district');
     expect(card.querySelector('.mp-card-photo').getAttribute('href')).toBe(card.querySelector('.mp-card-link').getAttribute('href'));
   });
 });
