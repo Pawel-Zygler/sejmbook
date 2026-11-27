@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
+- **Profile: Opozycja w PRL i stanowiska.** Linia życia pokazuje opozycję w PRL, Okrągły Stół, internowanie i pełnione stanowiska, także u urzędników.
 - **Posłowie: Posłowie wszystkich kadencji.** Na liście posłów filtr „Wszystkie” pokazuje każdego posła III RP raz.
 
 ## 2026-11-26

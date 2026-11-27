@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Posłowie wszystkich kadencji');
+  await expect(post).toContainText('Opozycja w PRL i stanowiska');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Posłowie wszystkich kadencji');
+  await expect(page.locator('.news-post').first()).toContainText('Opozycja w PRL i stanowiska');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -651,5 +651,11 @@ test('Posłowie: "Wszystkie" kadencje lists people of every term', async ({ page
   await page.locator('[data-action="dir-term"][data-term="0"]:visible').first().dispatchEvent('click');
   await expect(page.locator('[data-action="dir-term"][data-term="0"][aria-pressed="true"]').first()).toBeAttached();
   expect(await page.locator('.term-card').count()).toBeGreaterThan(2000);
+});
+
+test('Life line: Jarosław Kaczyński has the PRL opposition lane', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-148`);
+  await expect(page.locator('[data-testid="life-line"] [data-lane="opposition"]')).toBeVisible();
+  await expect(page.getByTestId('life-undated')).toContainText(/PC|Porozumienie/);
 });
 

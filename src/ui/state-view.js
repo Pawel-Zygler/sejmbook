@@ -1,5 +1,6 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
+import { stackRows } from './render.js';
 import { POSTS_COLOR } from '../lib/bio.js';
 import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl } from './render.js';
 import { clubFamily } from '../lib/career.js';
@@ -124,6 +125,13 @@ const yearOf = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ?
  * The life line of an official, in the same look as on MP profiles: their state roles over time since 1989,
  * government roles in one lane and the top offices in another, coloured by party.
  */
+/** A lane's track with overlapping items stacked in rows (same as on MP profiles). */
+function stackedTrack(items, seg) {
+  const sorted = [...items].sort((a, b) => a.from - b.from);
+  const rows = stackRows(sorted);
+  return `<div class="life-track" style="--rows:${Math.max(1, ...rows)}">${sorted.map((x, i) => seg(x, rows[i] - 1)).join('')}</div>`;
+}
+
 export function roleLine(roles, today, more = '', bio = null) {
   const now = yearOf(today);
   const items = roles.map((r) => ({ r, from: yearOf(r.from), to: yearOf(r.to ?? today) })).filter((x) => x.from != null && x.to != null);
@@ -138,9 +146,9 @@ export function roleLine(roles, today, more = '', bio = null) {
   const start = Math.min(1989, ...all.map((x) => Math.floor(x.from)));
   const pos = (y) => (((y - start) / (now - start)) * 100).toFixed(2);
   const width = (a, b) => Math.max(((b - a) / (now - start)) * 100, 0.8).toFixed(2);
-  const seg = (x) => {
+  const seg = (x, row = 0) => {
     const color = x.kind === 'opposition' ? '#d4202c' : x.kind === 'posts' ? POSTS_COLOR : x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
-    return `<span class="life-seg${x.r.to ? '' : ' open'}${x.uncertain ? ' uncertain' : ''}" style="--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
+    return `<span class="life-seg${x.r.to ? '' : ' open'}${x.uncertain ? ' uncertain' : ''}" style="--row:${row};--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
   };
   const lanes = [
     { id: 'opposition', label: 'Opozycja w PRL', items: opp },
@@ -153,7 +161,7 @@ export function roleLine(roles, today, more = '', bio = null) {
       <div class="life" data-testid="life-line">
         <div class="life-eras" aria-hidden="true">${start < 1989 ? `<span class="life-era prl" style="left:0;width:${pos(1989)}%">PRL</span>` : ''}<span class="life-era rp" style="left:${start < 1989 ? pos(1989) : 0}%;width:${(100 - Number(start < 1989 ? pos(1989) : 0)).toFixed(2)}%">III RP</span></div>
         <div class="life-lanes">${lanes.map((l) => `
-          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span><div class="life-track">${l.items.map(seg).join('')}</div></div>`).join('')}
+          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span>${stackedTrack(l.items, seg)}</div>`).join('')}
         </div>
         <div class="life-axis"><span>${start}</span><span>${String(today).slice(0, 4)}</span></div>
       </div>

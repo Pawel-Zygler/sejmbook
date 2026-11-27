@@ -18,6 +18,7 @@ import governmentData from '../../data/government.json';
 import lawData from '../../data/law-votes.json';
 import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
+import bioData from '../../data/bio.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -158,8 +159,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Posłowie wszystkich kadencji';
-const NEWEST_LINE = 'Posłowie: Posłowie wszystkich kadencji';
+const NEWEST = 'Opozycja w PRL i stanowiska';
+const NEWEST_LINE = 'Profile: Opozycja w PRL i stanowiska';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -941,6 +942,29 @@ describe('Posłowie: all terms at once', () => {
     click($('#aside [data-action="dir-sort"][data-sort="terms"]'));
     const first = $('.term-card .term-card-terms').textContent;
     expect(first).toMatch(/kadencje I/);
+  });
+});
+
+describe('Life line: PRL opposition, Round Table and offices (Wikipedia categories, Wikidata P39)', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, socialData, bioData, today: '2026-11-24' });
+  });
+  it('Jarosław Kaczyński: Porozumienie Centrum, KOR, internment and the Round Table', () => {
+    nav('#posel-148');
+    const lane = (id) => [...document.querySelectorAll(`[data-testid="life-line"] [data-lane="${id}"] .life-seg`)].map((s) => s.getAttribute('title'));
+    expect($('[data-testid="life-line"]').innerHTML).toMatch(/Porozumienie Centrum/);
+    const opp = lane('opposition').join(' | ');
+    expect(opp).toContain('Okrągłego Stołu');
+    expect(opp).toContain('Komitet Obrony Robotników');
+    expect(lane('posts').join(' ')).toMatch(/Prezes Rady Ministrów/);
+  });
+  it('the President\'s page shows more than the office itself', () => {
+    const slug = [...app.ctx.gov.bySlug.values()].find((p) => p.name === 'Lech Wałęsa').slug;
+    nav(`#urzad-${slug}`);
+    expect($('[data-testid="life-line"] [data-lane="opposition"]')).not.toBeNull();
+    expect($('[data-testid="life-line"] .life-era.prl')).not.toBeNull();
   });
 });
 
