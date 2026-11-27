@@ -164,8 +164,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Ranking Konecznego: ostrzejsze zasady';
-const NEWEST_LINE = 'Rankingi: Ranking Konecznego: ostrzejsze zasady';
+const NEWEST = 'Współczynnik deklaracji';
+const NEWEST_LINE = 'Profile: Współczynnik deklaracji';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
