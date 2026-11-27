@@ -3,6 +3,7 @@ import { hrefFor } from '../lib/router.js';
 import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
 import { formatPct } from '../lib/kpi.js';
 import { mpSov } from '../lib/sovereignty.js';
+import { mpQuincunx } from '../lib/quincunx.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const plural = (n, one, few, many) => {
@@ -31,7 +32,7 @@ export function attendancePctFor(ctx, mpId) {
 export function latinFor(ctx, mpId) {
   if (!ctx.latin?.laws?.length) return null;
   const r = mpLatin(ctx.latin, ctx.laws, mpId, { attendancePct: attendancePctFor(ctx, mpId) });
-  return r && { ...r, sov: mpSov(ctx.latin.sovereignty, ctx.laws, mpId) };
+  return r && { ...r, sov: mpSov(ctx.latin.sovereignty, ctx.laws, mpId), quin: mpQuincunx(ctx.latin.quincunx, ctx.laws, mpId, ctx.latin.laws) };
 }
 
 /** Results of every active MP, computed once per context: [{ mp, r }]. */
@@ -103,6 +104,46 @@ function sovSection(def, s, tip) {
   </section>`;
 }
 
+
+/** Why a law is zgodna or niezgodna, per Koneczny index (Pawel, 2026-11-28: "w info buttonie na labelce"). */
+export const explainText = (law) => (law.explain ?? []).map((x) => `${x.index}: ${x.text}`).join(' · ');
+
+function quinLawItem({ law, vote, points, consensus }, tip) {
+  const pts = consensus
+    ? `nie liczy się: niemal jednogłośna (${Math.round(100 * law.consensus)}% po jednej stronie)`
+    : points == null ? (vote === '-' ? 'nie liczy się (nieobecność)' : 'nie liczy się') : `${String(points).replace('.', ',')} pkt`;
+  const why = law.explain?.length ? tip(explainText(law), '', `Dlaczego ${law.direction}`) : '';
+  return `<li class="tax-law latin-law quin-law" data-process="${esc(law.process)}" data-direction="${esc(law.direction)}">
+    <div class="tax-law-top"><span class="tax-vote tax-v-${vote === '-' ? 'X' : vote}">${esc(VOTE_LABEL[vote])}</span><span class="latin-dir latin-dir-${esc(law.direction)}" data-testid="quin-dir">${esc(DIR_LABEL[law.direction])}</span>${why}<time datetime="${esc(law.date)}">${esc(law.date)}</time><span class="latin-pts">${esc(pts)}</span></div>
+    <a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}</a>
+    <span class="tax-law-why">${esc(law.reason)}</span>
+    <span class="tax-law-meta"><a href="${esc(votingUrl(law))}" target="_blank" rel="noopener">głosowanie nr ${law.votingNumber}, pos. ${law.sitting}</a></span>
+  </li>`;
+}
+
+/** Separate indicator inside the card: the five spheres of Koneczny's quincunx. Not part of the total. */
+function quincunxSection(def, q, tip) {
+  if (!def || !q) return '';
+  const sphereDef = new Map(def.spheres.map((s) => [s.id, s]));
+  const spheres = q.spheres.map((s) => {
+    const kpis = s.kpis.filter((k) => k.items.length);
+    const n = kpis.reduce((a, k) => a + k.items.length, 0);
+    const sum = s.voted ? `${s.score}/100 z ${s.voted} ${plural(s.voted, 'głosu', 'głosów', 'głosów')}${s.absent ? `, ${s.absent} ${plural(s.absent, 'nieobecność', 'nieobecności', 'nieobecności')}` : ''}` : 'brak głosów w ustawach tej sfery';
+    return `<section class="quin-sphere" data-sphere="${esc(s.id)}" data-testid="quin-sphere-${esc(s.id)}">
+      <h4><span>${esc(s.name)} ${tip(sphereDef.get(s.id)?.rule ?? '', def.criteriaUrl, `${s.name}: jak liczymy`)}</span><b data-testid="quin-sphere-${esc(s.id)}-score">${s.score ?? '–'}</b></h4>
+      ${scoreBar(s.score)}
+      <p class="latin-sum">${esc(sum)}</p>
+      ${n ? `<details class="tax-list"><summary>Pokaż ${lawsWord(n)}</summary>${kpis.map((k) => `<p class="quin-kpi"><strong>${esc(k.name)}</strong>${k.score != null ? ` · ${k.score}/100` : ''} ${def.kpis[k.id] ? tip(def.kpis[k.id].rule, def.criteriaUrl, `${k.name}: zasada`) : ''}</p><ol>${k.items.map((it) => quinLawItem(it, tip)).join('')}</ol>`).join('')}</details>` : ''}
+    </section>`;
+  });
+  return `<section class="latin-sov quin" data-testid="latin-quincunx">
+    <h3><span>${esc(def.title)} <em class="muted">· osobny wskaźnik</em> ${tip(`${def.scoring} Kierunek ustaw: ${def.criteriaSource}. ${def.disclaimer}`, def.criteriaUrl, 'Pięciomian: jak liczymy')}</span><b class="latin-pillar-score" data-testid="latin-quincunx-score">${q.score ?? '–'}</b></h3>
+    ${scoreBar(q.score)}
+    <p class="latin-sum">Średnia geometryczna sfer ${q.geo != null ? String(q.geo).replace('.', ',') : '–'} × spójność ${q.consistency != null ? String(q.consistency).replace('.', ',') : '–'}. Przy każdej ustawie ikona „i” wyjaśnia ocenę według indeksów Konecznego.</p>
+    ${spheres.join('')}
+  </section>`;
+}
+
 /** Experimental profile card: how the MP's votes fit four Koneczny pillars, 0–100, with every law listed. */
 export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS } = {}) {
   const data = ctx.latin;
@@ -125,6 +166,7 @@ export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS
     </div>
     ${pillars.join('')}
     ${sovSection(data.sovereignty, r.sov, tip)}
+    ${quincunxSection(data.quincunx, r.quin, tip)}
     <p class="latin-note" data-testid="latin-disclaimer">${esc(data.disclaimer)}</p>
   </article>`;
 }

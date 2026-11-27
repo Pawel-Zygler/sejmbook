@@ -2,6 +2,10 @@
 
 Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
 
+## 2026-11-28
+
+- **Profile: Pięciomian Konecznego (eksperyment).** Na karcie cywilizacji łacińskiej nowy wskaźnik: pięć sfer Konecznego, a ikona „i” przy każdej ustawie wyjaśnia ocenę.
+
 ## 2026-11-27
 
 - **Start: Feed w jednej linii.** Każdy wpis w Feedzie to teraz jedna linijka: data, kto, co. Urząd i źródło są pod przyciskiem „i”.

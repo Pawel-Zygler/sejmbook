@@ -164,8 +164,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Feed w jednej linii';
-const NEWEST_LINE = 'Start: Feed w jednej linii';
+const NEWEST = 'Pięciomian Konecznego (eksperyment)';
+const NEWEST_LINE = 'Profile: Pięciomian Konecznego (eksperyment)';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

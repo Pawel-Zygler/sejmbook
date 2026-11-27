@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-pieciomian",
+      "date": "2026-11-28",
+      "title": "Pięciomian Konecznego (eksperyment)",
+      "section": "Profile",
+      "body": "Na karcie cywilizacji łacińskiej nowy wskaźnik: pięć sfer Konecznego, a ikona „i” przy każdej ustawie wyjaśnia ocenę.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-feed-w-linii",
       "date": "2026-11-27",
       "title": "Feed w jednej linii",
