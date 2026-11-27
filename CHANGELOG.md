@@ -4,7 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
-- **Posłowie: Praca zawodowa.** Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.
+- **Posłowie: Posłowie wszystkich kadencji.** Na liście posłów filtr „Wszystkie” pokazuje każdego posła III RP raz.
 
 ## 2026-11-26
 

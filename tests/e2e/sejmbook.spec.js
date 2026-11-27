@@ -211,18 +211,20 @@ test('MP cards: portrait top-left, party tag top-right, then votes, district, at
   expect(overflow).toBe(0);
 });
 
-test('Spektrum partyjne: career sentence under the profile card, sources in the footer', async ({ page }) => {
+test('Spektrum partyjne: life line under the profile card, no prose under it', async ({ page }) => {
   await page.goto(`${PAGE}#posel-1`);
   const panel = page.getByTestId('spectrum');
   await expect(panel).toBeVisible();
   await expect(panel).toContainText('Spektrum partyjne');
-  await expect(panel.getByTestId('spectrum-text')).toContainText('W Sejmie III RP');
-  await expect(panel.getByTestId('life-first')).toContainText('Pierwsza aktywność polityczna w wieku');
+  await expect(panel.getByTestId('life-line')).toBeVisible();
+  await expect(panel.getByTestId('life-first')).toHaveCount(0);
   await expect(panel.locator('.spectrum-bar')).toHaveCount(0);
   const top = await page.locator('.profile-top').boundingBox();
   expect((await panel.boundingBox()).y).toBeGreaterThan(top.y + top.height - 1);
   await expect(page.getByTestId('site-foot')).toContainText('Źródła danych');
-  const tip = page.getByTestId('contact').getByTestId('info-tip');
+  // Sources behind an "i": the Frekwencja header explains the method and links the Sejm API.
+  await page.goto(`${PAGE}#frekwencja`);
+  const tip = page.locator('.page-head').getByTestId('info-tip');
   await expect(tip.locator('.info-tip-body')).toBeHidden();
   await tip.focus();
   await expect(tip.locator('.info-tip-body')).toBeVisible();
@@ -319,12 +321,10 @@ test('Posłowie: earlier terms of the Sejm', async ({ page }) => {
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
 
-test('Profile: Kontakt with official e-mail', async ({ page }) => {
+test('Profile: e-mail only as a round icon next to the name, no second Kontakt box', async ({ page }) => {
   await page.goto(`${PAGE}#posel-1`);
-  const box = page.getByTestId('contact');
-  await expect(box).toBeVisible();
-  await expect(box.getByTestId('contact-email').locator('a')).toHaveAttribute('href', /^mailto:.+@sejm\.pl$/);
-  await expect(box.getByTestId('contact-office')).toContainText('Biura Poselskie');
+  await expect(page.getByTestId('contact')).toHaveCount(0);
+  await expect(page.locator('.profile-title .profile-link[data-kind="email"]')).toHaveAttribute('href', /^mailto:.+@sejm\.pl$/);
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
@@ -438,7 +438,7 @@ test('Profiles: officials and former MPs use the MP profile layout', async ({ pa
   await page.goto(`${PAGE}#panstwo`);
   await page.locator('#view a', { hasText: 'Małgorzata Kidawa-Błońska' }).first().click();
   await expect(page.locator('[data-view="person"] .profile-top h1')).toHaveText('Małgorzata Kidawa-Błońska');
-  await expect(page.getByTestId('spectrum').getByTestId('spectrum-text')).toBeVisible();
+  await expect(page.getByTestId('spectrum').locator('[data-testid="life-line"], [data-testid="spectrum-text"]').first()).toBeVisible();
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
@@ -585,7 +585,7 @@ test('profile: round links next to the name (Sejm page first) and the social act
   if (page.viewportSize().width >= 800) expect(Math.abs((first.y + first.height / 2) - (h1.y + h1.height / 2))).toBeLessThan(h1.height / 2);
   expect(first.width).toBeGreaterThanOrEqual(30);
   await expect(page.locator('[data-testid="life-line"] [data-lane="social"]')).toBeVisible();
-  await expect(page.getByTestId('social-text')).toContainText('Młodzież Wszechpolska');
+  await expect(page.locator('[data-testid="life-line"] [data-lane="social"]')).toContainText('Młodzież Wszechpolska');
 });
 
 test('profile: hovering the Sejm and X icons shows a preview card', async ({ page, isMobile }) => {
@@ -644,3 +644,12 @@ test('Feed: the seats of the Sejm come first', async ({ page }) => {
   const win = await page.getByTestId('feed-window').boundingBox();
   expect(seat.y).toBeLessThan(win.y);
 });
+
+test('Posłowie: "Wszystkie" kadencje lists people of every term', async ({ page }) => {
+  await page.goto(`${PAGE}#poslowie`);
+  if (!(await page.getByTestId('aside-filters').isVisible())) await page.locator('.dir-filters-phone summary').click();
+  await page.locator('[data-action="dir-term"][data-term="0"]:visible').first().dispatchEvent('click');
+  await expect(page.locator('[data-action="dir-term"][data-term="0"][aria-pressed="true"]').first()).toBeAttached();
+  expect(await page.locator('.term-card').count()).toBeGreaterThan(2000);
+});
+

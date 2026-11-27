@@ -2,7 +2,7 @@ import { initials, formatInt, formatPln, inactiveLabel, clubCounts, termClubCoun
 import { againstClub, inWindow, itemTime, FEED_WINDOWS } from '../lib/feed.js';
 import { currentHolders, currentMembers } from '../lib/government.js';
 import { workFor } from '../lib/work.js';
-import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, personKey, buildPath, clubNameIn } from '../lib/career.js';
+import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, termList, ALL_TERMS, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
@@ -414,7 +414,8 @@ export function termPicker(ctx, state) {
   const nums = (ctx.terms?.terms ?? []).map((t) => t.num).sort((a, b) => b - a);
   if (nums.length < 2) return '';
   const cur = Number(state.term ?? CURRENT_TERM);
-  return `<div class="filters term-picker" role="group" aria-label="Kadencja Sejmu" data-testid="term-picker">${nums.map((n) => `<button type="button" class="filter ${n === cur ? 'on' : ''}" data-action="dir-term" data-term="${n}" aria-pressed="${n === cur}">${romanTerm(n)}</button>`).join('')}</div>`;
+  const btn = (n, label) => `<button type="button" class="filter ${n === cur ? 'on' : ''}" data-action="dir-term" data-term="${n}" aria-pressed="${n === cur}">${label}</button>`;
+  return `<div class="filters term-picker" role="group" aria-label="Kadencja Sejmu" data-testid="term-picker">${btn(ALL_TERMS, 'Wszystkie')}${nums.map((n) => btn(n, romanTerm(n))).join('')}</div>`;
 }
 
 /** A club of an earlier term: its id as the label, the camp's colour, the full name on hover. */
@@ -429,7 +430,7 @@ export function directoryFilters(ctx, state, where = 'aside') {
   const id = where === 'aside' ? 'dir-inactive' : 'dir-inactive-phone';
   const past = isPastTerm(ctx, state);
   const picker = termPicker(ctx, state);
-  const counts = past ? termClubCounts(termMps(ctx.terms, Number(state.term))) : clubCounts(ctx.mps);
+  const counts = past ? termClubCounts(termList(ctx.terms, state.term)) : clubCounts(ctx.mps);
   const label = (club) => (past ? club || 'bez klubu' : (ctx.clubs.get(club) ?? FALLBACK_CLUB).short);
   return `
       ${picker ? `<p class="filters-label">Kadencja</p>${picker}<p class="filters-label">Klub</p>` : ''}
@@ -568,16 +569,16 @@ export function renderDirectory(ctx, state, list) {
   return `
   <section data-view="directory">
     <div class="panel dir-head">
-      <h1 class="visually-hidden">Posłowie ${romanTerm(num)} kadencji</h1>
+      <h1 class="visually-hidden">Posłowie ${num === ALL_TERMS ? 'wszystkich kadencji' : `${romanTerm(num)} kadencji`}</h1>
       <label class="search-field" for="dir-search"><span class="visually-hidden">Szukaj posła</span>
         <input id="dir-search" type="search" placeholder="Szukaj posła po nazwisku, okręgu${past ? '' : ' lub województwie'}" value="${esc(state.query)}" data-action="search" autocomplete="off">
       </label>
-      <details class="phone-only dir-filters-phone"><summary>Filtry${past ? `: ${romanTerm(num)} kadencja` : ''}${state.club ? `${past ? ', ' : ': '}${esc(clubLabel)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
+      <details class="phone-only dir-filters-phone"><summary>Filtry${past ? `: ${num === ALL_TERMS ? 'wszystkie kadencje' : `${romanTerm(num)} kadencja`}` : ''}${state.club ? `${past ? ', ' : ': '}${esc(clubLabel)}` : ''}</summary>${directoryFilters(ctx, state, 'phone')}</details>
     </div>
     <ul class="mp-grid">
       ${list.length === 0 ? `<li class="empty">Nikt nie pasuje do tego wyszukiwania. Spróbuj innego nazwiska albo wybierz „Wszystkie”.</li>` : list.map((mp) => (past ? termCard(ctx, mp) : mpCard(ctx, mp))).join('')}
     </ul>
-    ${past ? `<p class="src panel">${esc(termsSourceNote(ctx))} Lista obejmuje też posłów, którzy objęli lub stracili mandat w trakcie kadencji.</p>` : ''}
+    ${past ? `<p class="src panel">${esc(termsSourceNote(ctx))} ${num === ALL_TERMS ? 'Każda osoba jest na liście raz, z klubem i okręgiem z ostatniej kadencji.' : 'Lista obejmuje też posłów, którzy objęli lub stracili mandat w trakcie kadencji.'}</p>` : ''}
   </section>`;
 }
 
@@ -676,10 +677,12 @@ export function workLine(ctx, key) {
 }
 
 /** The "i" next to the professional experience: where it comes from, with a link to the article. */
-export function workTip(w) {
+export function workTip(w, tl = null) {
   if (!w) return '';
   const href = w.title ? `https://pl.wikipedia.org/wiki/${encodeURIComponent(w.title.replace(/ /g, '_'))}` : w.qid ? `https://www.wikidata.org/wiki/${w.qid}` : '';
-  return infoTip('Praca zawodowa: zdania o pracy i pracodawcy podlinkowani w artykule w polskiej Wikipedii oraz Wikidata (P108, pracodawca). Bez funkcji politycznych, które są na innych liniach.', href, 'Źródło');
+  // On the life line the tip also lists every job in words, including those without years (not drawn).
+  const list = tl ? workText(tl).replace(/<[^>]+>/g, '') : '';
+  return infoTip(`${list ? `${list} ` : ''}Źródło: zdania o pracy i pracodawcy podlinkowani w artykule w polskiej Wikipedii oraz Wikidata (P108, pracodawca). Bez funkcji politycznych, które są na innych liniach.`, href, 'Praca zawodowa: źródło');
 }
 
 /** Every stretch of the life line in time order, with its lane, for the "Kroki" view. */
@@ -727,7 +730,10 @@ function lifeTabs() {
   return `<div class="life-tabs" role="group" aria-label="Widok linii życia" data-testid="life-tabs">${LIFE_VIEWS.map((v) => `<button type="button" data-action="life-view" data-life="${v}" aria-pressed="${v === DEFAULT_LIFE_VIEW}">${LIFE_VIEW_LABEL[v]}</button>`).join('')}</div>`;
 }
 
-/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms; under it a short bio in prose. */
+/** The prose under the life line ("Pierwsza aktywność polityczna…") is hidden: Pawel removed it on 2026-11-27. */
+const SHOW_LIFE_PROSE = false;
+
+/** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms. */
 export function renderLifeLine(ctx, mp, sp = null) {
   const now = Number(ctx.fetchedAt.slice(0, 4));
   const job = workFor(ctx.work, mp.workKey ?? `mp:${mp.id}`);
@@ -737,7 +743,7 @@ export function renderLifeLine(ctx, mp, sp = null) {
   const width = (a, b) => Math.max(pos(tl, b) - pos(tl, a), 0.8).toFixed(2);
   const lane = (l) => `
         <div class="life-lane" data-lane="${l.id}">
-          <span class="life-lane-label">${esc(l.label)}</span>
+          <span class="life-lane-label">${esc(l.label)}${l.id === 'work' ? ` ${workTip(job, tl)}` : ''}</span>
           <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${stretchYears(it)}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
@@ -765,7 +771,7 @@ export function renderLifeLine(ctx, mp, sp = null) {
         <div class="life-axis"><span>ur. ${tl.birth}</span>${ticks.map((y) => `<span class="life-axis-tick" style="left:${left(y)}%">${y}</span>`).join('')}${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
       </div>
       <div class="life-v life-v-kroki" data-testid="life-steps">${lifeSteps(tl)}</div>
-      ${first || undatedTip ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
+      ${SHOW_LIFE_PROSE && (first || undatedTip) ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 
 const spPct = (x) => `${Math.round(x * 1000) / 10}`.replace('.', ',');
@@ -804,7 +810,7 @@ function spectrumPanel(lifeLine, sp) {
     <section class="panel spectrum" data-testid="spectrum">
       <h2>Spektrum partyjne</h2>
       ${lifeLine}
-      ${lifeLine.includes('data-testid="spectrum-text"') ? '' : spectrumText(sp)}
+      ${lifeLine ? '' : spectrumText(sp)}
       ${!lifeLine && !sp ? '<p class="muted">Brak danych o klubach tej osoby w Sejmie.</p>' : ''}
     </section>`;
 }
@@ -916,7 +922,6 @@ export function renderProfile(ctx, id) {
           <dt>Lotnisko okręgu</dt><dd>${ap ? `${esc(ctx.airports.airports[ap].name)} <span class="muted">(${formatInt(legKm)} km do Warszawy)</span>` : 'brak połączenia lotniczego z Warszawą'}</dd>
         </dl>
         ${stateRolesLink(ctx, mp.name)}
-        ${renderContact(ctx, mp)}
       </aside>
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}

@@ -297,20 +297,18 @@ describe('Spektrum partyjne', () => {
     expect(panel).not.toBeNull();
     expect(panel.previousElementSibling.classList.contains('profile-top')).toBe(true);
     expect(panel.textContent).toContain('Spektrum partyjne');
-    expect(panel.textContent).toMatch(/(dwie|trzy|cztery|pięć|sześć|siedem|osiem|dziewięć|dziesięć) kadencj/);
-    const bio = panel.querySelector('[data-testid="life-first"]');
-    expect(bio.querySelector('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP [a-ząćęłńóśźż]+ kadencj.+, razem (około|niecały)/);
-    expect(bio.textContent).not.toMatch(/\((I|V|X)[IVX–, ]*\)|\b\d+ (lat|kadencj)/);
-    expect(bio.textContent).toMatch(/^Pierwsza aktywność polityczna /);
-    expect(panel.querySelectorAll('[data-testid="spectrum-text"]')).toHaveLength(1);
+    // No prose under the life line (Pawel, 2026-11-27): the Sejm terms are in the "Sejm" lane.
+    expect(panel.querySelector('[data-testid="life-first"]')).toBeNull();
+    expect(panel.querySelector('[data-testid="spectrum-text"]')).toBeNull();
+    expect(panel.querySelectorAll('[data-lane="sejm"] .life-seg').length).toBeGreaterThan(0);
     expect(panel.querySelector('.spectrum-bar')).toBeNull();
     expect(panel.querySelector('[data-testid="person-route"]')).toBeNull();
   });
   it('first-term MPs get one sentence with a single term', () => {
     const id = Object.entries(careerData.career).find(([, r]) => r.length === 1 && r[0].term === 10)[0];
     nav(`#posel-${id}`);
-    expect($('[data-testid="spectrum-text"]').textContent).toMatch(/^W Sejmie III RP jedna kadencja, dziesiąta, w .+, razem około /);
-    expect($('[data-testid="life-first"]').textContent).toMatch(/w roku 2023, jako nowy członek .+ w Sejmie\./);
+    expect($('[data-testid="life-first"]')).toBeNull();
+    expect($$('[data-lane="sejm"] .life-seg')).toHaveLength(1);
   });
 });
 
@@ -356,13 +354,12 @@ describe('Spektrum partyjne: life line', () => {
     const parties = [...life.querySelectorAll('[data-lane="parties"] .life-seg')].map((s) => s.textContent);
     expect(parties.join(' ')).toContain('KO / PO');
     expect(life.querySelector('[data-lane="sejm"] .life-seg')).not.toBeNull();
-    expect($('[data-testid="life-first"]').textContent).toContain('1990');
+    expect($('[data-testid="life-first"]')).toBeNull();
   });
   it('Jacek Tomczak: first activity in the PRL (KPN, 1988)', () => {
     nav('#posel-390');
-    const first = $('[data-testid="life-first"]').textContent;
-    expect(first).toContain('1988');
-    expect(first).toContain('jeszcze w PRL');
+    const kpn = [...document.querySelectorAll('[data-lane="parties"] .life-seg, [data-lane="opposition"] .life-seg')].find((s) => s.textContent.includes('KPN'));
+    expect(kpn.getAttribute('title')).toContain('1988');
   });
   it('an MP born after 1989 has no PRL band', () => {
     const young = app.ctx.mps.find((m) => m.active && m.birthYear > 1990);
@@ -395,7 +392,7 @@ describe('Spektrum partyjne: PZPR without dates', () => {
   it('Włodzimierz Czarzasty: hatched PZPR span and first activity in the PRL', () => {
     nav('#posel-58');
     expect($('[data-lane="parties"] .life-seg.uncertain').textContent).toContain('PZPR');
-    expect($('[data-testid="life-first"]').textContent).toContain('Pierwsza aktywność polityczna jeszcze w PRL: PZPR (lata nieznane).');
+    expect($('[data-testid="life-first"]')).toBeNull();
   });
 });
 
@@ -424,7 +421,7 @@ describe('Party years from Wikipedia', () => {
     expect(seg.classList.contains('uncertain')).toBe(false);
     expect(seg.getAttribute('title')).toContain('1978–1990');
     expect($('.profile-name [data-testid="red-past"]').getAttribute('title')).toContain('1978–1990');
-    expect($('[data-testid="life-first"]').textContent).toContain('1978');
+    expect($('[data-testid="life-first"]')).toBeNull();
   });
 });
 
@@ -488,18 +485,13 @@ describe('Posłowie: all terms', () => {
   });
 });
 
-describe('Profile: Kontakt', () => {
-  it('shows the official e-mail, Facebook when known, and says openly what is missing', () => {
+describe('Profile: no second Kontakt box', () => {
+  it('keeps contacts only as the round icons next to the name (Pawel, 2026-11-27)', () => {
     const withFb = Object.keys(contactsData.mps).find((id) => contactsData.mps[id].facebook.length && app.ctx.mpsById.get(Number(id)));
     nav(`#posel-${withFb}`);
-    const box = $('[data-testid="contact"]');
-    expect(box.querySelector('[data-testid="contact-email"] a').getAttribute('href')).toBe(`mailto:${contactsData.mps[withFb].email}`);
-    expect(box.querySelector('[data-testid="contact-fb"] a').getAttribute('href')).toBe(contactsData.mps[withFb].facebook[0]);
-    expect(box.querySelector('[data-testid="contact-phone"]').textContent).toContain('brak w otwartych danych Sejmu');
-    expect(box.querySelector('[data-testid="contact-office"] a').getAttribute('href')).toContain('posel.xsp?id=');
-    const noFb = Object.keys(contactsData.mps).find((id) => !contactsData.mps[id].facebook.length && app.ctx.mpsById.get(Number(id)));
-    nav(`#posel-${noFb}`);
-    expect($('[data-testid="contact-fb"]').textContent).toBe('brak danych');
+    expect($('[data-testid="contact"]')).toBeNull();
+    expect($('.about').textContent).not.toContain('Kontakt');
+    expect($(`.profile-title a[href="mailto:${contactsData.mps[withFb].email}"]`)).not.toBeNull();
   });
 });
 
@@ -517,7 +509,7 @@ describe('Profiles of former MPs', () => {
     const leader = $('[data-testid="hop-leader"] .hop-leader-name a');
     expect(leader.getAttribute('href')).toMatch(/^#osoba-\d+-\d+$/);
     nav(leader.getAttribute('href'));
-    expect($('[data-testid="spectrum-text"]').textContent.split(' w ').length).toBeGreaterThan(2);
+    expect($('[data-testid="spectrum"] [data-lane="sejm"] .life-seg, [data-testid="spectrum"] [data-testid="spectrum-text"]')).not.toBeNull();
     expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
     expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']);
     expect($('#view').textContent).not.toContain('Dane: API Sejmu');
@@ -550,7 +542,7 @@ describe('Theme switch and Frequent Flyer donut', () => {
 describe('Terms I and II (Wikipedia)', () => {
   it('Posłowie lists term I with clubs and districts, and people link across terms', () => {
     nav('#poslowie');
-    expect($$('#aside [data-action="dir-term"]').map((b) => b.dataset.term)).toEqual(['10', '9', '8', '7', '6', '5', '4', '3', '2', '1']);
+    expect($$('#aside [data-action="dir-term"]').map((b) => b.dataset.term)).toEqual(['0', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1']);
     click($('#aside [data-action="dir-term"][data-term="1"]'));
     expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('1');
     expect($$('.term-card').length).toBe(earlyTermsData.terms[0].mps.length);
@@ -843,7 +835,6 @@ describe('Profile: round links next to the name, social activity on the life lin
     const lane = $('[data-testid="life-line"] [data-lane="social"]');
     expect(lane).not.toBeNull();
     expect(lane.querySelector('.life-lane-label').textContent).toBe('Działalność społeczna');
-    expect($('[data-testid="social-text"]').textContent).toMatch(/^Działalność społeczna: .*Młodzież Wszechpolska/);
     expect($('[data-testid="life-steps"]').textContent).toContain('Działalność społeczna: Młodzież Wszechpolska');
   });
 });
@@ -923,6 +914,33 @@ describe('Feed: seats of the Sejm on top', () => {
     expect(view.firstElementChild.textContent).toContain('Skład Sejmu');
     const posts = $$('[data-view="home"] .feed-post');
     if (posts.length) expect(view.firstElementChild.compareDocumentPosition(posts[0]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+});
+
+describe('Posłowie: all terms at once', () => {
+  it('lists every person once, with the club and district of their latest term', () => {
+    nav('#poslowie');
+    const all = $('#aside [data-action="dir-term"][data-term="0"]');
+    expect(all.textContent).toBe('Wszystkie');
+    click(all);
+    expect($('#aside [data-action="dir-term"][aria-pressed="true"]').dataset.term).toBe('0');
+    expect($$('.term-card').length).toBe(app.ctx.terms.people.length);
+    expect($('[data-view="directory"] h1').textContent).toBe('Posłowie wszystkich kadencji');
+    const keys = $$('.term-card').map((c) => c.dataset.termMp);
+    expect(new Set(keys).size).toBe(keys.length);
+    // Today's MPs link to their profile, the rest to the person page.
+    expect($$('.term-card a.mp-card-link').some((a) => a.getAttribute('href').startsWith('#posel-'))).toBe(true);
+    expect($$('.term-card a.mp-card-link').some((a) => a.getAttribute('href').startsWith('#osoba-'))).toBe(true);
+  });
+  it('filters by name and sorts by number of terms', () => {
+    nav('#poslowie');
+    click($('#aside [data-action="dir-term"][data-term="0"]'));
+    type($('#dir-search'), 'Kaczyński');
+    expect($$('.term-card .mp-card-name').every((n) => n.textContent.includes('Kaczyński'))).toBe(true);
+    type($('#dir-search'), '');
+    click($('#aside [data-action="dir-sort"][data-sort="terms"]'));
+    const first = $('.term-card .term-card-terms').textContent;
+    expect(first).toMatch(/kadencje I/);
   });
 });
 

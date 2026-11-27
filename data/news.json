@@ -12,6 +12,17 @@
       }
     },
     {
+      "id": "2026-11-27-wszystkie-kadencje",
+      "date": "2026-11-27",
+      "title": "Posłowie wszystkich kadencji",
+      "section": "Posłowie",
+      "body": "Na liście posłów filtr „Wszystkie” pokazuje każdego posła III RP raz.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-sklad-na-gorze",
       "date": "2026-11-26",
       "title": "Skład Sejmu na górze",

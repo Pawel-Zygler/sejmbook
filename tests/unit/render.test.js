@@ -1,3 +1,4 @@
+import { careerSpectrum } from '../../src/lib/career.js';
 import { describe, it, expect } from 'vitest';
 import mpsData from '../../data/mps.json';
 import clubsData from '../../data/clubs.json';
@@ -333,8 +334,10 @@ describe('renderCareerSpectrum', () => {
     expect(html).toContain('Spektrum partyjne');
     expect(html).not.toContain('class="spectrum-seg"');
     expect(html).not.toContain('Ścieżka partyjna');
-    expect(html).toContain('W Sejmie III RP <b>dwie kadencje</b>: dziewiąta w <b>KO / PO</b> oraz dziesiąta w <b>PiS</b>, razem około ');
-    expect(html).not.toMatch(/\((IX|X)\)/);
+    expect(html).not.toContain('data-testid="life-first"'); // no prose under the life line (Pawel, 2026-11-27)
+    const sentence = careerSentence(careerSpectrum(career, 70, ctx.fetchedAt));
+    expect(sentence).toContain('W Sejmie III RP <b>dwie kadencje</b>: dziewiąta w <b>KO / PO</b> oraz dziesiąta w <b>PiS</b>, razem około ');
+    expect(sentence).not.toMatch(/\((IX|X)\)/);
     expect(html).not.toContain('Nie obejmuje Senatu');
   });
   it('without Sejm club data shows only the life line; without a birth year, nothing', () => {
@@ -487,12 +490,11 @@ describe('renderPerson', () => {
     expect(html).toContain('2 · Wałbrzych');
     expect(html).toContain('href="https://api.sejm.gov.pl/sejm/term4/MP/9"');
     expect(html).toContain('03.02.1950');
-    expect(html).toContain('trzecia w <b>UD / UW</b> oraz czwarta w <b>KO / PO</b>');
-    expect(html).toContain('Pierwsza aktywność polityczna w wieku czterdziestu siedmiu lat, w roku <b>1997</b>, jako nowy członek UD / UW w Sejmie.');
+    expect(html).not.toContain('Pierwsza aktywność polityczna');
   });
   it('uses the same layout as the MP profile: header, Spektrum partyjne, Informacje', () => {
     const html = renderPerson({ ...ctx, terms, peopleByKey }, '3-5');
-    for (const part of ['class="profile-top panel"', 'class="panel spectrum" data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>', 'data-testid="spectrum-text"']) expect(html).toContain(part);
+    for (const part of ['class="profile-top panel"', 'class="panel spectrum" data-testid="spectrum"', '<h2>Spektrum partyjne</h2>', 'class="profile-cols"', '<h2>Informacje</h2>']) expect(html).toContain(part);
     expect(html).toContain('<dt>Okręg wyborczy</dt><dd>nr 2 · Wałbrzych</dd>');
     expect(html).toContain('data-testid="life-line"');
     expect(html).toContain('(76 lat)');

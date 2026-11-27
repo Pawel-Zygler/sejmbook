@@ -177,6 +177,20 @@ export function termMps(termsData, num) {
   return out;
 }
 
+/** Term number that stands for "all terms" in the Posłowie filter (Pawel, 2026-11-27). */
+export const ALL_TERMS = 0;
+
+/** Every person who sat in the Sejm in any term, once, with the club and district of their latest term. */
+export function allTermsMps(termsData) {
+  return (termsData?.people ?? []).map((p) => {
+    const t = p.terms.reduce((a, b) => (b.t > a.t ? b : a));
+    return { key: `all-${personKey(p)}`, person: personKey(p), id: t.id, name: p.name, lastName: p.lastName, club: t.club, clubName: clubNameIn(termsData, t.t, t.club), districtNum: t.d, districtName: t.dn, active: t.active, current: p.current, lastTerm: t.t, terms: p.terms.map((x) => x.t) };
+  });
+}
+
+/** MPs of one term, or of all terms for ALL_TERMS. */
+export const termList = (termsData, num) => (Number(num) === ALL_TERMS ? allTermsMps(termsData) : termMps(termsData, Number(num)));
+
 /**
  * Ranking of MPs by how many parties they sat in over their Sejm career, most first.
  * Ties: more terms first, then by name. Only MPs with at least `min` parties.

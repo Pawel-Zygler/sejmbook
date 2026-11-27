@@ -164,12 +164,12 @@ describe('"Praca zawodowa" on the life line', () => {
     expect(tl.workUndated.map((x) => x.label)).toEqual(['Tłumacz']);
     expect(lifeSteps(tl)).toContain('Praca zawodowa: Fundacja Testowa (analityk)');
   });
-  it('the profile shows the lane, the prose and the source', () => {
+  it('the profile shows the lane, and its "i" lists every job (undated too) with the source', () => {
     const html = renderProfile(ctx, 33);
     expect(html).toContain('data-lane="work"');
-    expect(html).toContain('data-testid="work-text"');
-    expect(html).toContain('Praca zawodowa: <b>Fundacja Testowa</b> (analityk) w latach 2008–2011, <b>Wydawnictwo Testowe</b> od 2012 oraz <b>Tłumacz</b>.');
-    expect(html).toContain('https://pl.wikipedia.org/wiki/Krzysztof_Bosak');
+    const lane = html.slice(html.indexOf('data-lane="work"'), html.indexOf('life-track', html.indexOf('data-lane="work"')));
+    expect(lane).toContain('Praca zawodowa: Fundacja Testowa (analityk) w latach 2008–2011, Wydawnictwo Testowe od 2012 oraz Tłumacz.');
+    expect(lane).toContain('https://pl.wikipedia.org/wiki/Krzysztof_Bosak');
   });
   it('a profile without jobs has no lane', () => {
     expect(renderProfile(ctx, 1)).not.toContain('data-lane="work"');
