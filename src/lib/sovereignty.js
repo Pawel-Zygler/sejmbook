@@ -3,6 +3,7 @@
 // Laws come from data/sovereignty-classification.json (hand list, Pawel approves) plus laws whose Sejm description says
 // they implement or apply EU law (direction "oddaje"). Bilateral ratifications are not counted.
 import { voteOf } from './law-votes.js';
+import { consensusOf, isConsensus } from './latin.js';
 
 export const SOV_DIRECTIONS = ['oddaje', 'zatrzymuje', 'sporna', 'pomijana'];
 /** Points for keeping powers in Poland: against a law that gives them away = 1, for = 0, abstain = 0.5. */
@@ -18,7 +19,7 @@ export function buildSovLaws(cls, lawVotes, descriptions) {
     if (!law || out.has(process) || skip.has(process)) return;
     if (!SOV_DIRECTIONS.includes(direction)) throw new RangeError(`Unknown direction: ${direction}`);
     if (direction === 'pomijana') { skip.add(process); return; }
-    out.set(process, { process, direction, reason, source, title: law.title, date: law.date, sitting: law.sitting, votingNumber: law.votingNumber, passed: law.passed });
+    out.set(process, { process, direction, reason, source, title: law.title, date: law.date, sitting: law.sitting, votingNumber: law.votingNumber, passed: law.passed, consensus: consensusOf(law) });
   };
   for (const l of cls?.laws ?? []) add(l.process, l.direction, l.reason, 'manual');
   const impl = cls?.implementationPattern ? new RegExp(cls.implementationPattern, 'i') : null;
@@ -51,9 +52,10 @@ export function mpSov(sov, lawVotes, mpId) {
     if (!vote) continue;
     let pts = null;
     if (law.direction === 'sporna') r.contested++;
+    else if (isConsensus(law, sov.consensusSkip)) r.consensus = (r.consensus ?? 0) + 1;
     else if (vote === '-') r.absent++;
     else { pts = SOV_POINTS[vote][law.direction]; r.points += pts; r.voted++; }
-    r.items.push({ law, vote, points: pts });
+    r.items.push({ law, vote, points: pts, consensus: isConsensus(law, sov.consensusSkip) });
   }
   return { ...r, score: r.voted ? Math.round((100 * r.points) / r.voted) : null };
 }

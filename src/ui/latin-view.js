@@ -1,4 +1,4 @@
-import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sortValue } from '../lib/latin.js';
+import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sortValue, isConsensus } from '../lib/latin.js';
 import { hrefFor } from '../lib/router.js';
 import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
 import { formatPct } from '../lib/kpi.js';
@@ -50,8 +50,10 @@ function scoreBar(score) {
   return `<div class="latin-bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, score))}%"></i></div>`;
 }
 
-function lawItem({ law, vote, points }) {
-  const pts = points == null ? (vote === '-' ? 'nie liczy się (nieobecność)' : 'nie liczy się') : `${String(points).replace('.', ',')} pkt`;
+function lawItem({ law, vote, points, consensus }) {
+  const pts = consensus
+    ? `nie liczy się: niemal jednogłośna (${Math.round(100 * law.consensus)}% po jednej stronie)`
+    : points == null ? (vote === '-' ? 'nie liczy się (nieobecność)' : 'nie liczy się') : `${String(points).replace('.', ',')} pkt`;
   return `<li class="tax-law latin-law" data-process="${esc(law.process)}" data-direction="${esc(law.direction)}">
     <div class="tax-law-top"><span class="tax-vote tax-v-${vote === '-' ? 'X' : vote}">${esc(VOTE_LABEL[vote])}</span><span class="latin-dir latin-dir-${esc(law.direction)}">${esc(DIR_LABEL[law.direction])}</span><time datetime="${esc(law.date)}">${esc(law.date)}</time><span class="latin-pts">${esc(pts)}</span></div>
     <a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}</a>
@@ -62,7 +64,7 @@ function lawItem({ law, vote, points }) {
 
 function votesPillar(def, p, tip) {
   const sum = p.voted
-    ? `${p.score}/100 z ${p.voted} ${plural(p.voted, 'głosu', 'głosów', 'głosów')}${p.absent ? `, ${p.absent} ${plural(p.absent, 'nieobecność', 'nieobecności', 'nieobecności')}` : ''}${p.contested ? `, ${p.contested} spornych` : ''}`
+    ? `${p.score}/100 z ${p.voted} ${plural(p.voted, 'głosu', 'głosów', 'głosów')}${p.absent ? `, ${p.absent} ${plural(p.absent, 'nieobecność', 'nieobecności', 'nieobecności')}` : ''}${p.contested ? `, ${p.contested} spornych` : ''}${p.consensus ? `, ${p.consensus} niemal jednogłośnych pominiętych` : ''}`
     : 'brak głosów w ustawach tego filaru';
   return `<section class="latin-pillar" data-pillar="${def.id}" data-testid="latin-pillar-${def.id}">
     <h3><span>${def.id}. ${esc(def.name)} ${tip}</span><b class="latin-pillar-score" data-testid="latin-pillar-${def.id}-score">${p.score ?? '–'}</b></h3>
@@ -75,7 +77,7 @@ function votesPillar(def, p, tip) {
 function personPillar(def, p, tip) {
   const ind = p.independence;
   const lines = [
-    p.attendancePct != null ? `Obecność: <strong>${esc(formatPct(p.attendancePct))}</strong> dni obrad z głosowaniami` : 'Obecność: brak danych',
+    p.attendancePct != null ? `Obecność: <strong>${esc(formatPct(p.attendancePct))}</strong> dni obrad z głosowaniami${p.attendancePercentile != null ? `, lepiej niż ${Math.round(p.attendancePercentile)}% posłów` : ''}` : 'Obecność: brak danych',
     ind
       ? `Niezależność: inaczej niż większość klubu w <strong>${ind.diff}</strong> z ${ind.n} głosowań nad ustawami (${esc(formatPct(ind.pct))}), więcej niż ${Math.round(ind.percentile)}% posłów`
       : 'Niezależność: nie liczymy (poseł spoza klubu lub za mało głosowań)',
@@ -91,7 +93,7 @@ function personPillar(def, p, tip) {
 function sovSection(def, s, tip) {
   if (!def || !s) return '';
   const sum = s.voted
-    ? `${s.score}/100 z ${s.voted} ${plural(s.voted, 'głosu', 'głosów', 'głosów')}${s.absent ? `, ${s.absent} ${plural(s.absent, 'nieobecność', 'nieobecności', 'nieobecności')}` : ''}${s.contested ? `, ${s.contested} spornych` : ''}`
+    ? `${s.score}/100 z ${s.voted} ${plural(s.voted, 'głosu', 'głosów', 'głosów')}${s.absent ? `, ${s.absent} ${plural(s.absent, 'nieobecność', 'nieobecności', 'nieobecności')}` : ''}${s.contested ? `, ${s.contested} spornych` : ''}${s.consensus ? `, ${s.consensus} niemal jednogłośnych pominiętych` : ''}`
     : 'brak głosów w tych ustawach';
   return `<section class="latin-sov" data-testid="latin-sov">
     <h3><span>${esc(def.title)} <em class="muted">· osobny wskaźnik</em> ${tip(`${def.question} ${def.scoring} ${def.disclaimer}`, 'https://api.sejm.gov.pl/sejm/term10/processes', 'Suwerenność: jak liczymy')}</span><b class="latin-pillar-score" data-testid="latin-sov-score">${s.score ?? '–'}</b></h3>
@@ -180,6 +182,22 @@ export function latinDistChart(results, key = 'total', label = 'Wynik') {
   </figure>`;
 }
 
+/** How each sort key is computed, for the "i" next to its button (Pawel, 2026-11-27). */
+export function howComputed(data, key) {
+  if (key === 'total') return `Wynik: średnia czterech filarów, w których poseł ma wynik. ${data.scoring}`;
+  if (key === 'sov') {
+    const s = data.sovereignty;
+    return s ? `${s.title}: ${s.question} ${s.scoring} ${s.disclaimer}` : '';
+  }
+  const pl = data.pillars?.find((p) => `p${p.id}` === key);
+  if (!pl) return '';
+  const counted = data.laws.filter((l) => l.pillar === pl.id && l.direction !== 'sporna' && !isConsensus(l, data.consensusSkip)).length;
+  const how = pl.id === 4
+    ? 'Wynik = średnia z percentyla obecności i percentyla niezależności od klubu.'
+    : `Liczymy ${lawsWord(counted)}: za zgodny głos 1 pkt, za wstrzymanie 0,5, za przeciwny 0; wynik = suma punktów / liczba głosów × 100. Pomijamy nieobecności, ustawy sporne i przyjęte niemal jednogłośnie (co najmniej ${Math.round(100 * (data.consensusSkip ?? 1))}% po jednej stronie).`;
+  return `${pl.id}. ${pl.name}. ${pl.rule} ${how}`;
+}
+
 const btn = (action, attr, value, on, label) => `<button type="button" class="filter ${on ? 'on' : ''}" data-action="${action}" data-${attr}="${esc(value)}" aria-pressed="${on}">${label}</button>`;
 
 /** Ranking page "Konieczny" (#konieczny): every MP's score, bands 90/60/40, club filter, sort by total or pillar. */
@@ -204,7 +222,7 @@ export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch
   const stats = `<div class="stats">
       <div class="stat"><span>Średni wynik posła</span><b data-testid="latin-avg">${avg}</b></div>
       ${data.sovereignty ? `<div class="stat"><span>Średnia suwerenność (osobno)</span><b data-testid="latin-sov-avg">${(() => { const v = all.map((x) => x.r.sov?.score).filter((x) => x != null); return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : '–'; })()}</b></div>` : ''}
-      <div class="stat"><span>Ustaw w ocenie</span><b>${data.laws.filter((l) => l.direction !== 'sporna').length}</b></div>
+      <div class="stat"><span>Ustaw w ocenie</span><b>${data.laws.filter((l) => l.direction !== 'sporna' && !isConsensus(l, data.consensusSkip)).length}</b></div>
     </div>`;
   if (state.view === 'clubs') {
     const cl = clubLatin(all);
@@ -222,8 +240,8 @@ export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch
         ${btn('latin-band', 'band', 'all', state.band === 'all', `Wszyscy (${counts.all})`)}
         ${RANK_BANDS.map((b) => btn('latin-band', 'band', b.id, state.band === b.id, `${esc(b.label)} (${counts[b.id]})`)).join('')}
       </div>
-      <div class="rank-tools"><span>Sortuj:</span>
-        ${Object.entries(SORT_LABEL).map(([k, l]) => btn('latin-sort', 'sort', k, state.sortBy === k, esc(l))).join('')}
+      <div class="rank-tools latin-sorts"><span>Sortuj:</span>
+        ${Object.entries(SORT_LABEL).map(([k, l]) => `<span class="latin-sort-opt" data-testid="latin-sort-${k}">${btn('latin-sort', 'sort', k, state.sortBy === k, esc(l))}${infoTip(howComputed(data, k), 'https://api.sejm.gov.pl/sejm/term10/votings', `${SORT_LABEL[k]}: jak liczymy`)}</span>`).join('')}
       </div>
       <div class="rank-tools"><span>Kolejność:</span>
         ${btn('latin-order', 'order', 'desc', state.order === 'desc', 'Najwyższy')}

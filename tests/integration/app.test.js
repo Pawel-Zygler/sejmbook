@@ -163,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Suwerenność kompetencji (eksperyment)';
-const NEWEST_LINE = 'Rankingi: Suwerenność kompetencji (eksperyment)';
+const NEWEST = 'Ranking Konecznego: ostrzejsze zasady';
+const NEWEST_LINE = 'Rankingi: Ranking Konecznego: ostrzejsze zasady';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -1110,6 +1110,15 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     expect($$('[data-testid="latin-clubs"] td.latin-sov-col').length).toBeGreaterThan(5);
     click($('[data-action="latin-view"][data-view="mps"]'));
     click($('[data-action="latin-sort"][data-sort="total"]'));
+  });
+
+  it('every sort option has an "i" that says how it is computed', () => {
+    nav('#konieczny');
+    for (const k of ['total', 'p1', 'p2', 'p3', 'p4', 'sov']) {
+      const opt = $(`[data-testid="latin-sort-${k}"]`);
+      expect(opt.querySelector('[data-action="latin-sort"]')).not.toBeNull();
+      expect(opt.querySelector('.info-tip').textContent.length, k).toBeGreaterThan(80);
+    }
   });
 
   it('is linked from the sitemap and the footer', () => {

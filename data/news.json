@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-konieczny-ostrzej",
+      "date": "2026-11-27",
+      "title": "Ranking Konecznego: ostrzejsze zasady",
+      "section": "Rankingi",
+      "body": "Nie liczymy już ustaw przyjętych niemal jednogłośnie, a przy każdym sortowaniu ikona „i” mówi, jak je liczymy.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-27-suwerennosc",
       "date": "2026-11-27",
       "title": "Suwerenność kompetencji (eksperyment)",

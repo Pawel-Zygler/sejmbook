@@ -825,3 +825,4 @@ h2 { font-size: 1.1rem; }
 .latin-sov h3 em { font-style: normal; font-weight: 500; }
 .latin-dir-oddaje { color: var(--lab-low); } .latin-dir-zatrzymuje { color: var(--lab-hi); }
 .latin-rank .latin-sov-col { border-left: 1px dashed var(--line); }
+.latin-sort-opt { display: inline-flex; align-items: center; gap: 2px; }

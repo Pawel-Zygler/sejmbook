@@ -1,32 +1,116 @@
 {
   "title": "Suwerenność kompetencji",
   "question": "Czy poseł głosuje za pogłębianiem kompetencji Unii Europejskiej i organów zewnętrznych kosztem polskich, czy za zatrzymaniem ich w Polsce?",
-  "scoring": "Skala 0–100: 100 = zawsze głosuje tak, żeby kompetencje zostały w Polsce, 0 = zawsze za przenoszeniem ich do UE lub organów zewnętrznych. Ustawa, która wdraża prawo UE lub poszerza władzę organu zewnętrznego: przeciw = 1 pkt, wstrzymanie = 0,5, za = 0. Ustawa, która zatrzymuje lub odzyskuje kompetencje: odwrotnie. Nieobecności i ustawy sporne nie liczą się. Osobny wskaźnik, nie wchodzi do wyniku cywilizacji łacińskiej.",
+  "scoring": "Skala 0–100: 100 = zawsze głosuje tak, żeby kompetencje zostały w Polsce, 0 = zawsze za przenoszeniem ich do UE lub organów zewnętrznych. Ustawa, która wdraża prawo UE lub poszerza władzę organu zewnętrznego: przeciw = 1 pkt, wstrzymanie = 0,5, za = 0. Ustawa, która zatrzymuje lub odzyskuje kompetencje: odwrotnie. Nie liczymy nieobecności, ustaw spornych ani przyjętych niemal jednogłośnie (co najmniej 90% głosów po jednej stronie). Wynik = suma punktów / liczba policzonych głosów × 100. Osobny wskaźnik, nie wchodzi do wyniku cywilizacji łacińskiej.",
   "disclaimer": "Eksperyment: to interpretacja autora serwisu, nie neutralna ocena. Wiele ustaw wdrażających prawo UE Polska musi przyjąć z mocy traktatów; wskaźnik pokazuje tylko, jak poseł głosował.",
   "autoRule": "automatycznie: opis projektu w API Sejmu mówi o wdrożeniu lub stosowaniu prawa UE",
   "implementationPattern": "(wdro[żz]|implementac|transpozyc|zapewnienia stosowania|stosowani[ae] przepisów|w związku z .{0,80}(rozporządzeni|dyrektyw)|wykonani[ae] .{0,40}rozporządze|dostosowani[ae] .{0,80}(Unii|unijn|UE)|odpowiedzią na przepisy unijne)",
   "euPattern": "(Uni[ia] Europejsk|Unii\\b|\\(UE\\)|\\bUE\\b|unijn|dyrektyw|Parlamentu Europejskiego|\\bPE\\b|ReFuelEU|Wspólnej Polityki)",
   "laws": [
-    { "process": "906", "direction": "oddaje", "reason": "przystąpienie Polski do Prokuratury Europejskiej: unijny prokurator ściga przestępstwa w Polsce" },
-    { "process": "2164", "direction": "oddaje", "reason": "poszerza jurysdykcję Międzynarodowego Trybunału Karnego, także na czyny na terytorium Polski i jej obywateli" },
-    { "process": "1747", "direction": "oddaje", "reason": "umowa UE o ochronie inwestycji (Wietnam): spory rozstrzyga unijny system sądów inwestycyjnych" },
-    { "process": "1887", "direction": "oddaje", "reason": "umowa UE o ochronie inwestycji (Singapur): spory rozstrzyga unijny system sądów inwestycyjnych" },
-    { "process": "1855", "direction": "oddaje", "reason": "wdraża unijny graniczny podatek węglowy (CBAM) w ramach unijnego systemu handlu emisjami" },
-    { "process": "750", "direction": "oddaje", "reason": "Rada Fiskalna jako odpowiedź na unijne reguły fiskalne" },
-    { "process": "1261", "direction": "zatrzymuje", "reason": "wypowiedzenie konwencji ottawskiej: decyzja o obronie wraca do Polski" },
-    { "process": "204", "direction": "zatrzymuje", "reason": "zawieszenie traktatu CFE: Polska sama decyduje o swoich siłach zbrojnych" },
-    { "process": "745", "direction": "zatrzymuje", "reason": "wyjście z organizacji Intersputnik" },
-    { "process": "746", "direction": "zatrzymuje", "reason": "wyjście z systemu Intersputnik" },
-    { "process": "219", "direction": "sporna", "reason": "KRS: zmiany uzasadniane wyrokami sądów europejskich, ale dotyczą polskiego organu" },
-    { "process": "2108", "direction": "sporna", "reason": "KRS i Kodeks wyborczy: jak wyżej" },
-    { "process": "2107", "direction": "sporna", "reason": "skutki uchwał KRS: wykonanie wyroków sądów europejskich, ale o polskich sędziach" },
-    { "process": "1679", "direction": "sporna", "reason": "wykonywanie w Polsce wyroków Międzynarodowego Trybunału Karnego" },
-    { "process": "348", "direction": "sporna", "reason": "umowa UE z państwami Afryki, Karaibów i Pacyfiku (Samoa)" },
-    { "process": "420", "direction": "sporna", "reason": "umowa ramowa UE z Chile" },
-    { "process": "1484", "direction": "sporna", "reason": "ponowna ratyfikacja umowy o Międzynarodowej Korporacji Finansowej" },
-    { "process": "1485", "direction": "sporna", "reason": "ponowna ratyfikacja umowy o Banku Światowym" },
-    { "process": "1486", "direction": "sporna", "reason": "ponowna ratyfikacja umowy o MFW" },
-    { "process": "1487", "direction": "sporna", "reason": "ponowna ratyfikacja umowy o Międzynarodowym Stowarzyszeniu Rozwoju" },
-    { "process": "347", "direction": "pomijana", "reason": "organizacja polskiej prezydencji w Radzie UE, nie przenosi kompetencji" }
+    {
+      "process": "906",
+      "direction": "oddaje",
+      "reason": "przystąpienie Polski do Prokuratury Europejskiej: unijny prokurator ściga przestępstwa w Polsce"
+    },
+    {
+      "process": "2164",
+      "direction": "oddaje",
+      "reason": "poszerza jurysdykcję Międzynarodowego Trybunału Karnego, także na czyny na terytorium Polski i jej obywateli"
+    },
+    {
+      "process": "1747",
+      "direction": "oddaje",
+      "reason": "umowa UE o ochronie inwestycji (Wietnam): spory rozstrzyga unijny system sądów inwestycyjnych"
+    },
+    {
+      "process": "1887",
+      "direction": "oddaje",
+      "reason": "umowa UE o ochronie inwestycji (Singapur): spory rozstrzyga unijny system sądów inwestycyjnych"
+    },
+    {
+      "process": "1855",
+      "direction": "oddaje",
+      "reason": "wdraża unijny graniczny podatek węglowy (CBAM) w ramach unijnego systemu handlu emisjami"
+    },
+    {
+      "process": "750",
+      "direction": "oddaje",
+      "reason": "Rada Fiskalna jako odpowiedź na unijne reguły fiskalne"
+    },
+    {
+      "process": "1261",
+      "direction": "zatrzymuje",
+      "reason": "wypowiedzenie konwencji ottawskiej: decyzja o obronie wraca do Polski"
+    },
+    {
+      "process": "204",
+      "direction": "zatrzymuje",
+      "reason": "zawieszenie traktatu CFE: Polska sama decyduje o swoich siłach zbrojnych"
+    },
+    {
+      "process": "745",
+      "direction": "zatrzymuje",
+      "reason": "wyjście z organizacji Intersputnik"
+    },
+    {
+      "process": "746",
+      "direction": "zatrzymuje",
+      "reason": "wyjście z systemu Intersputnik"
+    },
+    {
+      "process": "219",
+      "direction": "sporna",
+      "reason": "KRS: zmiany uzasadniane wyrokami sądów europejskich, ale dotyczą polskiego organu"
+    },
+    {
+      "process": "2108",
+      "direction": "sporna",
+      "reason": "KRS i Kodeks wyborczy: jak wyżej"
+    },
+    {
+      "process": "2107",
+      "direction": "sporna",
+      "reason": "skutki uchwał KRS: wykonanie wyroków sądów europejskich, ale o polskich sędziach"
+    },
+    {
+      "process": "1679",
+      "direction": "sporna",
+      "reason": "wykonywanie w Polsce wyroków Międzynarodowego Trybunału Karnego"
+    },
+    {
+      "process": "348",
+      "direction": "sporna",
+      "reason": "umowa UE z państwami Afryki, Karaibów i Pacyfiku (Samoa)"
+    },
+    {
+      "process": "420",
+      "direction": "sporna",
+      "reason": "umowa ramowa UE z Chile"
+    },
+    {
+      "process": "1484",
+      "direction": "sporna",
+      "reason": "ponowna ratyfikacja umowy o Międzynarodowej Korporacji Finansowej"
+    },
+    {
+      "process": "1485",
+      "direction": "sporna",
+      "reason": "ponowna ratyfikacja umowy o Banku Światowym"
+    },
+    {
+      "process": "1486",
+      "direction": "sporna",
+      "reason": "ponowna ratyfikacja umowy o MFW"
+    },
+    {
+      "process": "1487",
+      "direction": "sporna",
+      "reason": "ponowna ratyfikacja umowy o Międzynarodowym Stowarzyszeniu Rozwoju"
+    },
+    {
+      "process": "347",
+      "direction": "pomijana",
+      "reason": "organizacja polskiej prezydencji w Radzie UE, nie przenosi kompetencji"
+    }
   ]
 }

@@ -18,6 +18,28 @@ export const LEVELS = [
 ];
 
 /**
+ * Share of the larger side among "za" and "przeciw" votes (0.5–1). Pawel, 2026-11-27 ("zaostrzyć warunki"): laws
+ * passed almost unanimously say nothing about the difference between MPs, so they are listed but not counted.
+ */
+export function consensusOf(law) {
+  let y = 0, n = 0;
+  for (const c of law?.v ?? '') { if (c === 'Y') y++; else if (c === 'N') n++; }
+  return y + n ? +(Math.max(y, n) / (y + n)).toFixed(3) : 1;
+}
+export const isConsensus = (law, limit) => limit != null && (law.consensus ?? 0) >= limit;
+
+/** Percentile (0–100) of each value among all values, ties sharing the middle rank. */
+export function percentiles(values) {
+  const vals = Object.values(values);
+  const out = {};
+  for (const [k, v] of Object.entries(values)) {
+    const below = vals.filter((x) => x < v).length, same = vals.filter((x) => x === v).length;
+    out[k] = (100 * (below + (same - 1) / 2)) / Math.max(1, vals.length - 1);
+  }
+  return out;
+}
+
+/**
  * All laws the card uses, with their pillar and direction. Hand classification wins; then tax laws (raise → niezgodna,
  * cut → zgodna, pillar 2; mixed ones are skipped); then laws whose Sejm description mentions deregulation (pillar 2,
  * zgodna). Only laws with a final vote in law-votes are kept. Newest first.
@@ -30,7 +52,7 @@ export function buildLatinLaws(cls, lawVotes, taxVotes, descriptions) {
     if (!law || out.has(process)) return;
     if (!LATIN_DIRECTIONS.includes(direction)) throw new RangeError(`Unknown direction: ${direction}`);
     if (![1, 2, 3].includes(pillar)) throw new RangeError(`Unknown pillar: ${pillar}`);
-    out.set(process, { process, pillar, direction, reason, source, title: law.title, date: law.date, sitting: law.sitting, votingNumber: law.votingNumber, passed: law.passed });
+    out.set(process, { process, pillar, direction, reason, source, title: law.title, date: law.date, sitting: law.sitting, votingNumber: law.votingNumber, passed: law.passed, consensus: consensusOf(law) });
   };
   for (const l of cls?.laws ?? []) add(l.process, l.pillar, l.direction, l.reason, 'manual');
   for (const l of taxVotes?.laws ?? []) {
@@ -117,14 +139,18 @@ export function mpLatin(latin, lawVotes, mpId, { attendancePct = null } = {}) {
     const p = pillars[law.pillar - 1];
     let pts = null;
     if (law.direction === 'sporna') p.contested++;
+    else if (isConsensus(law, latin.consensusSkip)) p.consensus = (p.consensus ?? 0) + 1;
     else if (vote === '-') p.absent++;
     else { pts = VOTE_POINTS[vote][law.direction]; p.points += pts; p.voted++; }
-    p.items.push({ law, vote, points: pts });
+    p.items.push({ law, vote, points: pts, consensus: isConsensus(law, latin.consensusSkip) });
   }
   const out = pillars.map((p) => ({ ...p, score: p.voted ? (100 * p.points) / p.voted : null }));
   const ind = latin.independence?.[mpId] ?? null;
-  const parts = [attendancePct, ind?.percentile].filter((x) => x != null);
-  out.push({ id: 4, attendancePct, independence: ind, score: parts.length ? parts.reduce((a, b) => a + b, 0) / parts.length : null, items: [] });
+  // Attendance counts as a percentile among MPs (since 2026-11-27), so 90% attendance is not automatically "high".
+  const att = latin.attendance?.[mpId] ?? null;
+  const attScore = att ? att.percentile : attendancePct;
+  const parts = [attScore, ind?.percentile].filter((x) => x != null);
+  out.push({ id: 4, attendancePct: att?.pct ?? attendancePct, attendancePercentile: att?.percentile ?? null, independence: ind, score: parts.length ? parts.reduce((a, b) => a + b, 0) / parts.length : null, items: [] });
   const scored = out.filter((p) => p.score != null);
   if (!scored.some((p) => p.id <= 3)) return null;
   const total = scored.reduce((a, p) => a + p.score, 0) / scored.length;

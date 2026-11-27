@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS, latinHistogram, percentile } from '../../src/lib/latin.js';
-import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS, renderLatinRanking, latinResults, latinScore, attendancePctFor, latinDistChart } from '../../src/ui/latin-view.js';
+import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS, latinHistogram, percentile, consensusOf, isConsensus, percentiles } from '../../src/lib/latin.js';
+import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS, renderLatinRanking, latinResults, latinScore, attendancePctFor, latinDistChart, howComputed } from '../../src/ui/latin-view.js';
 import cls from '../../data/latin-classification.json';
 import latinData from '../../data/latin.json';
 import lawData from '../../data/law-votes.json';
@@ -270,5 +270,46 @@ describe('Suwerenność kompetencji', () => {
     const r = { total: 70, pillars: [], sov: { score: 12 } };
     expect(sortValue(r, 'sov')).toBe(12);
     expect(sortValue({ total: 1, pillars: [] }, 'sov')).toBeNull();
+  });
+});
+
+// Pawel, 2026-11-27: "zaostrzyć warunki" — skip near-unanimous laws, attendance as a percentile; explain every sort.
+describe('stricter scoring and explanations', () => {
+  it('consensus = larger side of za/przeciw; percentiles share ties', () => {
+    expect(consensusOf({ v: 'YYYYYYYYYN' })).toBe(0.9);
+    expect(consensusOf({ v: 'YNA-' })).toBe(0.5);
+    expect(consensusOf({ v: '--' })).toBe(1);
+    expect(isConsensus({ consensus: 0.9 }, 0.9)).toBe(true);
+    expect(isConsensus({ consensus: 0.95 }, null)).toBe(false);
+    expect(percentiles({ a: 10, b: 20, c: 20, d: 30 })).toEqual({ a: 0, b: 50, c: 50, d: 100 });
+  });
+  it('near-unanimous laws are listed but not counted, in pillars and in sovereignty', () => {
+    const lv = { mps: [1, 2], laws: [{ process: 'a', v: 'YN' }, { process: 'b', v: 'YY' }] };
+    const latin = { consensusSkip: 0.9, laws: [
+      { process: 'a', pillar: 3, direction: 'zgodna', consensus: 0.5 },
+      { process: 'b', pillar: 3, direction: 'zgodna', consensus: 1 }] };
+    const r = mpLatin(latin, lv, 2);
+    expect(r.pillars[2]).toMatchObject({ score: 0, voted: 1, consensus: 1 });
+    expect(r.pillars[2].items.map((i) => i.consensus)).toEqual([false, true]);
+    const s = mpSov({ consensusSkip: 0.9, laws: [{ process: 'a', direction: 'oddaje', consensus: 0.5 }, { process: 'b', direction: 'oddaje', consensus: 1 }] }, lv, 2);
+    expect(s).toMatchObject({ score: 100, voted: 1, consensus: 1 });
+  });
+  it('pillar 4 uses the attendance percentile when the data has it', () => {
+    const lv = { mps: [1], laws: [{ process: 'a', v: 'Y' }] };
+    const latin = { laws: [{ process: 'a', pillar: 3, direction: 'zgodna' }], attendance: { 1: { pct: 95, percentile: 20 } }, independence: { 1: { percentile: 40 } } };
+    const p4 = mpLatin(latin, lv, 1).pillars[3];
+    expect(p4).toMatchObject({ score: 30, attendancePct: 95, attendancePercentile: 20 });
+  });
+  it('the shipped data skips near-unanimous laws and has attendance percentiles', () => {
+    expect(latinData.consensusSkip).toBe(0.9);
+    expect(latinData.sovereignty.consensusSkip).toBe(0.9);
+    expect(latinData.laws.every((l) => l.consensus >= 0.5 && l.consensus <= 1)).toBe(true);
+    expect(Object.keys(latinData.attendance).length).toBeGreaterThan(400);
+  });
+  it('every sort key has an explanation of how it is computed', () => {
+    for (const k of ['total', 'p1', 'p2', 'p3', 'p4', 'sov']) expect(howComputed(latinData, k).length, k).toBeGreaterThan(80);
+    expect(howComputed(latinData, 'p3')).toContain('niemal jednogłośnie');
+    expect(howComputed(latinData, 'p4')).toContain('percentyla obecności');
+    expect(howComputed(latinData, 'sov')).toContain('UE');
   });
 });
