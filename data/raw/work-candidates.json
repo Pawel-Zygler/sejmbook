@@ -430,8 +430,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q34433",
-   "label": "Uniwersytet Oksfordzki",
+   "qid": "Q35794",
+   "label": "University of Cambridge",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -439,8 +439,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q35794",
-   "label": "University of Cambridge",
+   "qid": "Q34433",
+   "label": "Uniwersytet Oksfordzki",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -1296,21 +1296,21 @@
   },
   {
    "kind": "P108",
-   "qid": "Q4294358",
-   "label": "Ministerstwo Zdrowia",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q1465005",
    "label": "Orange Polska",
    "from": 2009,
    "to": 2014,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q4294358",
+   "label": "Ministerstwo Zdrowia",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
   }
  ],
  "Michał Cieślak (polityk)": [
@@ -1439,18 +1439,18 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2822255",
-   "label": "Akademia Leona Koźmińskiego w Warszawie",
-   "from": null,
+   "qid": "Q175529",
+   "label": "Katolicki Uniwersytet Lubelski Jana Pawła II",
+   "from": 2003,
    "to": null,
    "verdict": "firma",
    "ok": true
   },
   {
    "kind": "P108",
-   "qid": "Q175529",
-   "label": "Katolicki Uniwersytet Lubelski Jana Pawła II",
-   "from": 2003,
+   "qid": "Q2822255",
+   "label": "Akademia Leona Koźmińskiego w Warszawie",
+   "from": null,
    "to": null,
    "verdict": "firma",
    "ok": true
@@ -2226,6 +2226,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q651690",
+   "label": "Polska Akademia Nauk",
+   "from": 1970,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q1658883",
    "label": "Uniwersytet w Białymstoku",
    "from": null,
@@ -2250,15 +2259,6 @@
    "to": null,
    "verdict": "jednostka terytorialna",
    "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q651690",
-   "label": "Polska Akademia Nauk",
-   "from": 1970,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
   }
  ],
  "Piotr Głowski": [
@@ -2619,26 +2619,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q1341068",
    "label": "Enea",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q315658",
-   "label": "Uniwersytet Wrocławski",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -2657,6 +2639,24 @@
    "kind": "P108",
    "qid": "Q615154",
    "label": "Uniwersytet Śląski w Katowicach",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q315658",
+   "label": "Uniwersytet Wrocławski",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -3332,15 +3332,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q1095404",
    "label": "Tygodnik Solidarność",
    "from": null,
@@ -3354,6 +3345,15 @@
    "label": "Biblioteka Uniwersytecka w Warszawie",
    "from": 1982,
    "to": 1983,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
+   "from": null,
+   "to": null,
    "verdict": "firma",
    "ok": true
   },
@@ -3482,15 +3482,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144015",
-   "label": "Centralne Biuro Antykorupcyjne",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q129110",
    "label": "Telewizja Polska",
    "from": null,
@@ -3506,6 +3497,15 @@
    "to": null,
    "verdict": "organizacja",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q144015",
+   "label": "Centralne Biuro Antykorupcyjne",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   },
   {
    "kind": "P108",
@@ -4832,20 +4832,20 @@
  "Ewa Leniart": [
   {
    "kind": "P108",
-   "qid": "Q660907",
-   "label": "Uniwersytet Rzeszowski",
-   "from": 2006,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q705173",
    "label": "Instytut Pamięci Narodowej",
    "from": null,
    "to": null,
    "verdict": "instytut",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q660907",
+   "label": "Uniwersytet Rzeszowski",
+   "from": 2006,
+   "to": null,
+   "verdict": "firma",
    "ok": true
   }
  ],
@@ -5087,6 +5087,33 @@
   },
   {
    "kind": "P108",
+   "qid": "Q1095404",
+   "label": "Tygodnik Solidarność",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1269452",
+   "label": "Dziennik Polska-Europa-Świat",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q2164678",
+   "label": "Rzeczpospolita",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q282171",
    "label": "Polsat",
    "from": null,
@@ -5116,33 +5143,6 @@
    "kind": "P108",
    "qid": "Q597255",
    "label": "Newsweek Polska",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1095404",
-   "label": "Tygodnik Solidarność",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1269452",
-   "label": "Dziennik Polska-Europa-Świat",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q2164678",
-   "label": "Rzeczpospolita",
    "from": null,
    "to": null,
    "verdict": "media",
@@ -5434,15 +5434,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q189441",
    "label": "Uniwersytet Jagielloński",
    "from": null,
@@ -5452,12 +5443,12 @@
   },
   {
    "kind": "P108",
-   "qid": "Q600742",
-   "label": "Służba Kontrwywiadu Wojskowego",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
    "from": null,
    "to": null,
-   "verdict": "urząd",
-   "ok": false
+   "verdict": "firma",
+   "ok": true
   },
   {
    "kind": "P108",
@@ -5466,6 +5457,15 @@
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q600742",
+   "label": "Służba Kontrwywiadu Wojskowego",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
    "ok": false
   },
   {
@@ -6155,21 +6155,21 @@
   },
   {
    "kind": "P108",
-   "qid": "Q655104",
-   "label": "Krytyka Polityczna",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q21006495",
    "label": "Partia Razem",
    "from": null,
    "to": null,
    "verdict": "partia",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q655104",
+   "label": "Krytyka Polityczna",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
   }
  ],
  "Paweł Olszewski (polityk)": [
@@ -6367,11 +6367,38 @@
   },
   {
    "kind": "P108",
+   "qid": "Q249591",
+   "label": "Polskie Koleje Państwowe",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q488048",
+   "label": "PricewaterhouseCoopers",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q7164",
    "label": "Bank Światowy",
    "from": null,
    "to": null,
    "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q9186177",
+   "label": "Centrum Analiz Społeczno-Ekonomicznych",
+   "from": null,
+   "to": null,
+   "verdict": "instytut",
    "ok": true
   },
   {
@@ -6405,33 +6432,6 @@
    "kind": "P108",
    "qid": "Q1160928",
    "label": "MBank",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q9186177",
-   "label": "Centrum Analiz Społeczno-Ekonomicznych",
-   "from": null,
-   "to": null,
-   "verdict": "instytut",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q249591",
-   "label": "Polskie Koleje Państwowe",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q488048",
-   "label": "PricewaterhouseCoopers",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -6835,6 +6835,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q137503",
+   "label": "Uniwersytet Łódzki",
+   "from": 1995,
+   "to": 2024,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q9332900",
    "label": "Szkoła Wyższa Ekonomii i Zarządzania w Łodzi",
    "from": null,
@@ -6848,15 +6857,6 @@
    "label": "Kolegium Trójcy Świętej w Cambridge",
    "from": null,
    "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q137503",
-   "label": "Uniwersytet Łódzki",
-   "from": 1995,
-   "to": 2024,
    "verdict": "firma",
    "ok": true
   },
@@ -7186,20 +7186,20 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9368045",
-   "label": "V Liceum Ogólnokształcące im. Stefana Żeromskiego w Gdańsku",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q282171",
    "label": "Polsat",
    "from": null,
    "to": null,
    "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q9368045",
+   "label": "V Liceum Ogólnokształcące im. Stefana Żeromskiego w Gdańsku",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
    "ok": true
   },
   {
@@ -11824,8 +11824,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q34433",
-   "label": "Uniwersytet Oksfordzki",
+   "qid": "Q35794",
+   "label": "University of Cambridge",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -11833,8 +11833,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q35794",
-   "label": "University of Cambridge",
+   "qid": "Q34433",
+   "label": "Uniwersytet Oksfordzki",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -12318,19 +12318,19 @@
   },
   {
    "kind": "P108",
-   "qid": "Q11815231",
-   "label": "Państwowa Akademia Nauk Stosowanych w Chełmie",
-   "from": 2001,
-   "to": 2018,
+   "qid": "Q189441",
+   "label": "Uniwersytet Jagielloński",
+   "from": 1988,
+   "to": null,
    "verdict": "firma",
    "ok": true
   },
   {
    "kind": "P108",
-   "qid": "Q189441",
-   "label": "Uniwersytet Jagielloński",
-   "from": 1988,
-   "to": null,
+   "qid": "Q11815231",
+   "label": "Państwowa Akademia Nauk Stosowanych w Chełmie",
+   "from": 2001,
+   "to": 2018,
    "verdict": "firma",
    "ok": true
   }
@@ -17055,8 +17055,8 @@
  "Adam Dobroński": [
   {
    "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
+   "qid": "Q1658883",
+   "label": "Uniwersytet w Białymstoku",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -17064,8 +17064,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1658883",
-   "label": "Uniwersytet w Białymstoku",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -17480,15 +17480,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q178909",
-   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q189441",
    "label": "Uniwersytet Jagielloński",
    "from": 1997,
@@ -17513,6 +17504,15 @@
    "to": null,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q178909",
+   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Antoni Duda": [
@@ -18431,6 +18431,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q7164",
+   "label": "Bank Światowy",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q144881",
    "label": "Zakład Ubezpieczeń Społecznych",
    "from": null,
@@ -18446,15 +18455,6 @@
    "to": 2008,
    "verdict": "urząd",
    "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q7164",
-   "label": "Bank Światowy",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
   },
   {
    "kind": "P108",
@@ -19128,24 +19128,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q11713056",
-   "label": "Instytut Historii im. Tadeusza Manteuffla Polskiej Akademii Nauk",
-   "from": 1955,
-   "to": 1985,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q17485893",
-   "label": "Centre de civilisation polonaise",
-   "from": 1962,
-   "to": 1965,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q209842",
    "label": "Uniwersytet Paryski",
    "from": 1960,
@@ -19161,6 +19143,24 @@
    "to": null,
    "verdict": "jednostka terytorialna",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q11713056",
+   "label": "Instytut Historii im. Tadeusza Manteuffla Polskiej Akademii Nauk",
+   "from": 1955,
+   "to": 1985,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q17485893",
+   "label": "Centre de civilisation polonaise",
+   "from": 1962,
+   "to": 1965,
+   "verdict": "firma",
+   "ok": true
   },
   {
    "kind": "P108",
@@ -20199,12 +20199,12 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9367286",
-   "label": "Urząd Zamówień Publicznych",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
+   "qid": "Q137503",
+   "label": "Uniwersytet Łódzki",
+   "from": 1988,
+   "to": 1996,
+   "verdict": "firma",
+   "ok": true
   },
   {
    "kind": "P108",
@@ -20217,12 +20217,12 @@
   },
   {
    "kind": "P108",
-   "qid": "Q137503",
-   "label": "Uniwersytet Łódzki",
-   "from": 1988,
-   "to": 1996,
-   "verdict": "firma",
-   "ok": true
+   "qid": "Q9367286",
+   "label": "Urząd Zamówień Publicznych",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Zofia Grabczan": [
@@ -20376,6 +20376,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q7164",
+   "label": "Bank Światowy",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q693173",
    "label": "Ministerstwo Skarbu Państwa",
    "from": null,
@@ -20414,15 +20423,6 @@
    "kind": "P108",
    "qid": "Q111937971",
    "label": "Polskie Elektrownie Jądrowe",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q7164",
-   "label": "Bank Światowy",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -20691,15 +20691,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1416331",
-   "label": "Uniwersytet Kardynała Stefana Wyszyńskiego w Warszawie",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q144488",
    "label": "Uniwersytet Warszawski",
    "from": null,
@@ -20715,6 +20706,15 @@
    "to": 2000,
    "verdict": "urząd",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1416331",
+   "label": "Uniwersytet Kardynała Stefana Wyszyńskiego w Warszawie",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
   },
   {
    "kind": "P108",
@@ -21316,15 +21316,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1067189",
-   "label": "Polskie Radio",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q9302058",
    "label": "Radar",
    "from": null,
@@ -21336,6 +21327,15 @@
    "kind": "P108",
    "qid": "Q9323182",
    "label": "Rozgłośnia Harcerska",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1067189",
+   "label": "Polskie Radio",
    "from": null,
    "to": null,
    "verdict": "media",
@@ -22056,33 +22056,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1095404",
-   "label": "Tygodnik Solidarność",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1427385",
-   "label": "Tygodnik Powszechny",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1478920",
-   "label": "Radio Maryja",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q2301650",
    "label": "TVP1",
    "from": null,
@@ -22112,6 +22085,33 @@
    "kind": "P108",
    "qid": "Q11791402",
    "label": "Niedziela",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1095404",
+   "label": "Tygodnik Solidarność",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1427385",
+   "label": "Tygodnik Powszechny",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1478920",
+   "label": "Radio Maryja",
    "from": null,
    "to": null,
    "verdict": "media",
@@ -23244,24 +23244,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q590406",
-   "label": "PKP Intercity",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q600502",
-   "label": "TVP3",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q671526",
    "label": "Krajowa Grupa Spożywcza",
    "from": null,
@@ -23294,6 +23276,24 @@
    "from": null,
    "to": null,
    "verdict": "organizacja",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q590406",
+   "label": "PKP Intercity",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q600502",
+   "label": "TVP3",
+   "from": null,
+   "to": null,
+   "verdict": "media",
    "ok": true
   }
  ],
@@ -24320,21 +24320,21 @@
   },
   {
    "kind": "P108",
-   "qid": "Q213624",
-   "label": "Ministerstwo Spraw Zagranicznych",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q144488",
    "label": "Uniwersytet Warszawski",
    "from": 1990,
    "to": null,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q213624",
+   "label": "Ministerstwo Spraw Zagranicznych",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
   },
   {
    "kind": "P108",
@@ -27066,6 +27066,33 @@
  "Jerzy Kropiwnicki": [
   {
    "kind": "P108",
+   "qid": "Q137503",
+   "label": "Uniwersytet Łódzki",
+   "from": 1968,
+   "to": 1981,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q137503",
+   "label": "Uniwersytet Łódzki",
+   "from": 1989,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q168844",
+   "label": "Narodowy Bank Polski",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
+  },
+  {
+   "kind": "P108",
    "qid": "Q4294646",
    "label": "Ministerstwo Rozwoju Regionalnego",
    "from": null,
@@ -27107,33 +27134,6 @@
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q137503",
-   "label": "Uniwersytet Łódzki",
-   "from": 1968,
-   "to": 1981,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q137503",
-   "label": "Uniwersytet Łódzki",
-   "from": 1989,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q168844",
-   "label": "Narodowy Bank Polski",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
    "ok": false
   }
  ],
@@ -28399,6 +28399,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q413833",
+   "label": "Akademia Wychowania Fizycznego im. Jerzego Kukuczki w Katowicach",
+   "from": 2008,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q7257416",
    "label": "Państwowa Medyczna Wyższa Szkoła Zawodowa w Opolu",
    "from": null,
@@ -28420,15 +28429,6 @@
    "qid": "Q11815246",
    "label": "Akademia Nauk Stosowanych w Raciborzu",
    "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q413833",
-   "label": "Akademia Wychowania Fizycznego im. Jerzego Kukuczki w Katowicach",
-   "from": 2008,
    "to": null,
    "verdict": "firma",
    "ok": true
@@ -28461,6 +28461,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q366071",
+   "label": "Uniwersytet Zielonogórski",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q7970913",
    "label": "Uniwersytet SWPS",
    "from": null,
@@ -28481,15 +28490,6 @@
    "kind": "P108",
    "qid": "Q9380727",
    "label": "Wyższa Szkoła Biznesu w Gorzowie Wielkopolskim",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q366071",
-   "label": "Uniwersytet Zielonogórski",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -29622,24 +29622,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9377454",
-   "label": "Wojskowa Agencja Mieszkaniowa",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q15895866",
-   "label": "Instytut Studiów Strategicznych",
-   "from": null,
-   "to": null,
-   "verdict": "instytut",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q1257671",
    "label": "Instytut Spraw Publicznych",
    "from": null,
@@ -29654,6 +29636,24 @@
    "from": null,
    "to": null,
    "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q9377454",
+   "label": "Wojskowa Agencja Mieszkaniowa",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q15895866",
+   "label": "Instytut Studiów Strategicznych",
+   "from": null,
+   "to": null,
+   "verdict": "instytut",
    "ok": true
   }
  ],
@@ -29713,8 +29713,8 @@
  "Dariusz Lipiński": [
   {
    "kind": "P108",
-   "qid": "Q11815238",
-   "label": "Uniwersytet Kaliski im. Prezydenta Stanisława Wojciechowskiego",
+   "qid": "Q348402",
+   "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -29722,8 +29722,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q348402",
-   "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+   "qid": "Q11815238",
+   "label": "Uniwersytet Kaliski im. Prezydenta Stanisława Wojciechowskiego",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -29757,24 +29757,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q3578073",
-   "label": "Krajowa Szkoła Administracji Publicznej im. Prezydenta Rzeczypospolitej Polskiej Lecha Kaczyńskiego",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q7970913",
-   "label": "Uniwersytet SWPS",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q615154",
    "label": "Uniwersytet Śląski w Katowicach",
    "from": null,
@@ -29795,6 +29777,24 @@
    "kind": "P108",
    "qid": "Q1416331",
    "label": "Uniwersytet Kardynała Stefana Wyszyńskiego w Warszawie",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q3578073",
+   "label": "Krajowa Szkoła Administracji Publicznej im. Prezydenta Rzeczypospolitej Polskiej Lecha Kaczyńskiego",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q7970913",
+   "label": "Uniwersytet SWPS",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -30010,8 +30010,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9380869",
-   "label": "Wyższa Szkoła Zarządzania i Administracji w Zamościu",
+   "qid": "Q1613719",
+   "label": "Uniwersytet Marii Curie-Skłodowskiej",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -30019,8 +30019,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1613719",
-   "label": "Uniwersytet Marii Curie-Skłodowskiej",
+   "qid": "Q9380869",
+   "label": "Wyższa Szkoła Zarządzania i Administracji w Zamościu",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -30293,21 +30293,21 @@
   },
   {
    "kind": "P108",
-   "qid": "Q11837925",
-   "label": "Wojskowa Akademia Techniczna im. Jarosława Dąbrowskiego",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q496351",
    "label": "Warszawski Uniwersytet Medyczny",
    "from": null,
    "to": null,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q11837925",
+   "label": "Wojskowa Akademia Techniczna im. Jarosława Dąbrowskiego",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
   }
  ],
  "Marek Łatas": [
@@ -30463,8 +30463,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9351629",
-   "label": "Szkoła Wyższa im. Bogdana Jańskiego w Warszawie",
+   "qid": "Q348402",
+   "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -30472,8 +30472,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q348402",
-   "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+   "qid": "Q9351629",
+   "label": "Szkoła Wyższa im. Bogdana Jańskiego w Warszawie",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -31501,8 +31501,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q488981",
-   "label": "Europejski Bank Odbudowy i Rozwoju",
+   "qid": "Q578832",
+   "label": "Powszechna Kasa Oszczędności Bank Polski",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -31510,8 +31510,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q578832",
-   "label": "Powszechna Kasa Oszczędności Bank Polski",
+   "qid": "Q488981",
+   "label": "Europejski Bank Odbudowy i Rozwoju",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -33334,33 +33334,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q129110",
-   "label": "Telewizja Polska",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q393231",
-   "label": "Życie Warszawy",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1395669",
-   "label": "Więź",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q7895361",
    "label": "Akademia Finansów i Biznesu Vistula",
    "from": null,
@@ -33417,6 +33390,33 @@
    "kind": "P108",
    "qid": "Q16540948",
    "label": "Dookoła Świata",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q129110",
+   "label": "Telewizja Polska",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q393231",
+   "label": "Życie Warszawy",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1395669",
+   "label": "Więź",
    "from": null,
    "to": null,
    "verdict": "media",
@@ -34211,20 +34211,20 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1636999",
-   "label": "Trybunał Konstytucyjny",
-   "from": 2001,
-   "to": 2010,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q4294864",
    "label": "Ministerstwo Sprawiedliwości",
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1636999",
+   "label": "Trybunał Konstytucyjny",
+   "from": 2001,
+   "to": 2010,
+   "verdict": "urząd",
    "ok": false
   }
  ],
@@ -34523,8 +34523,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q348402",
-   "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+   "qid": "Q9380799",
+   "label": "Collegium Da Vinci",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -34532,8 +34532,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9380799",
-   "label": "Collegium Da Vinci",
+   "qid": "Q348402",
+   "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -34666,8 +34666,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1109135",
-   "label": "Kolegium Europy",
+   "qid": "Q1758009",
+   "label": "Uniwersytet Gdański",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -34675,8 +34675,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1758009",
-   "label": "Uniwersytet Gdański",
+   "qid": "Q1109135",
+   "label": "Kolegium Europy",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -34853,6 +34853,15 @@
  "Stanisława Okularczyk": [
   {
    "kind": "P108",
+   "qid": "Q660907",
+   "label": "Uniwersytet Rzeszowski",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q11713190",
    "label": "Instytut Rozwoju Wsi i Rolnictwa Polskiej Akademii Nauk",
    "from": null,
@@ -34867,15 +34876,6 @@
    "from": null,
    "to": null,
    "verdict": "instytut",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q660907",
-   "label": "Uniwersytet Rzeszowski",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
    "ok": true
   }
  ],
@@ -34979,24 +34979,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q9148395",
-   "label": "Alior Bank",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q30261171",
-   "label": "Instytut Ekonomiki Rolnictwa i Gospodarki Żywnościowej",
-   "from": null,
-   "to": null,
-   "verdict": "instytut",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q1160928",
    "label": "MBank",
    "from": null,
@@ -35011,6 +34993,24 @@
    "from": null,
    "to": null,
    "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q9148395",
+   "label": "Alior Bank",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q30261171",
+   "label": "Instytut Ekonomiki Rolnictwa i Gospodarki Żywnościowej",
+   "from": null,
+   "to": null,
+   "verdict": "instytut",
    "ok": true
   }
  ],
@@ -35055,6 +35055,15 @@
  "Józef Oleksy": [
   {
    "kind": "P108",
+   "qid": "Q1394594",
+   "label": "Szkoła Główna Handlowa w Warszawie",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q5060625",
    "label": "Komitet Centralny Polskiej Zjednoczonej Partii Robotniczej",
    "from": null,
@@ -35066,15 +35075,6 @@
    "kind": "P108",
    "qid": "Q7895361",
    "label": "Akademia Finansów i Biznesu Vistula",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1394594",
-   "label": "Szkoła Główna Handlowa w Warszawie",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -40717,15 +40717,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144881",
-   "label": "Zakład Ubezpieczeń Społecznych",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q5060625",
    "label": "Komitet Centralny Polskiej Zjednoczonej Partii Robotniczej",
    "from": null,
@@ -40767,6 +40758,15 @@
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q144881",
+   "label": "Zakład Ubezpieczeń Społecznych",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
    "ok": false
   },
   {
@@ -41155,6 +41155,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q13371",
+   "label": "Uniwersytet Harvarda",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q192621",
    "label": "The Daily Telegraph",
    "from": null,
@@ -41170,15 +41179,6 @@
    "to": null,
    "verdict": "jednostka terytorialna",
    "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q13371",
-   "label": "Uniwersytet Harvarda",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
   },
   {
    "kind": "P108",
@@ -44184,6 +44184,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q178909",
+   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
+  },
+  {
+   "kind": "P108",
    "qid": "Q189441",
    "label": "Uniwersytet Jagielloński",
    "from": 2000,
@@ -44208,15 +44217,6 @@
    "to": null,
    "verdict": "firma",
    "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q178909",
-   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
   }
  ],
  "Adam Szczęsny": [
@@ -44333,8 +44333,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2560876",
-   "label": "Biuro Bezpieczeństwa Narodowego",
+   "qid": "Q178909",
+   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
    "from": null,
    "to": null,
    "verdict": "urząd",
@@ -44342,8 +44342,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q178909",
-   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
+   "qid": "Q2560876",
+   "label": "Biuro Bezpieczeństwa Narodowego",
    "from": null,
    "to": null,
    "verdict": "urząd",
@@ -45699,6 +45699,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q5062419",
    "label": "Ośrodek Studiów Wschodnich",
    "from": 1992,
@@ -45710,15 +45719,6 @@
    "kind": "P108",
    "qid": "Q9351629",
    "label": "Szkoła Wyższa im. Bogdana Jańskiego w Warszawie",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -45775,8 +45775,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q81299",
-   "label": "Organizacja Bezpieczeństwa i Współpracy w Europie",
+   "qid": "Q161718",
+   "label": "Program Narodów Zjednoczonych ds. Rozwoju",
    "from": null,
    "to": null,
    "verdict": "organizacja międzynarodowa",
@@ -45784,8 +45784,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q161718",
-   "label": "Program Narodów Zjednoczonych ds. Rozwoju",
+   "qid": "Q81299",
+   "label": "Organizacja Bezpieczeństwa i Współpracy w Europie",
    "from": null,
    "to": null,
    "verdict": "organizacja międzynarodowa",
@@ -47345,6 +47345,24 @@
   },
   {
    "kind": "P108",
+   "qid": "Q11711758",
+   "label": "Ilustrowany Kurier Polski",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q11822699",
+   "label": "Polskie Radio Pomorza i Kujaw",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q4294555",
    "label": "Ministerstwo Środowiska",
    "from": null,
@@ -47378,24 +47396,6 @@
    "to": null,
    "verdict": "media",
    "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q11711758",
-   "label": "Ilustrowany Kurier Polski",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q11822699",
-   "label": "Polskie Radio Pomorza i Kujaw",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
   }
  ],
  "Piotr Walkowski": [
@@ -47413,6 +47413,15 @@
   }
  ],
  "Danuta Waniek": [
+  {
+   "kind": "P108",
+   "qid": "Q651690",
+   "label": "Polska Akademia Nauk",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
   {
    "kind": "P108",
    "qid": "Q2822247",
@@ -47435,15 +47444,6 @@
    "kind": "P108",
    "qid": "Q9137142",
    "label": "ALMAMER Szkoła Wyższa w Warszawie",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q651690",
-   "label": "Polska Akademia Nauk",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -47640,12 +47640,30 @@
   },
   {
    "kind": "P108",
+   "qid": "Q27061984",
+   "label": "Akademia Sztuki Wojennej",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q137503",
    "label": "Uniwersytet Łódzki",
    "from": 1981,
    "to": 1987,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q213624",
+   "label": "Ministerstwo Spraw Zagranicznych",
+   "from": 1992,
+   "to": 2018,
+   "verdict": "jednostka terytorialna",
+   "ok": false
   },
   {
    "kind": "P108",
@@ -47673,24 +47691,6 @@
    "to": null,
    "verdict": "firma",
    "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q27061984",
-   "label": "Akademia Sztuki Wojennej",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q213624",
-   "label": "Ministerstwo Spraw Zagranicznych",
-   "from": 1992,
-   "to": 2018,
-   "verdict": "jednostka terytorialna",
-   "ok": false
   }
  ],
  "Zbigniew Wawak": [
@@ -47758,33 +47758,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
-   "from": 2006,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q4380777",
-   "label": "Ministerstwo Rolnictwa i Rozwoju Wsi",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q7262735",
-   "label": "Akademia im. Aleksandra Gieysztora w Pułtusku",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q9380704",
    "label": "Wyższa Szkoła Administracji Publicznej w Kielcach",
    "from": null,
@@ -47803,12 +47776,39 @@
   },
   {
    "kind": "P108",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
+   "from": 2006,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q213624",
    "label": "Ministerstwo Spraw Zagranicznych",
    "from": 2018,
    "to": 2023,
    "verdict": "jednostka terytorialna",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q4380777",
+   "label": "Ministerstwo Rolnictwa i Rozwoju Wsi",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q7262735",
+   "label": "Akademia im. Aleksandra Gieysztora w Pułtusku",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
   }
  ],
  "Stanisław Wądołowski": [
@@ -48206,8 +48206,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2822247",
-   "label": "Uniwersytet Andrzeja Frycza Modrzewskiego w Krakowie",
+   "qid": "Q615154",
+   "label": "Uniwersytet Śląski w Katowicach",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -48215,8 +48215,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q615154",
-   "label": "Uniwersytet Śląski w Katowicach",
+   "qid": "Q2822247",
+   "label": "Uniwersytet Andrzeja Frycza Modrzewskiego w Krakowie",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -48368,24 +48368,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q4294791",
-   "label": "Ministerstwo Finansów",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q5590495",
-   "label": "Gość Niedzielny",
-   "from": null,
-   "to": null,
-   "verdict": "media",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q11750179",
    "label": "Królowa Apostołów",
    "from": null,
@@ -48406,6 +48388,24 @@
    "kind": "P108",
    "qid": "Q1395669",
    "label": "Więź",
+   "from": null,
+   "to": null,
+   "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q4294791",
+   "label": "Ministerstwo Finansów",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q5590495",
+   "label": "Gość Niedzielny",
    "from": null,
    "to": null,
    "verdict": "media",
@@ -51041,20 +51041,20 @@
   },
   {
    "kind": "P108",
-   "qid": "Q30282062",
-   "label": "Śląskie Centrum Chorób Serca",
-   "from": null,
-   "to": null,
-   "verdict": "szpital",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q2239217",
    "label": "Śląski Uniwersytet Medyczny w Katowicach",
    "from": null,
    "to": null,
    "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q30282062",
+   "label": "Śląskie Centrum Chorób Serca",
+   "from": null,
+   "to": null,
+   "verdict": "szpital",
    "ok": true
   }
  ],
@@ -52448,6 +52448,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q4951",
+   "label": "Trybunał Sprawiedliwości Unii Europejskiej",
+   "from": 2009,
+   "to": 2024,
+   "verdict": "urząd",
+   "ok": false
+  },
+  {
+   "kind": "P108",
    "qid": "Q144488",
    "label": "Uniwersytet Warszawski",
    "from": 1973,
@@ -52463,15 +52472,6 @@
    "to": 1998,
    "verdict": "firma",
    "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q4951",
-   "label": "Trybunał Sprawiedliwości Unii Europejskiej",
-   "from": 2009,
-   "to": 2024,
-   "verdict": "urząd",
-   "ok": false
   },
   {
    "kind": "P108",
@@ -52551,6 +52551,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q651690",
+   "label": "Polska Akademia Nauk",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q1157203",
    "label": "Naczelny Sąd Administracyjny",
    "from": null,
@@ -52571,15 +52580,6 @@
    "kind": "P108",
    "qid": "Q1733433",
    "label": "Uniwersytet Warmińsko-Mazurski w Olsztynie",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q651690",
-   "label": "Polska Akademia Nauk",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -52738,6 +52738,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q828387",
+   "label": "Fundacja „Polsko-Niemieckie Pojednanie”",
+   "from": null,
+   "to": null,
+   "verdict": "organizacja",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q1636999",
    "label": "Trybunał Konstytucyjny",
    "from": null,
@@ -52753,15 +52762,6 @@
    "to": null,
    "verdict": "urząd",
    "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q828387",
-   "label": "Fundacja „Polsko-Niemieckie Pojednanie”",
-   "from": null,
-   "to": null,
-   "verdict": "organizacja",
-   "ok": true
   }
  ],
  "Adam Strzembosz": [
@@ -53077,21 +53077,21 @@
  "Aleksander Stępkowski": [
   {
    "kind": "P108",
-   "qid": "Q144488",
-   "label": "Uniwersytet Warszawski",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q213624",
    "label": "Ministerstwo Spraw Zagranicznych",
    "from": 2015,
    "to": 2016,
    "verdict": "jednostka terytorialna",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q144488",
+   "label": "Uniwersytet Warszawski",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
   },
   {
    "kind": "P108",
@@ -54629,18 +54629,18 @@
   },
   {
    "kind": "P108",
-   "qid": "Q651690",
-   "label": "Polska Akademia Nauk",
-   "from": null,
+   "qid": "Q1758009",
+   "label": "Uniwersytet Gdański",
+   "from": 1970,
    "to": null,
    "verdict": "firma",
    "ok": true
   },
   {
    "kind": "P108",
-   "qid": "Q1758009",
-   "label": "Uniwersytet Gdański",
-   "from": 1970,
+   "qid": "Q651690",
+   "label": "Polska Akademia Nauk",
+   "from": null,
    "to": null,
    "verdict": "firma",
    "ok": true
@@ -54997,21 +54997,21 @@
   },
   {
    "kind": "P108",
-   "qid": "Q651690",
-   "label": "Polska Akademia Nauk",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q2982446",
    "label": "Ministerstwo Obrony Narodowej",
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q651690",
+   "label": "Polska Akademia Nauk",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
   },
   {
    "kind": "P108",
@@ -55202,33 +55202,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q168844",
-   "label": "Narodowy Bank Polski",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q182000",
-   "label": "Konferencja Narodów Zjednoczonych ds. Handlu i Rozwoju",
-   "from": null,
-   "to": null,
-   "verdict": "organizacja międzynarodowa",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q7164",
-   "label": "Bank Światowy",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q189441",
    "label": "Uniwersytet Jagielloński",
    "from": null,
@@ -55247,11 +55220,38 @@
   },
   {
    "kind": "P108",
+   "qid": "Q7164",
+   "label": "Bank Światowy",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q633009",
    "label": "Polskie Radio Program III",
    "from": null,
    "to": null,
    "verdict": "media",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q168844",
+   "label": "Narodowy Bank Polski",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q182000",
+   "label": "Konferencja Narodów Zjednoczonych ds. Handlu i Rozwoju",
+   "from": null,
+   "to": null,
+   "verdict": "organizacja międzynarodowa",
    "ok": true
   },
   {
@@ -55533,19 +55533,19 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2822255",
-   "label": "Akademia Leona Koźmińskiego w Warszawie",
-   "from": null,
-   "to": null,
+   "qid": "Q1394594",
+   "label": "Szkoła Główna Handlowa w Warszawie",
+   "from": 1975,
+   "to": 2001,
    "verdict": "firma",
    "ok": true
   },
   {
    "kind": "P108",
-   "qid": "Q1394594",
-   "label": "Szkoła Główna Handlowa w Warszawie",
-   "from": 1975,
-   "to": 2001,
+   "qid": "Q2822255",
+   "label": "Akademia Leona Koźmińskiego w Warszawie",
+   "from": null,
+   "to": null,
    "verdict": "firma",
    "ok": true
   }
@@ -56066,6 +56066,24 @@
   },
   {
    "kind": "P108",
+   "qid": "Q1338484",
+   "label": "Narodowa Orkiestra Symfoniczna Polskiego Radia w Katowicach",
+   "from": 2000,
+   "to": 2018,
+   "verdict": "organizacja",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1951843",
+   "label": "Akademia Muzyczna im. Krzysztofa Pendereckiego w Krakowie",
+   "from": 1974,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q4237502",
    "label": "Filharmonia im. Karola Szymanowskiego w Krakowie",
    "from": 1991,
@@ -56090,24 +56108,6 @@
    "to": 1974,
    "verdict": "urząd",
    "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1338484",
-   "label": "Narodowa Orkiestra Symfoniczna Polskiego Radia w Katowicach",
-   "from": 2000,
-   "to": 2018,
-   "verdict": "organizacja",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q1951843",
-   "label": "Akademia Muzyczna im. Krzysztofa Pendereckiego w Krakowie",
-   "from": 1974,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
   }
  ],
  "Marek Zdrojewski": [
@@ -56175,15 +56175,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q137503",
-   "label": "Uniwersytet Łódzki",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q578832",
    "label": "Powszechna Kasa Oszczędności Bank Polski",
    "from": null,
@@ -56195,6 +56186,15 @@
    "kind": "P108",
    "qid": "Q673670",
    "label": "Polskie Górnictwo Naftowe i Gazownictwo",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q137503",
+   "label": "Uniwersytet Łódzki",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -56520,8 +56520,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q11781492",
-   "label": "Ministerstwo Przekształceń Własnościowych",
+   "qid": "Q693173",
+   "label": "Ministerstwo Skarbu Państwa",
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
@@ -56529,8 +56529,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q693173",
-   "label": "Ministerstwo Skarbu Państwa",
+   "qid": "Q11781492",
+   "label": "Ministerstwo Przekształceń Własnościowych",
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
@@ -56587,15 +56587,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q178909",
-   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q659012",
    "label": "Europejska Komisja Gospodarcza",
    "from": null,
@@ -56605,8 +56596,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q11741761",
-   "label": "Komitet Integracji Europejskiej",
+   "qid": "Q178909",
+   "label": "Kancelaria Prezydenta Rzeczypospolitej Polskiej",
    "from": null,
    "to": null,
    "verdict": "urząd",
@@ -56620,6 +56611,15 @@
    "to": null,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q11741761",
+   "label": "Komitet Integracji Europejskiej",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Andrzej Raczko": [
@@ -57173,15 +57173,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2122214",
-   "label": "Archiwum państwowe",
-   "from": null,
-   "to": null,
-   "verdict": "nie pracodawca",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q11822496",
    "label": "Polski Instytut Spraw Międzynarodowych",
    "from": 1966,
@@ -57260,6 +57251,15 @@
    "to": null,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q2122214",
+   "label": "Archiwum państwowe",
+   "from": null,
+   "to": null,
+   "verdict": "nie pracodawca",
+   "ok": false
   }
  ],
  "Michał Seweryński": [
@@ -58042,6 +58042,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q144881",
+   "label": "Zakład Ubezpieczeń Społecznych",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
+  },
+  {
+   "kind": "P108",
    "qid": "Q129110",
    "label": "Telewizja Polska",
    "from": null,
@@ -58051,8 +58060,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q144881",
-   "label": "Zakład Ubezpieczeń Społecznych",
+   "qid": "Q16565246",
+   "label": "Kancelaria Sejmu",
    "from": null,
    "to": null,
    "verdict": "urząd",
@@ -58075,15 +58084,6 @@
    "to": null,
    "verdict": "firma",
    "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q16565246",
-   "label": "Kancelaria Sejmu",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
   }
  ],
  "Jacek Rostowski": [
@@ -58143,15 +58143,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2466845",
-   "label": "UCL School of Slavonic and East European Studies",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q4294791",
    "label": "Ministerstwo Finansów",
    "from": null,
@@ -58172,6 +58163,15 @@
    "kind": "P108",
    "qid": "Q806642",
    "label": "Bank Polska Kasa Opieki",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q2466845",
+   "label": "UCL School of Slavonic and East European Studies",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -58265,15 +58265,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2955976",
-   "label": "Kancelaria Prezesa Rady Ministrów",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q11833454",
    "label": "Radio Plus",
    "from": null,
@@ -58307,6 +58298,15 @@
    "to": null,
    "verdict": "media",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q2955976",
+   "label": "Kancelaria Prezesa Rady Ministrów",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Mikołaj Budzanowski": [
@@ -58383,15 +58383,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2955976",
-   "label": "Kancelaria Prezesa Rady Ministrów",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q122452266",
    "label": "Ministerstwo Spraw Wewnętrznych",
    "from": null,
@@ -58416,6 +58407,15 @@
    "to": null,
    "verdict": "instytut",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q2955976",
+   "label": "Kancelaria Prezesa Rady Ministrów",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Marcin Korolec": [
@@ -58600,15 +58600,6 @@
  "Małgorzata Omilanowska": [
   {
    "kind": "P108",
-   "qid": "Q1758009",
-   "label": "Uniwersytet Gdański",
-   "from": 2006,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q4294444",
    "label": "Ministerstwo Kultury i Dziedzictwa Narodowego",
    "from": 2012,
@@ -58621,6 +58612,15 @@
    "qid": "Q651690",
    "label": "Polska Akademia Nauk",
    "from": 1985,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1758009",
+   "label": "Uniwersytet Gdański",
+   "from": 2006,
    "to": null,
    "verdict": "firma",
    "ok": true
@@ -58788,15 +58788,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q98975",
-   "label": "Senat Rzeczypospolitej Polskiej",
-   "from": 1989,
-   "to": 1990,
-   "verdict": "koło poselskie",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q144488",
    "label": "Uniwersytet Warszawski",
    "from": null,
@@ -58806,12 +58797,12 @@
   },
   {
    "kind": "P108",
-   "qid": "Q3578073",
-   "label": "Krajowa Szkoła Administracji Publicznej im. Prezydenta Rzeczypospolitej Polskiej Lecha Kaczyńskiego",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
+   "qid": "Q98975",
+   "label": "Senat Rzeczypospolitej Polskiej",
+   "from": 1989,
+   "to": 1990,
+   "verdict": "koło poselskie",
+   "ok": false
   },
   {
    "kind": "P108",
@@ -58871,6 +58862,15 @@
    "kind": "P108",
    "qid": "Q1394594",
    "label": "Szkoła Główna Handlowa w Warszawie",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q3578073",
+   "label": "Krajowa Szkoła Administracji Publicznej im. Prezydenta Rzeczypospolitej Polskiej Lecha Kaczyńskiego",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -59134,15 +59134,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q2955976",
-   "label": "Kancelaria Prezesa Rady Ministrów",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q16565246",
    "label": "Kancelaria Sejmu",
    "from": null,
@@ -59176,6 +59167,15 @@
    "to": null,
    "verdict": "media",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q2955976",
+   "label": "Kancelaria Prezesa Rady Ministrów",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Adam Niedzielski": [
@@ -59219,15 +59219,6 @@
    "from": 2016,
    "to": 2016,
    "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q4294358",
-   "label": "Ministerstwo Zdrowia",
-   "from": 2020,
-   "to": 2023,
-   "verdict": "jednostka terytorialna",
    "ok": false
   },
   {
@@ -59281,6 +59272,15 @@
    "label": "Ministerstwo Sprawiedliwości",
    "from": 2013,
    "to": 2016,
+   "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q4294358",
+   "label": "Ministerstwo Zdrowia",
+   "from": 2020,
+   "to": 2023,
    "verdict": "jednostka terytorialna",
    "ok": false
   }
@@ -59453,6 +59453,15 @@
   },
   {
    "kind": "P108",
+   "qid": "Q23710607",
+   "label": "Ministerstwo Rozwoju",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
    "qid": "Q1807170",
    "label": "Powszechny Zakład Ubezpieczeń",
    "from": null,
@@ -59467,15 +59476,6 @@
    "from": null,
    "to": null,
    "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q23710607",
-   "label": "Ministerstwo Rozwoju",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
    "ok": false
   }
  ],
@@ -59493,21 +59493,21 @@
  "Alvin Gajadhur": [
   {
    "kind": "P108",
-   "qid": "Q1718656",
-   "label": "Politechnika Warszawska",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q6867218",
    "label": "Ministerstwo Infrastruktury",
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1718656",
+   "label": "Politechnika Warszawska",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
   }
  ],
  "Ewa Krajewska": [
@@ -59557,24 +59557,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q100413012",
-   "label": "Ministerstwo Klimatu i Środowiska",
-   "from": null,
-   "to": null,
-   "verdict": "jednostka terytorialna",
-   "ok": false
-  },
-  {
-   "kind": "P108",
-   "qid": "Q971649",
-   "label": "Orlen",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q1786153",
    "label": "Enea Wytwarzanie",
    "from": null,
@@ -59595,6 +59577,24 @@
    "kind": "P108",
    "qid": "Q21791437",
    "label": "Ministerstwo Gospodarki Morskiej i Żeglugi Śródlądowej",
+   "from": null,
+   "to": null,
+   "verdict": "jednostka terytorialna",
+   "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q971649",
+   "label": "Orlen",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q100413012",
+   "label": "Ministerstwo Klimatu i Środowiska",
    "from": null,
    "to": null,
    "verdict": "jednostka terytorialna",
@@ -59684,15 +59684,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q1613719",
-   "label": "Uniwersytet Marii Curie-Skłodowskiej",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
    "qid": "Q1963911",
    "label": "Najwyższa Izba Kontroli",
    "from": null,
@@ -59735,6 +59726,15 @@
    "to": null,
    "verdict": "urząd",
    "ok": false
+  },
+  {
+   "kind": "P108",
+   "qid": "Q1613719",
+   "label": "Uniwersytet Marii Curie-Skłodowskiej",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
   }
  ],
  "Marzena Czarnecka": [
@@ -59867,8 +59867,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q310207",
-   "label": "McKinsey & Company",
+   "qid": "Q674093",
+   "label": "Bank BPH",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -59894,8 +59894,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q674093",
-   "label": "Bank BPH",
+   "qid": "Q310207",
+   "label": "McKinsey & Company",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -59903,6 +59903,15 @@
   }
  ],
  "Hanna Wróblewska": [
+  {
+   "kind": "P108",
+   "qid": "Q450241",
+   "label": "Zachęta Narodowa Galeria Sztuki",
+   "from": null,
+   "to": null,
+   "verdict": "muzeum",
+   "ok": true
+  },
   {
    "kind": "P108",
    "qid": "Q4294444",
@@ -59916,15 +59925,6 @@
    "kind": "P108",
    "qid": "Q55337700",
    "label": "Muzeum Getta Warszawskiego",
-   "from": null,
-   "to": null,
-   "verdict": "muzeum",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q450241",
-   "label": "Zachęta Narodowa Galeria Sztuki",
    "from": null,
    "to": null,
    "verdict": "muzeum",
@@ -59972,35 +59972,35 @@
   },
   {
    "kind": "P108",
+   "qid": "Q578832",
+   "label": "Powszechna Kasa Oszczędności Bank Polski",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q742422",
+   "label": "PKP Cargo",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q776749",
+   "label": "Koleje Śląskie",
+   "from": null,
+   "to": null,
+   "verdict": "firma",
+   "ok": true
+  },
+  {
+   "kind": "P108",
    "qid": "Q168833",
    "label": "Poczta Polska",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q204268",
-   "label": "Polskie Linie Lotnicze LOT",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q249591",
-   "label": "Polskie Koleje Państwowe",
-   "from": null,
-   "to": null,
-   "verdict": "firma",
-   "ok": true
-  },
-  {
-   "kind": "P108",
-   "qid": "Q923337",
-   "label": "Ukrzaliznycia",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -60044,8 +60044,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q578832",
-   "label": "Powszechna Kasa Oszczędności Bank Polski",
+   "qid": "Q923337",
+   "label": "Ukrzaliznycia",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -60053,8 +60053,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q742422",
-   "label": "PKP Cargo",
+   "qid": "Q204268",
+   "label": "Polskie Linie Lotnicze LOT",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -60062,8 +60062,8 @@
   },
   {
    "kind": "P108",
-   "qid": "Q776749",
-   "label": "Koleje Śląskie",
+   "qid": "Q249591",
+   "label": "Polskie Koleje Państwowe",
    "from": null,
    "to": null,
    "verdict": "firma",
@@ -60131,15 +60131,6 @@
   },
   {
    "kind": "P108",
-   "qid": "Q124542057",
-   "label": "Sąd Okręgowy w Krakowie",
-   "from": null,
-   "to": null,
-   "verdict": "urząd",
-   "ok": false
-  },
-  {
-   "kind": "P108",
    "qid": "Q4294864",
    "label": "Ministerstwo Sprawiedliwości",
    "from": null,
@@ -60155,6 +60146,15 @@
    "to": null,
    "verdict": "firma",
    "ok": true
+  },
+  {
+   "kind": "P108",
+   "qid": "Q124542057",
+   "label": "Sąd Okręgowy w Krakowie",
+   "from": null,
+   "to": null,
+   "verdict": "urząd",
+   "ok": false
   }
  ],
  "Agnieszka Bartol (ur. 1972)": [
