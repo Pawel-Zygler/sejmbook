@@ -946,6 +946,37 @@
     }
    ]
   },
+  "27": {
+   "qid": "Q21282008",
+   "title": "Joanna Borowiak",
+   "categories": [
+    "Absolwenci I Liceum Ogólnokształcącego im. Ziemi Kujawskiej we Włocławku",
+    "Absolwenci Uniwersytetu Kazimierza Wielkiego",
+    "Absolwenci Uniwersytetu Mikołaja Kopernika w Toruniu",
+    "Absolwenci Uniwersytetu Warmińsko-Mazurskiego",
+    "Absolwenci Wyższej Szkoły Kultury Społecznej i Medialnej w Toruniu",
+    "Ludzie urodzeni we Włocławku",
+    "Nauczyciele związani z Włocławkiem",
+    "Odznaczeni Brązowym Krzyżem Zasługi (III Rzeczpospolita)",
+    "Odznaczeni Brązową Odznaką „Za zasługi w pracy penitencjarnej”",
+    "Politycy Prawa i Sprawiedliwości",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Toruń",
+    "Radni Włocławka",
+    "Urodzeni w 1967"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": null,
+     "to": null
+    }
+   ]
+  },
   "28": {
    "qid": "Q60833165",
    "title": "Kamil Bortniczuk",
@@ -1327,14 +1358,14 @@
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2023-01-01",
+     "from": "2023-11-13",
      "to": null
     },
     {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2023-11-13",
+     "from": "2023-01-01",
      "to": null
     }
    ]
@@ -2504,68 +2535,6 @@
     }
    ]
   },
-  "73": {
-   "qid": "Q11778705",
-   "title": "Michał Dworczyk",
-   "categories": [
-    "Absolwenci Studium Europy Wschodniej Uniwersytetu Warszawskiego",
-    "Absolwenci Wydziału Historycznego Uniwersytetu Warszawskiego",
-    "Działacze Rozwoju Plus",
-    "Harcmistrzowie",
-    "Honorowi obywatele Bystrzycy Kłodzkiej",
-    "Instruktorzy Związku Harcerstwa Rzeczypospolitej",
-    "Ludzie urodzeni w Warszawie",
-    "Ludzie związani z bankowością w Polsce",
-    "Ministrowie w Kancelarii Prezesa Rady Ministrów",
-    "Ministrowie-członkowie Rady Ministrów III Rzeczypospolitej",
-    "Polacy odznaczeni Orderem „Za zasługi” (Ukraina)",
-    "Politycy Prawa i Sprawiedliwości",
-    "Politycy Przymierza Prawicy",
-    "Polscy działacze kresowi",
-    "Polscy posłowie do Parlamentu Europejskiego X kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej VII kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Warszawa",
-    "Posłowie z okręgu Wałbrzych",
-    "Radni Warszawy",
-    "Radni sejmiku województwa mazowieckiego V kadencji",
-    "Szefowie Kancelarii Prezesa Rady Ministrów",
-    "Urodzeni w 1975",
-    "Wiceministrowie obrony narodowej III Rzeczypospolitej"
-   ],
-   "positions": [
-    {
-     "qid": "Q107919931",
-     "label": "Szef Kancelarii Prezesa Rady Ministrów",
-     "of": null,
-     "from": "2017-12-19",
-     "to": "2022-09-30"
-    },
-    {
-     "qid": "Q93417831",
-     "label": "minister bez teki",
-     "of": null,
-     "from": "2019-11-15",
-     "to": "2023-11-27"
-    },
-    {
-     "qid": "Q27169",
-     "label": "poseł do Parlamentu Europejskiego",
-     "of": null,
-     "from": "2024-07-16",
-     "to": null
-    },
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2019-11-12",
-     "to": null
-    }
-   ]
-  },
   "75": {
    "qid": "Q1681725",
    "title": "Jan Dziedziczak",
@@ -3045,18 +3014,18 @@
    ],
    "positions": [
     {
+     "qid": "Q6501749",
+     "label": "sekretarz generalny",
+     "of": "Sojusz Lewicy Demokratycznej",
+     "from": "2012-01-01",
+     "to": "2016-01-01"
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2019-10-01",
      "to": null
-    },
-    {
-     "qid": "Q6501749",
-     "label": "sekretarz generalny",
-     "of": null,
-     "from": "2012-01-01",
-     "to": "2016-01-01"
     }
    ]
   },
@@ -3202,6 +3171,66 @@
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": null,
+     "to": null
+    }
+   ]
+  },
+  "97": {
+   "qid": "Q55937",
+   "title": "Roman Giertych",
+   "categories": [
+    "Absolwenci Wydziału Historycznego Uniwersytetu im. Adama Mickiewicza w Poznaniu",
+    "Absolwenci Wydziału Prawa i Administracji Uniwersytetu im. Adama Mickiewicza w Poznaniu",
+    "Absolwenci szkół średnich w Kórniku",
+    "Ludzie urodzeni w Śremie",
+    "Ministrowie edukacji III Rzeczypospolitej",
+    "Odznaczeni Srebrnym Medalem „Za zasługi dla obronności kraju”",
+    "Polacy we Włoszech",
+    "Politycy Koalicji Obywatelskiej",
+    "Politycy Platformy Obywatelskiej",
+    "Politycy Stronnictwa Narodowego (1989–2001)",
+    "Politycy Stronnictwa Narodowo-Demokratycznego (1991–2001)",
+    "Polscy adwokaci",
+    "Polscy członkowie Opus Dei",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IV kadencji (2001–2005)",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej V kadencji (2005–2007)",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Kielce",
+    "Posłowie z okręgu Warszawa",
+    "Posłowie z okręgu Warszawa II",
+    "Prezesi Ligi Polskich Rodzin",
+    "Prezesi Młodzieży Wszechpolskiej",
+    "Roman Giertych",
+    "Urodzeni w 1971",
+    "Wicepremierzy III Rzeczypospolitej"
+   ],
+   "positions": [
+    {
+     "qid": "Q25711733",
+     "label": "minister edukacji narodowej",
+     "of": null,
+     "from": "2006-05-05",
+     "to": "2007-08-13"
+    },
+    {
+     "qid": "Q15051532",
+     "label": "Wiceprezes Rady Ministrów Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2006-05-05",
+     "to": "2007-08-13"
+    },
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2001-01-01",
+     "to": "2007-01-01"
+    },
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2023-11-13",
      "to": null
     }
    ]
@@ -4675,6 +4704,52 @@
     }
    ]
   },
+  "139": {
+   "qid": "Q21282044",
+   "title": "Marek Jakubiak",
+   "categories": [
+    "Działacze Rozwoju Plus",
+    "Kandydaci na urząd Prezydenta RP w 2020 roku",
+    "Kandydaci na urząd Prezydenta RP w 2025 roku",
+    "Ludzie urodzeni w Warszawie",
+    "Ludzie związani z Ciechanowem",
+    "Ludzie związani z piwowarstwem w Polsce",
+    "Osobowości telewizyjne związane z Telewizją Republika",
+    "Podoficerowie Sił Zbrojnych Rzeczypospolitej Polskiej",
+    "Podoficerowie ludowego Wojska Polskiego",
+    "Politycy Kukiz’15",
+    "Polscy przedsiębiorcy XX wieku",
+    "Polscy przedsiębiorcy XXI wieku",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Płock",
+    "Posłowie z okręgu Warszawa",
+    "Urodzeni w 1959"
+   ],
+   "positions": [
+    {
+     "qid": "Q65494714",
+     "label": "przedstawiciel Zgromadzenia Parlamentarnego Rady Europy",
+     "of": null,
+     "from": "2018-01-22",
+     "to": "2018-05-09"
+    },
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2015-01-01",
+     "to": "2019-01-01"
+    },
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2023-01-01",
+     "to": null
+    }
+   ]
+  },
   "140": {
    "qid": "Q11768918",
    "title": "Maria Janyska",
@@ -4949,115 +5024,54 @@
    ]
   },
   "148": {
-   "qid": "Q2757",
-   "title": "Lech Kaczyński",
+   "qid": "Q55917",
+   "title": "Jarosław Kaczyński",
    "categories": [
     "Absolwenci Wydziału Prawa i Administracji Uniwersytetu Warszawskiego",
-    "Absolwenci XXXIX Liceum Ogólnokształcącego im. Lotnictwa Polskiego w Warszawie",
-    "Członkowie Kapituły Orderu Odrodzenia Polski (III Rzeczpospolita)",
-    "Członkowie Kapituły Orderu Orła Białego (III Rzeczpospolita)",
+    "Absolwenci XXXIII Liceum Ogólnokształcącego Dwujęzycznego im. Mikołaja Kopernika w Warszawie",
+    "Bibliotekarze Biblioteki Uniwersyteckiej w Warszawie",
+    "Członkowie Komitetu Helsińskiego",
     "Członkowie Komitetu Obywatelskiego przy Przewodniczącym NSZZ „Solidarność” Lechu Wałęsie",
+    "Członkowie i współpracownicy KOR",
     "Członkowie i współpracownicy Komitetu Samoobrony Społecznej „KOR”",
     "Członkowie i współpracownicy Tymczasowej Komisji Koordynacyjnej NSZZ „Solidarność”",
-    "Delegaci na I Krajowy Zjazd Delegatów Niezależnego Samorządnego Związku Zawodowego „Solidarność”",
-    "Doktorzy honoris causa Katolickiego Uniwersytetu Lubelskiego Jana Pawła II",
-    "Doktorzy honoris causa Państwowego Uniwersytetu w Tbilisi",
-    "Doktorzy honoris causa Uniwersytetu Słowiańskiego w Baku",
-    "Działacze Wolnych Związków Zawodowych",
-    "Honorowi obywatele Dolnego Śląska",
-    "Honorowi obywatele Jastrzębia-Zdroju",
-    "Honorowi obywatele Leszna",
-    "Honorowi obywatele Lubina",
-    "Honorowi obywatele Nowego Sącza",
-    "Honorowi obywatele Radomia",
-    "Honorowi obywatele Tarnobrzega",
-    "Honorowi obywatele Wadowic",
-    "Honorowi obywatele miasta stołecznego Warszawy",
-    "Honorowi obywatele polskich gmin",
-    "Internowani w Polskiej Rzeczypospolitej Ludowej 1981–1982",
-    "Kandydaci na urząd Prezydenta RP w 1995 roku",
-    "Kandydaci na urząd Prezydenta RP w 2005 roku",
-    "Kustosz Pamięci Narodowej",
-    "Laureaci nagrody im. św. Grzegorza I Wielkiego",
-    "Lech Kaczyński",
+    "Działacze Helsińskiej Fundacji Praw Człowieka",
+    "Jarosław Kaczyński",
+    "Kandydaci na urząd Prezydenta RP w 2010 roku",
+    "Laureaci nagrody Człowiek Wolności tygodnika Sieci",
+    "Ludzie Roku Gazety Polskiej",
+    "Ludzie roku tygodnika Wprost",
     "Ludzie urodzeni w Warszawie",
-    "Ludzie związani z Sopotem",
-    "Ministrowie sprawiedliwości III Rzeczypospolitej",
+    "Ludzie związani z Żoliborzem",
     "Ministrowie w Kancelarii Prezydenta RP",
-    "Nagrodzeni Medalem Dnia Pamięci Ofiar Zbrodni Katyńskiej",
-    "Narodowi Bohaterowie Gruzji",
-    "Nauczyciele akademiccy Wydziału Prawa i Administracji Uniwersytetu Gdańskiego",
-    "Nauczyciele akademiccy Wydziału Prawa i Administracji Uniwersytetu Kardynała Stefana Wyszyńskiego",
-    "Odznaczeni Krzyżem Wielkim Orderu Odrodzenia Polski (III Rzeczpospolita)",
-    "Odznaczeni Orderem Heydəra Əliyeva",
-    "Odznaczeni Orderem Orła Białego (III Rzeczpospolita)",
-    "Odznaczeni krzyżem Semper Fidelis",
-    "Odznaczeni odznaką honorową „Zasłużony dla Województwa Podkarpackiego”",
-    "Ofiary katastrofy polskiego Tu-154 w Smoleńsku",
-    "Osoby przedstawione na polskich banknotach",
-    "Osoby przedstawione na polskich monetach",
-    "Osoby przedstawione na znaczkach pocztowych",
-    "Osoby upamiętnione nazwami kultywarów",
-    "Pochowani w bazylice archikatedralnej św. Stanisława i św. Wacława w Krakowie",
-    "Polacy odznaczeni Orderem Gwiazdy Rumunii",
+    "Nauczyciele akademiccy Wydziału Prawa Uniwersytetu w Białymstoku",
     "Polacy odznaczeni Orderem Księcia Jarosława Mądrego",
-    "Polacy odznaczeni Orderem Lwa Białego",
-    "Polacy odznaczeni Orderem Narodowym Zasługi (Malta)",
-    "Polacy odznaczeni Orderem Podwójnego Białego Krzyża",
-    "Polacy odznaczeni Orderem Pro Merito Melitensi",
-    "Polacy odznaczeni Orderem Zasługi (Węgry)",
     "Polacy odznaczeni Orderem Zwycięstwa Świętego Jerzego",
-    "Polacy odznaczeni Wielkim Krzyżem ze Złotym Łańcuchem Orderu Witolda Wielkiego",
-    "Polacy odznaczeni Wielkim Orderem Króla Tomisława",
-    "Polacy odznaczeni Wielkim Łańcuchem Orderu Infanta Henryka (Portugalia)",
-    "Polacy odznaczeni azerbejdżańskimi odznaczeniami",
-    "Polacy odznaczeni saudyjskimi orderami i odznaczeniami",
-    "Polacy upamiętnieni nazwami nagród",
     "Politycy Porozumienia Centrum",
     "Politycy Prawa i Sprawiedliwości",
     "Polscy aktorzy dziecięcy",
-    "Polscy doktorzy honoris causa uczelni w Azerbejdżanie",
-    "Polscy doktorzy honoris causa uczelni w Mongolii",
-    "Polscy działacze spółdzielczości kredytowej",
-    "Polscy specjaliści prawa pracy",
+    "Polscy przedstawiciele nauk prawnych",
+    "Polscy redaktorzy naczelni",
     "Polskie bliźnięta",
     "Posłowie na Sejm Rzeczypospolitej Polskiej I kadencji (1991–1993)",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej III kadencji (1997–2001)",
     "Posłowie na Sejm Rzeczypospolitej Polskiej IV kadencji (2001–2005)",
-    "Posłowie z okręgu Gdańsk",
-    "Prezesi Najwyższej Izby Kontroli",
-    "Prezydenci Polski",
-    "Prezydenci Warszawy",
-    "Prezydenci miast w Polsce (kadencja 2002–2006)",
-    "Prokuratorzy generalni III Rzeczypospolitej",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej V kadencji (2005–2007)",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VI kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VII kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Warszawa",
+    "Premierzy III Rzeczypospolitej",
     "Senatorowie I kadencji Senatu Rzeczypospolitej Polskiej (1989–1991)",
+    "Szefowie Kancelarii Prezydenta RP (III Rzeczpospolita)",
     "Uczestnicy Okrągłego Stołu (strona solidarnościowa)",
-    "Uczestnicy wydarzeń Sierpnia 1980",
+    "Uczestnicy wydarzeń Marca 1968",
     "Urodzeni w 1949",
-    "Wyróżnieni Medalem „Zasłużony dla Wymiaru Sprawiedliwości – Bene Merentibus Iustitiae”",
-    "Zmarli w 2010"
+    "Wicepremierzy III Rzeczypospolitej"
    ],
    "positions": [
-    {
-     "qid": "Q28048774",
-     "label": "Minister Sprawiedliwości",
-     "of": null,
-     "from": "2000-06-12",
-     "to": "2001-07-04"
-    },
-    {
-     "qid": "Q6627774",
-     "label": "Prezydent miasta stołecznego Warszawy",
-     "of": null,
-     "from": "2002-11-18",
-     "to": "2005-12-22"
-    },
-    {
-     "qid": "Q1054799",
-     "label": "Prezydent Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2005-12-23",
-     "to": "2010-04-10"
-    },
     {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
@@ -5066,11 +5080,46 @@
      "to": "1993-05-31"
     },
     {
-     "qid": "Q81747225",
-     "label": "senator Rzeczypospolitej Polskiej",
+     "qid": "Q15051532",
+     "label": "Wiceprezes Rady Ministrów Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "1989-01-01",
-     "to": "1991-01-01"
+     "from": "2020-10-06",
+     "to": "2022-06-21"
+    },
+    {
+     "qid": "Q28048774",
+     "label": "Minister Sprawiedliwości",
+     "of": null,
+     "from": "2007-09-07",
+     "to": "2007-09-11"
+    },
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2019-11-12",
+     "to": null
+    },
+    {
+     "qid": "Q3259469",
+     "label": "Prezes Rady Ministrów",
+     "of": null,
+     "from": "2006-07-14",
+     "to": "2007-11-16"
+    },
+    {
+     "qid": "Q28976975",
+     "label": "minister kultury i dziedzictwa narodowego",
+     "of": null,
+     "from": "2007-09-07",
+     "to": "2007-09-12"
+    },
+    {
+     "qid": "Q109947727",
+     "label": "minister gospodarki",
+     "of": null,
+     "from": "2007-09-07",
+     "to": "2007-09-11"
     }
    ]
   },
@@ -6769,43 +6818,6 @@
     }
    ]
   },
-  "196": {
-   "qid": "Q1607519",
-   "title": "Henryka Krzywonos",
-   "categories": [
-    "Członkowie Niezależnego Samorządnego Związku Zawodowego „Solidarność” (1980–1989)",
-    "Honorowi obywatele Gdańska",
-    "Laureaci Nagrody im. Andrzeja Bączkowskiego",
-    "Laureaci Nagrody im. księdza Józefa Tischnera",
-    "Ludzie roku tygodnika Wprost",
-    "Ludzie urodzeni w Olsztynie",
-    "Odznaczeni Krzyżem Komandorskim Orderu Odrodzenia Polski (III Rzeczpospolita)",
-    "Odznaczeni Odznaką Honorową za Zasługi dla Ochrony Praw Dziecka",
-    "Odznaczeni Orderem Ecce Homo",
-    "Odznaczeni Orderem Uśmiechu",
-    "Ofiary represji w stanie wojennym w Polsce 1981–1983",
-    "Politycy Koalicji Obywatelskiej",
-    "Politycy Platformy Obywatelskiej",
-    "Politycy Unii Wolności",
-    "Polscy motorniczy",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Gdynia",
-    "Sygnatariusze porozumień sierpniowych (strona społeczna)",
-    "Uczestnicy wydarzeń Sierpnia 1980",
-    "Urodzeni w 1953"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": null,
-     "to": null
-    }
-   ]
-  },
   "197": {
    "qid": "Q21282066",
    "title": "Krzysztof Kubów",
@@ -6988,17 +7000,17 @@
    ],
    "positions": [
     {
+     "qid": "Q6501749",
+     "label": "sekretarz generalny",
+     "of": "Sojusz Lewicy Demokratycznej",
+     "from": "2016-01-23",
+     "to": null
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2019-10-01",
-     "to": null
-    },
-    {
-     "qid": "Q6501749",
-     "label": "sekretarz generalny",
-     "of": null,
-     "from": "2016-01-23",
      "to": null
     }
    ]
@@ -7142,36 +7154,6 @@
      "of": null,
      "from": "2004-07-20",
      "to": "2009-07-13"
-    }
-   ]
-  },
-  "205": {
-   "qid": "Q21282069",
-   "title": "Anna Kwiecień",
-   "categories": [
-    "Absolwenci II Liceum Ogólnokształcącego im. Marii Konopnickiej w Radomiu",
-    "Absolwenci uczelni w Warszawie",
-    "Działacze Rozwoju Plus",
-    "Ludzie urodzeni w Radomiu",
-    "Odznaczeni Brązowym Krzyżem Zasługi (III Rzeczpospolita)",
-    "Politycy Prawa i Sprawiedliwości",
-    "Polscy urzędnicy samorządowi",
-    "Polskie pielęgniarki",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Radom",
-    "Radni Radomia",
-    "Urodzeni w 1964",
-    "Wiceprezydenci miast w Polsce"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": null,
-     "to": null
     }
    ]
   },
@@ -8278,14 +8260,14 @@
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2007-01-01",
+     "from": "2011-01-01",
      "to": "2015-01-01"
     },
     {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2011-01-01",
+     "from": "2007-01-01",
      "to": "2015-01-01"
     },
     {
@@ -8358,44 +8340,6 @@
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2023-11-12",
-     "to": null
-    }
-   ]
-  },
-  "240": {
-   "qid": "Q105087004",
-   "title": "Łukasz Mejza",
-   "categories": [
-    "Absolwenci Uniwersytetu WSB Merito w Poznaniu",
-    "Absolwenci szkół średnich w Zielonej Górze",
-    "Ludzie urodzeni w Zielonej Górze",
-    "Politycy Bezpartyjnych Samorządowców",
-    "Politycy Partii Republikańskiej (2021–2023)",
-    "Politycy Polski Fair Play",
-    "Politycy Prawa i Sprawiedliwości",
-    "Polscy przedsiębiorcy XXI wieku",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Zielona Góra",
-    "Radni sejmiku województwa lubuskiego V kadencji",
-    "Radni sejmiku województwa lubuskiego VI kadencji",
-    "Urodzeni w 1991",
-    "Wiceministrowie sportu III Rzeczypospolitej",
-    "Zakon Rycerzy Świętego Jana Pawła II Wielkiego"
-   ],
-   "positions": [
-    {
-     "qid": "Q736559",
-     "label": "sekretarz stanu",
-     "of": null,
-     "from": "2021-01-01",
-     "to": "2021-01-01"
-    },
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2021-03-16",
      "to": null
     }
    ]
@@ -9911,7 +9855,7 @@
     {
      "qid": "Q1127270",
      "label": "wiceprzewodniczący",
-     "of": null,
+     "of": "Sojusz Lewicy Demokratycznej",
      "from": "2016-01-01",
      "to": null
     },
@@ -9947,14 +9891,14 @@
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2023-01-01",
+     "from": "2023-11-13",
      "to": null
     },
     {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2023-11-13",
+     "from": "2023-01-01",
      "to": null
     }
    ]
@@ -10372,6 +10316,56 @@
      "of": null,
      "from": "1990-01-01",
      "to": "2001-01-01"
+    }
+   ]
+  },
+  "296": {
+   "qid": "Q123119054",
+   "title": "Grzegorz Płaczek",
+   "categories": [
+    "Absolwenci Szkoły Głównej Handlowej",
+    "Ludzie urodzeni w Tarnowskich Górach",
+    "Politycy Konfederacji Wolność i Niepodległość",
+    "Politycy Nowej Nadziei (Polska)",
+    "Polscy aktywiści antyszczepionkowi",
+    "Polscy fotografowie",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Katowice",
+    "Urodzeni w 1978"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2023-11-13",
+     "to": null
+    }
+   ]
+  },
+  "297": {
+   "qid": "Q73024554",
+   "title": "Kacper Płażyński",
+   "categories": [
+    "Absolwenci II Liceum Ogólnokształcącego im. Bolesława Chrobrego w Sopocie",
+    "Absolwenci Wydziału Prawa i Administracji Uniwersytetu Gdańskiego",
+    "Ludzie urodzeni w Gdańsku",
+    "Politycy Prawa i Sprawiedliwości",
+    "Polscy adwokaci",
+    "Polscy działacze społeczni",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Gdańsk",
+    "Radni Gdańska",
+    "Urodzeni w 1989"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2019-11-12",
+     "to": null
     }
    ]
   },
@@ -11157,6 +11151,35 @@
     }
    ]
   },
+  "321": {
+   "qid": "Q21282117",
+   "title": "Jarosław Sachajko",
+   "categories": [
+    "Absolwenci I Liceum Ogólnokształcącego im. Hetmana Jana Zamoyskiego w Zamościu",
+    "Absolwenci Szkoły Głównej Gospodarstwa Wiejskiego",
+    "Absolwenci Uniwersytetu Przyrodniczego w Lublinie",
+    "Ludzie urodzeni w Lublinie",
+    "Nauczyciele akademiccy uczelni w Polsce",
+    "Politycy Kukiz’15",
+    "Polscy agronomowie",
+    "Polscy przedsiębiorcy XXI wieku",
+    "Polscy przedstawiciele nauk rolniczych",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Chełm",
+    "Urodzeni w 1971"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": null,
+     "to": null
+    }
+   ]
+  },
   "322": {
    "qid": "Q56256843",
    "title": "Paweł Sałek",
@@ -11557,9 +11580,16 @@
     {
      "qid": "Q736559",
      "label": "sekretarz stanu",
-     "of": null,
+     "of": "Ministerstwo Kultury i Dziedzictwa Narodowego",
      "from": "2005-11-10",
      "to": "2007-11-26"
+    },
+    {
+     "qid": "Q736559",
+     "label": "sekretarz stanu",
+     "of": "Ministerstwo Kultury i Dziedzictwa Narodowego",
+     "from": "2015-11-20",
+     "to": null
     },
     {
      "qid": "Q65494724",
@@ -11573,13 +11603,6 @@
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": null,
-     "to": null
-    },
-    {
-     "qid": "Q736559",
-     "label": "sekretarz stanu",
-     "of": null,
-     "from": "2015-11-20",
      "to": null
     }
    ]
@@ -11803,6 +11826,13 @@
    ],
    "positions": [
     {
+     "qid": "Q736559",
+     "label": "sekretarz stanu",
+     "of": "Ministerstwo Spraw Wewnętrznych i Administracji",
+     "from": "2007-01-01",
+     "to": "2011-01-01"
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
@@ -11836,13 +11866,6 @@
      "of": null,
      "from": "1998-01-01",
      "to": "2000-01-01"
-    },
-    {
-     "qid": "Q736559",
-     "label": "sekretarz stanu",
-     "of": null,
-     "from": "2007-01-01",
-     "to": "2011-01-01"
     },
     {
      "qid": "Q30960711",
@@ -12335,75 +12358,6 @@
      "of": null,
      "from": null,
      "to": null
-    }
-   ]
-  },
-  "353": {
-   "qid": "Q71516894",
-   "title": "Katarzyna Sójka",
-   "categories": [
-    "Absolwenci Uniwersytetu Przyrodniczego w Poznaniu",
-    "Absolwenci Wydziału Lekarskiego Uniwersytetu Poznańskiego",
-    "Ludzie urodzeni w Ostrowie Wielkopolskim",
-    "Ministrowie zdrowia III Rzeczypospolitej",
-    "Politycy Prawa i Sprawiedliwości",
-    "Polscy interniści",
-    "Polscy radni rad powiatów",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Kalisz",
-    "Urodzeni w 1986"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": null,
-     "to": null
-    }
-   ]
-  },
-  "354": {
-   "qid": "Q72386631",
-   "title": "Magdalena Sroka (ur. 1979)",
-   "categories": [
-    "Absolwenci Akademii Wychowania Fizycznego i Sportu im. Jędrzeja Śniadeckiego w Gdańsku",
-    "Absolwenci Uniwersytetu Gdańskiego",
-    "Członkowie Wodnego Ochotniczego Pogotowia Ratunkowego",
-    "Ludzie urodzeni w Gdańsku",
-    "Politycy Polskiego Stronnictwa Ludowego",
-    "Politycy Porozumienia",
-    "Polscy policjanci",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Gdańsk",
-    "Posłowie z okręgu Gdynia",
-    "Radni sejmiku województwa pomorskiego VI kadencji",
-    "Rzecznicy prasowi w Polsce",
-    "Urodzeni w 1979"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2023-11-13",
-     "to": null
-    },
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2019-11-12",
-     "to": "2023-11-12"
-    },
-    {
-     "qid": "Q130582164",
-     "label": "radny sejmiku wojewódzkiego",
-     "of": null,
-     "from": "2018-01-01",
-     "to": "2019-01-01"
     }
    ]
   },
@@ -13081,30 +13035,6 @@
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2019-11-12",
-     "to": null
-    }
-   ]
-  },
-  "376": {
-   "qid": "Q123173424",
-   "title": "Ewa Szymanowska",
-   "categories": [
-    "Absolwenci Uniwersytetu Łódzkiego",
-    "Ludzie urodzeni w Łodzi",
-    "Nauczyciele akademiccy Akademii Humanistyczno-Ekonomicznej w Łodzi",
-    "Politycy Polski 2050",
-    "Politycy Unii Centrum",
-    "Polscy przedsiębiorcy XXI wieku",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Łódź",
-    "Urodzeni w 1978"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2023-11-13",
      "to": null
     }
    ]
@@ -13917,13 +13847,6 @@
      "to": "1993-05-31"
     },
     {
-     "qid": "Q140686",
-     "label": "przewodniczący",
-     "of": null,
-     "from": "2019-12-01",
-     "to": "2022-05-31"
-    },
-    {
      "qid": "Q3259469",
      "label": "Prezes Rady Ministrów",
      "of": null,
@@ -13957,6 +13880,13 @@
      "of": null,
      "from": "2023-12-13",
      "to": null
+    },
+    {
+     "qid": "Q140686",
+     "label": "przewodniczący",
+     "of": "Europejska Partia Ludowa",
+     "from": "2019-12-01",
+     "to": "2022-05-31"
     }
    ]
   },
@@ -15351,6 +15281,39 @@
     }
    ]
   },
+  "442": {
+   "qid": "Q21157896",
+   "title": "Adrian Zandberg",
+   "categories": [
+    "Absolwenci Wydziału Historycznego Uniwersytetu Warszawskiego",
+    "Absolwenci szkół średnich w Warszawie",
+    "Kandydaci na urząd Prezydenta RP w 2025 roku",
+    "Ludzie urodzeni w Aalborgu",
+    "Nauczyciele akademiccy Polsko-Japońskiej Akademii Technik Komputerowych",
+    "Politycy Polskiej Partii Socjalistycznej (III Rzeczpospolita)",
+    "Politycy Unii Pracy",
+    "Polscy aktorzy dziecięcy",
+    "Polscy działacze spółdzielczy",
+    "Polscy historycy medycyny",
+    "Polscy historycy ruchu robotniczego",
+    "Polscy marksiści",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Warszawa",
+    "Stypendyści Funduszu Zdolni",
+    "Urodzeni w 1979",
+    "Współprzewodniczący Partii Razem"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": "2019-11-12",
+     "to": null
+    }
+   ]
+  },
   "443": {
    "qid": "Q440778",
    "title": "Andrzej Zapałowski",
@@ -15424,6 +15387,30 @@
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2023-01-01",
+     "to": null
+    }
+   ]
+  },
+  "445": {
+   "qid": "Q47484353",
+   "title": "Marcelina Zawisza",
+   "categories": [
+    "Absolwenci Wydziału Dziennikarstwa i Nauk Politycznych Uniwersytetu Warszawskiego",
+    "Ludzie urodzeni w Katowicach",
+    "Politycy Partii Razem",
+    "Politycy Zielonych (Polska)",
+    "Polskie feministki i feminiści",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
+    "Posłowie z okręgu Opole",
+    "Urodzeni w 1989"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": null,
      "to": null
     }
    ]
@@ -15521,18 +15508,18 @@
    ],
    "positions": [
     {
+     "qid": "Q28976975",
+     "label": "minister kultury i dziedzictwa narodowego",
+     "of": "Ministerstwo Kultury i Dziedzictwa Narodowego",
+     "from": "2007-11-16",
+     "to": "2014-06-14"
+    },
+    {
      "qid": "Q11827156",
      "label": "prezydent Wrocławia",
      "of": null,
      "from": "1990-01-01",
      "to": "2001-01-01"
-    },
-    {
-     "qid": "Q28976975",
-     "label": "minister kultury i dziedzictwa narodowego",
-     "of": null,
-     "from": "2007-11-16",
-     "to": "2014-06-14"
     },
     {
      "qid": "Q27169",
@@ -15583,6 +15570,38 @@
     "Posłowie z okręgu Opole",
     "Radni Opola",
     "Urodzeni w 1980"
+   ],
+   "positions": [
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "449": {
+   "qid": "Q11818289",
+   "title": "Piotr Zgorzelski",
+   "categories": [
+    "Absolwenci Uniwersytetu Mikołaja Kopernika w Toruniu",
+    "Absolwenci Wydziału Filozoficzno-Historycznego Uniwersytetu Łódzkiego",
+    "Absolwenci Wydziału Zarządzania Uniwersytetu Warszawskiego",
+    "Ludzie urodzeni w Płocku",
+    "Odznaczeni Brązowym Krzyżem Zasługi (III Rzeczpospolita)",
+    "Odznaczeni Odznaką Honorową za Zasługi dla Samorządu Terytorialnego",
+    "Politycy Konfederacji Polski Niepodległej",
+    "Politycy Polskiego Stronnictwa Ludowego",
+    "Polscy nauczyciele historii",
+    "Polscy radni rad powiatów",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VII kadencji",
+    "Posłowie na Sejm Rzeczypospolitej Polskiej VIII kadencji",
+    "Posłowie z okręgu Płock",
+    "Starostowie województwa mazowieckiego",
+    "Urodzeni w 1963",
+    "Wicemarszałkowie Sejmu Rzeczypospolitej Polskiej IX kadencji",
+    "Wicemarszałkowie Sejmu Rzeczypospolitej Polskiej X kadencji"
    ],
    "positions": [
     {
@@ -15933,42 +15952,6 @@
     }
    ]
   },
-  "460": {
-   "qid": "Q73683838",
-   "title": "Anna Maria Żukowska",
-   "categories": [
-    "Absolwenci Wydziału Neofilologii Uniwersytetu Warszawskiego",
-    "Absolwenci Wydziału Prawa i Administracji Uniwersytetu Warszawskiego",
-    "Członkowie Krajowej Rady Sądownictwa",
-    "Ludzie urodzeni w Warszawie",
-    "Polacy pochodzenia żydowskiego",
-    "Politycy SdRP, SLD i Nowej Lewicy",
-    "Polscy działacze na rzecz LGBT",
-    "Polscy działacze społeczności żydowskiej",
-    "Polscy prawnicy",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej IX kadencji",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Warszawa",
-    "Rzecznicy prasowi w Polsce",
-    "Urodzeni w 1983"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2023-11-13",
-     "to": null
-    },
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2019-11-12",
-     "to": "2023-11-12"
-    }
-   ]
-  },
   "461": {
    "qid": "Q123920903",
    "title": "Anna Baluch",
@@ -16273,27 +16256,6 @@
     "Radni sejmiku województwa śląskiego VI kadencji",
     "Radni sejmiku województwa śląskiego VII kadencji",
     "Urodzeni w 1959"
-   ],
-   "positions": [
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "2024-06-26",
-     "to": null
-    }
-   ]
-  },
-  "472": {
-   "qid": "Q126916157",
-   "title": "Piotr Kowal",
-   "categories": [
-    "Ludzie urodzeni we Włocławku",
-    "Politycy SdRP, SLD i Nowej Lewicy",
-    "Posłowie na Sejm Rzeczypospolitej Polskiej X kadencji",
-    "Posłowie z okręgu Toruń",
-    "Radni Włocławka",
-    "Urodzeni w 1992"
    ],
    "positions": [
     {
@@ -17712,14 +17674,14 @@
      "label": "minister kultury i dziedzictwa narodowego",
      "of": null,
      "from": "1989-09-12",
-     "to": "1991-01-12"
+     "to": "1991-08-12"
     },
     {
      "qid": "Q28976975",
      "label": "minister kultury i dziedzictwa narodowego",
      "of": null,
      "from": "1989-09-12",
-     "to": "1991-08-12"
+     "to": "1991-01-12"
     }
    ]
   },
@@ -19439,6 +19401,13 @@
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
+     "from": "1991-11-25",
+     "to": "1993-05-31"
+    },
+    {
+     "qid": "Q19269361",
+     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
+     "of": null,
      "from": null,
      "to": null
     },
@@ -19448,13 +19417,6 @@
      "of": null,
      "from": "1991-12-23",
      "to": "1993-03-17"
-    },
-    {
-     "qid": "Q19269361",
-     "label": "poseł na Sejm Rzeczypospolitej Polskiej",
-     "of": null,
-     "from": "1991-11-25",
-     "to": "1993-05-31"
     }
    ]
   },
@@ -19961,20 +19923,6 @@
    ],
    "positions": [
     {
-     "qid": "Q25598671",
-     "label": "Minister Spraw Zagranicznych Polski",
-     "of": null,
-     "from": "1993-10-26",
-     "to": "1995-03-06"
-    },
-    {
-     "qid": "Q11781525",
-     "label": "minister skarbu i finansów",
-     "of": null,
-     "from": "1992-02-28",
-     "to": "1992-06-05"
-    },
-    {
      "qid": "Q124460155",
      "label": "podsekretarz stanu",
      "of": null,
@@ -19987,6 +19935,20 @@
      "of": null,
      "from": "1994-01-01",
      "to": "1998-01-01"
+    },
+    {
+     "qid": "Q25598671",
+     "label": "Minister Spraw Zagranicznych Polski",
+     "of": null,
+     "from": "1993-10-26",
+     "to": "1995-03-06"
+    },
+    {
+     "qid": "Q11781525",
+     "label": "minister skarbu i finansów",
+     "of": null,
+     "from": "1992-02-28",
+     "to": "1992-06-05"
     }
    ]
   },
@@ -20804,7 +20766,7 @@
     {
      "qid": "Q212071",
      "label": "rektor",
-     "of": null,
+     "of": "Uniwersytet Kaliski im. Prezydenta Stanisława Wojciechowskiego",
      "from": null,
      "to": null
     },
@@ -21512,20 +21474,6 @@
      "to": "1993-05-31"
     },
     {
-     "qid": "Q140686",
-     "label": "przewodniczący",
-     "of": null,
-     "from": "2011-01-01",
-     "to": "2016-01-01"
-    },
-    {
-     "qid": "Q140686",
-     "label": "przewodniczący",
-     "of": null,
-     "from": "1999-01-01",
-     "to": "2004-01-01"
-    },
-    {
      "qid": "Q27169",
      "label": "poseł do Parlamentu Europejskiego",
      "of": null,
@@ -21538,13 +21486,6 @@
      "of": null,
      "from": "1991-11-25",
      "to": "2005-10-18"
-    },
-    {
-     "qid": "Q140686",
-     "label": "przewodniczący",
-     "of": null,
-     "from": "2008-01-01",
-     "to": "2010-01-01"
     },
     {
      "qid": "Q11781527",
@@ -21563,7 +21504,28 @@
     {
      "qid": "Q140686",
      "label": "przewodniczący",
-     "of": null,
+     "of": "Sojusz Lewicy Demokratycznej",
+     "from": "2011-01-01",
+     "to": "2016-01-01"
+    },
+    {
+     "qid": "Q140686",
+     "label": "przewodniczący",
+     "of": "Sojusz Lewicy Demokratycznej",
+     "from": "1999-01-01",
+     "to": "2004-01-01"
+    },
+    {
+     "qid": "Q140686",
+     "label": "przewodniczący",
+     "of": "Polska Lewica",
+     "from": "2008-01-01",
+     "to": "2010-01-01"
+    },
+    {
+     "qid": "Q140686",
+     "label": "przewodniczący",
+     "of": "Socjaldemokracja Rzeczypospolitej Polskiej",
      "from": "1997-01-01",
      "to": "1999-01-01"
     }
@@ -23712,18 +23674,18 @@
    ],
    "positions": [
     {
-     "qid": "Q107919931",
-     "label": "Szef Kancelarii Prezesa Rady Ministrów",
-     "of": null,
-     "from": "1999-03-26",
-     "to": "2000-06-12"
-    },
-    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": null,
      "to": null
+    },
+    {
+     "qid": "Q107919931",
+     "label": "Szef Kancelarii Prezesa Rady Ministrów",
+     "of": null,
+     "from": "1999-03-26",
+     "to": "2000-06-12"
     }
    ]
   },
@@ -24020,18 +23982,18 @@
    ],
    "positions": [
     {
+     "qid": "Q1553195",
+     "label": "lider partii",
+     "of": "Porozumienie Polskich Chrześcijańskich Demokratów",
+     "from": "1999-01-01",
+     "to": "2003-01-01"
+    },
+    {
      "qid": "Q15686806",
      "label": "senator",
      "of": null,
      "from": null,
      "to": null
-    },
-    {
-     "qid": "Q1553195",
-     "label": "lider partii",
-     "of": null,
-     "from": "1999-01-01",
-     "to": "2003-01-01"
     },
     {
      "qid": "Q19269361",
@@ -24124,34 +24086,6 @@
    ],
    "positions": [
     {
-     "qid": "Q28976975",
-     "label": "minister kultury i dziedzictwa narodowego",
-     "of": null,
-     "from": "2005-10-31",
-     "to": "2007-09-07"
-    },
-    {
-     "qid": "Q28976975",
-     "label": "minister kultury i dziedzictwa narodowego",
-     "of": null,
-     "from": "2007-09-12",
-     "to": "2007-11-16"
-    },
-    {
-     "qid": "Q65494735",
-     "label": "Special Guest of the Parliamentary Assembly of the Council of Europe",
-     "of": null,
-     "from": "1989-09-21",
-     "to": "1992-02-03"
-    },
-    {
-     "qid": "Q27169",
-     "label": "poseł do Parlamentu Europejskiego",
-     "of": null,
-     "from": "2017-06-01",
-     "to": null
-    },
-    {
      "qid": "Q27169",
      "label": "poseł do Parlamentu Europejskiego",
      "of": null,
@@ -24177,6 +24111,34 @@
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q28976975",
+     "label": "minister kultury i dziedzictwa narodowego",
+     "of": null,
+     "from": "2005-10-31",
+     "to": "2007-09-07"
+    },
+    {
+     "qid": "Q28976975",
+     "label": "minister kultury i dziedzictwa narodowego",
+     "of": null,
+     "from": "2007-09-12",
+     "to": "2007-11-16"
+    },
+    {
+     "qid": "Q65494735",
+     "label": "Special Guest of the Parliamentary Assembly of the Council of Europe",
+     "of": null,
+     "from": "1989-09-21",
+     "to": "1992-02-03"
+    },
+    {
+     "qid": "Q27169",
+     "label": "poseł do Parlamentu Europejskiego",
+     "of": null,
+     "from": "2017-06-01",
      "to": null
     }
    ]
@@ -26663,18 +26625,18 @@
    ],
    "positions": [
     {
-     "qid": "Q105978025",
-     "label": "rektor Uniwersytetu Łódzkiego",
-     "of": null,
-     "from": "1990-01-01",
-     "to": "1996-01-01"
-    },
-    {
      "qid": "Q25711733",
      "label": "minister edukacji narodowej",
      "of": null,
      "from": "2005-10-31",
      "to": "2006-05-05"
+    },
+    {
+     "qid": "Q105978025",
+     "label": "rektor Uniwersytetu Łódzkiego",
+     "of": null,
+     "from": "1990-01-01",
+     "to": "1996-01-01"
     }
    ]
   },
@@ -27512,13 +27474,6 @@
    ],
    "positions": [
     {
-     "qid": "Q140686",
-     "label": "przewodniczący",
-     "of": null,
-     "from": null,
-     "to": null
-    },
-    {
      "qid": "Q7614320",
      "label": "minister finansów",
      "of": null,
@@ -27531,6 +27486,13 @@
      "of": null,
      "from": "2006-07-14",
      "to": "2006-09-22"
+    },
+    {
+     "qid": "Q140686",
+     "label": "przewodniczący",
+     "of": "Komisja Nadzoru Finansowego",
+     "from": null,
+     "to": null
     }
    ]
   },
@@ -28133,13 +28095,6 @@
      "to": "1993-05-31"
     },
     {
-     "qid": "Q140686",
-     "label": "przewodniczący",
-     "of": null,
-     "from": "2019-12-01",
-     "to": "2022-05-31"
-    },
-    {
      "qid": "Q3259469",
      "label": "Prezes Rady Ministrów",
      "of": null,
@@ -28173,6 +28128,13 @@
      "of": null,
      "from": "2023-12-13",
      "to": null
+    },
+    {
+     "qid": "Q140686",
+     "label": "przewodniczący",
+     "of": "Europejska Partia Ludowa",
+     "from": "2019-12-01",
+     "to": "2022-05-31"
     }
    ]
   },
@@ -28627,6 +28589,27 @@
    ],
    "positions": [
     {
+     "qid": "Q27169",
+     "label": "poseł do Parlamentu Europejskiego",
+     "of": null,
+     "from": "2004-07-20",
+     "to": "2007-11-15"
+    },
+    {
+     "qid": "Q65494714",
+     "label": "przedstawiciel Zgromadzenia Parlamentarnego Rady Europy",
+     "of": null,
+     "from": "2002-01-21",
+     "to": "2004-10-04"
+    },
+    {
+     "qid": "Q30960711",
+     "label": "Minister Obrony Narodowej",
+     "of": null,
+     "from": "2007-11-16",
+     "to": "2011-08-02"
+    },
+    {
      "qid": "Q124460155",
      "label": "podsekretarz stanu",
      "of": null,
@@ -28660,27 +28643,6 @@
      "of": null,
      "from": "2004-05-01",
      "to": "2004-07-19"
-    },
-    {
-     "qid": "Q27169",
-     "label": "poseł do Parlamentu Europejskiego",
-     "of": null,
-     "from": "2004-07-20",
-     "to": "2007-11-15"
-    },
-    {
-     "qid": "Q65494714",
-     "label": "przedstawiciel Zgromadzenia Parlamentarnego Rady Europy",
-     "of": null,
-     "from": "2002-01-21",
-     "to": "2004-10-04"
-    },
-    {
-     "qid": "Q30960711",
-     "label": "Minister Obrony Narodowej",
-     "of": null,
-     "from": "2007-11-16",
-     "to": "2011-08-02"
     }
    ]
   },
@@ -28954,18 +28916,18 @@
    ],
    "positions": [
     {
+     "qid": "Q28976975",
+     "label": "minister kultury i dziedzictwa narodowego",
+     "of": "Ministerstwo Kultury i Dziedzictwa Narodowego",
+     "from": "2007-11-16",
+     "to": "2014-06-14"
+    },
+    {
      "qid": "Q11827156",
      "label": "prezydent Wrocławia",
      "of": null,
      "from": "1990-01-01",
      "to": "2001-01-01"
-    },
-    {
-     "qid": "Q28976975",
-     "label": "minister kultury i dziedzictwa narodowego",
-     "of": null,
-     "from": "2007-11-16",
-     "to": "2014-06-14"
     },
     {
      "qid": "Q27169",
@@ -29198,6 +29160,13 @@
    ],
    "positions": [
     {
+     "qid": "Q736559",
+     "label": "sekretarz stanu",
+     "of": "Ministerstwo Spraw Wewnętrznych i Administracji",
+     "from": "2007-01-01",
+     "to": "2011-01-01"
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
@@ -29231,13 +29200,6 @@
      "of": null,
      "from": "1998-01-01",
      "to": "2000-01-01"
-    },
-    {
-     "qid": "Q736559",
-     "label": "sekretarz stanu",
-     "of": null,
-     "from": "2007-01-01",
-     "to": "2011-01-01"
     },
     {
      "qid": "Q30960711",
@@ -29440,6 +29402,13 @@
    ],
    "positions": [
     {
+     "qid": "Q17763739",
+     "label": "minister sprawiedliwości",
+     "of": null,
+     "from": null,
+     "to": null
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
@@ -29487,13 +29456,6 @@
      "of": null,
      "from": "2015-11-16",
      "to": "2020-04-08"
-    },
-    {
-     "qid": "Q17763739",
-     "label": "minister sprawiedliwości",
-     "of": null,
-     "from": null,
-     "to": null
     }
    ]
   },
@@ -29630,7 +29592,7 @@
     {
      "qid": "Q428322",
      "label": "président-directeur général",
-     "of": null,
+     "of": "Ukrawtodor",
      "from": "2016-01-01",
      "to": "2017-01-01"
     },
@@ -29874,13 +29836,6 @@
    ],
    "positions": [
     {
-     "qid": "Q27169",
-     "label": "poseł do Parlamentu Europejskiego",
-     "of": null,
-     "from": "2023-11-16",
-     "to": "2024-07-15"
-    },
-    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
@@ -29893,6 +29848,13 @@
      "of": null,
      "from": "2009-01-26",
      "to": "2012-01-23"
+    },
+    {
+     "qid": "Q27169",
+     "label": "poseł do Parlamentu Europejskiego",
+     "of": null,
+     "from": "2023-11-16",
+     "to": "2024-07-15"
     }
    ]
   },
@@ -31063,7 +31025,7 @@
     {
      "qid": "Q83307",
      "label": "minister",
-     "of": null,
+     "of": "Ministerstwo Cyfryzacji",
      "from": "2015-11-16",
      "to": null
     }
@@ -31188,18 +31150,18 @@
    ],
    "positions": [
     {
+     "qid": "Q736559",
+     "label": "sekretarz stanu",
+     "of": "Ministerstwo Spraw Zagranicznych",
+     "from": "2005-11-01",
+     "to": "2008-08-01"
+    },
+    {
      "qid": "Q27169",
      "label": "poseł do Parlamentu Europejskiego",
      "of": null,
      "from": "2019-07-02",
      "to": "2024-07-15"
-    },
-    {
-     "qid": "Q736559",
-     "label": "sekretarz stanu",
-     "of": null,
-     "from": "2005-11-01",
-     "to": "2008-08-01"
     },
     {
      "qid": "Q25598671",
@@ -31415,7 +31377,7 @@
     {
      "qid": "Q1162163",
      "label": "dyrektor",
-     "of": null,
+     "of": "Krajowa Szkoła Administracji Publicznej im. Prezydenta Rzeczypospolitej Polskiej Lecha Kaczyńskiego",
      "from": "2008-01-01",
      "to": "2012-01-01"
     },
@@ -33076,18 +33038,18 @@
    ],
    "positions": [
     {
+     "qid": "Q17221",
+     "label": "rzecznik prasowy",
+     "of": "Główny Inspektor Transportu Drogowego",
+     "from": "2002-01-01",
+     "to": "2016-01-01"
+    },
+    {
      "qid": "Q9284418",
      "label": "Główny Inspektor Transportu Drogowego",
      "of": null,
      "from": "2017-04-07",
      "to": null
-    },
-    {
-     "qid": "Q17221",
-     "label": "rzecznik prasowy",
-     "of": null,
-     "from": "2002-01-01",
-     "to": "2016-01-01"
     }
    ]
   },
@@ -33362,18 +33324,18 @@
    ],
    "positions": [
     {
+     "qid": "Q6501749",
+     "label": "sekretarz generalny",
+     "of": "Sojusz Lewicy Demokratycznej",
+     "from": "2012-01-01",
+     "to": "2016-01-01"
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2019-10-01",
      "to": null
-    },
-    {
-     "qid": "Q6501749",
-     "label": "sekretarz generalny",
-     "of": null,
-     "from": "2012-01-01",
-     "to": "2016-01-01"
     }
    ]
   },
@@ -33479,14 +33441,14 @@
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2023-01-01",
+     "from": "2023-11-13",
      "to": null
     },
     {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
-     "from": "2023-11-13",
+     "from": "2023-01-01",
      "to": null
     }
    ]
@@ -34284,17 +34246,17 @@
    ],
    "positions": [
     {
+     "qid": "Q6501749",
+     "label": "sekretarz generalny",
+     "of": "Sojusz Lewicy Demokratycznej",
+     "from": "2016-01-23",
+     "to": null
+    },
+    {
      "qid": "Q19269361",
      "label": "poseł na Sejm Rzeczypospolitej Polskiej",
      "of": null,
      "from": "2019-10-01",
-     "to": null
-    },
-    {
-     "qid": "Q6501749",
-     "label": "sekretarz generalny",
-     "of": null,
-     "from": "2016-01-23",
      "to": null
     }
    ]
@@ -36239,7 +36201,7 @@
     {
      "qid": "Q16474031",
      "label": "Prezes Sądu",
-     "of": null,
+     "of": "Sąd Najwyższy",
      "from": "1990-07-01",
      "to": "1998-10-17"
     },
@@ -36955,6 +36917,13 @@
    ],
    "positions": [
     {
+     "qid": "Q1255921",
+     "label": "prezes",
+     "of": "Najwyższa Izba Kontroli",
+     "from": "2025-09-24",
+     "to": null
+    },
+    {
      "qid": "Q124460155",
      "label": "podsekretarz stanu",
      "of": null,
@@ -36981,13 +36950,6 @@
      "of": null,
      "from": "2018-01-16",
      "to": "2019-01-01"
-    },
-    {
-     "qid": "Q1255921",
-     "label": "prezes",
-     "of": null,
-     "from": "2025-09-24",
-     "to": null
     }
    ]
   },
