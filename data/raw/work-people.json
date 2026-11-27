@@ -197,7 +197,7 @@
   "qid": "Q1748055",
   "title": "Mariusz Błaszczak",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:21",
@@ -237,7 +237,7 @@
   "qid": "Q327668",
   "title": "Jacek Bogucki",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:25",
@@ -327,7 +327,7 @@
   "qid": "Q5423758",
   "title": "Krzysztof Bosak",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:34",
@@ -697,7 +697,7 @@
   "qid": "Q9310781",
   "title": "Robert Dowhan",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:71",
@@ -727,7 +727,7 @@
   "qid": "Q11778705",
   "title": "Michał Dworczyk",
   "how": "Wikidata: ta sama data urodzenia (1975-07-22) i nazwisko",
-  "jobs": 2
+  "jobs": 3
  },
  {
   "key": "mp:74",
@@ -827,7 +827,7 @@
   "qid": "Q71599083",
   "title": "Konrad Frysztak",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "mp:84",
@@ -957,7 +957,7 @@
   "qid": "Q9160607",
   "title": "Artur Gierada",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:97",
@@ -997,7 +997,7 @@
   "qid": "Q11817487",
   "title": "Piotr Gliński",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 5
+  "jobs": 3
  },
  {
   "key": "mp:101",
@@ -1027,7 +1027,7 @@
   "qid": "Q21282033",
   "title": "Marta Golbik",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "mp:104",
@@ -1107,7 +1107,7 @@
   "qid": "Q6799365",
   "title": "Małgorzata Gosiewska",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "mp:112",
@@ -1177,7 +1177,7 @@
   "qid": "Q123110549",
   "title": "Małgorzata Gromadzka",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:119",
@@ -1267,7 +1267,7 @@
   "qid": "Q72084103",
   "title": "Iwona Hartwich",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:128",
@@ -1427,7 +1427,7 @@
   "qid": "Q273578",
   "title": "Danuta Jazłowiecka",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "mp:144",
@@ -1477,7 +1477,7 @@
   "qid": "Q55917",
   "title": "Jarosław Kaczyński",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 6
+  "jobs": 5
  },
  {
   "key": "mp:149",
@@ -1807,7 +1807,7 @@
   "qid": "Q9166138",
   "title": "Bartosz Kownacki",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:182",
@@ -2397,7 +2397,7 @@
   "qid": "Q105087004",
   "title": "Łukasz Mejza",
   "how": "Wikidata: ta sama data urodzenia (1991-05-15) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:241",
@@ -2407,7 +2407,7 @@
   "qid": "Q64686653",
   "title": "Sławomir Mentzen",
   "how": "Wikidata: ta sama data urodzenia (1986-11-20) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "mp:242",
@@ -2487,7 +2487,7 @@
   "qid": "Q5202126",
   "title": "Czesław Mroczek (polityk)",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:250",
@@ -2507,7 +2507,7 @@
   "qid": "Q11714684",
   "title": "Izabela Mrzygłocka",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:252",
@@ -2617,7 +2617,7 @@
   "qid": "Q943067",
   "title": "Sławomir Nitras",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "mp:263",
@@ -2687,7 +2687,7 @@
   "qid": "Q55391464",
   "title": "Marcin Ociepa",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:270",
@@ -2857,7 +2857,7 @@
   "qid": "Q9324899",
   "title": "Ryszard Petru",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 13
+  "jobs": 12
  },
  {
   "key": "mp:287",
@@ -2987,7 +2987,7 @@
   "qid": "Q9297870",
   "title": "Jerzy Polaczek",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:300",
@@ -3087,7 +3087,7 @@
   "qid": "Q465497",
   "title": "Ireneusz Raś",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:310",
@@ -3257,7 +3257,7 @@
   "qid": "Q1249225",
   "title": "Marek Sawicki",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:327",
@@ -3277,7 +3277,7 @@
   "qid": "Q21282118",
   "title": "Joanna Scheuring-Wielgus",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "mp:329",
@@ -3467,7 +3467,7 @@
   "qid": "Q123110547",
   "title": "Anna Sobolak",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "mp:348",
@@ -3527,7 +3527,7 @@
   "qid": "Q71516894",
   "title": "Katarzyna Sójka",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:354",
@@ -3977,7 +3977,7 @@
   "qid": "Q21282146",
   "title": "Sylwester Tułajew",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:399",
@@ -3997,7 +3997,7 @@
   "qid": "Q946",
   "title": "Donald Tusk",
   "how": "lista rządów (Wikipedia)",
-  "jobs": 3
+  "jobs": 0
  },
  {
   "key": "mp:401",
@@ -4037,7 +4037,7 @@
   "qid": "Q21282149",
   "title": "Piotr Uruski",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "mp:405",
@@ -4177,7 +4177,7 @@
   "qid": "Q71513659",
   "title": "Patryk Wicher",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:419",
@@ -4337,7 +4337,7 @@
   "qid": "Q2908767",
   "title": "Bogusław Wołoszański",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "mp:435",
@@ -4547,7 +4547,7 @@
   "qid": "Q9359824",
   "title": "Tomasz Zimoch",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "mp:456",
@@ -4797,7 +4797,7 @@
   "qid": "Q4767398",
   "title": "Anna Paluch",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "mp:481",
@@ -4937,7 +4937,7 @@
   "qid": "Q18011037",
   "title": "Robert Jagła",
   "how": "Wikidata (API Sejmu → Wikidata)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "mp:495",
@@ -5417,7 +5417,7 @@
   "qid": "Q17544435",
   "title": "Piotr Babiarz",
   "how": "Wikidata: ta sama data urodzenia (1975-02-03) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:4-7",
@@ -5447,7 +5447,7 @@
   "qid": "Q65163302",
   "title": "Maciej Badora",
   "how": "Wikidata: ta sama data urodzenia (1973-01-06) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:1-13",
@@ -5607,7 +5607,7 @@
   "qid": "Q9359170",
   "title": "Tomasz Bańkowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:1-19",
@@ -6067,7 +6067,7 @@
   "qid": "Q55909",
   "title": "Jan Krzysztof Bielecki",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:5-15",
@@ -6407,7 +6407,7 @@
   "qid": "Q9324604",
   "title": "Ryszard Bonda",
   "how": "Wikidata: ta sama data urodzenia (1960-02-10) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:2-26",
@@ -6707,7 +6707,7 @@
   "qid": "Q11699634",
   "title": "Georg Brylka",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-37",
@@ -6827,7 +6827,7 @@
   "qid": "Q4858786",
   "title": "Barbara Bubula",
   "how": "Wikidata: ta sama data urodzenia (1963-03-04) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:8-43",
@@ -6957,7 +6957,7 @@
   "qid": "Q167999",
   "title": "Zbigniew Bujak",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 5
  },
  {
   "key": "osoba:5-30",
@@ -7117,7 +7117,7 @@
   "qid": "Q273583",
   "title": "Teresa Ceglecka-Zielonka",
   "how": "Wikidata: ta sama data urodzenia (1957-03-08) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-46",
@@ -7357,7 +7357,7 @@
   "qid": "Q11772246",
   "title": "Małgorzata Chomycz-Śmigielska",
   "how": "Wikidata: ta sama data urodzenia (1978-01-27) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-50",
@@ -7637,7 +7637,7 @@
   "qid": "Q55915",
   "title": "Włodzimierz Cimoszewicz",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:1-73",
@@ -7817,7 +7817,7 @@
   "qid": "Q253793",
   "title": "Ryszard Czarnecki",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 9
+  "jobs": 8
  },
  {
   "key": "osoba:3-62",
@@ -7827,7 +7827,7 @@
   "qid": "Q253793",
   "title": "Ryszard Czarnecki",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 9
+  "jobs": 8
  },
  {
   "key": "osoba:5-46",
@@ -8337,7 +8337,7 @@
   "qid": "Q6156015",
   "title": "Janusz Dobrosz",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:2-76",
@@ -8437,7 +8437,7 @@
   "qid": "Q11768098",
   "title": "Marek Domin",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:3-74",
@@ -8447,7 +8447,7 @@
   "qid": "Q55933",
   "title": "Ludwik Dorn",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:6-66",
@@ -8507,7 +8507,7 @@
   "qid": "Q9151911",
   "title": "Andrzej Duda",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 3
  },
  {
   "key": "osoba:8-72",
@@ -8627,7 +8627,7 @@
   "qid": "Q11778705",
   "title": "Michał Dworczyk",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 3
  },
  {
   "key": "osoba:2-79",
@@ -8997,7 +8997,7 @@
   "qid": "Q9159814",
   "title": "Arkady Radosław Fiedler",
   "how": "Wikidata: ta sama data urodzenia (1945-03-23) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-87",
@@ -9017,7 +9017,7 @@
   "qid": "Q11778730",
   "title": "Michał Figlus",
   "how": "Wikidata: ta sama data urodzenia (1953-07-09) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:2-88",
@@ -9057,7 +9057,7 @@
   "qid": "Q6440129",
   "title": "Krzysztof Filipek",
   "how": "Wikidata: ta sama data urodzenia (1961-08-01) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:8-84",
@@ -9527,7 +9527,7 @@
   "qid": "Q9394601",
   "title": "Łukasz Gibała",
   "how": "Wikidata: ta sama data urodzenia (1977-09-10) i nazwisko",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:3-98",
@@ -9547,7 +9547,7 @@
   "qid": "Q9160607",
   "title": "Artur Gierada",
   "how": "Wikidata: ta sama data urodzenia (1979-04-21) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:4-91",
@@ -9797,7 +9797,7 @@
   "qid": "Q382442",
   "title": "Marian Goliński",
   "how": "Wikidata: ta sama data urodzenia (1949-07-16) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-104",
@@ -9817,7 +9817,7 @@
   "qid": "Q381559",
   "title": "Henryk Gołębiewski (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1942-07-22) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-105",
@@ -9897,7 +9897,7 @@
   "qid": "Q55941",
   "title": "Przemysław Gosiewski",
   "how": "Wikidata: ta sama data urodzenia (1964-05-12) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:4-99",
@@ -9907,7 +9907,7 @@
   "qid": "Q55941",
   "title": "Przemysław Gosiewski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:6-102",
@@ -9927,7 +9927,7 @@
   "qid": "Q9287339",
   "title": "Helena Góralska",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:1-117",
@@ -10017,7 +10017,7 @@
   "qid": "Q327635",
   "title": "Tomasz Górski",
   "how": "Wikidata: ta sama data urodzenia (1973-08-15) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:2-108",
@@ -10347,7 +10347,7 @@
   "qid": "Q9342010",
   "title": "Stanisław Gudzowski",
   "how": "Wikidata: ta sama data urodzenia (1954-01-03) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:5-106",
@@ -10357,7 +10357,7 @@
   "qid": "Q4726715",
   "title": "Alina Gut",
   "how": "Wikidata: ta sama data urodzenia (1938-02-10) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-119",
@@ -10667,7 +10667,7 @@
   "qid": "Q604392",
   "title": "Danuta Hojarska",
   "how": "Wikidata: ta sama data urodzenia (1960-01-02) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:7-130",
@@ -10897,7 +10897,7 @@
   "qid": "Q382653",
   "title": "Jarosław Jagiełło",
   "how": "Wikidata: ta sama data urodzenia (1971-05-15) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:7-464",
@@ -10907,7 +10907,7 @@
   "qid": "Q382653",
   "title": "Jarosław Jagiełło",
   "how": "Wikidata: ta sama data urodzenia (1971-05-15) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:7-137",
@@ -11047,7 +11047,7 @@
   "qid": "Q1790439",
   "title": "Krzysztof Janik",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:7-470",
@@ -11307,7 +11307,7 @@
   "qid": "Q21282046",
   "title": "Tomasz Jaskóła",
   "how": "Wikidata: ta sama data urodzenia (1974-07-31) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:6-468",
@@ -11317,7 +11317,7 @@
   "qid": "Q16571661",
   "title": "Leszek Jastrzębski",
   "how": "Wikidata: ta sama data urodzenia (1976-08-20) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:1-141",
@@ -11597,7 +11597,7 @@
   "qid": "Q9359387",
   "title": "Tomasz Kaczmarek (funkcjonariusz CBA)",
   "how": "Wikidata: ta sama data urodzenia (1976-08-15) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:1-147",
@@ -11647,7 +11647,7 @@
   "qid": "Q2757",
   "title": "Lech Kaczyński",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 5
+  "jobs": 3
  },
  {
   "key": "osoba:3-153",
@@ -12117,7 +12117,7 @@
   "qid": "Q11781993",
   "title": "Mirosława Kątna",
   "how": "Wikidata: ta sama data urodzenia (1949-06-30) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:5-143",
@@ -12157,7 +12157,7 @@
   "qid": "Q9354528",
   "title": "Tadeusz Kędziak",
   "how": "Wikidata: ta sama data urodzenia (1959-11-21) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:7-165",
@@ -12257,7 +12257,7 @@
   "qid": "Q21282051",
   "title": "Jan Kilian (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1953-12-27) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-168",
@@ -12487,7 +12487,7 @@
   "qid": "Q5408398",
   "title": "Eugeniusz Kłopotek",
   "how": "Wikidata: ta sama data urodzenia (1953-11-15) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:6-516",
@@ -12767,7 +12767,7 @@
   "qid": "Q11762539",
   "title": "Longin Komołowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 4
  },
  {
   "key": "osoba:2-167",
@@ -12797,7 +12797,7 @@
   "qid": "Q9388025",
   "title": "Zbigniew Komorowski",
   "how": "Wikidata: ta sama data urodzenia (1944-03-17) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:2-169",
@@ -12817,7 +12817,7 @@
   "qid": "Q246216",
   "title": "Ewa Kopacz",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 1
  },
  {
   "key": "osoba:5-161",
@@ -12867,7 +12867,7 @@
   "qid": "Q9176160",
   "title": "Bohdan Kopczyński",
   "how": "Wikidata: ta sama data urodzenia (1935-10-22) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:2-171",
@@ -12967,7 +12967,7 @@
   "qid": "Q1683061",
   "title": "Janusz Korwin-Mikke",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:4-181",
@@ -13127,7 +13127,7 @@
   "qid": "Q559797",
   "title": "Roman Kotliński",
   "how": "Wikidata: ta sama data urodzenia (1967-03-15) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:2-177",
@@ -13277,7 +13277,7 @@
   "qid": "Q9166138",
   "title": "Bartosz Kownacki",
   "how": "Wikidata: ta sama data urodzenia (1979-08-11) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:2-183",
@@ -13347,7 +13347,7 @@
   "qid": "Q6185422",
   "title": "Jerzy Kozdroń",
   "how": "Wikidata: ta sama data urodzenia (1950-10-23) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:8-491",
@@ -13697,7 +13697,7 @@
   "qid": "Q6271241",
   "title": "Urszula Krupa",
   "how": "Wikidata: ta sama data urodzenia (1949-10-20) i nazwisko",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:6-489",
@@ -14097,7 +14097,7 @@
   "qid": "Q432183",
   "title": "Jacek Kurski",
   "how": "Wikidata: ta sama data urodzenia (1966-02-22) i nazwisko",
-  "jobs": 6
+  "jobs": 5
  },
  {
   "key": "osoba:9-204",
@@ -14187,7 +14187,7 @@
   "qid": "Q55758",
   "title": "Aleksander Kwaśniewski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:7-208",
@@ -14217,7 +14217,7 @@
   "qid": "Q448330",
   "title": "Krzysztof Kwiatkowski (polityk)",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:4-205",
@@ -14497,7 +14497,7 @@
   "qid": "Q9354066",
   "title": "Tadeusz Lewandowski (ur. 1951)",
   "how": "Wikidata: ta sama data urodzenia (1951-10-28) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-209",
@@ -14547,7 +14547,7 @@
   "qid": "Q432097",
   "title": "Jan Filip Libicki",
   "how": "Wikidata: ta sama data urodzenia (1971-01-17) i nazwisko",
-  "jobs": 3
+  "jobs": 4
  },
  {
   "key": "osoba:1-210",
@@ -14677,7 +14677,7 @@
   "qid": "Q447579",
   "title": "Krzysztof Lisek",
   "how": "Wikidata: ta sama data urodzenia (1967-05-28) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:8-219",
@@ -14737,7 +14737,7 @@
   "qid": "Q11718273",
   "title": "Jan Lityński",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 6
+  "jobs": 5
  },
  {
   "key": "osoba:1-215",
@@ -14777,7 +14777,7 @@
   "qid": "Q9310970",
   "title": "Robert Luśnia",
   "how": "Wikidata: ta sama data urodzenia (1962-07-09) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:5-199",
@@ -14957,7 +14957,7 @@
   "qid": "Q11719634",
   "title": "Jan Łopuszański (poseł)",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:6-214",
@@ -15077,7 +15077,7 @@
   "qid": "Q7967158",
   "title": "Wanda Łyżwińska",
   "how": "Wikidata: ta sama data urodzenia (1953-07-09) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:4-225",
@@ -15277,7 +15277,7 @@
   "qid": "Q9297859",
   "title": "Janusz Maksymiuk",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:9-228",
@@ -15307,7 +15307,7 @@
   "qid": "Q11720117",
   "title": "Janusz Malinowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-227",
@@ -15337,7 +15337,7 @@
   "qid": "Q9145714",
   "title": "Aleksander Małachowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:2-230",
@@ -15547,7 +15547,7 @@
   "qid": "Q11768302",
   "title": "Marek Markiewicz",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:4-237",
@@ -15967,7 +15967,7 @@
   "qid": "Q11730950",
   "title": "Józef Michalik (polityk)",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-247",
@@ -16257,7 +16257,7 @@
   "qid": "Q11738149",
   "title": "Kazimierz Modzelewski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:1-253",
@@ -16857,7 +16857,7 @@
   "qid": "Q6761469",
   "title": "Maria Nowak (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1950-03-31) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:5-251",
@@ -16867,7 +16867,7 @@
   "qid": "Q6761469",
   "title": "Maria Nowak (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1950-03-31) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:2-266",
@@ -16947,7 +16947,7 @@
   "qid": "Q7961429",
   "title": "Waldemar Nowakowski (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1950-01-13) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:4-269",
@@ -17407,7 +17407,7 @@
   "qid": "Q6158899",
   "title": "Marek Opioła",
   "how": "Wikidata: ta sama data urodzenia (1976-09-24) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-269",
@@ -17427,7 +17427,7 @@
   "qid": "Q11718579",
   "title": "Jan Orkisz",
   "how": "Wikidata: ta sama data urodzenia (1954-08-04) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-272",
@@ -17727,7 +17727,7 @@
   "qid": "Q158298",
   "title": "Janusz Palikot",
   "how": "Wikidata: ta sama data urodzenia (1964-10-26) i nazwisko",
-  "jobs": 5
+  "jobs": 7
  },
  {
   "key": "osoba:3-277",
@@ -18147,7 +18147,7 @@
   "qid": "Q9370217",
   "title": "Waldemar Pelc",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:7-291",
@@ -18197,7 +18197,7 @@
   "qid": "Q4937468",
   "title": "Bogdan Pęk",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:4-295",
@@ -18497,7 +18497,7 @@
   "qid": "Q9276087",
   "title": "Grażyna Pijanowska",
   "how": "Wikidata: ta sama data urodzenia (1952-06-03) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-296",
@@ -18627,7 +18627,7 @@
   "qid": "Q11686038",
   "title": "Andrzej Piotrowski (polityk)",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-299",
@@ -18947,7 +18947,7 @@
   "qid": "Q376784",
   "title": "Wojciech Pomajda",
   "how": "Wikidata: ta sama data urodzenia (1968-08-18) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-325",
@@ -18967,7 +18967,7 @@
   "qid": "Q7156196",
   "title": "Paweł Poncyljusz",
   "how": "Wikidata: ta sama data urodzenia (1969-05-18) i nazwisko",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:4-321",
@@ -19037,7 +19037,7 @@
   "qid": "Q48842557",
   "title": "Violetta Porowska",
   "how": "Wikidata: ta sama data urodzenia (1968-08-06) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:8-309",
@@ -19207,7 +19207,7 @@
   "qid": "Q4893556",
   "title": "Bernard Ptak",
   "how": "Wikidata: ta sama data urodzenia (1954-08-09) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:8-315",
@@ -19217,7 +19217,7 @@
   "qid": "Q21282110",
   "title": "Paweł Pudłowski",
   "how": "Wikidata: ta sama data urodzenia (1972-07-08) i nazwisko",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:3-312",
@@ -19677,7 +19677,7 @@
   "qid": "Q11738283",
   "title": "Kazimierz Rostek",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:6-322",
@@ -19767,7 +19767,7 @@
   "qid": "Q11765612",
   "title": "Maciej Rudnicki",
   "how": "Wikidata: ta sama data urodzenia (1970-12-20) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:1-322",
@@ -20107,7 +20107,7 @@
   "qid": "Q6532175",
   "title": "Leszek Samborski",
   "how": "Wikidata: ta sama data urodzenia (1955-05-19) i nazwisko",
-  "jobs": 2
+  "jobs": 3
  },
  {
   "key": "osoba:1-327",
@@ -20257,7 +20257,7 @@
   "qid": "Q5223026",
   "title": "Dariusz Seliga",
   "how": "Wikidata: ta sama data urodzenia (1969-04-10) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:1-331",
@@ -20537,7 +20537,7 @@
   "qid": "Q604616",
   "title": "Marek Siwiec",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:2-354",
@@ -20597,7 +20597,7 @@
   "qid": "Q11731354",
   "title": "Józef Skowyra",
   "how": "Wikidata: ta sama data urodzenia (1941-03-23) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-356",
@@ -20687,7 +20687,7 @@
   "qid": "Q5612556",
   "title": "Grzegorz Skwierczyński",
   "how": "Wikidata: ta sama data urodzenia (1974-07-25) i nazwisko",
-  "jobs": 3
+  "jobs": 4
  },
  {
   "key": "osoba:2-359",
@@ -20817,7 +20817,7 @@
   "qid": "Q11755094",
   "title": "Leszek Smykowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "osoba:1-347",
@@ -21187,7 +21187,7 @@
   "qid": "Q9343115",
   "title": "Stanisław Stańdo",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-359",
@@ -21277,7 +21277,7 @@
   "qid": "Q21282127",
   "title": "Michał Stasiński",
   "how": "Wikidata: ta sama data urodzenia (1968-04-28) i nazwisko",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:8-467",
@@ -21447,7 +21447,7 @@
   "qid": "Q7350134",
   "title": "Robert Strąk",
   "how": "Wikidata: ta sama data urodzenia (1967-06-09) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:6-362",
@@ -21587,7 +21587,7 @@
   "qid": "Q55930",
   "title": "Hanna Suchocka",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:1-367",
@@ -21767,7 +21767,7 @@
   "qid": "Q9291399",
   "title": "Herbert Szafraniec",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-384",
@@ -22077,7 +22077,7 @@
   "qid": "Q4759716",
   "title": "Andrzej Szlachta",
   "how": "Wikidata: ta sama data urodzenia (1947-01-19) i nazwisko",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:1-381",
@@ -22277,7 +22277,7 @@
   "qid": "Q9373618",
   "title": "Wiesław Szweda",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 2
+  "jobs": 1
  },
  {
   "key": "osoba:2-397",
@@ -22417,7 +22417,7 @@
   "qid": "Q9393142",
   "title": "Zygmunt Szymański (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1956-01-12) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:7-387",
@@ -22477,7 +22477,7 @@
   "qid": "Q11739998",
   "title": "Klemens Ścierski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-386",
@@ -22697,7 +22697,7 @@
   "qid": "Q11708461",
   "title": "Halina Talaga",
   "how": "Wikidata: ta sama data urodzenia (1948-01-04) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:2-412",
@@ -22867,7 +22867,7 @@
   "qid": "Q11697441",
   "title": "Ewa Tomaszewska",
   "how": "Wikidata: ta sama data urodzenia (1947-04-14) i nazwisko",
-  "jobs": 4
+  "jobs": 3
  },
  {
   "key": "osoba:7-400",
@@ -22997,7 +22997,7 @@
   "qid": "Q1551223",
   "title": "Grzegorz Tuderek",
   "how": "Wikidata: ta sama data urodzenia (1938-03-10) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:1-397",
@@ -23087,7 +23087,7 @@
   "qid": "Q9390139",
   "title": "Zenon Tyma",
   "how": "Wikidata: ta sama data urodzenia (1952-05-15) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:1-402",
@@ -23177,7 +23177,7 @@
   "qid": "Q11721023",
   "title": "Jarosław Ulatowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 3
  },
  {
   "key": "osoba:1-406",
@@ -23557,7 +23557,7 @@
   "qid": "Q9343406",
   "title": "Stanisław Wąsik (poseł)",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-413",
@@ -23897,7 +23897,7 @@
   "qid": "Q19690243",
   "title": "Jacek Wilk",
   "how": "Wikidata: ta sama data urodzenia (1974-08-17) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:8-425",
@@ -24187,7 +24187,7 @@
   "qid": "Q9388406",
   "title": "Zbigniew Wojciechowski (polityk)",
   "how": "Wikidata: ta sama data urodzenia (1962-05-12) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:6-421",
@@ -24237,7 +24237,7 @@
   "qid": "Q6758920",
   "title": "Marek Wojtera",
   "how": "Wikidata: ta sama data urodzenia (1963-11-24) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:5-422",
@@ -24317,7 +24317,7 @@
   "qid": "Q72831660",
   "title": "Zdzisław Wolski",
   "how": "Wikidata: ta sama data urodzenia (1956-02-25) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:2-442",
@@ -24647,7 +24647,7 @@
   "qid": "Q9288874",
   "title": "Henryk Wujec",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 6
+  "jobs": 4
  },
  {
   "key": "osoba:2-449",
@@ -24747,7 +24747,7 @@
   "qid": "Q9296820",
   "title": "Zbyszek Zaborowski",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:6-433",
@@ -24877,7 +24877,7 @@
   "qid": "Q11714611",
   "title": "Iwona Zakrzewska",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:3-442",
@@ -25117,7 +25117,7 @@
   "qid": "Q6761672",
   "title": "Maria Zbyrowska",
   "how": "Wikidata: ta sama data urodzenia (1956-11-02) i nazwisko",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "osoba:6-444",
@@ -25227,7 +25227,7 @@
   "qid": "Q11755150",
   "title": "Leszek Zieliński (ur. 1956)",
   "how": "lista posłów I–II kadencji (Wikipedia)",
-  "jobs": 1
+  "jobs": 2
  },
  {
   "key": "osoba:7-446",
@@ -25387,7 +25387,7 @@
   "qid": "Q6150289",
   "title": "Jan Zubowski",
   "how": "Wikidata: ta sama data urodzenia (1957-11-08) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:7-453",
@@ -25637,7 +25637,7 @@
   "qid": "Q351397",
   "title": "Adam Żyliński",
   "how": "Wikidata: ta sama data urodzenia (1958-02-10) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:6-460",
@@ -25647,7 +25647,7 @@
   "qid": "Q351397",
   "title": "Adam Żyliński",
   "how": "Wikidata: ta sama data urodzenia (1958-02-10) i nazwisko",
-  "jobs": 1
+  "jobs": 0
  },
  {
   "key": "osoba:4-459",
@@ -25737,7 +25737,7 @@
   "qid": "Q55909",
   "title": "Jan Krzysztof Bielecki",
   "how": "lista urzędów (Wikipedia)",
-  "jobs": 3
+  "jobs": 2
  },
  {
   "key": "urzad:marek-belka",
@@ -26257,7 +26257,7 @@
   "qid": "Q11768259",
   "title": "Marek Kucharski",
   "how": "lista urzędów (Wikipedia)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "urzad:aleksander-mackiewicz",
@@ -27147,7 +27147,7 @@
   "qid": "Q4776168",
   "title": "Antoni Jaszczak",
   "how": "lista urzędów (Wikipedia)",
-  "jobs": 0
+  "jobs": 1
  },
  {
   "key": "urzad:anna-kalata",

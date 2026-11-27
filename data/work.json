@@ -101,8 +101,8 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": 1986,
-     "to": 1989,
+     "from": 1984,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -137,7 +137,7 @@
      "label": "Muzeum Podkarpackie w Krośnie",
      "qid": "Q11787132",
      "role": null,
-     "from": null,
+     "from": 1999,
      "to": null,
      "src": "plwiki"
     }
@@ -153,6 +153,14 @@
      "role": null,
      "from": 1983,
      "to": 1984,
+     "src": "plwiki"
+    },
+    {
+     "label": "Uniwersytet w Augsburgu",
+     "qid": "Q616905",
+     "role": null,
+     "from": 1988,
+     "to": 1989,
      "src": "plwiki"
     },
     {
@@ -274,14 +282,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Uniwersytet w Augsburgu",
-     "qid": "Q616905",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -343,20 +343,6 @@
     }
    ]
   },
-  "Mariusz Błaszczak": {
-   "qid": "Q1748055",
-   "revid": 80768878,
-   "items": [
-    {
-     "label": "Fabryka Samochodów Osobowych",
-     "qid": "Q27786",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Rafał Bochenek": {
    "qid": "Q22060880",
    "revid": 79988566,
@@ -381,6 +367,20 @@
      "role": null,
      "from": 2010,
      "to": 2016,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Jacek Bogucki": {
+   "qid": "Q327668",
+   "revid": 80922396,
+   "items": [
+    {
+     "label": "Własne gospodarstwo rolnego.",
+     "qid": null,
+     "role": null,
+     "from": 1989,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -435,20 +435,6 @@
      "label": "Fundacja Instytut na rzecz Kultury Prawnej Ordo Iuris",
      "qid": "Q48852336",
      "role": "analityczka",
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Krzysztof Bosak": {
-   "qid": "Q5423758",
-   "revid": 80760112,
-   "items": [
-    {
-     "label": "Dyrektor",
-     "qid": null,
-     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -657,8 +643,8 @@
      "label": "Własne przedsiębiorstwo mc",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2004,
+     "to": 2008,
      "src": "plwiki"
     }
    ]
@@ -823,12 +809,34 @@
     }
    ]
   },
+  "Robert Dowhan": {
+   "qid": "Q9310781",
+   "revid": 79800777,
+   "items": [
+    {
+     "label": "Własne przedsiębiorstwo",
+     "qid": null,
+     "role": null,
+     "from": 1991,
+     "to": 2003,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Michał Dworczyk": {
    "qid": "Q11778705",
    "revid": 80772269,
    "items": [
     {
      "label": "Własna działalność gospodarcza",
+     "qid": null,
+     "role": null,
+     "from": 2001,
+     "to": 2005,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własne biuro podróży",
      "qid": null,
      "role": null,
      "from": 2001,
@@ -898,6 +906,14 @@
      "from": null,
      "to": null,
      "src": "plwiki"
+    },
+    {
+     "label": "Własna spółka wydawniczej",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -909,7 +925,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 2010,
      "to": null,
      "src": "plwiki"
     }
@@ -979,6 +995,20 @@
     }
    ]
   },
+  "Artur Gierada": {
+   "qid": "Q9160607",
+   "revid": 80065571,
+   "items": [
+    {
+     "label": "Własna firma zajmująca się",
+     "qid": null,
+     "role": null,
+     "from": 2001,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Włodzisław Giziński": {
    "qid": "Q9382909",
    "revid": 79860623,
@@ -1020,22 +1050,6 @@
      "src": "wikidata"
     },
     {
-     "label": "Polskie drogi",
-     "qid": "Q11822834",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Polsko-Amerykańska Fundacja Wolności",
-     "qid": "Q11822918",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Program Narodów Zjednoczonych ds. Rozwoju",
      "qid": "Q161718",
      "role": null,
@@ -1061,7 +1075,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1993,
      "to": null,
      "src": "plwiki"
     }
@@ -1071,6 +1085,14 @@
    "qid": "Q21282033",
    "revid": 80115241,
    "items": [
+    {
+     "label": "Własne przedsiębiorstwo działające w",
+     "qid": null,
+     "role": null,
+     "from": 2012,
+     "to": null,
+     "src": "plwiki"
+    },
     {
      "label": "Gliwicka Wyższa Szkoła Przedsiębiorczości w Gliwicach",
      "qid": "Q9268733",
@@ -1100,19 +1122,11 @@
    "revid": 80760092,
    "items": [
     {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": 2000,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
      "role": "starszy referent",
-     "from": null,
-     "to": null,
+     "from": 1990,
+     "to": 1991,
      "src": "plwiki"
     }
    ]
@@ -1271,6 +1285,20 @@
     }
    ]
   },
+  "Małgorzata Gromadzka": {
+   "qid": "Q123110549",
+   "revid": 79785348,
+   "items": [
+    {
+     "label": "Własne przedsiębiorstwo działające w",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Andrzej Grzyb (poseł)": {
    "qid": "Q4759608",
    "revid": 80936884,
@@ -1338,20 +1366,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    }
-   ]
-  },
-  "Iwona Hartwich": {
-   "qid": "Q72084103",
-   "revid": 80922263,
-   "items": [
-    {
-     "label": "Handlowiec",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -1518,14 +1532,6 @@
    "revid": 79943307,
    "items": [
     {
-     "label": "Naczelnik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
@@ -1575,14 +1581,6 @@
      "role": null,
      "from": 1994,
      "to": 1997,
-     "src": "plwiki"
-    },
-    {
-     "label": "Instytut Badań Literackich Polskiej Akademii Nauk",
-     "qid": "Q11712953",
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     },
     {
@@ -1716,32 +1714,32 @@
    "revid": 80499668,
    "items": [
     {
-     "label": "Nowe Państwo",
-     "qid": "Q11793619",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Tygodnik Mazowsze",
-     "qid": "Q9363504",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Tygodnik Solidarność",
      "qid": "Q1095404",
      "role": "dziennikarka działu politycznego",
-     "from": null,
+     "from": 1989,
      "to": null,
      "src": "plwiki"
     },
     {
      "label": "Wprost",
      "qid": "Q1465227",
+     "role": null,
+     "from": 1996,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Nowe Państwo",
+     "qid": "Q11793619",
+     "role": null,
+     "from": 2000,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Tygodnik Mazowsze",
+     "qid": "Q9363504",
      "role": null,
      "from": null,
      "to": null,
@@ -1885,7 +1883,7 @@
      "label": "Politechnika Opolska",
      "qid": "Q2399339",
      "role": "specjalista",
-     "from": null,
+     "from": 1998,
      "to": null,
      "src": "plwiki"
     }
@@ -1904,6 +1902,14 @@
      "src": "plwiki"
     },
     {
+     "label": "Centrum Stosunków Międzynarodowych",
+     "qid": "Q11689627",
+     "role": "ekspert ds",
+     "from": 2001,
+     "to": 2003,
+     "src": "plwiki,wikidata"
+    },
+    {
      "label": "Mazowiecki Instytut Kultury",
      "qid": "Q11771988",
      "role": null,
@@ -1912,10 +1918,10 @@
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Centrum Stosunków Międzynarodowych",
-     "qid": "Q11689627",
-     "role": "ekspert ds",
-     "from": null,
+     "label": "Muzeum Powstania Warszawskiego",
+     "qid": "Q574328",
+     "role": "ekspert",
+     "from": 2003,
      "to": null,
      "src": "plwiki,wikidata"
     },
@@ -1923,14 +1929,6 @@
      "label": "Kolegium Europy",
      "qid": "Q1109135",
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
-    },
-    {
-     "label": "Muzeum Powstania Warszawskiego",
-     "qid": "Q574328",
-     "role": "ekspert",
      "from": null,
      "to": null,
      "src": "plwiki,wikidata"
@@ -1978,6 +1976,20 @@
      "qid": "Q416916",
      "role": null,
      "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Bartosz Kownacki": {
+   "qid": "Q9166138",
+   "revid": 78867394,
+   "items": [
+    {
+     "label": "Własna kancelaria adwokacka",
+     "qid": null,
+     "role": null,
+     "from": 2009,
      "to": null,
      "src": "plwiki"
     }
@@ -2085,7 +2097,7 @@
      "label": "Nauczyciel historii",
      "qid": null,
      "role": null,
-     "from": 1990,
+     "from": 1984,
      "to": null,
      "src": "plwiki"
     }
@@ -2517,8 +2529,8 @@
      "label": "Instytut Studiów Iberyjskich i Iberoamerykańskich Uniwersytetu Warszawskiego",
      "qid": "Q71975034",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1975,
+     "to": 1976,
      "src": "plwiki"
     },
     {
@@ -2597,6 +2609,34 @@
     }
    ]
   },
+  "Łukasz Mejza": {
+   "qid": "Q105087004",
+   "revid": 80251961,
+   "items": [
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": 2019,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Sławomir Mentzen": {
+   "qid": "Q64686653",
+   "revid": 80884384,
+   "items": [
+    {
+     "label": "Własna kancelaria podatkowa pod nazwą",
+     "qid": null,
+     "role": null,
+     "from": 2021,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Anna Milczanowska": {
    "qid": "Q9155500",
    "revid": 78867151,
@@ -2605,7 +2645,7 @@
      "label": "Nauczycielka",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1996,
      "to": null,
      "src": "plwiki"
     },
@@ -2649,8 +2689,8 @@
      "label": "Fabryka Wyrobów Runowych „Runotex”",
      "qid": "Q9324035",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1978,
+     "to": 1983,
      "src": "plwiki,wikidata"
     },
     {
@@ -2663,40 +2703,12 @@
     }
    ]
   },
-  "Czesław Mroczek (polityk)": {
-   "qid": "Q5202126",
-   "revid": 79908820,
-   "items": [
-    {
-     "label": "Kierownik",
-     "qid": null,
-     "role": null,
-     "from": 1990,
-     "to": 1998,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Aleksander Mrówczyński": {
    "qid": "Q21282094",
    "revid": 80646489,
    "items": [
     {
      "label": "Nauczyciel matematyki",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Izabela Mrzygłocka": {
-   "qid": "Q11714684",
-   "revid": 79837470,
-   "items": [
-    {
-     "label": "Inspektor",
      "qid": null,
      "role": null,
      "from": null,
@@ -2753,14 +2765,6 @@
    "qid": "Q943067",
    "revid": 80489186,
    "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1997,
-     "to": 1998,
-     "src": "plwiki"
-    },
     {
      "label": "Uniwersytet Szczeciński",
      "qid": "Q1752716",
@@ -2857,20 +2861,6 @@
     },
     {
      "label": "Własna działalność gospodarcza",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Marcin Ociepa": {
-   "qid": "Q55391464",
-   "revid": 81049330,
-   "items": [
-    {
-     "label": "Dyrektor",
      "qid": null,
      "role": null,
      "from": null,
@@ -3020,14 +3010,6 @@
      "src": "plwiki"
     },
     {
-     "label": "Konsultant",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "MBank",
      "qid": "Q1160928",
      "role": "dyrektora banku ds",
@@ -3091,7 +3073,7 @@
      "label": "Nauczyciel wychowania fizycznego",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1984,
      "to": null,
      "src": "plwiki"
     }
@@ -3119,21 +3101,7 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Jerzy Polaczek": {
-   "qid": "Q9297870",
-   "revid": 80400741,
-   "items": [
-    {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": 1986,
+     "from": 1983,
      "to": 1990,
      "src": "plwiki"
     }
@@ -3186,20 +3154,6 @@
      "from": 2010,
      "to": 2015,
      "src": "plwiki,wikidata"
-    }
-   ]
-  },
-  "Ireneusz Raś": {
-   "qid": "Q465497",
-   "revid": 81254003,
-   "items": [
-    {
-     "label": "Huta Katowice",
-     "qid": "Q951658",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -3385,22 +3339,8 @@
      "label": "Fundacja „Polsko-Niemieckie Pojednanie”",
      "qid": "Q828387",
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Marek Sawicki": {
-   "qid": "Q1249225",
-   "revid": 79940021,
-   "items": [
-    {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
+     "from": 1995,
+     "to": 1998,
      "src": "plwiki"
     }
    ]
@@ -3424,18 +3364,10 @@
    "revid": 79833653,
    "items": [
     {
-     "label": "Cereal Partners Poland Toruń Pacific",
-     "qid": "Q48862316",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Halo.Radio",
      "qid": "Q81919765",
      "role": null,
-     "from": null,
+     "from": 2021,
      "to": null,
      "src": "plwiki"
     }
@@ -3578,6 +3510,14 @@
    "revid": 81195348,
    "items": [
     {
+     "label": "Telewizja Polska",
+     "qid": "Q129110",
+     "role": null,
+     "from": 1994,
+     "to": 1996,
+     "src": "plwiki,wikidata"
+    },
+    {
      "label": "Polskie Radio",
      "qid": "Q1067189",
      "role": null,
@@ -3600,14 +3540,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Telewizja Polska",
-     "qid": "Q129110",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
     }
    ]
   },
@@ -3666,6 +3598,14 @@
    "revid": 79718937,
    "items": [
     {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": 2006,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "BASF",
      "qid": "Q9401",
      "role": null,
@@ -3681,20 +3621,6 @@
    "items": [
     {
      "label": "Doradca personalny",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Katarzyna Sójka": {
-   "qid": "Q71516894",
-   "revid": 79514609,
-   "items": [
-    {
-     "label": "Leśniczy",
      "qid": null,
      "role": null,
      "from": null,
@@ -3789,8 +3715,8 @@
      "label": "Poczta Polska",
      "qid": "Q168833",
      "role": "doradca dyrektora generalnego",
-     "from": null,
-     "to": null,
+     "from": 2004,
+     "to": 2011,
      "src": "plwiki"
     }
    ]
@@ -4010,6 +3936,14 @@
    "revid": 81227504,
    "items": [
     {
+     "label": "Studencki Komitet Solidarności w Krakowie",
+     "qid": "Q684410",
+     "role": null,
+     "from": 1977,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Państwowa Akademia Nauk Stosowanych w Chełmie",
      "qid": "Q11815231",
      "role": null,
@@ -4056,14 +3990,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Studencki Komitet Solidarności w Krakowie",
-     "qid": "Q684410",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     },
     {
      "label": "Uniwersytet Ignatianum w Krakowie",
@@ -4141,8 +4067,8 @@
      "label": "Związek Młodzieży Wiejskiej",
      "qid": "Q9392362",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1983,
+     "to": 1984,
      "src": "plwiki"
     }
    ]
@@ -4161,56 +4087,12 @@
     }
    ]
   },
-  "Sylwester Tułajew": {
-   "qid": "Q21282146",
-   "revid": 80772248,
-   "items": [
-    {
-     "label": "Urzędnik",
-     "qid": null,
-     "role": null,
-     "from": 2006,
-     "to": 2008,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Witold Tumanowicz": {
    "qid": "Q123110533",
    "revid": 80085051,
    "items": [
     {
      "label": "Grafik komputerowy",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Donald Tusk": {
-   "qid": "Q946",
-   "revid": 80771679,
-   "items": [
-    {
-     "label": "Gazeta Wyborcza",
-     "qid": "Q741296",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Gdański Uniwersytet Medyczny",
-     "qid": "Q5529378",
-     "role": "sekretarka",
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Lutnik",
      "qid": null,
      "role": null,
      "from": null,
@@ -4265,8 +4147,8 @@
      "label": "Zespół Szkół nr 2 im. Grzegorza z Sanoka w Sanoku",
      "qid": "Q18431833",
      "role": null,
-     "from": 2005,
-     "to": null,
+     "from": 2002,
+     "to": 2004,
      "src": "plwiki"
     },
     {
@@ -4274,14 +4156,6 @@
      "qid": "Q660907",
      "role": null,
      "from": 2007,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Podkarpacki Bank Spółdzielczy",
-     "qid": "Q11820382",
-     "role": null,
-     "from": null,
      "to": null,
      "src": "plwiki"
     }
@@ -4309,8 +4183,8 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1986,
+     "to": 1989,
      "src": "plwiki"
     }
    ]
@@ -4328,21 +4202,7 @@
      "src": "wikidata"
     },
     {
-     "label": "Zarządca hotelu",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Patryk Wicher": {
-   "qid": "Q71513659",
-   "revid": 79862056,
-   "items": [
-    {
-     "label": "Nauczyciel",
+     "label": "Własna firma szkoleniowa",
      "qid": null,
      "role": null,
      "from": null,
@@ -4398,6 +4258,14 @@
    "revid": 81263286,
    "items": [
     {
+     "label": "Najwyższy Czas!",
+     "qid": "Q887583",
+     "role": null,
+     "from": 1999,
+     "to": 2001,
+     "src": "plwiki,wikidata"
+    },
+    {
      "label": "Instytut Jagielloński",
      "qid": "Q16560117",
      "role": null,
@@ -4420,14 +4288,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Najwyższy Czas!",
-     "qid": "Q887583",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
     },
     {
      "label": "NFI Magna Polonia",
@@ -4537,14 +4397,6 @@
    "qid": "Q2908767",
    "revid": 81068232,
    "items": [
-    {
-     "label": "25 Pułk Piechoty",
-     "qid": "Q9131426",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Telewizja Polska",
      "qid": "Q129110",
@@ -4709,8 +4561,8 @@
      "label": "Własna firma transportowa",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1991,
+     "to": 1998,
      "src": "plwiki"
     }
    ]
@@ -4728,16 +4580,16 @@
      "src": "plwiki"
     },
     {
-     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
-     "qid": "Q1003",
+     "label": "Uniwersytet Ekonomiczny we Wrocławiu",
+     "qid": "Q1041598",
      "role": null,
-     "from": null,
+     "from": 1984,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Uniwersytet Ekonomiczny we Wrocławiu",
-     "qid": "Q1041598",
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
      "role": null,
      "from": null,
      "to": null,
@@ -4793,14 +4645,6 @@
    "qid": "Q9359824",
    "revid": 80944579,
    "items": [
-    {
-     "label": "Farmaceutka",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "TVN24",
      "qid": "Q2385689",
@@ -5100,6 +4944,14 @@
      "from": null,
      "to": null,
      "src": "plwiki"
+    },
+    {
+     "label": "Własne przedsiębiorstwo usługowe w",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -5145,20 +4997,6 @@
     }
    ]
   },
-  "Robert Jagła": {
-   "qid": "Q18011037",
-   "revid": 79967674,
-   "items": [
-    {
-     "label": "Menedżer",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Bogumiła Olbryś": {
    "qid": "Q135670489",
    "revid": 78867531,
@@ -5181,8 +5019,8 @@
      "label": "Nauczyciel języka niemieckiego",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2009,
+     "to": 2015,
      "src": "plwiki"
     }
    ]
@@ -5209,7 +5047,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1990,
      "to": null,
      "src": "plwiki"
     }
@@ -5289,7 +5127,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1991,
      "to": null,
      "src": "plwiki"
     }
@@ -5361,7 +5199,7 @@
      "label": "Instytut Historii Nauki im. Ludwika i Aleksandra Birkenmajerów Polskiej Akademii Nauk",
      "qid": "Q4201542",
      "role": "starszy asystent",
-     "from": null,
+     "from": 1977,
      "to": null,
      "src": "plwiki"
     }
@@ -5411,22 +5249,8 @@
      "label": "Dyrektor ds",
      "qid": null,
      "role": null,
-     "from": 2008,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Piotr Babiarz": {
-   "qid": "Q17544435",
-   "revid": 80640878,
-   "items": [
-    {
-     "label": "Urzędnik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
+     "from": 2005,
+     "to": 2006,
      "src": "plwiki"
     }
    ]
@@ -5440,6 +5264,20 @@
      "qid": "Q11797489",
      "role": null,
      "from": 1977,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Maciej Badora": {
+   "qid": "Q65163302",
+   "revid": 78343571,
+   "items": [
+    {
+     "label": "Własna kancelaria specjalizująca się w",
+     "qid": null,
+     "role": null,
+     "from": null,
      "to": null,
      "src": "plwiki"
     }
@@ -5494,18 +5332,18 @@
    "revid": 80249278,
    "items": [
     {
-     "label": "Nauczyciel akademicki",
-     "qid": null,
+     "label": "Huta Częstochowa",
+     "qid": "Q11710320",
      "role": null,
-     "from": 1999,
+     "from": 1995,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Huta Częstochowa",
-     "qid": "Q11710320",
+     "label": "Nauczyciel akademicki",
+     "qid": null,
      "role": null,
-     "from": null,
+     "from": 1999,
      "to": null,
      "src": "plwiki"
     }
@@ -5543,6 +5381,14 @@
    "qid": "Q9359170",
    "revid": 81371056,
    "items": [
+    {
+     "label": "Własne przedsiębiorstwo",
+     "qid": null,
+     "role": null,
+     "from": 1983,
+     "to": null,
+     "src": "plwiki"
+    },
     {
      "label": "ZETO",
      "qid": "Q9383686",
@@ -5603,7 +5449,7 @@
      "label": "Komitet Obrony Robotników",
      "qid": "Q1779995",
      "role": null,
-     "from": null,
+     "from": 1977,
      "to": null,
      "src": "plwiki"
     },
@@ -5611,7 +5457,7 @@
      "label": "Komitet Samoobrony Społecznej „KOR”",
      "qid": "Q5152957",
      "role": null,
-     "from": null,
+     "from": 1977,
      "to": null,
      "src": "plwiki"
     }
@@ -5793,8 +5639,8 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1985,
+     "to": 2008,
      "src": "plwiki"
     }
    ]
@@ -5882,20 +5728,20 @@
    "revid": 81310128,
    "items": [
     {
+     "label": "Nauczyciel akademicki",
+     "qid": null,
+     "role": null,
+     "from": 1975,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Akademia Bialska im. Jana Pawła II",
      "qid": "Q11815216",
      "role": null,
      "from": 2000,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Nauczyciel akademicki",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -5903,6 +5749,14 @@
    "qid": "Q9382578",
    "revid": 81003843,
    "items": [
+    {
+     "label": "Nauczyciel",
+     "qid": null,
+     "role": null,
+     "from": 1982,
+     "to": 1988,
+     "src": "plwiki"
+    },
     {
      "label": "Uniwersytet Jagielloński",
      "qid": "Q189441",
@@ -5918,14 +5772,6 @@
      "from": 2001,
      "to": 2018,
      "src": "wikidata"
-    },
-    {
-     "label": "Nauczyciel",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -6030,14 +5876,6 @@
      "src": "plwiki"
     },
     {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Bank Polska Kasa Opieki",
      "qid": "Q806642",
      "role": null,
@@ -6066,17 +5904,17 @@
    "revid": 79839372,
    "items": [
     {
-     "label": "Instytut Lecha Wałęsy",
-     "qid": "Q11713097",
-     "role": null,
-     "from": null,
+     "label": "Predom",
+     "qid": "Q9134833",
+     "role": "socjolog",
+     "from": 1972,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Predom",
-     "qid": "Q9134833",
-     "role": "socjolog",
+     "label": "Instytut Lecha Wałęsy",
+     "qid": "Q11713097",
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -6132,18 +5970,18 @@
    "revid": 79833759,
    "items": [
     {
+     "label": "Specjalistka ds",
+     "qid": null,
+     "role": null,
+     "from": 1968,
+     "to": 1977,
+     "src": "plwiki"
+    },
+    {
      "label": "J.W. Construction Holding",
      "qid": "Q11715031",
      "role": null,
      "from": 2001,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Specjalistka ds",
-     "qid": null,
-     "role": null,
-     "from": null,
      "to": null,
      "src": "plwiki"
     }
@@ -6271,7 +6109,7 @@
      "label": "Polskie Towarzystwo Turystyczno-Krajoznawcze",
      "qid": "Q4994123",
      "role": "instruktor",
-     "from": null,
+     "from": 1975,
      "to": null,
      "src": "plwiki"
     }
@@ -6288,6 +6126,14 @@
      "from": null,
      "to": null,
      "src": "plwiki"
+    },
+    {
+     "label": "Własna firma transportowa",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -6295,6 +6141,14 @@
    "qid": "Q535780",
    "revid": 80886803,
    "items": [
+    {
+     "label": "Enterprise Investors",
+     "qid": "Q12727669",
+     "role": null,
+     "from": 1994,
+     "to": null,
+     "src": "plwiki"
+    },
     {
      "label": "Centrum Analiz Społeczno-Ekonomicznych",
      "qid": "Q9186177",
@@ -6310,14 +6164,6 @@
      "from": null,
      "to": null,
      "src": "plwiki,wikidata"
-    },
-    {
-     "label": "Enterprise Investors",
-     "qid": "Q12727669",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     },
     {
      "label": "Instytut Nauk o Człowieku",
@@ -6408,6 +6254,14 @@
    "revid": 79981419,
    "items": [
     {
+     "label": "Stocznia Gdańska",
+     "qid": "Q1736541",
+     "role": null,
+     "from": 1979,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Fundacja Centrum Solidarności",
      "qid": "Q9264365",
      "role": null,
@@ -6418,14 +6272,6 @@
     {
      "label": "Spółdzielnia",
      "qid": "Q4539",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Stocznia Gdańska",
-     "qid": "Q1736541",
      "role": null,
      "from": null,
      "to": null,
@@ -6534,17 +6380,17 @@
    "revid": 79838575,
    "items": [
     {
-     "label": "Akademia Teatralna im. Aleksandra Zelwerowicza w Warszawie",
-     "qid": "Q688872",
-     "role": "adiunkt",
-     "from": 1981,
-     "to": 1983,
-     "src": "plwiki"
-    },
-    {
      "label": "Zastępca sekretarza redakcji",
      "qid": null,
      "role": null,
+     "from": 1977,
+     "to": 1981,
+     "src": "plwiki"
+    },
+    {
+     "label": "Akademia Teatralna im. Aleksandra Zelwerowicza w Warszawie",
+     "qid": "Q688872",
+     "role": "adiunkt",
      "from": 1981,
      "to": 1983,
      "src": "plwiki"
@@ -6567,8 +6413,8 @@
      "label": "Gazeta Lubuska",
      "qid": "Q1496625",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1982,
+     "to": 1993,
      "src": "plwiki"
     }
    ]
@@ -6631,20 +6477,6 @@
     }
    ]
   },
-  "Georg Brylka": {
-   "qid": "Q11699634",
-   "revid": 79839405,
-   "items": [
-    {
-     "label": "Zakłady Elektrotechniki Motoryzacyjnej „Elmot”",
-     "qid": "Q9386285",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Józef Brynkus": {
    "qid": "Q21282012",
    "revid": 80696401,
@@ -6675,22 +6507,8 @@
      "label": "Nauczyciel historii",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Barbara Bubula": {
-   "qid": "Q4858786",
-   "revid": 80676549,
-   "items": [
-    {
-     "label": "Katolickie Szkoły im. Świętej Rodziny z Nazaretu w Krakowie",
-     "qid": "Q18426154",
-     "role": null,
-     "from": 1991,
-     "to": 1995,
+     "from": 1946,
+     "to": 1982,
      "src": "plwiki"
     }
    ]
@@ -6753,7 +6571,7 @@
      "label": "Komitet Obrony Robotników",
      "qid": "Q1779995",
      "role": null,
-     "from": null,
+     "from": 1976,
      "to": null,
      "src": "plwiki"
     },
@@ -6792,6 +6610,22 @@
      "from": 1973,
      "to": 1981,
      "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Agora",
+     "qid": "Q395389",
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Gazeta Wyborcza",
+     "qid": "Q741296",
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     },
     {
      "label": "Główny Urząd Ceł",
@@ -6847,8 +6681,8 @@
      "label": "Doradca prasowy",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1990,
+     "to": 1991,
      "src": "plwiki"
     }
    ]
@@ -6931,20 +6765,6 @@
     }
    ]
   },
-  "Teresa Ceglecka-Zielonka": {
-   "qid": "Q273583",
-   "revid": 79862099,
-   "items": [
-    {
-     "label": "Referent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Andrzej Celiński": {
    "qid": "Q514808",
    "revid": 80904391,
@@ -6983,7 +6803,7 @@
      "label": "ArcelorMittal Poland Oddział w Krakowie",
      "qid": "Q7674527",
      "role": "ślusarz",
-     "from": null,
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     }
@@ -7137,20 +6957,6 @@
    "items": [
     {
      "label": "Starszy inspektor wojewódzki",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Małgorzata Chomycz-Śmigielska": {
-   "qid": "Q11772246",
-   "revid": 81261923,
-   "items": [
-    {
-     "label": "Konsultantka",
      "qid": null,
      "role": null,
      "from": null,
@@ -7338,14 +7144,6 @@
    "revid": 80759911,
    "items": [
     {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1972,
-     "to": 1985,
-     "src": "plwiki"
-    },
-    {
      "label": "Uniwersytet Warszawski",
      "qid": "Q144488",
      "role": null,
@@ -7379,7 +7177,7 @@
      "label": "Polskie Radio Białystok",
      "qid": "Q11822691",
      "role": null,
-     "from": null,
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     },
@@ -7564,6 +7362,14 @@
    "revid": 81037791,
    "items": [
     {
+     "label": "Archiwum Akt Nowych",
+     "qid": "Q9159187",
+     "role": null,
+     "from": 1986,
+     "to": 1987,
+     "src": "plwiki"
+    },
+    {
      "label": "Dziennik Polski i Dziennik Żołnierza",
      "qid": "Q5319800",
      "role": null,
@@ -7612,24 +7418,8 @@
      "src": "plwiki"
     },
     {
-     "label": "Archiwum Akt Nowych",
-     "qid": "Q9159187",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Polska Grupa Zbrojeniowa",
-     "qid": "Q19401271",
      "role": null,
      "from": null,
      "to": null,
@@ -7659,7 +7449,7 @@
      "label": "Własne przedsiębiorstwo pphu",
      "qid": null,
      "role": null,
-     "from": 1995,
+     "from": 1989,
      "to": null,
      "src": "plwiki"
     },
@@ -7695,8 +7485,8 @@
      "label": "Instytut Badań Jądrowych",
      "qid": "Q11712952",
      "role": null,
-     "from": 1965,
-     "to": 1972,
+     "from": 1962,
+     "to": 1966,
      "src": "plwiki"
     }
    ]
@@ -7709,8 +7499,8 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1971,
+     "to": 1972,
      "src": "plwiki"
     },
     {
@@ -7781,7 +7571,7 @@
      "label": "Malarz",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1986,
      "to": null,
      "src": "plwiki"
     }
@@ -7845,8 +7635,8 @@
      "label": "Kontroler",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1968,
+     "to": 1973,
      "src": "plwiki"
     }
    ]
@@ -8022,7 +7812,7 @@
      "qid": "Q11822651",
      "role": null,
      "from": 2005,
-     "to": 2021,
+     "to": 2013,
      "src": "plwiki"
     }
    ]
@@ -8129,16 +7919,8 @@
      "label": "Dyrektor ds",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
+     "from": 1993,
+     "to": 1995,
      "src": "plwiki"
     },
     {
@@ -8159,16 +7941,16 @@
      "label": "Monter",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1982,
+     "to": 1990,
      "src": "plwiki"
     },
     {
      "label": "Specjalista handlowy",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1990,
+     "to": 1992,
      "src": "plwiki"
     }
    ]
@@ -8181,8 +7963,8 @@
      "label": "Dąbrowska Fabryka Obrabiarek Ponar-Defum",
      "qid": "Q24947741",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1984,
+     "to": 1991,
      "src": "plwiki"
     }
    ]
@@ -8248,14 +8030,6 @@
    "revid": 79839467,
    "items": [
     {
-     "label": "Gospodarstwo rolne",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Pełnomocnik ds",
      "qid": null,
      "role": null,
@@ -8280,14 +8054,6 @@
     {
      "label": "Komitet Samoobrony Społecznej „KOR”",
      "qid": "Q5152957",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Politechnika Warszawska",
-     "qid": "Q1718656",
      "role": null,
      "from": null,
      "to": null,
@@ -8322,19 +8088,19 @@
    "revid": 81179319,
    "items": [
     {
+     "label": "Nauczyciel",
+     "qid": null,
+     "role": null,
+     "from": 1960,
+     "to": 1970,
+     "src": "plwiki"
+    },
+    {
      "label": "Politechnika Koszalińska",
      "qid": "Q1788258",
      "role": null,
      "from": 1970,
      "to": 1981,
-     "src": "plwiki"
-    },
-    {
-     "label": "Nauczyciel",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -8358,6 +8124,14 @@
      "from": null,
      "to": null,
      "src": "wikidata"
+    },
+    {
+     "label": "Własna kancelaria prawna",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -8377,8 +8151,8 @@
      "label": "Huta Cynku Miasteczko Śląskie",
      "qid": "Q9295128",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1966,
+     "to": 1978,
      "src": "plwiki"
     }
    ]
@@ -8505,7 +8279,7 @@
      "label": "Ośrodek Myśli Politycznej",
      "qid": "Q11801621",
      "role": null,
-     "from": null,
+     "from": 1995,
      "to": null,
      "src": "plwiki"
     },
@@ -8513,7 +8287,7 @@
      "label": "Wyższa Szkoła Europejska im. ks. Józefa Tischnera w Krakowie",
      "qid": "Q938324",
      "role": null,
-     "from": null,
+     "from": 2003,
      "to": null,
      "src": "plwiki,wikidata"
     }
@@ -8560,20 +8334,20 @@
      "src": "plwiki,wikidata"
     },
     {
+     "label": "Wydział Polonistyki Uniwersytetu Warszawskiego",
+     "qid": "Q16616882",
+     "role": null,
+     "from": 1978,
+     "to": 2006,
+     "src": "plwiki"
+    },
+    {
      "label": "Uniwersytet Warszawski",
      "qid": "Q144488",
      "role": null,
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Wydział Polonistyki Uniwersytetu Warszawskiego",
-     "qid": "Q16616882",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -8610,33 +8384,19 @@
    "revid": 79836573,
    "items": [
     {
-     "label": "Budimex",
-     "qid": "Q24946938",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Pratt & Whitney Rzeszów",
      "qid": "Q9380477",
      "role": "robotnik",
-     "from": null,
-     "to": null,
+     "from": 1956,
+     "to": 1963,
      "src": "plwiki"
-    }
-   ]
-  },
-  "Arkady Radosław Fiedler": {
-   "qid": "Q9159814",
-   "revid": 79952564,
-   "items": [
+    },
     {
-     "label": "Nauczyciel",
-     "qid": null,
+     "label": "Budimex",
+     "qid": "Q24946938",
      "role": null,
-     "from": 1970,
-     "to": null,
+     "from": 1981,
+     "to": 1984,
      "src": "plwiki"
     }
    ]
@@ -8650,6 +8410,14 @@
      "qid": "Q4578155",
      "role": "kierowca",
      "from": 1973,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własna firma transportowa",
+     "qid": null,
+     "role": null,
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     }
@@ -8689,6 +8457,14 @@
    "items": [
     {
      "label": "Firma produkująca",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własna firma doradcza",
      "qid": null,
      "role": null,
      "from": null,
@@ -8793,7 +8569,7 @@
      "label": "Miejskie Przedsiębiorstwo Komunikacyjne we Wrocławiu",
      "qid": "Q11780311",
      "role": null,
-     "from": null,
+     "from": 1978,
      "to": null,
      "src": "plwiki"
     }
@@ -8840,17 +8616,17 @@
    "revid": 79043145,
    "items": [
     {
-     "label": "Kierownik działu sadów",
-     "qid": null,
-     "role": null,
-     "from": null,
+     "label": "Stocznia Gdynia",
+     "qid": "Q4978195",
+     "role": "mechanik urządzeń kopiujących",
+     "from": 1966,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Stocznia Gdynia",
-     "qid": "Q4978195",
-     "role": "mechanik urządzeń kopiujących",
+     "label": "Kierownik działu sadów",
+     "qid": null,
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -8995,7 +8771,7 @@
      "label": "Polskie Koleje Państwowe",
      "qid": "Q249591",
      "role": "zastępcy naczelnika sekcji",
-     "from": null,
+     "from": 1970,
      "to": null,
      "src": "plwiki"
     },
@@ -9003,7 +8779,7 @@
      "label": "TK Telekom",
      "qid": "Q9353734",
      "role": null,
-     "from": null,
+     "from": 2001,
      "to": null,
      "src": "plwiki"
     }
@@ -9059,8 +8835,8 @@
      "label": "Towarzystwo Ubezpieczeń i Reasekuracji „Warta”",
      "qid": "Q9353838",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2004,
+     "to": 2007,
      "src": "plwiki"
     }
    ]
@@ -9159,14 +8935,6 @@
    "qid": "Q9394601",
    "revid": 81184974,
    "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 2002,
-     "to": 2006,
-     "src": "plwiki"
-    },
     {
      "label": "Klub Jagielloński",
      "qid": "Q11740224",
@@ -9459,34 +9227,6 @@
     }
    ]
   },
-  "Marian Goliński": {
-   "qid": "Q382442",
-   "revid": 79834215,
-   "items": [
-    {
-     "label": "Urzędnik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Henryk Gołębiewski (polityk)": {
-   "qid": "Q381559",
-   "revid": 79850820,
-   "items": [
-    {
-     "label": "Towarzystwo Przyjaciół Dzieci",
-     "qid": "Q16611224",
-     "role": null,
-     "from": 1982,
-     "to": 1984,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Wiesław Gołębiewski": {
    "qid": "Q9373480",
    "revid": 79851004,
@@ -9509,7 +9249,7 @@
      "label": "Kompania Węglowa",
      "qid": "Q1389835",
      "role": "informatyk",
-     "from": null,
+     "from": 1989,
      "to": null,
      "src": "plwiki"
     }
@@ -9549,14 +9289,6 @@
    "qid": "Q55941",
    "revid": 79851085,
    "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": 1993,
-     "to": 1995,
-     "src": "plwiki"
-    },
     {
      "label": "Nowe Państwo",
      "qid": "Q11793619",
@@ -9601,14 +9333,6 @@
    "qid": "Q9287339",
    "revid": 79834664,
    "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1972,
-     "to": 1975,
-     "src": "plwiki"
-    },
     {
      "label": "Bielska Wyższa Szkoła im. Józefa Tyszkiewicza w Bielsku-Białej",
      "qid": "Q9171325",
@@ -9701,16 +9425,16 @@
      "label": "Klub Zachowawczo-Monarchistyczny",
      "qid": "Q1137031",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1988,
+     "to": 2004,
      "src": "plwiki"
     },
     {
      "label": "Polska Agencja Prasowa",
      "qid": "Q1484980",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1995,
+     "to": 1997,
      "src": "plwiki"
     },
     {
@@ -9727,14 +9451,6 @@
    "qid": "Q327635",
    "revid": 79837251,
    "items": [
-    {
-     "label": "Pełnomocnik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Własna działalność gospodarcza",
      "qid": null,
@@ -9794,7 +9510,7 @@
    "revid": 80370371,
    "items": [
     {
-     "label": "Referent",
+     "label": "Własna firma",
      "qid": null,
      "role": null,
      "from": null,
@@ -9955,7 +9671,7 @@
      "label": "Uniwersytet Warszawski",
      "qid": "Q144488",
      "role": null,
-     "from": 1974,
+     "from": 1970,
      "to": 2015,
      "src": "plwiki,wikidata"
     },
@@ -9963,7 +9679,7 @@
      "label": "Wydział Nauk Politycznych i Studiów Międzynarodowych Uniwersytetu Warszawskiego",
      "qid": "Q9379368",
      "role": null,
-     "from": null,
+     "from": 1970,
      "to": null,
      "src": "plwiki"
     }
@@ -10117,36 +9833,8 @@
      "label": "Narodowy Instytut Kardiologii Stefana kardynała Wyszyńskiego",
      "qid": "Q11713082",
      "role": "asystent",
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Stanisław Gudzowski": {
-   "qid": "Q9342010",
-   "revid": 79835487,
-   "items": [
-    {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": 2000,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Alina Gut": {
-   "qid": "Q4726715",
-   "revid": 79838600,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": 1964,
-     "to": 1976,
+     "from": 1983,
+     "to": 2003,
      "src": "plwiki"
     }
    ]
@@ -10441,7 +10129,21 @@
      "label": "Starszy asystent projektanta",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1976,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Danuta Hojarska": {
+   "qid": "Q604392",
+   "revid": 79836399,
+   "items": [
+    {
+     "label": "Własna firma usługowa",
+     "qid": null,
+     "role": null,
+     "from": 2008,
      "to": null,
      "src": "plwiki"
     }
@@ -10477,8 +10179,8 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": 1981,
-     "to": 1990,
+     "from": 1951,
+     "to": 1981,
      "src": "plwiki"
     },
     {
@@ -10534,16 +10236,16 @@
    "revid": 79861904,
    "items": [
     {
-     "label": "Konstruktor",
-     "qid": null,
+     "label": "Studencki Komitet Solidarności we Wrocławiu",
+     "qid": "Q9347297",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1978,
+     "to": 1980,
      "src": "plwiki"
     },
     {
-     "label": "Studencki Komitet Solidarności we Wrocławiu",
-     "qid": "Q9347297",
+     "label": "Konstruktor",
+     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -10614,28 +10316,28 @@
    "revid": 79830882,
    "items": [
     {
-     "label": "Akademia Nauk Społecznych",
-     "qid": "Q9143056",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Instytut Nauk Politycznych Wydziału Nauk Politycznych i Studiów Międzynarodowych Uniwersytetu Warszawskiego",
      "qid": "Q11713135",
      "role": "starszy asystent",
-     "from": null,
-     "to": null,
+     "from": 1972,
+     "to": 1973,
      "src": "plwiki"
     },
     {
      "label": "Uniwersytet Warmińsko-Mazurski w Olsztynie",
      "qid": "Q1733433",
      "role": null,
-     "from": null,
+     "from": 1992,
      "to": null,
      "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Akademia Nauk Społecznych",
+     "qid": "Q9143056",
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     },
     {
      "label": "Wyższa Szkoła Bezpieczeństwa w Poznaniu",
@@ -10767,20 +10469,6 @@
     }
    ]
   },
-  "Jarosław Jagiełło": {
-   "qid": "Q382653",
-   "revid": 79837236,
-   "items": [
-    {
-     "label": "Urzędnik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Patryk Jaki": {
    "qid": "Q11813593",
    "revid": 80934805,
@@ -10874,6 +10562,14 @@
    "revid": 79834672,
    "items": [
     {
+     "label": "Maszynista kolejowy",
+     "qid": null,
+     "role": null,
+     "from": 1974,
+     "to": 1978,
+     "src": "plwiki"
+    },
+    {
      "label": "Komitet Samoobrony Społecznej „KOR”",
      "qid": "Q5152957",
      "role": null,
@@ -10884,14 +10580,6 @@
     {
      "label": "Desa Unicum",
      "qid": "Q9206379",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Maszynista kolejowy",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -10999,20 +10687,6 @@
     }
    ]
   },
-  "Krzysztof Janik": {
-   "qid": "Q1790439",
-   "revid": 79833899,
-   "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Jacek Janiszewski": {
    "qid": "Q11715328",
    "revid": 79834792,
@@ -11074,6 +10748,14 @@
    "revid": 79836434,
    "items": [
     {
+     "label": "Specjalista techniczny",
+     "qid": null,
+     "role": null,
+     "from": 1970,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Huta Aluminium Konin",
      "qid": "Q16558776",
      "role": null,
@@ -11083,14 +10765,6 @@
     },
     {
      "label": "Monter",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Specjalista techniczny",
      "qid": null,
      "role": null,
      "from": null,
@@ -11132,16 +10806,16 @@
    "revid": 79839550,
    "items": [
     {
-     "label": "Komitet Obrony Robotników",
-     "qid": "Q1779995",
+     "label": "Najwyższa Izba Kontroli",
+     "qid": "Q1963911",
      "role": null,
-     "from": null,
+     "from": 1996,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Najwyższa Izba Kontroli",
-     "qid": "Q1963911",
+     "label": "Komitet Obrony Robotników",
+     "qid": "Q1779995",
      "role": null,
      "from": null,
      "to": null,
@@ -11249,7 +10923,7 @@
      "label": "Najwyższa Izba Kontroli",
      "qid": "Q1963911",
      "role": null,
-     "from": 1994,
+     "from": 1992,
      "to": null,
      "src": "plwiki"
     },
@@ -11298,14 +10972,6 @@
    "revid": 79349691,
    "items": [
     {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1998,
-     "to": 2004,
-     "src": "plwiki"
-    },
-    {
      "label": "Browar Lwówek",
      "qid": "Q9180157",
      "role": null,
@@ -11319,14 +10985,6 @@
    "qid": "Q16571661",
    "revid": 72317127,
    "items": [
-    {
-     "label": "Menedżer",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Teraz Rock",
      "qid": "Q4180350",
@@ -11345,8 +11003,8 @@
      "label": "Nysa Kłodzko",
      "qid": "Q11794271",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2001,
+     "to": 2002,
      "src": "plwiki"
     }
    ]
@@ -11515,8 +11173,8 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1981,
+     "to": 1989,
      "src": "plwiki"
     }
    ]
@@ -11557,8 +11215,8 @@
      "label": "Spółdzielnia",
      "qid": "Q4539",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1968,
+     "to": 1990,
      "src": "plwiki"
     }
    ]
@@ -11607,8 +11265,8 @@
      "label": "Głos Wielkopolski",
      "qid": "Q11703203",
      "role": null,
-     "from": 1995,
-     "to": 1996,
+     "from": 1993,
+     "to": 1995,
      "src": "plwiki"
     },
     {
@@ -11664,6 +11322,14 @@
    "revid": 80499367,
    "items": [
     {
+     "label": "Własna firma z zakresu",
+     "qid": null,
+     "role": null,
+     "from": 2011,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Wywiadowca",
      "qid": null,
      "role": null,
@@ -11681,8 +11347,8 @@
      "label": "Polski Związek Żeglarski",
      "qid": "Q11822651",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2001,
+     "to": 2017,
      "src": "plwiki"
     }
    ]
@@ -11714,28 +11380,12 @@
      "src": "wikidata"
     },
     {
-     "label": "Stocznia Gdańska",
-     "qid": "Q1736541",
-     "role": null,
-     "from": 1988,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Uniwersytet Kardynała Stefana Wyszyńskiego w Warszawie",
      "qid": "Q1416331",
      "role": null,
      "from": 1999,
      "to": 2005,
      "src": "wikidata"
-    },
-    {
-     "label": "Instytut Badań Literackich Polskiej Akademii Nauk",
-     "qid": "Q11712953",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     },
     {
      "label": "Najwyższa Izba Kontroli",
@@ -11766,19 +11416,19 @@
    "revid": 80936485,
    "items": [
     {
+     "label": "Poznańska Fabryka Maszyn Żniwnych „Agromet”",
+     "qid": "Q11826153",
+     "role": null,
+     "from": 1969,
+     "to": 1970,
+     "src": "plwiki"
+    },
+    {
      "label": "Spółdzielnia",
      "qid": "Q4539",
      "role": null,
      "from": 1974,
      "to": 1982,
-     "src": "plwiki"
-    },
-    {
-     "label": "Poznańska Fabryka Maszyn Żniwnych „Agromet”",
-     "qid": "Q11826153",
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -11887,8 +11537,8 @@
      "label": "Ochotnicza straż pożarna w Polsce",
      "qid": "Q55289175",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1992,
+     "to": 1998,
      "src": "plwiki"
     }
    ]
@@ -11909,8 +11559,8 @@
      "label": "Działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2002,
+     "to": 2007,
      "src": "plwiki"
     },
     {
@@ -11931,7 +11581,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1991,
      "to": null,
      "src": "plwiki"
     }
@@ -12141,8 +11791,8 @@
      "label": "Sanok Rubber Company",
      "qid": "Q9345987",
      "role": "pracownik fizyczny",
-     "from": 1982,
-     "to": 1984,
+     "from": 1974,
+     "to": 1981,
      "src": "plwiki"
     },
     {
@@ -12180,14 +11830,6 @@
      "from": 1972,
      "to": 1984,
      "src": "plwiki"
-    },
-    {
-     "label": "Fundacja Dajemy Dzieciom Siłę",
-     "qid": "Q9264370",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -12213,36 +11855,8 @@
      "label": "Komitet Helsiński",
      "qid": "Q11741757",
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Tadeusz Kędziak": {
-   "qid": "Q9354528",
-   "revid": 79836443,
-   "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Jan Kilian (polityk)": {
-   "qid": "Q21282051",
-   "revid": 81105869,
-   "items": [
-    {
-     "label": "Własna działalność gospodarcza",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
+     "from": 1984,
+     "to": 1989,
      "src": "plwiki"
     }
    ]
@@ -12280,16 +11894,16 @@
    "revid": 80432507,
    "items": [
     {
-     "label": "II Liceum Ogólnokształcące im. Jana Śniadeckiego w Kielcach",
-     "qid": "Q9295986",
+     "label": "Nauczycielka",
+     "qid": null,
      "role": null,
-     "from": 1974,
+     "from": 1972,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Nauczycielka",
-     "qid": null,
+     "label": "II Liceum Ogólnokształcące im. Jana Śniadeckiego w Kielcach",
+     "qid": "Q9295986",
      "role": null,
      "from": 1974,
      "to": null,
@@ -12374,20 +11988,20 @@
      "src": "wikidata"
     },
     {
+     "label": "Lekarz",
+     "qid": null,
+     "role": null,
+     "from": 1992,
+     "to": 1995,
+     "src": "plwiki"
+    },
+    {
      "label": "Instytut Studiów Strategicznych",
      "qid": "Q15895866",
      "role": null,
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Lekarz",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     },
     {
      "label": "Szpital Specjalistyczny im. Ludwika Rydygiera w Krakowie",
@@ -12480,6 +12094,20 @@
      "qid": "Q9252651",
      "role": null,
      "from": 2008,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Eugeniusz Kłopotek": {
+   "qid": "Q5408398",
+   "revid": 79860626,
+   "items": [
+    {
+     "label": "Własna firma doradczej",
+     "qid": null,
+     "role": null,
+     "from": null,
      "to": null,
      "src": "plwiki"
     }
@@ -12675,15 +12303,23 @@
      "label": "Polski Komitet Paralimpijski",
      "qid": "Q11822517",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2000,
+     "to": 2015,
      "src": "plwiki"
     },
     {
      "label": "Stowarzyszenie „Wspólnota Polska”",
      "qid": "Q1342099",
      "role": null,
-     "from": null,
+     "from": 2000,
+     "to": 2015,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": 2002,
      "to": null,
      "src": "plwiki"
     },
@@ -12724,6 +12360,14 @@
    "revid": 81102462,
    "items": [
     {
+     "label": "Bakoma",
+     "qid": "Q804469",
+     "role": null,
+     "from": 1989,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Warszawska Giełda Towarowa",
      "qid": "Q9371168",
      "role": null,
@@ -12759,22 +12403,6 @@
    "qid": "Q246216",
    "revid": 81371153,
    "items": [
-    {
-     "label": "Krawcowa",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Mechanik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Samodzielny publiczny zakład opieki zdrowotnej",
      "qid": "Q122363702",
@@ -12857,7 +12485,15 @@
      "label": "Stocznia Szczecińska im. Adolfa Warskiego",
      "qid": "Q16607020",
      "role": null,
-     "from": null,
+     "from": 1952,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Kancelarię.",
+     "qid": null,
+     "role": null,
+     "from": 1990,
      "to": null,
      "src": "plwiki"
     }
@@ -12871,7 +12507,7 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": 1982,
+     "from": 1968,
      "to": null,
      "src": "plwiki"
     }
@@ -12885,7 +12521,7 @@
      "label": "Firma budowlana",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 2014,
      "to": null,
      "src": "plwiki"
     }
@@ -12930,14 +12566,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Państwowe Zakłady Lotnicze",
-     "qid": "Q965259",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -12949,7 +12577,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1990,
      "to": null,
      "src": "plwiki"
     }
@@ -13003,6 +12631,20 @@
    "items": [
     {
      "label": "Dyrektor wydziału finansów",
+     "qid": null,
+     "role": null,
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Roman Kotliński": {
+   "qid": "Q559797",
+   "revid": 78564305,
+   "items": [
+    {
+     "label": "Własne przedsiębiorstwo",
      "qid": null,
      "role": null,
      "from": null,
@@ -13141,6 +12783,20 @@
     }
    ]
   },
+  "Jerzy Kozdroń": {
+   "qid": "Q6185422",
+   "revid": 79862179,
+   "items": [
+    {
+     "label": "Własna kancelaria prawna w",
+     "qid": null,
+     "role": null,
+     "from": 1989,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Andrzej Kozioł (polityk)": {
    "qid": "Q9152577",
    "revid": 79851178,
@@ -13196,20 +12852,20 @@
      "src": "plwiki"
     },
     {
+     "label": "Uniwersytet Warmińsko-Mazurski w Olsztynie",
+     "qid": "Q1733433",
+     "role": null,
+     "from": 2003,
+     "to": 2006,
+     "src": "plwiki"
+    },
+    {
      "label": "Uniwersytet Mikołaja Kopernika w Toruniu",
      "qid": "Q1752712",
      "role": null,
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Uniwersytet Warmińsko-Mazurski w Olsztynie",
-     "qid": "Q1733433",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -13299,8 +12955,8 @@
      "label": "Kierownik fermy",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1977,
+     "to": 1991,
      "src": "plwiki"
     }
    ]
@@ -13452,14 +13108,6 @@
    "revid": 79831871,
    "items": [
     {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1977,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Radio Maryja",
      "qid": "Q1478920",
      "role": null,
@@ -13543,7 +13191,7 @@
      "label": "Pielęgniarka",
      "qid": null,
      "role": null,
-     "from": 1999,
+     "from": 1991,
      "to": null,
      "src": "plwiki"
     },
@@ -13758,6 +13406,14 @@
    "revid": 81378611,
    "items": [
     {
+     "label": "Etatowy instruktor",
+     "qid": null,
+     "role": null,
+     "from": 1952,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Drużyna",
      "qid": "Q9212322",
      "role": "publicysta",
@@ -13766,16 +13422,16 @@
      "src": "plwiki"
     },
     {
-     "label": "Biuro Interwencyjne KSS „KOR”",
-     "qid": "Q9173927",
+     "label": "Towarzystwo Kursów Naukowych",
+     "qid": "Q9360446",
      "role": null,
-     "from": null,
+     "from": 1978,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Etatowy instruktor",
-     "qid": null,
+     "label": "Biuro Interwencyjne KSS „KOR”",
+     "qid": "Q9173927",
      "role": null,
      "from": null,
      "to": null,
@@ -13800,14 +13456,6 @@
     {
      "label": "Robotnik",
      "qid": "Q9311307",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Towarzystwo Kursów Naukowych",
-     "qid": "Q9360446",
      "role": null,
      "from": null,
      "to": null,
@@ -13880,6 +13528,14 @@
    "revid": 80466763,
    "items": [
     {
+     "label": "Telewizja Polska",
+     "qid": "Q129110",
+     "role": null,
+     "from": 1991,
+     "to": 1994,
+     "src": "plwiki"
+    },
+    {
      "label": "Bank Światowy",
      "qid": "Q7164",
      "role": null,
@@ -13898,22 +13554,6 @@
     {
      "label": "Deutsche Presse-Agentur",
      "qid": "Q312653",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Gazeta Wyborcza",
-     "qid": "Q741296",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Telewizja Polska",
-     "qid": "Q129110",
      "role": null,
      "from": null,
      "to": null,
@@ -14070,14 +13710,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Wysiedlenie Polaków z Kresów Wschodnich w latach 1944–1946",
-     "qid": "Q450355",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -14085,14 +13717,6 @@
    "qid": "Q448330",
    "revid": 80367293,
    "items": [
-    {
-     "label": "Menedżer",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Najwyższa Izba Kontroli",
      "qid": "Q1963911",
@@ -14141,8 +13765,8 @@
      "label": "Hawe",
      "qid": "Q11708712",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2009,
+     "to": 2011,
      "src": "plwiki,wikidata"
     },
     {
@@ -14171,8 +13795,8 @@
      "label": "Kredyt Bank",
      "qid": "Q2490554",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1996,
+     "to": 2000,
      "src": "plwiki"
     }
    ]
@@ -14311,7 +13935,7 @@
      "label": "Działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1998,
      "to": null,
      "src": "plwiki"
     }
@@ -14441,20 +14065,6 @@
     }
    ]
   },
-  "Tadeusz Lewandowski (ur. 1951)": {
-   "qid": "Q9354066",
-   "revid": 79834234,
-   "items": [
-    {
-     "label": "Kierownik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Bogusław Liberadzki": {
    "qid": "Q4937928",
    "revid": 80805831,
@@ -14463,7 +14073,7 @@
      "label": "Szkoła Główna Handlowa w Warszawie",
      "qid": "Q1394594",
      "role": null,
-     "from": null,
+     "from": 1971,
      "to": null,
      "src": "plwiki,wikidata"
     }
@@ -14473,6 +14083,22 @@
    "qid": "Q432097",
    "revid": 81090941,
    "items": [
+    {
+     "label": "Własne biuro tłumaczeń.",
+     "qid": null,
+     "role": null,
+     "from": 1994,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Asystent przewodniczącego rady",
+     "qid": null,
+     "role": null,
+     "from": 1997,
+     "to": 2005,
+     "src": "plwiki"
+    },
     {
      "label": "Polski Komitet Paralimpijski",
      "qid": "Q11822517",
@@ -14487,14 +14113,6 @@
      "role": null,
      "from": 2000,
      "to": 2010,
-     "src": "plwiki"
-    },
-    {
-     "label": "Asystent przewodniczącego rady",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -14641,7 +14259,7 @@
      "label": "Wolne Związki Zawodowe Wybrzeża",
      "qid": "Q784622",
      "role": null,
-     "from": null,
+     "from": 1978,
      "to": null,
      "src": "plwiki"
     }
@@ -14656,20 +14274,6 @@
      "qid": "Q931642",
      "role": "nauczyciel akademicki",
      "from": 1978,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Krzysztof Lisek": {
-   "qid": "Q447579",
-   "revid": 80146675,
-   "items": [
-    {
-     "label": "Doradca",
-     "qid": null,
-     "role": null,
-     "from": null,
      "to": null,
      "src": "plwiki"
     }
@@ -14770,14 +14374,6 @@
      "from": null,
      "to": null,
      "src": "plwiki"
-    },
-    {
-     "label": "Dziennikarka",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -14789,8 +14385,8 @@
      "label": "Huta Stalowa Wola",
      "qid": "Q4899048",
      "role": "radca prawny m",
-     "from": null,
-     "to": null,
+     "from": 1973,
+     "to": 1996,
      "src": "plwiki"
     }
    ]
@@ -14809,20 +14405,6 @@
     }
    ]
   },
-  "Robert Luśnia": {
-   "qid": "Q9310970",
-   "revid": 79836588,
-   "items": [
-    {
-     "label": "Firma handlująca",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Zbigniew Ładosz": {
    "qid": "Q9388448",
    "revid": 79839729,
@@ -14831,7 +14413,7 @@
      "label": "Huta Aluminium Konin",
      "qid": "Q16558776",
      "role": "starszy technolog",
-     "from": null,
+     "from": 1969,
      "to": null,
      "src": "plwiki"
     },
@@ -15004,14 +14586,6 @@
    "revid": 79834824,
    "items": [
     {
-     "label": "Inżynier",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
      "role": null,
@@ -15059,8 +14633,8 @@
      "label": "Instytut Nauk Politycznych Wydziału Nauk Politycznych i Studiów Międzynarodowych Uniwersytetu Warszawskiego",
      "qid": "Q11713135",
      "role": null,
-     "from": 1980,
-     "to": 1983,
+     "from": 1977,
+     "to": null,
      "src": "plwiki"
     },
     {
@@ -15081,8 +14655,8 @@
      "label": "Spółdzielnia kółek rolniczych",
      "qid": "Q11751840",
      "role": null,
-     "from": 1977,
-     "to": 1979,
+     "from": 1976,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -15125,6 +14699,14 @@
      "role": "kasjerka",
      "from": 1973,
      "to": 1976,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -15193,7 +14775,7 @@
      "label": "Elektromonter górnictwa podziemnego",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1979,
      "to": null,
      "src": "plwiki"
     },
@@ -15215,8 +14797,8 @@
      "label": "Instytut Nauk Politycznych Wydziału Nauk Politycznych i Studiów Międzynarodowych Uniwersytetu Warszawskiego",
      "qid": "Q11713135",
      "role": null,
-     "from": 1974,
-     "to": 1980,
+     "from": 1967,
+     "to": null,
      "src": "plwiki"
     },
     {
@@ -15236,6 +14818,20 @@
     {
      "label": "Solidarność Walcząca",
      "qid": "Q5447928",
+     "role": null,
+     "from": 1983,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Janusz Maksymiuk": {
+   "qid": "Q9297859",
+   "revid": 79838615,
+   "items": [
+    {
+     "label": "Własna firma usługowa",
+     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -15257,43 +14853,21 @@
     }
    ]
   },
-  "Janusz Malinowski": {
-   "qid": "Q11720117",
-   "revid": 80495109,
-   "items": [
-    {
-     "label": "Dyrektor",
-     "qid": null,
-     "role": null,
-     "from": 1990,
-     "to": 1993,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Aleksander Małachowski": {
    "qid": "Q9145714",
    "revid": 81342842,
    "items": [
     {
-     "label": "Asystent",
-     "qid": null,
+     "label": "Polski Czerwony Krzyż",
+     "qid": "Q6127600",
      "role": null,
-     "from": null,
+     "from": 1998,
      "to": null,
      "src": "plwiki"
     },
     {
      "label": "Kultura",
      "qid": "Q7464548",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Polski Czerwony Krzyż",
-     "qid": "Q6127600",
      "role": null,
      "from": null,
      "to": null,
@@ -15345,8 +14919,8 @@
      "label": "Mechanik",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1988,
+     "to": 1989,
      "src": "plwiki"
     }
    ]
@@ -15370,19 +14944,19 @@
    "revid": 79850829,
    "items": [
     {
+     "label": "KGHM Polska Miedź",
+     "qid": "Q1476710",
+     "role": null,
+     "from": 1980,
+     "to": 1984,
+     "src": "plwiki"
+    },
+    {
      "label": "Górnik Polkowice",
      "qid": "Q1719050",
      "role": null,
      "from": 2011,
      "to": 2013,
-     "src": "plwiki"
-    },
-    {
-     "label": "KGHM Polska Miedź",
-     "qid": "Q1476710",
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     },
     {
@@ -15452,6 +15026,14 @@
      "src": "plwiki"
     },
     {
+     "label": "Starszy komisarz skarbowy",
+     "qid": null,
+     "role": null,
+     "from": 1992,
+     "to": 1994,
+     "src": "plwiki"
+    },
+    {
      "label": "Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie",
      "qid": "Q414245",
      "role": null,
@@ -15462,14 +15044,6 @@
     {
      "label": "Najwyższa Izba Kontroli",
      "qid": "Q1963911",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Starszy komisarz skarbowy",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -15496,18 +15070,10 @@
    "revid": 80770298,
    "items": [
     {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1973,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Kancelaria adwokacka",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 2001,
      "to": null,
      "src": "plwiki"
     },
@@ -15937,20 +15503,6 @@
     }
    ]
   },
-  "Józef Michalik (polityk)": {
-   "qid": "Q11730950",
-   "revid": 77661731,
-   "items": [
-    {
-     "label": "Kierownik",
-     "qid": null,
-     "role": null,
-     "from": 1978,
-     "to": 1993,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Marek Michalik": {
    "qid": "Q11768316",
    "revid": 76512488,
@@ -16139,7 +15691,7 @@
      "label": "Wydział Ekonomiczny Uniwersytetu Gdańskiego",
      "qid": "Q9379374",
      "role": null,
-     "from": 1970,
+     "from": 1958,
      "to": null,
      "src": "plwiki"
     },
@@ -16188,6 +15740,14 @@
    "revid": 81101783,
    "items": [
     {
+     "label": "Stolica",
+     "qid": "Q9345959",
+     "role": null,
+     "from": 1961,
+     "to": 1977,
+     "src": "plwiki,wikidata"
+    },
+    {
      "label": "Akademia Finansów i Biznesu Vistula",
      "qid": "Q7895361",
      "role": null,
@@ -16218,14 +15778,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Stolica",
-     "qid": "Q9345959",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
     },
     {
      "label": "Telewizja Polska",
@@ -16277,6 +15829,20 @@
     }
    ]
   },
+  "Kazimierz Modzelewski": {
+   "qid": "Q11738149",
+   "revid": 72104494,
+   "items": [
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Wojciech Mojzesowicz": {
    "qid": "Q432759",
    "revid": 79850886,
@@ -16296,17 +15862,17 @@
    "revid": 79837129,
    "items": [
     {
-     "label": "Super Express",
-     "qid": "Q494902",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "TVP3 Łódź",
      "qid": "Q2385759",
      "role": "starszy inspektor",
+     "from": 1984,
+     "to": 1990,
+     "src": "plwiki"
+    },
+    {
+     "label": "Super Express",
+     "qid": "Q494902",
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -16318,20 +15884,20 @@
    "revid": 79754539,
    "items": [
     {
+     "label": "Politechnika Wrocławska",
+     "qid": "Q522109",
+     "role": null,
+     "from": 1973,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Uniwersytet Wrocławski",
      "qid": "Q315658",
      "role": null,
      "from": 1973,
      "to": 2009,
      "src": "wikidata"
-    },
-    {
-     "label": "Politechnika Wrocławska",
-     "qid": "Q522109",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -16421,8 +15987,8 @@
      "label": "Szkoła Wyższa im. Bogdana Jańskiego w Warszawie",
      "qid": "Q9351629",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1998,
+     "to": 2001,
      "src": "plwiki"
     }
    ]
@@ -16465,7 +16031,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1989,
      "to": null,
      "src": "plwiki"
     }
@@ -16712,18 +16278,10 @@
    "revid": 79862575,
    "items": [
     {
-     "label": "Polska Federacja Stowarzyszeń Rodzin Katolickich",
-     "qid": "Q11822147",
-     "role": null,
-     "from": 1991,
-     "to": 2001,
-     "src": "plwiki"
-    },
-    {
      "label": "Nauczycielka",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1973,
      "to": null,
      "src": "plwiki"
     }
@@ -16765,6 +16323,14 @@
      "label": "Polskie Linie Oceaniczne",
      "qid": "Q2102640",
      "role": "oficer elektryk",
+     "from": 1980,
+     "to": 1989,
+     "src": "plwiki"
+    },
+    {
+     "label": "Firm",
+     "qid": null,
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -16955,7 +16521,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     }
@@ -17051,8 +16617,8 @@
      "label": "Drumet",
      "qid": "Q9212301",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1972,
+     "to": 1990,
      "src": "plwiki"
     },
     {
@@ -17228,34 +16794,6 @@
      "qid": null,
      "role": null,
      "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Marek Opioła": {
-   "qid": "Q6158899",
-   "revid": 79837143,
-   "items": [
-    {
-     "label": "Referent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Jan Orkisz": {
-   "qid": "Q11718579",
-   "revid": 79963912,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": 2019,
      "to": null,
      "src": "plwiki"
     }
@@ -17474,6 +17012,14 @@
      "src": "wikidata"
     },
     {
+     "label": "Polmos",
+     "qid": "Q3062604",
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Polska Akademia Nauk",
      "qid": "Q651690",
      "role": null,
@@ -17488,6 +17034,14 @@
      "from": null,
      "to": null,
      "src": "wikidata"
+    },
+    {
+     "label": "Własna spółka",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -17720,20 +17274,20 @@
    "revid": 80988181,
    "items": [
     {
-     "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
-     "qid": "Q348402",
-     "role": "nauczyciel akademicki",
-     "from": 1990,
-     "to": 1992,
-     "src": "plwiki,wikidata"
-    },
-    {
      "label": "Dziennikarz",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1972,
      "to": null,
      "src": "plwiki"
+    },
+    {
+     "label": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+     "qid": "Q348402",
+     "role": "nauczyciel akademicki",
+     "from": 1983,
+     "to": 1992,
+     "src": "plwiki,wikidata"
     }
    ]
   },
@@ -17750,17 +17304,17 @@
      "src": "plwiki"
     },
     {
-     "label": "CWKS Legia Warszawa",
-     "qid": "Q1812607",
-     "role": "trener",
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Polski Związek Lekkiej Atletyki",
      "qid": "Q3092102",
      "role": "kierownik wyszkolenia",
+     "from": 1972,
+     "to": 1976,
+     "src": "plwiki"
+    },
+    {
+     "label": "CWKS Legia Warszawa",
+     "qid": "Q1812607",
+     "role": "trener",
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -17833,7 +17387,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 2013,
      "to": null,
      "src": "plwiki"
     }
@@ -17935,6 +17489,20 @@
     }
    ]
   },
+  "Waldemar Pelc": {
+   "qid": "Q9370217",
+   "revid": 79839966,
+   "items": [
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Irena Petryna": {
    "qid": "Q11713816",
    "revid": 79856184,
@@ -17960,20 +17528,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    }
-   ]
-  },
-  "Bogdan Pęk": {
-   "qid": "Q4937468",
-   "revid": 79862458,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": 1979,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -18077,8 +17631,8 @@
      "label": "Polskie Koleje Państwowe",
      "qid": "Q249591",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1978,
+     "to": 2005,
      "src": "plwiki"
     }
    ]
@@ -18135,7 +17689,7 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1993,
      "to": null,
      "src": "plwiki"
     }
@@ -18151,20 +17705,6 @@
      "role": null,
      "from": null,
      "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Grażyna Pijanowska": {
-   "qid": "Q9276087",
-   "revid": 80640076,
-   "items": [
-    {
-     "label": "Referent",
-     "qid": null,
-     "role": null,
-     "from": 1972,
-     "to": 1991,
      "src": "plwiki"
     }
    ]
@@ -18217,20 +17757,6 @@
      "role": "asystent",
      "from": 1981,
      "to": 1983,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Andrzej Piotrowski (polityk)": {
-   "qid": "Q11686038",
-   "revid": 80640427,
-   "items": [
-    {
-     "label": "Nauczycielka",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -18397,16 +17923,16 @@
      "label": "Towarzystwo Wiedzy Powszechnej",
      "qid": "Q9360567",
      "role": "instruktor",
-     "from": 1973,
-     "to": 1975,
+     "from": 1972,
+     "to": 1973,
      "src": "plwiki"
     },
     {
      "label": "Związek Młodzieży Wiejskiej",
      "qid": "Q9392362",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1975,
+     "to": 1980,
      "src": "plwiki"
     }
    ]
@@ -18447,46 +17973,24 @@
     }
    ]
   },
-  "Wojciech Pomajda": {
-   "qid": "Q376784",
-   "revid": 79837547,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Paweł Poncyljusz": {
    "qid": "Q7156196",
    "revid": 80011970,
    "items": [
+    {
+     "label": "Księgowy",
+     "qid": null,
+     "role": null,
+     "from": 1991,
+     "to": 1993,
+     "src": "plwiki"
+    },
     {
      "label": "Działalność gospodarcza",
      "qid": null,
      "role": null,
      "from": 1993,
      "to": 2001,
-     "src": "plwiki"
-    },
-    {
-     "label": "Księgowy",
-     "qid": null,
-     "role": null,
-     "from": 1993,
-     "to": 2001,
-     "src": "plwiki"
-    },
-    {
-     "label": "Menedżer",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
      "src": "plwiki"
     }
    ]
@@ -18557,6 +18061,20 @@
     }
    ]
   },
+  "Violetta Porowska": {
+   "qid": "Q48842557",
+   "revid": 79861664,
+   "items": [
+    {
+     "label": "Własna firma medyczna i",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Jarosław Porwich": {
    "qid": "Q21282106",
    "revid": 81019835,
@@ -18609,8 +18127,8 @@
      "label": "Politechnika Gdańska",
      "qid": "Q465922",
      "role": "asystent",
-     "from": 1974,
-     "to": 1983,
+     "from": 1967,
+     "to": 1973,
      "src": "plwiki"
     },
     {
@@ -18631,8 +18149,8 @@
      "label": "Telewizja Polska",
      "qid": "Q129110",
      "role": "dziennikarka",
-     "from": null,
-     "to": null,
+     "from": 1989,
+     "to": 2007,
      "src": "plwiki"
     }
    ]
@@ -18695,32 +18213,10 @@
     }
    ]
   },
-  "Bernard Ptak": {
-   "qid": "Q4893556",
-   "revid": 80604290,
-   "items": [
-    {
-     "label": "Stażysta",
-     "qid": null,
-     "role": null,
-     "from": 1974,
-     "to": 1977,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Paweł Pudłowski": {
    "qid": "Q21282110",
    "revid": 80760043,
    "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": 1996,
-     "to": 1997,
-     "src": "plwiki"
-    },
     {
      "label": "BP",
      "qid": "Q152057",
@@ -18755,8 +18251,8 @@
      "label": "Fabryka Przyrządów i Uchwytów „Bison-Bial”",
      "qid": "Q11688112",
      "role": "robotnik",
-     "from": 1987,
-     "to": 1988,
+     "from": 1975,
+     "to": 1994,
      "src": "plwiki"
     }
    ]
@@ -18867,8 +18363,8 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": 1999,
-     "to": null,
+     "from": 1985,
+     "to": 1987,
      "src": "plwiki"
     }
    ]
@@ -19108,18 +18604,10 @@
    "revid": 76685885,
    "items": [
     {
-     "label": "Huta Stalowa Wola",
-     "qid": "Q4899048",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Mostostal",
      "qid": "Q1451697",
      "role": "kierownik działu",
-     "from": null,
+     "from": 1976,
      "to": null,
      "src": "plwiki"
     }
@@ -19208,6 +18696,14 @@
      "from": null,
      "to": null,
      "src": "wikidata"
+    },
+    {
+     "label": "Własna kancelaria prawna",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -19307,7 +18803,7 @@
      "label": "Komitet Obrony Robotników",
      "qid": "Q1779995",
      "role": null,
-     "from": 1977,
+     "from": 1976,
      "to": null,
      "src": "plwiki"
     },
@@ -19541,7 +19037,7 @@
      "label": "Lotte Wedel",
      "qid": "Q1273613",
      "role": "pracownik fizyczny",
-     "from": null,
+     "from": 1996,
      "to": null,
      "src": "plwiki"
     }
@@ -19573,6 +19069,14 @@
    "qid": "Q6532175",
    "revid": 79836084,
    "items": [
+    {
+     "label": "Własna firma handlowa",
+     "qid": null,
+     "role": null,
+     "from": 1990,
+     "to": null,
+     "src": "plwiki"
+    },
     {
      "label": "Autor",
      "qid": null,
@@ -19724,14 +19228,6 @@
      "from": 2022,
      "to": null,
      "src": "plwiki"
-    },
-    {
-     "label": "Urzędnik",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -19821,8 +19317,8 @@
      "label": "Własna działalność gospodarcza",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1998,
+     "to": 2000,
      "src": "plwiki"
     }
    ]
@@ -19854,17 +19350,17 @@
      "src": "wikidata"
     },
     {
-     "label": "Szkoła Wyższa im. Pawła Włodkowica w Płocku",
-     "qid": "Q9351632",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Wydział Nauk Politycznych i Studiów Międzynarodowych Uniwersytetu Warszawskiego",
      "qid": "Q9379368",
      "role": "asystent",
+     "from": 1981,
+     "to": 1991,
+     "src": "plwiki"
+    },
+    {
+     "label": "Szkoła Wyższa im. Pawła Włodkowica w Płocku",
+     "qid": "Q9351632",
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -19909,7 +19405,7 @@
      "label": "Nauczyciel",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1971,
      "to": null,
      "src": "plwiki"
     }
@@ -20005,8 +19501,8 @@
      "label": "Przedsiębiorstwo Produkcyjno-Usługowe ZAP-Robotyka",
      "qid": "Q106840548",
      "role": "inżynier",
-     "from": null,
-     "to": null,
+     "from": 1968,
+     "to": 1990,
      "src": "plwiki"
     }
    ]
@@ -20030,6 +19526,14 @@
    "revid": 79846155,
    "items": [
     {
+     "label": "Uniwersytet Warszawski",
+     "qid": "Q144488",
+     "role": null,
+     "from": 1988,
+     "to": 1989,
+     "src": "plwiki"
+    },
+    {
      "label": "Telewizja Polska",
      "qid": "Q129110",
      "role": null,
@@ -20052,14 +19556,6 @@
      "from": null,
      "to": null,
      "src": "plwiki"
-    },
-    {
-     "label": "Uniwersytet Warszawski",
-     "qid": "Q144488",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -20073,14 +19569,6 @@
      "role": null,
      "from": 1987,
      "to": 1990,
-     "src": "plwiki"
-    },
-    {
-     "label": "Kopalnie i Zakłady Przetwórcze Siarki Siarkopol",
-     "qid": "Q9336244",
-     "role": "wicedyrektor tarnobrzeskiego kombinatu",
-     "from": null,
-     "to": null,
      "src": "plwiki"
     },
     {
@@ -20117,20 +19605,6 @@
      "role": "pracownik laboratorium ochrony",
      "from": null,
      "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Józef Skowyra": {
-   "qid": "Q11731354",
-   "revid": 79836458,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": 1965,
-     "to": 1998,
      "src": "plwiki"
     }
    ]
@@ -20233,6 +19707,14 @@
      "role": null,
      "from": 2002,
      "to": 2005,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własna firma marketingowa",
+     "qid": null,
+     "role": null,
+     "from": 2009,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -20350,19 +19832,11 @@
    "revid": 79846163,
    "items": [
     {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Najwyższa Izba Kontroli",
      "qid": "Q1963911",
      "role": "specjalisty kontroli państwowej",
-     "from": null,
-     "to": null,
+     "from": 1997,
+     "to": 2001,
      "src": "plwiki"
     },
     {
@@ -20411,8 +19885,8 @@
      "label": "ArcelorMittal Warszawa",
      "qid": "Q9295223",
      "role": "walcownik stali",
-     "from": null,
-     "to": null,
+     "from": 1974,
+     "to": 1990,
      "src": "plwiki"
     }
    ]
@@ -20425,8 +19899,8 @@
      "label": "Związek Nauczycielstwa Polskiego",
      "qid": "Q245110",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1990,
+     "to": 2006,
      "src": "plwiki"
     }
    ]
@@ -20483,7 +19957,7 @@
      "label": "Nauczyciel wychowania fizycznego",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1990,
      "to": null,
      "src": "plwiki"
     }
@@ -20597,7 +20071,7 @@
      "label": "Najwyższa Izba Kontroli",
      "qid": "Q1963911",
      "role": null,
-     "from": 2005,
+     "from": 2002,
      "to": null,
      "src": "plwiki"
     }
@@ -20632,20 +20106,6 @@
     {
      "label": "Spółdzielnia",
      "qid": "Q4539",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Stanisław Stańdo": {
-   "qid": "Q9343115",
-   "revid": 79846181,
-   "items": [
-    {
-     "label": "Naczelnik",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -20734,6 +20194,14 @@
      "from": null,
      "to": null,
      "src": "plwiki"
+    },
+    {
+     "label": "Własne przedsiębiorstwo",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -20773,7 +20241,7 @@
      "label": "Kopalnie i Zakłady Przetwórcze Siarki Siarkopol",
      "qid": "Q9336244",
      "role": "sztygar zmianowy",
-     "from": null,
+     "from": 1968,
      "to": null,
      "src": "plwiki"
     }
@@ -20826,19 +20294,11 @@
    "revid": 79836388,
    "items": [
     {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Powszechna Kasa Oszczędności Bank Polski",
      "qid": "Q578832",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1994,
+     "to": 1997,
      "src": "plwiki"
     }
    ]
@@ -20962,14 +20422,6 @@
    "revid": 80993440,
    "items": [
     {
-     "label": "Stażystka",
-     "qid": null,
-     "role": null,
-     "from": 1968,
-     "to": 1969,
-     "src": "plwiki"
-    },
-    {
      "label": "Georgetown University",
      "qid": "Q333886",
      "role": null,
@@ -21053,7 +20505,7 @@
      "label": "Politechnika Białostocka",
      "qid": "Q4902926",
      "role": null,
-     "from": null,
+     "from": 1970,
      "to": null,
      "src": "plwiki,wikidata"
     }
@@ -21141,20 +20593,6 @@
     }
    ]
   },
-  "Herbert Szafraniec": {
-   "qid": "Q9291399",
-   "revid": 79846192,
-   "items": [
-    {
-     "label": "Tłumacz naukowo-techniczny",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Stefan Szańkowski": {
    "qid": "Q9345374",
    "revid": 79853846,
@@ -21163,8 +20601,8 @@
      "label": "Instytut Nowych Syntez Chemicznych",
      "qid": "Q11713144",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1982,
+     "to": 1984,
      "src": "plwiki"
     }
    ]
@@ -21177,7 +20615,7 @@
      "label": "Huta Ferrum",
      "qid": "Q11710321",
      "role": null,
-     "from": null,
+     "from": 1973,
      "to": null,
      "src": "plwiki"
     }
@@ -21343,8 +20781,8 @@
      "label": "Starszy specjalista",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1978,
+     "to": 1988,
      "src": "plwiki"
     }
    ]
@@ -21371,8 +20809,8 @@
      "label": "Mechanik",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1958,
+     "to": 1992,
      "src": "plwiki"
     }
    ]
@@ -21439,14 +20877,6 @@
    "qid": "Q4759716",
    "revid": 80059304,
    "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
     {
      "label": "Politechnika Rzeszowska im. Ignacego Łukasiewicza",
      "qid": "Q3578303",
@@ -21604,14 +21034,6 @@
    "revid": 79834035,
    "items": [
     {
-     "label": "Inspektor",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Jastrzębska Spółka Węglowa",
      "qid": "Q3507748",
      "role": null,
@@ -21643,8 +21065,8 @@
      "label": "Muzeum Historyczne Miasta Krakowa",
      "qid": "Q5101500",
      "role": "asystent",
-     "from": null,
-     "to": null,
+     "from": 1987,
+     "to": 1995,
      "src": "plwiki"
     },
     {
@@ -21679,8 +21101,8 @@
      "label": "Związek Górnośląski",
      "qid": "Q9392318",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2003,
+     "to": 2006,
      "src": "plwiki"
     }
    ]
@@ -21707,8 +21129,8 @@
      "label": "Zakłady Przemysłu Ciągnikowego „Ursus”",
      "qid": "Q2143828",
      "role": "formierz-operator",
-     "from": null,
-     "to": null,
+     "from": 1968,
+     "to": 1975,
      "src": "plwiki"
     }
    ]
@@ -21787,6 +21209,20 @@
     }
    ]
   },
+  "Zygmunt Szymański (polityk)": {
+   "qid": "Q9393142",
+   "revid": 79836582,
+   "items": [
+    {
+     "label": "Własna firma zajmującej się",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Jan Szyszko": {
    "qid": "Q9297845",
    "revid": 81022855,
@@ -21845,20 +21281,6 @@
     }
    ]
   },
-  "Klemens Ścierski": {
-   "qid": "Q11739998",
-   "revid": 79729071,
-   "items": [
-    {
-     "label": "Dyrektor",
-     "qid": null,
-     "role": null,
-     "from": 2001,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Iwona Śledzińska-Katarasińska": {
    "qid": "Q9296852",
    "revid": 80676553,
@@ -21885,7 +21307,7 @@
      "role": null,
      "from": null,
      "to": null,
-     "src": "plwiki,wikidata"
+     "src": "wikidata"
     },
     {
      "label": "Dziennikarka",
@@ -21909,7 +21331,7 @@
      "role": null,
      "from": null,
      "to": null,
-     "src": "plwiki,wikidata"
+     "src": "wikidata"
     }
    ]
   },
@@ -21929,8 +21351,8 @@
      "label": "Telewizja Polska",
      "qid": "Q129110",
      "role": "dyrektor biura zarządu",
-     "from": null,
-     "to": null,
+     "from": 2008,
+     "to": 2009,
      "src": "plwiki"
     }
    ]
@@ -22133,20 +21555,6 @@
     }
    ]
   },
-  "Halina Talaga": {
-   "qid": "Q11708461",
-   "revid": 79835477,
-   "items": [
-    {
-     "label": "Referentka",
-     "qid": null,
-     "role": null,
-     "from": 1966,
-     "to": 1989,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Dominik Tarczyński": {
    "qid": "Q21282143",
    "revid": 81062167,
@@ -22307,7 +21715,7 @@
      "label": "I Liceum Ogólnokształcące im. Tadeusza Kościuszki w Turku",
      "qid": "Q97578200",
      "role": "nauczycielka",
-     "from": null,
+     "from": 1985,
      "to": null,
      "src": "plwiki"
     }
@@ -22317,14 +21725,6 @@
    "qid": "Q11697441",
    "revid": 79861208,
    "items": [
-    {
-     "label": "Referent",
-     "qid": null,
-     "role": null,
-     "from": 1970,
-     "to": 1971,
-     "src": "plwiki"
-    },
     {
      "label": "Monter",
      "qid": null,
@@ -22409,7 +21809,7 @@
      "label": "Fundacja Centrum Europejskie Natolin",
      "qid": "Q9264363",
      "role": "analityk",
-     "from": null,
+     "from": 2002,
      "to": null,
      "src": "plwiki,wikidata"
     },
@@ -22428,20 +21828,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    }
-   ]
-  },
-  "Grzegorz Tuderek": {
-   "qid": "Q1551223",
-   "revid": 79835137,
-   "items": [
-    {
-     "label": "Menedżer",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -22509,6 +21895,20 @@
      "label": "ZE PAK",
      "qid": "Q196808",
      "role": null,
+     "from": 1970,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Zenon Tyma": {
+   "qid": "Q9390139",
+   "revid": 81375487,
+   "items": [
+    {
+     "label": "Własna firma transportowa",
+     "qid": null,
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -22523,7 +21923,7 @@
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
      "role": null,
-     "from": null,
+     "from": 1983,
      "to": null,
      "src": "plwiki"
     }
@@ -22575,6 +21975,22 @@
    "qid": "Q11721023",
    "revid": 79846251,
    "items": [
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": 1990,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polska Rada Biznesu",
+     "qid": "Q8313282",
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
     {
      "label": "Remontowa Shipbuilding",
      "qid": "Q9306270",
@@ -22894,6 +22310,14 @@
      "src": "wikidata"
     },
     {
+     "label": "Nauczyciel",
+     "qid": null,
+     "role": null,
+     "from": 1987,
+     "to": 1988,
+     "src": "plwiki"
+    },
+    {
      "label": "Akademia Humanistyczno-Ekonomiczna w Łodzi",
      "qid": "Q9143027",
      "role": null,
@@ -22916,14 +22340,6 @@
      "from": null,
      "to": null,
      "src": "plwiki,wikidata"
-    },
-    {
-     "label": "Nauczyciel",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -23003,22 +22419,8 @@
      "label": "Stocznia Szczecińska Nowa",
      "qid": "Q1126024",
      "role": null,
-     "from": 1990,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Stanisław Wąsik (poseł)": {
-   "qid": "Q9343406",
-   "revid": 79846274,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
+     "from": 1966,
+     "to": 2002,
      "src": "plwiki"
     }
    ]
@@ -23097,8 +22499,8 @@
      "label": "Bank Gospodarki Żywnościowej",
      "qid": "Q9164980",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1986,
+     "to": 1997,
      "src": "plwiki"
     }
    ]
@@ -23144,24 +22546,24 @@
    "revid": 80404494,
    "items": [
     {
+     "label": "Uniwersytet Jagielloński",
+     "qid": "Q189441",
+     "role": null,
+     "from": 1959,
+     "to": 1965,
+     "src": "plwiki"
+    },
+    {
      "label": "Instytut Podstawowych Problemów Marksizmu-Leninizmu",
      "qid": "Q6039185",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1981,
+     "to": 1984,
      "src": "plwiki"
     },
     {
      "label": "University of Michigan",
      "qid": "Q230492",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Uniwersytet Jagielloński",
-     "qid": "Q189441",
      "role": null,
      "from": null,
      "to": null,
@@ -23201,7 +22603,7 @@
      "label": "Główny energetyk",
      "qid": null,
      "role": null,
-     "from": null,
+     "from": 1970,
      "to": null,
      "src": "plwiki"
     }
@@ -23294,16 +22696,16 @@
      "src": "plwiki"
     },
     {
-     "label": "Gość Niedzielny",
-     "qid": "Q5590495",
+     "label": "Królowa Apostołów",
+     "qid": "Q11750179",
      "role": null,
-     "from": null,
+     "from": 1982,
      "to": null,
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Królowa Apostołów",
-     "qid": "Q11750179",
+     "label": "Gość Niedzielny",
+     "qid": "Q5590495",
      "role": null,
      "from": null,
      "to": null,
@@ -23377,8 +22779,22 @@
      "label": "Nauczycielka",
      "qid": null,
      "role": null,
-     "from": 1974,
-     "to": 1993,
+     "from": 1963,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Jacek Wilk": {
+   "qid": "Q19690243",
+   "revid": 79658226,
+   "items": [
+    {
+     "label": "Własna kancelaria adwokacka",
+     "qid": null,
+     "role": null,
+     "from": 2005,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -23387,6 +22803,14 @@
    "qid": "Q11772408",
    "revid": 80208227,
    "items": [
+    {
+     "label": "Uczelnia Korczaka – Akademia Nauk Stosowanych",
+     "qid": "Q9380819",
+     "role": null,
+     "from": 2001,
+     "to": 2007,
+     "src": "plwiki,wikidata"
+    },
     {
      "label": "Uniwersytet Jana Kochanowskiego w Kielcach",
      "qid": "Q3551420",
@@ -23418,14 +22842,6 @@
      "from": 2022,
      "to": 2023,
      "src": "wikidata"
-    },
-    {
-     "label": "Uczelnia Korczaka – Akademia Nauk Stosowanych",
-     "qid": "Q9380819",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
     }
    ]
   },
@@ -23607,6 +23023,20 @@
     }
    ]
   },
+  "Zbigniew Wojciechowski (polityk)": {
+   "qid": "Q9388406",
+   "revid": 80611388,
+   "items": [
+    {
+     "label": "Własna kancelaria prawnicza",
+     "qid": null,
+     "role": null,
+     "from": 2007,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Edward Wojtas": {
    "qid": "Q1294150",
    "revid": 79860661,
@@ -23615,8 +23045,8 @@
      "label": "Dyrektor generalny tego",
      "qid": null,
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1997,
+     "to": 1998,
      "src": "plwiki"
     }
    ]
@@ -23630,6 +23060,20 @@
      "qid": null,
      "role": null,
      "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Marek Wojtera": {
+   "qid": "Q6758920",
+   "revid": 79860326,
+   "items": [
+    {
+     "label": "Własna firma usługowo",
+     "qid": null,
+     "role": null,
+     "from": 1996,
      "to": null,
      "src": "plwiki"
     }
@@ -23665,8 +23109,8 @@
      "label": "Georgetown University",
      "qid": "Q333886",
      "role": "profesor wizytujący",
-     "from": null,
-     "to": null,
+     "from": 1994,
+     "to": 1996,
      "src": "plwiki"
     },
     {
@@ -23699,6 +23143,20 @@
    "items": [
     {
      "label": "Leśnik",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Zdzisław Wolski": {
+   "qid": "Q72831660",
+   "revid": 81083999,
+   "items": [
+    {
+     "label": "Własna firma budowlana",
      "qid": null,
      "role": null,
      "from": null,
@@ -23757,21 +23215,21 @@
      "label": "Akademia Medyczna w Łodzi",
      "qid": "Q6806253",
      "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Politechnika Łódzka",
-     "qid": "Q2140369",
-     "role": null,
-     "from": null,
+     "from": 1982,
      "to": null,
      "src": "plwiki"
     },
     {
      "label": "Uniwersytet Medyczny w Łodzi",
      "qid": "Q495957",
+     "role": null,
+     "from": 1982,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Politechnika Łódzka",
+     "qid": "Q2140369",
      "role": null,
      "from": null,
      "to": null,
@@ -24048,22 +23506,6 @@
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Agora",
-     "qid": "Q395389",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
-     "label": "Gazeta Wyborcza",
-     "qid": "Q741296",
-     "role": "dziennikarz",
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    },
-    {
      "label": "Tygodnik Mazowsze",
      "qid": "Q9363504",
      "role": null,
@@ -24159,20 +23601,6 @@
     }
    ]
   },
-  "Zbyszek Zaborowski": {
-   "qid": "Q9296820",
-   "revid": 80404615,
-   "items": [
-    {
-     "label": "Asystent",
-     "qid": null,
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
   "Jan Zaciura": {
    "qid": "Q11719506",
    "revid": 79834059,
@@ -24244,20 +23672,6 @@
     {
      "label": "Rybnicka Spółka Węglowa",
      "qid": "Q9324292",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Iwona Zakrzewska": {
-   "qid": "Q11714611",
-   "revid": 80624845,
-   "items": [
-    {
-     "label": "Specjalista",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -24417,6 +23831,20 @@
     }
    ]
   },
+  "Maria Zbyrowska": {
+   "qid": "Q6761672",
+   "revid": 79836410,
+   "items": [
+    {
+     "label": "Własna firma transportowa",
+     "qid": null,
+     "role": null,
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "Hanna Zdanowska": {
    "qid": "Q293211",
    "revid": 80876052,
@@ -24475,7 +23903,7 @@
      "label": "Uniwersytet w Utrechcie",
      "qid": "Q221653",
      "role": null,
-     "from": 1985,
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     },
@@ -24549,7 +23977,15 @@
      "label": "Telpod",
      "qid": "Q9356597",
      "role": null,
-     "from": null,
+     "from": 1979,
+     "to": 1983,
+     "src": "plwiki"
+    },
+    {
+     "label": "Własne przedsiębiorstwo projektowe",
+     "qid": null,
+     "role": null,
+     "from": 1998,
      "to": null,
      "src": "plwiki"
     }
@@ -24599,8 +24035,8 @@
      "label": "Owens-Illinois",
      "qid": "Q180106",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1976,
+     "to": 1982,
      "src": "plwiki"
     }
    ]
@@ -24659,20 +24095,6 @@
      "role": null,
      "from": null,
      "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Jan Zubowski": {
-   "qid": "Q6150289",
-   "revid": 79838974,
-   "items": [
-    {
-     "label": "Dyrektor",
-     "qid": null,
-     "role": null,
-     "from": 1990,
-     "to": 2004,
      "src": "plwiki"
     }
    ]
@@ -24871,8 +24293,8 @@
      "label": "Muzeum im. Władysława Orkana w Rabce-Zdroju",
      "qid": "Q11787305",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1969,
+     "to": 1974,
      "src": "plwiki"
     },
     {
@@ -24886,20 +24308,6 @@
     {
      "label": "Związek Podhalan",
      "qid": "Q9392390",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
-    }
-   ]
-  },
-  "Adam Żyliński": {
-   "qid": "Q351397",
-   "revid": 79860952,
-   "items": [
-    {
-     "label": "Dyrektor",
-     "qid": null,
      "role": null,
      "from": null,
      "to": null,
@@ -24926,6 +24334,14 @@
    "revid": 79149953,
    "items": [
     {
+     "label": "Centrum Badania Opinii Społecznej",
+     "qid": "Q5062544",
+     "role": "konsultant",
+     "from": 1985,
+     "to": 1989,
+     "src": "plwiki"
+    },
+    {
      "label": "Akademia Finansów i Biznesu Vistula",
      "qid": "Q7895361",
      "role": null,
@@ -24939,14 +24355,6 @@
      "role": null,
      "from": 2000,
      "to": 2002,
-     "src": "plwiki"
-    },
-    {
-     "label": "Centrum Badania Opinii Społecznej",
-     "qid": "Q5062544",
-     "role": "konsultant",
-     "from": null,
-     "to": null,
      "src": "plwiki"
     },
     {
@@ -24983,7 +24391,7 @@
      "label": "Związek Bojowników o Wolność i Demokrację",
      "qid": "Q1126143",
      "role": null,
-     "from": 1972,
+     "from": 1969,
      "to": null,
      "src": "plwiki"
     }
@@ -25049,7 +24457,7 @@
      "label": "Instytut Nauk Ekonomicznych Polskiej Akademii Nauk",
      "qid": "Q11125432",
      "role": null,
-     "from": null,
+     "from": 1986,
      "to": null,
      "src": "plwiki"
     },
@@ -25057,7 +24465,7 @@
      "label": "Polska Akademia Nauk",
      "qid": "Q651690",
      "role": null,
-     "from": null,
+     "from": 1986,
      "to": null,
      "src": "plwiki"
     },
@@ -25076,16 +24484,16 @@
    "revid": 80296704,
    "items": [
     {
-     "label": "Uniwersytet Warszawski",
-     "qid": "Q144488",
+     "label": "Uniwersytet Wrocławski",
+     "qid": "Q315658",
      "role": null,
-     "from": 1969,
+     "from": 1962,
      "to": null,
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Uniwersytet Wrocławski",
-     "qid": "Q315658",
+     "label": "Uniwersytet Warszawski",
+     "qid": "Q144488",
      "role": null,
      "from": 1969,
      "to": null,
@@ -25155,7 +24563,7 @@
      "label": "Katolicki Uniwersytet Lubelski Jana Pawła II",
      "qid": "Q175529",
      "role": "profesora",
-     "from": 1991,
+     "from": 1990,
      "to": null,
      "src": "plwiki,wikidata"
     },
@@ -25543,8 +24951,8 @@
      "label": "Powszechna Kasa Oszczędności Bank Polski",
      "qid": "Q578832",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1966,
+     "to": 1975,
      "src": "plwiki"
     }
    ]
@@ -25645,7 +25053,7 @@
      "label": "Bank Ochrony Środowiska",
      "qid": "Q4855958",
      "role": "wiceprezes zarządu",
-     "from": null,
+     "from": 1999,
      "to": null,
      "src": "plwiki"
     }
@@ -25887,6 +25295,20 @@
      "label": "Rada Wzajemnej Pomocy Gospodarczej",
      "qid": "Q191582",
      "role": null,
+     "from": 1988,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Marek Kucharski": {
+   "qid": "Q11768259",
+   "revid": 81154538,
+   "items": [
+    {
+     "label": "Własna firma działająca na",
+     "qid": null,
+     "role": null,
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -25970,6 +25392,14 @@
    "revid": 79938563,
    "items": [
     {
+     "label": "Uniwersytet Łódzki",
+     "qid": "Q137503",
+     "role": null,
+     "from": 1969,
+     "to": 1980,
+     "src": "plwiki"
+    },
+    {
      "label": "Instytut Nauk Ekonomicznych Polskiej Akademii Nauk",
      "qid": "Q11125432",
      "role": null,
@@ -25980,14 +25410,6 @@
     {
      "label": "Polska Akademia Nauk",
      "qid": "Q651690",
-     "role": null,
-     "from": 1981,
-     "to": 1989,
-     "src": "plwiki"
-    },
-    {
-     "label": "Uniwersytet Łódzki",
-     "qid": "Q137503",
      "role": null,
      "from": 1981,
      "to": 1989,
@@ -26039,7 +25461,7 @@
      "label": "Ruch Obrony Praw Człowieka i Obywatela",
      "qid": "Q6926637",
      "role": null,
-     "from": null,
+     "from": 1976,
      "to": null,
      "src": "plwiki"
     }
@@ -26055,6 +25477,14 @@
      "role": null,
      "from": 1973,
      "to": 1978,
+     "src": "plwiki"
+    },
+    {
+     "label": "Uniwersytet WSB Merito w Poznaniu",
+     "qid": "Q9380713",
+     "role": null,
+     "from": 2002,
+     "to": 2006,
      "src": "plwiki"
     },
     {
@@ -26080,14 +25510,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Uniwersytet WSB Merito w Poznaniu",
-     "qid": "Q9380713",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -26201,8 +25623,8 @@
      "label": "Młodszy asystent",
      "qid": null,
      "role": null,
-     "from": 1953,
-     "to": 1963,
+     "from": 1948,
+     "to": 1951,
      "src": "plwiki"
     },
     {
@@ -26342,20 +25764,20 @@
      "src": "plwiki"
     },
     {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "role": null,
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Instytut Filozofii i Socjologii Polskiej Akademii Nauk",
      "qid": "Q11713023",
      "role": null,
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
-     "qid": "Q1003",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     },
     {
      "label": "Uniwersytet Civitas w Warszawie",
@@ -26519,8 +25941,8 @@
      "label": "Komitet Samoobrony Społecznej „KOR”",
      "qid": "Q5152957",
      "role": null,
-     "from": 1980,
-     "to": null,
+     "from": 1978,
+     "to": 1980,
      "src": "plwiki"
     },
     {
@@ -26779,7 +26201,7 @@
      "label": "Zakłady Mechaniczne „Bumar-Łabędy”",
      "qid": "Q9182020",
      "role": null,
-     "from": null,
+     "from": 1991,
      "to": null,
      "src": "plwiki"
     }
@@ -26907,8 +26329,8 @@
      "label": "Telewizja Polska",
      "qid": "Q129110",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 1994,
+     "to": 1996,
      "src": "plwiki"
     }
    ]
@@ -26973,7 +26395,7 @@
      "label": "Newag",
      "qid": "Q766622",
      "role": null,
-     "from": null,
+     "from": 1987,
      "to": null,
      "src": "plwiki"
     }
@@ -27243,8 +26665,8 @@
      "label": "Federacja Stowarzyszeń Naukowo-Technicznych NOT",
      "qid": "Q7209908",
      "role": "instruktor",
-     "from": null,
-     "to": null,
+     "from": 1971,
+     "to": 1988,
      "src": "plwiki"
     }
    ]
@@ -27257,8 +26679,8 @@
      "label": "Bank Polska Kasa Opieki",
      "qid": "Q806642",
      "role": null,
-     "from": 1995,
-     "to": 1998,
+     "from": 1992,
+     "to": null,
      "src": "plwiki"
     },
     {
@@ -27348,7 +26770,7 @@
      "qid": "Q688872",
      "role": null,
      "from": 1975,
-     "to": 1984,
+     "to": null,
      "src": "plwiki,wikidata"
     },
     {
@@ -27456,6 +26878,20 @@
      "qid": null,
      "role": null,
      "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "Antoni Jaszczak": {
+   "qid": "Q4776168",
+   "revid": 79463656,
+   "items": [
+    {
+     "label": "Własna firma",
+     "qid": null,
+     "role": null,
+     "from": 1996,
      "to": null,
      "src": "plwiki"
     }
@@ -27589,8 +27025,8 @@
      "label": "Polskie Górnictwo Naftowe i Gazownictwo",
      "qid": "Q673670",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2014,
+     "to": 2016,
      "src": "plwiki"
     }
    ]
@@ -27989,9 +27425,9 @@
      "label": "Collegium Verum",
      "qid": "Q9351626",
      "role": null,
-     "from": 2001,
-     "to": 2003,
-     "src": "plwiki,wikidata"
+     "from": null,
+     "to": null,
+     "src": "wikidata"
     }
    ]
   },
@@ -28128,16 +27564,24 @@
    "revid": 73766012,
    "items": [
     {
-     "label": "Bank BPH",
-     "qid": "Q674093",
+     "label": "Erste Bank Polska",
+     "qid": "Q806653",
      "role": null,
-     "from": null,
+     "from": 1997,
      "to": null,
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Erste Bank Polska",
-     "qid": "Q806653",
+     "label": "Wielkopolski Bank Kredytowy",
+     "qid": "Q7999068",
+     "role": null,
+     "from": 1997,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Bank BPH",
+     "qid": "Q674093",
      "role": null,
      "from": null,
      "to": null,
@@ -28158,14 +27602,6 @@
      "from": null,
      "to": null,
      "src": "plwiki"
-    },
-    {
-     "label": "Wielkopolski Bank Kredytowy",
-     "qid": "Q7999068",
-     "role": null,
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
     }
    ]
   },
@@ -28185,8 +27621,8 @@
      "label": "TV Puls",
      "qid": "Q446161",
      "role": null,
-     "from": null,
-     "to": null,
+     "from": 2000,
+     "to": 2002,
      "src": "plwiki,wikidata"
     }
    ]
@@ -28243,8 +27679,8 @@
      "label": "Powszechna Kasa Oszczędności Bank Polski",
      "qid": "Q578832",
      "role": "dealer walutowy",
-     "from": 2005,
-     "to": 2006,
+     "from": 2004,
+     "to": null,
      "src": "plwiki"
     },
     {
@@ -28342,18 +27778,18 @@
    "revid": 81152047,
    "items": [
     {
-     "label": "Pracodawcy Rzeczypospolitej Polskiej",
-     "qid": "Q5374324",
-     "role": "główny legislator",
-     "from": 2023,
+     "label": "Najwyższa Izba Kontroli",
+     "qid": "Q1963911",
+     "role": null,
+     "from": 2004,
      "to": null,
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Najwyższa Izba Kontroli",
-     "qid": "Q1963911",
-     "role": null,
-     "from": null,
+     "label": "Pracodawcy Rzeczypospolitej Polskiej",
+     "qid": "Q5374324",
+     "role": "główny legislator",
+     "from": 2023,
      "to": null,
      "src": "plwiki,wikidata"
     },
@@ -28408,6 +27844,14 @@
    "revid": 80340598,
    "items": [
     {
+     "label": "Reuters",
+     "qid": "Q130879",
+     "role": "korespondent makroekonomiczny agencji",
+     "from": 2006,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
      "label": "Bank BPH",
      "qid": "Q674093",
      "role": null,
@@ -28416,18 +27860,10 @@
      "src": "plwiki,wikidata"
     },
     {
-     "label": "Reuters",
-     "qid": "Q130879",
-     "role": "korespondent makroekonomiczny agencji",
-     "from": 2011,
-     "to": null,
-     "src": "plwiki,wikidata"
-    },
-    {
      "label": "Boston Consulting Group",
      "qid": "Q135635",
      "role": "konsultant",
-     "from": null,
+     "from": 2016,
      "to": null,
      "src": "plwiki,wikidata"
     },
@@ -28589,14 +28025,13 @@
   "mp:16": "Konrad Berkowicz",
   "mp:17": "Sylwia Bielawska",
   "mp:18": "Marek Biernacki",
-  "mp:20": "Mariusz Błaszczak",
   "mp:22": "Rafał Bochenek",
   "mp:23": "Izabela Bodnar",
+  "mp:24": "Jacek Bogucki",
   "mp:25": "Zbigniew Bogucki (polityk)",
   "mp:27": "Joanna Borowiak",
   "mp:31": "Marcin Bosacki",
   "mp:32": "Karina Bosak",
-  "mp:33": "Krzysztof Bosak",
   "mp:34": "Grzegorz Braun",
   "mp:37": "Waldemar Buda",
   "mp:38": "Borys Budka",
@@ -28617,6 +28052,7 @@
   "mp:63": "Sławomir Ćwik",
   "mp:68": "Andrzej Domański",
   "mp:69": "Bartłomiej Dorywalski",
+  "mp:70": "Robert Dowhan",
   "mp:73": "Michał Dworczyk",
   "mp:76": "Agnieszka Dziemianowicz-Bąk",
   "mp:78": "Magdalena Filipek-Sobczak",
@@ -28627,6 +28063,7 @@
   "mp:91": "Zdzisław Gawlik",
   "mp:92": "Andrzej Gawron (polityk)",
   "mp:94": "Elżbieta Gelert",
+  "mp:96": "Artur Gierada",
   "mp:98": "Włodzisław Giziński",
   "mp:99": "Szymon Giżyński",
   "mp:100": "Piotr Gliński",
@@ -28637,12 +28074,12 @@
   "mp:114": "Krzysztof Grabczuk",
   "mp:116": "Marcin Grabowski (polityk)",
   "mp:117": "Michał Gramatyka",
+  "mp:118": "Małgorzata Gromadzka",
   "mp:120": "Andrzej Grzyb (poseł)",
   "mp:122": "Kazimierz Gwiazdowski",
   "mp:123": "Marcin Gwóźdź",
   "mp:124": "Marek Gzik",
   "mp:125": "Krzysztof Habura",
-  "mp:127": "Iwona Hartwich",
   "mp:128": "Paulina Hennig-Kloska",
   "mp:133": "Szymon Hołownia",
   "mp:137": "Paweł Jabłoński",
@@ -28665,6 +28102,7 @@
   "mp:175": "Tomasz Kostuś",
   "mp:178": "Paweł Kowal",
   "mp:180": "Janusz Kowalski (polityk)",
+  "mp:181": "Bartosz Kownacki",
   "mp:184": "Wiesław Krajewski (polityk)",
   "mp:187": "Michał Krawczyk (polityk)",
   "mp:188": "Robert Kropiwnicki",
@@ -28690,12 +28128,12 @@
   "mp:227": "Marlena Maląg",
   "mp:235": "Jerzy Materna",
   "mp:239": "Paulina Matysiak",
+  "mp:240": "Łukasz Mejza",
+  "mp:241": "Sławomir Mentzen",
   "mp:242": "Anna Milczanowska",
   "mp:246": "Mateusz Morawiecki",
   "mp:247": "Jan Mosiński",
-  "mp:249": "Czesław Mroczek (polityk)",
   "mp:250": "Aleksander Mrówczyński",
-  "mp:251": "Izabela Mrzygłocka",
   "mp:252": "Joanna Mucha",
   "mp:260": "Małgorzata Niemczyk",
   "mp:262": "Sławomir Nitras",
@@ -28704,7 +28142,6 @@
   "mp:265": "Tomasz Nowak (polityk)",
   "mp:266": "Wanda Nowicka",
   "mp:268": "Mirosława Nykiel",
-  "mp:269": "Marcin Ociepa",
   "mp:273": "Dorota Olko",
   "mp:276": "Łukasz Osmalak",
   "mp:280": "Teresa Pamuła",
@@ -28714,11 +28151,9 @@
   "mp:293": "Lucjan Pietrzczyk",
   "mp:294": "Dariusz Piontkowski",
   "mp:295": "Kazimierz Plocke",
-  "mp:299": "Jerzy Polaczek",
   "mp:300": "Elżbieta Polak",
   "mp:304": "Jacek Protas",
   "mp:305": "Marcin Przydacz",
-  "mp:309": "Ireneusz Raś",
   "mp:310": "Zbigniew Rau (prawnik)",
   "mp:311": "Marcin Romanowski",
   "mp:312": "Bartosz Romowicz",
@@ -28729,7 +28164,6 @@
   "mp:323": "Wojciech Saługa",
   "mp:324": "Tadeusz Samborski",
   "mp:325": "Jacek Sasin",
-  "mp:326": "Marek Sawicki",
   "mp:327": "Ewa Schädler",
   "mp:328": "Joanna Scheuring-Wielgus",
   "mp:329": "Anna Schmidt",
@@ -28744,7 +28178,6 @@
   "mp:344": "Waldemar Sługocki",
   "mp:347": "Anna Sobolak",
   "mp:350": "Agnieszka Soin",
-  "mp:353": "Katarzyna Sójka",
   "mp:354": "Magdalena Sroka (ur. 1979)",
   "mp:355": "Mirosława Stachowiak-Różecka",
   "mp:357": "Franciszek Sterczewski",
@@ -28768,15 +28201,12 @@
   "mp:391": "Wioleta Tomczak",
   "mp:393": "Stanisław Tomczyszyn",
   "mp:397": "Krzysztof Tuduj",
-  "mp:398": "Sylwester Tułajew",
   "mp:399": "Witold Tumanowicz",
-  "mp:400": "Donald Tusk",
   "mp:401": "Stanisław Tyszka",
   "mp:404": "Piotr Uruski",
   "mp:409": "Robert Warwas",
   "mp:410": "Jan Warzecha",
   "mp:413": "Maciej Wąsik",
-  "mp:418": "Patryk Wicher",
   "mp:419": "Dariusz Wieczorek (polityk)",
   "mp:420": "Jarosław Wieczorek",
   "mp:421": "Monika Wielichowska",
@@ -28816,7 +28246,6 @@
   "mp:485": "Krzysztof Szymański (ur. 1990)",
   "mp:486": "Włodzimierz Tomaszewski",
   "mp:492": "Rafał Romanowski",
-  "mp:494": "Robert Jagła",
   "mp:496": "Bogumiła Olbryś",
   "mp:498": "Marek Subocz",
   "osoba:4-1": "Łukasz Abgarowicz",
@@ -28834,8 +28263,8 @@
   "osoba:1-11": "Wojciech Arkuszewski",
   "osoba:8-14": "Joanna Augustynowska",
   "osoba:2-8": "Andrzej Aumiller",
-  "osoba:7-474": "Piotr Babiarz",
   "osoba:4-8": "Tadeusz Badach",
+  "osoba:8-487": "Maciej Badora",
   "osoba:3-11": "Leszek Balcerowicz",
   "osoba:1-16": "Marek Balicki",
   "osoba:7-18": "Marek Balt",
@@ -28893,10 +28322,8 @@
   "osoba:1-55": "Juliusz Braun",
   "osoba:3-36": "Ryszard Brejza",
   "osoba:5-25": "Joachim Brudziński",
-  "osoba:1-56": "Georg Brylka",
   "osoba:8-41": "Józef Brynkus",
   "osoba:1-57": "Zbigniew Brzycki",
-  "osoba:5-27": "Barbara Bubula",
   "osoba:2-35": "Piotr Buczkowski",
   "osoba:2-36": "Jan Budkiewicz",
   "osoba:5-29": "Jerzy Budnik",
@@ -28912,7 +28339,6 @@
   "osoba:2-45": "Jan Byra (polityk)",
   "osoba:6-39": "Marek Cebula",
   "osoba:3-46": "Franciszka Cegielska",
-  "osoba:5-32": "Teresa Ceglecka-Zielonka",
   "osoba:2-46": "Andrzej Celiński",
   "osoba:4-36": "Józef Cepil",
   "osoba:1-65": "Michał Chałoński",
@@ -28927,7 +28353,6 @@
   "osoba:1-68": "Bogusław Choina",
   "osoba:1-69": "Janusz Choiński",
   "osoba:9-42": "Kazimierz Choma",
-  "osoba:7-56": "Małgorzata Chomycz-Śmigielska",
   "osoba:3-50": "Andrzej Chrzanowski (polityk)",
   "osoba:1-70": "Wiesław Chrzanowski (prawnik)",
   "osoba:2-51": "Leszek Chwat",
@@ -29004,7 +28429,6 @@
   "osoba:2-85": "Stanisław Fal",
   "osoba:9-80": "Monika Falej",
   "osoba:4-79": "Tadeusz Ferenc",
-  "osoba:5-70": "Arkady Radosław Fiedler",
   "osoba:4-80": "Michał Figlus",
   "osoba:6-80": "Marian Filar",
   "osoba:3-85": "Anna Filek",
@@ -29034,6 +28458,7 @@
   "osoba:6-88": "Grażyna Gęsicka",
   "osoba:6-89": "Łukasz Gibała",
   "osoba:3-98": "Roman Giedrojć",
+  "osoba:6-90": "Artur Gierada",
   "osoba:4-91": "Maciej Giertych",
   "osoba:1-110": "Mieczysław Gil",
   "osoba:9-101": "Hanna Gill-Piątek",
@@ -29049,8 +28474,6 @@
   "osoba:1-112": "Tadeusz Godlewski (nauczyciel)",
   "osoba:6-506": "John Godson",
   "osoba:5-86": "Mieczysław Golba",
-  "osoba:3-102": "Marian Goliński",
-  "osoba:5-88": "Henryk Gołębiewski (polityk)",
   "osoba:2-105": "Wiesław Gołębiewski",
   "osoba:8-108": "Jarosław Gonciarz",
   "osoba:5-90": "Stanisław Gorczyca (polityk)",
@@ -29084,8 +28507,6 @@
   "osoba:5-101": "Rafał Grupiński",
   "osoba:2-115": "Józef Gruszka (1947–2020)",
   "osoba:3-111": "Stanisław Grzonkowski",
-  "osoba:4-116": "Stanisław Gudzowski",
-  "osoba:5-106": "Alina Gut",
   "osoba:2-118": "Jerzy Gwiżdż",
   "osoba:6-475": "Kazimierz Hajda",
   "osoba:1-120": "Adam Halber",
@@ -29102,6 +28523,7 @@
   "osoba:3-116": "Krystyna Herman",
   "osoba:4-121": "Jerzy Hertel",
   "osoba:5-109": "Jolanta Hibner",
+  "osoba:4-122": "Danuta Hojarska",
   "osoba:1-128": "Tomasz Holc",
   "osoba:1-129": "Jerzy Hrybacz",
   "osoba:7-132": "Józefina Hrynkiewicz",
@@ -29115,8 +28537,6 @@
   "osoba:3-123": "Mieczysław Jacków",
   "osoba:4-472": "Zbigniew Jacyna-Onyszkiewicz",
   "osoba:4-126": "Andrzej Jagiełło",
-  "osoba:5-117": "Jarosław Jagiełło",
-  "osoba:7-464": "Jarosław Jagiełło",
   "osoba:7-137": "Patryk Jaki",
   "osoba:6-126": "Elżbieta Jakubiak",
   "osoba:3-125": "Aleksandra Jakubowska",
@@ -29129,7 +28549,6 @@
   "osoba:4-130": "Ewa Janik (ur. 1947)",
   "osoba:4-131": "Ewa Janik (ur. 1948)",
   "osoba:5-119": "Grzegorz Janik (polityk)",
-  "osoba:2-131": "Krzysztof Janik",
   "osoba:3-131": "Jacek Janiszewski",
   "osoba:1-135": "Michał Janiszewski (1954–2025)",
   "osoba:4-133": "Elżbieta Jankowska (polityk)",
@@ -29193,8 +28612,6 @@
   "osoba:4-165": "Mirosława Kątna",
   "osoba:5-143": "Beata Kempa",
   "osoba:1-157": "Andrzej Kern",
-  "osoba:4-167": "Tadeusz Kędziak",
-  "osoba:8-156": "Jan Kilian (polityk)",
   "osoba:2-162": "Henryk Kisielewski",
   "osoba:2-163": "Jan Kisieliński",
   "osoba:4-168": "Bożena Kizińska",
@@ -29208,6 +28625,7 @@
   "osoba:5-149": "Izabela Kloc",
   "osoba:1-164": "Marek Kłoczko",
   "osoba:5-469": "Andrzej Kłopotek",
+  "osoba:3-173": "Eugeniusz Kłopotek",
   "osoba:5-151": "Sławomir Kłosowski",
   "osoba:5-152": "Ryszard Knosala",
   "osoba:3-175": "Zdzisława Kobylińska",
@@ -29237,13 +28655,16 @@
   "osoba:2-175": "Wiesław Kossakowski",
   "osoba:6-465": "Wojciech Kossakowski",
   "osoba:5-165": "Jacek Kościelniak",
+  "osoba:7-188": "Roman Kotliński",
   "osoba:1-179": "Józef Kowalczyk (1948–2000)",
   "osoba:2-182": "Bronisława Kowalska (polityk)",
   "osoba:5-169": "Bogusław Kowalski",
   "osoba:7-190": "Sławomir Kowalski (polityk)",
+  "osoba:7-191": "Bartosz Kownacki",
   "osoba:2-183": "Stanisław Kowolik",
   "osoba:6-180": "Jacek Kozaczyński",
   "osoba:1-185": "Mikołaj Kozakiewicz",
+  "osoba:5-171": "Jerzy Kozdroń",
   "osoba:3-184": "Andrzej Kozioł (polityk)",
   "osoba:6-183": "Agnieszka Kozłowska-Rajewicz",
   "osoba:5-173": "Maks Kraczkowski",
@@ -29300,7 +28721,6 @@
   "osoba:1-207": "Janusz Lewandowski",
   "osoba:1-208": "Mirosław Lewandowski",
   "osoba:3-207": "Piotr Lewandowski (polityk)",
-  "osoba:3-208": "Tadeusz Lewandowski (ur. 1951)",
   "osoba:3-209": "Bogusław Liberadzki",
   "osoba:5-191": "Jan Filip Libicki",
   "osoba:8-215": "Ewa Lieder",
@@ -29310,14 +28730,12 @@
   "osoba:1-212": "Irena Lipowicz",
   "osoba:6-209": "Bogdan Lis",
   "osoba:4-215": "Janusz Lisak",
-  "osoba:5-195": "Krzysztof Lisek",
   "osoba:4-462": "Andrzej Liss",
   "osoba:1-213": "Teresa Liszcz",
   "osoba:1-214": "Jan Lityński",
   "osoba:1-215": "Władysław Liwak",
   "osoba:8-221": "Katarzyna Lubnauer",
   "osoba:2-215": "Krzysztof Luks",
-  "osoba:4-216": "Robert Luśnia",
   "osoba:1-216": "Zbigniew Ładosz",
   "osoba:7-220": "Marek Łapiński (polityk)",
   "osoba:4-217": "Mariusz Łapiński",
@@ -29341,8 +28759,8 @@
   "osoba:5-210": "Tadeusz Madziarczyk",
   "osoba:1-228": "Wit Majewski",
   "osoba:8-478": "Robert Majka",
+  "osoba:1-229": "Janusz Maksymiuk",
   "osoba:9-228": "Wojciech Maksymowicz",
-  "osoba:2-226": "Janusz Malinowski",
   "osoba:1-230": "Aleksander Małachowski",
   "osoba:1-231": "Maciej Manicki",
   "osoba:3-227": "Edward Maniura",
@@ -29375,7 +28793,6 @@
   "osoba:2-244": "Andrzej Micewski",
   "osoba:4-244": "Aldona Michalak",
   "osoba:1-244": "Elżbieta Michalak",
-  "osoba:2-245": "Józef Michalik (polityk)",
   "osoba:1-247": "Marek Michalik",
   "osoba:2-246": "Marian Michalski",
   "osoba:2-247": "Waldemar Michna",
@@ -29389,6 +28806,7 @@
   "osoba:4-250": "Jerzy Młynarczyk",
   "osoba:1-251": "Piotr Mochnaczewski",
   "osoba:1-252": "Leszek Moczulski",
+  "osoba:2-255": "Kazimierz Modzelewski",
   "osoba:1-255": "Wojciech Mojzesowicz",
   "osoba:5-238": "Halina Molka",
   "osoba:8-255": "Kornel Morawiecki",
@@ -29443,8 +28861,6 @@
   "osoba:1-270": "Janusz Onyszkiewicz",
   "osoba:3-480": "Grzegorz Opala",
   "osoba:1-271": "Henryk Opilo",
-  "osoba:5-264": "Marek Opioła",
-  "osoba:4-280": "Jan Orkisz",
   "osoba:1-272": "Jerzy Orłowski (ur. 1938)",
   "osoba:1-274": "Jerzy Osiatyński",
   "osoba:3-272": "Andrzej Osnowski",
@@ -29480,9 +28896,9 @@
   "osoba:8-295": "Zbigniew Pawłowicz",
   "osoba:5-280": "Daniel Pawłowiec",
   "osoba:5-281": "Sylwester Pawłowski",
+  "osoba:1-285": "Waldemar Pelc",
   "osoba:2-301": "Irena Petryna",
   "osoba:3-288": "Andrzej Pęczak",
-  "osoba:2-302": "Bogdan Pęk",
   "osoba:2-303": "Wiesław Piątkowski",
   "osoba:1-291": "Jacek Piechota",
   "osoba:1-292": "Adam Piechowicz",
@@ -29496,10 +28912,8 @@
   "osoba:3-295": "Mirosław Pietrewicz",
   "osoba:1-294": "Alojzy Pietrzyk",
   "osoba:4-301": "Kazimierz Pietrzyk",
-  "osoba:4-302": "Grażyna Pijanowska",
   "osoba:1-297": "Bohdan Pilarski",
   "osoba:1-298": "Marian Piłka",
-  "osoba:2-313": "Andrzej Piotrowski (polityk)",
   "osoba:5-294": "Mateusz Piskorski",
   "osoba:2-316": "Jerzy Pistelok",
   "osoba:6-296": "Marek Plura",
@@ -29510,11 +28924,11 @@
   "osoba:2-319": "Zdzisław Podkański",
   "osoba:2-321": "Marek Pol",
   "osoba:2-323": "Tadeusz Polański",
-  "osoba:5-300": "Wojciech Pomajda",
   "osoba:4-320": "Paweł Poncyljusz",
   "osoba:1-304": "Krzysztof Popenda",
   "osoba:6-303": "Krzysztof Popiołek",
   "osoba:3-307": "Maciej Poręba",
+  "osoba:9-306": "Violetta Porowska",
   "osoba:8-309": "Jarosław Porwich",
   "osoba:1-305": "Andrzej Potocki (1964–2025)",
   "osoba:2-328": "Franciszek Potulski",
@@ -29522,7 +28936,6 @@
   "osoba:4-324": "Jacek Protasiewicz",
   "osoba:1-306": "Lech Pruchno-Wróblewski",
   "osoba:4-325": "Stanisława Prządka",
-  "osoba:5-303": "Bernard Ptak",
   "osoba:8-315": "Paweł Pudłowski",
   "osoba:1-308": "Krzysztof Putra",
   "osoba:5-304": "Adam Puza",
@@ -29598,7 +29011,6 @@
   "osoba:1-342": "Marek Siwiec",
   "osoba:2-354": "Szczepan Skomra",
   "osoba:6-346": "Aleksander Skorupa",
-  "osoba:4-351": "Józef Skowyra",
   "osoba:2-358": "Ireneusz Skubis",
   "osoba:8-350": "Wojciech Skurkiewicz",
   "osoba:4-353": "Józef Skutecki",
@@ -29629,7 +29041,6 @@
   "osoba:3-353": "Edmund Sroka",
   "osoba:1-356": "Grażyna Staniszewska (polityk)",
   "osoba:6-357": "Piotr Stanke",
-  "osoba:1-358": "Stanisław Stańdo",
   "osoba:1-359": "Joanna Staręga-Piasek",
   "osoba:5-350": "Lidia Staroń",
   "osoba:1-360": "Marian Starownik",
@@ -29658,7 +29069,6 @@
   "osoba:1-370": "Tadeusz Syryjczyk",
   "osoba:1-372": "Tadeusz Sytek",
   "osoba:1-373": "Alojzy Szablewski",
-  "osoba:1-374": "Herbert Szafraniec",
   "osoba:1-375": "Stefan Szańkowski",
   "osoba:5-365": "Wojciech Szarama",
   "osoba:1-376": "Andrzej Szarawarski",
@@ -29699,10 +29109,10 @@
   "osoba:3-384": "Antoni Szymański (polityk)",
   "osoba:1-384": "Janusz Szymański (polityk)",
   "osoba:3-386": "Zbigniew Szymański (lekarz)",
+  "osoba:4-394": "Zygmunt Szymański (polityk)",
   "osoba:5-381": "Jan Szyszko",
   "osoba:1-385": "Tomasz Szyszko",
   "osoba:4-396": "Stanisław Szyszkowski",
-  "osoba:2-403": "Klemens Ścierski",
   "osoba:1-386": "Iwona Śledzińska-Katarasińska",
   "osoba:5-383": "Piotr Ślusarczyk",
   "osoba:5-478": "Witold Śmiałek",
@@ -29714,7 +29124,6 @@
   "osoba:3-481": "Leszek Świętochowski",
   "osoba:1-388": "Jan Świtka (polityk)",
   "osoba:1-389": "Kazimierz Świtoń",
-  "osoba:4-400": "Halina Talaga",
   "osoba:8-396": "Dominik Tarczyński",
   "osoba:1-390": "Jacek Taylor",
   "osoba:1-392": "Andrzej Terlecki",
@@ -29729,12 +29138,12 @@
   "osoba:4-464": "Ryszard Tomczyk (polityk)",
   "osoba:4-407": "Bogusława Towalewska",
   "osoba:8-407": "Rafał Trzaskowski",
-  "osoba:3-397": "Grzegorz Tuderek",
   "osoba:4-408": "Michał Turkiewicz",
   "osoba:1-398": "Ludwik Turko",
   "osoba:1-400": "Zdzisław Tuszyński",
   "osoba:1-401": "Bolesław Twaróg",
   "osoba:3-400": "Antoni Tyczka",
+  "osoba:4-410": "Zenon Tyma",
   "osoba:5-394": "Robert Tyszkiewicz",
   "osoba:5-395": "Grażyna Tyszko",
   "osoba:2-420": "Jacek Uczkiewicz",
@@ -29758,7 +29167,6 @@
   "osoba:3-410": "Zbigniew Wawak",
   "osoba:9-417": "Piotr Wawrzyk",
   "osoba:1-415": "Stanisław Wądołowski",
-  "osoba:1-416": "Stanisław Wąsik (poseł)",
   "osoba:3-413": "Tomasz Wełnicki",
   "osoba:2-427": "Jerzy Wenderlich",
   "osoba:3-416": "Adam Wędrychowicz",
@@ -29776,6 +29184,7 @@
   "osoba:4-420": "Elżbieta Więcławska-Sauk",
   "osoba:3-422": "Marek Wikiński",
   "osoba:2-435": "Zofia Wilczyńska (polityk)",
+  "osoba:8-424": "Jacek Wilk",
   "osoba:2-437": "Małgorzata Winiarczyk-Kossakowska",
   "osoba:5-411": "Jadwiga Wiśniewska",
   "osoba:2-439": "Stanisław Wiśniewski (poseł)",
@@ -29788,13 +29197,16 @@
   "osoba:8-501": "Henryk Wnorowski",
   "osoba:8-430": "Grzegorz Wojciechowski",
   "osoba:2-440": "Janusz Wojciechowski",
+  "osoba:6-518": "Zbigniew Wojciechowski (polityk)",
   "osoba:6-422": "Edward Wojtas",
   "osoba:3-426": "Michał Wojtczak",
+  "osoba:5-421": "Marek Wojtera",
   "osoba:6-424": "Marek Wojtkowski",
   "osoba:1-428": "Andrzej Wojtyła",
   "osoba:9-431": "Agata Wojtyszek",
   "osoba:5-423": "Ewa Wolak",
   "osoba:2-441": "Krzysztof Wolfram",
+  "osoba:9-432": "Zdzisław Wolski",
   "osoba:6-485": "Sławomir Worach",
   "osoba:1-429": "Józef Woroszczak",
   "osoba:7-429": "Grzegorz Woźniak (polityk)",
@@ -29819,13 +29231,11 @@
   "osoba:8-440": "Małgorzata Wypych",
   "osoba:1-438": "Jan Wyrowiński",
   "osoba:5-435": "Stanisław Wziątek",
-  "osoba:2-452": "Zbyszek Zaborowski",
   "osoba:2-453": "Jan Zaciura",
   "osoba:4-440": "Stanisław Zadora",
   "osoba:4-441": "Rafał Zagórny",
   "osoba:4-442": "Marek Zagórski",
   "osoba:3-439": "Andrzej Zając (polityk)",
-  "osoba:1-441": "Iwona Zakrzewska",
   "osoba:3-445": "Anna Zalewska (1939–2004)",
   "osoba:2-458": "Anna Zalewska (1939–2004)",
   "osoba:1-443": "Maciej Zalewski (filolog)",
@@ -29836,6 +29246,7 @@
   "osoba:4-447": "Artur Zawisza (polityk)",
   "osoba:5-445": "Łukasz Zbonikowski",
   "osoba:2-461": "Ryszard Zbrzyzny",
+  "osoba:4-450": "Maria Zbyrowska",
   "osoba:6-444": "Hanna Zdanowska",
   "osoba:1-447": "Jerzy Zdrada",
   "osoba:4-451": "Bogdan Zdrojewski",
@@ -29851,7 +29262,6 @@
   "osoba:1-451": "Wiesława Ziółkowska",
   "osoba:3-454": "Kosma Złotowski",
   "osoba:5-454": "Maria Zuba",
-  "osoba:5-455": "Jan Zubowski",
   "osoba:7-453": "Wojciech Zubowski",
   "osoba:9-455": "Tadeusz Zwiefka",
   "osoba:1-453": "Józef Zych",
@@ -29866,8 +29276,6 @@
   "osoba:9-459": "Stanisław Żuk (polityk)",
   "osoba:3-459": "Bogdan Żurek",
   "osoba:1-461": "Stanisław Żurowski (ur. 1943)",
-  "osoba:3-460": "Adam Żyliński",
-  "osoba:6-460": "Adam Żyliński",
   "osoba:4-459": "Marek Żyliński",
   "osoba:7-460": "Jerzy Żyżyński",
   "urzad:wojciech-jaruzelski": "Wojciech Jaruzelski",
@@ -29912,6 +29320,7 @@
   "urzad:jacek-ambroziak": "Jacek Ambroziak",
   "urzad:izabella-cywinska": "Izabella Cywińska",
   "urzad:bronislaw-kaminski-minister": "Bronisław Kamiński (minister)",
+  "urzad:marek-kucharski": "Marek Kucharski",
   "urzad:aleksander-paszynski": "Aleksander Paszyński",
   "urzad:henryk-samsonowicz": "Henryk Samsonowicz",
   "urzad:florian-siwicki": "Florian Siwicki",
@@ -29973,6 +29382,7 @@
   "urzad:stefan-meller": "Stefan Meller",
   "urzad:michal-sewerynski": "Michał Seweryński",
   "urzad:piotr-wozniak-geolog": "Piotr Woźniak (geolog)",
+  "urzad:antoni-jaszczak": "Antoni Jaszczak",
   "urzad:pawel-wojciechowski-ekonomista": "Paweł Wojciechowski (ekonomista)",
   "urzad:stanislaw-kluza": "Stanisław Kluza",
   "urzad:janusz-kaczmarek": "Janusz Kaczmarek",
