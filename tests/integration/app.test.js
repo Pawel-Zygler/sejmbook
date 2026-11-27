@@ -158,8 +158,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Skład Sejmu na górze';
-const NEWEST_LINE = 'Feed: Skład Sejmu na górze';
+const NEWEST = 'Praca zawodowa';
+const NEWEST_LINE = 'Posłowie: Praca zawodowa';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

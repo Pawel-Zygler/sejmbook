@@ -2,6 +2,10 @@
 
 Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
 
+## 2026-11-27
+
+- **Posłowie: Praca zawodowa.** Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.
+
 ## 2026-11-26
 
 - **Feed: Skład Sejmu na górze.** Podział mandatów między kluby jest teraz na samej górze Feedu.

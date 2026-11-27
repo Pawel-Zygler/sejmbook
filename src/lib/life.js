@@ -1,6 +1,7 @@
 // "Spektrum partyjne" on the scale of an MP's whole life: birth, PRL, the start of the III RP (1989),
 // party and opposition memberships (Wikidata, data/life.json) and Sejm terms with clubs (data/career.json).
 import { clubFamily, termRanges } from './career.js';
+import { WORK_COLOR, WORK_LABEL } from './work.js';
 
 export const III_RP_START = 1989;
 /** Colour of the "Działalność społeczna" lane. */
@@ -84,6 +85,16 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     social.push({ label: o.label, color: SOCIAL_COLOR, from: clamp(o.from), to: clamp(Math.max(o.to ?? o.from, o.from)), since: o.to == null, prl: o.from < III_RP_START });
   }
   social.sort((a, b) => a.from - b.from || a.to - b.to);
+
+  // Professional experience (data/work.json: Polish Wikipedia + Wikidata P108), passed in as mp.work.
+  const work = [];
+  const workUndated = [];
+  for (const w of mp.work ?? []) {
+    const label = w.label;
+    if (w.from == null || w.from > now) { workUndated.push(w); continue; }
+    work.push({ label, role: w.role ?? null, full: w.role ? `${label} (${w.role})` : label, color: WORK_COLOR, from: clamp(w.from), to: clamp(Math.max(w.to ?? w.from, w.from)), since: w.to == null, prl: w.from < III_RP_START });
+  }
+  work.sort((a, b) => a.from - b.from || a.to - b.to);
   opposition.sort((a, b) => a.from - b.from);
 
   const termsByNum = new Map((career?.terms ?? []).map((t) => [t.num, t]));
@@ -114,11 +125,13 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     lanes: [
       { id: 'opposition', label: 'Opozycja w PRL', items: opposition },
       { id: 'social', label: 'Działalność społeczna', items: social },
+      { id: 'work', label: WORK_LABEL, items: work },
       { id: 'parties', label: 'Partie', items: parties },
       { id: 'sejm', label: 'Sejm', items: sejm.map((s) => ({ ...s, label: `${s.label} · ${termRanges(s.terms)}` })) },
     ].filter((l) => l.items.length),
     undated: [...new Set(undated)],
     social, socialUndated: [...new Set(socialUndated)],
+    work, workUndated,
     hasWikidata: Boolean(entry),
   };
 }

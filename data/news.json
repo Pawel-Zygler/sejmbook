@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-praca-zawodowa",
+      "date": "2026-11-27",
+      "title": "Praca zawodowa",
+      "section": "Posłowie",
+      "body": "Na osi w Spektrum partyjnym jest nowa linia „Praca zawodowa” z potwierdzonym doświadczeniem zawodowym polityków.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-26-sklad-na-gorze",
       "date": "2026-11-26",
       "title": "Skład Sejmu na górze",

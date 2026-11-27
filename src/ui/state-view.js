@@ -1,6 +1,7 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
-import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl } from './render.js';
+import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl, workText, workTip } from './render.js';
+import { workFor, WORK_COLOR, WORK_LABEL } from '../lib/work.js';
 import { clubFamily } from '../lib/career.js';
 import { aboutYears } from '../lib/pl-words.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
@@ -123,18 +124,22 @@ const yearOf = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ?
  * The life line of an official, in the same look as on MP profiles: their state roles over time since 1989,
  * government roles in one lane and the top offices in another, coloured by party.
  */
-export function roleLine(roles, today, more = '') {
+export function roleLine(roles, today, more = '', work = []) {
   const now = yearOf(today);
   const items = roles.map((r) => ({ r, from: yearOf(r.from), to: yearOf(r.to ?? today) })).filter((x) => x.from != null && x.to != null);
   if (!items.length) return '';
-  const start = Math.min(1989, ...items.map((x) => Math.floor(x.from)));
+  // Professional experience (data/work.json) on its own lane, years only.
+  const jobs = work.filter((w) => w.from != null && w.from <= now).map((w) => ({ w, from: w.from, to: Math.max(w.to ?? w.from, w.from) + (w.to == null ? 0.5 : 1) }));
+  const start = Math.min(1989, ...items.map((x) => Math.floor(x.from)), ...jobs.map((x) => x.from));
   const pos = (y) => (((y - start) / (now - start)) * 100).toFixed(2);
   const width = (a, b) => Math.max(((b - a) / (now - start)) * 100, 0.8).toFixed(2);
   const seg = (x) => {
     const color = x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
     return `<span class="life-seg${x.r.to ? '' : ' open'}" style="--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
   };
+  const jobSeg = (x) => `<span class="life-seg${Number(width(x.from, x.to)) < 7 ? ' narrow' : ''}" style="--seg:${WORK_COLOR};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.w.role ? `${x.w.label} (${x.w.role})` : x.w.label)}: ${x.w.to == null ? `od ${x.w.from}` : x.w.from === x.w.to ? x.w.from : `${x.w.from}–${x.w.to}`}"><span>${esc(x.w.label)}</span></span>`;
   const lanes = [
+    { id: 'work', label: WORK_LABEL, items: jobs, seg: jobSeg },
     { id: 'gov', label: 'Rząd', items: items.filter((x) => x.r.gov) },
     { id: 'office', label: 'Urzędy', items: items.filter((x) => !x.r.gov) },
   ].filter((l) => l.items.length);
@@ -143,7 +148,7 @@ export function roleLine(roles, today, more = '') {
       <div class="life" data-testid="life-line">
         <div class="life-eras" aria-hidden="true"><span class="life-era rp" style="left:0;width:100%">III RP</span></div>
         <div class="life-lanes">${lanes.map((l) => `
-          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span><div class="life-track">${l.items.map(seg).join('')}</div></div>`).join('')}
+          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span><div class="life-track">${l.items.map(l.seg ?? seg).join('')}</div></div>`).join('')}
         </div>
         <div class="life-axis"><span>${start}</span><span>${String(today).slice(0, 4)}</span></div>
       </div>
@@ -165,7 +170,9 @@ export function renderOfficial(ctx, slug, today) {
   const roleText = sp
     ? `<span data-testid="spectrum-text">W funkcjach państwowych ${listPl(sp.parts.map((x) => `${aboutYears(x.years)} w <b>${esc(x.label)}</b>, ${x.to === today ? `od ${String(x.from).slice(0, 4)} do dziś` : `w latach ${esc(years(x.from, x.to))}`}`), 'oraz')}.</span>`
     : '';
-  const line = roleLine(p.roles, today, roleText);
+  const job = workFor(ctx.work, `urzad:${p.slug}`);
+  const work = workText({ work: (job?.items ?? []).filter((w) => w.from != null).map((w) => ({ ...w, since: w.to == null })), workUndated: (job?.items ?? []).filter((w) => w.from == null) });
+  const line = roleLine(p.roles, today, `${roleText}${work ? ` <span data-testid="work-text">${work} ${workTip(job)}</span>` : ''}`, job?.items ?? []);
   return `
   <section data-view="official" data-official="${esc(p.slug)}">
     <div class="profile-top panel">
