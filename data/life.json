@@ -1,6 +1,6 @@
 {
  "source": "https://www.wikidata.org (P102 członek partii, P463 członek organizacji; daty P580/P582) + API Sejmu (data urodzenia)",
- "fetchedAt": "2026-11-24",
+ "fetchedAt": "2026-11-27",
  "birthDates": {
   "1": "1959-01-04",
   "2": "1961-06-26",
@@ -562,6 +562,18 @@
    ],
    "orgs": []
   },
+  "7": {
+   "qid": "Q1676071",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "8": {
    "qid": "Q55703",
    "parties": [
@@ -863,6 +875,11 @@
     }
    ]
   },
+  "32": {
+   "qid": "Q123107543",
+   "parties": [],
+   "orgs": []
+  },
   "33": {
    "qid": "Q5423758",
    "parties": [
@@ -1013,6 +1030,18 @@
    ],
    "orgs": []
   },
+  "44": {
+   "qid": "Q73675982",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "46": {
    "qid": "Q71651090",
    "parties": [
@@ -1049,6 +1078,18 @@
      "to": null
     }
    ]
+  },
+  "48": {
+   "qid": "Q21440613",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
   },
   "49": {
    "qid": "Q11720108",
@@ -1119,6 +1160,18 @@
   },
   "54": {
    "qid": "Q327687",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "55": {
+   "qid": "Q381551",
    "parties": [
     {
      "qid": "Q156874",
@@ -1353,6 +1406,18 @@
   },
   "72": {
    "qid": "Q21288049",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "75": {
+   "qid": "Q1681725",
    "parties": [
     {
      "qid": "Q156874",
@@ -1660,6 +1725,18 @@
      "to": null
     }
    ]
+  },
+  "96": {
+   "qid": "Q9160607",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
   },
   "98": {
    "qid": "Q9382909",
@@ -2210,6 +2287,18 @@
    ],
    "orgs": []
   },
+  "132": {
+   "qid": "Q11768165",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "133": {
    "qid": "Q9352644",
    "parties": [
@@ -2295,6 +2384,18 @@
    ],
    "orgs": []
   },
+  "140": {
+   "qid": "Q11768918",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "141": {
    "qid": "Q11778830",
    "parties": [
@@ -2368,6 +2469,18 @@
    "parties": [],
    "orgs": []
   },
+  "146": {
+   "qid": "Q21282048",
+   "parties": [
+    {
+     "qid": "Q1337891",
+     "label": "Suwerenna Polska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "147": {
    "qid": "Q21282049",
    "parties": [
@@ -2379,6 +2492,43 @@
     }
    ],
    "orgs": []
+  },
+  "148": {
+   "qid": "Q2757",
+   "parties": [
+    {
+     "qid": "Q11795487",
+     "label": "Obywatelski Klub Parlamentarny",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q1475388",
+     "label": "Porozumienie Centrum",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": 2006
+    }
+   ],
+   "orgs": [
+    {
+     "qid": "Q19159587",
+     "label": "Jarosław i Lech Kaczyńscy",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q1003",
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "from": null,
+     "to": null
+    }
+   ]
   },
   "149": {
    "qid": "Q11817602",
@@ -2486,6 +2636,11 @@
      "to": null
     }
    ],
+   "orgs": []
+  },
+  "155": {
+   "qid": "Q55391774",
+   "parties": [],
    "orgs": []
   },
   "156": {
@@ -2619,6 +2774,11 @@
    ],
    "orgs": []
   },
+  "164": {
+   "qid": "Q123110541",
+   "parties": [],
+   "orgs": []
+  },
   "165": {
    "qid": "Q100590690",
    "parties": [
@@ -2673,6 +2833,18 @@
      "to": null
     }
    ]
+  },
+  "169": {
+   "qid": "Q123119070",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
   },
   "170": {
    "qid": "Q108391916",
@@ -2879,6 +3051,30 @@
    ],
    "orgs": []
   },
+  "181": {
+   "qid": "Q9166138",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "182": {
+   "qid": "Q11714567",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "183": {
    "qid": "Q73025004",
    "parties": [
@@ -2909,6 +3105,18 @@
     {
      "qid": "Q156874",
      "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "186": {
+   "qid": "Q60834086",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
      "from": null,
      "to": null
     }
@@ -3188,6 +3396,36 @@
    ],
    "orgs": []
   },
+  "204": {
+   "qid": "Q6271307",
+   "parties": [
+    {
+     "qid": "Q2537981",
+     "label": "Zjednoczone Stronnictwo Ludowe",
+     "from": 1986,
+     "to": 1989
+    },
+    {
+     "qid": "Q218477",
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": 1989,
+     "to": 2006
+    },
+    {
+     "qid": "Q20034899",
+     "label": "Stronnictwo „Piast”",
+     "from": 2006,
+     "to": 2008
+    },
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": 2008,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "206": {
    "qid": "Q123107544",
    "parties": [
@@ -3344,9 +3582,39 @@
    ],
    "orgs": []
   },
+  "218": {
+   "qid": "Q21282075",
+   "parties": [
+    {
+     "qid": "Q2307945",
+     "label": "Unia Wolności",
+     "from": 1994,
+     "to": 2005
+    },
+    {
+     "qid": "Q20738981",
+     "label": ".Nowoczesna",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "219": {
    "qid": "Q123173451",
    "parties": [],
+   "orgs": []
+  },
+  "220": {
+   "qid": "Q72970716",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
    "orgs": []
   },
   "221": {
@@ -3400,6 +3668,18 @@
   "224": {
    "qid": "Q111249780",
    "parties": [],
+   "orgs": []
+  },
+  "225": {
+   "qid": "Q1906523",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
    "orgs": []
   },
   "226": {
@@ -3492,6 +3772,11 @@
      "to": null
     }
    ]
+  },
+  "227": {
+   "qid": "Q48842537",
+   "parties": [],
+   "orgs": []
   },
   "228": {
    "qid": "Q432482",
@@ -3770,6 +4055,30 @@
    ],
    "orgs": []
   },
+  "250": {
+   "qid": "Q21282094",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "251": {
+   "qid": "Q11714684",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "252": {
    "qid": "Q439058",
    "parties": [
@@ -3943,6 +4252,30 @@
    ],
    "orgs": []
   },
+  "264": {
+   "qid": "Q123115283",
+   "parties": [
+    {
+     "qid": "Q100979832",
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "265": {
+   "qid": "Q327673",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "266": {
    "qid": "Q513719",
    "parties": [
@@ -4083,6 +4416,25 @@
     {
      "qid": "Q9346157",
      "label": "Stowarzyszenie \"Młodzi Demokraci\"",
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  "275": {
+   "qid": "Q123119073",
+   "parties": [
+    {
+     "qid": "Q218477",
+     "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": [
+    {
+     "qid": "Q125516519",
+     "label": "Komisja Śledcza do zbadania legalności, prawidłowości oraz celowości działań, a także występowania nadużyć, zaniedbań i zaniechań w zakresie legalizacji pobytu cudzoziemców na terytorium Rzeczypospolitej Polskiej",
      "from": null,
      "to": null
     }
@@ -4324,9 +4676,64 @@
    ],
    "orgs": []
   },
+  "291": {
+   "qid": "Q275644",
+   "parties": [
+    {
+     "qid": "Q73386729",
+     "label": "Inicjatywa Polska",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q639754",
+     "label": "Ruch Obywatelski Akcja Demokratyczna",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q953174",
+     "label": "Sojusz Lewicy Demokratycznej",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q1476149",
+     "label": "Unia Demokratyczna",
+     "from": null,
+     "to": null
+    },
+    {
+     "qid": "Q2307945",
+     "label": "Unia Wolności",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": [
+    {
+     "qid": "Q763652",
+     "label": "Niezależne Zrzeszenie Studentów",
+     "from": 1986,
+     "to": null
+    }
+   ]
+  },
   "292": {
    "qid": "Q123169129",
    "parties": [],
+   "orgs": []
+  },
+  "293": {
+   "qid": "Q11763318",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
    "orgs": []
   },
   "294": {
@@ -4384,6 +4791,18 @@
     {
      "qid": "Q156874",
      "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "300": {
+   "qid": "Q4371329",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
      "from": null,
      "to": null
     }
@@ -4833,6 +5252,11 @@
     }
    ]
   },
+  "332": {
+   "qid": "Q85866918",
+   "parties": [],
+   "orgs": []
+  },
   "333": {
    "qid": "Q5345327",
    "parties": [
@@ -5050,6 +5474,18 @@
    ],
    "orgs": []
   },
+  "350": {
+   "qid": "Q65162977",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "351": {
    "qid": "Q7329574",
    "parties": [
@@ -5101,6 +5537,18 @@
   "357": {
    "qid": "Q73681986",
    "parties": [],
+   "orgs": []
+  },
+  "358": {
+   "qid": "Q123119067",
+   "parties": [
+    {
+     "qid": "Q100979832",
+     "label": "Polska 2050",
+     "from": null,
+     "to": null
+    }
+   ],
    "orgs": []
   },
   "359": {
@@ -6049,6 +6497,18 @@
     }
    ]
   },
+  "420": {
+   "qid": "Q22351002",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "421": {
    "qid": "Q1716183",
    "parties": [
@@ -6132,6 +6592,18 @@
      "to": null
     }
    ]
+  },
+  "425": {
+   "qid": "Q120835703",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
   },
   "426": {
    "qid": "Q123119059",
@@ -6424,6 +6896,18 @@
     }
    ]
   },
+  "443": {
+   "qid": "Q440778",
+   "parties": [
+    {
+     "qid": "Q3488584",
+     "label": "Naprzód Polsko",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "444": {
    "qid": "Q123115428",
    "parties": [],
@@ -6435,6 +6919,18 @@
     {
      "qid": "Q156874",
      "label": "Prawo i Sprawiedliwość",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "447": {
+   "qid": "Q323398",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
      "from": null,
      "to": null
     }
@@ -6465,6 +6961,18 @@
     {
      "qid": "Q218477",
      "label": "Polskie Stronnictwo Ludowe",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "451": {
+   "qid": "Q72264741",
+   "parties": [
+    {
+     "qid": "Q199007",
+     "label": "Zieloni",
      "from": null,
      "to": null
     }
@@ -6513,6 +7021,18 @@
      "qid": "Q1337891",
      "label": "Suwerenna Polska",
      "from": 2012,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
+  "457": {
+   "qid": "Q9377016",
+   "parties": [
+    {
+     "qid": "Q156874",
+     "label": "Prawo i Sprawiedliwość",
+     "from": null,
      "to": null
     }
    ],
@@ -6705,6 +7225,18 @@
    ],
    "orgs": []
   },
+  "474": {
+   "qid": "Q126916272",
+   "parties": [
+    {
+     "qid": "Q156868",
+     "label": "Platforma Obywatelska",
+     "from": null,
+     "to": null
+    }
+   ],
+   "orgs": []
+  },
   "475": {
    "qid": "Q126914118",
    "parties": [
@@ -6715,6 +7247,11 @@
      "to": null
     }
    ],
+   "orgs": []
+  },
+  "476": {
+   "qid": "Q126959888",
+   "parties": [],
    "orgs": []
   },
   "477": {
