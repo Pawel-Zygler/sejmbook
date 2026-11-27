@@ -1,0 +1,28 @@
+name: law-pdfs
+# Builds data/law-pdfs.json (direct PDF of every law on the site: Dziennik Ustaw via ELI, or the Sejm print) from the Sejm API.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 6 * * 1'
+  push:
+    branches: [main]
+    paths: ['scripts/fetch-law-pdfs.mjs', 'src/lib/law-pdf.js', '.github/workflows/law-pdfs.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-law-pdfs.mjs
+      - name: Commit law PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/law-pdfs.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update law PDF links from the Sejm API"
+          git pull --rebase
+          git push
