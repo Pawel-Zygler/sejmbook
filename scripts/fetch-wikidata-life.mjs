@@ -57,11 +57,12 @@ console.log(`matched ${match.size}/${mps.length} on Wikidata by label and birth 
 const rest = mps.filter((m) => m.birthDate && !match.has(m.id));
 for (let i = 0; i < rest.length; i += 25) {
   const batch = rest.slice(i, i + 25);
-  const values = batch.map((m) => `(${m.id} "${m.birthDate}T00:00:00Z"^^xsd:dateTime ${lit(m.lastName.toLowerCase())})`).join('\n');
+  // Twins share a birth date and a surname (Jarosław and Lech Kaczyński), so the first name must match too.
+  const values = batch.map((m) => `(${m.id} "${m.birthDate}T00:00:00Z"^^xsd:dateTime ${lit(m.lastName.toLowerCase())} ${lit(String(m.firstName ?? m.firstLastName).split(' ')[0].toLowerCase())})`).join('\n');
   const q = `SELECT ?mp ?item (SAMPLE(?pol) AS ?isPol) (SAMPLE(?art) AS ?hasArt) WHERE {
-    VALUES (?mp ?bd ?last) { ${values} }
+    VALUES (?mp ?bd ?last ?first) { ${values} }
     ?item wdt:P569 ?bd; wdt:P31 wd:Q5; rdfs:label ?l.
-    FILTER(LANG(?l) = "pl" && CONTAINS(LCASE(?l), ?last))
+    FILTER(LANG(?l) = "pl" && CONTAINS(LCASE(?l), ?last) && STRSTARTS(LCASE(?l), ?first))
     OPTIONAL { ?item wdt:P106 wd:Q82955. BIND(1 AS ?pol) }
     OPTIONAL { ?art schema:about ?item; schema:isPartOf <https://pl.wikipedia.org/> }
   } GROUP BY ?mp ?item`;

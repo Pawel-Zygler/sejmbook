@@ -1,5 +1,6 @@
 // "Spektrum partyjne" on the scale of an MP's whole life: birth, PRL, the start of the III RP (1989),
 // party and opposition memberships (Wikidata, data/life.json) and Sejm terms with clubs (data/career.json).
+import { oppositionItems, POSTS_COLOR } from './bio.js';
 import { clubFamily, termRanges } from './career.js';
 
 export const III_RP_START = 1989;
@@ -84,7 +85,16 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     social.push({ label: o.label, color: SOCIAL_COLOR, from: clamp(o.from), to: clamp(Math.max(o.to ?? o.from, o.from)), since: o.to == null, prl: o.from < III_RP_START });
   }
   social.sort((a, b) => a.from - b.from || a.to - b.to);
+  // Opposition, the Round Table and internment from Wikipedia categories (data/bio.json).
+  const fold = (s) => s.toLowerCase().replace(/[„”"]/g, '');
+  for (const o of oppositionItems(entry?.bio?.opposition, birth, clamp)) {
+    const base = fold(o.label.replace(' (lata nieznane)', ''));
+    if (opposition.some((x) => fold(x.label).includes(base) || base.includes(fold(x.label)))) continue;
+    opposition.push(o);
+  }
   opposition.sort((a, b) => a.from - b.from);
+  // Public offices (Wikidata P39), e.g. minister, senator, member of the European Parliament.
+  const posts = (entry?.bio?.posts ?? []).filter((p) => p.from <= now).map((p) => ({ label: p.label, full: p.label, color: POSTS_COLOR, from: clamp(p.from), to: clamp(Math.max(p.to ?? now, p.from)), open: p.to == null, prl: p.from < III_RP_START }));
 
   const termsByNum = new Map((career?.terms ?? []).map((t) => [t.num, t]));
   const sejm = [];
@@ -114,6 +124,7 @@ export function lifeTimeline({ life, career }, mp, nowYear) {
     lanes: [
       { id: 'opposition', label: 'Opozycja w PRL', items: opposition },
       { id: 'social', label: 'Działalność społeczna', items: social },
+      { id: 'posts', label: 'Stanowiska', items: posts },
       { id: 'parties', label: 'Partie', items: parties },
       { id: 'sejm', label: 'Sejm', items: sejm.map((s) => ({ ...s, label: `${s.label} · ${termRanges(s.terms)}` })) },
     ].filter((l) => l.items.length),

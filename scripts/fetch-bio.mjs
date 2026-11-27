@@ -58,7 +58,7 @@ for (const ids of chunks([...byQid.keys()], 50)) {
 // 2) Wikidata items of officials from their plwiki titles (redirects followed).
 const byTitle = new Map([...people].filter(([, p]) => p.title && !p.qid).map(([k, p]) => [p.title, k]));
 for (const titles of chunks([...byTitle.keys()], 50)) {
-  const r = await getJson(`${WD}?action=wbgetentities&format=json&props=sitelinks&sitefilter=plwiki&sites=plwiki&normalize=1&redirects=yes&titles=${encodeURIComponent(titles.join('|'))}`);
+  const r = await getJson(`${WD}?action=wbgetentities&format=json&props=sitelinks&sitefilter=plwiki&sites=plwiki&redirects=yes&titles=${encodeURIComponent(titles.join('|'))}`);
   for (const [q, ent] of Object.entries(r.entities ?? {})) {
     if (!q.startsWith('Q')) continue;
     const t = ent.sitelinks?.plwiki?.title;

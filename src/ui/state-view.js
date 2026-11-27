@@ -1,5 +1,6 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
+import { POSTS_COLOR } from '../lib/bio.js';
 import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl } from './render.js';
 import { clubFamily } from '../lib/career.js';
 import { aboutYears } from '../lib/pl-words.js';
@@ -123,25 +124,34 @@ const yearOf = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ?
  * The life line of an official, in the same look as on MP profiles: their state roles over time since 1989,
  * government roles in one lane and the top offices in another, coloured by party.
  */
-export function roleLine(roles, today, more = '') {
+export function roleLine(roles, today, more = '', bio = null) {
   const now = yearOf(today);
   const items = roles.map((r) => ({ r, from: yearOf(r.from), to: yearOf(r.to ?? today) })).filter((x) => x.from != null && x.to != null);
-  if (!items.length) return '';
-  const start = Math.min(1989, ...items.map((x) => Math.floor(x.from)));
+  // Opposition in the PRL and other public offices (data/bio.json: plwiki categories, Wikidata P39), Pawel 2026-11-27.
+  const word = (s) => String(s).toLowerCase().split(/\s+/)[0];
+  const posts = (bio?.posts ?? [])
+    .filter((p) => !roles.some((r) => word(r.office) === word(p.label) && Math.abs(Number(String(r.from).slice(0, 4)) - p.from) <= 1))
+    .map((p) => ({ r: { office: p.label, from: String(p.from), to: p.to ? String(p.to) : null }, from: p.from, to: p.to ? p.to + 0.9 : now, kind: 'posts' }));
+  const opp = (bio?.opposition ?? []).map((o) => ({ r: { office: o.from ? o.label : `${o.label} (lata nieznane)`, full: o.full, from: String(o.from ?? 1980), to: String(o.to ?? 1989) }, from: o.from ?? 1980, to: (o.to ?? 1989) + 0.9, kind: 'opposition', uncertain: !o.from }));
+  if (!items.length && !posts.length && !opp.length) return '';
+  const all = [...items, ...posts, ...opp];
+  const start = Math.min(1989, ...all.map((x) => Math.floor(x.from)));
   const pos = (y) => (((y - start) / (now - start)) * 100).toFixed(2);
   const width = (a, b) => Math.max(((b - a) / (now - start)) * 100, 0.8).toFixed(2);
   const seg = (x) => {
-    const color = x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
-    return `<span class="life-seg${x.r.to ? '' : ' open'}" style="--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
+    const color = x.kind === 'opposition' ? '#d4202c' : x.kind === 'posts' ? POSTS_COLOR : x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
+    return `<span class="life-seg${x.r.to ? '' : ' open'}${x.uncertain ? ' uncertain' : ''}" style="--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
   };
   const lanes = [
+    { id: 'opposition', label: 'Opozycja w PRL', items: opp },
+    { id: 'posts', label: 'Stanowiska', items: posts },
     { id: 'gov', label: 'Rząd', items: items.filter((x) => x.r.gov) },
     { id: 'office', label: 'Urzędy', items: items.filter((x) => !x.r.gov) },
   ].filter((l) => l.items.length);
-  const first = [...items].sort((x, y) => x.from - y.from)[0];
+  const first = [...(items.length ? items : all)].sort((x, y) => x.from - y.from)[0];
   return `
       <div class="life" data-testid="life-line">
-        <div class="life-eras" aria-hidden="true"><span class="life-era rp" style="left:0;width:100%">III RP</span></div>
+        <div class="life-eras" aria-hidden="true">${start < 1989 ? `<span class="life-era prl" style="left:0;width:${pos(1989)}%">PRL</span>` : ''}<span class="life-era rp" style="left:${start < 1989 ? pos(1989) : 0}%;width:${(100 - Number(start < 1989 ? pos(1989) : 0)).toFixed(2)}%">III RP</span></div>
         <div class="life-lanes">${lanes.map((l) => `
           <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span><div class="life-track">${l.items.map(seg).join('')}</div></div>`).join('')}
         </div>
@@ -165,7 +175,7 @@ export function renderOfficial(ctx, slug, today) {
   const roleText = sp
     ? `<span data-testid="spectrum-text">W funkcjach państwowych ${listPl(sp.parts.map((x) => `${aboutYears(x.years)} w <b>${esc(x.label)}</b>, ${x.to === today ? `od ${String(x.from).slice(0, 4)} do dziś` : `w latach ${esc(years(x.from, x.to))}`}`), 'oraz')}.</span>`
     : '';
-  const line = roleLine(p.roles, today, roleText);
+  const line = roleLine(p.roles, today, roleText, ctx.bio?.officials?.[p.wiki ?? p.name] ?? null);
   return `
   <section data-view="official" data-official="${esc(p.slug)}">
     <div class="profile-top panel">
