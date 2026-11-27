@@ -99,7 +99,7 @@ for (const qs of chunks([...qKeys.keys()], 50)) {
     ?item p:P39 ?st. ?st ps:P39 ?pos.
     OPTIONAL { ?st pq:P580 ?start }
     OPTIONAL { ?st pq:P582 ?end }
-    OPTIONAL { ?st pq:P642 ?of }
+    OPTIONAL { ?st pq:P642|pq:P2389 ?of }
     SERVICE wikibase:label { bd:serviceParam wikibase:language "pl,en". }
   }`;
   let r;

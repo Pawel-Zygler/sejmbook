@@ -52,7 +52,7 @@ export function oppositionFromCategories(categories = []) {
 
 /** P39 entries that are only Sejm membership (drawn from the Sejm data already). */
 const SEJM_SEAT = /^(pose[łl]|posłanka|członek sejmu|członkini sejmu|member of the sejm)/i;
-const GENERIC = /^(przewodnicząc[ya]|wiceprzewodnicząc[ya]|członek|członkini|prezes|wiceprezes|sekretarz|dyrektor|kierownik|szef|rzecznik)$/i;
+const GENERIC = /^(prezes zarządu|członek zarządu|dyrektor muzeum|dyrektor generalny|przewodnicząc[ya]|wiceprzewodnicząc[ya]|członek|członkini|prezes|wiceprezes|sekretarz|dyrektor|kierownik|szef|rzecznik)$/i;
 const year = (d) => (d ? Number(String(d).slice(0, 4)) : null);
 
 /** Public offices from Wikidata P39 with a start year, e.g. { label: 'prezes Instytutu Pamięci Narodowej', from: 2021, to: 2025 }. */
