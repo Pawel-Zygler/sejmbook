@@ -77,7 +77,7 @@ function votesPillar(def, p, tip) {
 function personPillar(def, p, tip) {
   const ind = p.independence;
   const lines = [
-    p.attendancePct != null ? `Obecność: <strong>${esc(formatPct(p.attendancePct))}</strong> dni obrad z głosowaniami${p.attendancePercentile != null ? `, lepiej niż ${Math.round(p.attendancePercentile)}% posłów` : ''}` : 'Obecność: brak danych',
+    p.attendancePct != null ? `Obecność: <strong>${esc(formatPct(p.attendancePct))}</strong> dni obrad z głosowaniami` : 'Obecność: brak danych',
     ind
       ? `Niezależność: inaczej niż większość klubu w <strong>${ind.diff}</strong> z ${ind.n} głosowań nad ustawami (${esc(formatPct(ind.pct))}), więcej niż ${Math.round(ind.percentile)}% posłów`
       : 'Niezależność: nie liczymy (poseł spoza klubu lub za mało głosowań)',
@@ -193,8 +193,8 @@ export function howComputed(data, key) {
   if (!pl) return '';
   const counted = data.laws.filter((l) => l.pillar === pl.id && l.direction !== 'sporna' && !isConsensus(l, data.consensusSkip)).length;
   const how = pl.id === 4
-    ? 'Wynik = średnia z percentyla obecności i percentyla niezależności od klubu.'
-    : `Liczymy ${lawsWord(counted)}: za zgodny głos 1 pkt, za wstrzymanie 0,5, za przeciwny 0; wynik = suma punktów / liczba głosów × 100. Pomijamy nieobecności, ustawy sporne i przyjęte niemal jednogłośnie (co najmniej ${Math.round(100 * (data.consensusSkip ?? 1))}% po jednej stronie).`;
+    ? `Wynik = średnia z obecności (${data.attendanceMode === 'percentile' ? 'percentyl wśród posłów' : '% dni obrad z głosem'}) i percentyla niezależności od klubu.`
+    : `Liczymy ${lawsWord(counted)}: za zgodny głos 1 pkt, za wstrzymanie 0,5, za przeciwny 0; wynik = suma punktów / liczba głosów × 100. Pomijamy nieobecności i ustawy sporne${data.consensusSkip ? ` oraz przyjęte niemal jednogłośnie (co najmniej ${Math.round(100 * data.consensusSkip)}% po jednej stronie)` : ''}.`;
   return `${pl.id}. ${pl.name}. ${pl.rule} ${how}`;
 }
 

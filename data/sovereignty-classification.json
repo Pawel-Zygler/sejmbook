@@ -112,5 +112,6 @@
       "direction": "pomijana",
       "reason": "organizacja polskiej prezydencji w Radzie UE, nie przenosi kompetencji"
     }
-  ]
+  ],
+  "consensusSkip": 0.9
 }

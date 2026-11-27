@@ -163,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Ranking Konecznego: ostrzejsze zasady';
-const NEWEST_LINE = 'Rankingi: Ranking Konecznego: ostrzejsze zasady';
+const NEWEST = 'Cywilizacja łacińska: poprzednie zasady';
+const NEWEST_LINE = 'Rankingi: Cywilizacja łacińska: poprzednie zasady';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

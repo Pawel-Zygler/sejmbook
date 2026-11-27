@@ -24,8 +24,9 @@ export async function buildLatin() {
   const { laws: _drop, deregulationPattern, ...meta } = cls;
   // Separate indicator "Suwerenność kompetencji" (Pawel, 2026-11-27), shipped in the same file.
   const { laws: _s, implementationPattern, euPattern, ...sovMeta } = sovCls ?? {};
-  const sovereignty = sovCls ? { ...sovMeta, consensusSkip: cls.consensusSkip, laws: buildSovLaws(sovCls, lawVotes, descriptions) } : null;
-  const out = { ...meta, fetchedAt: lawVotes.fetchedAt, laws, independence, attendance, sovereignty };
+  const sovereignty = sovCls ? { ...sovMeta, laws: buildSovLaws(sovCls, lawVotes, descriptions) } : null;
+  // Pillar 4 uses raw attendance again (Pawel, 2026-11-27 22:20); the percentiles stay in the file for reference.
+  const out = { ...meta, fetchedAt: lawVotes.fetchedAt, laws, independence, attendance, attendanceMode: cls.attendanceMode ?? 'raw', sovereignty };
   await writeFile(new URL('data/latin.json', root), JSON.stringify(out) + '\n');
   return out;
 }
