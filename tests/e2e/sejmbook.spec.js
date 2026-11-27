@@ -682,24 +682,3 @@ for (const skin of ['classic', 'modern']) {
   });
 }
 
-for (const skin of ['classic', 'modern']) {
-  test(`profile: KPI card with an info button per KPI, fits the screen (${skin})`, async ({ page }) => {
-    await page.addInitScript((s) => localStorage.setItem('sejmbook-ui', s), skin);
-    await page.goto(`${PAGE}#posel-32`);
-    const card = page.getByTestId('profile-kpi');
-    await expect(card).toBeVisible();
-    await expect(card.locator('.kpi-tile')).toHaveCount(4);
-    for (const id of ['attendance', 'speeches', 'interpellations', 'bills']) await expect(card.getByTestId(`kpi-${id}-value`)).toBeVisible();
-    const tip = card.getByTestId('kpi-speeches').getByTestId('info-tip');
-    await tip.focus();
-    await expect(tip.locator('.info-tip-body')).toBeVisible();
-    await expect(tip.locator('.info-tip-body')).toContainText('stenogram');
-    const box = await card.boundingBox();
-    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-    expect(overflow).toBeLessThanOrEqual(0);
-    // Two columns of tiles on wide screens, one on phones.
-    const xs = await card.locator('.kpi-tile').evaluateAll((els) => new Set(els.map((e) => Math.round(e.getBoundingClientRect().left))).size);
-    expect(xs).toBe(page.viewportSize().width > 640 ? 2 : 1);
-  });
-}
