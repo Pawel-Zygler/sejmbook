@@ -16,7 +16,7 @@ import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, socialData, workData, districtMapData, bioData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, declarationsData, socialData, workData, districtMapData, bioData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -36,6 +36,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     laws: lawData ?? null,
     // Experimental Koneczny card: classified laws and club independence (data/latin.json, built by scripts/build-latin.mjs).
     latin: latinData ?? null,
+    // "Współczynnik deklaracji": 2023 committee promises vs votes (data/declarations-card.json, scripts/build-declarations.mjs).
+    declarations: declarationsData ?? null,
     // Mini map of the 41 Sejm districts (data/district-map.json, GUGiK borders + Wikipedia).
     districtMap: districtMapData ?? null,
     career: careerData ?? null,
