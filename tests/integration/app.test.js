@@ -164,8 +164,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Cywilizacja łacińska: poprzednie zasady';
-const NEWEST_LINE = 'Rankingi: Cywilizacja łacińska: poprzednie zasady';
+const NEWEST = 'Feed w jednej linii';
+const NEWEST_LINE = 'Start: Feed w jednej linii';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -575,10 +575,19 @@ describe('Home feed', () => {
     expect(posts.length).toBeGreaterThan(30);
     const kinds = new Set(posts.map((p) => p.dataset.feed));
     for (const k of ['president', 'pm', 'office', 'vote', 'act']) expect(kinds.has(k), k).toBe(true);
-    const times = posts.map((p) => p.querySelector('.post-head time').getAttribute('datetime').slice(0, 10));
+    const times = posts.map((p) => p.querySelector('time.post-time').getAttribute('datetime').slice(0, 10));
     expect([...times].sort().reverse()).toEqual(times);
     expect($('#view .feed-post[data-feed="president"]').textContent).toContain('Karol Nawrocki');
-    expect($('#view .feed-list')).toBeNull();
+    // One line per entry (Pawel, 2026-11-27): date, who, title, and the source only behind the "i".
+    expect($('#view .feed-rows')).not.toBeNull();
+    for (const p of posts.slice(0, 20)) {
+      expect(p.querySelector('.feed-line > time.post-time')).not.toBeNull();
+      expect(p.querySelector('.feed-line > .feed-who')).not.toBeNull();
+      expect(p.querySelector('.feed-line > .feed-title')).not.toBeNull();
+      expect(p.querySelector('.feed-line > [data-testid="info-tip"]')).not.toBeNull();
+    }
+    expect($$('#view .feed-rows .feed-title').some((t) => t.textContent.includes('Źródło:'))).toBe(false);
+    expect($('#view .feed-rows .post-foot')).toBeNull();
     expect($('#view .feed-more')).toBeNull();
     expect($('[data-testid="feed-note"]').textContent).toContain('zweryfikowane');
   });
@@ -688,7 +697,7 @@ describe('Feed: interactive', () => {
   it('links the President to his profile here', () => {
     nav('#start');
     click($('[data-window="all"]'));
-    expect($('#view .feed-post[data-feed="president"] .post-head a').getAttribute('href')).toBe('#urzad-karol-nawrocki');
+    expect($('#view .feed-post[data-feed="president"] .feed-who a').getAttribute('href')).toBe('#urzad-karol-nawrocki');
   });
 });
 
@@ -699,9 +708,9 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     const offices = $$('#view .feed-post[data-feed="office"]');
     expect(offices.length).toBeGreaterThan(10);
     expect(offices.every((p) => /^https:\/\/www\.(gov|senat|nik)\.gov\.pl|^https:\/\/www\.gov\.pl/.test(p.querySelector('.post-title a').href))).toBe(true);
-    expect(offices.some((p) => p.querySelector('.post-head a[href^="#"]'))).toBe(true);
+    expect(offices.some((p) => p.querySelector('.feed-who a[href^="#"]'))).toBe(true);
     const acts = $$('#view .feed-post[data-feed="act"]');
-    expect(acts.some((p) => p.querySelector('.post-head a[href^="#posel-"]'))).toBe(true);
+    expect(acts.some((p) => p.querySelector('.feed-who a[href^="#posel-"]'))).toBe(true);
   });
   it('opens the sitemap from the side menu and every link goes somewhere real', () => {
     nav('#mapa');
@@ -728,7 +737,7 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     nav(kk.getAttribute('href'));
     const news = $('[data-testid="person-news"]');
     expect(news.textContent).toContain('Ministerstwo Obrony Narodowej');
-    expect(news.querySelectorAll('article.feed-post').length).toBeGreaterThan(0);
+    expect(news.querySelectorAll('li.feed-post').length).toBeGreaterThan(0);
   });
 });
 
@@ -925,11 +934,10 @@ describe('Feed: seats of the Sejm on top', () => {
     expect(head.querySelector('.lede')).toBeNull();
   });
 
-  it('puts the date of a post in its own element at the end of the header (top-right corner)', () => {
+  it('starts every feed line with its date', () => {
     nav('#start');
-    const head = $('article.post .post-head time.post-time').parentElement;
-    expect(head.lastElementChild.classList.contains('post-time')).toBe(true);
-    expect(head.querySelector('small time')).toBeNull();
+    const line = $('.feed-row .feed-line');
+    expect(line.firstElementChild.classList.contains('post-time')).toBe(true);
   });
 
   it('shows the "Skład Sejmu" post before the time window and the feed posts', () => {

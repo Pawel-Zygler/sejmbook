@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Cywilizacja łacińska: poprzednie zasady');
+  await expect(post).toContainText('Feed w jednej linii');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Cywilizacja łacińska: poprzednie zasady');
+  await expect(page.locator('.news-post').first()).toContainText('Feed w jednej linii');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -423,7 +423,7 @@ test('Feed: open a voting to see clubs, switch the time window', async ({ page }
   await expect(v.locator('.vote-links a').first()).toHaveAttribute('href', /sejm\.gov\.pl/);
   await page.locator('[data-window="all"]').click();
   await expect(page.locator('[data-window="all"]')).toHaveAttribute('aria-pressed', 'true');
-  await page.locator('#view .feed-post[data-feed="president"] .post-head a').first().click();
+  await page.locator('#view .feed-post[data-feed="president"] .feed-who a').first().click();
   await expect(page.locator('#view h1')).toHaveText('Karol Nawrocki');
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
@@ -455,7 +455,7 @@ test('Feed: office releases and MP acts; sitemap from the side menu or the feed 
   await page.goto(`${PAGE}#start`);
   await page.locator('[data-action="feed-window"][data-window="all"]').click();
   await expect(page.locator('.feed-post[data-feed="office"]').first()).toBeVisible();
-  await expect(page.locator('.feed-post[data-feed="act"] .post-head a[href^="#posel-"]').first()).toBeVisible();
+  await expect(page.locator('.feed-post[data-feed="act"] .feed-who a[href^="#posel-"]').first()).toBeVisible();
   await page.locator('[data-testid="feed-note"] a[href="#mapa"]').click();
   await expect(page.locator('#view h1')).toHaveText('Mapa strony');
   await page.getByTestId('sitemap').locator('a', { hasText: 'Rząd Jerzego Buzka' }).click();
@@ -646,16 +646,20 @@ test('Profile: mini map of Poland with the district highlighted', async ({ page 
   expect(on).not.toBe(land);
 });
 
-test('Feed: time filter on the right, post date in the top-right corner', async ({ page }) => {
+test('Feed: time filter on the right, one line per entry with the source behind the i', async ({ page }) => {
   await page.goto(PAGE);
   const panel = await page.getByTestId('feed-window').boundingBox();
   const last = await page.locator('[data-action="feed-window"]').last().boundingBox();
   expect(panel.x + panel.width - (last.x + last.width)).toBeLessThan(24);
-  const post = page.locator('article.post:has([data-testid="post-time"])').first();
-  const a = await post.boundingBox();
-  const t = await post.getByTestId('post-time').boundingBox();
-  expect(a.x + a.width - (t.x + t.width)).toBeLessThan(28);
-  expect(t.y - a.y).toBeLessThan(28);
+  // One line per feed entry: every row is a single line high, and the source sits behind the "i".
+  const rows = page.locator('.feed-row:not([data-feed="vote"]) .feed-line');
+  const heights = await rows.evaluateAll((els) => els.slice(0, 15).map((e) => e.getBoundingClientRect().height));
+  expect(Math.max(...heights)).toBeLessThan(48);
+  const first = page.locator('.feed-row .feed-line').first();
+  const tip = first.getByTestId('info-tip');
+  await tip.focus();
+  await expect(tip.locator('.info-tip-body')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
 test('Feed: the seats of the Sejm come first', async ({ page }) => {

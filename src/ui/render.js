@@ -240,16 +240,6 @@ function stateNameLink(ctx, name) {
   return href ? `<a class="official-link" href="${esc(href)}">${esc(name)}</a>` : esc(name);
 }
 
-/** The face at the top of a feed card, linked to our profile of that person. */
-function feedFace(ctx, name, badge) {
-  const mp = mpByName(ctx, name);
-  if (mp) return mpLink(mp, avatar(ctx, mp, 'md'));
-  const href = feedProfileHref(ctx, name);
-  const photo = govPhoto(ctx, name);
-  const face = photo ? personAvatar(name, null, 'md', photo) : `<span class="avatar avatar-md person-badge" aria-hidden="true">${esc(badge)}</span>`;
-  return href ? `<a class="feed-face" href="${esc(href)}" aria-label="Profil: ${esc(name)}">${face}</a>` : face;
-}
-
 const voteTime = (iso) => (iso && iso.length > 10 ? `${fmtDay(iso.slice(0, 10))}, ${iso.slice(11, 16)}` : fmtDay(iso));
 
 /** Details of one voting, built when it is opened: topic, how each club voted, MPs against their club, links. */
@@ -304,39 +294,41 @@ export function feedEntries(ctx, f = ctx.feed) {
   return out.sort(newestFirst);
 }
 
-/** The face and name at the top of a post. */
-function postHead(ctx, e) {
-  const when = e.kind === 'vote' ? voteTime(e.vote.date) : fmtDay(e.date);
+/**
+ * One line per feed entry (Pawel, 2026-11-27: "jednoliniowe informacje", like the table of laws): date, who, what,
+ * and the office and source behind an "i" button. Votings open their details below the line.
+ */
+function feedWho(ctx, e) {
   const name = e.mp ? mpLink(e.mp, esc(e.mp.name), 'official-link') : e.kind === 'vote' || (e.kind === 'office' && !e.person) ? esc(e.author) : stateNameLink(ctx, e.author);
-  const face = e.mp ? mpLink(e.mp, avatar(ctx, e.mp, 'md')) : e.kind === 'vote' || (e.kind === 'office' && !e.person) ? pageBadge() : feedFace(ctx, e.author, initials(e.author));
   const extra = e.kind === 'act' && e.act.from.length > 1 ? ` i ${e.act.from.length - 1} ${plural(e.act.from.length - 1, 'inny poseł', 'innych posłów', 'innych posłów')}` : '';
-  return `<header class="post-head">${face}<div class="post-who"><strong>${name}${extra}</strong><small>${esc(e.role)}${e.place ? ` · ${esc(e.place)}` : ''}</small></div><time class="post-time" data-testid="post-time" datetime="${esc(e.time ?? e.date ?? '')}">${esc(when)}</time></header>`;
+  return `<span class="feed-who" title="${esc(`${e.mp?.name ?? e.author}${extra}`)}">${name}${extra}</span>`;
 }
 
-/** One entry of the feed as a post. */
 export function feedPost(ctx, e) {
-  const src = e.url ? `<a class="post-src" href="${esc(e.url)}" target="_blank" rel="noopener">${esc(hostOf(e.url))}</a>` : '';
-  let body;
+  const iso = e.time ?? e.date ?? '';
+  const when = e.kind === 'vote' ? voteTime(e.vote.date) : fmtDay(e.date);
+  const time = `<time class="post-time" data-testid="post-time" datetime="${esc(iso)}" title="${esc(when)}">${esc(fmtDay((e.kind === 'vote' ? e.vote.date : e.date)?.slice(0, 10)))}</time>`;
+  const host = e.url ? hostOf(e.url) : '';
+  const about = [e.role, e.place].filter(Boolean).join(' · ');
   if (e.kind === 'vote') {
     const v = e.vote;
-    const all = (v.yes ?? 0) + (v.no ?? 0) + (v.abstain ?? 0) || 1;
-    const w = (n) => ((100 * (n ?? 0)) / all).toFixed(1);
-    body = `<details class="vote-item" data-voting="${e.index}">
-          <summary><p class="vote-title">${esc(v.title)}</p>
-          <div class="vote-bar" role="img" aria-label="Za ${v.yes}, przeciw ${v.no}, wstrzymało się ${v.abstain}"><span class="v-yes" style="width:${w(v.yes)}%"></span><span class="v-no" style="width:${w(v.no)}%"></span><span class="v-abs" style="width:${w(v.abstain)}%"></span></div>
-          <small><b class="${v.passed ? 'v-pass' : 'v-fail'}">${v.passed ? 'Przyjęto' : 'Odrzucono'}</b> · za ${v.yes} · przeciw ${v.no} · wstrzymało się ${v.abstain}</small></summary>
+    const counts = `za ${v.yes} · przeciw ${v.no} · wstrzymało się ${v.abstain}`;
+    const res = `<b class="feed-res ${v.passed ? 'v-pass' : 'v-fail'}">${v.passed ? 'Przyjęto' : 'Odrzucono'}</b>`;
+    return `<li class="feed-post feed-row" data-feed="vote"><details class="vote-item" data-voting="${e.index}">
+          <summary class="feed-line">${time}${feedWho(ctx, e)}<span class="feed-title post-title vote-title" title="${esc(v.title)}">${res} ${esc(v.title)}</span>${infoTip(`${about ? `${about}, ` : ''}${when}. ${res.replace(/<[^>]+>/g, '')}: ${counts}.`, e.url ?? '', 'Szczegóły')}</summary>
           <div class="vote-more" data-testid="vote-more"></div>
-        </details>`;
-  } else if (e.kind === 'social') {
-    body = `<p class="post-text">${esc(e.text)}</p><p class="post-meta muted">♥ ${formatInt(e.likes)} · ⟲ ${formatInt(e.reposts)} · konto zweryfikowane</p>`;
-  } else {
-    body = `<p class="post-text post-title"><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a></p>`;
+        </details></li>`;
   }
-  return `<article class="post feed-post" data-feed="${e.kind}">
-      ${postHead(ctx, e)}
-      ${body}
-      ${src ? `<footer class="post-foot post-foot-src"><span class="muted">Źródło:</span> ${src}</footer>` : ''}
-    </article>`;
+  let title;
+  let tip = `${about}${about ? '. ' : ''}`;
+  if (e.kind === 'social') {
+    title = `<span class="feed-title post-title post-text" title="${esc(e.text)}">${esc(e.text)}</span>`;
+    tip += `♥ ${formatInt(e.likes)} · ⟲ ${formatInt(e.reposts)} · konto zweryfikowane.`;
+  } else {
+    title = `<span class="feed-title post-title" title="${esc(e.title)}">${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a>` : esc(e.title)}</span>`;
+  }
+  if (host) tip += ' Źródło:';
+  return `<li class="feed-post feed-row" data-feed="${e.kind}"><div class="feed-line">${time}${feedWho(ctx, e)}${title}${infoTip(tip.trim(), e.url ?? '', host ? 'Źródło' : 'Szczegóły')}</div></li>`;
 }
 
 /**
@@ -346,7 +338,7 @@ export function feedPost(ctx, e) {
 export function personNewsPost(ctx, name) {
   const mine = feedEntries(ctx).filter((e) => e.author === name && e.kind !== 'act').slice(0, 6);
   if (!mine.length) return '';
-  return `<div class="person-news" data-testid="person-news">${mine.map((e) => feedPost(ctx, e)).join('')}</div>`;
+  return `<ol class="panel feed-rows person-news" data-testid="person-news">${mine.map((e) => feedPost(ctx, e)).join('')}</ol>`;
 }
 
 /** The time window chips above the feed. */
@@ -364,7 +356,7 @@ export function renderLiveFeed(ctx, { window: winId = 'all', now = Date.now() } 
   const shown = inWindow(all, w.id, now);
   return `
     ${feedWindowBar(w.id)}
-    ${shown.length ? shown.map((e) => feedPost(ctx, e)).join('') : `<p class="panel feed-quiet muted" data-testid="feed-quiet">Nic nowego w ciągu ostatnich ${esc(w.label)}. Ostatni wpis: ${esc(fmtDay(all[0]?.date))}. Wybierz dłuższy okres.</p>`}
+    ${shown.length ? `<ol class="panel feed-rows" data-testid="feed-rows">${shown.map((e) => feedPost(ctx, e)).join('')}</ol>` : `<p class="panel feed-quiet muted" data-testid="feed-quiet">Nic nowego w ciągu ostatnich ${esc(w.label)}. Ostatni wpis: ${esc(fmtDay(all[0]?.date))}. Wybierz dłuższy okres.</p>`}
     <p class="src feed-note" data-testid="feed-note">Feed odświeża się co 3 godziny (stan na ${esc(fmtDay(f.fetchedAt?.slice(0, 10)))}). Każdy wpis publikuje osoba, która dziś kieruje urzędem, albo poseł, który złożył interpelację. Pokazujemy tylko oficjalne strony i zweryfikowane konta: prezydent.pl, gov.pl (premier i wszystkie ministerstwa), senat.gov.pl, nik.gov.pl, API Sejmu i Bluesky premiera. Strona Sejmu blokuje automatyczne pobieranie, więc komunikatów Marszałka Sejmu jeszcze nie ma. Posty z X i Facebooka wymagają płatnego lub zamkniętego API. Konto Karola Nawrockiego na Bluesky ma oznaczenie podszywania się, więc go nie pokazujemy. Wszystkie sekcje: <a href="#mapa">Mapa strony</a>.</p>`;
 }
 

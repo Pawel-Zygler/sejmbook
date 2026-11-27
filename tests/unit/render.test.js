@@ -566,10 +566,13 @@ describe('Feed: one chronological stream of posts', () => {
     expect(e.find((x) => x.title === 'Budżet <2027>').author).toBe('Jan Kasa');
     expect(e.find((x) => x.title === 'Bez ministra').author).toBe('Ministerstwo Rozwoju');
     const html = renderLiveFeed(c, { window: 'all', now });
-    expect((html.match(/<article class="post feed-post"/g) ?? []).length).toBe(9);
+    expect((html.match(/<li class="feed-post feed-row"/g) ?? []).length).toBe(9);
+    expect(html).not.toContain('<article class="post feed-post"');
     expect(html).toContain('Budżet &lt;2027&gt;');
     expect(html).toContain('href="#urzad-jan-kasa"');
-    expect(html).toContain('Ministerstwo Finansów</small></div><time class="post-time" data-testid="post-time" datetime="2026-11-22">22.11.2026</time>');
+    expect(html).toContain('<time class="post-time" data-testid="post-time" datetime="2026-11-22" title="22.11.2026">22.11.2026</time>');
+    expect(html).toContain('Ministerstwo Finansów');
+    expect(html).not.toContain('Źródło:</span>');
     expect(html).not.toContain('feed-more');
   });
   it('shows the President and the Prime Minister like everyone else, escaped, with place and source', () => {
@@ -584,10 +587,10 @@ describe('Feed: one chronological stream of posts', () => {
   });
   it('posts each voting as the Sejm, with details on demand', () => {
     const html = renderLiveFeed(c, { window: 'all', now });
-    expect(html).toContain('<details class="vote-item" data-voting="0">');
+    expect(html).toContain('<li class="feed-post feed-row" data-feed="vote"><details class="vote-item" data-voting="0">');
     expect(html).toContain('Pkt. 1 &lt;b&gt;');
     expect(html).toContain('19.11.2026, 13:43');
-    expect(html).toContain('Przyjęto</b> · za 3 · przeciw 1');
+    expect(html).toContain('Przyjęto: za 3 · przeciw 1');
     expect(html).toContain('Odrzucono');
     const more = renderVotingDetails(ctx, FEED.sejm.items[0]);
     expect(more).toContain('class="vote-clubs"');
@@ -599,7 +602,7 @@ describe('Feed: one chronological stream of posts', () => {
     expect(html).toContain(`href="#posel-70">${mp.name}</a> i 1 inny poseł`);
     expect(html).toContain('class="official-link" href="#posel-70"');
     expect(html).toContain('interpelacja nr 1 do: minister klimatu');
-    expect(html).toContain('<strong>Posłowie</strong>');
+    expect(html).toContain('<span class="feed-who" title="Posłowie">Posłowie</span>');
   });
   it('keeps only the chosen window and says when nothing is new', () => {
     const html = renderLiveFeed(c, { window: '24h', now });
@@ -623,7 +626,7 @@ describe('Feed: one chronological stream of posts', () => {
   it('shows a person\'s own posts on their profile, nothing for others', () => {
     const own = personNewsPost(c, 'Donald Tusk');
     expect(own).toContain('data-testid="person-news"');
-    expect((own.match(/<article/g) ?? []).length).toBe(2);
+    expect((own.match(/<li class="feed-post/g) ?? []).length).toBe(2);
     expect(personNewsPost(c, 'Nikt')).toBe('');
     expect(personNewsPost({ ...c, feed: null }, 'Jan Kasa')).toBe('');
     expect(feedPost(c, { kind: 'office', author: 'X', role: 'R', title: 'T', date: '2026-11-24' })).not.toContain('Źródło');
