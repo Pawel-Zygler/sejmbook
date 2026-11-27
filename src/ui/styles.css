@@ -663,6 +663,31 @@ h2 { font-size: 1.1rem; }
 .tax-law-why { font-size: 0.85rem; }
 .tax-law-meta { font-size: 0.75rem; color: var(--muted); }
 
+/* ---------- Profile: KPI card (aktywność i skuteczność) ---------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 640px) { .kpi-grid { grid-template-columns: minmax(0, 1fr); } }
+.kpi-tile { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: 10px; background: var(--surface-2); min-width: 0; }
+.kpi-tile h3 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.kpi-big { margin: 2px 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.kpi-big b { font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.kpi-big span { color: var(--muted); font-size: 0.9rem; }
+.kpi-vs { font-style: normal; font-size: 0.72rem; font-weight: 700; padding: 1px 8px; border-radius: 99px; background: var(--surface); color: var(--muted); }
+.kpi-vs-up { background: var(--accent-soft); color: var(--accent); }
+.kpi-vs-down { background: var(--warn-bg); color: var(--warn-ink); }
+.kpi-line { margin: 0; font-size: 0.85rem; overflow-wrap: anywhere; }
+.kpi-bars { display: flex; flex-direction: column; gap: 3px; margin-top: 6px; }
+.kpi-bar-row { display: grid; grid-template-columns: 4.2em minmax(0, 1fr) auto; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--muted); }
+.kpi-bar-row b { font-variant-numeric: tabular-nums; color: var(--ink); min-width: 3ch; text-align: right; }
+.kpi-bar { height: 8px; border-radius: 99px; background: var(--surface); overflow: hidden; }
+.kpi-bar i { display: block; height: 100%; border-radius: 99px; }
+.kpi-bar-mp { background: var(--accent); }
+.kpi-bar-avg { background: var(--muted); opacity: 0.55; }
+.kpi-bills ol { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.kpi-bill { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; }
+.kpi-bill a { color: inherit; overflow-wrap: anywhere; }
+.kpi-bill-status { align-self: flex-start; font-size: 0.7rem; font-weight: 700; padding: 1px 8px; border-radius: 99px; background: var(--surface); color: var(--muted); }
+.kpi-bill-status.is-passed { background: var(--accent); color: var(--accent-ink); }
+
 /* Law search on the profile (under the tax card) */
 .law-search { display: block; margin: 4px 0 10px; }
 .law-filters { margin-bottom: 10px; }

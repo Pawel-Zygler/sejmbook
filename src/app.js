@@ -15,7 +15,7 @@ import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, socialData, districtMapData, bioData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, socialData, districtMapData, bioData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -29,6 +29,8 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     attendance: attendanceData ?? null,
     // Final votes on laws that raised or cut taxes in the X term (data/tax-votes.json, API Sejmu).
     taxes: taxData ?? null,
+    // KPI of every MP's work in the X term (data/kpi.json, API Sejmu).
+    kpi: kpiData ?? null,
     // Every final vote on a whole law in the X term, per MP (data/law-votes.json, API Sejmu).
     laws: lawData ?? null,
     // Mini map of the 41 Sejm districts (data/district-map.json, GUGiK borders + Wikipedia).
