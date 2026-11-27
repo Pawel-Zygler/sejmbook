@@ -36,6 +36,16 @@ describe('feed times', () => {
     const out = withSeenAt([{ url: 'a', date: '2026-11-24' }, { url: 'b', date: '2026-11-24' }, { url: 'c', date: '2026-11-20' }], prev, '2026-11-24T09:00:00.000Z');
     expect(out.map((x) => x.seenAt)).toEqual(['2026-11-24T03:00:00.000Z', '2026-11-24T09:00:00.000Z', '2026-11-20T23:59:59.000Z']);
   });
+  it('a date later than the day the item was first seen is a source typo: the seen day replaces it (regression, gov.pl 2027)', () => {
+    const out = withSeenAt([{ url: 'x', date: '2027-11-27' }], [{ url: 'x', seenAt: '2026-11-27T18:59:07.718Z' }], '2026-11-27T21:00:00.000Z');
+    expect(out[0].date).toBe('2026-11-27');
+    expect(withSeenAt([{ url: 'y', date: '2026-11-26' }], [], '2026-11-27T21:00:00.000Z')[0].date).toBe('2026-11-26');
+  });
+  it('no item in data/feed.json is dated after the day it was first seen (regression)', async () => {
+    const feed = (await import('../../data/feed.json')).default;
+    const items = [feed.president?.items, feed.pm?.items, ...(feed.offices ?? []).map((o) => o.items)].flat().filter(Boolean);
+    for (const it of items) if (it.date && it.seenAt) expect(it.date <= it.seenAt.slice(0, 10), it.url).toBe(true);
+  });
   it('uses the item\'s own time, then when it was seen, then its day', () => {
     expect(itemTime({ time: 'T', seenAt: 'S', date: '2026-01-01' })).toBe('T');
     expect(itemTime({ seenAt: 'S' })).toBe('S');

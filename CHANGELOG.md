@@ -5,6 +5,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 ## 2026-11-27
 
 - **Rankingi: Cywilizacja łacińska: poprzednie zasady.** Wynik cywilizacji łacińskiej znów liczy wszystkie ustawy i zwykłą obecność; suwerenność liczymy bez zmian.
+- **Profile: Współczynnik deklaracji.** Na profilu posła sprawdzisz, czy głosował tak, jak jego komitet obiecywał w kampanii 2023.
 - **Rankingi: Ranking Konecznego: ostrzejsze zasady.** Nie liczymy już ustaw przyjętych niemal jednogłośnie, a przy każdym sortowaniu ikona „i” mówi, jak je liczymy.
 - **Rankingi: Suwerenność kompetencji (eksperyment).** Nowy osobny wskaźnik: czy poseł głosuje za przenoszeniem kompetencji do UE, czy za zatrzymaniem ich w Polsce.
 - **Rankingi: Wykres rozkładu: cywilizacja łacińska.** Ranking ma teraz wykres, który pokazuje, ilu posłów ma jaki wynik.

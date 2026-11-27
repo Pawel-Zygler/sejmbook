@@ -19,6 +19,7 @@ import lawData from '../../data/law-votes.json';
 import kpiData from '../../data/kpi.json';
 import taxData from '../../data/tax-votes.json';
 import latinData from '../../data/latin.json';
+import declarationsData from '../../data/declarations-card.json';
 import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
 import bioData from '../../data/bio.json';
@@ -1044,6 +1045,54 @@ describe('Profile: no KPI card (removed by Pawel, 2026-11-27)', () => {
   });
 });
 
+// "Współczynnik deklaracji" (Pawel, 2026-11-27): 2023 committee promises vs votes, above the Latin civilisation card.
+describe('Profile: card "Współczynnik deklaracji"', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, declarationsData, today: '2026-11-27' });
+  });
+
+  it('sits right above the Latin civilisation card, with a % score, a level, an "i" tip and quoted postulates', () => {
+    nav('#posel-33');
+    const card = $('[data-testid="profile-declarations"]');
+    expect(card).not.toBeNull();
+    const order = $$('.feed > article').map((a) => a.dataset.testid);
+    expect(order.indexOf('profile-declarations')).toBe(order.indexOf('profile-latin') - 1);
+    const total = Number(card.querySelector('[data-testid="decl-total-value"]').textContent);
+    expect(total).toBeGreaterThanOrEqual(0);
+    expect(total).toBeLessThanOrEqual(100);
+    expect(card.querySelector('[data-testid="decl-level"]').textContent).toMatch(/konsekwentny/);
+    expect(card.querySelector('.post-head [data-testid="info-tip"]').getAttribute('aria-label')).toBe('Współczynnik deklaracji: jak liczymy');
+    const ps = card.querySelectorAll('[data-testid="decl-postulate"]');
+    expect(ps.length).toBeGreaterThan(0);
+    for (const p of ps) {
+      expect(p.querySelector('[data-testid="decl-quote"] a').href).toMatch(/^https:/);
+      expect(p.querySelector('[data-testid="info-tip"]')).not.toBeNull();
+    }
+  });
+
+  it('shows for MPs of all five 2023 committees, each with their own programme', () => {
+    for (const k of ['KO', 'TD', 'Lewica', 'PiS', 'Konfederacja']) {
+      const mp = mpsData.mps.find((m) => m.active && declarationsData.mpCommittee[m.id] === k && m.name !== 'Zbigniew Ziobro' && m.name !== 'Marcin Romanowski');
+      nav(`#posel-${mp.id}`);
+      const card = $('[data-testid="profile-declarations"]');
+      expect(card, k).not.toBeNull();
+      expect(card.dataset.committee).toBe(k);
+    }
+  });
+
+  it('every listed vote says whether it was consistent with the declaration', () => {
+    nav('#posel-33');
+    const items = $$('[data-testid="profile-declarations"] .decl-law');
+    expect(items.length).toBeGreaterThan(0);
+    for (const li of items) {
+      expect(['za', 'przeciw']).toContain(li.dataset.stance);
+      expect(li.querySelector('[data-testid="decl-verdict"]').textContent).toMatch(/deklaracj|nieobecno|wstrzymanie/);
+    }
+  });
+});
+
 // Experimental Koneczny card (Pawel, 2026-11-27): first only on Krzysztof Bosak's profile, in both looks.
 describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', () => {
   beforeEach(() => {
@@ -1064,7 +1113,7 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     expect(card.querySelectorAll('.latin-pillar')).toHaveLength(4);
     expect(card.querySelector('[data-testid="latin-disclaimer"]').textContent).toContain('interpretacja autora');
     const order = $$('.feed > article').map((a) => a.dataset.testid);
-    expect(order.indexOf('profile-latin')).toBe(order.indexOf('profile-taxes') + 1);
+    expect(order.indexOf('profile-latin')).toBeGreaterThan(order.indexOf('profile-taxes'));
   });
 
   it('lists every classified law with the vote of the MP and its direction', () => {

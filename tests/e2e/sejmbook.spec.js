@@ -708,6 +708,29 @@ test('profile: no "Aktywność i skuteczność" card', async ({ page }) => {
   await expect(page.getByTestId('profile-kpi')).toHaveCount(0);
 });
 
+// "Współczynnik deklaracji" (Pawel, 2026-11-27): above the Latin card, both looks, "i" tips, no sideways overflow.
+for (const skin of ['classic', 'modern']) {
+  test(`profile: declarations coefficient above the Latin card (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#posel-33`);
+    await expect(page.locator('html')).toHaveAttribute('data-ui', skin);
+    const card = page.getByTestId('profile-declarations');
+    await expect(card).toBeVisible();
+    await expect(card.getByTestId('decl-total-value')).toHaveText(/^\d{1,3}$/);
+    await expect(card.getByTestId('decl-level')).toHaveText(/konsekwentny/);
+    const order = await page.locator('.feed > article').evaluateAll((els) => els.map((e) => e.dataset.testid));
+    expect(order.indexOf('profile-declarations')).toBe(order.indexOf('profile-latin') - 1);
+    const first = card.getByTestId('decl-postulate').first();
+    await expect(first.getByTestId('decl-quote')).toBeVisible();
+    await first.locator('summary').click();
+    await expect(first.locator('.decl-law').first()).toBeVisible();
+    await card.locator('.post-head [data-testid="info-tip"]').focus();
+    await expect(card.locator('.post-head .info-tip-body')).toContainText('Głos zgodny z deklaracją');
+    const box = await card.boundingBox();
+    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
+  });
+}
+
 // Experimental Koneczny card (Pawel, 2026-11-27): striped "Eksperymentalne" background, both looks, no sideways overflow.
 for (const skin of ['classic', 'modern']) {
   test(`profile: experimental Latin civilisation card on Krzysztof Bosak (${skin})`, async ({ page }) => {

@@ -832,3 +832,17 @@ h2 { font-size: 1.1rem; }
 .latin-dir-oddaje { color: var(--lab-low); } .latin-dir-zatrzymuje { color: var(--lab-hi); }
 .latin-rank .latin-sov-col { border-left: 1px dashed var(--line); }
 .latin-sort-opt { display: inline-flex; align-items: center; gap: 2px; }
+
+/* Profile: "Współczynnik deklaracji" (Pawel, 2026-11-27), above the Latin civilisation card; reuses the latin-* parts */
+.decl-post { --lab: #1f6f8b; --lab-ink: #ffffff; --lab-hi: #2f7d4f; --lab-mid: #a06a00; --lab-low: #b23a3a; border-left: 4px solid var(--lab); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .decl-post { --lab: #6cc4e0; --lab-ink: #0b1d24; --lab-hi: #6fd39a; --lab-mid: #f0b84a; --lab-low: #ff8a8a; } }
+:root[data-theme="dark"] .decl-post { --lab: #6cc4e0; --lab-ink: #0b1d24; --lab-hi: #6fd39a; --lab-mid: #f0b84a; --lab-low: #ff8a8a; }
+.decl-post .latin-big b { font-size: 2.6rem; line-height: 1; color: var(--lab); }
+.decl-postulate { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
+.decl-postulate h3 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+.decl-postulate h3 > span { flex: 1 1 auto; min-width: 0; }
+.decl-quote { margin: 0; padding: 6px 10px; border-left: 3px solid var(--lab); background: var(--surface-2); font-size: 0.85rem; font-style: italic; overflow-wrap: anywhere; border-radius: 0 8px 8px 0; }
+.decl-quote a { font-style: normal; font-size: 0.75rem; }
+.decl-stance { font-size: 0.72rem; font-weight: 700; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); color: var(--muted); }
+.decl-verdict { font-size: 0.75rem; font-weight: 700; }
+.decl-ok { color: var(--lab-hi); } .decl-bad { color: var(--lab-low); } .decl-half { color: var(--lab-mid); }

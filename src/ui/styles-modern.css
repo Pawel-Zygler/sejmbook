@@ -197,3 +197,8 @@
   :root[data-ui="modern"] .profile-links .lp-wrap:nth-child(n+3):focus-within .link-preview { transform: none; }
   :root[data-ui="modern"] .profile-links .lp-wrap:nth-child(n+3) .link-preview::before { left: auto; right: -12px; }
 }
+
+/* Profile: "Współczynnik deklaracji" */
+:root[data-ui="modern"] .decl-post .latin-big b { font-family: var(--font-display); letter-spacing: -0.03em; }
+:root[data-ui="modern"] .decl-quote { border-radius: 0 14px 14px 0; }
+:root[data-ui="modern"] .decl-law { border-radius: 14px; }

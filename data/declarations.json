@@ -1,0 +1,59 @@
+{
+ "title": "Współczynnik deklaracji",
+ "question": "Czy poseł głosował tak, jak jego komitet obiecywał w kampanii 2023?",
+ "rule": "Bierzemy postulaty z programów i oficjalnych deklaracji komitetów wyborczych z kampanii 2023 (każdy z cytatem i linkiem do źródła). Do postulatu przypisujemy tylko ustawy, które wprost go realizują albo mu zaprzeczają, z kierunkiem: „za” albo „przeciw”. Poseł jest rozliczany z programu komitetu, z którego listy dostał mandat (klub w jego pierwszym głosowaniu w Sejmie X kadencji, według API Sejmu).",
+ "scoring": "Głos zgodny z deklaracją = 1, wstrzymanie się = 0,5, głos przeciwny = 0; nieobecności pomijamy. Wynik postulatu to odsetek punktów, a współczynnik to średnia postulatów, w których poseł głosował (każdy postulat waży tyle samo). 75 i więcej = konsekwentny, 50–74 = częściowo konsekwentny, poniżej 50 = niekonsekwentny.",
+ "disclaimer": "Przypisanie ustaw do postulatów to interpretacja autora strony na podstawie opisów projektów w API Sejmu; każdą pozycję można sprawdzić w źródle.",
+ "committees": {
+  "KO": { "name": "Koalicja Obywatelska", "program": "100 konkretów na 100 dni" },
+  "TD": { "name": "Trzecia Droga (PSL, Polska 2050)", "program": "12 gwarancji" },
+  "Lewica": { "name": "Lewica", "program": "program wyborczy 2023" },
+  "PiS": { "name": "Prawo i Sprawiedliwość", "program": "Bezpieczna przyszłość Polaków" },
+  "Konfederacja": { "name": "Konfederacja Wolność i Niepodległość", "program": "deklaracje programowe 2023" }
+ },
+ "sources": {
+  "ko100": { "label": "Interia: „100 konkretów na 100 dni” KO (2023)", "url": "https://wydarzenia.interia.pl/wybory/parlamentarne/news-obietnice-wyborcze-2023-100-konkretow-na-100-dni-koalicji-ob,nId,7015662" },
+  "td12": { "label": "Trzecia Droga: „12 gwarancji” (PDF, 2023)", "url": "https://demagog.org.pl/wp-content/uploads/2023/10/12-gwarancji.pdf" },
+  "lewicaTvn": { "label": "TVN24: 10 pytań, odpowiada Nowa Lewica (11.10.2023)", "url": "https://tvn24.pl/wybory-parlamentarne-2023/wybory-2023-jaki-program-wyborczy-ma-nowa-lewica-7373559" },
+  "pisProgram": { "label": "PiS: program „Bezpieczna przyszłość Polaków”, s. 14–15 (2023)", "url": "https://tvn24.pl/najnowsze/program-pis-bezpieczna-przyszlosc-polakowpdf-bi7344418" },
+  "konfParkiet": { "label": "Parkiet: 15 pytań o gospodarkę, Konfederacja (02.10.2023)", "url": "https://www.parkiet.com/wybory-parlamentarne-2023/art39199921-15-pytan-o-gospodarke-konfederacja" },
+  "konfInfakt": { "label": "inFakt: program Konfederacji 2023 (11.09.2023)", "url": "https://www.infakt.pl/blog/wybory-2023-konfederacja/" }
+ },
+ "postulates": [
+  { "id": "ko-invitro", "committee": "KO", "topic": "In vitro", "quote": "Wprowadzenie finansowania in vitro z budżetu państwa.", "source": "ko100", "laws": [{ "process": "31", "stance": "za" }] },
+  { "id": "ko-aborcja", "committee": "KO", "topic": "Aborcja", "quote": "Legalna, bezpieczna i dostępna aborcja do 12. tygodnia ciąży", "source": "ko100", "laws": [{ "process": "176", "stance": "za" }, { "process": "611", "stance": "za" }, { "process": "223", "stance": "za" }] },
+  { "id": "ko-antykoncepcja", "committee": "KO", "topic": "Antykoncepcja awaryjna", "quote": "Dostęp do „antykoncepcji awaryjnej” bez recepty", "source": "ko100", "laws": [{ "process": "185", "stance": "za" }] },
+  { "id": "ko-skladka", "committee": "KO", "topic": "Składka zdrowotna", "quote": "Powrót do ryczałtowego systemu rozliczania składki zdrowotnej", "source": "ko100", "laws": [{ "process": "838", "stance": "za" }] },
+  { "id": "ko-aktywna-mama", "committee": "KO", "topic": "Babciowe", "quote": "Wsparcie kobiet wracających na rynek pracy po urodzeniu dziecka: Program „Aktywna mama” - 1500 zł miesięcznie", "source": "ko100", "laws": [{ "process": "319", "stance": "za" }] },
+  { "id": "ko-kasowy-pit", "committee": "KO", "topic": "Kasowy PIT", "quote": "Płacenie podatku dochodowego dopiero po otrzymaniu środków z tytułu zapłaconej faktury", "source": "ko100", "laws": [{ "process": "601", "stance": "za" }, { "process": "1838", "stance": "za" }] },
+  { "id": "ko-urlop-zus", "committee": "KO", "topic": "Urlop od składek", "quote": "„Urlop dla przedsiębiorców” - jeden miesiąc wolny od składek na ubezpieczenia społeczne …", "source": "ko100", "laws": [{ "process": "275", "stance": "za" }] },
+  { "id": "ko-krs", "committee": "KO", "topic": "KRS", "quote": "Likwidacja neoKRS i utworzenie Krajowej Rady Sądownictwa w składzie zgodnym z Konstytucją", "source": "ko100", "laws": [{ "process": "219", "stance": "za" }, { "process": "2108", "stance": "za" }, { "process": "2107", "stance": "za" }] },
+  { "id": "ko-wiatraki", "committee": "KO", "topic": "Wiatraki na lądzie", "quote": "Złożenie projektu ustawy odblokowującej możliwość rozwoju energetyki wiatrowej na lądzie", "source": "ko100", "laws": [{ "process": "1130", "stance": "za" }] },
+  { "id": "ko-gaz", "committee": "KO", "topic": "Ceny gazu", "quote": "„Zamrożenie” cen gazu w 2024 roku dla gospodarstw domowych … na poziomie cen z 2023 roku", "source": "ko100", "laws": [{ "process": "72", "stance": "za" }] },
+  { "id": "ko-rejestracja", "committee": "KO", "topic": "Rejestracja do lekarza", "quote": "Łatwy w obsłudze i czytelny system system rezerwacji wizyt - sms-y, maile", "source": "ko100", "laws": [{ "process": "1609", "stance": "za" }] },
+  { "id": "ko-asystencja", "committee": "KO", "topic": "Usługi asystenckie", "quote": "Stworzenie system usług asystenckich dla osób niesamodzielnych …", "source": "ko100", "laws": [{ "process": "316", "stance": "za" }] },
+
+  { "id": "td-skladka", "committee": "TD", "topic": "Składka zdrowotna", "quote": "Przez zmiany wprowadzone przez Polski Ład nie można odliczyć jej od podatku. Cofniemy tę regulację.", "source": "td12", "laws": [{ "process": "838", "stance": "za" }] },
+  { "id": "td-wakacje-zus", "committee": "TD", "topic": "Wakacje od ZUS", "quote": "Wprowadzimy wakacje od składek na Zakład Ubezpieczeń Społecznych dla mikroprzedsiębiorców w kłopotach finansowych.", "source": "td12", "laws": [{ "process": "275", "stance": "za" }] },
+  { "id": "td-kasowy-pit", "committee": "TD", "topic": "Kasowy PIT", "quote": "VAT i PIT będzie płacony tylko od uregulowanych faktur.", "source": "td12", "laws": [{ "process": "601", "stance": "za" }, { "process": "1838", "stance": "za" }] },
+  { "id": "td-podatki", "committee": "TD", "topic": "Bez podwyżek CIT, VAT, PIT", "quote": "Nie podwyższymy CIT, VAT i PIT przez całą kadencję.", "source": "td12", "laws": [{ "process": "1752", "stance": "przeciw" }, { "process": "3135", "stance": "przeciw" }] },
+  { "id": "td-aborcja", "committee": "TD", "topic": "Wyrok TK z 2020 r.", "quote": "Zapewnimy bezpieczeństwo polskim kobietom, odpowiednią ustawą odwracając negatywne skutki … orzeczenia TK z 2020 r.", "source": "td12", "laws": [{ "process": "223", "stance": "za" }] },
+  { "id": "td-invitro", "committee": "TD", "topic": "In vitro", "quote": "Przywrócimy dofinansowanie in vitro z budżetu państwa", "source": "td12", "laws": [{ "process": "31", "stance": "za" }] },
+  { "id": "td-asystent", "committee": "TD", "topic": "Asystent osobisty", "quote": "Asystent osobisty dla osób z niepełnosprawnościami.", "source": "td12", "laws": [{ "process": "316", "stance": "za" }] },
+
+  { "id": "lewica-aborcja", "committee": "Lewica", "topic": "Aborcja", "quote": "Wprowadzimy uzależnione wyłącznie od decyzji kobiety prawo do przerwania ciąży do 12. tygodnia.", "source": "lewicaTvn", "laws": [{ "process": "176", "stance": "za" }, { "process": "611", "stance": "za" }, { "process": "223", "stance": "za" }] },
+  { "id": "lewica-antykoncepcja", "committee": "Lewica", "topic": "Antykoncepcja awaryjna", "quote": "Antykoncepcja awaryjna będzie dostępna bez recepty.", "source": "lewicaTvn", "laws": [{ "process": "185", "stance": "za" }] },
+  { "id": "lewica-invitro", "committee": "Lewica", "topic": "In vitro", "quote": "Wprowadzimy publiczny ogólnopaństwowy program leczenia niepłodności, w tym przez zapłodnienie pozaustrojowe (in vitro).", "source": "lewicaTvn", "laws": [{ "process": "31", "stance": "za" }] },
+  { "id": "lewica-zwiazki", "committee": "Lewica", "topic": "Związki partnerskie", "quote": "Wprowadzimy pełną równość małżeńską, a także instytucję związków partnerskich niezależnie od płci.", "source": "lewicaTvn", "laws": [{ "process": "2110", "stance": "za" }] },
+  { "id": "lewica-krs", "committee": "Lewica", "topic": "KRS", "quote": "… sędziowie, członkowie Krajowej Rady Sądownictwa … powinni być wybierani przez sędziów.", "source": "lewicaTvn", "laws": [{ "process": "219", "stance": "za" }, { "process": "2108", "stance": "za" }] },
+  { "id": "lewica-mieszkania", "committee": "Lewica", "topic": "Mieszkania na wynajem", "quote": "… publicznego programu budowy mieszkań na wynajem, który będzie realizowany zgodnie z zasadą: państwo płaci, planuje i wspiera, samorządy budują mieszkania.", "source": "lewicaTvn", "laws": [{ "process": "1319", "stance": "za" }] },
+
+  { "id": "pis-zycie", "committee": "PiS", "topic": "Ochrona życia", "quote": "Uznajemy za niedopuszczalne zabijanie dzieci nienarodzonych, jednocześnie broniąc godności i zdrowia kobiet.", "source": "pisProgram", "laws": [{ "process": "176", "stance": "przeciw" }, { "process": "611", "stance": "przeciw" }, { "process": "223", "stance": "przeciw" }] },
+  { "id": "pis-rodzina", "committee": "PiS", "topic": "Rodzina", "quote": "Prawo i Sprawiedliwość będzie stanowczo bronić rodziny naturalnej. Opiera się ona na trwałym związku kobiety i mężczyzny.", "source": "pisProgram", "laws": [{ "process": "2110", "stance": "przeciw" }] },
+
+  { "id": "konf-podatki", "committee": "Konfederacja", "topic": "Niższe podatki", "quote": "Wyższe podatki/daniny dla najlepiej zarabiających/przedsiębiorców/biznesu: NIE; likwidacja 15 istniejących podatków", "source": "konfParkiet", "extraSource": "konfInfakt", "fromTax": { "raise": "przeciw", "cut": "za" }, "laws": [] },
+  { "id": "konf-zus", "committee": "Konfederacja", "topic": "Dobrowolny ZUS", "quote": "Dobrowolny ZUS dla przedsiębiorców: TAK", "source": "konfParkiet", "laws": [{ "process": "275", "stance": "za" }] },
+  { "id": "konf-swiadczenia", "committee": "Konfederacja", "topic": "Świadczenia socjalne", "quote": "Należy zlikwidować 13. i 14. emeryturę oraz inne świadczenia socjalne, a także wycofać podwyżkę 500+ do 800 zł.", "source": "konfParkiet", "laws": [{ "process": "319", "stance": "przeciw" }] },
+  { "id": "konf-energia", "committee": "Konfederacja", "topic": "Zielona energia", "quote": "Więcej zielonej energii i atom kosztem ograniczenia paliw kopalnych: NIE", "source": "konfParkiet", "laws": [{ "process": "1130", "stance": "przeciw" }] }
+ ]
+}
