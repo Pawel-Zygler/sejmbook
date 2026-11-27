@@ -7,7 +7,7 @@ import careerData from '../../data/career.json';
 import governmentData from '../../data/government.json';
 import termsData from '../../data/terms.json';
 import earlyTermsData from '../../data/early-terms.json';
-import { workCandidates, ownBusinessLabel, employerVerdict, wdYear, wdDate, sameBirth, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
+import { workCandidates, ownBusinessLabel, employerVerdict, wdYear, wdDate, sameBirth, sameName, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
 import { lifeTimeline } from '../../src/lib/life.js';
 import { createContext } from '../../src/app.js';
 import { renderProfile, renderPerson, workText, workTip, workLine, lifeSteps } from '../../src/ui/render.js';
@@ -87,6 +87,14 @@ describe('dates and identity', () => {
     expect(sameBirth({ birthYear: 1982 }, [])).toBe(false);
     expect(sameBirth({}, ['+1982-01-01T00:00:00Z'])).toBe(false);
     expect(sameBirth({ birthYear: 1982 }, null)).toBe(false);
+  });
+  it('matches names by first name and surname (twins differ, middle names and accents do not matter)', () => {
+    expect(sameName('Łukasz Maria Abgarowicz', 'Łukasz Abgarowicz')).toBe(true);
+    expect(sameName('Joanna Kluzik-Rostkowska', 'Joanna Kluzik-Rostkowska (polityk)')).toBe(true);
+    expect(sameName('Jarosław Kaczyński', 'Lech Kaczyński')).toBe(false);
+    expect(sameName('Jan Nowak', 'Nowak')).toBe(false);
+    expect(sameName('Jan', 'Jan Nowak')).toBe(false);
+    expect(sameName(null, 'Jan Nowak')).toBe(false);
   });
   it('maps names in a list of MPs to their articles', () => {
     const m = nameLinks('[[Jan Nowak (polityk)|Jan Nowak]], [[Anna Maria Kowal]], [[Sejm]], [[Plik:X.jpg|Jan Zły]] [[Jan Nowak|Jan Nowak]]');

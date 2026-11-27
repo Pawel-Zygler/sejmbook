@@ -143,6 +143,15 @@ export function sameBirth(person, wikidataBirths) {
   return false;
 }
 
+const foldName = (s) => String(s ?? '').toLowerCase().replace(/\s*\([^)]*\)\s*$/, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').split(/[\s-]+/).filter(Boolean);
+/** Same person's name: the first name and the surname (last word, or each part of a double surname) are both there. */
+export function sameName(ours, theirs) {
+  const a = foldName(ours), b = foldName(theirs);
+  if (a.length < 2 || b.length < 2) return false;
+  const surname = String(ours).trim().split(/\s+/).pop();
+  return b.includes(a[0]) && foldName(surname).every((w) => b.includes(w));
+}
+
 /** Links "[[Target|Name]]" in a list of MPs → Map name → article title (only links whose text is the name). */
 export function nameLinks(wikitext) {
   const map = new Map();

@@ -9,7 +9,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { orgName } from '../src/lib/social.js';
 import { mergeEarlyTerms } from '../src/lib/early-terms.js';
 import { buildHierarchy } from '../src/lib/government.js';
-import { workCandidates, employerVerdict, profilePeople, nameLinks, sameBirth, mergeWorkItems, wdYear } from '../src/lib/work.js';
+import { workCandidates, employerVerdict, profilePeople, nameLinks, sameBirth, sameName, mergeWorkItems, wdYear } from '../src/lib/work.js';
 
 const UA = 'sejmbook-data-fetch/1.0 (GitHub Actions; open data project)';
 const root = new URL('..', import.meta.url);
@@ -75,31 +75,55 @@ for (const p of people) {
   p.title = k.title; p.qid = p.qid ?? k.qid;
 }
 
-// 3) The rest: search by name, accept only an article whose Wikidata date of birth is the same as ours.
+// 3) The rest. a) Full date of birth: one SPARQL query per 80 dates finds every person on Wikidata born that day
+// with an article on Polish Wikipedia; we accept the one whose name matches (first name and surname).
+const sparql = (q) => getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', signal: AbortSignal.timeout(120000), headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` });
+const id = (uri) => uri.split('/').pop();
+const byDate = people.filter((p) => !p.title && p.birthDate && p.kind !== 'urzad');
+const dates = [...new Set(byDate.map((p) => p.birthDate))];
+console.log(`matching ${byDate.length} people by date of birth (${dates.length} dates)`);
+const bornOn = new Map();
+for (let i = 0; i < dates.length; i += 80) {
+  try {
+    const r = await sparql(`SELECT ?item ?d ?art ?label WHERE { VALUES ?d { ${dates.slice(i, i + 80).map((d) => `"${d}T00:00:00Z"^^xsd:dateTime`).join(' ')} }
+      ?item wdt:P569 ?d ; wdt:P31 wd:Q5 . ?art schema:about ?item ; schema:isPartOf <https://pl.wikipedia.org/> .
+      OPTIONAL { ?item rdfs:label ?label FILTER(lang(?label) = "pl") } }`);
+    for (const b of r.results?.bindings ?? []) {
+      const d = b.d.value.slice(0, 10);
+      if (!bornOn.has(d)) bornOn.set(d, []);
+      bornOn.get(d).push({ qid: id(b.item.value), title: decodeURIComponent(b.art.value.split('/wiki/').pop()).replace(/_/g, ' '), label: b.label?.value ?? '' });
+    }
+  } catch (e) { console.log(`dates ${i}: ${e.message}`); }
+  await sleep(1000);
+}
+for (const p of byDate) {
+  const hits = [...new Map((bornOn.get(p.birthDate) ?? []).filter((h) => sameName(p.name, h.label) || sameName(p.name, h.title)).map((h) => [h.qid, h])).values()];
+  if (hits.length === 1) { p.qid = hits[0].qid; p.title = hits[0].title; p.how = `Wikidata: ta sama data urodzenia (${p.birthDate}) i nazwisko`; }
+  else p.how = hits.length > 1 ? 'kilka osób z tą samą datą urodzenia i nazwiskiem' : 'brak w Wikidata osoby z tą datą urodzenia i nazwiskiem';
+}
+// b) Only a birth year (MPs without a Wikidata item): search by name, the year and the name must match.
 async function births(qids) {
   const out = new Map();
   for (let i = 0; i < qids.length; i += 50) {
-    const r = await getJson(`${WD}action=wbgetentities&ids=${qids.slice(i, i + 50).join('|')}&props=claims|sitelinks&sitefilter=plwiki`);
+    const r = await getJson(`${WD}action=wbgetentities&ids=${qids.slice(i, i + 50).join('|')}&props=claims|sitelinks|labels&languages=pl&sitefilter=plwiki`);
     for (const [q, e] of Object.entries(r.entities ?? {})) out.set(q, { births: (e.claims?.P569 ?? []).map((c) => c.mainsnak?.datavalue?.value?.time), title: e.sitelinks?.plwiki?.title ?? null });
     await sleep(300);
   }
   return out;
 }
-const toFind = people.filter((p) => !p.title && (p.birthDate || p.birthYear) && p.kind !== 'urzad');
+const toFind = people.filter((p) => !p.title && !p.birthDate && p.birthYear && p.kind === 'mp');
 console.log(`searching ${toFind.length} people by name`);
-let found = 0;
-for (const [n, p] of toFind.entries()) {
+for (const p of toFind) {
   try {
     const r = await getJson(`${WP}action=query&list=search&srlimit=5&srnamespace=0&srprop=&srsearch=${encodeURIComponent(`"${p.name}"`)}`);
-    const titles = (r.query?.search ?? []).map((x) => x.title);
+    const titles = (r.query?.search ?? []).map((x) => x.title).filter((t) => sameName(p.name, t));
     const info = titles.length ? await pageInfo(titles) : new Map();
     const qids = [...new Set([...info.values()].map((x) => x.qid).filter(Boolean))];
     const b = qids.length ? await births(qids) : new Map();
     const hits = qids.filter((q) => sameBirth(p, b.get(q)?.births) && b.get(q)?.title);
-    if (hits.length === 1) { p.qid = hits[0]; p.title = b.get(hits[0]).title; p.how = `wyszukiwanie + ta sama data urodzenia (${p.birthDate ?? p.birthYear})`; found++; }
-    else p.how = hits.length > 1 ? 'kilka artykułów z tą samą datą urodzenia' : 'nie znaleziono artykułu z tą samą datą urodzenia';
+    if (hits.length === 1) { p.qid = hits[0]; p.title = b.get(hits[0]).title; p.how = `wyszukiwanie + ten sam rok urodzenia (${p.birthYear})`; }
+    else p.how = hits.length > 1 ? 'kilka artykułów z tym samym rokiem urodzenia' : 'nie znaleziono artykułu z tym samym rokiem urodzenia';
   } catch (e) { p.how = `błąd wyszukiwania: ${e.message}`; }
-  if (n % 100 === 0) console.log(`search ${n}/${toFind.length}, found ${found}`);
   await sleep(250);
 }
 for (const p of people) if (!p.title && !p.how) p.how = 'brak daty urodzenia i pewnego linku';
@@ -121,8 +145,6 @@ for (let i = 0; i < titles.length; i += 20) {
 }
 
 // 5) Wikidata P108 (employer) with dates, for every person with an item.
-const sparql = (q) => getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', signal: AbortSignal.timeout(90000), headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` });
-const id = (uri) => uri.split('/').pop();
 const personQids = [...new Set(people.map((p) => p.qid).filter(Boolean))];
 const p108 = new Map();
 for (let i = 0; i < personQids.length; i += 150) {
