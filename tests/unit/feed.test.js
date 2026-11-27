@@ -62,3 +62,12 @@ describe('feed times', () => {
     expect(FEED_WINDOWS.map((w) => w.id)).toEqual(['6h', '24h', '3d', 'all']);
   });
 });
+
+// Regression (2026-11-27): gov.pl printed "2027-11-27" on a news item; a future date must not jump to the top.
+describe('withSeenAt: future dates from the source', () => {
+  it('uses the day the item was first seen', () => {
+    const [it] = withSeenAt([{ url: 'x', date: '2027-11-27' }], [], '2026-11-27T18:59:07.718Z');
+    expect(it).toEqual({ url: 'x', date: '2026-11-27', seenAt: '2026-11-27T18:59:07.718Z' });
+    expect(withSeenAt([{ url: 'y', date: '2026-11-27' }], [], '2026-11-27T18:00:00.000Z')[0].date).toBe('2026-11-27');
+  });
+});

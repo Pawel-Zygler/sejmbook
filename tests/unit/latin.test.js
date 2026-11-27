@@ -297,19 +297,22 @@ describe('stricter scoring and explanations', () => {
   it('pillar 4 uses the attendance percentile when the data has it', () => {
     const lv = { mps: [1], laws: [{ process: 'a', v: 'Y' }] };
     const latin = { laws: [{ process: 'a', pillar: 3, direction: 'zgodna' }], attendance: { 1: { pct: 95, percentile: 20 } }, independence: { 1: { percentile: 40 } } };
-    const p4 = mpLatin(latin, lv, 1).pillars[3];
-    expect(p4).toMatchObject({ score: 30, attendancePct: 95, attendancePercentile: 20 });
+    // Pawel, 2026-11-27 22:20: back to raw attendance; percentile only when the data asks for it.
+    expect(mpLatin(latin, lv, 1).pillars[3]).toMatchObject({ score: 68, attendancePct: 95, attendancePercentile: 20 });
+    expect(mpLatin({ ...latin, attendanceMode: 'percentile' }, lv, 1).pillars[3]).toMatchObject({ score: 30 });
   });
-  it('the shipped data skips near-unanimous laws and has attendance percentiles', () => {
-    expect(latinData.consensusSkip).toBe(0.9);
+  it('shipped data: Latin counts every law and raw attendance again (Pawel, 22:20); sovereignty still skips near-unanimous laws', () => {
+    expect(latinData.consensusSkip).toBeUndefined();
+    expect(latinData.attendanceMode).toBe('raw');
     expect(latinData.sovereignty.consensusSkip).toBe(0.9);
     expect(latinData.laws.every((l) => l.consensus >= 0.5 && l.consensus <= 1)).toBe(true);
     expect(Object.keys(latinData.attendance).length).toBeGreaterThan(400);
   });
   it('every sort key has an explanation of how it is computed', () => {
     for (const k of ['total', 'p1', 'p2', 'p3', 'p4', 'sov']) expect(howComputed(latinData, k).length, k).toBeGreaterThan(80);
-    expect(howComputed(latinData, 'p3')).toContain('niemal jednogłośnie');
-    expect(howComputed(latinData, 'p4')).toContain('percentyla obecności');
+    expect(howComputed(latinData, 'p3')).not.toContain('niemal jednogłośnie');
+    expect(howComputed(latinData, 'p4')).toContain('% dni obrad z głosem');
+    expect(howComputed(latinData, 'sov')).toContain('niemal jednogłośnie');
     expect(howComputed(latinData, 'sov')).toContain('UE');
   });
 });

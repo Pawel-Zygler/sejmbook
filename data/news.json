@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-konieczny-powrot",
+      "date": "2026-11-27",
+      "title": "Cywilizacja łacińska: poprzednie zasady",
+      "section": "Rankingi",
+      "body": "Wynik cywilizacji łacińskiej znów liczy wszystkie ustawy i zwykłą obecność; suwerenność liczymy bez zmian.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-27-wspolczynnik-deklaracji",
       "date": "2026-11-27",
       "title": "Współczynnik deklaracji",

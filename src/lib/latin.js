@@ -148,7 +148,7 @@ export function mpLatin(latin, lawVotes, mpId, { attendancePct = null } = {}) {
   const ind = latin.independence?.[mpId] ?? null;
   // Attendance counts as a percentile among MPs (since 2026-11-27), so 90% attendance is not automatically "high".
   const att = latin.attendance?.[mpId] ?? null;
-  const attScore = att ? att.percentile : attendancePct;
+  const attScore = att && latin.attendanceMode === 'percentile' ? att.percentile : (att?.pct ?? attendancePct);
   const parts = [attScore, ind?.percentile].filter((x) => x != null);
   out.push({ id: 4, attendancePct: att?.pct ?? attendancePct, attendancePercentile: att?.percentile ?? null, independence: ind, score: parts.length ? parts.reduce((a, b) => a + b, 0) / parts.length : null, items: [] });
   const scored = out.filter((p) => p.score != null);
