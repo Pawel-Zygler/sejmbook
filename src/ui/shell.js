@@ -29,6 +29,7 @@ export const SHELL_HTML = `
     <a href="#frequent-flyer" data-nav="flyer"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5 4 11l1.5-1.5 7 .5 4.2-4.2c.9-.9 2.4-.9 3.1-.2s.7 2.2-.2 3.1L15.4 13l.5 7-1.5 1.5-2.5-6.5"/><path d="m7 17-3 .5.5-3"/></svg></span>Frequent Flyer</a>
     <a href="#frekwencja" data-nav="attendance"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5V12h8.5"/></svg></span>Frekwencja</a>
     <a href="#partie" data-nav="parties"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></svg></span>Najwięcej partii</a>
+    <a href="#konieczny" data-nav="latin"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 9h14"/><path d="M8.5 21h7"/></svg></span>Cywilizacja łacińska</a>
     <p class="sidenav-label">Serwis</p>
     <a href="#changelog" data-nav="changelog"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5V12l3 2"/><circle cx="12" cy="12" r="8.5"/></svg></span>Changelog</a>
     <a href="#mapa" data-nav="sitemap"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3.5" width="6" height="4.5" rx="1"/><rect x="3" y="16" width="6" height="4.5" rx="1"/><rect x="15" y="16" width="6" height="4.5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></svg></span>Mapa strony</a>
@@ -54,6 +55,7 @@ export const SHELL_HTML = `
         <a href="#frequent-flyer">Frequent Flyer</a>
         <a href="#frekwencja">Frekwencja</a>
         <a href="#partie">Najwięcej partii</a>
+        <a href="#konieczny">Cywilizacja łacińska</a>
       </nav>
       <nav class="foot-col" aria-label="Serwis w stopce">
         <p class="foot-h">Serwis</p>

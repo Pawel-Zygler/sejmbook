@@ -1,6 +1,68 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-konieczny-ostrzej",
+      "date": "2026-11-27",
+      "title": "Ranking Konecznego: ostrzejsze zasady",
+      "section": "Rankingi",
+      "body": "Nie liczymy już ustaw przyjętych niemal jednogłośnie, a przy każdym sortowaniu ikona „i” mówi, jak je liczymy.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
+      "id": "2026-11-27-suwerennosc",
+      "date": "2026-11-27",
+      "title": "Suwerenność kompetencji (eksperyment)",
+      "section": "Rankingi",
+      "body": "Nowy osobny wskaźnik: czy poseł głosuje za przenoszeniem kompetencji do UE, czy za zatrzymaniem ich w Polsce.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
+      "id": "2026-11-27-rozklad-konieczny",
+      "date": "2026-11-27",
+      "title": "Wykres rozkładu: cywilizacja łacińska",
+      "section": "Rankingi",
+      "body": "Ranking ma teraz wykres, który pokazuje, ilu posłów ma jaki wynik.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz wykres"
+      }
+    },
+    {
+      "id": "2026-11-27-linkedin",
+      "date": "2026-11-27",
+      "title": "LinkedIn przy nazwisku posła",
+      "section": "Profile",
+      "body": "Przy nazwisku jest teraz ikona LinkedIn: potwierdzony profil z Wikidata albo wyszukiwanie po imieniu i nazwisku."
+    },
+    {
+      "id": "2026-11-27-ranking-konieczny",
+      "date": "2026-11-27",
+      "title": "Ranking: cywilizacja łacińska",
+      "section": "Rankingi",
+      "body": "Nowy eksperymentalny ranking posłów według czterech zasad Konecznego, a karta jest teraz na profilu każdego posła.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
+      "id": "2026-11-27-cywilizacja-lacinska",
+      "date": "2026-11-27",
+      "title": "Zgodność z cywilizacją łacińską (eksperyment)",
+      "section": "Profile",
+      "body": "Eksperymentalna karta na profilach posłów Lewicy i Konfederacji ocenia głosowania według czterech zasad Konecznego, w skali 0–100.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-nowe-karty",
       "date": "2026-11-27",
       "title": "Nowe karty posłów",

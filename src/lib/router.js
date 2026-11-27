@@ -6,6 +6,7 @@ export function parseHash(hash) {
   if (h === 'frequent-flyer') return { name: 'flyer' };
   if (h === 'frekwencja') return { name: 'attendance' };
   if (h === 'partie') return { name: 'parties' };
+  if (h === 'konieczny') return { name: 'latin' };
   if (h === 'changelog') return { name: 'changelog' };
   if (h === 'panstwo') return { name: 'state' };
   if (h === 'mapa') return { name: 'sitemap' };
@@ -27,6 +28,7 @@ export function hrefFor(route) {
     case 'flyer': return '#frequent-flyer';
     case 'attendance': return '#frekwencja';
     case 'parties': return '#partie';
+    case 'latin': return '#konieczny';
     case 'changelog': return '#changelog';
     case 'state': return '#panstwo';
     case 'sitemap': return '#mapa';

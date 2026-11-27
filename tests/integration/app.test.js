@@ -18,6 +18,7 @@ import governmentData from '../../data/government.json';
 import lawData from '../../data/law-votes.json';
 import kpiData from '../../data/kpi.json';
 import taxData from '../../data/tax-votes.json';
+import latinData from '../../data/latin.json';
 import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
 import bioData from '../../data/bio.json';
@@ -162,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Nowe karty posłów';
-const NEWEST_LINE = 'Posłowie: Nowe karty posłów';
+const NEWEST = 'Ranking Konecznego: ostrzejsze zasady';
+const NEWEST_LINE = 'Rankingi: Ranking Konecznego: ostrzejsze zasady';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -515,7 +516,7 @@ describe('Profiles of former MPs', () => {
     nav(leader.getAttribute('href'));
     expect($('[data-testid="spectrum"] [data-lane="sejm"] .life-seg, [data-testid="spectrum"] [data-testid="spectrum-text"]')).not.toBeNull();
     expect($('[data-testid="site-foot"]').textContent).toContain('Źródła danych');
-    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']);
+    expect($$('[data-testid="site-foot"] .foot-col a').map((a) => a.getAttribute('href'))).toEqual(['#start', '#poslowie', '#panstwo', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#changelog', '#mapa']);
     expect($('#view').textContent).not.toContain('Dane: API Sejmu');
   });
 });
@@ -710,7 +711,7 @@ describe('Feed: office press releases, MP acts; sitemap; one page header', () =>
     for (const h of hrefs) { nav(h); expect($('#view').textContent).not.toContain('Nie ma takiej strony'); }
   });
   it('gives every section page the same header', () => {
-    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#changelog', '#mapa']) {
+    for (const h of ['#panstwo', '#rzad-buzek', '#frequent-flyer', '#frekwencja', '#partie', '#konieczny', '#changelog', '#mapa']) {
       nav(h);
       const head = $('#view .page-head');
       expect(head, h).not.toBeNull();
@@ -973,7 +974,8 @@ describe('Posłowie: all terms at once', () => {
     click($('#aside [data-action="dir-sort"][data-sort="terms"]'));
     const first = $('.term-card .term-card-terms').textContent;
     expect(first).toMatch(/kadencje I/);
-  });
+    // Renders every MP of every term (~3000 cards) four times: about 4.5 s in jsdom, too close to the 5 s default.
+  }, 20000);
 });
 
 describe('Life line: PRL opposition, Round Table and offices (Wikipedia categories, Wikidata P39)', () => {
@@ -1039,5 +1041,125 @@ describe('Profile: no KPI card (removed by Pawel, 2026-11-27)', () => {
     expect($('[data-testid="profile-kpi"]')).toBeNull();
     expect($('[data-testid="profile-taxes"]')).not.toBeNull();
     expect($('#view').textContent).not.toContain('Aktywność i skuteczność');
+  });
+});
+
+// Experimental Koneczny card (Pawel, 2026-11-27): first only on Krzysztof Bosak's profile, in both looks.
+describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, today: '2026-11-27' });
+  });
+
+  it('shows on the profile of Krzysztof Bosak, after the tax card, marked experimental, with a 0-100 score and four pillars', () => {
+    nav('#posel-33');
+    const card = $('[data-testid="profile-latin"]');
+    expect(card).not.toBeNull();
+    expect(card.dataset.experimental).toBe('true');
+    expect(card.querySelector('[data-testid="latin-experimental"]').textContent).toBe('Eksperymentalne');
+    const total = Number(card.querySelector('[data-testid="latin-total-value"]').textContent);
+    expect(total).toBeGreaterThanOrEqual(0);
+    expect(total).toBeLessThanOrEqual(100);
+    expect(card.querySelectorAll('.latin-pillar')).toHaveLength(4);
+    expect(card.querySelector('[data-testid="latin-disclaimer"]').textContent).toContain('interpretacja autora');
+    const order = $$('.feed > article').map((a) => a.dataset.testid);
+    expect(order.indexOf('profile-latin')).toBe(order.indexOf('profile-taxes') + 1);
+  });
+
+  it('lists every classified law with the vote of the MP and its direction', () => {
+    nav('#posel-33');
+    const items = $$('[data-testid="profile-latin"] .latin-law');
+    expect(items.length).toBeGreaterThan(50);
+    for (const li of items.slice(0, 20)) expect(['zgodna', 'niezgodna', 'sporna']).toContain(li.dataset.direction);
+  });
+
+  it('shows for every MP, whatever the club (Pawel, 2026-11-27)', () => {
+    for (const club of ['KO', 'PiS', 'Lewica', 'Konfederacja', 'PSL-TD']) {
+      const mp = mpsData.mps.find((m) => m.active && m.club === club);
+      nav(`#posel-${mp.id}`);
+      expect($('[data-testid="profile-latin"]'), club).not.toBeNull();
+    }
+  });
+
+  it('ranking page from the side menu: every MP, filters by band and club, sorts by pillar, club view', () => {
+    nav('#konieczny');
+    expect($('.sidenav a[data-nav="latin"]').getAttribute('aria-current')).toBe('page');
+    expect($('[data-view="latin"] h1').textContent).toContain('Cywilizacja łacińska');
+    expect($('[data-testid="latin-experimental"]')).not.toBeNull();
+    const rows = () => $$('[data-testid="latin-ranking"] tbody tr');
+    expect(rows().length).toBe(mpsData.mps.filter((m) => m.active).length);
+    const totals = rows().map((tr) => Number(tr.querySelector('[data-testid="latin-row-total"] b').textContent));
+    expect(totals).toEqual([...totals].sort((x, y) => y - x));
+    click($('[data-action="latin-band"][data-band="40"]'));
+    for (const tr of rows()) expect(tr.dataset.band).toBe('40');
+    click($('[data-action="latin-band"][data-band="all"]'));
+    click($('[data-action="latin-club"][data-club="Lewica"]'));
+    expect(rows().length).toBe(mpsData.mps.filter((m) => m.active && m.club === 'Lewica').length);
+    click($('[data-action="latin-sort"][data-sort="p3"]'));
+    expect($('[data-action="latin-sort"][data-sort="p3"]').getAttribute('aria-pressed')).toBe('true');
+    click($('[data-action="latin-order"][data-order="asc"]'));
+    const first = Number(rows()[0].children[5].textContent), last = Number(rows().at(-1).children[5].textContent);
+    expect(first).toBeLessThanOrEqual(last);
+    click($('[data-action="latin-view"][data-view="clubs"]'));
+    expect($$('[data-testid="latin-clubs"] tbody tr').length).toBeGreaterThan(5);
+    click($('[data-testid="latin-clubs"] [data-action="latin-club"][data-club="KO"]'));
+    expect(rows().every((tr) => mpsData.mps.find((m) => m.id === Number(tr.dataset.mpId)).club === 'KO')).toBe(true);
+  });
+
+  it('ranking page shows the distribution chart; it follows the sort key and the club filter', () => {
+    nav('#konieczny');
+    const total = () => $$('[data-testid="latin-hist"] .lh-col').reduce((s, li) => s + Number(li.dataset.count), 0);
+    expect($('[data-testid="latin-hist"]').dataset.key).toBe('total');
+    expect(total()).toBe(mpsData.mps.filter((m) => m.active).length);
+    click($('[data-action="latin-sort"][data-sort="p3"]'));
+    expect($('[data-testid="latin-hist"]').dataset.key).toBe('p3');
+    click($('[data-action="latin-club"][data-club="Lewica"]'));
+    expect(total()).toBeLessThanOrEqual(mpsData.mps.filter((m) => m.active && m.club === 'Lewica').length);
+    click($('[data-action="latin-sort"][data-sort="total"]'));
+    click($('[data-action="latin-club"][data-club=""]'));
+  });
+
+  it('separate indicator "Suwerenność kompetencji": section on the card, column and sort in the ranking', () => {
+    nav('#posel-33');
+    const sec = $('[data-testid="profile-latin"] [data-testid="latin-sov"]');
+    expect(sec).not.toBeNull();
+    expect(sec.textContent).toContain('osobny wskaźnik');
+    expect(Number(sec.querySelector('[data-testid="latin-sov-score"]').textContent)).toBeGreaterThanOrEqual(0);
+    expect($$('[data-testid="profile-latin"] .latin-pillar')).toHaveLength(4);
+    nav('#konieczny');
+    expect($('[data-testid="latin-sov-avg"]')).not.toBeNull();
+    click($('[data-action="latin-sort"][data-sort="sov"]'));
+    expect($('[data-testid="latin-hist"]').dataset.key).toBe('sov');
+    const v = $$('[data-testid="latin-row-sov"]').map((td) => td.textContent).filter((t) => t !== '–').map(Number);
+    expect(v.length).toBeGreaterThan(300);
+    expect(v).toEqual([...v].sort((x, y) => y - x));
+    click($('[data-action="latin-view"][data-view="clubs"]'));
+    expect($$('[data-testid="latin-clubs"] td.latin-sov-col').length).toBeGreaterThan(5);
+    click($('[data-action="latin-view"][data-view="mps"]'));
+    click($('[data-action="latin-sort"][data-sort="total"]'));
+  });
+
+  it('every sort option has an "i" that says how it is computed', () => {
+    nav('#konieczny');
+    for (const k of ['total', 'p1', 'p2', 'p3', 'p4', 'sov']) {
+      const opt = $(`[data-testid="latin-sort-${k}"]`);
+      expect(opt.querySelector('[data-action="latin-sort"]')).not.toBeNull();
+      expect(opt.querySelector('.info-tip').textContent.length, k).toBeGreaterThan(80);
+    }
+  });
+
+  it('is linked from the sitemap and the footer', () => {
+    nav('#mapa');
+    expect($('[data-testid="sitemap"] a[href="#konieczny"]')).not.toBeNull();
+    expect($('[data-testid="site-foot"] a[href="#konieczny"]')).not.toBeNull();
+  });
+
+  it('stays after switching to the modern look', () => {
+    nav('#posel-33');
+    click($('[data-action="ui-skin"][data-skin="modern"]'));
+    expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
+    expect($('[data-testid="profile-latin"]')).not.toBeNull();
+    click($('[data-action="ui-skin"][data-skin="classic"]'));
   });
 });

@@ -12,6 +12,7 @@ import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileKpi } from './kpi-view.js';
 import { renderProfileLaws } from './law-view.js';
+import { renderProfileLatin } from './latin-view.js';
 import { renderProfileLinks } from './profile-links.js';
 import { renderDistrictMap } from './district-map.js';
 import { SORTS, DEFAULT_SORT, sortKeys } from '../lib/dir-sort.js';
@@ -483,7 +484,7 @@ function partyRoute(steps) {
 
 /** On phones the side menu is hidden; this row links the rankings to each other. */
 export function rankingSwitch(current) {
-  const items = [['#frequent-flyer', 'flyer', 'Frequent Flyer'], ['#frekwencja', 'attendance', 'Frekwencja'], ['#partie', 'parties', 'Najwięcej partii']];
+  const items = [['#frequent-flyer', 'flyer', 'Frequent Flyer'], ['#frekwencja', 'attendance', 'Frekwencja'], ['#partie', 'parties', 'Najwięcej partii'], ['#konieczny', 'latin', 'Cywilizacja łacińska']];
   return `<nav class="rank-switch" aria-label="Rankingi" data-testid="rank-switch">${items.map(([href, id, label]) => `<a href="${href}"${id === current ? ' aria-current="page" class="on"' : ''}>${label}</a>`).join('')}</nav>`;
 }
 
@@ -968,6 +969,7 @@ export function renderProfile(ctx, id) {
         ${renderProfileAttendance(ctx, mp)}
         ${SHOW_KPI_CARD ? renderProfileKpi(ctx, mp, { infoTip }) : ''}
         ${renderProfileTaxes(ctx, mp, { infoTip })}
+        ${renderProfileLatin(ctx, mp, { infoTip })}
         ${renderProfileLaws(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>

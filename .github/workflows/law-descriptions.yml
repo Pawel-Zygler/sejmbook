@@ -1,0 +1,28 @@
+name: law-descriptions
+# Builds data/raw/law-descriptions.json (official Sejm description of every law voted as a whole in the X term).
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 4 * * 1'
+  push:
+    branches: [main, 'claude/**']
+    paths: ['scripts/fetch-law-descriptions.mjs', '.github/workflows/law-descriptions.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/fetch-law-descriptions.mjs
+      - name: Commit law descriptions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw/law-descriptions.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update law descriptions from the Sejm API"
+          git pull --rebase
+          git push

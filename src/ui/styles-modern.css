@@ -172,3 +172,28 @@
 :root[data-ui="modern"][data-aside="off"] .layout { grid-template-columns: minmax(0, 1fr); }
 
 :root[data-ui="modern"] .page-head:has(.info-tip)::after { top: 0; font-size: 7rem; line-height: 1; }
+
+/* Profile: experimental Latin civilisation card */
+:root[data-ui="modern"] .latin-post { border-radius: var(--radius); border-style: dashed; }
+:root[data-ui="modern"] .latin-ribbon { font-family: var(--font-display); letter-spacing: 0.12em; }
+:root[data-ui="modern"] .latin-big b { font-family: var(--font-display); letter-spacing: -0.03em; }
+:root[data-ui="modern"] .latin-law { border-radius: 14px; }
+:root[data-ui="modern"] .latin-head { border-radius: var(--radius); }
+:root[data-ui="modern"] .latin-page .latin-ribbon { font-family: var(--font-display); letter-spacing: 0.12em; }
+
+/* Link previews next to the name open sideways: right beside the hovered icon and up over the cover, so they never
+   cover the "Spektrum partyjne" card below (Pawel, 2026-11-27: "niech to się tak nie overlapuje pod sobą"). */
+@media (hover: hover) and (min-width: 900px) {
+  :root[data-ui="modern"] .profile-links .link-preview,
+  :root[data-ui="modern"] .profile-links .lp-wrap:first-child .link-preview { top: auto; bottom: -6px; left: calc(100% + 10px); transform: translateX(4px); }
+  :root[data-ui="modern"] .profile-links .lp-wrap:hover .link-preview,
+  :root[data-ui="modern"] .profile-links .lp-wrap:focus-within .link-preview { transform: none; }
+  :root[data-ui="modern"] .profile-links .link-preview::before { top: auto; bottom: 0; left: -12px; right: auto; width: 12px; height: 48px; }
+}
+/* On narrower screens icons from the third on open to the left instead, so the card stays inside the window. */
+@media (hover: hover) and (min-width: 900px) and (max-width: 1199px) {
+  :root[data-ui="modern"] .profile-links .lp-wrap:nth-child(n+3) .link-preview { left: auto; right: calc(100% + 10px); transform: translateX(-4px); }
+  :root[data-ui="modern"] .profile-links .lp-wrap:nth-child(n+3):hover .link-preview,
+  :root[data-ui="modern"] .profile-links .lp-wrap:nth-child(n+3):focus-within .link-preview { transform: none; }
+  :root[data-ui="modern"] .profile-links .lp-wrap:nth-child(n+3) .link-preview::before { left: auto; right: -12px; }
+}
