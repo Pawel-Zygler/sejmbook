@@ -1,6 +1,6 @@
 {
  "source": "https://pl.wikipedia.org (artykuły posłów: zdania o członkostwie i funkcjach w organizacjach) + https://www.wikidata.org (P463)",
- "fetchedAt": "2026-11-26",
+ "fetchedAt": "2026-11-27",
  "mps": {
   "1": {
    "title": "Andrzej Adamczyk",
@@ -22,6 +22,37 @@
      "qid": "Q1461181",
      "from": 2015,
      "to": 2016,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "6": {
+   "title": "Jan Krzysztof Ardanowski",
+   "items": [
+    {
+     "label": "Akcja Wyborcza Solidarność",
+     "qid": "Q416916",
+     "from": 1998,
+     "to": 2002,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
+    }
+   ]
+  },
+  "7": {
+   "title": "Iwona Arent",
+   "items": [
+    {
+     "label": "Katolicyzm",
+     "qid": "Q1841",
+     "from": null,
+     "to": null,
      "src": "plwiki"
     }
    ]
@@ -314,6 +345,32 @@
     }
    ]
   },
+  "75": {
+   "title": "Jan Dziedziczak",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Rzeczypospolitej",
+     "qid": "Q7438352",
+     "from": 2006,
+     "to": 2007,
+     "src": "plwiki"
+    },
+    {
+     "label": "Fundacja „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego",
+     "qid": "Q5508924",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Katolicyzm",
+     "qid": "Q1841",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "77": {
    "title": "Magdalena Filiks",
    "items": [
@@ -449,6 +506,30 @@
      "qid": "Q763652",
      "from": null,
      "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "96": {
+   "title": "Artur Gierada",
+   "items": [
+    {
+     "label": "Stowarzyszenie „Młodzi Demokraci”",
+     "qid": "Q9346157",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "97": {
+   "title": "Roman Giertych",
+   "items": [
+    {
+     "label": "Młodzież Wszechpolska",
+     "qid": "Q1461181",
+     "from": 1989,
+     "to": 1994,
      "src": "plwiki"
     }
    ]
@@ -657,6 +738,25 @@
     }
    ]
   },
+  "132": {
+   "title": "Marek Hok",
+   "items": [
+    {
+     "label": "Polski Czerwony Krzyż",
+     "qid": "Q6127600",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Kolarski",
+     "qid": "Q589190",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "133": {
    "title": "Szymon Hołownia",
    "items": [
@@ -747,6 +847,39 @@
      "from": 2021,
      "to": null,
      "src": "plwiki"
+    }
+   ]
+  },
+  "148": {
+   "title": "Jarosław Kaczyński",
+   "items": [
+    {
+     "label": "Komitet Helsiński",
+     "qid": "Q11741757",
+     "from": 1982,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Fundacja Prasowa „Solidarność”",
+     "qid": "Q9264460",
+     "from": 1990,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Jarosław i Lech Kaczyńscy",
+     "qid": "Q19159587",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
     }
    ]
   },
@@ -865,6 +998,18 @@
     {
      "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
      "qid": "Q9392377",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "163": {
+   "title": "Joanna Kluzik-Rostkowska",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -1156,6 +1301,18 @@
     }
    ]
   },
+  "204": {
+   "title": "Zbigniew Kuźmiuk",
+   "items": [
+    {
+     "label": "Rządowe Centrum Studiów Strategicznych",
+     "qid": "Q9325484",
+     "from": 1997,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "213": {
    "title": "Joanna Lichocka",
    "items": [
@@ -1211,6 +1368,18 @@
     }
    ]
   },
+  "220": {
+   "title": "Artur Łącki",
+   "items": [
+    {
+     "label": "Zachodniopomorski Związek Piłki Nożnej",
+     "qid": "Q9385616",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "222": {
    "title": "Dorota Łoboda",
    "items": [
@@ -1227,6 +1396,18 @@
      "from": null,
      "to": null,
      "src": "wikidata"
+    }
+   ]
+  },
+  "225": {
+   "title": "Marzena Machałek",
+   "items": [
+    {
+     "label": "Fundacja Rozwoju Systemu Edukacji",
+     "qid": "Q9264484",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
     }
    ]
   },
@@ -1549,6 +1730,18 @@
     }
    ]
   },
+  "275": {
+   "title": "Mirosław Orliński",
+   "items": [
+    {
+     "label": "Forum Młodych Ludowców",
+     "qid": "Q9261859",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "280": {
    "title": "Teresa Pamuła",
    "items": [
@@ -1635,12 +1828,81 @@
     }
    ]
   },
+  "291": {
+   "title": "Katarzyna Piekarska",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1986,
+     "to": null,
+     "src": "wikidata"
+    },
+    {
+     "label": "Polski Czerwony Krzyż",
+     "qid": "Q6127600",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "293": {
+   "title": "Lucjan Pietrzczyk",
+   "items": [
+    {
+     "label": "Polski Czerwony Krzyż",
+     "qid": "Q6127600",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+     "qid": "Q9392377",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "295": {
    "title": "Kazimierz Plocke",
    "items": [
     {
      "label": "Ochotnicza straż pożarna w Polsce",
      "qid": "Q55289175",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "297": {
+   "title": "Kacper Płażyński",
+   "items": [
+    {
+     "label": "Związek Piłsudczyków RP Towarzystwo Pamięci Józefa Piłsudskiego",
+     "qid": "Q48864588",
+     "from": null,
+     "to": null,
+     "src": "wikidata"
+    }
+   ]
+  },
+  "300": {
+   "title": "Elżbieta Polak",
+   "items": [
+    {
+     "label": "Lechia Zielona Góra",
+     "qid": "Q1164141",
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -1751,6 +2013,37 @@
     {
      "label": "Ludowe Zespoły Sportowe",
      "qid": "Q6699027",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "321": {
+   "title": "Jarosław Sachajko",
+   "items": [
+    {
+     "label": "Towarzystwo Przyjaźni Polsko-Radzieckiej",
+     "qid": "Q7210102",
+     "from": 2016,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Ruch Obywatelski na rzecz Jednomandatowych Okręgów Wyborczych",
+     "qid": "Q9323589",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "322": {
+   "title": "Paweł Sałek",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
      "from": null,
      "to": null,
      "src": "plwiki"
@@ -1885,6 +2178,25 @@
      "from": 2013,
      "to": 2023,
      "src": "plwiki"
+    }
+   ]
+  },
+  "340": {
+   "title": "Włodzimierz Skalik",
+   "items": [
+    {
+     "label": "Aeroklub Polski",
+     "qid": "Q7209858",
+     "from": 2010,
+     "to": 2018,
+     "src": "plwiki"
+    },
+    {
+     "label": "Aeroklub Częstochowski",
+     "qid": "Q11684541",
+     "from": null,
+     "to": null,
+     "src": "plwiki,wikidata"
     }
    ]
   },
@@ -2498,6 +2810,65 @@
     }
    ]
   },
+  "442": {
+   "title": "Adrian Zandberg",
+   "items": [
+    {
+     "label": "Młodzi Socjaliści",
+     "qid": "Q8058433",
+     "from": 2005,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polski Związek Ludowy",
+     "qid": "Q18424836",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "443": {
+   "title": "Andrzej Zapałowski",
+   "items": [
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": 1980,
+     "to": 1986,
+     "src": "plwiki"
+    },
+    {
+     "label": "Związek Harcerstwa Rzeczypospolitej",
+     "qid": "Q7438352",
+     "from": 1980,
+     "to": 1986,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1986,
+     "to": 1990,
+     "src": "plwiki"
+    },
+    {
+     "label": "KWW Grzegorza Brauna „Szczęść Boże!”",
+     "qid": "Q24944840",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Polskie Towarzystwo Geopolityczne",
+     "qid": "Q65168271",
+     "from": null,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "444": {
    "title": "Bartosz Zawieja",
    "items": [
@@ -2510,6 +2881,18 @@
     }
    ]
   },
+  "445": {
+   "title": "Marcelina Zawisza",
+   "items": [
+    {
+     "label": "Młodzi Socjaliści",
+     "qid": "Q8058433",
+     "from": 2014,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
   "446": {
    "title": "Sławomir Zawiślak",
    "items": [
@@ -2517,6 +2900,25 @@
      "label": "Światowy Związek Żołnierzy Armii Krajowej",
      "qid": "Q9396283",
      "from": 1998,
+     "to": null,
+     "src": "plwiki"
+    }
+   ]
+  },
+  "447": {
+   "title": "Bogdan Zdrojewski",
+   "items": [
+    {
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1980,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
+     "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+     "qid": "Q1003",
+     "from": null,
      "to": null,
      "src": "plwiki"
     }
