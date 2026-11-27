@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Bez karty aktywności');
+  await expect(post).toContainText('Zgodność z cywilizacją łacińską');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Bez karty aktywności');
+  await expect(page.locator('.news-post').first()).toContainText('Zgodność z cywilizacją łacińską');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -687,3 +687,25 @@ test('profile: no "Aktywność i skuteczność" card', async ({ page }) => {
   await expect(page.getByTestId('profile-taxes')).toBeVisible();
   await expect(page.getByTestId('profile-kpi')).toHaveCount(0);
 });
+
+// Experimental Koneczny card (Pawel, 2026-11-27): striped "Eksperymentalne" background, both looks, no sideways overflow.
+for (const skin of ['classic', 'modern']) {
+  test(`profile: experimental Latin civilisation card on Krzysztof Bosak (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#posel-33`);
+    await expect(page.locator('html')).toHaveAttribute('data-ui', skin);
+    const card = page.getByTestId('profile-latin');
+    await expect(card).toBeVisible();
+    await expect(card.getByTestId('latin-experimental')).toHaveText(/eksperymentalne/i);
+    expect(await card.evaluate((el) => getComputedStyle(el).backgroundImage)).toContain('repeating-linear-gradient');
+    await expect(card.getByTestId('latin-total-value')).toHaveText(/^\d{1,3}$/);
+    await expect(card.locator('.latin-pillar')).toHaveCount(4);
+    await card.getByTestId('latin-pillar-1').locator('summary').click();
+    await expect(card.getByTestId('latin-pillar-1').locator('.latin-law').first()).toBeVisible();
+    const box = await card.boundingBox();
+    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
+    await page.goto(`${PAGE}#posel-32`);
+    await expect(page.getByTestId('profile-taxes')).toBeVisible();
+    await expect(page.getByTestId('profile-latin')).toHaveCount(0);
+  });
+}

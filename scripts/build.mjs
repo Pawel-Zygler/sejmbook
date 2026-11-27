@@ -5,9 +5,13 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { SHELL_HTML } from '../src/ui/shell.js';
 import { changelogMarkdown } from '../src/lib/changelog.js';
+import { buildLatin } from './build-latin.mjs';
 
 const root = new URL('..', import.meta.url);
 const p = (rel) => new URL(rel, root);
+
+// The experimental Koneczny card follows the latest votes and classification.
+await buildLatin();
 
 const result = await build({
   entryPoints: [p('src/main.js').pathname],

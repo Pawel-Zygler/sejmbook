@@ -18,6 +18,7 @@ import governmentData from '../../data/government.json';
 import lawData from '../../data/law-votes.json';
 import kpiData from '../../data/kpi.json';
 import taxData from '../../data/tax-votes.json';
+import latinData from '../../data/latin.json';
 import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
 import bioData from '../../data/bio.json';
@@ -162,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Bez karty aktywności';
-const NEWEST_LINE = 'Profile: Bez karty aktywności';
+const NEWEST = 'Zgodność z cywilizacją łacińską (eksperyment)';
+const NEWEST_LINE = 'Profile: Zgodność z cywilizacją łacińską (eksperyment)';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -1011,5 +1012,50 @@ describe('Profile: no KPI card (removed by Pawel, 2026-11-27)', () => {
     expect($('[data-testid="profile-kpi"]')).toBeNull();
     expect($('[data-testid="profile-taxes"]')).not.toBeNull();
     expect($('#view').textContent).not.toContain('Aktywność i skuteczność');
+  });
+});
+
+// Experimental Koneczny card (Pawel, 2026-11-27): first only on Krzysztof Bosak's profile, in both looks.
+describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', () => {
+  beforeEach(() => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, today: '2026-11-27' });
+  });
+
+  it('shows on the profile of Krzysztof Bosak, after the tax card, marked experimental, with a 0-100 score and four pillars', () => {
+    nav('#posel-33');
+    const card = $('[data-testid="profile-latin"]');
+    expect(card).not.toBeNull();
+    expect(card.dataset.experimental).toBe('true');
+    expect(card.querySelector('[data-testid="latin-experimental"]').textContent).toBe('Eksperymentalne');
+    const total = Number(card.querySelector('[data-testid="latin-total-value"]').textContent);
+    expect(total).toBeGreaterThanOrEqual(0);
+    expect(total).toBeLessThanOrEqual(100);
+    expect(card.querySelectorAll('.latin-pillar')).toHaveLength(4);
+    expect(card.querySelector('[data-testid="latin-disclaimer"]').textContent).toContain('interpretacja autora');
+    const order = $$('.feed > article').map((a) => a.dataset.testid);
+    expect(order.indexOf('profile-latin')).toBe(order.indexOf('profile-taxes') + 1);
+  });
+
+  it('lists every classified law with the vote of the MP and its direction', () => {
+    nav('#posel-33');
+    const items = $$('[data-testid="profile-latin"] .latin-law');
+    expect(items.length).toBeGreaterThan(50);
+    for (const li of items.slice(0, 20)) expect(['zgodna', 'niezgodna', 'sporna']).toContain(li.dataset.direction);
+  });
+
+  it('is not shown on other profiles yet', () => {
+    nav('#posel-32');
+    expect($('[data-testid="profile-taxes"]')).not.toBeNull();
+    expect($('[data-testid="profile-latin"]')).toBeNull();
+  });
+
+  it('stays after switching to the modern look', () => {
+    nav('#posel-33');
+    click($('[data-action="ui-skin"][data-skin="modern"]'));
+    expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
+    expect($('[data-testid="profile-latin"]')).not.toBeNull();
+    click($('[data-action="ui-skin"][data-skin="classic"]'));
   });
 });

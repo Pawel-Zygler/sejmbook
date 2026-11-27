@@ -1,0 +1,348 @@
+{
+ "title": "Zgodność z cywilizacją łacińską",
+ "experimental": true,
+ "disclaimer": "Karta eksperymentalna. To interpretacja autora strony, oparta na „O wielości cywilizacji” i „Logos a Ethos” Feliksa Konecznego, a nie neutralna ocena. Liczymy wyłącznie głosowania i aktywność posła według czterech zasad; nie przypisujemy nikomu żadnej innej cywilizacji.",
+ "scoring": "Filary 1–3: głos zgodny z kierunkiem ustawy = 1, wstrzymanie się = 0,5, głos przeciwny = 0; nieobecności pomijamy (liczą się w filarze 4). Ustawa zgodna: zgodny jest głos za; niezgodna: zgodny jest głos przeciw. Ustawy „sporne” pokazujemy, ale nie liczymy, dopóki autor nie przypisze im kierunku. Wynik filaru = suma punktów / liczba oddanych głosów × 100. Wynik ogólny = średnia filarów, w których poseł głosował. Od 67: wysoka zgodność, 34–66: częściowa, poniżej 34: niska zgodność (ryzyko).",
+ "criteriaSource": "opis projektu (pole description) w API Sejmu: https://api.sejm.gov.pl/sejm/term10/processes/{nr}",
+ "deregulationPattern": "deregulac",
+ "pillars": [
+  {
+   "id": 1,
+   "name": "Prymat etyki nad państwem",
+   "short": "Etyka nad państwem",
+   "rule": "Koneczny: w cywilizacji łacińskiej państwo podlega etyce, a społeczeństwo rządzi się samo (samorząd, wolne zrzeszenia, niezależne sądy i uczelnie). Zgodna: przenosi władzę lub pieniądze do samorządów i wolnych zrzeszeń, ogranicza władzę administracji i służb nad osobą. Niezgodna: centralizacja, nowe uprawnienia ministra lub urzędu nad samorządem, uczelnią, organizacją społeczną."
+  },
+  {
+   "id": 2,
+   "name": "Dualizm prawa: własność i swoboda umów",
+   "short": "Własność i swoboda umów",
+   "rule": "Koneczny: prawo prywatne jest niezależne od państwa, które nie rozporządza własnością obywateli. Zgodna: obniżka podatku, deregulacja, mniej obowiązków i formalności. Niezgodna: podwyżka podatku, ceny maksymalne, zakazy legalnej działalności, nowe obowiązki dla firm. Podatki według karty „Głosowania nad podatkami”; ustawy, których opis w API Sejmu mówi o deregulacji, liczą się jako zgodne."
+  },
+  {
+   "id": 3,
+   "name": "Rodzina monogamiczna i wychowanie",
+   "short": "Rodzina i wychowanie",
+   "rule": "Koneczny: podstawą cywilizacji łacińskiej jest trwała rodzina monogamiczna, a wychowanie należy do rodziców. Zgodna: wspiera małżeństwo, rodziców i ich prawo do wychowania. Niezgodna: osłabia trwałość małżeństwa, tworzy instytucje obok małżeństwa, osłabia ochronę życia poczętego lub władzę rodzicielską."
+  },
+  {
+   "id": 4,
+   "name": "Personalizm i odpowiedzialność osobista",
+   "short": "Personalizm",
+   "rule": "Koneczny: cywilizacja łacińska jest personalistyczna, a nie gromadna; człowiek odpowiada za siebie, nie za stado. Mierzymy dwie rzeczy po równo: obecność na posiedzeniach (dni z choć jednym głosem / dni obrad w czasie mandatu, z karty KPI) i niezależność głosowania (jak często poseł głosował inaczej niż większość jego obecnego klubu w głosowaniach nad całymi ustawami, jako percentyl wśród posłów)."
+  }
+ ],
+ "laws": [
+  {
+   "process": "622",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "finansowanie samorządów oparte na dochodach własnych zamiast dotacji z budżetu państwa"
+  },
+  {
+   "process": "610",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "obowiązkowy fundusz sołecki i rady młodzieżowe w sołectwach: wzmocnienie najniższego szczebla samorządu"
+  },
+  {
+   "process": "868",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "szybka rejestracja stowarzyszeń według wzorca statutu: łatwiej zrzeszać się bez zgody urzędu"
+  },
+  {
+   "process": "1808",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "stowarzyszenia i fundacje mogą obradować elektronicznie: mniej ograniczeń dla wolnych zrzeszeń"
+  },
+  {
+   "process": "2597",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "organizacje pozarządowe łatwiej realizują zadania publiczne, mniej formalności"
+  },
+  {
+   "process": "445",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "uproszczona ewidencja dla organizacji pożytku publicznego"
+  },
+  {
+   "process": "2411",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "sąd kontroluje podsłuchy i obserwację służb: ochrona osoby przed państwem"
+  },
+  {
+   "process": "2372",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "sąd kontroluje decyzje prokuratora: ograniczenie władzy aparatu"
+  },
+  {
+   "process": "1376",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "milczące załatwienie sprawy: urząd, który nie zdąży z decyzją, nie blokuje obywatela"
+  },
+  {
+   "process": "2318",
+   "pillar": 1,
+   "direction": "zgodna",
+   "reason": "szersza milcząca zgoda w urzędach: mniej władzy administracji nad obywatelem"
+  },
+  {
+   "process": "171",
+   "pillar": 1,
+   "direction": "niezgodna",
+   "reason": "nadzór nad NCBR przeniesiony na ministra, zgoda ministra na spółki: centralizacja"
+  },
+  {
+   "process": "1129",
+   "pillar": 1,
+   "direction": "niezgodna",
+   "reason": "ministrowie mogą zlecać zadania Narodowemu Instytutowi Wolności: rząd steruje społeczeństwem obywatelskim"
+  },
+  {
+   "process": "219",
+   "pillar": 1,
+   "direction": "sporna",
+   "reason": "wybór sędziów do KRS: obie strony sporu powołują się na niezależność sądów; do decyzji autora"
+  },
+  {
+   "process": "2108",
+   "pillar": 1,
+   "direction": "sporna",
+   "reason": "nowe zasady wyboru sędziów do KRS: sporne, do decyzji autora"
+  },
+  {
+   "process": "2107",
+   "pillar": 1,
+   "direction": "sporna",
+   "reason": "skutki uchwał KRS z lat 2018–2026: sporne, do decyzji autora"
+  },
+  {
+   "process": "253",
+   "pillar": 1,
+   "direction": "sporna",
+   "reason": "nowa ustawa o Trybunale Konstytucyjnym: sporne, do decyzji autora"
+  },
+  {
+   "process": "254",
+   "pillar": 1,
+   "direction": "sporna",
+   "reason": "przepisy wprowadzające ustawę o TK: sporne, do decyzji autora"
+  },
+  {
+   "process": "2867",
+   "pillar": 1,
+   "direction": "sporna",
+   "reason": "stan spoczynku i delegowania sędziów: sporne, do decyzji autora"
+  },
+  {
+   "process": "558",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "poselski projekt ograniczenia biurokracji w 27 ustawach (Sejm go odrzucił)"
+  },
+  {
+   "process": "838",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "niższa składka zdrowotna przedsiębiorców: mniejsze obciążenie własności"
+  },
+  {
+   "process": "1440",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "koniec kary więzienia za spóźniony wniosek o upadłość spółki"
+  },
+  {
+   "process": "3002",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "uchylenie zakazu reklamy aptek: swoboda działalności"
+  },
+  {
+   "process": "2277",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "zwolnienie części firm z raportów ESG"
+  },
+  {
+   "process": "3261",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "uproszczenie raportów ESG"
+  },
+  {
+   "process": "2737",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "prostsze zasady spółek z o.o."
+  },
+  {
+   "process": "2076",
+   "pillar": 2,
+   "direction": "zgodna",
+   "reason": "łatwiejsze zakładanie i prowadzenie firmy"
+  },
+  {
+   "process": "726",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "nowe obowiązki sprawozdawczości ESG dla firm"
+  },
+  {
+   "process": "346",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "państwowe ceny maksymalne energii, gazu i ciepła: kontrola cen zamiast swobody umów"
+  },
+  {
+   "process": "494",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "przedłużenie kontroli cen energii i obowiązków przedsiębiorstw energetycznych"
+  },
+  {
+   "process": "841",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "przedłużenie mrożenia cen energii na 2025 r."
+  },
+  {
+   "process": "1684",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "przedłużenie ceny maksymalnej prądu dla gospodarstw domowych"
+  },
+  {
+   "process": "2389",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "cena maksymalna benzyny i oleju napędowego"
+  },
+  {
+   "process": "3157",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "maksymalne stawki wynagrodzeń personelu medycznego: ograniczenie swobody umów"
+  },
+  {
+   "process": "2007",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "całkowity zakaz reklamy alkoholu: zakaz legalnej działalności gospodarczej"
+  },
+  {
+   "process": "2010",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "bezwzględny zakaz reklamy alkoholu, gminy mogą zakazać sprzedaży w godzinach"
+  },
+  {
+   "process": "703",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "zakaz hodowli zwierząt futerkowych: likwidacja legalnej działalności"
+  },
+  {
+   "process": "835",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "zakaz hodowli zwierząt futerkowych po okresie przejściowym"
+  },
+  {
+   "process": "751",
+   "pillar": 2,
+   "direction": "niezgodna",
+   "reason": "obowiązkowe strefy czystego transportu: ograniczenie korzystania z własnego samochodu"
+  },
+  {
+   "process": "1390",
+   "pillar": 2,
+   "direction": "sporna",
+   "reason": "zakaz sprzedaży państwowej ziemi rolnej przedłużony o 10 lat: własność państwowa kontra ochrona polskiej ziemi; do decyzji autora"
+  },
+  {
+   "process": "1632",
+   "pillar": 2,
+   "direction": "sporna",
+   "reason": "ochrona polskiego rolnictwa i ziemi (zakaz sprzedaży gruntów państwowych): do decyzji autora"
+  },
+  {
+   "process": "2079",
+   "pillar": 2,
+   "direction": "sporna",
+   "reason": "zakaz sprzedaży państwowych gruntów rolnych do 2036 r.: do decyzji autora"
+  },
+  {
+   "process": "176",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "depenalizacja przerywania ciąży do 12. tygodnia (Sejm projekt odrzucił)"
+  },
+  {
+   "process": "611",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "częściowa dekryminalizacja przerywania ciąży i pomocy w aborcji"
+  },
+  {
+   "process": "223",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "odwrócenie wyroku TK z 2020 r. w sprawie dopuszczalności przerywania ciąży"
+  },
+  {
+   "process": "2110",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "status osoby najbliższej: rejestrowany związek obok małżeństwa"
+  },
+  {
+   "process": "2111",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "przepisy wprowadzające status osoby najbliższej"
+  },
+  {
+   "process": "2121",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "rozwód pozasądowy: łatwiejsze rozwiązanie małżeństwa"
+  },
+  {
+   "process": "31",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "in vitro finansowane z budżetu: prokreacja oddzielona od małżeństwa"
+  },
+  {
+   "process": "2449",
+   "pillar": 3,
+   "direction": "niezgodna",
+   "reason": "rzecznicy praw uczniowskich i rady szkół z uczniami na równi z rodzicami: słabszy autorytet wychowawczy rodziców"
+  },
+  {
+   "process": "319",
+   "pillar": 3,
+   "direction": "zgodna",
+   "reason": "świadczenia dla rodziców małych dzieci, także za opiekę w domu"
+  },
+  {
+   "process": "762",
+   "pillar": 3,
+   "direction": "zgodna",
+   "reason": "uzupełniający urlop macierzyński przy długiej hospitalizacji dziecka"
+  },
+  {
+   "process": "671",
+   "pillar": 3,
+   "direction": "zgodna",
+   "reason": "wychowanie patriotyczne i Komisja Edukacji Narodowej jako organ ekspercki"
+  }
+ ]
+}

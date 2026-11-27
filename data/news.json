@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-cywilizacja-lacinska",
+      "date": "2026-11-27",
+      "title": "Zgodność z cywilizacją łacińską (eksperyment)",
+      "section": "Profile",
+      "body": "Eksperymentalna karta na profilu Krzysztofa Bosaka ocenia głosowania według czterech zasad Konecznego, w skali 0–100.",
+      "link": {
+        "href": "#posel-33",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-bez-kpi",
       "date": "2026-11-27",
       "title": "Bez karty aktywności",

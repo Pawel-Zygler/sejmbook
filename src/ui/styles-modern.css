@@ -172,3 +172,9 @@
 :root[data-ui="modern"][data-aside="off"] .layout { grid-template-columns: minmax(0, 1fr); }
 
 :root[data-ui="modern"] .page-head:has(.info-tip)::after { top: 0; font-size: 7rem; line-height: 1; }
+
+/* Profile: experimental Latin civilisation card */
+:root[data-ui="modern"] .latin-post { border-radius: var(--radius); border-style: dashed; }
+:root[data-ui="modern"] .latin-ribbon { font-family: var(--font-display); letter-spacing: 0.12em; }
+:root[data-ui="modern"] .latin-big b { font-family: var(--font-display); letter-spacing: -0.03em; }
+:root[data-ui="modern"] .latin-law { border-radius: 14px; }

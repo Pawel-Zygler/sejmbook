@@ -12,6 +12,7 @@ import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileKpi } from './kpi-view.js';
 import { renderProfileLaws } from './law-view.js';
+import { renderProfileLatin } from './latin-view.js';
 import { renderProfileLinks } from './profile-links.js';
 import { renderDistrictMap } from './district-map.js';
 import { SORTS, DEFAULT_SORT, sortKeys } from '../lib/dir-sort.js';
@@ -955,6 +956,7 @@ export function renderProfile(ctx, id) {
         ${renderProfileAttendance(ctx, mp)}
         ${SHOW_KPI_CARD ? renderProfileKpi(ctx, mp, { infoTip }) : ''}
         ${renderProfileTaxes(ctx, mp, { infoTip })}
+        ${renderProfileLatin(ctx, mp, { infoTip })}
         ${renderProfileLaws(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
       </div>

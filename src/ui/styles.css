@@ -739,3 +739,36 @@ h2 { font-size: 1.1rem; }
 /* Page headers with an "i" icon: let the tooltip leave the card (the decorative glyph stays inside) */
 .page-head:has(.info-tip) { overflow: visible; }
 .page-head:has(.info-tip)::after { top: 4px; max-height: calc(100% - 8px); overflow: hidden; }
+
+/* Profile: experimental card "Zgodność z cywilizacją łacińską" (Pawel, 2026-11-27: "background dla karty - eksperymentalne") */
+.latin-post { --lab: #6b3fa0; --lab-soft: rgba(107, 63, 160, 0.07); --lab-ink: #ffffff; --lab-hi: #2f7d4f; --lab-mid: #a06a00; --lab-low: #b23a3a;
+  position: relative; overflow: hidden; border: 1px dashed var(--lab);
+  background: repeating-linear-gradient(-45deg, var(--lab-soft) 0 12px, transparent 12px 24px), var(--surface); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .latin-post { --lab: #b48ef0; --lab-soft: rgba(180, 142, 240, 0.08); --lab-ink: #1a1024; --lab-hi: #6fd39a; --lab-mid: #f0b84a; --lab-low: #ff8a8a; } }
+:root[data-theme="dark"] .latin-post { --lab: #b48ef0; --lab-soft: rgba(180, 142, 240, 0.08); --lab-ink: #1a1024; --lab-hi: #6fd39a; --lab-mid: #f0b84a; --lab-low: #ff8a8a; }
+.latin-ribbon { position: absolute; top: 12px; right: 12px; background: var(--lab); color: var(--lab-ink); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 99px; }
+.latin-post .post-head { padding-right: 120px; }
+.latin-total { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.latin-big { margin: 0; display: flex; align-items: baseline; gap: 4px; }
+.latin-big b { font-size: 2.6rem; line-height: 1; color: var(--lab); }
+.latin-big span { color: var(--muted); font-weight: 600; }
+.latin-level { font-weight: 700; font-size: 0.8rem; padding: 2px 10px; border-radius: 99px; color: #fff; }
+.latin-level-high { background: var(--lab-hi); }
+.latin-level-mid { background: var(--lab-mid); }
+.latin-level-low { background: var(--lab-low); }
+:root:not([data-theme="light"]) .latin-level { color: var(--lab-ink); }
+.latin-pillar { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
+.latin-pillar h3 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+.latin-pillar h3 > span { flex: 1 1 auto; min-width: 0; }
+.latin-pillar-score { font-size: 1.1rem; color: var(--lab); }
+.latin-bar { height: 8px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+.latin-bar i { display: block; height: 100%; background: var(--lab); border-radius: 99px; }
+.latin-sum { margin: 0; font-size: 0.9rem; }
+.latin-dir { font-size: 0.72rem; font-weight: 700; padding: 1px 6px; border-radius: 6px; border: 1px solid currentColor; }
+.latin-dir-zgodna { color: var(--lab-hi); }
+.latin-dir-niezgodna { color: var(--lab-low); }
+.latin-dir-sporna { color: var(--muted); }
+.latin-pts { margin-left: auto; }
+.latin-law .tax-law-top { flex-wrap: wrap; }
+.latin-note { margin: 0; padding: 8px 10px; border-radius: 8px; background: var(--lab-soft); border-left: 3px solid var(--lab); font-size: 0.8rem; color: var(--muted); }
+@media (max-width: 520px) { .latin-ribbon { position: static; align-self: flex-start; } .latin-post .post-head { padding-right: 0; } }
