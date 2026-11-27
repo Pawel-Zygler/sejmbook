@@ -197,6 +197,6 @@ describe('"Praca zawodowa" on the life line', () => {
     const html = renderOfficial({ ...ctx, work: { index: { [`urzad:${slug}`]: 'P' }, people: { P: { items: [{ label: 'Bank', from: 1980, to: null }, { label: 'Szkoła', from: null, to: null }] } } } }, slug, '2026-11-27');
     expect(html).toContain('data-lane="work"');
     expect(html).toContain('Praca zawodowa: <b>Bank</b> od 1980 oraz <b>Szkoła</b>.');
-    expect(roleLine([{ office: 'Minister', from: '2000-01-01', to: '2001-01-01', gov: 'x' }], '2026-11-27', '', [{ label: 'B', role: 'r', from: 1990, to: 1990 }])).toContain('B (r): 1990');
+    expect(roleLine([{ office: 'Minister', from: '2000-01-01', to: '2001-01-01', gov: 'x' }], '2026-11-27', '', null, [{ label: 'B', role: 'r', from: 1990, to: 1990 }])).toContain('B (r): 1990 – 1990');
   });
 });

@@ -1,3 +1,4 @@
+import { mergeBio } from './lib/bio.js';
 import { indexById, clubById, filterMps, filterTermMps } from './lib/mps.js';
 import { termMps, termList, indexPeople } from './lib/career.js';
 import { mergeEarlyTerms } from './lib/early-terms.js';
@@ -14,7 +15,7 @@ import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, socialData, workData, districtMapData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, socialData, workData, districtMapData, bioData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -44,7 +45,9 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     gov: buildHierarchy(governmentData ?? null),
     today: today ?? new Date().toISOString().slice(0, 10),
     // Party years (Wikidata + Wikipedia infobox) and social activity (data/social.json) per MP.
-    life: mergeSocial(mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null), socialData ?? null),
+    life: mergeBio(mergeSocial(mergeWikiParties(lifeData ?? null, wikiPartiesData ?? null), socialData ?? null), bioData ?? null),
+    // Opposition, Round Table and offices of officials (data/bio.json), by plwiki title.
+    bio: bioData ?? null,
     // Professional experience of everyone with a profile (data/work.json: Polish Wikipedia + Wikidata P108).
     work: workData ?? null,
     // Inlined photos and club logos (data: URLs) from media/, when the build found them.

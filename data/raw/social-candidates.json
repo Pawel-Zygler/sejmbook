@@ -307,6 +307,227 @@
    }
   ]
  },
+ "5": {
+  "title": "Dorota Arciszewska-Mielewczyk",
+  "review": [
+   {
+    "target": "Konfederacja Polski Niepodległej",
+    "qid": "Q1361968",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W latach 90. działała w Konfederacji Polski Niepodległej, gdzie pełniła funkcję przewodniczącej okręgu i następnie w Konfederacji Polski Niepodległej – Obóz Patriotyczny."
+   },
+   {
+    "target": "Stronnictwo Konserwatywno-Ludowe",
+    "qid": "Q3366252",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2000,
+    "to": null,
+    "sentence": "W 2000 przystąpiła do Stronnictwa Konserwatywno-Ludowego, po przekształceniu należała do SKL-RNP."
+   },
+   {
+    "target": "Polskie Linie Oceaniczne",
+    "qid": "Q2102640",
+    "verdict": "firma",
+    "classes": [
+     "Q1807108"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu 2019 została powołana na stanowisko prezesa Polskich Linii Oceanicznych."
+   }
+  ]
+ },
+ "6": {
+  "title": "Jan Krzysztof Ardanowski",
+  "review": [
+   {
+    "target": "Ministerstwo Rolnictwa i Rozwoju Wsi",
+    "qid": "Q4380777",
+    "verdict": "urząd",
+    "classes": [
+     "Q1364302",
+     "Q6866556",
+     "Q66739700"
+    ],
+    "from": 2005,
+    "to": 2007,
+    "sentence": "W latach 2005–2007 podsekretarz stanu w Ministerstwie Rolnictwa i Rozwoju Wsi, w latach 2007–2010 doradca prezydenta RP Lecha Kaczyńskiego ds. wsi i rolnictwa, w latach 2018–2020 minister rolnictwa i rozwoju wsi, poseł na Sejm VII, VIII, IX"
+   },
+   {
+    "target": "Niezależne Zrzeszenie Studentów",
+    "qid": "Q763652",
+    "verdict": "ok",
+    "classes": [
+     "Q43229",
+     "Q1685451"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od listopada 1980 działał w Niezależnym Zrzeszeniu Studentów."
+   },
+   {
+    "target": "Polskie Stronnictwo Ludowe – Porozumienie Ludowe",
+    "qid": "Q11822738",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1993 działał w PSL-Porozumieniu Ludowym."
+   },
+   {
+    "target": "Akcja Wyborcza Solidarność",
+    "qid": "Q416916",
+    "verdict": "ok",
+    "classes": [
+     "Q6138528"
+    ],
+    "from": 1998,
+    "to": 2002,
+    "sentence": "W okresie 1998–2002 z ramienia Akcji Wyborczej Solidarność zasiadał w sejmiku kujawsko-pomorskim I kadencji."
+   },
+   {
+    "target": "Sejmik Województwa Kujawsko-Pomorskiego",
+    "qid": "Q9334991",
+    "verdict": "parlament",
+    "classes": [
+     "Q11204",
+     "Q675911"
+    ],
+    "from": 1998,
+    "to": 2002,
+    "sentence": "W okresie 1998–2002 z ramienia Akcji Wyborczej Solidarność zasiadał w sejmiku kujawsko-pomorskim I kadencji."
+   },
+   {
+    "target": "Krajowa Rada Izb Rolniczych",
+    "qid": "Q12188071",
+    "verdict": "firma",
+    "classes": [
+     "Q59155876"
+    ],
+    "from": 2003,
+    "to": 2007,
+    "sentence": "W latach 2003–2007 prezesował Krajowej Radzie Izb Rolniczych w Warszawie."
+   },
+   {
+    "target": "Warszawa",
+    "qid": "Q270",
+    "verdict": "urząd",
+    "classes": [
+     "Q515",
+     "Q56061",
+     "Q200250",
+     "Q925381"
+    ],
+    "from": 2003,
+    "to": 2007,
+    "sentence": "W latach 2003–2007 prezesował Krajowej Radzie Izb Rolniczych w Warszawie."
+   },
+   {
+    "target": "Ministerstwo Rolnictwa i Rozwoju Wsi",
+    "qid": "Q4380777",
+    "verdict": "urząd",
+    "classes": [
+     "Q1364302",
+     "Q6866556",
+     "Q66739700"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 3 listopada 2005 do 21 grudnia 2007 był podsekretarzem stanu w Ministerstwie Rolnictwa i Rozwoju Wsi."
+   },
+   {
+    "target": "Komisja Rolnictwa i Rozwoju Wsi (Sejm)",
+    "qid": "Q11741669",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie VIII kadencji został wiceprzewodniczącym Komisji Rolnictwa i Rozwoju Wsi oraz członkiem Komisji do Spraw Energii i Skarbu Państwa."
+   },
+   {
+    "target": "Komisja do Spraw Energii, Klimatu i Aktywów Państwowych",
+    "qid": "Q11741680",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie VIII kadencji został wiceprzewodniczącym Komisji Rolnictwa i Rozwoju Wsi oraz członkiem Komisji do Spraw Energii i Skarbu Państwa."
+   },
+   {
+    "target": "Karol Nawrocki",
+    "qid": "Q17704749",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu 2025 prezydent RP Karol Nawrocki powierzył mu funkcję przewodniczącego powołanej wówczas Rady Rolnictwa i Obszarów Wiejskich."
+   }
+  ]
+ },
+ "7": {
+  "title": "Iwona Arent",
+  "review": [
+   {
+    "target": "Katolicyzm",
+    "qid": "Q1841",
+    "verdict": "ok",
+    "classes": [
+     "Q71966963",
+     "Q123129246"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W latach 80. działała w młodzieżowych ruchach katolickich."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2002,
+    "to": null,
+    "sentence": "W 2002 wstąpiła do Prawa i Sprawiedliwości, została m.in. wiceprezesem regionu olsztyńskiego partii (okręg nr 35), wcześniej pełniła funkcję skarbnika."
+   },
+   {
+    "target": "Okręg wyborczy nr 35 do Sejmu Rzeczypospolitej Polskiej",
+    "qid": "Q7088700",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q11797473"
+    ],
+    "from": 2002,
+    "to": null,
+    "sentence": "W 2002 wstąpiła do Prawa i Sprawiedliwości, została m.in. wiceprezesem regionu olsztyńskiego partii (okręg nr 35), wcześniej pełniła funkcję skarbnika."
+   },
+   {
+    "target": "Komisja Odpowiedzialności Konstytucyjnej",
+    "qid": "Q11741650",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie VIII kadencji była m.in. przewodniczącą Komisji Odpowiedzialności Konstytucyjnej."
+   }
+  ]
+ },
  "8": {
   "title": "Bartosz Arłukowicz",
   "review": [
@@ -667,6 +888,106 @@
    }
   ]
  },
+ "13": {
+  "title": "Władysław Teofil Bartoszewski",
+  "review": [
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "22 października 1955 w Warszawie) – polski historyk, menedżer, nauczyciel akademicki i polityk, posiadający również obywatelstwo brytyjskie, doktor w dziedzinie antropologii kulturowej, poseł na Sejm IX i X kadencji, sekretarz stanu w Minis"
+   },
+   {
+    "target": "Ministerstwo Spraw Zagranicznych (Polska)",
+    "qid": "Q213624",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q20901295"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "22 października 1955 w Warszawie) – polski historyk, menedżer, nauczyciel akademicki i polityk, posiadający również obywatelstwo brytyjskie, doktor w dziedzinie antropologii kulturowej, poseł na Sejm IX i X kadencji, sekretarz stanu w Minis"
+   },
+   {
+    "target": "Oksford",
+    "qid": "Q34217",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q515",
+     "Q1187811",
+     "Q1357964",
+     "Q7897276"
+    ],
+    "from": 1985,
+    "to": null,
+    "sentence": "W 1985 był współzałożycielem Instytutu Studiów Polsko-Żydowskich w Oksfordzie, pełnił funkcję jego dyrektora, pozostał w zarządzie tej jednostki."
+   },
+   {
+    "target": "PGE Polska Grupa Energetyczna",
+    "qid": "Q787714",
+    "verdict": "firma",
+    "classes": [
+     "Q891723",
+     "Q4830453",
+     "Q6881511"
+    ],
+    "from": 2012,
+    "to": 2016,
+    "sentence": "W latach 2012–2016 był zatrudniony w Grupie Kapitałowej PGE jako prezes zarządu Domu Maklerskiego PGE oraz wiceprezes zarządu spółki akcyjnej Exatel."
+   },
+   {
+    "target": "Exatel",
+    "qid": "Q9257077",
+    "verdict": "firma",
+    "classes": [
+     "Q4830453",
+     "Q6881511"
+    ],
+    "from": 2012,
+    "to": 2016,
+    "sentence": "W latach 2012–2016 był zatrudniony w Grupie Kapitałowej PGE jako prezes zarządu Domu Maklerskiego PGE oraz wiceprezes zarządu spółki akcyjnej Exatel."
+   },
+   {
+    "target": "Komisja Spraw Zagranicznych (Sejm)",
+    "qid": "Q11741686",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2022,
+    "to": null,
+    "sentence": "W Sejmie wszedł w skład Komisji Spraw Zagranicznych (w 2022 został jej wiceprzewodniczącym) oraz Komisji do Spraw Energii, Klimatu i Aktywów Państwowych."
+   },
+   {
+    "target": "Komisja do Spraw Unii Europejskiej",
+    "qid": "Q11741710",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Zasiadł także w Komisji Łączności z Polakami za Granicą oraz Komisji do spraw Unii Europejskiej. 19 grudnia 2023 został powołany na urząd sekretarza stanu w Ministerstwie Spraw Zagranicznych."
+   },
+   {
+    "target": "Ministerstwo Spraw Zagranicznych (Polska)",
+    "qid": "Q213624",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q20901295"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Zasiadł także w Komisji Łączności z Polakami za Granicą oraz Komisji do spraw Unii Europejskiej. 19 grudnia 2023 został powołany na urząd sekretarza stanu w Ministerstwie Spraw Zagranicznych."
+   }
+  ]
+ },
  "14": {
   "title": "Barbara Bartuś",
   "review": [
@@ -752,6 +1073,76 @@
     "from": 2023,
     "to": null,
     "sentence": "13 października 1962 w Łowiczu) – polski polityk, inżynier, urzędnik państwowy i samorządowy, w latach 2012–2014 wicewojewoda łódzki, następnie do 2015 członek zarządu województwa, poseł na Sejm VIII, IX i X kadencji, od 2023 sekretarz stan"
+   }
+  ]
+ },
+ "16": {
+  "title": "Konrad Berkowicz",
+  "review": [
+   {
+    "target": "Nowa Nadzieja (polska partia polityczna)",
+    "qid": "Q19600733",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "27 maja 1984 w Krakowie) – polski polityk, pierwszy wiceprezes partii Nowa Nadzieja, poseł na Sejm IX i X kadencji."
+   },
+   {
+    "target": "Unia Polityki Realnej",
+    "qid": "Q1270771",
+    "verdict": "partia",
+    "classes": [
+     "Q7278",
+     "Q48204"
+    ],
+    "from": 2005,
+    "to": null,
+    "sentence": "W 2005 został członkiem Unii Polityki Realnej."
+   },
+   {
+    "target": "Kongres Nowej Prawicy",
+    "qid": "Q1584987",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "Po odejściu z UPR pełnił funkcję wiceprezesa Kongresu Nowej Prawicy, był również rzecznikiem Janusza Korwin-Mikkego w jego kampanii wyborczej przed wyborami prezydenckimi w 2015."
+   },
+   {
+    "target": "Nowa Nadzieja (polska partia polityczna)",
+    "qid": "Q19600733",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2022,
+    "to": null,
+    "sentence": "W tym samym roku został członkiem zarządu partii KORWiN, a następnie objął funkcję jej wiceprezesa (w 2022 partia przyjęła nazwę Nowa Nadzieja, a Konrad Berkowicz został jej pierwszym wiceprezesem)."
+   },
+   {
+    "target": "Koło (parlament)",
+    "qid": "Q11744698",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q16334295"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W maju 2022 został wiceprzewodniczącym koła poselskiego Konfederacji."
+   },
+   {
+    "target": "Komisja Polityki Senioralnej",
+    "qid": "Q28673139",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W X kadencji Sejmu został m.in. wiceprzewodniczącym Komisji Polityki Senioralnej."
    }
   ]
  },
@@ -1287,6 +1678,20 @@
     "from": null,
     "to": null,
     "sentence": "Od 31 sierpnia do 16 listopada 2007 był sekretarzem stanu w Ministerstwie Rolnictwa i Rozwoju Wsi."
+   }
+  ]
+ },
+ "27": {
+  "title": "Joanna Borowiak",
+  "review": [
+   {
+    "target": "Komisja Polityki Senioralnej",
+    "qid": "Q28673139",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie X kadencji została wybrana na przewodniczącą Komisji Polityki Senioralnej, zasiadła też w Komisji Edukacji, Nauki i Młodzieży oraz Komisji Polityki Społecznej i Rodziny."
    }
   ]
  },
@@ -2215,6 +2620,22 @@
    }
   ]
  },
+ "41": {
+  "title": "Marek Chmielewski (polityk)",
+  "review": [
+   {
+    "target": "Platforma Obywatelska",
+    "qid": "Q156868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Należał do Platformy Obywatelskiej."
+   }
+  ]
+ },
  "42": {
   "title": "Zbigniew Chmielowiec",
   "review": [
@@ -2300,6 +2721,82 @@
     "from": null,
     "to": null,
     "sentence": "Działacz Akcji Katolickiej."
+   }
+  ]
+ },
+ "45": {
+  "title": "Dominika Chorosińska",
+  "review": [
+   {
+    "target": "Samorząd terytorialny w Polsce",
+    "qid": "Q9333260",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q74817647"
+    ],
+    "from": 2019,
+    "to": null,
+    "sentence": "28 grudnia 1978 w Elblągu) – polska aktorka teatralna i filmowa, prezenterka telewizyjna, działaczka samorządowa i polityczna, posłanka na Sejm IX i X kadencji (od 2019), minister kultury i dziedzictwa narodowego oraz przewodnicząca Komitet"
+   },
+   {
+    "target": "Polityka",
+    "qid": "Q7163",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q125542526"
+    ],
+    "from": 2019,
+    "to": null,
+    "sentence": "28 grudnia 1978 w Elblągu) – polska aktorka teatralna i filmowa, prezenterka telewizyjna, działaczka samorządowa i polityczna, posłanka na Sejm IX i X kadencji (od 2019), minister kultury i dziedzictwa narodowego oraz przewodnicząca Komitet"
+   },
+   {
+    "target": "Komitet do spraw Pożytku Publicznego",
+    "qid": "Q50362481",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2023,
+    "to": 2023,
+    "sentence": "28 grudnia 1978 w Elblągu) – polska aktorka teatralna i filmowa, prezenterka telewizyjna, działaczka samorządowa i polityczna, posłanka na Sejm IX i X kadencji (od 2019), minister kultury i dziedzictwa narodowego oraz przewodnicząca Komitet"
+   },
+   {
+    "target": "Trzeci rząd Mateusza Morawieckiego",
+    "qid": "Q123385247",
+    "verdict": "urząd",
+    "classes": [
+     "Q1338983"
+    ],
+    "from": 2023,
+    "to": 2023,
+    "sentence": "28 grudnia 1978 w Elblągu) – polska aktorka teatralna i filmowa, prezenterka telewizyjna, działaczka samorządowa i polityczna, posłanka na Sejm IX i X kadencji (od 2019), minister kultury i dziedzictwa narodowego oraz przewodnicząca Komitet"
+   },
+   {
+    "target": "Komitet do spraw Pożytku Publicznego",
+    "qid": "Q50362481",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2023,
+    "to": null,
+    "sentence": "W 2023 w tym samym okręgu dostała 9582 głosy, utrzymując mandat na kolejną kadencję. 27 listopada 2023 powołana na ministra kultury i dziedzictwa narodowego oraz przewodniczącą Komitetu do spraw Pożytku Publicznego w trzecim rządzie Mateusz"
+   },
+   {
+    "target": "trzeci rząd Mateusza Morawieckiego",
+    "qid": "Q123385247",
+    "verdict": "urząd",
+    "classes": [
+     "Q1338983"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "W 2023 w tym samym okręgu dostała 9582 głosy, utrzymując mandat na kolejną kadencję. 27 listopada 2023 powołana na ministra kultury i dziedzictwa narodowego oraz przewodniczącą Komitetu do spraw Pożytku Publicznego w trzecim rządzie Mateusz"
+   },
+   {
+    "target": "wotum zaufania",
+    "qid": "Q330094",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2023,
+    "to": null,
+    "sentence": "W 2023 w tym samym okręgu dostała 9582 głosy, utrzymując mandat na kolejną kadencję. 27 listopada 2023 powołana na ministra kultury i dziedzictwa narodowego oraz przewodniczącą Komitetu do spraw Pożytku Publicznego w trzecim rządzie Mateusz"
    }
   ]
  },
@@ -2480,6 +2977,103 @@
     "from": null,
     "to": null,
     "sentence": "Został również instruktorem Związku Harcerstwa Polskiego w Radomsku oraz wiceprezesem szkoły liderów Collegium Nobilium Opoliense."
+   }
+  ]
+ },
+ "51": {
+  "title": "Janusz Cieszyński",
+  "review": [
+   {
+    "target": "Ministerstwo Zdrowia (Polska)",
+    "qid": "Q4294358",
+    "verdict": "urząd",
+    "classes": [
+     "Q1519799",
+     "Q6866556"
+    ],
+    "from": 2018,
+    "to": 2020,
+    "sentence": "Podsekretarz stanu w Ministerstwie Zdrowia w latach 2018–2020, odpowiedzialny za informatyzację sektora zdrowia."
+   },
+   {
+    "target": "Kancelaria Prezesa Rady Ministrów",
+    "qid": "Q2955976",
+    "verdict": "urząd",
+    "classes": [
+     "Q327333",
+     "Q3754526",
+     "Q9367288"
+    ],
+    "from": 2021,
+    "to": 2023,
+    "sentence": "W latach 2021–2023 sekretarz stanu w Kancelarii Prezesa Rady Ministrów, w 2023 minister cyfryzacji w drugim rządzie Mateusza Morawieckiego."
+   },
+   {
+    "target": "Prezes Rady Ministrów",
+    "qid": "Q3259469",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q294414"
+    ],
+    "from": 2021,
+    "to": 2023,
+    "sentence": "W latach 2021–2023 sekretarz stanu w Kancelarii Prezesa Rady Ministrów, w 2023 minister cyfryzacji w drugim rządzie Mateusza Morawieckiego."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2012,
+    "to": null,
+    "sentence": "W 2012 wstąpił do partii Prawo i Sprawiedliwość."
+   },
+   {
+    "target": "Ministerstwo Rozwoju",
+    "qid": "Q23710607",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556"
+    ],
+    "from": 2016,
+    "to": 2017,
+    "sentence": "W 2015 został doradcą Mateusza Morawieckiego w Ministerstwie Rozwoju i Ministerstwie Finansów, a w latach 2016–2017 kierował Departamentem Małych i Średnich Przedsiębiorstw w Ministerstwie Rozwoju."
+   },
+   {
+    "target": "Korporacja Ubezpieczeń Kredytów Eksportowych",
+    "qid": "Q11743798",
+    "verdict": "firma",
+    "classes": [
+     "Q4830453",
+     "Q6881511"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 2016 do 2018 przewodniczył Radzie Nadzorczej Korporacji Ubezpieczeń Kredytów Eksportowych S.A."
+   },
+   {
+    "target": "Rozwój Plus",
+    "qid": "Q140695333",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został członkiem Stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
+   },
+   {
+    "target": "Mateusz Morawiecki",
+    "qid": "Q11771436",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został członkiem Stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
    }
   ]
  },
@@ -2674,6 +3268,22 @@
     "from": null,
     "to": null,
     "sentence": "W tym samym roku został członkiem zarządu powiatu czarnkowsko-trzcianeckiego."
+   }
+  ]
+ },
+ "55": {
+  "title": "Witold Czarnecki (polityk)",
+  "review": [
+   {
+    "target": "Porozumienie Centrum",
+    "qid": "Q1475388",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Należał do Porozumienia Centrum."
    }
   ]
  },
@@ -3636,6 +4246,207 @@
     "from": 2003,
     "to": null,
     "sentence": "W 2003 wstąpił do Prawa i Sprawiedliwości."
+   }
+  ]
+ },
+ "75": {
+  "title": "Jan Dziedziczak",
+  "review": [
+   {
+    "target": "instruktor harcerski",
+    "qid": "Q2540793",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q12737077"
+    ],
+    "from": 2006,
+    "to": 2007,
+    "sentence": "3 sierpnia 1981 w Warszawie) – polski polityk i politolog, instruktor harcerski Związku Harcerstwa Rzeczypospolitej, rzecznik prasowy rządu Jarosława Kaczyńskiego (2006–2007), poseł na Sejm VI, VII, VIII, IX i X kadencji (od 2007), sekretar"
+   },
+   {
+    "target": "Związek Harcerstwa Rzeczypospolitej",
+    "qid": "Q7438352",
+    "verdict": "ok",
+    "classes": [
+     "Q79913",
+     "Q163740",
+     "Q1572070",
+     "Q66742026"
+    ],
+    "from": 2006,
+    "to": 2007,
+    "sentence": "3 sierpnia 1981 w Warszawie) – polski polityk i politolog, instruktor harcerski Związku Harcerstwa Rzeczypospolitej, rzecznik prasowy rządu Jarosława Kaczyńskiego (2006–2007), poseł na Sejm VI, VII, VIII, IX i X kadencji (od 2007), sekretar"
+   },
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "3 sierpnia 1981 w Warszawie) – polski polityk i politolog, instruktor harcerski Związku Harcerstwa Rzeczypospolitej, rzecznik prasowy rządu Jarosława Kaczyńskiego (2006–2007), poseł na Sejm VI, VII, VIII, IX i X kadencji (od 2007), sekretar"
+   },
+   {
+    "target": "Ministerstwo Spraw Zagranicznych (Polska)",
+    "qid": "Q213624",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q20901295"
+    ],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "3 sierpnia 1981 w Warszawie) – polski polityk i politolog, instruktor harcerski Związku Harcerstwa Rzeczypospolitej, rzecznik prasowy rządu Jarosława Kaczyńskiego (2006–2007), poseł na Sejm VI, VII, VIII, IX i X kadencji (od 2007), sekretar"
+   },
+   {
+    "target": "Kancelaria Prezesa Rady Ministrów",
+    "qid": "Q2955976",
+    "verdict": "urząd",
+    "classes": [
+     "Q327333",
+     "Q3754526",
+     "Q9367288"
+    ],
+    "from": 2019,
+    "to": 2023,
+    "sentence": "3 sierpnia 1981 w Warszawie) – polski polityk i politolog, instruktor harcerski Związku Harcerstwa Rzeczypospolitej, rzecznik prasowy rządu Jarosława Kaczyńskiego (2006–2007), poseł na Sejm VI, VII, VIII, IX i X kadencji (od 2007), sekretar"
+   },
+   {
+    "target": "samorząd studencki",
+    "qid": "Q877998",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q1341006"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W czasie studiów działał w samorządzie studenckim Instytutu Polityki Społecznej UW."
+   },
+   {
+    "target": "Związek Harcerstwa Rzeczypospolitej",
+    "qid": "Q7438352",
+    "verdict": "ok",
+    "classes": [
+     "Q79913",
+     "Q163740",
+     "Q1572070",
+     "Q66742026"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Jest instruktorem Związku Harcerstwa Rzeczypospolitej w stopniu harcmistrza."
+   },
+   {
+    "target": "harcmistrz",
+    "qid": "Q63078973",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q9346078"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Jest instruktorem Związku Harcerstwa Rzeczypospolitej w stopniu harcmistrza."
+   },
+   {
+    "target": "komendant hufca",
+    "qid": "Q11741538",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2003,
+    "to": 2006,
+    "sentence": "W latach 2003–2006 pełnił funkcję komendanta Warszawskiego Związku Drużyn Harcerzy „Mokotów” wchodzącego w skład Mazowieckiej Chorągwi Harcerzy ZHR."
+   },
+   {
+    "target": "Mazowiecka Chorągiew Harcerzy ZHR",
+    "qid": "Q11771977",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2003,
+    "to": 2006,
+    "sentence": "W latach 2003–2006 pełnił funkcję komendanta Warszawskiego Związku Drużyn Harcerzy „Mokotów” wchodzącego w skład Mazowieckiej Chorągwi Harcerzy ZHR."
+   },
+   {
+    "target": "Katolicyzm",
+    "qid": "Q1841",
+    "verdict": "ok",
+    "classes": [
+     "Q71966963",
+     "Q123129246"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został też członkiem rady nadzorczej (powiernikiem) jednej z warszawskich rad katolickiej organizacji Rycerze Kolumba."
+   },
+   {
+    "target": "Rycerze Kolumba",
+    "qid": "Q1046799",
+    "verdict": "koalicja wyborcza",
+    "classes": [
+     "Q163740",
+     "Q2003221"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został też członkiem rady nadzorczej (powiernikiem) jednej z warszawskich rad katolickiej organizacji Rycerze Kolumba."
+   },
+   {
+    "target": "Fundacja „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego",
+    "qid": "Q5508924",
+    "verdict": "ok",
+    "classes": [
+     "Q157031"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 2016 do 2023 sprawował funkcję przewodniczącego rady Fundacji „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był asystentem prasowym prezesa Prawa i Sprawiedliwości Jarosława Kaczyńskiego, odpowiadając za kształtowanie jego medialnego wizerunku."
+   },
+   {
+    "target": "Jarosław Kaczyński",
+    "qid": "Q55917",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był asystentem prasowym prezesa Prawa i Sprawiedliwości Jarosława Kaczyńskiego, odpowiadając za kształtowanie jego medialnego wizerunku."
+   },
+   {
+    "target": "Rząd Jarosława Kaczyńskiego",
+    "qid": "Q1720028",
+    "verdict": "urząd",
+    "classes": [
+     "Q1338983"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 14 lipca 2006 do 4 listopada 2007 pełnił funkcję rzecznika prasowego rządu Jarosława Kaczyńskiego."
+   },
+   {
+    "target": "Ministerstwo Spraw Zagranicznych (Polska)",
+    "qid": "Q213624",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q20901295"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "17 listopada 2015 powołany na sekretarza stanu w Ministerstwie Spraw Zagranicznych odpowiedzialnego za sprawy polonijne, konsularne, parlamentarne oraz dyplomację publiczną i kulturalną."
    }
   ]
  },
@@ -4624,6 +5435,282 @@
     "from": null,
     "to": null,
     "sentence": "W styczniu 2020 objęła funkcję sekretarza stanu w Ministerstwie Funduszy i Polityki Regionalnej, odpowiedzialnego m.in. za lokalne inicjatywy społeczne."
+   }
+  ]
+ },
+ "96": {
+  "title": "Artur Gierada",
+  "review": [
+   {
+    "target": "Stronnictwo Konserwatywno-Ludowe",
+    "qid": "Q3366252",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 2000 do 2001 należał do Stronnictwa Konserwatywno-Ludowego oraz do stowarzyszenia Młodzi Konserwatyści."
+   },
+   {
+    "target": "Stowarzyszenie „Młodzi Demokraci”",
+    "qid": "Q9346157",
+    "verdict": "ok",
+    "classes": [
+     "Q48204"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był członkiem Stowarzyszenia „Młodzi Demokraci” w Kielcach, w którym działał do 2009."
+   },
+   {
+    "target": "radny",
+    "qid": "Q4657217",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q4164871"
+    ],
+    "from": 2002,
+    "to": 2007,
+    "sentence": "W latach 2002–2007 pełnił funkcję radnego rady miejskiej w Kielcach, był jej wiceprzewodniczącym."
+   },
+   {
+    "target": "Kielce",
+    "qid": "Q102317",
+    "verdict": "urząd",
+    "classes": [
+     "Q515",
+     "Q925381",
+     "Q1549591"
+    ],
+    "from": 2002,
+    "to": 2007,
+    "sentence": "W latach 2002–2007 pełnił funkcję radnego rady miejskiej w Kielcach, był jej wiceprzewodniczącym."
+   }
+  ]
+ },
+ "97": {
+  "title": "Roman Giertych",
+  "review": [
+   {
+    "target": "Młodzież Wszechpolska",
+    "qid": "Q1461181",
+    "verdict": "ok",
+    "classes": [
+     "Q2493450"
+    ],
+    "from": 1989,
+    "to": 1994,
+    "sentence": "27 lutego 1971 w Śremie) – polski polityk i prawnik, adwokat, założyciel i w latach 1989–1994 prezes Młodzieży Wszechpolskiej, prezes Ligi Polskich Rodzin (2006–2007), poseł na Sejm IV, V i X kadencji (2001–2007, od 2023), wicepremier oraz "
+   },
+   {
+    "target": "Liga Polskich Rodzin",
+    "qid": "Q687574",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2006,
+    "to": 2007,
+    "sentence": "27 lutego 1971 w Śremie) – polski polityk i prawnik, adwokat, założyciel i w latach 1989–1994 prezes Młodzieży Wszechpolskiej, prezes Ligi Polskich Rodzin (2006–2007), poseł na Sejm IV, V i X kadencji (2001–2007, od 2023), wicepremier oraz "
+   },
+   {
+    "target": "Opus Dei",
+    "qid": "Q160918",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q1455927"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działał w Opus Dei."
+   },
+   {
+    "target": "Młodzież Wszechpolska",
+    "qid": "Q1461181",
+    "verdict": "ok",
+    "classes": [
+     "Q2493450"
+    ],
+    "from": 1989,
+    "to": null,
+    "sentence": "W 1989 założył deklarującą narodowe wartości Młodzież Wszechpolską, nawiązującą swoją nazwą do przedwojennego Związku Akademickiego Młodzież Wszechpolska."
+   },
+   {
+    "target": "Stronnictwo Narodowo-Demokratyczne (III Rzeczpospolita)",
+    "qid": "Q9346764",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2001,
+    "to": null,
+    "sentence": "Był członkiem Stronnictwa Narodowo-Demokratycznego i Stronnictwa Narodowego, którego działacze w 2001 utworzyli Ligę Polskich Rodzin."
+   },
+   {
+    "target": "Stronnictwo Narodowe (III Rzeczpospolita)",
+    "qid": "Q6974786",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2001,
+    "to": null,
+    "sentence": "Był członkiem Stronnictwa Narodowo-Demokratycznego i Stronnictwa Narodowego, którego działacze w 2001 utworzyli Ligę Polskich Rodzin."
+   },
+   {
+    "target": "Liga Polskich Rodzin",
+    "qid": "Q687574",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2001,
+    "to": null,
+    "sentence": "Był członkiem Stronnictwa Narodowo-Demokratycznego i Stronnictwa Narodowego, którego działacze w 2001 utworzyli Ligę Polskich Rodzin."
+   },
+   {
+    "target": "Komisja Łączności z Polakami za Granicą",
+    "qid": "Q11741728",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie był przewodniczącym Komisji Łączności z Polakami za Granicą."
+   },
+   {
+    "target": "komisja śledcza w sprawie PKN Orlen",
+    "qid": "Q11741735",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q9335008"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od lipca 2004 pełnił funkcję wiceprzewodniczącego sejmowej komisji śledczej badającej tzw."
+   },
+   {
+    "target": "Komisja do Spraw Służb Specjalnych",
+    "qid": "Q16567367",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie pełnił funkcję przewodniczącego Komisji do Spraw Służb Specjalnych."
+   },
+   {
+    "target": "Marek Kotlinowski",
+    "qid": "Q6758857",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był przewodniczącym kongresu LPR (od stycznia 2002), w marcu 2006 został wybrany na prezesa tej partii w miejsce Marka Kotlinowskiego."
+   },
+   {
+    "target": "Amnesty International",
+    "qid": "Q42970",
+    "verdict": "firma",
+    "classes": [
+     "Q79913",
+     "Q163740",
+     "Q17084016"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Przeciwko decyzji ministra protestowali m.in. pracownicy CODN, Polska Izba Książki, Amnesty International i sekretarz generalny Rady Europy Terry Davis."
+   },
+   {
+    "target": "sekretarz generalny Rady Europy",
+    "qid": "Q2942251",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q4164871"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Przeciwko decyzji ministra protestowali m.in. pracownicy CODN, Polska Izba Książki, Amnesty International i sekretarz generalny Rady Europy Terry Davis."
+   },
+   {
+    "target": "Terry Davis",
+    "qid": "Q337401",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Przeciwko decyzji ministra protestowali m.in. pracownicy CODN, Polska Izba Książki, Amnesty International i sekretarz generalny Rady Europy Terry Davis."
+   },
+   {
+    "target": "think tank",
+    "qid": "Q155271",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W lutym 2013, m.in. razem z Kazimierzem Marcinkiewiczem i Michałem Kamińskim, założył think tank Instytut Myśli Państwowej, którego został prezesem."
+   },
+   {
+    "target": "Jacek Dubois",
+    "qid": "Q11715271",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Wraz z Jackiem Dubois i Mikołajem Pietrzakiem skierował do MTK zawiadomienie o popełnieniu przestępstwa przez ministra sprawiedliwości i prokuratora generalnego Zbigniewa Ziobrę oraz przez prokuratora krajowego Bogdana Święczkowskiego, zarz"
+   },
+   {
+    "target": "Międzynarodowy Trybunał Karny",
+    "qid": "Q47488",
+    "verdict": "urząd",
+    "classes": [
+     "Q245065",
+     "Q1262438"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Wraz z Jackiem Dubois i Mikołajem Pietrzakiem skierował do MTK zawiadomienie o popełnieniu przestępstwa przez ministra sprawiedliwości i prokuratora generalnego Zbigniewa Ziobrę oraz przez prokuratora krajowego Bogdana Święczkowskiego, zarz"
+   },
+   {
+    "target": "Zbigniew Ziobro",
+    "qid": "Q159472",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Wraz z Jackiem Dubois i Mikołajem Pietrzakiem skierował do MTK zawiadomienie o popełnieniu przestępstwa przez ministra sprawiedliwości i prokuratora generalnego Zbigniewa Ziobrę oraz przez prokuratora krajowego Bogdana Święczkowskiego, zarz"
+   },
+   {
+    "target": "Pierwszy Prezes Sądu Najwyższego",
+    "qid": "Q11816725",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q16474031"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Po zwycięstwie Karola Nawrockiego w wyborach prezydenckich w czerwcu 2025 Roman Giertych był inicjatorem masowych (ponad 50 tysięcy) protestów wyborczych, nazwanych następnie przez pierwszego prezesa Sądu Najwyższego Małgorzatę Manowską „gi"
+   },
+   {
+    "target": "Małgorzata Manowska",
+    "qid": "Q56339412",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Po zwycięstwie Karola Nawrockiego w wyborach prezydenckich w czerwcu 2025 Roman Giertych był inicjatorem masowych (ponad 50 tysięcy) protestów wyborczych, nazwanych następnie przez pierwszego prezesa Sądu Najwyższego Małgorzatę Manowską „gi"
    }
   ]
  },
@@ -6228,6 +7315,64 @@
    }
   ]
  },
+ "132": {
+  "title": "Marek Hok",
+  "review": [
+   {
+    "target": "zarząd województwa",
+    "qid": "Q7939813",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2006,
+    "to": 2011,
+    "sentence": "15 czerwca 1953 w Koszalinie) – polski polityk, lekarz ginekolog i samorządowiec, od 2006 do 2011 członek zarządu województwa zachodniopomorskiego dwóch kadencji, poseł na Sejm VII, VIII, IX i X kadencji."
+   },
+   {
+    "target": "województwo zachodniopomorskie",
+    "qid": "Q54188",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q150093"
+    ],
+    "from": 2006,
+    "to": 2011,
+    "sentence": "15 czerwca 1953 w Koszalinie) – polski polityk, lekarz ginekolog i samorządowiec, od 2006 do 2011 członek zarządu województwa zachodniopomorskiego dwóch kadencji, poseł na Sejm VII, VIII, IX i X kadencji."
+   },
+   {
+    "target": "Polski Czerwony Krzyż",
+    "qid": "Q6127600",
+    "verdict": "ok",
+    "classes": [
+     "Q1968122"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został członkiem różnych organizacji sportowych i pozarządowych (m.in. prezesem zarządu lokalnego PCK i prezesem Zachodniopomorskiego Związku Kolarskiego)."
+   },
+   {
+    "target": "Polski Związek Kolarski",
+    "qid": "Q589190",
+    "verdict": "ok",
+    "classes": [
+     "Q2485448"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został członkiem różnych organizacji sportowych i pozarządowych (m.in. prezesem zarządu lokalnego PCK i prezesem Zachodniopomorskiego Związku Kolarskiego)."
+   },
+   {
+    "target": "Powiat kołobrzeski",
+    "qid": "Q1340605",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q247073"
+    ],
+    "from": 2010,
+    "to": null,
+    "sentence": "Został m.in. wiceprzewodniczącym struktur regionalnych, a w 2010 przewodniczącym partii w powiecie kołobrzeskim."
+   }
+  ]
+ },
  "133": {
   "title": "Szymon Hołownia",
   "review": [
@@ -6580,6 +7725,129 @@
    }
   ]
  },
+ "139": {
+  "title": "Marek Jakubiak",
+  "review": [
+   {
+    "target": "Krotoszyn",
+    "qid": "Q984538",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q515"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Po 1996 zasiadał w radzie nadzorczej i zarządzie browaru w Krotoszynie, który upadł z powodu zadłużenia."
+   },
+   {
+    "target": "Kukiz’15",
+    "qid": "Q20740347",
+    "verdict": "partia",
+    "classes": [
+     "Q7278",
+     "Q2738074",
+     "Q7210356"
+    ],
+    "from": 2016,
+    "to": null,
+    "sentence": "W 2016 współtworzył stowarzyszenie Endecja, w którym pełnił funkcję przewodniczącego rady gospodarczej. 20 lipca 2018 został wiceprzewodniczącym komisji śledczej ds. wyłudzeń VAT."
+   },
+   {
+    "target": "Komisja śledcza do zbadania prawidłowości i legalności działań oraz występowania zaniedbań i zaniechań organów i instytucji publicznych w zakresie zapewnienia dochodów Skarbu Państwa z tytułu podatku od towarów i usług i podatku akcyzowego",
+    "qid": "Q56339007",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q9335008"
+    ],
+    "from": 2016,
+    "to": null,
+    "sentence": "W 2016 współtworzył stowarzyszenie Endecja, w którym pełnił funkcję przewodniczącego rady gospodarczej. 20 lipca 2018 został wiceprzewodniczącym komisji śledczej ds. wyłudzeń VAT."
+   },
+   {
+    "target": "Rozwój Plus",
+    "qid": "Q140695333",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "Również w 2026 został członkiem stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
+   },
+   {
+    "target": "Mateusz Morawiecki",
+    "qid": "Q11771436",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "Również w 2026 został członkiem stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
+   }
+  ]
+ },
+ "140": {
+  "title": "Maria Janyska",
+  "review": [
+   {
+    "target": "sekretarz (samorząd)",
+    "qid": "Q883211",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q4164871"
+    ],
+    "from": 1989,
+    "to": 1990,
+    "sentence": "W latach 1989–1990 pełniła funkcję kierownika rejonowego biura pracy, następnie objęła stanowisko sekretarza miasta w Czarnkowie."
+   },
+   {
+    "target": "Tarnowo Podgórne (gmina)",
+    "qid": "Q554126",
+    "verdict": "urząd",
+    "classes": [
+     "Q3504085"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 2001 pełniła funkcję sekretarza gminy Tarnowo Podgórne."
+   },
+   {
+    "target": "Powiat czarnkowsko-trzcianecki",
+    "qid": "Q133164",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q247073"
+    ],
+    "from": 1998,
+    "to": 2002,
+    "sentence": "W latach 1998–2002 zasiadała w radzie powiatu czarnkowsko-trzcianeckiego I kadencji."
+   },
+   {
+    "target": "Komisja Administracji i Spraw Wewnętrznych",
+    "qid": "Q11741606",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie VIII kadencji została zastępcynią przewodniczącego Komisji Nadzwyczajnej do spraw deregulacji i członkinią Komisji Administracji i Spraw Wewnętrznych oraz Komisji Gospodarki i Rozwoju."
+   },
+   {
+    "target": "Komisja Administracji i Spraw Wewnętrznych",
+    "qid": "Q11741606",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W IX kadencji była wiceprzewodniczącą Komisji Gospodarki i Rozwoju, a w X kadencji została wiceprzewodniczącą Komisji Administracji i Spraw Wewnętrznych."
+   }
+  ]
+ },
  "141": {
   "title": "Michał Jaros",
   "review": [
@@ -6854,6 +8122,56 @@
    }
   ]
  },
+ "146": {
+  "title": "Norbert Kaczmarczyk",
+  "review": [
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2021,
+    "to": 2022,
+    "sentence": "16 listopada 1989 w Proszowicach) – polski polityk, dziennikarz, rolnik i samorządowiec, poseł na Sejm VIII, IX i X kadencji, w latach 2021–2022 sekretarz stanu w Ministerstwie Rolnictwa i Rozwoju Wsi."
+   },
+   {
+    "target": "Ministerstwo Rolnictwa i Rozwoju Wsi",
+    "qid": "Q4380777",
+    "verdict": "urząd",
+    "classes": [
+     "Q1364302",
+     "Q6866556",
+     "Q66739700"
+    ],
+    "from": 2021,
+    "to": 2022,
+    "sentence": "16 listopada 1989 w Proszowicach) – polski polityk, dziennikarz, rolnik i samorządowiec, poseł na Sejm VIII, IX i X kadencji, w latach 2021–2022 sekretarz stanu w Ministerstwie Rolnictwa i Rozwoju Wsi."
+   },
+   {
+    "target": "Izba rolnicza",
+    "qid": "Q59155876",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Zajął się prowadzeniem rodzinnego gospodarstwa rolnego, został członkiem Małopolskiej Izby Rolniczej."
+   },
+   {
+    "target": "Komisja Kultury i Środków Przekazu (Sejm)",
+    "qid": "Q11741624",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie X kadencji ponownie został członkiem Komisji Rolnictwa i Rozwoju Wsi, objął też funkcje zastępcy przewodniczącego Komisji Kultury i Środków Przekazu oraz przewodniczącego Parlamentarnego Zespołu ds."
+   }
+  ]
+ },
  "147": {
   "title": "Filip Kaczyński",
   "review": [
@@ -6910,6 +8228,336 @@
     "from": 2021,
     "to": null,
     "sentence": "W Sejmie został członkiem Komisji Administracji i Spraw Wewnętrznych, Komisji Finansów Publicznych oraz Komisji Polityki Senioralnej (w 2021 objął funkcję jej wiceprzewodniczącego)."
+   }
+  ]
+ },
+ "148": {
+  "title": "Jarosław Kaczyński",
+  "review": [
+   {
+    "target": "prezes Rady Ministrów",
+    "qid": "Q3259469",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q294414"
+    ],
+    "from": 2006,
+    "to": 2007,
+    "sentence": "18 czerwca 1949 w Warszawie) – polski polityk i doktor nauk prawnych, w latach 2006–2007 prezes Rady Ministrów."
+   },
+   {
+    "target": "Polska Rzeczpospolita Ludowa",
+    "qid": "Q211274",
+    "verdict": "państwo",
+    "classes": [
+     "Q3024240"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W okresie PRL działacz opozycji politycznej."
+   },
+   {
+    "target": "Opozycja polityczna w PRL",
+    "qid": "Q96480380",
+    "verdict": "ruch społeczny",
+    "classes": [
+     "Q2738074"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W okresie PRL działacz opozycji politycznej."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2020,
+    "to": 2022,
+    "sentence": "Od 2003 prezes partii Prawo i Sprawiedliwość, w latach 2020–2022 i w 2023 wiceprezes Rady Ministrów, w latach 2020–2022 przewodniczący Komitetu Rady Ministrów do spraw Bezpieczeństwa Narodowego i spraw Obronnych."
+   },
+   {
+    "target": "wiceprezes Rady Ministrów",
+    "qid": "Q15051532",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q4164871"
+    ],
+    "from": 2020,
+    "to": 2022,
+    "sentence": "Od 2003 prezes partii Prawo i Sprawiedliwość, w latach 2020–2022 i w 2023 wiceprezes Rady Ministrów, w latach 2020–2022 przewodniczący Komitetu Rady Ministrów do spraw Bezpieczeństwa Narodowego i spraw Obronnych."
+   },
+   {
+    "target": "Szare Szeregi",
+    "qid": "Q218893",
+    "verdict": "wojsko",
+    "classes": [
+     "Q207320",
+     "Q2363019"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Matka, Jadwiga z domu Jasiewicz, należała do Szarych Szeregów, z wykształcenia była filologiem polskim (zawodowo związana z Instytutem Badań Literackich Polskiej Akademii Nauk)."
+   },
+   {
+    "target": "Fundacja Prasowa „Solidarność”",
+    "qid": "Q9264460",
+    "verdict": "ok",
+    "classes": [
+     "Q157031"
+    ],
+    "from": 1990,
+    "to": null,
+    "sentence": "W 1990 był współzałożycielem Fundacji Prasowej „Solidarność”."
+   },
+   {
+    "target": "Srebrna (przedsiębiorstwo)",
+    "qid": "Q26736565",
+    "verdict": "firma",
+    "classes": [
+     "Q4830453",
+     "Q6881511"
+    ],
+    "from": 1994,
+    "to": 1997,
+    "sentence": "W latach 1994–1997 Jarosław Kaczyński kierował działem wydawniczym w spółce z o.o. „Srebrna”."
+   },
+   {
+    "target": "Antoni Macierewicz",
+    "qid": "Q597698",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1979 należał do redakcji kierowanego przez Antoniego Macierewicza niezależnego miesięcznika „Głos”."
+   },
+   {
+    "target": "Głos (czasopismo)",
+    "qid": "Q11703191",
+    "verdict": "media",
+    "classes": [
+     "Q1002697"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1979 należał do redakcji kierowanego przez Antoniego Macierewicza niezależnego miesięcznika „Głos”."
+   },
+   {
+    "target": "Kluby Służby Niepodległości",
+    "qid": "Q11740308",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 1981,
+    "to": null,
+    "sentence": "W 1981 podpisał deklarację założycielską Klubów Służby Niepodległości."
+   },
+   {
+    "target": "Komitet Helsiński",
+    "qid": "Q11741757",
+    "verdict": "ok",
+    "classes": [
+     "Q1920810",
+     "Q7210356"
+    ],
+    "from": 1982,
+    "to": null,
+    "sentence": "W 1982 był jednym z założycieli Komitetu Helsińskiego w Polsce."
+   },
+   {
+    "target": "Krajowa Komisja Wykonawcza NSZZ „Solidarność”",
+    "qid": "Q24945852",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1987 był sekretarzem Krajowej Komisji Wykonawczej NSZZ „Solidarność”."
+   },
+   {
+    "target": "Komitet Obywatelski „Solidarność”",
+    "qid": "Q7557985",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1988 należał do Komitetu Obywatelskiego „Solidarność”."
+   },
+   {
+    "target": "Stronnictwo Demokratyczne",
+    "qid": "Q2351138",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W lipcu i sierpniu 1989 był ze strony NSZZ „Solidarność” członkiem zespołu ds. negocjacji ze Stronnictwem Demokratycznym i Zjednoczonym Stronnictwem Ludowym w sprawie powołania koalicyjnego rządu."
+   },
+   {
+    "target": "Zjednoczone Stronnictwo Ludowe",
+    "qid": "Q2537981",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W lipcu i sierpniu 1989 był ze strony NSZZ „Solidarność” członkiem zespołu ds. negocjacji ze Stronnictwem Demokratycznym i Zjednoczonym Stronnictwem Ludowym w sprawie powołania koalicyjnego rządu."
+   },
+   {
+    "target": "Senat Rzeczypospolitej Polskiej",
+    "qid": "Q98975",
+    "verdict": "urząd",
+    "classes": [
+     "Q2570643"
+    ],
+    "from": 1989,
+    "to": 1991,
+    "sentence": "W latach 1989–1991 zasiadał w Senacie I kadencji."
+   },
+   {
+    "target": "Senatorowie I kadencji Senatu Rzeczypospolitej Polskiej (1989–1991)",
+    "qid": "Q11822086",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q13406463"
+    ],
+    "from": 1989,
+    "to": 1991,
+    "sentence": "W latach 1989–1991 zasiadał w Senacie I kadencji."
+   },
+   {
+    "target": "Obywatelski Klub Parlamentarny",
+    "qid": "Q11795487",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Senacie był członkiem Obywatelskiego Klubu Parlamentarnego."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2001,
+    "to": null,
+    "sentence": "W 2001 wraz z Lechem Kaczyńskim współtworzył partię Prawo i Sprawiedliwość, która w wyborach parlamentarnych w 2001 zdobyła 9,5% głosów i 44 mandaty poselskie."
+   },
+   {
+    "target": "Komisja Etyki Poselskiej",
+    "qid": "Q11741610",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2001,
+    "to": 2003,
+    "sentence": "W latach 2001–2003 był członkiem Komisji Etyki oraz przewodniczącym klubu parlamentarnego PiS."
+   },
+   {
+    "target": "Prezes Rady Ministrów",
+    "qid": "Q3259469",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q294414"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Po podaniu się do dymisji przez Kazimierza Marcinkiewicza, 7 lipca 2006 Jarosław Kaczyński uzyskał formalną rekomendację kierowanej przez siebie partii na objęcie stanowiska prezesa Rady Ministrów."
+   },
+   {
+    "target": "wiceprezes Rady Ministrów",
+    "qid": "Q15051532",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q4164871"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "6 października 2020 objął funkcję wiceprezesa Rady Ministrów w rekonstruowanym drugim rządzie Mateusza Morawieckiego."
+   },
+   {
+    "target": "drugi rząd Mateusza Morawieckiego",
+    "qid": "Q75110838",
+    "verdict": "urząd",
+    "classes": [
+     "Q1338983"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "6 października 2020 objął funkcję wiceprezesa Rady Ministrów w rekonstruowanym drugim rządzie Mateusza Morawieckiego."
+   },
+   {
+    "target": "Ustawa o obronie Ojczyzny",
+    "qid": "Q113815424",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q820655"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Jako wiceprezes Rady Ministrów oraz Przewodniczący Komitetu Rady Ministrów do spraw Bezpieczeństwa Narodowego i spraw Obronnych był autorem Ustawy o obronie Ojczyzny, przyjętej przez Parlament RP w marcu 2022 a podpisanej przez Prezydenta R"
+   },
+   {
+    "target": "Komedia satyryczna",
+    "qid": "Q11741513",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2017,
+    "to": 2019,
+    "sentence": "W latach 2017–2019 głównym bohaterem polskiego politycznokomediowego serialu internetowego Ucho Prezesa był przywódca pewnej partii wzorowany na osobie Jarosława Kaczyńskiego."
+   },
+   {
+    "target": "Serial internetowy",
+    "qid": "Q526877",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q140354053"
+    ],
+    "from": 2017,
+    "to": 2019,
+    "sentence": "W latach 2017–2019 głównym bohaterem polskiego politycznokomediowego serialu internetowego Ucho Prezesa był przywódca pewnej partii wzorowany na osobie Jarosława Kaczyńskiego."
+   },
+   {
+    "target": "Ucho Prezesa",
+    "qid": "Q28675455",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q526877"
+    ],
+    "from": 2017,
+    "to": 2019,
+    "sentence": "W latach 2017–2019 głównym bohaterem polskiego politycznokomediowego serialu internetowego Ucho Prezesa był przywódca pewnej partii wzorowany na osobie Jarosława Kaczyńskiego."
+   },
+   {
+    "target": "Andrzej Grabowski (aktor)",
+    "qid": "Q514958",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W rolę „Prezesa” wcielił się Andrzej Grabowski."
+   },
+   {
+    "target": "Michał Wiśniewski",
+    "qid": "Q2920083",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Utwór Prezes Michała Wiśniewskiego stanowi atak na osobę Kaczyńskiego, choć w tekście nie pada jego nazwisko."
    }
   ]
  },
@@ -7273,6 +8921,69 @@
     "from": null,
     "to": null,
     "sentence": "Pod koniec lutego 2020, jako przedstawiciel Solidarnej Polski wszedł w skład sztabu wyborczego prezydenta Andrzeja Dudy. 12 listopada 2021 objął funkcję sekretarza stanu w Ministerstwie Aktywów Państwowych."
+   }
+  ]
+ },
+ "155": {
+  "title": "Fryderyk Kapinos",
+  "review": [
+   {
+    "target": "Chorzelów",
+    "qid": "Q2622818",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q3558970"
+    ],
+    "from": 2005,
+    "to": 2007,
+    "sentence": "Od 1989 do 2004 kierował PZZ AGRO-PIAST w Chorzelowie, następnie w latach 2005–2007 kierował marketingiem w PPM „Taurus” w Pilźnie."
+   },
+   {
+    "target": "Pilzno",
+    "qid": "Q43453",
+    "verdict": "firma",
+    "classes": [
+     "Q515",
+     "Q257978",
+     "Q1549591",
+     "Q5153359"
+    ],
+    "from": 2005,
+    "to": 2007,
+    "sentence": "Od 1989 do 2004 kierował PZZ AGRO-PIAST w Chorzelowie, następnie w latach 2005–2007 kierował marketingiem w PPM „Taurus” w Pilźnie."
+   },
+   {
+    "target": "Wadowice Górne",
+    "qid": "Q1822332",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q3558970"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został współzałożycielem i wiceprezesem Funduszu Misyjnego w Wadowicach Górnych."
+   },
+   {
+    "target": "Rozwój Plus",
+    "qid": "Q140695333",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został członkiem stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
+   },
+   {
+    "target": "Mateusz Morawiecki",
+    "qid": "Q11771436",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został członkiem stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
    }
   ]
  },
@@ -7889,6 +9600,158 @@
    }
   ]
  },
+ "163": {
+  "title": "Joanna Kluzik-Rostkowska",
+  "review": [
+   {
+    "target": "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+    "qid": "Q4294766",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q12813215"
+    ],
+    "from": 2005,
+    "to": 2007,
+    "sentence": "Posłanka na Sejm VI, VII, VIII, IX i X kadencji, w latach 2005–2007 podsekretarz stanu w Ministerstwie Pracy i Polityki Społecznej, w 2007 podsekretarz stanu w Ministerstwie Rozwoju Regionalnego, w 2007 minister pracy i polityki społecznej,"
+   },
+   {
+    "target": "Ministerstwo Rozwoju Regionalnego (Polska)",
+    "qid": "Q4294646",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556"
+    ],
+    "from": 2007,
+    "to": null,
+    "sentence": "Posłanka na Sejm VI, VII, VIII, IX i X kadencji, w latach 2005–2007 podsekretarz stanu w Ministerstwie Pracy i Polityki Społecznej, w 2007 podsekretarz stanu w Ministerstwie Rozwoju Regionalnego, w 2007 minister pracy i polityki społecznej,"
+   },
+   {
+    "target": "Polska Jest Najważniejsza",
+    "qid": "Q1784503",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2010,
+    "to": 2011,
+    "sentence": "Posłanka na Sejm VI, VII, VIII, IX i X kadencji, w latach 2005–2007 podsekretarz stanu w Ministerstwie Pracy i Polityki Społecznej, w 2007 podsekretarz stanu w Ministerstwie Rozwoju Regionalnego, w 2007 minister pracy i polityki społecznej,"
+   },
+   {
+    "target": "Niezależne Zrzeszenie Studentów",
+    "qid": "Q763652",
+    "verdict": "ok",
+    "classes": [
+     "Q43229",
+     "Q1685451"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W czasie studiów działała w Niezależnym Zrzeszeniu Studentów."
+   },
+   {
+    "target": "Nowe Państwo (czasopismo)",
+    "qid": "Q11793619",
+    "verdict": "media",
+    "classes": [
+     "Q11780435"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 2000 kierowała działem gospodarczym tygodnika „Nowe Państwo”."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W tym samym roku wstąpiła do Prawa i Sprawiedliwości."
+   },
+   {
+    "target": "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+    "qid": "Q4294766",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q12813215"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "17 listopada 2005 objęła stanowisko podsekretarza stanu w Ministerstwie Pracy i Polityki Społecznej, przejmując m.in. część kompetencji pełnomocnika rządu do spraw równego traktowania (urząd ten został zlikwidowany przez nowego premiera Kaz"
+   },
+   {
+    "target": "Jarosław Kaczyński",
+    "qid": "Q55917",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Tego samego dnia została powołana przez premiera Jarosława Kaczyńskiego na stanowisko podsekretarza stanu w Ministerstwie Rozwoju Regionalnego."
+   },
+   {
+    "target": "Ministerstwo Rozwoju Regionalnego (Polska)",
+    "qid": "Q4294646",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Tego samego dnia została powołana przez premiera Jarosława Kaczyńskiego na stanowisko podsekretarza stanu w Ministerstwie Rozwoju Regionalnego."
+   },
+   {
+    "target": "Paweł Kowal",
+    "qid": "Q432215",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Joanna Kluzik-Rostkowska kierowała ugrupowaniem do momentu wyboru na jego prezesa Pawła Kowala 4 czerwca 2011 na pierwszym kongresie partii. 3 dni później ustąpiła z funkcji szefa klubu parlamentarnego PJN na rzecz Pawła Poncyljusza. 13 cze"
+   },
+   {
+    "target": "Paweł Poncyljusz",
+    "qid": "Q7156196",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Joanna Kluzik-Rostkowska kierowała ugrupowaniem do momentu wyboru na jego prezesa Pawła Kowala 4 czerwca 2011 na pierwszym kongresie partii. 3 dni później ustąpiła z funkcji szefa klubu parlamentarnego PJN na rzecz Pawła Poncyljusza. 13 cze"
+   }
+  ]
+ },
+ "164": {
+  "title": "Agnieszka Kłopotek",
+  "review": [
+   {
+    "target": "Zootechnika",
+    "qid": "Q600846",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "9 lipca 1969 w Tarnowie) – polska polityk, zootechnik i działaczka samorządowa, posłanka na Sejm X kadencji."
+   },
+   {
+    "target": "Samorząd terytorialny",
+    "qid": "Q6621940",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "9 lipca 1969 w Tarnowie) – polska polityk, zootechnik i działaczka samorządowa, posłanka na Sejm X kadencji."
+   }
+  ]
+ },
  "165": {
   "title": "Łukasz Kmita",
   "review": [
@@ -8271,6 +10134,87 @@
     "from": null,
     "to": null,
     "sentence": "W Sejmie został członkiem Komisji do Spraw Energii, Klimatu i Aktywów Państwowych oraz Komisji Spraw Zagranicznych."
+   }
+  ]
+ },
+ "173": {
+  "title": "Zbigniew Konwiński",
+  "review": [
+   {
+    "target": "Koalicja Obywatelska",
+    "qid": "Q1021144",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197",
+     "Q11741833"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "24 marca 1974 w Słupsku) – polski polityk, samorządowiec i menedżer, poseł na Sejm VI, VII, VIII, IX i X kadencji (od 2007), od 2023 przewodniczący Klubu Parlamentarnego Koalicji Obywatelskiej."
+   },
+   {
+    "target": "Platforma Obywatelska",
+    "qid": "Q156868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2005,
+    "to": null,
+    "sentence": "W latach 1999–2002 był dyrektorem słupskiego oddziału Ruch S.A. Od 2002 pracował w „Dzienniku Bałtyckim”, od 2005 był przewodniczącym Rady Nadzorczej Pomorskiej Agencji Rozwoju Regionalnego i kierownikiem biura poselskiego PO w Słupsku."
+   },
+   {
+    "target": "Konfederacja Polski Niepodległej",
+    "qid": "Q1361968",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1992 do 1998 był członkiem Konfederacji Polski Niepodległej, następnie Ruchu Społecznego AWS."
+   },
+   {
+    "target": "Komisja śledcza do zbadania prawidłowości i legalności działań oraz występowania zaniedbań i zaniechań organów i instytucji publicznych w zakresie zapewnienia dochodów Skarbu Państwa z tytułu podatku od towarów i usług i podatku akcyzowego",
+    "qid": "Q56339007",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q9335008"
+    ],
+    "from": 2018,
+    "to": null,
+    "sentence": "W 2018 został członkiem komisji śledczej ds. wyłudzeń VAT."
+   },
+   {
+    "target": "Komisja Łączności z Polakami za Granicą",
+    "qid": "Q11741728",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Objął funkcję przewodniczącego Komisji Łączności z Polakami za Granicą. 19 grudnia 2023 zastąpił Borysa Budkę na funkcji przewodniczącego Klubu Parlamentarnego KO."
+   },
+   {
+    "target": "Borys Budka",
+    "qid": "Q11688652",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Objął funkcję przewodniczącego Komisji Łączności z Polakami za Granicą. 19 grudnia 2023 zastąpił Borysa Budkę na funkcji przewodniczącego Klubu Parlamentarnego KO."
+   },
+   {
+    "target": "województwo pomorskie",
+    "qid": "Q54180",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q150093"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został także członkiem jej zarządu w województwie pomorskim."
    }
   ]
  },
@@ -9101,6 +11045,98 @@
    }
   ]
  },
+ "181": {
+  "title": "Bartosz Kownacki",
+  "review": [
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "Poseł na Sejm VII, VIII, IX i X kadencji, w latach 2015–2018 sekretarz stanu w Ministerstwie Obrony Narodowej."
+   },
+   {
+    "target": "Ministerstwo Obrony Narodowej",
+    "qid": "Q2982446",
+    "verdict": "urząd",
+    "classes": [
+     "Q1788820",
+     "Q6866556"
+    ],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "Poseł na Sejm VII, VIII, IX i X kadencji, w latach 2015–2018 sekretarz stanu w Ministerstwie Obrony Narodowej."
+   },
+   {
+    "target": "Komisja ds. Likwidacji Wojskowych Służb Informacyjnych",
+    "qid": "Q24944917",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Był także członkiem Komisji Likwidacyjnej do spraw WSI."
+   },
+   {
+    "target": "Wojskowe Służby Informacyjne",
+    "qid": "Q647320",
+    "verdict": "urząd",
+    "classes": [
+     "Q327333"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był także członkiem Komisji Likwidacyjnej do spraw WSI."
+   },
+   {
+    "target": "Komisja Obrony Narodowej (Sejm)",
+    "qid": "Q11741644",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Został członkiem, a później wiceprzewodniczącym Komisji Obrony Narodowej."
+   }
+  ]
+ },
+ "182": {
+  "title": "Iwona Kozłowska",
+  "review": [
+   {
+    "target": "Samorząd terytorialny",
+    "qid": "Q6621940",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "11 sierpnia 1963 w Więcborku) – polska nauczycielka, pedagog, działaczka samorządowa i polityk, posłanka na Sejm VII, IX i X kadencji."
+   },
+   {
+    "target": "polityk",
+    "qid": "Q82955",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "11 sierpnia 1963 w Więcborku) – polska nauczycielka, pedagog, działaczka samorządowa i polityk, posłanka na Sejm VII, IX i X kadencji."
+   },
+   {
+    "target": "Komisja Polityki Senioralnej",
+    "qid": "Q28673139",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W X kadencji objęła funkcję wiceprzewodniczącej Komisji Polityki Senioralnej."
+   }
+  ]
+ },
  "183": {
   "title": "Stefan Krajewski (ur. 1981)",
   "review": [
@@ -9261,6 +11297,43 @@
     "from": null,
     "to": null,
     "sentence": "Był wśród założycieli Porozumienia Centrum i PiS, obejmował kierownicze funkcje w organach tych partii na szczeblu regionalnym i krajowym."
+   }
+  ]
+ },
+ "186": {
+  "title": "Iwona Krawczyk",
+  "review": [
+   {
+    "target": "Kamiennogórska Specjalna Strefa Ekonomiczna Małej Przedsiębiorczości",
+    "qid": "Q11734412",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Została później prezesem zarządu Kamiennogórskiej Specjalnej Strefy Ekonomicznej Małej Przedsiębiorczości, gdzie m.in. zainicjowała pierwszy w Polsce Strefowy Klaster Edukacyjny."
+   },
+   {
+    "target": "powiat kamiennogórski",
+    "qid": "Q637226",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q247073"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W międzyczasie została przewodniczącą struktur PO w powiecie kamiennogórskim."
+   },
+   {
+    "target": "Koalicja Obywatelska",
+    "qid": "Q1021144",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197",
+     "Q11741833"
+    ],
+    "from": 2025,
+    "to": null,
+    "sentence": "W 2025, w wyniku przekształcenia PO, została działaczką Koalicji Obywatelskiej."
    }
   ]
  },
@@ -10298,6 +12371,134 @@
    }
   ]
  },
+ "204": {
+  "title": "Zbigniew Kuźmiuk",
+  "review": [
+   {
+    "target": "Rządowe Centrum Studiów Strategicznych",
+    "qid": "Q9325484",
+    "verdict": "ok",
+    "classes": [
+     "Q43229"
+    ],
+    "from": 1997,
+    "to": null,
+    "sentence": "19 września 1956 w Komorowie) – polski ekonomista, nauczyciel akademicki i przedsiębiorca, doktor nauk ekonomicznych; polityk ruchu ludowego i publicysta, w latach 1994–1996 wojewoda radomski, w 1997 prezes Rządowego Centrum Studiów Strateg"
+   },
+   {
+    "target": "Radom",
+    "qid": "Q104740",
+    "verdict": "urząd",
+    "classes": [
+     "Q515",
+     "Q925381",
+     "Q1549591"
+    ],
+    "from": 1990,
+    "to": 1992,
+    "sentence": "W latach 1990–1992 był prezesem zarządu spółki akcyjnej PPHU Tex w Radomiu."
+   },
+   {
+    "target": "Zjednoczone Stronnictwo Ludowe",
+    "qid": "Q2537981",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1986 działał w Zjednoczonym Stronnictwie Ludowym, następnie był członkiem Polskiego Stronnictwa Ludowego."
+   },
+   {
+    "target": "wojewoda",
+    "qid": "Q275102",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q56019",
+     "Q4164871",
+     "Q107120393",
+     "Q114962596"
+    ],
+    "from": 1994,
+    "to": 1996,
+    "sentence": "W okresie 1994–1996 pełnił funkcję wojewody radomskiego."
+   },
+   {
+    "target": "województwo radomskie",
+    "qid": "Q185306",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q150093"
+    ],
+    "from": 1994,
+    "to": 1996,
+    "sentence": "W okresie 1994–1996 pełnił funkcję wojewody radomskiego."
+   },
+   {
+    "target": "Rządowe Centrum Studiów Strategicznych",
+    "qid": "Q9325484",
+    "verdict": "ok",
+    "classes": [
+     "Q43229"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1 stycznia 1997 do 31 października 1997 w randze ministra był prezesem Rządowego Centrum Studiów Strategicznych w rządzie Włodzimierza Cimoszewicza."
+   },
+   {
+    "target": "rząd Włodzimierza Cimoszewicza",
+    "qid": "Q2932340",
+    "verdict": "urząd",
+    "classes": [
+     "Q1338983"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1 stycznia 1997 do 31 października 1997 w randze ministra był prezesem Rządowego Centrum Studiów Strategicznych w rządzie Włodzimierza Cimoszewicza."
+   },
+   {
+    "target": "radny",
+    "qid": "Q4657217",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q4164871"
+    ],
+    "from": 1998,
+    "to": 2001,
+    "sentence": "W latach 1998–2001 pełnił funkcje radnego sejmiku oraz marszałka województwa mazowieckiego."
+   },
+   {
+    "target": "sejmik województwa",
+    "qid": "Q675911",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 1998,
+    "to": 2001,
+    "sentence": "W latach 1998–2001 pełnił funkcje radnego sejmiku oraz marszałka województwa mazowieckiego."
+   },
+   {
+    "target": "Polskie Stronnictwo Ludowe",
+    "qid": "Q218477",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był wiceprzewodniczącym, a od lutego 2002 do marca 2003 przewodniczącym Klubu Parlamentarnego Polskiego Stronnictwa Ludowego oraz przewodniczącym Komisji Samorządu Terytorialnego i Polityki Regionalnej."
+   },
+   {
+    "target": "Komisja Samorządu Terytorialnego i Polityki Regionalnej",
+    "qid": "Q11741677",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Był wiceprzewodniczącym, a od lutego 2002 do marca 2003 przewodniczącym Klubu Parlamentarnego Polskiego Stronnictwa Ludowego oraz przewodniczącym Komisji Samorządu Terytorialnego i Polityki Regionalnej."
+   }
+  ]
+ },
  "206": {
   "title": "Piotr Lachowicz",
   "review": [
@@ -10761,6 +12962,126 @@
    }
   ]
  },
+ "218": {
+  "title": "Katarzyna Lubnauer",
+  "review": [
+   {
+    "target": "Nowoczesna",
+    "qid": "Q20738981",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2017,
+    "to": 2019,
+    "sentence": "24 lipca 1969 w Łodzi) – polska polityczka, matematyczka i nauczycielka akademicka, doktor nauk matematycznych, w latach 2017–2019 przewodnicząca partii Nowoczesna, posłanka na Sejm VIII, IX i X kadencji, od 2023 wiceminister edukacji w ran"
+   },
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "24 lipca 1969 w Łodzi) – polska polityczka, matematyczka i nauczycielka akademicka, doktor nauk matematycznych, w latach 2017–2019 przewodnicząca partii Nowoczesna, posłanka na Sejm VIII, IX i X kadencji, od 2023 wiceminister edukacji w ran"
+   },
+   {
+    "target": "Unia Demokratyczna",
+    "qid": "Q1476149",
+    "verdict": "partia",
+    "classes": [
+     "Q23702035"
+    ],
+    "from": 1994,
+    "to": null,
+    "sentence": "Od 1993 działała w Unii Demokratycznej, następnie od 1994 w Unii Wolności, w której kierowała jednym z łódzkich kół partii."
+   },
+   {
+    "target": "Rada Miejska w Łodzi",
+    "qid": "Q11833377",
+    "verdict": "urząd",
+    "classes": [
+     "Q3507268"
+    ],
+    "from": 1998,
+    "to": 2002,
+    "sentence": "W latach 1998–2002 zasiadała w radzie miejskiej Łodzi III kadencji."
+   },
+   {
+    "target": "Komisja Edukacji i Nauki",
+    "qid": "Q11741609",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q2986700"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie została zastępczynią przewodniczącego Komisji Edukacji, Nauki i Młodzieży."
+   },
+   {
+    "target": "Rzecznik prasowy",
+    "qid": "Q17221",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q4164871"
+    ],
+    "from": 2016,
+    "to": null,
+    "sentence": "W 2016 została wiceprzewodniczącą ugrupowania, od stycznia do maja 2017 pełniła funkcję jego rzecznika prasowego, a w kwietniu tego samego roku objęła przewodnictwo w klubie poselskim. 25 listopada 2017 została wybrana na przewodniczącą ugr"
+   },
+   {
+    "target": "Ryszard Petru",
+    "qid": "Q9324899",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2016,
+    "to": null,
+    "sentence": "W 2016 została wiceprzewodniczącą ugrupowania, od stycznia do maja 2017 pełniła funkcję jego rzecznika prasowego, a w kwietniu tego samego roku objęła przewodnictwo w klubie poselskim. 25 listopada 2017 została wybrana na przewodniczącą ugr"
+   },
+   {
+    "target": "Kamila Gasiuk-Pihowicz",
+    "qid": "Q21231228",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2016,
+    "to": null,
+    "sentence": "W 2016 została wiceprzewodniczącą ugrupowania, od stycznia do maja 2017 pełniła funkcję jego rzecznika prasowego, a w kwietniu tego samego roku objęła przewodnictwo w klubie poselskim. 25 listopada 2017 została wybrana na przewodniczącą ugr"
+   },
+   {
+    "target": "Ministerstwo Edukacji i Nauki",
+    "qid": "Q108408600",
+    "verdict": "urząd",
+    "classes": [
+     "Q1313096",
+     "Q2269756",
+     "Q6866556"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu tego samego roku została powołana na stanowisko sekretarza stanu w Ministerstwie Edukacji i Nauki (od stycznia 2024 jako sekretarz stanu w wydzielonym Ministerstwie Edukacji Narodowej)."
+   },
+   {
+    "target": "Ministerstwo Edukacji Narodowej",
+    "qid": "Q4294477",
+    "verdict": "urząd",
+    "classes": [
+     "Q2269756",
+     "Q6866556"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu tego samego roku została powołana na stanowisko sekretarza stanu w Ministerstwie Edukacji i Nauki (od stycznia 2024 jako sekretarz stanu w wydzielonym Ministerstwie Edukacji Narodowej)."
+   }
+  ]
+ },
  "219": {
   "title": "Adam Luboński",
   "review": [
@@ -10786,6 +13107,45 @@
     "from": null,
     "to": null,
     "sentence": "Został też wiceprezesem Wielkopolskiego Związku Piłki Nożnej oraz członkiem Komisji ds."
+   }
+  ]
+ },
+ "220": {
+  "title": "Artur Łącki",
+  "review": [
+   {
+    "target": "Zachodniopomorski Związek Piłki Nożnej",
+    "qid": "Q9385616",
+    "verdict": "ok",
+    "classes": [
+     "Q2485448"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został też wiceprezesem Zachodniopomorskiego Związku Piłki Nożnej."
+   },
+   {
+    "target": "Platforma Obywatelska",
+    "qid": "Q156868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2003,
+    "to": null,
+    "sentence": "Został działaczem Platformy Obywatelskiej, kierował jej strukturami w powiecie, a od 2003 zasiadał we władzach wojewódzkich."
+   },
+   {
+    "target": "Koalicja Obywatelska",
+    "qid": "Q1021144",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197",
+     "Q11741833"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Objął funkcję przewodniczącego klubu radnych Koalicji Obywatelskiej."
    }
   ]
  },
@@ -10867,6 +13227,70 @@
     "from": null,
     "to": null,
     "sentence": "Należał do Platformy Obywatelskiej."
+   }
+  ]
+ },
+ "225": {
+  "title": "Marzena Machałek",
+  "review": [
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2017,
+    "to": 2023,
+    "sentence": "Posłanka na Sejm V, VI, VII, VIII, IX i X kadencji, w latach 2017–2023 sekretarz stanu w resortach odpowiedzialnych za edukację."
+   },
+   {
+    "target": "burmistrz",
+    "qid": "Q30185",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q4164871"
+    ],
+    "from": 1998,
+    "to": 2002,
+    "sentence": "W latach 1998–2002 pełniła funkcję zastępcy burmistrza tego miasta."
+   },
+   {
+    "target": "Ministerstwo Edukacji Narodowej",
+    "qid": "Q4294477",
+    "verdict": "urząd",
+    "classes": [
+     "Q2269756",
+     "Q6866556"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "W wyborach w 2015 została ponownie wybrana do Sejmu, otrzymując 14&nbsp;608 głosów. 10 marca 2017 została powołana na stanowisko sekretarza stanu w Ministerstwie Edukacji Narodowej (od stycznia 2021 w Ministerstwie Edukacji i Nauki)."
+   },
+   {
+    "target": "Ministerstwo Edukacji i Nauki",
+    "qid": "Q108408600",
+    "verdict": "urząd",
+    "classes": [
+     "Q1313096",
+     "Q2269756",
+     "Q6866556"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "W wyborach w 2015 została ponownie wybrana do Sejmu, otrzymując 14&nbsp;608 głosów. 10 marca 2017 została powołana na stanowisko sekretarza stanu w Ministerstwie Edukacji Narodowej (od stycznia 2021 w Ministerstwie Edukacji i Nauki)."
+   },
+   {
+    "target": "Fundacja Rozwoju Systemu Edukacji",
+    "qid": "Q9264484",
+    "verdict": "ok",
+    "classes": [
+     "Q43229"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Sprawowała także funkcję przewodniczącej rady Fundacji Rozwoju Systemu Edukacji."
    }
   ]
  },
@@ -11115,6 +13539,55 @@
     "from": null,
     "to": null,
     "sentence": "Ponownego Zbadania Wypadku Lotniczego pod Smoleńskiem, powołanej przy Komisji Badania Wypadków Lotniczych Lotnictwa Państwowego, który w połowie kwietnia 2017 jako szef podkomisji do ponownego zbadania katastrofy smoleńskiej Wacław Berczyńs"
+   }
+  ]
+ },
+ "227": {
+  "title": "Marlena Maląg",
+  "review": [
+   {
+    "target": "Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych",
+    "qid": "Q430553",
+    "verdict": "urząd",
+    "classes": [
+     "Q327333"
+    ],
+    "from": 2018,
+    "to": 2019,
+    "sentence": "2 listopada 1964 w Ostrowie Wielkopolskim) – polska polityk, nauczycielka, urzędniczka i samorządowiec, wicewojewoda wielkopolski (2016–2018), prezes Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych (2018–2019), posłanka na Sejm IX"
+   },
+   {
+    "target": "Beata Szydło",
+    "qid": "Q4877021",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu 2015 objęła stanowisko wicestarosty powiatu ostrowskiego; funkcję tę pełniła do 11 stycznia 2016, kiedy to została powołana na stanowisko wicewojewody wielkopolskiego przez prezesa Rady Ministrów Beatę Szydło."
+   },
+   {
+    "target": "Mateusz Morawiecki",
+    "qid": "Q11771436",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "20 grudnia 2018 została powołana przez premiera Mateusza Morawieckiego na stanowisko prezesa zarządu Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych."
+   },
+   {
+    "target": "Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych",
+    "qid": "Q430553",
+    "verdict": "urząd",
+    "classes": [
+     "Q327333"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "20 grudnia 2018 została powołana przez premiera Mateusza Morawieckiego na stanowisko prezesa zarządu Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych."
    }
   ]
  },
@@ -12253,6 +14726,108 @@
    }
   ]
  },
+ "250": {
+  "title": "Aleksander Mrówczyński",
+  "review": [
+   {
+    "target": "Komisja Edukacji i Nauki",
+    "qid": "Q11741609",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q2986700"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został członkiem Komisji Edukacji, Nauki i Młodzieży oraz Komisji Infrastruktury."
+   }
+  ]
+ },
+ "251": {
+  "title": "Izabela Mrzygłocka",
+  "review": [
+   {
+    "target": "Ekonomista",
+    "qid": "Q188094",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q108300140"
+    ],
+    "from": 2005,
+    "to": 2024,
+    "sentence": "10 sierpnia 2024 w Warszawie) – polska polityk, ekonomistka i działaczka samorządowa, posłanka na Sejm V, VI, VII, VIII, IX i X kadencji (2005–2024)."
+   },
+   {
+    "target": "Samorząd terytorialny",
+    "qid": "Q6621940",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2005,
+    "to": 2024,
+    "sentence": "10 sierpnia 2024 w Warszawie) – polska polityk, ekonomistka i działaczka samorządowa, posłanka na Sejm V, VI, VII, VIII, IX i X kadencji (2005–2024)."
+   },
+   {
+    "target": "radny",
+    "qid": "Q4657217",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q4164871"
+    ],
+    "from": 1998,
+    "to": 2005,
+    "sentence": "W latach 1998–2005 pełniła funkcję radnej wałbrzyskiej rady miejskiej."
+   },
+   {
+    "target": "Unia Wolności",
+    "qid": "Q2307945",
+    "verdict": "partia",
+    "classes": [
+     "Q7278",
+     "Q23702035"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1994 należała do Unii Wolności."
+   },
+   {
+    "target": "Komisja Administracji i Cyfryzacji",
+    "qid": "Q24945413",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Została również zastępczynią przewodniczącego Komisji Administracji i Cyfryzacji, a także przewodniczącą Rady Ochrony Pracy."
+   },
+   {
+    "target": "Rada Ochrony Pracy",
+    "qid": "Q97374527",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Została również zastępczynią przewodniczącego Komisji Administracji i Cyfryzacji, a także przewodniczącą Rady Ochrony Pracy."
+   },
+   {
+    "target": "Gabinet cieni",
+    "qid": "Q303329",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W listopadzie 2016 została powołana na funkcję wiceprzewodniczącej Stałego Komitetu Rady Ministrów w gabinecie cieni utworzonym przez Platformę Obywatelską."
+   },
+   {
+    "target": "Komisja do Spraw Petycji",
+    "qid": "Q56327455",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Została również zastępczynią przewodniczącego Komisji do Spraw Petycji."
+   }
+  ]
+ },
  "252": {
   "title": "Joanna Mucha",
   "review": [
@@ -13184,6 +15759,100 @@
    }
   ]
  },
+ "264": {
+  "title": "Maja Nowak",
+  "review": [
+   {
+    "target": "Polityka",
+    "qid": "Q7163",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q125542526"
+    ],
+    "from": 2025,
+    "to": 2026,
+    "sentence": "7 lipca 1987 w Nowej Soli) – polska pedagożka, działaczka społeczna i polityczna, posłanka na Sejm X kadencji, w latach 2025–2026 sekretarz stanu w Ministerstwie Rodziny, Pracy i Polityki Społecznej oraz pełnomocnik rządu ds. osób niepełnos"
+   },
+   {
+    "target": "Sekretarz stanu (Polska)",
+    "qid": "Q9335058",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q599151",
+     "Q4164871"
+    ],
+    "from": 2025,
+    "to": 2026,
+    "sentence": "7 lipca 1987 w Nowej Soli) – polska pedagożka, działaczka społeczna i polityczna, posłanka na Sejm X kadencji, w latach 2025–2026 sekretarz stanu w Ministerstwie Rodziny, Pracy i Polityki Społecznej oraz pełnomocnik rządu ds. osób niepełnos"
+   },
+   {
+    "target": "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+    "qid": "Q4294766",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q12813215"
+    ],
+    "from": 2025,
+    "to": 2026,
+    "sentence": "7 lipca 1987 w Nowej Soli) – polska pedagożka, działaczka społeczna i polityczna, posłanka na Sejm X kadencji, w latach 2025–2026 sekretarz stanu w Ministerstwie Rodziny, Pracy i Polityki Społecznej oraz pełnomocnik rządu ds. osób niepełnos"
+   },
+   {
+    "target": "Polska 2050",
+    "qid": "Q100979832",
+    "verdict": "partia",
+    "classes": [
+     "Q7278",
+     "Q49773",
+     "Q2738074"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Wstąpiła do Polski 2050 Szymona Hołowni, objęła funkcję sekretarza regionu lubuskiego partii."
+   },
+   {
+    "target": "Szymon Hołownia",
+    "qid": "Q9352644",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Wstąpiła do Polski 2050 Szymona Hołowni, objęła funkcję sekretarza regionu lubuskiego partii."
+   },
+   {
+    "target": "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+    "qid": "Q4294766",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556",
+     "Q12813215"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu 2025 objęła stanowiska sekretarza stanu w Ministerstwie Rodziny, Pracy i Polityki Społecznej oraz pełnomocnika rządu ds. osób niepełnosprawnych."
+   }
+  ]
+ },
+ "265": {
+  "title": "Tomasz Nowak (polityk)",
+  "review": [
+   {
+    "target": "Konin",
+    "qid": "Q52845",
+    "verdict": "urząd",
+    "classes": [
+     "Q515",
+     "Q925381",
+     "Q13416557"
+    ],
+    "from": 1979,
+    "to": 1992,
+    "sentence": "W latach 1979–1992 pracował jako instruktor teatralny w Wojewódzkim Domu Kultury w Koninie oraz jako kierownik Górniczego Domu Kultury w tym mieście."
+   }
+  ]
+ },
  "266": {
   "title": "Wanda Nowicka",
   "review": [
@@ -13808,6 +16477,44 @@
     "from": null,
     "to": null,
     "sentence": "W Sejmie VIII kadencji został zastępcą przewodniczącego Komisji Infrastruktury."
+   }
+  ]
+ },
+ "275": {
+  "title": "Mirosław Orliński",
+  "review": [
+   {
+    "target": "Forum Młodych Ludowców",
+    "qid": "Q9261859",
+    "verdict": "ok",
+    "classes": [
+     "Q2493450"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działał w Forum Młodych Ludowców, przewodniczył FML w województwie mazowieckim."
+   },
+   {
+    "target": "województwo mazowieckie",
+    "qid": "Q54169",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q150093"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działał w Forum Młodych Ludowców, przewodniczył FML w województwie mazowieckim."
+   },
+   {
+    "target": "Polskie Stronnictwo Ludowe",
+    "qid": "Q218477",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Członek Polskiego Stronnictwa Ludowego."
    }
   ]
  },
@@ -14693,6 +17400,166 @@
    }
   ]
  },
+ "291": {
+  "title": "Katarzyna Piekarska",
+  "review": [
+   {
+    "target": "Ministerstwo Spraw Wewnętrznych i Administracji",
+    "qid": "Q4294318",
+    "verdict": "urząd",
+    "classes": [
+     "Q6589202",
+     "Q6866556"
+    ],
+    "from": 1997,
+    "to": null,
+    "sentence": "23 września 1967 w Warszawie) – polska polityk i prawniczka, w 1997 podsekretarz stanu w Ministerstwie Spraw Wewnętrznych i Administracji, posłanka na Sejm II, III, IV, V, IX i X kadencji (1993–2007 i od 2019)."
+   },
+   {
+    "target": "Ministerstwo Spraw Wewnętrznych i Administracji",
+    "qid": "Q4294318",
+    "verdict": "urząd",
+    "classes": [
+     "Q6589202",
+     "Q6866556"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W tym samym roku pełniła funkcję wiceministra w MSWiA."
+   },
+   {
+    "target": "stowarzyszenie",
+    "qid": "Q48204",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q2135465",
+     "Q10541491"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Objęła funkcję przewodniczącej stowarzyszenia Młode Kobiety w Polityce, była wiceprezesem Polskiego Czerwonego Krzyża."
+   },
+   {
+    "target": "Polski Czerwony Krzyż",
+    "qid": "Q6127600",
+    "verdict": "ok",
+    "classes": [
+     "Q1968122"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Objęła funkcję przewodniczącej stowarzyszenia Młode Kobiety w Polityce, była wiceprezesem Polskiego Czerwonego Krzyża."
+   },
+   {
+    "target": "Komisja Sprawiedliwości i Praw Człowieka",
+    "qid": "Q11741687",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie IV kadencji pełniła funkcję przewodniczącej Komisji Sprawiedliwości i Praw Człowieka."
+   },
+   {
+    "target": "Koalicja Obywatelska",
+    "qid": "Q1021144",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197",
+     "Q11741833"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W lipcu 2019 zrezygnowała z członkostwa w Sojuszu Lewicy Demokratycznej i została ogłoszona kandydatką Koalicji Obywatelskiej do Sejmu w wyborach parlamentarnych w tym samym roku (z rekomendacji Inicjatywy Polska)."
+   },
+   {
+    "target": "Wybory parlamentarne w Polsce w 2019 roku",
+    "qid": "Q23132741",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q22269206"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W lipcu 2019 zrezygnowała z członkostwa w Sojuszu Lewicy Demokratycznej i została ogłoszona kandydatką Koalicji Obywatelskiej do Sejmu w wyborach parlamentarnych w tym samym roku (z rekomendacji Inicjatywy Polska)."
+   },
+   {
+    "target": "Inicjatywa Polska",
+    "qid": "Q73386729",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W lipcu 2019 zrezygnowała z członkostwa w Sojuszu Lewicy Demokratycznej i została ogłoszona kandydatką Koalicji Obywatelskiej do Sejmu w wyborach parlamentarnych w tym samym roku (z rekomendacji Inicjatywy Polska)."
+   }
+  ]
+ },
+ "293": {
+  "title": "Lucjan Pietrzczyk",
+  "review": [
+   {
+    "target": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
+    "qid": "Q9392377",
+    "verdict": "ok",
+    "classes": [
+     "Q163740",
+     "Q15911314"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działacz Związku Ochotniczych Straży Pożarnych RP i Polskiego Czerwonego Krzyża."
+   },
+   {
+    "target": "Polski Czerwony Krzyż",
+    "qid": "Q6127600",
+    "verdict": "ok",
+    "classes": [
+     "Q1968122"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działacz Związku Ochotniczych Straży Pożarnych RP i Polskiego Czerwonego Krzyża."
+   },
+   {
+    "target": "Związek Harcerstwa Polskiego",
+    "qid": "Q1995166",
+    "verdict": "ok",
+    "classes": [
+     "Q79913",
+     "Q163740",
+     "Q1572070",
+     "Q66742026"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Instruktor Związku Harcerstwa Polskiego w stopniu harcmistrza."
+   },
+   {
+    "target": "harcmistrz",
+    "qid": "Q63078973",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q9346078"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Instruktor Związku Harcerstwa Polskiego w stopniu harcmistrza."
+   },
+   {
+    "target": "Koalicja Obywatelska",
+    "qid": "Q1021144",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197",
+     "Q11741833"
+    ],
+    "from": 2025,
+    "to": null,
+    "sentence": "W 2025, w wyniku przekształcenia PO, został działaczem Koalicji Obywatelskiej."
+   }
+  ]
+ },
  "294": {
   "title": "Dariusz Piontkowski",
   "review": [
@@ -14829,6 +17696,69 @@
    }
   ]
  },
+ "297": {
+  "title": "Kacper Płażyński",
+  "review": [
+   {
+    "target": "Wybory parlamentarne w Polsce w 2015 roku",
+    "qid": "Q17507754",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q22269206"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "Po wyborach parlamentarnych w 2015 roku został członkiem partii Prawo i Sprawiedliwość."
+   },
+   {
+    "target": "Prawo i Sprawiedliwość",
+    "qid": "Q156874",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "Po wyborach parlamentarnych w 2015 roku został członkiem partii Prawo i Sprawiedliwość."
+   },
+   {
+    "target": "Komisja do Spraw Unii Europejskiej",
+    "qid": "Q11741710",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": 2022,
+    "to": null,
+    "sentence": "Uzyskał mandat poselski, otrzymując 89 384 głosów. 24 października 2019 jego obowiązki przewodniczącego klubu radnych Prawa i Sprawiedliwości w Radzie Miasta Gdańska przejął Kazimierz Koralewski. 13 listopada 2019 został członkiem Komisji d"
+   },
+   {
+    "target": "Komisja Gospodarki Morskiej i Żeglugi Śródlądowej",
+    "qid": "Q65162653",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": 2021,
+    "to": null,
+    "sentence": "Uzyskał mandat poselski, otrzymując 89 384 głosów. 24 października 2019 jego obowiązki przewodniczącego klubu radnych Prawa i Sprawiedliwości w Radzie Miasta Gdańska przejął Kazimierz Koralewski. 13 listopada 2019 został członkiem Komisji d"
+   },
+   {
+    "target": "Europejskie Centrum Solidarności",
+    "qid": "Q534403",
+    "verdict": "firma",
+    "classes": [
+     "Q7075",
+     "Q33506",
+     "Q671735",
+     "Q1378975"
+    ],
+    "from": 2019,
+    "to": null,
+    "sentence": "W 2019 był członkiem Rady Europejskiego Centrum Solidarności."
+   }
+  ]
+ },
  "298": {
   "title": "Szymon Pogoda",
   "review": [
@@ -14949,6 +17879,45 @@
     "from": null,
     "to": null,
     "sentence": "W styczniu 2010 na kongresie założycielskim wybrano go na prezesa zarządu partii Polska Plus."
+   }
+  ]
+ },
+ "300": {
+  "title": "Elżbieta Polak",
+  "review": [
+   {
+    "target": "Stowarzyszenie",
+    "qid": "Q48204",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q2135465",
+     "Q10541491"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Pełniła też różne funkcje w organizacjach społecznych, m.in. stała na czele Lubuskiego Forum Urzędników Europejskich i Stowarzyszenia Przyjaciół Małomic."
+   },
+   {
+    "target": "TVP3 Gorzów Wielkopolski",
+    "qid": "Q2385693",
+    "verdict": "media",
+    "classes": [
+     "Q1616075"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Była wiceprzewodniczącą rady programowej TVP Gorzów Wielkopolski i członkinią zarządu klubu sportowego Lechia Zielona Góra."
+   },
+   {
+    "target": "Lechia Zielona Góra",
+    "qid": "Q1164141",
+    "verdict": "ok",
+    "classes": [
+     "Q476028"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Była wiceprzewodniczącą rady programowej TVP Gorzów Wielkopolski i członkinią zarządu klubu sportowego Lechia Zielona Góra."
    }
   ]
  },
@@ -15969,6 +18938,96 @@
    }
   ]
  },
+ "321": {
+  "title": "Jarosław Sachajko",
+  "review": [
+   {
+    "target": "Ruch Obywatelski na rzecz Jednomandatowych Okręgów Wyborczych",
+    "qid": "Q9323589",
+    "verdict": "ok",
+    "classes": [
+     "Q48204"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działacz Ruchu Obywatelskiego na rzecz JOW."
+   },
+   {
+    "target": "Komisja Rolnictwa i Rozwoju Wsi (Sejm)",
+    "qid": "Q11741669",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W Sejmie został przewodniczącym Komisji Rolnictwa i Rozwoju Wsi."
+   },
+   {
+    "target": "Towarzystwo Przyjaźni Polsko-Radzieckiej",
+    "qid": "Q7210102",
+    "verdict": "ok",
+    "classes": [
+     "Q48204"
+    ],
+    "from": 2016,
+    "to": null,
+    "sentence": "W 2016 został wiceprzewodniczącym Stowarzyszenia Polska-Białoruś (założonego przez byłych działaczy Towarzystwa Przyjaźni Polsko-Radzieckiej), deklarującego działania na rzecz dobrosąsiedzkich stosunków i współpracy między społeczeństwem po"
+   },
+   {
+    "target": "Koalicja Polska",
+    "qid": "Q65062993",
+    "verdict": "partia",
+    "classes": [
+     "Q7278",
+     "Q848197"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Po wyborach został wiceprzewodniczącym klubu parlamentarnego Koalicja Polska – PSL-Kukiz’15."
+   }
+  ]
+ },
+ "322": {
+  "title": "Paweł Sałek",
+  "review": [
+   {
+    "target": "Ministerstwo Środowiska",
+    "qid": "Q4294555",
+    "verdict": "urząd",
+    "classes": [
+     "Q917441",
+     "Q6866556"
+    ],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "29 czerwca 1975 w Skierniewicach) – polski urzędnik, inżynier i polityk, doktor nauk rolniczych, specjalista w zakresie ochrony środowiska, w latach 2015–2018 sekretarz stanu w Ministerstwa Środowiska i pełnomocnik rządu ds. polityki klimat"
+   },
+   {
+    "target": "Niezależne Zrzeszenie Studentów",
+    "qid": "Q763652",
+    "verdict": "ok",
+    "classes": [
+     "Q43229",
+     "Q1685451"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Kierował Akademickim Centrum Edukacji Ekologicznej Niezależnego Zrzeszenia Studentów."
+   },
+   {
+    "target": "Jan Szyszko",
+    "qid": "Q9297845",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2005,
+    "to": 2007,
+    "sentence": "Pozostawał członkiem gabinetu politycznego ministra środowiska Jana Szyszki (2005–2007)."
+   }
+  ]
+ },
  "323": {
   "title": "Wojciech Saługa",
   "review": [
@@ -16866,6 +19925,69 @@
    }
   ]
  },
+ "332": {
+  "title": "Olga Semeniuk-Patkowska",
+  "review": [
+   {
+    "target": "samorząd terytorialny w Polsce",
+    "qid": "Q9333260",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q74817647"
+    ],
+    "from": 2020,
+    "to": 2023,
+    "sentence": "5 grudnia 1988 w Warszawie) – polska urzędniczka państwowa, działaczka samorządowa i organizacji pozarządowych, wiceminister w resortach do spraw rozwoju (2020–2023), pełnomocnik rządu ds. małych i średnich przedsiębiorstw (2021–2023), posł"
+   },
+   {
+    "target": "Ministerstwo Rozwoju",
+    "qid": "Q23710607",
+    "verdict": "urząd",
+    "classes": [
+     "Q6866556"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "2 stycznia 2020 została powołana na stanowisko podsekretarza stanu w Ministerstwie Rozwoju. 19 października tego samego roku powołana na tożsame stanowisko w Ministerstwie Rozwoju, Pracy i Technologii, a dwa dni później, 21 października, zo"
+   },
+   {
+    "target": "Ministerstwo Rozwoju, Pracy i Technologii",
+    "qid": "Q101246722",
+    "verdict": "urząd",
+    "classes": [
+     "Q1241288",
+     "Q2399523",
+     "Q12813215"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "2 stycznia 2020 została powołana na stanowisko podsekretarza stanu w Ministerstwie Rozwoju. 19 października tego samego roku powołana na tożsame stanowisko w Ministerstwie Rozwoju, Pracy i Technologii, a dwa dni później, 21 października, zo"
+   },
+   {
+    "target": "Ministerstwo Rozwoju i Technologii",
+    "qid": "Q109638209",
+    "verdict": "urząd",
+    "classes": [
+     "Q2399523",
+     "Q6866556"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "17 sierpnia 2021 otrzymała, z rąk premiera Mateusza Morawieckiego, akt powołania na podsekretarza stanu w Ministerstwie Rozwoju i Technologii."
+   },
+   {
+    "target": "Polska Agencja Kosmiczna",
+    "qid": "Q18203370",
+    "verdict": "urząd",
+    "classes": [
+     "Q17505024"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Małych i Średnich Przedsiębiorstw. 22 października tego samego roku wybrano ją na przewodniczącą Rady Polskiej Agencji Kosmicznej. 26 października 2021 awansowana przez premiera Mateusza Morawieckiego na sekretarza stanu w Ministerstwie Roz"
+   }
+  ]
+ },
  "333": {
   "title": "Edward Siarka",
   "review": [
@@ -17319,6 +20441,46 @@
     "from": 2021,
     "to": null,
     "sentence": "W 2021 został współprzewodniczącym (obok Krzysztofa Śmiszka) Nowej Lewicy w województwie dolnośląskim."
+   }
+  ]
+ },
+ "340": {
+  "title": "Włodzimierz Skalik",
+  "review": [
+   {
+    "target": "Aeroklub Polski",
+    "qid": "Q7209858",
+    "verdict": "ok",
+    "classes": [
+     "Q163740",
+     "Q2485448"
+    ],
+    "from": 2010,
+    "to": 2018,
+    "sentence": "10 czerwca 1959 w Radomsku) – polski pilot sportowy, polityk i samorządowiec, prezes Aeroklubu Polskiego (2010–2018), poseł na Sejm X kadencji."
+   },
+   {
+    "target": "Aeroklub Częstochowski",
+    "qid": "Q11684541",
+    "verdict": "ok",
+    "classes": [
+     "Q43229"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Członek Aeroklubu Częstochowskiego."
+   },
+   {
+    "target": "Aeroklub Polski",
+    "qid": "Q7209858",
+    "verdict": "ok",
+    "classes": [
+     "Q163740",
+     "Q2485448"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W marcu 2010 podczas XXVII walnego zgromadzenia delegatów został wybrany na prezesa Aeroklubu Polskiego."
    }
   ]
  },
@@ -17848,6 +21010,22 @@
    }
   ]
  },
+ "350": {
+  "title": "Agnieszka Soin",
+  "review": [
+   {
+    "target": "Porozumienie Polskich Chrześcijańskich Demokratów",
+    "qid": "Q11824104",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2014,
+    "to": null,
+    "sentence": "Działała w młodzieżówce Stowarzyszenia Polskich Chrześcijańskich Demokratów oraz w Prawicy Rzeczypospolitej, w której radzie naczelnej zasiadła w 2014."
+   }
+  ]
+ },
  "351": {
   "title": "Zbigniew Sosnowski (polityk)",
   "review": [
@@ -18010,6 +21188,29 @@
     "from": null,
     "to": null,
     "sentence": "Później został zatrudniony w Towarzystwie Zarządzającym SKOK; został też działaczem fundacji „Kocham Podlasie” Grzegorza Biereckiego."
+   }
+  ]
+ },
+ "358": {
+  "title": "Piotr Strach",
+  "review": [
+   {
+    "target": "Komisja Obrony Narodowej (Sejm)",
+    "qid": "Q11741644",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Został zastępcą przewodniczącego Komisji Obrony Narodowej oraz członkiem Komisji Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa."
+   },
+   {
+    "target": "Komisja Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa",
+    "qid": "Q11741648",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "Został zastępcą przewodniczącego Komisji Obrony Narodowej oraz członkiem Komisji Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa."
    }
   ]
  },
@@ -22268,6 +25469,22 @@
    }
   ]
  },
+ "420": {
+  "title": "Jarosław Wieczorek",
+  "review": [
+   {
+    "target": "województwo śląskie",
+    "qid": "Q54181",
+    "verdict": "jednostka terytorialna",
+    "classes": [
+     "Q150093"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W listopadzie 2023 powołany na stanowisko przewodniczącego zarządu wojewódzkiego Prawa i Sprawiedliwości w województwie śląskim."
+   }
+  ]
+ },
  "421": {
   "title": "Monika Wielichowska",
   "review": [
@@ -22548,6 +25765,104 @@
     "from": null,
     "to": null,
     "sentence": "W styczniu 2024 powołany na wiceprzewodniczącego sejmowej komisji śledczej ds. wykorzystania oprogramowania Pegasus."
+   }
+  ]
+ },
+ "425": {
+  "title": "Aleksandra Uznańska-Wiśniewska",
+  "review": [
+   {
+    "target": "polska",
+    "qid": "Q36",
+    "verdict": "państwo",
+    "classes": [
+     "Q6256",
+     "Q3624078"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "27 maja 1994 w Łodzi) – polska działaczka humanitarna, społeczna i polityczna, z wykształcenia politolog, posłanka na Sejm X kadencji (od 2023)."
+   },
+   {
+    "target": "Pomoc humanitarna",
+    "qid": "Q826745",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2023,
+    "to": null,
+    "sentence": "27 maja 1994 w Łodzi) – polska działaczka humanitarna, społeczna i polityczna, z wykształcenia politolog, posłanka na Sejm X kadencji (od 2023)."
+   },
+   {
+    "target": "Kryzys migracyjny w Europie",
+    "qid": "Q20857240",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q85785387"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu 2015 zgłosiła się jako wolontariuszka do pracy w obozie dla uchodźców w Grecji na wyspie Lesbos."
+   },
+   {
+    "target": "Lesbos",
+    "qid": "Q128087",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q23442"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W grudniu 2015 zgłosiła się jako wolontariuszka do pracy w obozie dla uchodźców w Grecji na wyspie Lesbos."
+   },
+   {
+    "target": "Inwazja Rosji na Ukrainę",
+    "qid": "Q110999040",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q198",
+     "Q154605",
+     "Q467011",
+     "Q474138"
+    ],
+    "from": 2022,
+    "to": 2023,
+    "sentence": "W latach 2022–2023 podczas inwazji Rosji na Ukrainę kierowała na Ukrainie misją międzynarodowej organizacji pomocowej ."
+   },
+   {
+    "target": "Ukraina",
+    "qid": "Q212",
+    "verdict": "państwo",
+    "classes": [
+     "Q6256",
+     "Q7270",
+     "Q179164",
+     "Q619610"
+    ],
+    "from": 2022,
+    "to": 2023,
+    "sentence": "W latach 2022–2023 podczas inwazji Rosji na Ukrainę kierowała na Ukrainie misją międzynarodowej organizacji pomocowej ."
+   },
+   {
+    "target": "Sekretarz Sejmu Rzeczypospolitej Polskiej",
+    "qid": "Q114851378",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q4164871"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Objęła funkcję sekretarza Sejmu, zasiadła w Komisji Łączności z Polakami za Granicą, Komisji Spraw Zagranicznych oraz Komisji Obrony Narodowej."
+   },
+   {
+    "target": "Platforma Obywatelska",
+    "qid": "Q156868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2024,
+    "to": null,
+    "sentence": "W 2024 wstąpiła do Platformy Obywatelskiej, po której przekształceniu w 2025 została działaczką partii KO."
    }
   ]
  },
@@ -23525,6 +26840,269 @@
    }
   ]
  },
+ "442": {
+  "title": "Adrian Zandberg",
+  "review": [
+   {
+    "target": "Partia Razem",
+    "qid": "Q21006495",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2022,
+    "to": null,
+    "sentence": "4 grudnia 1979 w Aalborgu) – polski polityk, historyk, programista i nauczyciel akademicki, doktor nauk humanistycznych, poseł na Sejm IX i X kadencji (od 2019), współzałożyciel Partii Razem i jej współprzewodniczący od 2022."
+   },
+   {
+    "target": "Marxists Internet Archive",
+    "qid": "Q1906210",
+    "verdict": "firma",
+    "classes": [
+     "Q35127",
+     "Q212805"
+    ],
+    "from": 1993,
+    "to": 1995,
+    "sentence": "Współtworzył polską sekcję Marxists Internet Archive w protokole Gopher (okres 1993–1995)."
+   },
+   {
+    "target": "Gopher",
+    "qid": "Q322654",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q37071",
+     "Q1668024",
+     "Q15836568",
+     "Q65966993"
+    ],
+    "from": 1993,
+    "to": 1995,
+    "sentence": "Współtworzył polską sekcję Marxists Internet Archive w protokole Gopher (okres 1993–1995)."
+   },
+   {
+    "target": "Unia Pracy",
+    "qid": "Q1506868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 1992,
+    "to": null,
+    "sentence": "Jako wczesną inspirację dla własnej działalności wskazał wystąpienia Ryszarda Bugaja i Aleksandra Małachowskiego, liderów Unii Pracy (którą w 1992 współtworzyła Solidarność Pracy), w Sejmie lat 90."
+   },
+   {
+    "target": "Wolność i Równość",
+    "qid": "Q1409821",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2005,
+    "to": null,
+    "sentence": "W 2005 współtworzył z Izabelą Jarugą-Nowacką Unię Lewicy III RP, wchodząc do jej zarządu."
+   },
+   {
+    "target": "Młodzi Socjaliści (Polska)",
+    "qid": "Q8058433",
+    "verdict": "ok",
+    "classes": [
+     "Q2493450"
+    ],
+    "from": 2005,
+    "to": null,
+    "sentence": "Również w 2005 współtworzył na bazie lewego skrzydła FM UP stowarzyszenie Młodzi Socjaliści, które prowadziło edukację polityczną dla swoich członków przy wsparciu finansowym niemieckiej Fundacji im. Róży Luksemburg i działało do październi"
+   },
+   {
+    "target": "Partia Razem",
+    "qid": "Q21006495",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W maju 2015 współtworzył Partię Razem, zasiadł w jej zarządzie krajowym, odpowiadał za stronę internetową i media społecznościowe tego ugrupowania."
+   },
+   {
+    "target": "Komisja Gospodarki i Rozwoju",
+    "qid": "Q54943100",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Był członkiem Komisji Gospodarki i Rozwoju, Komisji Cyfryzacji, Innowacyjności i Nowoczesnych Technologii, a także przewodniczącym Polsko-Duńskiej Grupy Parlamentarnej."
+   },
+   {
+    "target": "Magdalena Biejat",
+    "qid": "Q71056770",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "27 listopada 2022 razem z Magdaleną Biejat został współprzewodniczącym partii Lewica Razem."
+   },
+   {
+    "target": "Polski Związek Ludowy",
+    "qid": "Q18424836",
+    "verdict": "ok",
+    "classes": [
+     "Q7210356"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Współpracował z socjalistą Edwardem Abramowskim w organizowaniu spółdzielczości spożywczej, w tym Towarzystwa Kooperatystów (wydawcy tygodnika „Społem”) w 1906, należał do nielegalnego Polskiego Związku Ludowego działającego w latach 1904–1"
+   },
+   {
+    "target": "Senat Rzeczypospolitej Polskiej IV kadencji (1935–1938)",
+    "qid": "Q9335254",
+    "verdict": "parlament",
+    "classes": [
+     "Q15238777"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Do pięciorga jego dzieci należała obok Zofii, matki Krystyny Zandberg, senatorka IV kadencji (1935–1938) i współzałożycielka Stronnictwa Demokratycznego w 1939 Regina Fleszarowa."
+   },
+   {
+    "target": "Stronnictwo Demokratyczne",
+    "qid": "Q2351138",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Do pięciorga jego dzieci należała obok Zofii, matki Krystyny Zandberg, senatorka IV kadencji (1935–1938) i współzałożycielka Stronnictwa Demokratycznego w 1939 Regina Fleszarowa."
+   },
+   {
+    "target": "Regina Fleszarowa",
+    "qid": "Q11834022",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Do pięciorga jego dzieci należała obok Zofii, matki Krystyny Zandberg, senatorka IV kadencji (1935–1938) i współzałożycielka Stronnictwa Demokratycznego w 1939 Regina Fleszarowa."
+   },
+   {
+    "target": "Ucho Prezesa",
+    "qid": "Q28675455",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q526877"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W serialu satyrycznym Ucho Prezesa w postać nawiązującą do Adriana Zandberga wcielił się Michał Floriańczyk."
+   }
+  ]
+ },
+ "443": {
+  "title": "Andrzej Zapałowski",
+  "review": [
+   {
+    "target": "Związek Harcerstwa Polskiego",
+    "qid": "Q1995166",
+    "verdict": "ok",
+    "classes": [
+     "Q79913",
+     "Q163740",
+     "Q1572070",
+     "Q66742026"
+    ],
+    "from": 1980,
+    "to": 1986,
+    "sentence": "W latach 1980–1986 działał w nieformalnym opozycyjnym ruchu wewnątrz Związku Harcerstwa Polskiego, następnie należał do Związku Harcerstwa Rzeczypospolitej."
+   },
+   {
+    "target": "Związek Harcerstwa Rzeczypospolitej",
+    "qid": "Q7438352",
+    "verdict": "ok",
+    "classes": [
+     "Q79913",
+     "Q163740",
+     "Q1572070",
+     "Q66742026"
+    ],
+    "from": 1980,
+    "to": 1986,
+    "sentence": "W latach 1980–1986 działał w nieformalnym opozycyjnym ruchu wewnątrz Związku Harcerstwa Polskiego, następnie należał do Związku Harcerstwa Rzeczypospolitej."
+   },
+   {
+    "target": "Niezależne Zrzeszenie Studentów",
+    "qid": "Q763652",
+    "verdict": "ok",
+    "classes": [
+     "Q43229",
+     "Q1685451"
+    ],
+    "from": 1986,
+    "to": 1990,
+    "sentence": "W latach 1986–1990 kierował Niezależnym Zrzeszeniem Studentów na krakowskiej WSP, później związany z Konfederacją Polski Niepodległej."
+   },
+   {
+    "target": "Naprzód Polsko",
+    "qid": "Q3488584",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2008,
+    "to": null,
+    "sentence": "W 2008 był jednym z założycieli partii Naprzód Polsko, objął funkcję skarbnika w zarządzie tej partii, z której wystąpił w styczniu 2010."
+   },
+   {
+    "target": "Jedność Narodu",
+    "qid": "Q65168155",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "W 2015 przystąpił do nowo powstałej partii Jedność Narodu (zasiadał w jej radzie krajowej)."
+   },
+   {
+    "target": "KWW Grzegorza Brauna „Szczęść Boże!”",
+    "qid": "Q24944840",
+    "verdict": "ok",
+    "classes": [
+     "Q7210356"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Jako jej działacz w tym samym roku został zarejestrowany jako lider listy KWW Grzegorza Brauna „Szczęść Boże!” do Sejmu w wyborach parlamentarnych, jednak lista ta została przed wyborami wyrejestrowana."
+   },
+   {
+    "target": "Wybory parlamentarne w Polsce w 2015 roku",
+    "qid": "Q17507754",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q22269206"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Jako jej działacz w tym samym roku został zarejestrowany jako lider listy KWW Grzegorza Brauna „Szczęść Boże!” do Sejmu w wyborach parlamentarnych, jednak lista ta została przed wyborami wyrejestrowana."
+   },
+   {
+    "target": "Polskie Towarzystwo Geopolityczne",
+    "qid": "Q65168271",
+    "verdict": "ok",
+    "classes": [
+     "Q748019"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Został przewodniczącym rzeszowskiego oddziału Polskiego Towarzystwa Geopolitycznego, przewodniczącym Komisji Obrony Terytorialnej PTG, a także wykładowcą Uniwersytetu Rzeszowskiego oraz Wyższej Szkoły Prawa i Administracji w Przemyślu."
+   }
+  ]
+ },
  "444": {
   "title": "Bartosz Zawieja",
   "review": [
@@ -23562,6 +27140,113 @@
     "from": 2018,
     "to": null,
     "sentence": "Objął w tymże roku stanowisko wiceprezesa zarządu przedsiębiorstwa Remondis Sanitech Poznań, z którego został odwołany w 2018 po konflikcie z prezydentem miasta Jackiem Jaśkowiakiem."
+   }
+  ]
+ },
+ "445": {
+  "title": "Marcelina Zawisza",
+  "review": [
+   {
+    "target": "polska",
+    "qid": "Q36",
+    "verdict": "państwo",
+    "classes": [
+     "Q6256",
+     "Q3624078"
+    ],
+    "from": 2019,
+    "to": null,
+    "sentence": "3 maja 1989 w Katowicach) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji (od 2019)."
+   },
+   {
+    "target": "Działacz społeczny",
+    "qid": "Q8359428",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q12737077",
+     "Q24902509"
+    ],
+    "from": 2019,
+    "to": null,
+    "sentence": "3 maja 1989 w Katowicach) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji (od 2019)."
+   },
+   {
+    "target": "Polityk",
+    "qid": "Q82955",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640"
+    ],
+    "from": 2019,
+    "to": null,
+    "sentence": "3 maja 1989 w Katowicach) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji (od 2019)."
+   },
+   {
+    "target": "Młodzi Socjaliści (Polska)",
+    "qid": "Q8058433",
+    "verdict": "ok",
+    "classes": [
+     "Q2493450"
+    ],
+    "from": 2014,
+    "to": null,
+    "sentence": "Należała do stowarzyszenia Młodzi Socjaliści oraz do Partii Zieloni, w której od 2014 była członkinią zarządu partii oraz przewodniczącą jej warszawskiego koła."
+   },
+   {
+    "target": "Joanna Erbel",
+    "qid": "Q16913523",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W tym samym roku była kandydatką do rady miasta w Warszawie, kierowała też sztabem Joanny Erbel, ubiegającej się o funkcję prezydenta Warszawy w wyborach samorządowych."
+   },
+   {
+    "target": "Partia Razem",
+    "qid": "Q21006495",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2015,
+    "to": null,
+    "sentence": "W 2015 wystąpiła z Zielonych, należała w tym samym roku do założycieli Partii Razem."
+   },
+   {
+    "target": "Komisja Zdrowia (Sejm)",
+    "qid": "Q11741704",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Do 2025 była wiceprzewodniczącą Komisji Zdrowia."
+   },
+   {
+    "target": "Lewica (2019)",
+    "qid": "Q66807204",
+    "verdict": "klub poselski",
+    "classes": [
+     "Q848197",
+     "Q6138528"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "W październiku 2024 wraz z kilkoma innymi posłami swojej partii zrezygnowała z członkostwa w KKP Lewicy."
+   },
+   {
+    "target": "Adrian Zandberg",
+    "qid": "Q21157896",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2025,
+    "to": null,
+    "sentence": "W 2025 pełniła funkcję pełnomocnika wyborczego Adriana Zandberga, kandydującego na urząd prezydenta RP."
    }
   ]
  },
@@ -23624,6 +27309,66 @@
    }
   ]
  },
+ "447": {
+  "title": "Bogdan Zdrojewski",
+  "review": [
+   {
+    "target": "Platforma Obywatelska",
+    "qid": "Q156868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2006,
+    "to": 2007,
+    "sentence": "Prezydent Wrocławia (1990–2001), senator IV i X kadencji (1997–2000, 2019–2023), poseł na Sejm IV, V, VI, VII i X kadencji (2001–2014, 2023–2024), poseł do Parlamentu Europejskiego VIII i X kadencji (2014–2019, od 2024), przewodniczący klub"
+   },
+   {
+    "target": "Niezależne Zrzeszenie Studentów",
+    "qid": "Q763652",
+    "verdict": "ok",
+    "classes": [
+     "Q43229",
+     "Q1685451"
+    ],
+    "from": 1980,
+    "to": null,
+    "sentence": "W 1980 został członkiem Niezależnego Zrzeszenia Studentów, jesienią tego samego roku został przewodniczącym struktury NZS na Wydziale Filozoficzno-Historycznym UWr."
+   },
+   {
+    "target": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
+    "qid": "Q1003",
+    "verdict": "ok",
+    "classes": [
+     "Q43229",
+     "Q178790"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Od 1984 pracował w Akademii Ekonomicznej we Wrocławiu, był członkiem komisji zakładowej NSZZ „Solidarność” na AE."
+   },
+   {
+    "target": "Zespół Rzeczników Platformy Obywatelskiej",
+    "qid": "Q9390339",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2006,
+    "to": null,
+    "sentence": "W 2006 został członkiem gabinetu cieni PO odpowiadającym za obronę narodową. 5 grudnia 2006 objął stanowisko przewodniczącego klubu parlamentarnego PO."
+   },
+   {
+    "target": "Komisja Kultury i Środków Przekazu (Sejm)",
+    "qid": "Q11741624",
+    "verdict": "koło poselskie",
+    "classes": [
+     "Q11741739"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Objął funkcje przewodniczącego Komisji Kultury i Środków Przekazu oraz członka Komisji Sprawiedliwości i Praw Człowieka."
+   }
+  ]
+ },
  "448": {
   "title": "Witold Zembaczyński",
   "review": [
@@ -23637,6 +27382,31 @@
     "from": null,
     "to": null,
     "sentence": "Działał w Platformie Obywatelskiej."
+   }
+  ]
+ },
+ "449": {
+  "title": "Piotr Zgorzelski",
+  "review": [
+   {
+    "target": "Klub (parlament)",
+    "qid": "Q848197",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2010,
+    "to": 2011,
+    "sentence": "17 września 1963 w Płocku) – polski samorządowiec, nauczyciel i polityk, starosta powiatu płockiego (2010–2011), poseł na Sejm VII, VIII, IX i X kadencji (od 2011), wicemarszałek Sejmu IX i X kadencji (od 2019), przewodniczący Klubu Parlame"
+   },
+   {
+    "target": "Polskie Stronnictwo Ludowe",
+    "qid": "Q218477",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2010,
+    "to": 2011,
+    "sentence": "17 września 1963 w Płocku) – polski samorządowiec, nauczyciel i polityk, starosta powiatu płockiego (2010–2011), poseł na Sejm VII, VIII, IX i X kadencji (od 2011), wicemarszałek Sejmu IX i X kadencji (od 2019), przewodniczący Klubu Parlame"
    }
   ]
  },
@@ -23720,6 +27490,91 @@
     "from": null,
     "to": null,
     "sentence": "Działacz ochotniczej straży pożarnej."
+   }
+  ]
+ },
+ "451": {
+  "title": "Urszula Zielińska",
+  "review": [
+   {
+    "target": "polska",
+    "qid": "Q36",
+    "verdict": "państwo",
+    "classes": [
+     "Q6256",
+     "Q3624078"
+    ],
+    "from": 2022,
+    "to": 2025,
+    "sentence": "3 października 1977 w Warszawie) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji, w latach 2022–2025 współprzewodnicząca partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem), od 2023 sekretarz stanu "
+   },
+   {
+    "target": "Polityk",
+    "qid": "Q82955",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640"
+    ],
+    "from": 2022,
+    "to": 2025,
+    "sentence": "3 października 1977 w Warszawie) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji, w latach 2022–2025 współprzewodnicząca partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem), od 2023 sekretarz stanu "
+   },
+   {
+    "target": "Zieloni (Polska)",
+    "qid": "Q199007",
+    "verdict": "partia",
+    "classes": [
+     "Q7278",
+     "Q3778417"
+    ],
+    "from": 2022,
+    "to": 2025,
+    "sentence": "3 października 1977 w Warszawie) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji, w latach 2022–2025 współprzewodnicząca partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem), od 2023 sekretarz stanu "
+   },
+   {
+    "target": "parytet",
+    "qid": null,
+    "verdict": "brak w Wikidata",
+    "classes": [],
+    "from": 2022,
+    "to": 2025,
+    "sentence": "3 października 1977 w Warszawie) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji, w latach 2022–2025 współprzewodnicząca partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem), od 2023 sekretarz stanu "
+   },
+   {
+    "target": "Przemysław Słowik",
+    "qid": "Q110567776",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2022,
+    "to": 2025,
+    "sentence": "3 października 1977 w Warszawie) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji, w latach 2022–2025 współprzewodnicząca partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem), od 2023 sekretarz stanu "
+   },
+   {
+    "target": "Ministerstwo Klimatu i Środowiska",
+    "qid": "Q100413012",
+    "verdict": "urząd",
+    "classes": [
+     "Q917441",
+     "Q6866556",
+     "Q19973795",
+     "Q81741534"
+    ],
+    "from": 2023,
+    "to": null,
+    "sentence": "3 października 1977 w Warszawie) – polska działaczka społeczna i polityczna, posłanka na Sejm IX i X kadencji, w latach 2022–2025 współprzewodnicząca partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem), od 2023 sekretarz stanu "
+   },
+   {
+    "target": "Przemysław Słowik",
+    "qid": "Q110567776",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "15 stycznia 2022 została wybrana na przewodniczącą Partii Zieloni (w ramach parytetu wraz z Przemysławem Słowikiem); w listopadzie tego samego roku funkcja przewodniczącej została zmieniona na funkcję współprzewodniczącej, a pełną nazwę par"
    }
   ]
  },
@@ -23867,6 +27722,42 @@
     "from": null,
     "to": null,
     "sentence": "Skargi te trafiły do posłanki Platformy Obywatelskiej Bożeny Kamińskiej, która skierowała w tej sprawie interpelację do ministra Joachima Brudzińskiego."
+   }
+  ]
+ },
+ "454": {
+  "title": "Jolanta Zięba-Gzik",
+  "review": [
+   {
+    "target": "Pedagog",
+    "qid": "Q1231865",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640"
+    ],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "13 października 1975 w Sieradzu) – polska polityk, pedagożka i działaczka samorządowa, w latach 2015–2018 członkini zarządu województwa łódzkiego, posłanka na Sejm X kadencji."
+   },
+   {
+    "target": "Samorząd terytorialny",
+    "qid": "Q6621940",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": 2015,
+    "to": 2018,
+    "sentence": "13 października 1975 w Sieradzu) – polska polityk, pedagożka i działaczka samorządowa, w latach 2015–2018 członkini zarządu województwa łódzkiego, posłanka na Sejm X kadencji."
+   },
+   {
+    "target": "Polskie Stronnictwo Ludowe",
+    "qid": "Q218477",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Działaczka Polskiego Stronnictwa Ludowego."
    }
   ]
  },
@@ -24023,6 +27914,33 @@
     "from": 1980,
     "to": null,
     "sentence": "Jego ojciec był lekarzem i dyrektorem krynickiego sanatorium, należał do PZPR do 1990 roku (do rozwiązania partii), a od 1980 także do NSZZ „Solidarność”."
+   }
+  ]
+ },
+ "457": {
+  "title": "Wojciech Zubowski",
+  "review": [
+   {
+    "target": "Rozwój Plus",
+    "qid": "Q140695333",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został członkiem stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
+   },
+   {
+    "target": "Mateusz Morawiecki",
+    "qid": "Q11771436",
+    "verdict": "nie organizacja",
+    "classes": [
+     "Q5"
+    ],
+    "from": 2026,
+    "to": null,
+    "sentence": "W 2026 został członkiem stowarzyszenia Rozwój Plus założonego przez Mateusza Morawieckiego."
    }
   ]
  },
@@ -24559,6 +28477,22 @@
    }
   ]
  },
+ "474": {
+  "title": "Maria Koźlakiewicz",
+  "review": [
+   {
+    "target": "Platforma Obywatelska",
+    "qid": "Q156868",
+    "verdict": "partia",
+    "classes": [
+     "Q7278"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "Wstąpiła do Platformy Obywatelskiej RP."
+   }
+  ]
+ },
  "475": {
   "title": "Katarzyna Królak",
   "review": [
@@ -24582,6 +28516,32 @@
     "from": null,
     "to": null,
     "sentence": "1 marca 1971 w Iławie) – polska polityczka, przedsiębiorca i działaczka samorządowa, posłanka na Sejm X kadencji."
+   }
+  ]
+ },
+ "476": {
+  "title": "Wioletta Kulpa",
+  "review": [
+   {
+    "target": "Księgowy",
+    "qid": "Q326653",
+    "verdict": "stanowisko",
+    "classes": [
+     "Q28640",
+     "Q108300140"
+    ],
+    "from": null,
+    "to": null,
+    "sentence": "9 grudnia 1974 w Płocku) – polska polityk, księgowa i działaczka samorządowa, posłanka na Sejm X kadencji."
+   },
+   {
+    "target": "Samorząd terytorialny",
+    "qid": "Q6621940",
+    "verdict": "nie organizacja",
+    "classes": [],
+    "from": null,
+    "to": null,
+    "sentence": "9 grudnia 1974 w Płocku) – polska polityk, księgowa i działaczka samorządowa, posłanka na Sejm X kadencji."
    }
   ]
  },

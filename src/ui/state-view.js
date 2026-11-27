@@ -2,6 +2,8 @@
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
 import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl, workText, workTip } from './render.js';
 import { workFor, WORK_COLOR, WORK_LABEL } from '../lib/work.js';
+import { stackRows } from './render.js';
+import { POSTS_COLOR } from '../lib/bio.js';
 import { clubFamily } from '../lib/career.js';
 import { aboutYears } from '../lib/pl-words.js';
 import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
@@ -124,31 +126,46 @@ const yearOf = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ?
  * The life line of an official, in the same look as on MP profiles: their state roles over time since 1989,
  * government roles in one lane and the top offices in another, coloured by party.
  */
-export function roleLine(roles, today, more = '', work = []) {
+/** A lane's track with overlapping items stacked in rows (same as on MP profiles). */
+function stackedTrack(items, seg) {
+  const sorted = [...items].sort((a, b) => a.from - b.from);
+  const rows = stackRows(sorted);
+  return `<div class="life-track" style="--rows:${Math.max(1, ...rows)}">${sorted.map((x, i) => seg(x, rows[i] - 1)).join('')}</div>`;
+}
+
+export function roleLine(roles, today, more = '', bio = null, work = []) {
   const now = yearOf(today);
   const items = roles.map((r) => ({ r, from: yearOf(r.from), to: yearOf(r.to ?? today) })).filter((x) => x.from != null && x.to != null);
-  if (!items.length) return '';
+  // Opposition in the PRL and other public offices (data/bio.json: plwiki categories, Wikidata P39), Pawel 2026-11-27.
+  const word = (s) => String(s).toLowerCase().split(/\s+/)[0];
+  const posts = (bio?.posts ?? [])
+    .filter((p) => !roles.some((r) => word(r.office) === word(p.label) && Math.abs(Number(String(r.from).slice(0, 4)) - p.from) <= 1))
+    .map((p) => ({ r: { office: p.label, from: String(p.from), to: p.to ? String(p.to) : null }, from: p.from, to: p.to ? p.to + 0.9 : now, kind: 'posts' }));
+  const opp = (bio?.opposition ?? []).map((o) => ({ r: { office: o.from ? o.label : `${o.label} (lata nieznane)`, full: o.full, from: String(o.from ?? 1980), to: String(o.to ?? 1989) }, from: o.from ?? 1980, to: (o.to ?? 1989) + 0.9, kind: 'opposition', uncertain: !o.from }));
   // Professional experience (data/work.json) on its own lane, years only.
-  const jobs = work.filter((w) => w.from != null && w.from <= now).map((w) => ({ w, from: w.from, to: Math.max(w.to ?? w.from, w.from) + (w.to == null ? 0.5 : 1) }));
-  const start = Math.min(1989, ...items.map((x) => Math.floor(x.from)), ...jobs.map((x) => x.from));
+  const jobs = work.filter((w) => w.from != null && w.from <= now).map((w) => ({ r: { office: w.label, full: w.role ? `${w.label} (${w.role})` : w.label, from: String(w.from), to: w.to != null ? String(w.to) : null }, from: w.from, to: Math.max(w.to ?? w.from, w.from) + 0.9, kind: 'work' }));
+  if (!items.length && !posts.length && !opp.length) return '';
+  const all = [...items, ...posts, ...opp, ...jobs];
+  const start = Math.min(1989, ...all.map((x) => Math.floor(x.from)));
   const pos = (y) => (((y - start) / (now - start)) * 100).toFixed(2);
   const width = (a, b) => Math.max(((b - a) / (now - start)) * 100, 0.8).toFixed(2);
-  const seg = (x) => {
-    const color = x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
-    return `<span class="life-seg${x.r.to ? '' : ' open'}" style="--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
+  const seg = (x, row = 0) => {
+    const color = x.kind === 'work' ? WORK_COLOR : x.kind === 'opposition' ? '#d4202c' : x.kind === 'posts' ? POSTS_COLOR : x.r.party ? (clubFamily(x.r.party, x.r.party).color ?? '#7d8590') : 'var(--accent)';
+    return `<span class="life-seg${x.r.to ? '' : ' open'}${x.uncertain ? ' uncertain' : ''}" style="--row:${row};--seg:${esc(color)};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.r.full ?? x.r.office)}${x.r.party ? ` (${esc(x.r.party)})` : ''}: ${esc(span(x.r.from, x.r.to))}"><span>${esc(x.r.office)}</span></span>`;
   };
-  const jobSeg = (x) => `<span class="life-seg${Number(width(x.from, x.to)) < 7 ? ' narrow' : ''}" style="--seg:${WORK_COLOR};left:${pos(x.from)}%;width:${width(x.from, x.to)}%" title="${esc(x.w.role ? `${x.w.label} (${x.w.role})` : x.w.label)}: ${x.w.to == null ? `od ${x.w.from}` : x.w.from === x.w.to ? x.w.from : `${x.w.from}–${x.w.to}`}"><span>${esc(x.w.label)}</span></span>`;
   const lanes = [
-    { id: 'work', label: WORK_LABEL, items: jobs, seg: jobSeg },
+    { id: 'opposition', label: 'Opozycja w PRL', items: opp },
+    { id: 'work', label: WORK_LABEL, items: jobs },
+    { id: 'posts', label: 'Stanowiska', items: posts },
     { id: 'gov', label: 'Rząd', items: items.filter((x) => x.r.gov) },
     { id: 'office', label: 'Urzędy', items: items.filter((x) => !x.r.gov) },
   ].filter((l) => l.items.length);
-  const first = [...items].sort((x, y) => x.from - y.from)[0];
+  const first = [...(items.length ? items : all)].sort((x, y) => x.from - y.from)[0];
   return `
       <div class="life" data-testid="life-line">
-        <div class="life-eras" aria-hidden="true"><span class="life-era rp" style="left:0;width:100%">III RP</span></div>
+        <div class="life-eras" aria-hidden="true">${start < 1989 ? `<span class="life-era prl" style="left:0;width:${pos(1989)}%">PRL</span>` : ''}<span class="life-era rp" style="left:${start < 1989 ? pos(1989) : 0}%;width:${(100 - Number(start < 1989 ? pos(1989) : 0)).toFixed(2)}%">III RP</span></div>
         <div class="life-lanes">${lanes.map((l) => `
-          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span><div class="life-track">${l.items.map(l.seg ?? seg).join('')}</div></div>`).join('')}
+          <div class="life-lane" data-lane="${l.id}"><span class="life-lane-label">${l.label}</span>${stackedTrack(l.items, seg)}</div>`).join('')}
         </div>
         <div class="life-axis"><span>${start}</span><span>${String(today).slice(0, 4)}</span></div>
       </div>
@@ -172,7 +189,7 @@ export function renderOfficial(ctx, slug, today) {
     : '';
   const job = workFor(ctx.work, `urzad:${p.slug}`);
   const work = workText({ work: (job?.items ?? []).filter((w) => w.from != null).map((w) => ({ ...w, since: w.to == null })), workUndated: (job?.items ?? []).filter((w) => w.from == null) });
-  const line = roleLine(p.roles, today, `${roleText}${work ? ` <span data-testid="work-text">${work} ${workTip(job)}</span>` : ''}`, job?.items ?? []);
+  const line = roleLine(p.roles, today, `${roleText}${work ? ` <span data-testid="work-text">${work} ${workTip(job)}</span>` : ''}`, ctx.bio?.officials?.[p.wiki ?? p.name] ?? null, job?.items ?? []);
   return `
   <section data-view="official" data-official="${esc(p.slug)}">
     <div class="profile-top panel">

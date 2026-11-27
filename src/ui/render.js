@@ -3,7 +3,7 @@ import { againstClub, inWindow, itemTime, FEED_WINDOWS } from '../lib/feed.js';
 import { currentHolders, currentMembers } from '../lib/government.js';
 import { workFor } from '../lib/work.js';
 import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, termList, ALL_TERMS, personKey, buildPath, clubNameIn } from '../lib/career.js';
-import { lifeTimeline, pos, communistPast } from '../lib/life.js';
+import { lifeTimeline, pos, communistPast, partyStyle } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
 import { listPl, ageWords, aboutYears, termsWords, termOrdinals } from '../lib/pl-words.js';
@@ -730,6 +730,25 @@ function lifeTabs() {
   return `<div class="life-tabs" role="group" aria-label="Widok linii życia" data-testid="life-tabs">${LIFE_VIEWS.map((v) => `<button type="button" data-action="life-view" data-life="${v}" aria-pressed="${v === DEFAULT_LIFE_VIEW}">${LIFE_VIEW_LABEL[v]}</button>`).join('')}</div>`;
 }
 
+const foldPl = (s) => String(s).toLowerCase().replace(/[„”"]/g, '');
+
+/** Row (1, 2, …) of each item so that overlapping items in one lane sit under each other. */
+export function stackRows(items) {
+  const ends = [];
+  return items.map((it) => {
+    let r = ends.findIndex((e) => e < it.from);
+    if (r === -1) { ends.push(it.to); r = ends.length - 1; } else ends[r] = it.to;
+    return r + 1;
+  });
+}
+
+/** Parties and organisations known without years (e.g. Porozumienie Centrum for Jarosław Kaczyński): shown as chips. */
+function undatedRow(labels, qid) {
+  if (!labels?.length) return '';
+  const chips = labels.map((l) => `<span class="life-chip" style="--seg:${esc(partyStyle(l).color ?? '#7d8590')}" title="${esc(l)}: lata nieznane">${esc(l)}</span>`).join('');
+  return `<div class="life-lane life-undated" data-testid="life-undated"><span class="life-lane-label">Bez dat</span><div class="life-chips">${chips}${infoTip('Członkostwo znane z Wikidanych lub Wikipedii, ale bez lat początku i końca.', qid ? `https://www.wikidata.org/wiki/${qid}` : '')}</div></div>`;
+}
+
 /** The prose under the life line ("Pierwsza aktywność polityczna…") is hidden: Pawel removed it on 2026-11-27. */
 const SHOW_LIFE_PROSE = false;
 
@@ -741,11 +760,15 @@ export function renderLifeLine(ctx, mp, sp = null) {
   if (!tl) return '';
   const left = (y) => pos(tl, y).toFixed(2);
   const width = (a, b) => Math.max(pos(tl, b) - pos(tl, a), 0.8).toFixed(2);
-  const lane = (l) => `
+  const lane = (l) => {
+    const row = stackRows(l.items);
+    const rows = Math.max(1, ...row);
+    return `
         <div class="life-lane" data-lane="${l.id}">
           <span class="life-lane-label">${esc(l.label)}${l.id === 'work' ? ` ${workTip(job, tl)}` : ''}</span>
-          <div class="life-track">${l.items.map((it) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${stretchYears(it)}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
+          <div class="life-track" style="--rows:${rows}">${l.items.map((it, i) => `<span class="life-seg${it.open ? ' open' : ''}${it.uncertain ? ' uncertain' : ''}${Number(width(it.from, it.to)) < 7 ? ' narrow' : ''}" style="--row:${row[i] - 1};--seg:${esc(it.color)};left:${left(it.from)}%;width:${width(it.from, it.to)}%" title="${esc(it.full ?? it.label)}${it.uncertain ? '' : `: ${stretchYears(it)}`}"><span>${esc(it.label)}</span></span>`).join('')}</div>
         </div>`;
+  };
   const prlW = tl.bornInPrl ? width(tl.birth, tl.prlEnd) : 0;
   const qid = ctx.life?.mps?.[mp.id]?.qid;
   const undatedTip = tl.undated.length
@@ -769,6 +792,7 @@ export function renderLifeLine(ctx, mp, sp = null) {
           <div class="life-overlay">${ticks.map((y) => `<span class="life-decade" style="left:${left(y)}%"></span>`).join('')}${tl.bornInPrl ? `<span class="life-1989" style="left:${left(tl.prlEnd)}%" title="4 czerwca 1989: początek III RP"></span>` : ''}</div>
         </div>
         <div class="life-axis"><span>ur. ${tl.birth}</span>${ticks.map((y) => `<span class="life-axis-tick" style="left:${left(y)}%">${y}</span>`).join('')}${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
+        ${undatedRow(tl.undated.filter((u) => !tl.lanes.some((l) => l.id === 'opposition' && l.items.some((it) => foldPl(u).includes(foldPl(it.label.replace(' (lata nieznane)', '')))))), qid)}
       </div>
       <div class="life-v life-v-kroki" data-testid="life-steps">${lifeSteps(tl)}</div>
       ${SHOW_LIFE_PROSE && (first || undatedTip) ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;

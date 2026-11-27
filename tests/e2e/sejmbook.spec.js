@@ -653,3 +653,9 @@ test('Posłowie: "Wszystkie" kadencje lists people of every term', async ({ page
   expect(await page.locator('.term-card').count()).toBeGreaterThan(2000);
 });
 
+test('Life line: Jarosław Kaczyński has the PRL opposition lane', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-148`);
+  await expect(page.locator('[data-testid="life-line"] [data-lane="opposition"]')).toBeVisible();
+  await expect(page.getByTestId('life-undated')).toContainText(/PC|Porozumienie/);
+});
+
