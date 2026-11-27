@@ -10,6 +10,8 @@ jobs:
       - run: npm ci
       - run: npm run coverage          # unit tests + coverage thresholds
       - run: npm run test:integration
+      # The runner's Microsoft apt source answers 403 (2026-11-27), which breaks apt-get update; Playwright needs only Ubuntu packages.
+      - run: sudo find /etc/apt/sources.list.d -iname '*microsoft*' -delete
       - run: npx playwright install --with-deps chromium
       - run: npm run build
       - run: npm run test:e2e
