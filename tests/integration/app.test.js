@@ -162,8 +162,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Praca zawodowa';
-const NEWEST_LINE = 'Posłowie: Praca zawodowa';
+const NEWEST = 'Bez karty aktywności';
+const NEWEST_LINE = 'Profile: Bez karty aktywności';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -1002,52 +1002,14 @@ describe('Praca zawodowa: professional experience on the life line', () => {
   });
 });
 
-describe('Profile: KPI card (aktywność i skuteczność)', () => {
-  beforeEach(() => {
+describe('Profile: no KPI card (removed by Pawel, 2026-11-27)', () => {
+  it('does not show the "Aktywność i skuteczność" card even with KPI data', () => {
     app.destroy();
     document.body.innerHTML = SHELL_HTML;
     app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, today: '2026-11-24' });
     nav('#posel-32');
-  });
-
-  it('is a separate card next to the tax card, with the four approved KPI and no rejected ones', () => {
-    const card = $('[data-testid="profile-kpi"]');
-    expect(card).not.toBeNull();
-    const tiles = [...card.querySelectorAll('.kpi-tile')].map((t) => t.dataset.kpi);
-    expect(tiles).toEqual(['attendance', 'speeches', 'interpellations', 'bills']);
-    expect(card.textContent).not.toMatch(/oświadcze|sprawach bieżących/i);
-    const order = $$('.feed > article').map((a) => a.dataset.testid);
-    expect(order.indexOf('profile-kpi')).toBe(order.indexOf('profile-taxes') - 1);
-  });
-
-  it('gives every KPI an info button explaining the calculation', () => {
-    const tips = $$('[data-testid="profile-kpi"] .kpi-tile h3 [data-testid="info-tip"]');
-    expect(tips).toHaveLength(4);
-    for (const t of tips) {
-      expect(t.getAttribute('aria-label')).toBe('Jak liczymy');
-      expect(t.querySelector('.info-tip-body').textContent).toMatch(/Średnia|średnia/);
-    }
-  });
-
-  it('shows real numbers from data/kpi.json for the MP', () => {
-    const k = kpiData.mps[32];
-    expect($('[data-testid="kpi-speeches-value"]').textContent.replace(/\s/g, '')).toBe(String(k.speeches));
-    expect($('[data-testid="kpi-attendance"]').textContent).toContain(`z ${k.days[1]} dni`);
-    expect($('[data-testid="kpi-questions"]')).not.toBeNull();
-  });
-
-  it('lists the MPs\' bills the MP signed, with links to the legislative process', () => {
-    const n = kpiData.mps[32].bills.length;
-    const items = $$('[data-testid="kpi-bills"] .kpi-bill');
-    expect(items).toHaveLength(n);
-    if (n) expect(items[0].querySelector('a').getAttribute('href')).toMatch(/PrzebiegProc\.xsp\?nr=/);
-  });
-
-  it('is left out when there is no KPI data', () => {
-    app.destroy();
-    document.body.innerHTML = SHELL_HTML;
-    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, today: '2026-11-24' });
-    nav('#posel-32');
     expect($('[data-testid="profile-kpi"]')).toBeNull();
+    expect($('[data-testid="profile-taxes"]')).not.toBeNull();
+    expect($('#view').textContent).not.toContain('Aktywność i skuteczność');
   });
 });

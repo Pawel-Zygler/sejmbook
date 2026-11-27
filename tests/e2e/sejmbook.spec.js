@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Praca zawodowa');
+  await expect(post).toContainText('Bez karty aktywności');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Praca zawodowa');
+  await expect(page.locator('.news-post').first()).toContainText('Bez karty aktywności');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -682,24 +682,8 @@ for (const skin of ['classic', 'modern']) {
   });
 }
 
-for (const skin of ['classic', 'modern']) {
-  test(`profile: KPI card with an info button per KPI, fits the screen (${skin})`, async ({ page }) => {
-    await page.addInitScript((s) => localStorage.setItem('sejmbook-ui', s), skin);
-    await page.goto(`${PAGE}#posel-32`);
-    const card = page.getByTestId('profile-kpi');
-    await expect(card).toBeVisible();
-    await expect(card.locator('.kpi-tile')).toHaveCount(4);
-    for (const id of ['attendance', 'speeches', 'interpellations', 'bills']) await expect(card.getByTestId(`kpi-${id}-value`)).toBeVisible();
-    const tip = card.getByTestId('kpi-speeches').getByTestId('info-tip');
-    await tip.focus();
-    await expect(tip.locator('.info-tip-body')).toBeVisible();
-    await expect(tip.locator('.info-tip-body')).toContainText('stenogram');
-    const box = await card.boundingBox();
-    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-    expect(overflow).toBeLessThanOrEqual(0);
-    // Two columns of tiles on wide screens, one on phones.
-    const xs = await card.locator('.kpi-tile').evaluateAll((els) => new Set(els.map((e) => Math.round(e.getBoundingClientRect().left))).size);
-    expect(xs).toBe(page.viewportSize().width > 640 ? 2 : 1);
-  });
-}
+test('profile: no "Aktywność i skuteczność" card', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-32`);
+  await expect(page.getByTestId('profile-taxes')).toBeVisible();
+  await expect(page.getByTestId('profile-kpi')).toHaveCount(0);
+});

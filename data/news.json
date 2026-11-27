@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-bez-kpi",
+      "date": "2026-11-27",
+      "title": "Bez karty aktywności",
+      "section": "Profile",
+      "body": "Z profilu posła zniknęła karta „Aktywność i skuteczność”.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-praca-zawodowa",
       "date": "2026-11-27",
       "title": "Praca zawodowa",

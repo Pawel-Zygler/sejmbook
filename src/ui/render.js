@@ -751,6 +751,8 @@ function undatedRow(labels, qid) {
 }
 
 /** The prose under the life line ("Pierwsza aktywność polityczna…") is hidden: Pawel removed it on 2026-11-27. */
+/** Pawel removed the "Aktywność i skuteczność" card from MP profiles on 2026-11-27 ("Wywal tą sekcję"). */
+const SHOW_KPI_CARD = false;
 const SHOW_LIFE_PROSE = false;
 
 /** The MP's life line: birth, PRL, 1989, party and opposition memberships, Sejm terms. */
@@ -951,7 +953,7 @@ export function renderProfile(ctx, id) {
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
-        ${renderProfileKpi(ctx, mp, { infoTip })}
+        ${SHOW_KPI_CARD ? renderProfileKpi(ctx, mp, { infoTip }) : ''}
         ${renderProfileTaxes(ctx, mp, { infoTip })}
         ${renderProfileLaws(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
