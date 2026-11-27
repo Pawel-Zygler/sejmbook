@@ -308,7 +308,7 @@ function postHead(ctx, e) {
   const name = e.mp ? mpLink(e.mp, esc(e.mp.name), 'official-link') : e.kind === 'vote' || (e.kind === 'office' && !e.person) ? esc(e.author) : stateNameLink(ctx, e.author);
   const face = e.mp ? mpLink(e.mp, avatar(ctx, e.mp, 'md')) : e.kind === 'vote' || (e.kind === 'office' && !e.person) ? pageBadge() : feedFace(ctx, e.author, initials(e.author));
   const extra = e.kind === 'act' && e.act.from.length > 1 ? ` i ${e.act.from.length - 1} ${plural(e.act.from.length - 1, 'inny poseł', 'innych posłów', 'innych posłów')}` : '';
-  return `<header class="post-head">${face}<div><strong>${name}${extra}</strong><small>${esc(e.role)} · <time datetime="${esc(e.time ?? e.date ?? '')}">${esc(when)}</time>${e.place ? ` · ${esc(e.place)}` : ''}</small></div></header>`;
+  return `<header class="post-head">${face}<div class="post-who"><strong>${name}${extra}</strong><small>${esc(e.role)}${e.place ? ` · ${esc(e.place)}` : ''}</small></div><time class="post-time" data-testid="post-time" datetime="${esc(e.time ?? e.date ?? '')}">${esc(when)}</time></header>`;
 }
 
 /** One entry of the feed as a post. */
@@ -587,8 +587,18 @@ const cardDistrict = (num, name) => `<span class="mp-card-district" title="okrę
 
 /** Card layout (Pawel, 2026-11-26): portrait in the top-left corner, facts on the right from the top, name at the bottom. */
 const cardShell = (href, face, name, facts) => `<a class="mp-card-photo" href="${href}" tabindex="-1" aria-hidden="true">${face}</a>
-    <div class="mp-card-facts" data-testid="mp-card-meta">${facts}</div>
-    <a class="mp-card-link" href="${href}"><span class="mp-card-name">${esc(name)}</span></a>`;
+    <a class="mp-card-link" href="${href}"><span class="mp-card-name">${esc(name)}</span></a>
+    <div class="mp-card-facts" data-testid="mp-card-meta">${facts}</div>`;
+
+/** Age from the year of birth (the Sejm API gives only the year, so it can be a year too high before the birthday). */
+function cardAge(ctx, mp) {
+  const now = Number(String(ctx.today ?? ctx.fetchedAt ?? new Date().toISOString()).slice(0, 4));
+  if (!Number.isInteger(mp.birthYear) || !now) return '';
+  const age = now - mp.birthYear;
+  return `<span class="mp-card-age" data-testid="mp-card-age" title="rocznik ${mp.birthYear}">${age} ${plural(age, 'rok', 'lata', 'lat')}</span>`;
+}
+
+const cardTerms = (n) => (n ? `<span class="mp-card-terms" data-testid="mp-card-terms" title="kadencje w Sejmie III RP">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')}</span>` : '');
 
 /** Facts on the right of the card, top to bottom: party tag (with a PZPR mark), votes in 2023, district, attendance. */
 export function mpCardMeta(ctx, mp) {
@@ -599,6 +609,8 @@ export function mpCardMeta(ctx, mp) {
     votes,
     cardDistrict(mp.districtNum, mp.districtName),
     attendanceBadge(ctx, mp.id, 16),
+    cardAge(ctx, mp),
+    cardTerms(ctx.career?.career?.[mp.id]?.length),
   ].join('');
 }
 

@@ -288,6 +288,10 @@ describe('mpCardMeta', () => {
     expect(html).toContain(`>okr. ${mp.districtNum} · ${mp.districtName}</span>`);
     expect(html).toMatch(/\d głos(y|ów)?<\/span>/);
     expect(html).not.toContain('meta-dot');
+    expect(html).toContain(`>${2026 - mp.birthYear} `);
+    expect(html).not.toContain('mp-card-terms'); // no career data in this context
+    const withCareer = mpCardMeta({ ...ctx, career: { career: { [mp.id]: [{ term: 9 }, { term: 10 }] } } }, mp);
+    expect(withCareer).toMatch(/data-testid="mp-card-terms"[^>]*>2 kadencje</);
   });
 });
 
@@ -561,7 +565,7 @@ describe('Feed: one chronological stream of posts', () => {
     expect((html.match(/<article class="post feed-post"/g) ?? []).length).toBe(9);
     expect(html).toContain('Budżet &lt;2027&gt;');
     expect(html).toContain('href="#urzad-jan-kasa"');
-    expect(html).toContain('Ministerstwo Finansów · <time datetime="2026-11-22">22.11.2026</time>');
+    expect(html).toContain('Ministerstwo Finansów</small></div><time class="post-time" data-testid="post-time" datetime="2026-11-22">22.11.2026</time>');
     expect(html).not.toContain('feed-more');
   });
   it('shows the President and the Prime Minister like everyone else, escaped, with place and source', () => {

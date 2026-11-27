@@ -162,8 +162,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Bez karty aktywności';
-const NEWEST_LINE = 'Profile: Bez karty aktywności';
+const NEWEST = 'Nowe karty posłów';
+const NEWEST_LINE = 'Posłowie: Nowe karty posłów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -898,19 +898,27 @@ describe('Profile: mini map of the district', () => {
   });
 });
 
-describe('Posłowie: card with the portrait top-left and facts on the right', () => {
+describe('Posłowie: card with the portrait top-left, the name top-right and facts at the bottom', () => {
   beforeEach(() => nav('#poslowie'));
-  it('puts the photo first, then party, votes, district and attendance, then the name', () => {
+  it('puts the photo first, then the name, then party, votes, district, attendance, age and terms', () => {
     const card = $('.mp-card');
     expect(card.firstElementChild.classList.contains('mp-card-photo')).toBe(true);
+    expect(card.children[1].classList.contains('mp-card-link')).toBe(true);
     const facts = [...card.querySelector('.mp-card-facts').children].map((e) => e.className.split(' ')[0]);
     expect(facts.slice(0, 3)).toEqual(['mp-card-party', 'mp-card-votes', 'mp-card-district']);
-    expect(card.querySelector('.mp-card-facts').nextElementSibling.classList.contains('mp-card-link')).toBe(true);
+    expect(facts.slice(-2)).toEqual(['mp-card-age', 'mp-card-terms']);
     expect(card.querySelector('.mp-card-photo').getAttribute('href')).toBe(card.querySelector('.mp-card-link').getAttribute('href'));
   });
 });
 
 describe('Feed: seats of the Sejm on top', () => {
+  it('puts the date of a post in its own element at the end of the header (top-right corner)', () => {
+    nav('#start');
+    const head = $('article.post .post-head time.post-time').parentElement;
+    expect(head.lastElementChild.classList.contains('post-time')).toBe(true);
+    expect(head.querySelector('small time')).toBeNull();
+  });
+
   it('shows the "Skład Sejmu" post before the time window and the feed posts', () => {
     nav('');
     const view = $('[data-view="home"]');
