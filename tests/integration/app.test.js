@@ -946,7 +946,8 @@ describe('Posłowie: all terms at once', () => {
     click($('#aside [data-action="dir-sort"][data-sort="terms"]'));
     const first = $('.term-card .term-card-terms').textContent;
     expect(first).toMatch(/kadencje I/);
-  });
+    // Renders every MP of every term (~3000 cards) four times: about 4.5 s in jsdom, too close to the 5 s default.
+  }, 20000);
 });
 
 describe('Life line: PRL opposition, Round Table and offices (Wikipedia categories, Wikidata P39)', () => {
