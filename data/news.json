@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-rozklad-konieczny",
+      "date": "2026-11-27",
+      "title": "Wykres rozkładu: cywilizacja łacińska",
+      "section": "Rankingi",
+      "body": "Ranking ma teraz wykres, który pokazuje, ilu posłów ma jaki wynik.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz wykres"
+      }
+    },
+    {
       "id": "2026-11-27-linkedin",
       "date": "2026-11-27",
       "title": "LinkedIn przy nazwisku posła",

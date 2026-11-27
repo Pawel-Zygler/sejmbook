@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS } from '../../src/lib/latin.js';
-import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS, renderLatinRanking, latinResults, latinScore, attendancePctFor } from '../../src/ui/latin-view.js';
+import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS, latinHistogram, percentile } from '../../src/lib/latin.js';
+import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS, renderLatinRanking, latinResults, latinScore, attendancePctFor, latinDistChart } from '../../src/ui/latin-view.js';
 import cls from '../../data/latin-classification.json';
 import latinData from '../../data/latin.json';
 import lawData from '../../data/law-votes.json';
@@ -197,5 +197,36 @@ describe('ranking page', () => {
     expect(latinScore(null)).toContain('–');
     expect(attendancePctFor({ kpi: { mps: { 1: { days: [9, 10] } } } }, 1)).toBe(90);
     expect(attendancePctFor({}, 1)).toBeNull();
+  });
+});
+
+// Pawel, 2026-11-27: distribution of MPs' scores on a chart.
+describe('distribution chart', () => {
+  it('bins of 2 points on 0–100, 100 in the last bin, percentiles by nearest rank', () => {
+    const h = latinHistogram([0, 1, 2, 62, 63, 70, 100, null]);
+    expect(h.bins).toHaveLength(50);
+    expect(h.n).toBe(7);
+    expect(h.bins[0]).toEqual({ from: 0, to: 2, count: 2 });
+    expect(h.bins[31].count).toBe(2);
+    expect(h.bins[49].count).toBe(1);
+    expect(h.max).toBe(2);
+    expect([h.p10, h.p50, h.p90]).toEqual([0, 62, 100]);
+    expect(percentile([], 50)).toBeNull();
+    expect(() => latinHistogram([1], 3)).toThrow(RangeError);
+  });
+  it('draws one column per bin, with count and names on hover, for the chosen score', () => {
+    const r = (total, p1) => ({ total, pillars: [{ id: 1, score: p1 }, { id: 2, score: null }, { id: 3, score: null }, { id: 4, score: null }] });
+    const res = [{ mp: { id: 1, name: 'Anna' }, r: r(70, 10) }, { mp: { id: 2, name: 'Bartek' }, r: r(71, 95) }, { mp: { id: 3, name: 'Celina' }, r: r(40, null) }];
+    const html = latinDistChart(res);
+    expect((html.match(/class="lh-col /g) ?? []).length).toBe(50);
+    expect(html).toContain('data-from="70" data-count="2"');
+    expect(html).toContain('aria-label="70–71 pkt: 2 posłowie, 67%"');
+    expect(html).toContain('Bartek <b>71</b>');
+    expect(html).toContain('data-testid="latin-hist-median">70<');
+    const p1 = latinDistChart(res, 'p1', 'Etyka');
+    expect(p1).toContain('data-key="p1"');
+    expect(p1).toContain('Rozkład: Etyka');
+    expect(p1).toContain('2 posłowie, oś');
+    expect(latinDistChart([])).toBe('');
   });
 });

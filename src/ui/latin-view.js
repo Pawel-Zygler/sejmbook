@@ -1,4 +1,4 @@
-import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS } from '../lib/latin.js';
+import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sortValue } from '../lib/latin.js';
 import { hrefFor } from '../lib/router.js';
 import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
 import { formatPct } from '../lib/kpi.js';
@@ -125,6 +125,41 @@ function bandBar(counts) {
   </div>`;
 }
 
+const mpWord = (n) => (n === 1 ? 'poseł' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 'posłowie' : 'posłów');
+
+/**
+ * Histogram of the chosen score (total or a pillar) for the MPs in the club filter: one column per 2 points on a
+ * 0–100 axis, coloured by band, the middle 80% of MPs shaded and the median marked. Hover or focus a column for
+ * its count and names (Pawel, 2026-11-27).
+ */
+export function latinDistChart(results, key = 'total', label = 'Wynik') {
+  const vals = results.map((x) => ({ x, v: sortValue(x.r, key) })).filter((o) => o.v != null);
+  const h = latinHistogram(vals.map((o) => o.v));
+  if (!h.n) return '';
+  const pos = (v) => `${v}%`;
+  const cols = h.bins.map((b, i) => {
+    const inBin = vals.filter((o) => Math.min(h.bins.length - 1, Math.floor(o.v / 2)) === i).sort((a, c) => c.v - a.v || a.x.mp.name.localeCompare(c.x.mp.name, 'pl'));
+    const range = b.to === 100 ? `${b.from}–100` : `${b.from}–${b.to - 1}`;
+    const pct = Math.round((100 * b.count) / h.n);
+    const names = inBin.slice(0, 4).map((o) => `${esc(o.x.mp.name)} <b>${o.v}</b>`).join('<br>');
+    const more = inBin.length > 4 ? `<br><span class="muted">i ${inBin.length - 4} więcej</span>` : '';
+    const side = b.from < 24 ? ' tip-l' : b.from >= 76 ? ' tip-r' : '';
+    return `<li class="lh-col band-l${bandOf(b.from)}${b.count ? '' : ' lh-empty'}" data-from="${b.from}" data-count="${b.count}"${b.count ? ` tabindex="0" aria-label="${range} pkt: ${b.count} ${mpWord(b.count)}, ${pct}%"` : ' aria-hidden="true"'}>
+      <span class="lh-bar" style="height:${b.count ? Math.max(3, (100 * b.count) / h.max) : 0}%"></span>${b.count ? `<span class="lh-tip${side}" role="tooltip"><b>${range} pkt</b> · ${b.count} ${mpWord(b.count)} (${pct}%)<br>${names}${more}</span>` : ''}</li>`;
+  }).join('');
+  return `<figure class="latin-hist" data-testid="latin-hist" data-key="${esc(key)}">
+    <figcaption><b>Rozkład: ${esc(label)}</b> <span class="muted">· ${h.n} ${mpWord(h.n)}, oś 0–100</span></figcaption>
+    <div class="lh-plot">
+      <span class="lh-mid" style="left:${pos(h.p10)};width:${pos(Math.max(1, h.p90 - h.p10 + 1))}" aria-hidden="true"></span>
+      <span class="lh-med" style="left:${pos(h.p50 + 0.5)}" aria-hidden="true"></span>
+      <span class="lh-max muted" aria-hidden="true">${h.max}</span>
+      <ol class="lh-cols">${cols}</ol>
+    </div>
+    <div class="lh-axis" aria-hidden="true">${[0, 20, 40, 60, 80, 100].map((t) => `<span style="left:${t}%">${t}</span>`).join('')}</div>
+    <p class="lh-key" data-testid="latin-hist-key"><span><i class="lh-key-mid"></i>środkowe 80% posłów: <b>${h.p10}–${h.p90}</b></span> <span><i class="lh-key-med"></i>mediana: <b data-testid="latin-hist-median">${h.p50}</b></span> <span class="muted">Najedź na słupek, żeby zobaczyć posłów.</span></p>
+  </figure>`;
+}
+
 const btn = (action, attr, value, on, label) => `<button type="button" class="filter ${on ? 'on' : ''}" data-action="${action}" data-${attr}="${esc(value)}" aria-pressed="${on}">${label}</button>`;
 
 /** Ranking page "Konieczny" (#konieczny): every MP's score, bands 90/60/40, club filter, sort by total or pillar. */
@@ -160,6 +195,7 @@ export function renderLatinRanking(ctx, state, { avatar, clubChip, rankingSwitch
   const clubName = (c) => esc(ctx.clubs.get(c)?.short ?? c);
   return head(`${stats}${tabs}
     <div class="panel">
+      ${latinDistChart(all.filter((x) => !state.club || x.mp.club === state.club), state.sortBy, SORT_LABEL[state.sortBy])}
       ${bandBar(counts)}
       <div class="rank-tools"><span>Przedział:</span>
         ${btn('latin-band', 'band', 'all', state.band === 'all', `Wszyscy (${counts.all})`)}

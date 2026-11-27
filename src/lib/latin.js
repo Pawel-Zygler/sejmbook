@@ -183,3 +183,23 @@ export function clubLatin(results) {
     .map(([club, rs]) => ({ club, n: rs.length, total: avg(rs.map((r) => r.total)), ...Object.fromEntries([1, 2, 3, 4].map((id) => [`p${id}`, avg(rs.map((r) => sortValue(r, `p${id}`)).filter((v) => v != null))])) }))
     .sort((a, b) => b.total - a.total || a.club.localeCompare(b.club));
 }
+
+/** Nearest-rank percentile (p in 0..100) of sorted numbers; null for an empty list. */
+export function percentile(sorted, p) {
+  if (!sorted.length) return null;
+  return sorted[Math.min(sorted.length - 1, Math.max(0, Math.ceil((p / 100) * sorted.length) - 1))];
+}
+
+/**
+ * Distribution of 0–100 scores for the ranking chart (Pawel, 2026-11-27: "dystrybucję ukazać na ładnym czarcie"):
+ * bins of `size` points ([0,2), [2,4) … [98,100], 100 goes to the last bin), the biggest bin, and the 10th, 50th and
+ * 90th percentile. Nulls are skipped.
+ */
+export function latinHistogram(values, size = 2) {
+  if (!(size > 0) || 100 % size) throw new RangeError(`Bin size must divide 100: ${size}`);
+  const vals = values.filter((v) => v != null).sort((a, b) => a - b);
+  const n = 100 / size;
+  const bins = Array.from({ length: n }, (_, i) => ({ from: i * size, to: i * size + size, count: 0 }));
+  for (const v of vals) bins[Math.min(n - 1, Math.max(0, Math.floor(v / size)))].count++;
+  return { bins, n: vals.length, max: Math.max(0, ...bins.map((b) => b.count)), p10: percentile(vals, 10), p50: percentile(vals, 50), p90: percentile(vals, 90) };
+}

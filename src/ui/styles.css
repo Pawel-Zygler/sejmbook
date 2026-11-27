@@ -794,3 +794,28 @@ h2 { font-size: 1.1rem; }
 .latin-dist-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
 .latin-dist .band-l90 { background: var(--l90); } .latin-dist .band-l60 { background: var(--l60); } .latin-dist .band-l40 { background: var(--l40); } .latin-dist .band-l0 { background: var(--l0); }
 .latin-page .latin-note { margin: 12px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--lab-soft); border-left: 3px solid var(--lab); font-size: 0.8rem; color: var(--muted); }
+
+/* Ranking "Cywilizacja łacińska": distribution chart (one column per 2 points, 0–100) */
+.latin-hist { margin: 0 0 16px; }
+.latin-hist figcaption { font-size: 0.9rem; margin-bottom: 10px; }
+.lh-plot { position: relative; height: 150px; border-bottom: 1px solid var(--line); }
+.lh-cols { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; display: flex; align-items: flex-end; gap: 2px; }
+.latin-hist .lh-cols > .lh-col { position: relative; flex: 1 1 0; min-width: 0; height: 100%; display: flex; align-items: flex-end; outline: none; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
+.latin-hist .lh-cols > .lh-col::before, .latin-hist .lh-cols > .lh-col::after { content: none; }
+.lh-bar { display: block; width: 100%; border-radius: 4px 4px 0 0; background: currentColor; transition: opacity .12s; }
+.lh-col.band-l90 { color: var(--l90); } .lh-col.band-l60 { color: var(--l60); } .lh-col.band-l40 { color: var(--l40); } .lh-col.band-l0 { color: var(--l0); }
+.lh-cols:hover .lh-col:not(:hover) .lh-bar { opacity: .45; }
+.lh-col:focus-visible .lh-bar { outline: 2px solid var(--ink); outline-offset: 1px; }
+.lh-mid { position: absolute; top: 0; bottom: 0; background: var(--lab-soft); border-inline: 1px dashed var(--lab); }
+.lh-med { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px solid var(--ink); z-index: 1; pointer-events: none; }
+.lh-max { position: absolute; top: -2px; left: 0; font-size: 0.7rem; }
+.lh-tip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); z-index: 5; width: max-content; max-width: 240px; padding: 8px 10px; border-radius: 10px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 10px 28px rgba(0,0,0,.16); font-size: 0.78rem; line-height: 1.4; white-space: normal; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .1s; }
+.lh-tip.tip-l { left: 0; transform: none; } .lh-tip.tip-r { left: auto; right: 0; transform: none; }
+.lh-col:hover .lh-tip, .lh-col:focus .lh-tip { opacity: 1; visibility: visible; }
+.lh-axis { position: relative; height: 18px; font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+.lh-axis span { position: absolute; transform: translateX(-50%); }
+.lh-axis span:first-child { transform: none; } .lh-axis span:last-child { transform: translateX(-100%); }
+.lh-key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 6px 0 0; font-size: 0.82rem; }
+.lh-key i { display: inline-block; width: 12px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.lh-key-mid { background: var(--lab-soft); border: 1px dashed var(--lab); }
+.lh-key-med { width: 0 !important; height: 12px !important; border-left: 2px solid var(--ink); }

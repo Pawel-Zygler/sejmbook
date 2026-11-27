@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('LinkedIn przy nazwisku posła');
+  await expect(post).toContainText('Wykres rozkładu: cywilizacja łacińska');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('LinkedIn przy nazwisku posła');
+  await expect(page.locator('.news-post').first()).toContainText('Wykres rozkładu: cywilizacja łacińska');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -774,3 +774,18 @@ for (const skin of ['classic', 'modern']) {
     await expect(search).toHaveAttribute('href', /linkedin\.com\/search\/results\/people\/\?keywords=Krzysztof%20Bosak/);
   });
 }
+
+test('ranking "Cywilizacja łacińska": distribution chart shows MPs of a column on hover', async ({ page, isMobile }) => {
+  await page.goto(`${PAGE}#konieczny`);
+  const chart = page.getByTestId('latin-hist');
+  await expect(chart).toBeVisible();
+  await expect(chart.locator('.lh-col')).toHaveCount(50);
+  const col = chart.locator('.lh-col:not([data-count="0"])').first();
+  if (isMobile) await col.focus(); else await col.hover();
+  await expect(col.locator('.lh-tip')).toBeVisible();
+  await expect(col.locator('.lh-tip')).toContainText('pkt');
+  const tip = await col.locator('.lh-tip').boundingBox();
+  expect(tip.x).toBeGreaterThanOrEqual(0);
+  expect(tip.x + tip.width).toBeLessThanOrEqual(page.viewportSize().width);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});

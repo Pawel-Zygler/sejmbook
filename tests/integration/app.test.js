@@ -163,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'LinkedIn przy nazwisku posła';
-const NEWEST_LINE = 'Profile: LinkedIn przy nazwisku posła';
+const NEWEST = 'Wykres rozkładu: cywilizacja łacińska';
+const NEWEST_LINE = 'Rankingi: Wykres rozkładu: cywilizacja łacińska';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -1077,6 +1077,19 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     expect($$('[data-testid="latin-clubs"] tbody tr').length).toBeGreaterThan(5);
     click($('[data-testid="latin-clubs"] [data-action="latin-club"][data-club="KO"]'));
     expect(rows().every((tr) => mpsData.mps.find((m) => m.id === Number(tr.dataset.mpId)).club === 'KO')).toBe(true);
+  });
+
+  it('ranking page shows the distribution chart; it follows the sort key and the club filter', () => {
+    nav('#konieczny');
+    const total = () => $$('[data-testid="latin-hist"] .lh-col').reduce((s, li) => s + Number(li.dataset.count), 0);
+    expect($('[data-testid="latin-hist"]').dataset.key).toBe('total');
+    expect(total()).toBe(mpsData.mps.filter((m) => m.active).length);
+    click($('[data-action="latin-sort"][data-sort="p3"]'));
+    expect($('[data-testid="latin-hist"]').dataset.key).toBe('p3');
+    click($('[data-action="latin-club"][data-club="Lewica"]'));
+    expect(total()).toBeLessThanOrEqual(mpsData.mps.filter((m) => m.active && m.club === 'Lewica').length);
+    click($('[data-action="latin-sort"][data-sort="total"]'));
+    click($('[data-action="latin-club"][data-club=""]'));
   });
 
   it('is linked from the sitemap and the footer', () => {
