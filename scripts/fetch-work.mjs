@@ -17,10 +17,11 @@ const json = async (p) => JSON.parse(await readFile(new URL(p, root), 'utf8'));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const now = new Date().getFullYear();
 
-async function getJson(url, tries = 8, init = {}) {
+async function getJson(url, tries = 8, init = {}, timeoutMs = 60000) {
   for (let i = 1; ; i++) {
     try {
-      const res = await fetch(url, { ...init, headers: { 'User-Agent': UA, Accept: 'application/json', ...(init.headers ?? {}) } });
+      // A fresh timeout for every try: a shared signal would abort all retries at once.
+      const res = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs), headers: { 'User-Agent': UA, Accept: 'application/json', ...(init.headers ?? {}) } });
       if (res.status === 429) { const wait = Number(res.headers.get('retry-after')) || 10 * i; await sleep(wait * 1000); throw new Error('HTTP 429'); }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.json();
@@ -77,7 +78,7 @@ for (const p of people) {
 
 // 3) The rest. a) Full date of birth: one SPARQL query per 80 dates finds every person on Wikidata born that day
 // with an article on Polish Wikipedia; we accept the one whose name matches (first name and surname).
-const sparql = (q) => getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', signal: AbortSignal.timeout(120000), headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` });
+const sparql = (q) => getJson('https://query.wikidata.org/sparql', 6, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json' }, body: `query=${encodeURIComponent(q)}` }, 120000);
 const id = (uri) => uri.split('/').pop();
 const byDate = people.filter((p) => !p.title && p.birthDate && p.kind !== 'urzad');
 const dates = [...new Set(byDate.map((p) => p.birthDate))];
@@ -147,8 +148,8 @@ for (let i = 0; i < titles.length; i += 20) {
 // 5) Wikidata P108 (employer) with dates, for every person with an item.
 const personQids = [...new Set(people.map((p) => p.qid).filter(Boolean))];
 const p108 = new Map();
-for (let i = 0; i < personQids.length; i += 150) {
-  const r = await sparql(`SELECT ?p ?emp ?empLabel ?art ?start ?end WHERE { VALUES ?p { ${personQids.slice(i, i + 150).map((q) => `wd:${q}`).join(' ')} }
+for (let i = 0; i < personQids.length; i += 50) {
+  const r = await sparql(`SELECT ?p ?emp ?empLabel ?art ?start ?end WHERE { VALUES ?p { ${personQids.slice(i, i + 50).map((q) => `wd:${q}`).join(' ')} }
     ?p p:P108 ?st . ?st ps:P108 ?emp . OPTIONAL { ?st pq:P580 ?start } OPTIONAL { ?st pq:P582 ?end }
     OPTIONAL { ?art schema:about ?emp ; schema:isPartOf <https://pl.wikipedia.org/> }
     SERVICE wikibase:label { bd:serviceParam wikibase:language "pl,en". } }`);
