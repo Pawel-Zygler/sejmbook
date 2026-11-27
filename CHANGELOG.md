@@ -2,6 +2,11 @@
 
 Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
 
+## 2026-11-28
+
+- **Profile: Cywilizacja łacińska: karta urzędników.** Ministrowie i prezydent dostali eksperymentalną kartę Konecznego liczoną z projektów ustaw, które złożył ich rząd lub urząd.
+- **Rankingi: Cywilizacja łacińska: ustawy zatwierdzone.** Sporne ustawy dostały kierunek według testu a priori / a posteriori, więc liczą się już w wyniku.
+
 ## 2026-11-27
 
 - **Rankingi: Frequent Flyer bez szacunków.** Ranking Frequent Flyer pokazuje już tylko pewne dane: liczbę lotów i artykuły, bez szacowanych kilometrów.

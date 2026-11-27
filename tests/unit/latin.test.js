@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS, latinHistogram, percentile, consensusOf, isConsensus, percentiles } from '../../src/lib/latin.js';
+import { buildLatinLaws, clubIndependence, mpLatin, levelOf, VOTE_POINTS, rankLatin, clubLatin, bandOf, sortValue, RANK_BANDS, latinHistogram, percentile, consensusOf, isConsensus, percentiles, lawAuthor } from '../../src/lib/latin.js';
 import { renderProfileLatin, latinVisibleFor, LATIN_PILOT_CLUBS, renderLatinRanking, latinResults, latinScore, attendancePctFor, latinDistChart, howComputed } from '../../src/ui/latin-view.js';
 import cls from '../../data/latin-classification.json';
 import latinData from '../../data/latin.json';
@@ -131,7 +131,7 @@ describe('data contract: Latin civilisation card', () => {
     expect(cls.experimental).toBe(true);
   });
   it('data/latin.json is in sync with the classification and the votes', () => {
-    expect(latinData.laws).toEqual(buildLatinLaws(cls, lawData, taxData, descriptions));
+    expect(latinData.laws).toEqual(buildLatinLaws(cls, lawData, taxData, descriptions).map((l) => ({ ...l, author: lawAuthor(descriptions.laws[l.process]) })));
     expect(Object.keys(clubIndependence(lawData, mpsData.mps))).toEqual(Object.keys(latinData.independence));
   });
   it('covers every pillar 1–3 and Krzysztof Bosak gets a score', () => {

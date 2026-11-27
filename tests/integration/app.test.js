@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Frequent Flyer bez szacunków';
-const NEWEST_LINE = 'Rankingi: Frequent Flyer bez szacunków';
+const NEWEST = 'Cywilizacja łacińska: karta urzędników';
+const NEWEST_LINE = 'Profile: Cywilizacja łacińska: karta urzędników';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -637,6 +637,25 @@ describe('Państwo: III RP hierarchy', () => {
     expect($('.profile-top h1').textContent).toBe('Karol Nawrocki');
     expect($('.official-head')).toBeNull();
     expect($('[data-testid="spectrum"] h2').textContent).toBe('Spektrum partyjne');
+  });
+  it('shows the experimental Koneczny card on officials: from the bills of their government, also under the MP profile of a minister', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, today: '2026-11-27' });
+    nav('#urzad-adam-bodnar');
+    const card = $('[data-testid="official-latin"]');
+    expect(card).not.toBeNull();
+    expect(card.dataset.experimental).toBe('true');
+    expect(card.textContent).toContain('karta urzędnika');
+    expect(Number($('[data-testid="official-latin-total-value"]').textContent)).toBeGreaterThan(0);
+    expect(card.querySelectorAll('li.latin-law[data-author="rzad"]').length).toBeGreaterThan(10);
+    nav('#urzad-karol-nawrocki');
+    expect($('[data-testid="official-latin-few"]')).not.toBeNull();
+    nav('#urzad-lech-walesa');
+    expect($('[data-testid="official-latin"]')).toBeNull();
+    nav(`#posel-${mpsData.mps.find((m) => m.name === 'Andrzej Domański').id}`);
+    expect($('[data-testid="profile-latin"]')).not.toBeNull();
+    expect($('[data-testid="official-latin"]')).not.toBeNull();
   });
   it('gives presidents and prime ministers profiles with all their roles', () => {
     nav('#urzad-lech-kaczynski');

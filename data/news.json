@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-konieczny-urzednicy",
+      "date": "2026-11-28",
+      "title": "Cywilizacja łacińska: karta urzędników",
+      "section": "Profile",
+      "body": "Ministrowie i prezydent dostali eksperymentalną kartę Konecznego liczoną z projektów ustaw, które złożył ich rząd lub urząd.",
+      "link": {
+        "href": "#urzad-adam-bodnar",
+        "label": "Zobacz"
+      }
+    },
+    {
+      "id": "2026-11-28-konieczny-zatwierdzone",
+      "date": "2026-11-28",
+      "title": "Cywilizacja łacińska: ustawy zatwierdzone",
+      "section": "Rankingi",
+      "body": "Sporne ustawy dostały kierunek według testu a priori / a posteriori, więc liczą się już w wyniku.",
+      "link": {
+        "href": "#konieczny",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-flyer-bez-szacunkow",
       "date": "2026-11-27",
       "title": "Frequent Flyer bez szacunków",

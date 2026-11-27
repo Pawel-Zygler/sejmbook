@@ -1,4 +1,4 @@
-import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sortValue, isConsensus } from '../lib/latin.js';
+import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sortValue, isConsensus, officialLatin, OFFICIAL_MIN } from '../lib/latin.js';
 import { hrefFor } from '../lib/router.js';
 import { lawHref, lawLinkTitle, pdfMark } from '../lib/law-pdf.js';
 import { VOTE_LABEL, votingUrl } from '../lib/taxes.js';
@@ -127,6 +127,64 @@ export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS
     ${pillars.join('')}
     ${sovSection(data.sovereignty, r.sov, tip)}
     <p class="latin-note" data-testid="latin-disclaimer">${esc(data.disclaimer)}</p>
+  </article>`;
+}
+
+const AUTHOR_LABEL = { rzad: 'projekt rządu', prezydent: 'projekt prezydenta' };
+
+function officialLawItem({ law, role, points }) {
+  const pts = points == null ? 'nie liczy się' : `${points} pkt`;
+  return `<li class="tax-law latin-law" data-process="${esc(law.process)}" data-direction="${esc(law.direction)}" data-author="${esc(law.author)}">
+    <div class="tax-law-top"><span class="tax-vote tax-v-Y">${esc(AUTHOR_LABEL[law.author])}</span><span class="latin-dir latin-dir-${esc(law.direction)}">${esc(DIR_LABEL[law.direction])}</span><time datetime="${esc(law.date)}">${esc(law.date)}</time><span class="latin-pts">${esc(pts)}</span></div>
+    <a class="tax-law-title" href="${esc(lawHref(law))}" target="_blank" rel="noopener" title="${esc(lawLinkTitle(law))}">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}${pdfMark(law)}</a>
+    <span class="tax-law-why">${esc(law.reason)}${SOURCE_LABEL[law.source] ? ` <em class="muted">(${esc(SOURCE_LABEL[law.source])})</em>` : ''}</span>
+    <span class="tax-law-meta">w dniu głosowania: ${esc(role.office)} · <a href="${esc(votingUrl(law))}" target="_blank" rel="noopener">głosowanie nr ${law.votingNumber}, pos. ${law.sitting}</a></span>
+  </li>`;
+}
+
+function officialPillar(def, p) {
+  const sum = p.counted
+    ? `${p.score}/100 z ${lawsWord(p.counted)}${p.contested ? `, ${p.contested} spornych` : ''}`
+    : p.contested ? `${p.contested} spornych, nieliczonych` : 'brak projektów w tym filarze';
+  return `<section class="latin-pillar" data-pillar="${def.id}" data-testid="official-latin-pillar-${def.id}">
+    <h3><span>${def.id}. ${esc(def.name)}</span><b class="latin-pillar-score" data-testid="official-latin-pillar-${def.id}-score">${p.score ?? '–'}</b></h3>
+    ${scoreBar(p.score)}
+    <p class="latin-sum">${esc(sum)}</p>
+    ${p.items.length ? `<details class="tax-list"><summary>Pokaż ${lawsWord(p.items.length)}</summary><ol>${p.items.map(officialLawItem).join('')}</ol></details>` : ''}
+  </section>`;
+}
+
+/**
+ * Experimental card for state officials (Pawel, 2026-11-28: "rób kolejny etap"): bills their government or the President
+ * submitted in the X term, scored on pillars 1–3. On the state profile of every official and, for ministers who are MPs,
+ * under their MP card. `person` = a person of the state hierarchy ({ name, roles }).
+ */
+export function renderOfficialLatin(ctx, person, { infoTip } = {}) {
+  const data = ctx.latin;
+  const r = person && data?.laws?.length ? officialLatin(data, person.roles) : null;
+  if (!r) return '';
+  const tip = (text, href = '', label = 'Jak liczymy') => (infoTip ? infoTip(text, href, label) : '');
+  const defs = new Map(data.pillars.map((d) => [d.id, d]));
+  const how = `Urzędnik nie głosuje w Sejmie, więc liczymy projekty ustaw, które złożył jego organ: projekt rządu liczy się każdemu członkowi rządu w dniu ostatecznego głosowania w Sejmie, projekt prezydenta prezydentowi. Złożenie projektu traktujemy jak głos za: ustawa zgodna = 1 pkt, niezgodna = 0, sporne pokazujemy bez liczenia. Filar 4 (obecność, niezależność od klubu) nie dotyczy urzędników. Wynik = średnia filarów, liczony od ${OFFICIAL_MIN} projektów. ${data.approval ?? ''}`;
+  const s = r.sov;
+  const sovDef = data.sovereignty;
+  const sov = sovDef && s.items.length ? `<section class="latin-sov" data-testid="official-latin-sov">
+    <h3><span>${esc(sovDef.title)} <em class="muted">· osobny wskaźnik</em> ${tip(`${sovDef.question} Dla urzędnika: projekt, który oddaje kompetencje = 0 pkt, zatrzymuje = 1 pkt; sporne nie liczą się. Liczymy też ustawy przyjęte niemal jednogłośnie, bo urzędnik je zaproponował. ${sovDef.disclaimer}`, 'https://api.sejm.gov.pl/sejm/term10/processes', 'Suwerenność: jak liczymy')}</span><b class="latin-pillar-score" data-testid="official-latin-sov-score">${s.score ?? '–'}</b></h3>
+    ${scoreBar(s.score)}
+    <p class="latin-sum">${esc(s.counted ? `${s.score}/100 z ${lawsWord(s.counted)}${s.contested ? `, ${s.contested} spornych` : ''}` : `${s.contested} spornych, nieliczonych`)}. 100 = kompetencje zostają w Polsce, 0 = przechodzą do UE lub organów zewnętrznych.</p>
+    <details class="tax-list"><summary>Pokaż ${lawsWord(s.items.length)}</summary><ol>${s.items.map((x) => officialLawItem(x)).join('')}</ol></details>
+  </section>` : '';
+  return `<article class="post tax-post latin-post" data-testid="official-latin" data-experimental="true">
+    <span class="latin-ribbon">Eksperymentalne</span>
+    <header class="post-head"><div><strong>${esc(data.title)}: projekty ustaw</strong> ${tip(how, 'https://api.sejm.gov.pl/sejm/term10/processes')}<small>według Feliksa Konecznego, X kadencja · karta urzędnika, eksperymentalna</small></div></header>
+    <div class="latin-total" data-testid="official-latin-total">
+      ${r.total != null
+        ? `<p class="latin-big"><b data-testid="official-latin-total-value">${r.total}</b><span>/100</span></p><span class="latin-level latin-level-${r.level.id}">${esc(r.level.label)}</span>`
+        : `<p class="latin-sum" data-testid="official-latin-few">Za mało projektów do wyniku (${r.counted} z ${OFFICIAL_MIN} potrzebnych).</p>`}
+    </div>
+    ${r.pillars.map((p) => officialPillar(defs.get(p.id), p)).join('')}
+    ${sov}
+    <p class="latin-note">${esc(data.disclaimer)}</p>
   </article>`;
 }
 

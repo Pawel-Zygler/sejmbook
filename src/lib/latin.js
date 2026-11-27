@@ -230,3 +230,59 @@ export function latinHistogram(values, size = 2) {
   for (const v of vals) bins[Math.min(n - 1, Math.max(0, Math.floor(v / size)))].count++;
   return { bins, n: vals.length, max: Math.max(0, ...bins.map((b) => b.count)), p10: percentile(vals, 10), p50: percentile(vals, 50), p90: percentile(vals, 90) };
 }
+
+/**
+ * Who submitted a bill, from its Sejm project title (data/raw/law-descriptions.json): 'rzad' for "Rządowy projekt…",
+ * 'prezydent' for "Przedstawiony przez Prezydenta…", null for MPs', committees', the Senate's and citizens' bills.
+ */
+export function lawAuthor(desc) {
+  const t = desc?.projectTitle ?? '';
+  if (/^Rządowy\b/i.test(t)) return 'rzad';
+  if (/Prezydent/i.test(t)) return 'prezydent';
+  return null;
+}
+
+/** Which roles carry a bill of each author: any member of the government, or the President. */
+const AUTHOR_ROLE = { rzad: (r) => r.gov != null, prezydent: (r) => r.officeId === 'prezydent' };
+const coveringRole = (roles, law) => roles.find((r) => AUTHOR_ROLE[law.author]?.(r) && r.from && r.from <= law.date && (!r.to || law.date <= r.to)) ?? null;
+
+/**
+ * State officials (Pawel, 2026-11-28: "rób kolejny etap"). An official does not vote in the Sejm, so the card counts
+ * the bills their body submitted: a government bill counts for every member of that government on the day of the Sejm's
+ * final vote, a presidential bill for the President. Submitting a bill = voting for it: zgodna = 1, niezgodna = 0,
+ * "sporna" listed but not counted. Pillar 4 (attendance, independence from the club) does not apply. Total = mean of
+ * pillars with at least one bill, only from OFFICIAL_MIN counted bills. Sovereignty (separate): oddaje = 0, zatrzymuje = 1. Returns null without any bill.
+ * `roles` = [{ officeId, gov, from, to, office }] from the state hierarchy (src/lib/government.js).
+ */
+export const OFFICIAL_MIN = 3;
+export function officialLatin(latin, roles) {
+  if (!latin?.laws?.length || !roles?.length) return null;
+  const pillars = [1, 2, 3].map((id) => ({ id, points: 0, counted: 0, contested: 0, items: [] }));
+  for (const law of latin.laws) {
+    const role = law.author ? coveringRole(roles, law) : null;
+    if (!role) continue;
+    const p = pillars[law.pillar - 1];
+    let pts = null;
+    if (law.direction === 'sporna') p.contested++;
+    else { pts = law.direction === 'zgodna' ? 1 : 0; p.points += pts; p.counted++; }
+    p.items.push({ law, role, points: pts });
+  }
+  if (!pillars.some((p) => p.items.length)) return null;
+  const out = pillars.map((p) => ({ ...p, score: p.counted ? round((100 * p.points) / p.counted) : null }));
+  const scored = out.filter((p) => p.score != null);
+  // Below OFFICIAL_MIN counted bills the total says more about chance than about the official, so it stays empty.
+  const counted = out.reduce((a, p) => a + p.counted, 0);
+  const total = scored.length && counted >= OFFICIAL_MIN ? round(scored.reduce((a, p) => a + (100 * p.points) / p.counted, 0) / scored.length) : null;
+  const sov = { points: 0, counted: 0, contested: 0, items: [] };
+  for (const law of latin.sovereignty?.laws ?? []) {
+    const role = law.author ? coveringRole(roles, law) : null;
+    if (!role) continue;
+    let pts = null;
+    if (law.direction === 'oddaje') pts = 0;
+    else if (law.direction === 'zatrzymuje') pts = 1;
+    else sov.contested++;
+    if (pts != null) { sov.points += pts; sov.counted++; }
+    sov.items.push({ law, role, points: pts });
+  }
+  return { total, counted, level: total == null ? null : levelOf(total), pillars: out, sov: { ...sov, score: sov.counted ? round((100 * sov.points) / sov.counted) : null } };
+}

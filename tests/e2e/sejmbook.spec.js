@@ -411,6 +411,18 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
   }
 });
 
+test('Cywilizacja łacińska: card of an official from their government\'s bills', async ({ page }) => {
+  await page.goto(`${PAGE}#urzad-adam-bodnar`);
+  const card = page.locator('[data-testid="official-latin"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Eksperymentalne');
+  await expect(page.locator('[data-testid="official-latin-total-value"]')).toHaveText(/^\d+$/);
+  await card.locator('[data-testid="official-latin-pillar-2"] summary').click();
+  await expect(card.locator('[data-testid="official-latin-pillar-2"] li.latin-law').first()).toContainText('projekt rządu');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
 test('Feed: open a voting to see clubs, switch the time window', async ({ page }) => {
   await page.goto(PAGE);
   await expect(page.locator('.topnav a[data-nav="home"]')).toHaveText('Feed');
