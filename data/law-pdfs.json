@@ -1,5 +1,2935 @@
 {
- "source": "",
- "fetchedAt": null,
- "laws": {}
+ "source": "Teksty ustaw z Dziennika Ustaw (https://api.sejm.gov.pl/eli/acts/DU) i druki sejmowe (https://api.sejm.gov.pl/sejm/term10/prints), API Sejmu",
+ "fetchedAt": "2026-11-27",
+ "laws": {
+  "30": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1615/text.pdf",
+   "kind": "dzu"
+  },
+  "31": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2730/text.pdf",
+   "kind": "dzu"
+  },
+  "32": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1243/text.pdf",
+   "kind": "dzu"
+  },
+  "63": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2626/text.pdf",
+   "kind": "dzu"
+  },
+  "72": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2760/text.pdf",
+   "kind": "dzu"
+  },
+  "74": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2776/text.pdf",
+   "kind": "dzu"
+  },
+  "75": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/721/text.pdf",
+   "kind": "dzu"
+  },
+  "92": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2699/text.pdf",
+   "kind": "dzu"
+  },
+  "106": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2768/text.pdf",
+   "kind": "dzu"
+  },
+  "125": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/122/text.pdf",
+   "kind": "dzu"
+  },
+  "127": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/2778/text.pdf",
+   "kind": "dzu"
+  },
+  "128": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/128/128.pdf",
+   "kind": "druk",
+   "print": "128"
+  },
+  "141": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/124/text.pdf",
+   "kind": "dzu"
+  },
+  "142": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/123/text.pdf",
+   "kind": "dzu"
+  },
+  "171": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/227/text.pdf",
+   "kind": "dzu"
+  },
+  "176": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/176/176.pdf",
+   "kind": "druk",
+   "print": "176"
+  },
+  "185": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/185/185.pdf",
+   "kind": "druk",
+   "print": "185"
+  },
+  "188": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/232/text.pdf",
+   "kind": "dzu"
+  },
+  "199": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/414/text.pdf",
+   "kind": "dzu"
+  },
+  "201": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/467/text.pdf",
+   "kind": "dzu"
+  },
+  "204": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/492/text.pdf",
+   "kind": "dzu"
+  },
+  "208": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/653/text.pdf",
+   "kind": "dzu"
+  },
+  "209": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1228/text.pdf",
+   "kind": "dzu"
+  },
+  "211": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1246/text.pdf",
+   "kind": "dzu"
+  },
+  "219": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/219/219.pdf",
+   "kind": "druk",
+   "print": "219"
+  },
+  "223": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/223/223.pdf",
+   "kind": "druk",
+   "print": "223"
+  },
+  "227": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/653/text.pdf",
+   "kind": "dzu"
+  },
+  "231": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/651/text.pdf",
+   "kind": "dzu"
+  },
+  "232": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1820/text.pdf",
+   "kind": "dzu"
+  },
+  "233": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/233/233.pdf",
+   "kind": "druk",
+   "print": "233"
+  },
+  "241": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/731/text.pdf",
+   "kind": "dzu"
+  },
+  "242": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/619/text.pdf",
+   "kind": "dzu"
+  },
+  "248": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/696/text.pdf",
+   "kind": "dzu"
+  },
+  "253": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/253/253.pdf",
+   "kind": "druk",
+   "print": "253"
+  },
+  "254": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/254/254.pdf",
+   "kind": "druk",
+   "print": "254"
+  },
+  "257": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/647/text.pdf",
+   "kind": "dzu"
+  },
+  "258": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/258/258.pdf",
+   "kind": "druk",
+   "print": "258"
+  },
+  "268": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/850/text.pdf",
+   "kind": "dzu"
+  },
+  "269": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/834/text.pdf",
+   "kind": "dzu"
+  },
+  "274": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/743/text.pdf",
+   "kind": "dzu"
+  },
+  "275": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/863/text.pdf",
+   "kind": "dzu"
+  },
+  "276": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1092/text.pdf",
+   "kind": "dzu"
+  },
+  "277": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/649/text.pdf",
+   "kind": "dzu"
+  },
+  "293": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/742/text.pdf",
+   "kind": "dzu"
+  },
+  "294": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1148/text.pdf",
+   "kind": "dzu"
+  },
+  "296": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/296/296.pdf",
+   "kind": "druk",
+   "print": "296"
+  },
+  "303": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/851/text.pdf",
+   "kind": "dzu"
+  },
+  "311": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/879/text.pdf",
+   "kind": "dzu"
+  },
+  "316": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/316/316.pdf",
+   "kind": "druk",
+   "print": "316"
+  },
+  "317": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/928/text.pdf",
+   "kind": "dzu"
+  },
+  "318": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/878/text.pdf",
+   "kind": "dzu"
+  },
+  "319": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/858/text.pdf",
+   "kind": "dzu"
+  },
+  "320": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/862/text.pdf",
+   "kind": "dzu"
+  },
+  "321": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/321/321.pdf",
+   "kind": "druk",
+   "print": "321"
+  },
+  "326": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1827/text.pdf",
+   "kind": "dzu"
+  },
+  "341": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/852/text.pdf",
+   "kind": "dzu"
+  },
+  "342": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/854/text.pdf",
+   "kind": "dzu"
+  },
+  "346": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/859/text.pdf",
+   "kind": "dzu"
+  },
+  "347": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1006/text.pdf",
+   "kind": "dzu"
+  },
+  "348": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1090/text.pdf",
+   "kind": "dzu"
+  },
+  "351": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/351/351.pdf",
+   "kind": "druk",
+   "print": "351"
+  },
+  "382": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/885/text.pdf",
+   "kind": "dzu"
+  },
+  "406": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1254/text.pdf",
+   "kind": "dzu"
+  },
+  "407": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1246/text.pdf",
+   "kind": "dzu"
+  },
+  "410": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/410/410.pdf",
+   "kind": "druk",
+   "print": "410"
+  },
+  "420": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1091/text.pdf",
+   "kind": "dzu"
+  },
+  "423": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1221/text.pdf",
+   "kind": "dzu"
+  },
+  "424": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1222/text.pdf",
+   "kind": "dzu"
+  },
+  "430": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1081/text.pdf",
+   "kind": "dzu"
+  },
+  "437": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1237/text.pdf",
+   "kind": "dzu"
+  },
+  "440": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/479/text.pdf",
+   "kind": "dzu"
+  },
+  "445": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1761/text.pdf",
+   "kind": "dzu"
+  },
+  "471": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1248/text.pdf",
+   "kind": "dzu"
+  },
+  "472": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1089/text.pdf",
+   "kind": "dzu"
+  },
+  "494": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1831/text.pdf",
+   "kind": "dzu"
+  },
+  "496": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1672/text.pdf",
+   "kind": "dzu"
+  },
+  "497": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1230/text.pdf",
+   "kind": "dzu"
+  },
+  "545": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1166/text.pdf",
+   "kind": "dzu"
+  },
+  "546": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1165/text.pdf",
+   "kind": "dzu"
+  },
+  "547": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1155/text.pdf",
+   "kind": "dzu"
+  },
+  "548": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1229/text.pdf",
+   "kind": "dzu"
+  },
+  "553": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1565/text.pdf",
+   "kind": "dzu"
+  },
+  "554": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1597/text.pdf",
+   "kind": "dzu"
+  },
+  "556": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/178/text.pdf",
+   "kind": "dzu"
+  },
+  "558": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/558/558.pdf",
+   "kind": "druk",
+   "print": "558"
+  },
+  "560": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/28/text.pdf",
+   "kind": "dzu"
+  },
+  "573": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/31/text.pdf",
+   "kind": "dzu"
+  },
+  "589": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1559/text.pdf",
+   "kind": "dzu"
+  },
+  "600": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1635/text.pdf",
+   "kind": "dzu"
+  },
+  "601": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1593/text.pdf",
+   "kind": "dzu"
+  },
+  "602": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1544/text.pdf",
+   "kind": "dzu"
+  },
+  "603": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1692/text.pdf",
+   "kind": "dzu"
+  },
+  "604": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/604/604.pdf",
+   "kind": "druk",
+   "print": "604"
+  },
+  "605": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1562/text.pdf",
+   "kind": "dzu"
+  },
+  "606": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1558/text.pdf",
+   "kind": "dzu"
+  },
+  "607": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1674/text.pdf",
+   "kind": "dzu"
+  },
+  "608": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/608/608.pdf",
+   "kind": "druk",
+   "print": "608"
+  },
+  "610": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1436/text.pdf",
+   "kind": "dzu"
+  },
+  "611": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/611/611.pdf",
+   "kind": "druk",
+   "print": "611"
+  },
+  "622": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1572/text.pdf",
+   "kind": "dzu"
+  },
+  "643": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/643/643.pdf",
+   "kind": "druk",
+   "print": "643"
+  },
+  "650": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1535/text.pdf",
+   "kind": "dzu"
+  },
+  "655": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1560/text.pdf",
+   "kind": "dzu"
+  },
+  "656": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1721/text.pdf",
+   "kind": "dzu"
+  },
+  "661": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1684/text.pdf",
+   "kind": "dzu"
+  },
+  "664": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1907/text.pdf",
+   "kind": "dzu"
+  },
+  "665": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1494/text.pdf",
+   "kind": "dzu"
+  },
+  "670": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1781/text.pdf",
+   "kind": "dzu"
+  },
+  "671": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1527/text.pdf",
+   "kind": "dzu"
+  },
+  "672": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1473/text.pdf",
+   "kind": "dzu"
+  },
+  "673": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1585/text.pdf",
+   "kind": "dzu"
+  },
+  "674": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1685/text.pdf",
+   "kind": "dzu"
+  },
+  "687": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/63/text.pdf",
+   "kind": "dzu"
+  },
+  "692": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1681/text.pdf",
+   "kind": "dzu"
+  },
+  "693": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1925/text.pdf",
+   "kind": "dzu"
+  },
+  "702": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1762/text.pdf",
+   "kind": "dzu"
+  },
+  "703": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1696/text.pdf",
+   "kind": "dzu"
+  },
+  "722": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1688/text.pdf",
+   "kind": "dzu"
+  },
+  "726": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1863/text.pdf",
+   "kind": "dzu"
+  },
+  "727": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1764/text.pdf",
+   "kind": "dzu"
+  },
+  "741": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1757/text.pdf",
+   "kind": "dzu"
+  },
+  "742": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/742/742.pdf",
+   "kind": "druk",
+   "print": "742"
+  },
+  "743": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1881/text.pdf",
+   "kind": "dzu"
+  },
+  "744": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1847/text.pdf",
+   "kind": "dzu"
+  },
+  "745": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1976/text.pdf",
+   "kind": "dzu"
+  },
+  "746": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1975/text.pdf",
+   "kind": "dzu"
+  },
+  "747": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1974/text.pdf",
+   "kind": "dzu"
+  },
+  "748": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/748/748.pdf",
+   "kind": "druk",
+   "print": "748"
+  },
+  "750": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/39/text.pdf",
+   "kind": "dzu"
+  },
+  "751": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1853/text.pdf",
+   "kind": "dzu"
+  },
+  "752": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1855/text.pdf",
+   "kind": "dzu"
+  },
+  "753": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1840/text.pdf",
+   "kind": "dzu"
+  },
+  "754": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1754/text.pdf",
+   "kind": "dzu"
+  },
+  "755": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1755/text.pdf",
+   "kind": "dzu"
+  },
+  "756": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1756/text.pdf",
+   "kind": "dzu"
+  },
+  "757": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1897/text.pdf",
+   "kind": "dzu"
+  },
+  "759": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1933/text.pdf",
+   "kind": "dzu"
+  },
+  "760": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1911/text.pdf",
+   "kind": "dzu"
+  },
+  "761": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1841/text.pdf",
+   "kind": "dzu"
+  },
+  "762": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1871/text.pdf",
+   "kind": "dzu"
+  },
+  "763": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1823/text.pdf",
+   "kind": "dzu"
+  },
+  "764": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1915/text.pdf",
+   "kind": "dzu"
+  },
+  "765": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/146/text.pdf",
+   "kind": "dzu"
+  },
+  "766": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1834/text.pdf",
+   "kind": "dzu"
+  },
+  "777": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1965/text.pdf",
+   "kind": "dzu"
+  },
+  "800": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1827/text.pdf",
+   "kind": "dzu"
+  },
+  "801": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1824/text.pdf",
+   "kind": "dzu"
+  },
+  "802": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1717/text.pdf",
+   "kind": "dzu"
+  },
+  "803": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/129/text.pdf",
+   "kind": "dzu"
+  },
+  "804": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1836/text.pdf",
+   "kind": "dzu"
+  },
+  "810": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/179/text.pdf",
+   "kind": "dzu"
+  },
+  "811": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1828/text.pdf",
+   "kind": "dzu"
+  },
+  "812": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1914/text.pdf",
+   "kind": "dzu"
+  },
+  "813": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1940/text.pdf",
+   "kind": "dzu"
+  },
+  "829": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1088/text.pdf",
+   "kind": "dzu"
+  },
+  "835": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1696/text.pdf",
+   "kind": "dzu"
+  },
+  "838": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/838/838.pdf",
+   "kind": "druk",
+   "print": "838"
+  },
+  "839": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1826/text.pdf",
+   "kind": "dzu"
+  },
+  "840": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1926/text.pdf",
+   "kind": "dzu"
+  },
+  "841": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1831/text.pdf",
+   "kind": "dzu"
+  },
+  "842": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1964/text.pdf",
+   "kind": "dzu"
+  },
+  "852": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1961/text.pdf",
+   "kind": "dzu"
+  },
+  "865": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/865/865.pdf",
+   "kind": "druk",
+   "print": "865"
+  },
+  "868": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/346/text.pdf",
+   "kind": "dzu"
+  },
+  "876": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/876/876.pdf",
+   "kind": "druk",
+   "print": "876"
+  },
+  "878": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/172/text.pdf",
+   "kind": "dzu"
+  },
+  "879": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/240/text.pdf",
+   "kind": "dzu"
+  },
+  "880": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/641/text.pdf",
+   "kind": "dzu"
+  },
+  "895": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/216/text.pdf",
+   "kind": "dzu"
+  },
+  "896": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/222/text.pdf",
+   "kind": "dzu"
+  },
+  "897": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1946/text.pdf",
+   "kind": "dzu"
+  },
+  "906": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/304/text.pdf",
+   "kind": "dzu"
+  },
+  "909": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1169/text.pdf",
+   "kind": "dzu"
+  },
+  "923": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/923/923.pdf",
+   "kind": "druk",
+   "print": "923"
+  },
+  "924": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/389/text.pdf",
+   "kind": "dzu"
+  },
+  "925": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/165/text.pdf",
+   "kind": "dzu"
+  },
+  "926": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/926/926.pdf",
+   "kind": "druk",
+   "print": "926"
+  },
+  "927": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/159/text.pdf",
+   "kind": "dzu"
+  },
+  "932": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/295/text.pdf",
+   "kind": "dzu"
+  },
+  "933": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/409/text.pdf",
+   "kind": "dzu"
+  },
+  "934": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/807/text.pdf",
+   "kind": "dzu"
+  },
+  "935": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/935/935.pdf",
+   "kind": "druk",
+   "print": "935"
+  },
+  "948": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf",
+   "kind": "dzu"
+  },
+  "949": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/621/text.pdf",
+   "kind": "dzu"
+  },
+  "950": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/619/text.pdf",
+   "kind": "dzu"
+  },
+  "951": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/622/text.pdf",
+   "kind": "dzu"
+  },
+  "952": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/374/text.pdf",
+   "kind": "dzu"
+  },
+  "953": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/289/text.pdf",
+   "kind": "dzu"
+  },
+  "954": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/413/text.pdf",
+   "kind": "dzu"
+  },
+  "955": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/393/text.pdf",
+   "kind": "dzu"
+  },
+  "956": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/303/text.pdf",
+   "kind": "dzu"
+  },
+  "964": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/497/text.pdf",
+   "kind": "dzu"
+  },
+  "981": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/340/text.pdf",
+   "kind": "dzu"
+  },
+  "982": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/427/text.pdf",
+   "kind": "dzu"
+  },
+  "983": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/799/text.pdf",
+   "kind": "dzu"
+  },
+  "988": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/526/text.pdf",
+   "kind": "dzu"
+  },
+  "989": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/368/text.pdf",
+   "kind": "dzu"
+  },
+  "992": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/352/text.pdf",
+   "kind": "dzu"
+  },
+  "993": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/820/text.pdf",
+   "kind": "dzu"
+  },
+  "994": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/524/text.pdf",
+   "kind": "dzu"
+  },
+  "995": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/630/text.pdf",
+   "kind": "dzu"
+  },
+  "1008": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/290/text.pdf",
+   "kind": "dzu"
+  },
+  "1009": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/321/text.pdf",
+   "kind": "dzu"
+  },
+  "1034": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/525/text.pdf",
+   "kind": "dzu"
+  },
+  "1038": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/523/text.pdf",
+   "kind": "dzu"
+  },
+  "1058": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/637/text.pdf",
+   "kind": "dzu"
+  },
+  "1074": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/603/text.pdf",
+   "kind": "dzu"
+  },
+  "1075": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/631/text.pdf",
+   "kind": "dzu"
+  },
+  "1076": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1021/text.pdf",
+   "kind": "dzu"
+  },
+  "1078": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1077/text.pdf",
+   "kind": "dzu"
+  },
+  "1090": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/779/text.pdf",
+   "kind": "dzu"
+  },
+  "1107": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1698/text.pdf",
+   "kind": "dzu"
+  },
+  "1108": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/769/text.pdf",
+   "kind": "dzu"
+  },
+  "1109": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1109/1109.pdf",
+   "kind": "druk",
+   "print": "1109"
+  },
+  "1110": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1110/1110.pdf",
+   "kind": "druk",
+   "print": "1110"
+  },
+  "1112": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/758/text.pdf",
+   "kind": "dzu"
+  },
+  "1129": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/531/text.pdf",
+   "kind": "dzu"
+  },
+  "1130": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1130/1130.pdf",
+   "kind": "druk",
+   "print": "1130"
+  },
+  "1131": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1131/1131.pdf",
+   "kind": "druk",
+   "print": "1131"
+  },
+  "1132": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/537/text.pdf",
+   "kind": "dzu"
+  },
+  "1133": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/527/text.pdf",
+   "kind": "dzu"
+  },
+  "1142": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/900/text.pdf",
+   "kind": "dzu"
+  },
+  "1171": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/884/text.pdf",
+   "kind": "dzu"
+  },
+  "1172": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/718/text.pdf",
+   "kind": "dzu"
+  },
+  "1174": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/794/text.pdf",
+   "kind": "dzu"
+  },
+  "1175": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/565/text.pdf",
+   "kind": "dzu"
+  },
+  "1176": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/680/text.pdf",
+   "kind": "dzu"
+  },
+  "1184": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1235/text.pdf",
+   "kind": "dzu"
+  },
+  "1187": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1665/text.pdf",
+   "kind": "dzu"
+  },
+  "1196": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/435/text.pdf",
+   "kind": "dzu"
+  },
+  "1201": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/921/text.pdf",
+   "kind": "dzu"
+  },
+  "1202": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1166/text.pdf",
+   "kind": "dzu"
+  },
+  "1203": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1080/text.pdf",
+   "kind": "dzu"
+  },
+  "1204": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/370/text.pdf",
+   "kind": "dzu"
+  },
+  "1208": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1023/text.pdf",
+   "kind": "dzu"
+  },
+  "1209": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/759/text.pdf",
+   "kind": "dzu"
+  },
+  "1231": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/894/text.pdf",
+   "kind": "dzu"
+  },
+  "1232": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/896/text.pdf",
+   "kind": "dzu"
+  },
+  "1233": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1074/text.pdf",
+   "kind": "dzu"
+  },
+  "1234": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/897/text.pdf",
+   "kind": "dzu"
+  },
+  "1238": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1017/text.pdf",
+   "kind": "dzu"
+  },
+  "1239": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1239/1239.pdf",
+   "kind": "druk",
+   "print": "1239"
+  },
+  "1240": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/905/text.pdf",
+   "kind": "dzu"
+  },
+  "1241": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1019/text.pdf",
+   "kind": "dzu"
+  },
+  "1242": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1157/text.pdf",
+   "kind": "dzu"
+  },
+  "1243": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1243/1243.pdf",
+   "kind": "druk",
+   "print": "1243"
+  },
+  "1244": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1018/text.pdf",
+   "kind": "dzu"
+  },
+  "1246": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1083/text.pdf",
+   "kind": "dzu"
+  },
+  "1261": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1008/text.pdf",
+   "kind": "dzu"
+  },
+  "1262": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1069/text.pdf",
+   "kind": "dzu"
+  },
+  "1263": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1085/text.pdf",
+   "kind": "dzu"
+  },
+  "1264": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1178/text.pdf",
+   "kind": "dzu"
+  },
+  "1265": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1417/text.pdf",
+   "kind": "dzu"
+  },
+  "1266": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/924/text.pdf",
+   "kind": "dzu"
+  },
+  "1267": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/935/text.pdf",
+   "kind": "dzu"
+  },
+  "1268": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1006/text.pdf",
+   "kind": "dzu"
+  },
+  "1269": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/923/text.pdf",
+   "kind": "dzu"
+  },
+  "1270": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1014/text.pdf",
+   "kind": "dzu"
+  },
+  "1271": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/891/text.pdf",
+   "kind": "dzu"
+  },
+  "1272": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1167/text.pdf",
+   "kind": "dzu"
+  },
+  "1280": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1180/text.pdf",
+   "kind": "dzu"
+  },
+  "1281": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1022/text.pdf",
+   "kind": "dzu"
+  },
+  "1282": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1064/text.pdf",
+   "kind": "dzu"
+  },
+  "1284": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1284/1284.pdf",
+   "kind": "druk",
+   "print": "1284"
+  },
+  "1302": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1165/text.pdf",
+   "kind": "dzu"
+  },
+  "1303": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1173/text.pdf",
+   "kind": "dzu"
+  },
+  "1304": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1172/text.pdf",
+   "kind": "dzu"
+  },
+  "1305": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1161/text.pdf",
+   "kind": "dzu"
+  },
+  "1306": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1170/text.pdf",
+   "kind": "dzu"
+  },
+  "1307": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1216/text.pdf",
+   "kind": "dzu"
+  },
+  "1308": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1864/text.pdf",
+   "kind": "dzu"
+  },
+  "1309": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1162/text.pdf",
+   "kind": "dzu"
+  },
+  "1310": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1310/1310.pdf",
+   "kind": "druk",
+   "print": "1310"
+  },
+  "1311": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1556/text.pdf",
+   "kind": "dzu"
+  },
+  "1312": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1543/text.pdf",
+   "kind": "dzu"
+  },
+  "1313": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1313/1313.pdf",
+   "kind": "druk",
+   "print": "1313"
+  },
+  "1314": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1179/text.pdf",
+   "kind": "dzu"
+  },
+  "1315": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1056/text.pdf",
+   "kind": "dzu"
+  },
+  "1319": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1077/text.pdf",
+   "kind": "dzu"
+  },
+  "1342": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1171/text.pdf",
+   "kind": "dzu"
+  },
+  "1343": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1176/text.pdf",
+   "kind": "dzu"
+  },
+  "1344": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/187/text.pdf",
+   "kind": "dzu"
+  },
+  "1346": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1346/1346.pdf",
+   "kind": "druk",
+   "print": "1346"
+  },
+  "1348": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/424/text.pdf",
+   "kind": "dzu"
+  },
+  "1374": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1158/text.pdf",
+   "kind": "dzu"
+  },
+  "1375": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1020/text.pdf",
+   "kind": "dzu"
+  },
+  "1376": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1168/text.pdf",
+   "kind": "dzu"
+  },
+  "1377": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1191/text.pdf",
+   "kind": "dzu"
+  },
+  "1378": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1416/text.pdf",
+   "kind": "dzu"
+  },
+  "1379": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1847/text.pdf",
+   "kind": "dzu"
+  },
+  "1380": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1174/text.pdf",
+   "kind": "dzu"
+  },
+  "1381": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1381/1381.pdf",
+   "kind": "druk",
+   "print": "1381"
+  },
+  "1382": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1077/text.pdf",
+   "kind": "dzu"
+  },
+  "1383": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/973/text.pdf",
+   "kind": "dzu"
+  },
+  "1384": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1445/text.pdf",
+   "kind": "dzu"
+  },
+  "1387": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1387/1387.pdf",
+   "kind": "druk",
+   "print": "1387"
+  },
+  "1388": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1218/text.pdf",
+   "kind": "dzu"
+  },
+  "1389": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1389/1389.pdf",
+   "kind": "druk",
+   "print": "1389"
+  },
+  "1390": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/317/text.pdf",
+   "kind": "dzu"
+  },
+  "1402": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1420/text.pdf",
+   "kind": "dzu"
+  },
+  "1404": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1423/text.pdf",
+   "kind": "dzu"
+  },
+  "1407": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1203/text.pdf",
+   "kind": "dzu"
+  },
+  "1424": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1424/1424.pdf",
+   "kind": "druk",
+   "print": "1424"
+  },
+  "1425": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1508/text.pdf",
+   "kind": "dzu"
+  },
+  "1426": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1423/text.pdf",
+   "kind": "dzu"
+  },
+  "1427": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1427/1427.pdf",
+   "kind": "druk",
+   "print": "1427"
+  },
+  "1428": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1415/text.pdf",
+   "kind": "dzu"
+  },
+  "1429": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1192/text.pdf",
+   "kind": "dzu"
+  },
+  "1430": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1430/1430.pdf",
+   "kind": "druk",
+   "print": "1430"
+  },
+  "1431": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1413/text.pdf",
+   "kind": "dzu"
+  },
+  "1432": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1427/text.pdf",
+   "kind": "dzu"
+  },
+  "1433": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1187/text.pdf",
+   "kind": "dzu"
+  },
+  "1434": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1545/text.pdf",
+   "kind": "dzu"
+  },
+  "1435": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1424/text.pdf",
+   "kind": "dzu"
+  },
+  "1436": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1175/text.pdf",
+   "kind": "dzu"
+  },
+  "1437": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1734/text.pdf",
+   "kind": "dzu"
+  },
+  "1438": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1189/text.pdf",
+   "kind": "dzu"
+  },
+  "1439": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1414/text.pdf",
+   "kind": "dzu"
+  },
+  "1440": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1440/1440.pdf",
+   "kind": "druk",
+   "print": "1440"
+  },
+  "1441": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1426/text.pdf",
+   "kind": "dzu"
+  },
+  "1442": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1518/text.pdf",
+   "kind": "dzu"
+  },
+  "1443": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1425/text.pdf",
+   "kind": "dzu"
+  },
+  "1444": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1793/text.pdf",
+   "kind": "dzu"
+  },
+  "1445": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1673/text.pdf",
+   "kind": "dzu"
+  },
+  "1446": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1159/text.pdf",
+   "kind": "dzu"
+  },
+  "1448": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1456/text.pdf",
+   "kind": "dzu"
+  },
+  "1449": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1541/text.pdf",
+   "kind": "dzu"
+  },
+  "1450": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1408/text.pdf",
+   "kind": "dzu"
+  },
+  "1451": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1872/text.pdf",
+   "kind": "dzu"
+  },
+  "1472": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1160/text.pdf",
+   "kind": "dzu"
+  },
+  "1479": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1795/text.pdf",
+   "kind": "dzu"
+  },
+  "1481": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1188/text.pdf",
+   "kind": "dzu"
+  },
+  "1482": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1507/text.pdf",
+   "kind": "dzu"
+  },
+  "1483": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1211/text.pdf",
+   "kind": "dzu"
+  },
+  "1484": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1411/text.pdf",
+   "kind": "dzu"
+  },
+  "1485": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1407/text.pdf",
+   "kind": "dzu"
+  },
+  "1486": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1412/text.pdf",
+   "kind": "dzu"
+  },
+  "1487": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1446/text.pdf",
+   "kind": "dzu"
+  },
+  "1492": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1492/1492.pdf",
+   "kind": "druk",
+   "print": "1492"
+  },
+  "1522": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1409/text.pdf",
+   "kind": "dzu"
+  },
+  "1523": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1169/text.pdf",
+   "kind": "dzu"
+  },
+  "1524": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1563/text.pdf",
+   "kind": "dzu"
+  },
+  "1525": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1542/text.pdf",
+   "kind": "dzu"
+  },
+  "1526": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1036/text.pdf",
+   "kind": "dzu"
+  },
+  "1529": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1529/1529.pdf",
+   "kind": "druk",
+   "print": "1529"
+  },
+  "1560": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1705/text.pdf",
+   "kind": "dzu"
+  },
+  "1561": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1709/text.pdf",
+   "kind": "dzu"
+  },
+  "1600": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1600/1600.pdf",
+   "kind": "druk",
+   "print": "1600"
+  },
+  "1601": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf",
+   "kind": "dzu"
+  },
+  "1604": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1716/text.pdf",
+   "kind": "dzu"
+  },
+  "1605": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1729/text.pdf",
+   "kind": "dzu"
+  },
+  "1606": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1606/1606.pdf",
+   "kind": "druk",
+   "print": "1606"
+  },
+  "1607": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1607/1607.pdf",
+   "kind": "druk",
+   "print": "1607"
+  },
+  "1608": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/24/text.pdf",
+   "kind": "dzu"
+  },
+  "1609": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1537/text.pdf",
+   "kind": "dzu"
+  },
+  "1610": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1533/text.pdf",
+   "kind": "dzu"
+  },
+  "1611": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1564/text.pdf",
+   "kind": "dzu"
+  },
+  "1612": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1540/text.pdf",
+   "kind": "dzu"
+  },
+  "1613": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/988/text.pdf",
+   "kind": "dzu"
+  },
+  "1623": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1366/text.pdf",
+   "kind": "dzu"
+  },
+  "1626": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1652/text.pdf",
+   "kind": "dzu"
+  },
+  "1627": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1661/text.pdf",
+   "kind": "dzu"
+  },
+  "1628": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1809/text.pdf",
+   "kind": "dzu"
+  },
+  "1629": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/184/text.pdf",
+   "kind": "dzu"
+  },
+  "1630": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1794/text.pdf",
+   "kind": "dzu"
+  },
+  "1632": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/317/text.pdf",
+   "kind": "dzu"
+  },
+  "1634": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1700/text.pdf",
+   "kind": "dzu"
+  },
+  "1635": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1814/text.pdf",
+   "kind": "dzu"
+  },
+  "1636": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1818/text.pdf",
+   "kind": "dzu"
+  },
+  "1637": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1531/text.pdf",
+   "kind": "dzu"
+  },
+  "1638": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1669/text.pdf",
+   "kind": "dzu"
+  },
+  "1639": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1612/text.pdf",
+   "kind": "dzu"
+  },
+  "1649": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1679/text.pdf",
+   "kind": "dzu"
+  },
+  "1650": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/904/text.pdf",
+   "kind": "dzu"
+  },
+  "1651": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/566/text.pdf",
+   "kind": "dzu"
+  },
+  "1677": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1676/text.pdf",
+   "kind": "dzu"
+  },
+  "1678": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1609/text.pdf",
+   "kind": "dzu"
+  },
+  "1679": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1608/text.pdf",
+   "kind": "dzu"
+  },
+  "1683": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1303/text.pdf",
+   "kind": "dzu"
+  },
+  "1684": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1302/text.pdf",
+   "kind": "dzu"
+  },
+  "1685": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1301/text.pdf",
+   "kind": "dzu"
+  },
+  "1721": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1721/1721.pdf",
+   "kind": "druk",
+   "print": "1721"
+  },
+  "1727": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1610/text.pdf",
+   "kind": "dzu"
+  },
+  "1728": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1811/text.pdf",
+   "kind": "dzu"
+  },
+  "1729": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1882/text.pdf",
+   "kind": "dzu"
+  },
+  "1730": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/179/text.pdf",
+   "kind": "dzu"
+  },
+  "1732": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/318/text.pdf",
+   "kind": "dzu"
+  },
+  "1746": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1535/text.pdf",
+   "kind": "dzu"
+  },
+  "1747": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1671/text.pdf",
+   "kind": "dzu"
+  },
+  "1749": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/62/text.pdf",
+   "kind": "dzu"
+  },
+  "1750": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1840/text.pdf",
+   "kind": "dzu"
+  },
+  "1752": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1658/text.pdf",
+   "kind": "dzu"
+  },
+  "1753": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1753/1753.pdf",
+   "kind": "druk",
+   "print": "1753"
+  },
+  "1757": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1757/1757.pdf",
+   "kind": "druk",
+   "print": "1757"
+  },
+  "1758": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/985/text.pdf",
+   "kind": "dzu"
+  },
+  "1761": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1826/text.pdf",
+   "kind": "dzu"
+  },
+  "1762": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1806/text.pdf",
+   "kind": "dzu"
+  },
+  "1763": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/177/text.pdf",
+   "kind": "dzu"
+  },
+  "1765": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/737/text.pdf",
+   "kind": "dzu"
+  },
+  "1767": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/27/text.pdf",
+   "kind": "dzu"
+  },
+  "1796": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1841/text.pdf",
+   "kind": "dzu"
+  },
+  "1797": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1797/1797.pdf",
+   "kind": "druk",
+   "print": "1797"
+  },
+  "1798": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1817/text.pdf",
+   "kind": "dzu"
+  },
+  "1804": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1812/text.pdf",
+   "kind": "dzu"
+  },
+  "1805": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1837/text.pdf",
+   "kind": "dzu"
+  },
+  "1806": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1792/text.pdf",
+   "kind": "dzu"
+  },
+  "1807": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1807/1807.pdf",
+   "kind": "druk",
+   "print": "1807"
+  },
+  "1808": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/316/text.pdf",
+   "kind": "dzu"
+  },
+  "1816": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/436/text.pdf",
+   "kind": "dzu"
+  },
+  "1824": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1659/text.pdf",
+   "kind": "dzu"
+  },
+  "1825": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1825/1825.pdf",
+   "kind": "druk",
+   "print": "1825"
+  },
+  "1826": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1657/text.pdf",
+   "kind": "dzu"
+  },
+  "1835": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1838/text.pdf",
+   "kind": "dzu"
+  },
+  "1836": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1836/1836.pdf",
+   "kind": "druk",
+   "print": "1836"
+  },
+  "1837": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1854/text.pdf",
+   "kind": "dzu"
+  },
+  "1838": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1858/text.pdf",
+   "kind": "dzu"
+  },
+  "1839": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1668/text.pdf",
+   "kind": "dzu"
+  },
+  "1855": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1863/text.pdf",
+   "kind": "dzu"
+  },
+  "1856": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/26/text.pdf",
+   "kind": "dzu"
+  },
+  "1857": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1857/1857.pdf",
+   "kind": "druk",
+   "print": "1857"
+  },
+  "1858": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1820/text.pdf",
+   "kind": "dzu"
+  },
+  "1859": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/160/text.pdf",
+   "kind": "dzu"
+  },
+  "1860": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1810/text.pdf",
+   "kind": "dzu"
+  },
+  "1861": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1807/text.pdf",
+   "kind": "dzu"
+  },
+  "1862": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/50/text.pdf",
+   "kind": "dzu"
+  },
+  "1863": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1844/text.pdf",
+   "kind": "dzu"
+  },
+  "1880": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1822/text.pdf",
+   "kind": "dzu"
+  },
+  "1881": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1804/text.pdf",
+   "kind": "dzu"
+  },
+  "1884": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1884/1884.pdf",
+   "kind": "druk",
+   "print": "1884"
+  },
+  "1885": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1846/text.pdf",
+   "kind": "dzu"
+  },
+  "1886": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1746/text.pdf",
+   "kind": "dzu"
+  },
+  "1887": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/31/text.pdf",
+   "kind": "dzu"
+  },
+  "1929": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1929/1929.pdf",
+   "kind": "druk",
+   "print": "1929"
+  },
+  "1930": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1813/text.pdf",
+   "kind": "dzu"
+  },
+  "1933": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1933/1933.pdf",
+   "kind": "druk",
+   "print": "1933"
+  },
+  "1937": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/331/text.pdf",
+   "kind": "dzu"
+  },
+  "1938": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/39/text.pdf",
+   "kind": "dzu"
+  },
+  "1939": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/180/text.pdf",
+   "kind": "dzu"
+  },
+  "1941": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1033/text.pdf",
+   "kind": "dzu"
+  },
+  "1945": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1849/text.pdf",
+   "kind": "dzu"
+  },
+  "1950": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1697/text.pdf",
+   "kind": "dzu"
+  },
+  "1951": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1823/text.pdf",
+   "kind": "dzu"
+  },
+  "1955": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/252/text.pdf",
+   "kind": "dzu"
+  },
+  "1962": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1290/text.pdf",
+   "kind": "dzu"
+  },
+  "1963": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/731/text.pdf",
+   "kind": "dzu"
+  },
+  "1964": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/1964/1964.pdf",
+   "kind": "druk",
+   "print": "1964"
+  },
+  "1985": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1843/text.pdf",
+   "kind": "dzu"
+  },
+  "1995": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1739/text.pdf",
+   "kind": "dzu"
+  },
+  "1996": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/1881/text.pdf",
+   "kind": "dzu"
+  },
+  "2005": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/34/text.pdf",
+   "kind": "dzu"
+  },
+  "2006": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2006/2006.pdf",
+   "kind": "druk",
+   "print": "2006"
+  },
+  "2007": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2007/2007.pdf",
+   "kind": "druk",
+   "print": "2007"
+  },
+  "2010": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2010/2010.pdf",
+   "kind": "druk",
+   "print": "2010"
+  },
+  "2026": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/32/text.pdf",
+   "kind": "dzu"
+  },
+  "2027": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/176/text.pdf",
+   "kind": "dzu"
+  },
+  "2028": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/35/text.pdf",
+   "kind": "dzu"
+  },
+  "2029": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/542/text.pdf",
+   "kind": "dzu"
+  },
+  "2031": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/425/text.pdf",
+   "kind": "dzu"
+  },
+  "2033": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1354/text.pdf",
+   "kind": "dzu"
+  },
+  "2037": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/312/text.pdf",
+   "kind": "dzu"
+  },
+  "2060": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/548/text.pdf",
+   "kind": "dzu"
+  },
+  "2061": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/504/text.pdf",
+   "kind": "dzu"
+  },
+  "2063": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/41/text.pdf",
+   "kind": "dzu"
+  },
+  "2064": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2064/2064.pdf",
+   "kind": "druk",
+   "print": "2064"
+  },
+  "2072": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/36/text.pdf",
+   "kind": "dzu"
+  },
+  "2075": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/421/text.pdf",
+   "kind": "dzu"
+  },
+  "2076": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/507/text.pdf",
+   "kind": "dzu"
+  },
+  "2077": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/328/text.pdf",
+   "kind": "dzu"
+  },
+  "2078": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/465/text.pdf",
+   "kind": "dzu"
+  },
+  "2079": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/317/text.pdf",
+   "kind": "dzu"
+  },
+  "2101": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/340/text.pdf",
+   "kind": "dzu"
+  },
+  "2105": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/119/text.pdf",
+   "kind": "dzu"
+  },
+  "2106": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/347/text.pdf",
+   "kind": "dzu"
+  },
+  "2107": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2107/2107.pdf",
+   "kind": "druk",
+   "print": "2107"
+  },
+  "2108": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2108/2108.pdf",
+   "kind": "druk",
+   "print": "2108"
+  },
+  "2110": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2110/2110.pdf",
+   "kind": "druk",
+   "print": "2110"
+  },
+  "2111": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2111/2111.pdf",
+   "kind": "druk",
+   "print": "2111"
+  },
+  "2112": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/174/text.pdf",
+   "kind": "dzu"
+  },
+  "2119": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/471/text.pdf",
+   "kind": "dzu"
+  },
+  "2120": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2120/2120.pdf",
+   "kind": "druk",
+   "print": "2120"
+  },
+  "2121": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2121/2121.pdf",
+   "kind": "druk",
+   "print": "2121"
+  },
+  "2122": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/441/text.pdf",
+   "kind": "dzu"
+  },
+  "2126": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2126/2126.pdf",
+   "kind": "druk",
+   "print": "2126"
+  },
+  "2127": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1354/text.pdf",
+   "kind": "dzu"
+  },
+  "2150": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/516/text.pdf",
+   "kind": "dzu"
+  },
+  "2159": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/644/text.pdf",
+   "kind": "dzu"
+  },
+  "2160": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/483/text.pdf",
+   "kind": "dzu"
+  },
+  "2161": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/567/text.pdf",
+   "kind": "dzu"
+  },
+  "2162": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/615/text.pdf",
+   "kind": "dzu"
+  },
+  "2163": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/484/text.pdf",
+   "kind": "dzu"
+  },
+  "2164": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/568/text.pdf",
+   "kind": "dzu"
+  },
+  "2165": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/605/text.pdf",
+   "kind": "dzu"
+  },
+  "2172": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/203/text.pdf",
+   "kind": "dzu"
+  },
+  "2178": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/319/text.pdf",
+   "kind": "dzu"
+  },
+  "2180": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/305/text.pdf",
+   "kind": "dzu"
+  },
+  "2200": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/638/text.pdf",
+   "kind": "dzu"
+  },
+  "2201": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/444/text.pdf",
+   "kind": "dzu"
+  },
+  "2206": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/426/text.pdf",
+   "kind": "dzu"
+  },
+  "2208": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/988/text.pdf",
+   "kind": "dzu"
+  },
+  "2223": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/445/text.pdf",
+   "kind": "dzu"
+  },
+  "2227": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2227/2227.pdf",
+   "kind": "druk",
+   "print": "2227"
+  },
+  "2236": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/607/text.pdf",
+   "kind": "dzu"
+  },
+  "2240": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/451/text.pdf",
+   "kind": "dzu"
+  },
+  "2245": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/475/text.pdf",
+   "kind": "dzu"
+  },
+  "2250": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/473/text.pdf",
+   "kind": "dzu"
+  },
+  "2270": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1005/text.pdf",
+   "kind": "dzu"
+  },
+  "2271": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2271/2271.pdf",
+   "kind": "druk",
+   "print": "2271"
+  },
+  "2272": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2272/2272.pdf",
+   "kind": "druk",
+   "print": "2272"
+  },
+  "2273": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2273/2273.pdf",
+   "kind": "druk",
+   "print": "2273"
+  },
+  "2274": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1005/text.pdf",
+   "kind": "dzu"
+  },
+  "2276": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/682/text.pdf",
+   "kind": "dzu"
+  },
+  "2277": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/333/text.pdf",
+   "kind": "dzu"
+  },
+  "2287": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/846/text.pdf",
+   "kind": "dzu"
+  },
+  "2288": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2288/2288.pdf",
+   "kind": "druk",
+   "print": "2288"
+  },
+  "2289": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1046/text.pdf",
+   "kind": "dzu"
+  },
+  "2290": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/734/text.pdf",
+   "kind": "dzu"
+  },
+  "2291": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/637/text.pdf",
+   "kind": "dzu"
+  },
+  "2292": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/640/text.pdf",
+   "kind": "dzu"
+  },
+  "2293": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/755/text.pdf",
+   "kind": "dzu"
+  },
+  "2294": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/794/text.pdf",
+   "kind": "dzu"
+  },
+  "2295": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/632/text.pdf",
+   "kind": "dzu"
+  },
+  "2307": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/646/text.pdf",
+   "kind": "dzu"
+  },
+  "2317": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2317/2317.pdf",
+   "kind": "druk",
+   "print": "2317"
+  },
+  "2318": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/875/text.pdf",
+   "kind": "dzu"
+  },
+  "2319": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/739/text.pdf",
+   "kind": "dzu"
+  },
+  "2352": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/825/text.pdf",
+   "kind": "dzu"
+  },
+  "2355": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/815/text.pdf",
+   "kind": "dzu"
+  },
+  "2360": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/780/text.pdf",
+   "kind": "dzu"
+  },
+  "2361": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/676/text.pdf",
+   "kind": "dzu"
+  },
+  "2363": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2363/2363.pdf",
+   "kind": "druk",
+   "print": "2363"
+  },
+  "2371": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/680/text.pdf",
+   "kind": "dzu"
+  },
+  "2372": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/901/text.pdf",
+   "kind": "dzu"
+  },
+  "2387": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/882/text.pdf",
+   "kind": "dzu"
+  },
+  "2388": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/635/text.pdf",
+   "kind": "dzu"
+  },
+  "2389": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/415/text.pdf",
+   "kind": "dzu"
+  },
+  "2390": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/414/text.pdf",
+   "kind": "dzu"
+  },
+  "2395": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/864/text.pdf",
+   "kind": "dzu"
+  },
+  "2398": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/902/text.pdf",
+   "kind": "dzu"
+  },
+  "2404": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/636/text.pdf",
+   "kind": "dzu"
+  },
+  "2410": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1097/text.pdf",
+   "kind": "dzu"
+  },
+  "2411": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1281/text.pdf",
+   "kind": "dzu"
+  },
+  "2412": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1006/text.pdf",
+   "kind": "dzu"
+  },
+  "2415": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2415/2415.pdf",
+   "kind": "druk",
+   "print": "2415"
+  },
+  "2440": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/633/text.pdf",
+   "kind": "dzu"
+  },
+  "2443": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1003/text.pdf",
+   "kind": "dzu"
+  },
+  "2445": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf",
+   "kind": "dzu"
+  },
+  "2446": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/912/text.pdf",
+   "kind": "dzu"
+  },
+  "2449": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2449/2449.pdf",
+   "kind": "druk",
+   "print": "2449"
+  },
+  "2456": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2456/2456.pdf",
+   "kind": "druk",
+   "print": "2456"
+  },
+  "2457": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2457/2457.pdf",
+   "kind": "druk",
+   "print": "2457"
+  },
+  "2458": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/821/text.pdf",
+   "kind": "dzu"
+  },
+  "2459": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/781/text.pdf",
+   "kind": "dzu"
+  },
+  "2460": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/791/text.pdf",
+   "kind": "dzu"
+  },
+  "2468": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1077/text.pdf",
+   "kind": "dzu"
+  },
+  "2488": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/830/text.pdf",
+   "kind": "dzu"
+  },
+  "2489": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/775/text.pdf",
+   "kind": "dzu"
+  },
+  "2497": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/989/text.pdf",
+   "kind": "dzu"
+  },
+  "2498": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1073/text.pdf",
+   "kind": "dzu"
+  },
+  "2499": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1004/text.pdf",
+   "kind": "dzu"
+  },
+  "2500": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/971/text.pdf",
+   "kind": "dzu"
+  },
+  "2528": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2528/2528.pdf",
+   "kind": "druk",
+   "print": "2528"
+  },
+  "2529": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2529/2529.pdf",
+   "kind": "druk",
+   "print": "2529"
+  },
+  "2530": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2530/2530-wraz%20z%203%20autopoprawkami.pdf",
+   "kind": "druk",
+   "print": "2530"
+  },
+  "2533": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/760/text.pdf",
+   "kind": "dzu"
+  },
+  "2549": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1079/text.pdf",
+   "kind": "dzu"
+  },
+  "2550": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/974/text.pdf",
+   "kind": "dzu"
+  },
+  "2551": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/982/text.pdf",
+   "kind": "dzu"
+  },
+  "2552": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/982/text.pdf",
+   "kind": "dzu"
+  },
+  "2578": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/900/text.pdf",
+   "kind": "dzu"
+  },
+  "2579": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/986/text.pdf",
+   "kind": "dzu"
+  },
+  "2580": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1098/text.pdf",
+   "kind": "dzu"
+  },
+  "2581": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/965/text.pdf",
+   "kind": "dzu"
+  },
+  "2597": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1040/text.pdf",
+   "kind": "dzu"
+  },
+  "2598": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2598/2598.pdf",
+   "kind": "druk",
+   "print": "2598"
+  },
+  "2600": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1159/text.pdf",
+   "kind": "dzu"
+  },
+  "2620": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1074/text.pdf",
+   "kind": "dzu"
+  },
+  "2621": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2621/2621.pdf",
+   "kind": "druk",
+   "print": "2621"
+  },
+  "2642": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1206/text.pdf",
+   "kind": "dzu"
+  },
+  "2643": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1007/text.pdf",
+   "kind": "dzu"
+  },
+  "2644": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2644/2644.pdf",
+   "kind": "druk",
+   "print": "2644"
+  },
+  "2648": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1156/text.pdf",
+   "kind": "dzu"
+  },
+  "2649": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1273/text.pdf",
+   "kind": "dzu"
+  },
+  "2667": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1100/text.pdf",
+   "kind": "dzu"
+  },
+  "2668": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1036/text.pdf",
+   "kind": "dzu"
+  },
+  "2669": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1161/text.pdf",
+   "kind": "dzu"
+  },
+  "2670": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2670/2670.pdf",
+   "kind": "druk",
+   "print": "2670"
+  },
+  "2675": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1155/text.pdf",
+   "kind": "dzu"
+  },
+  "2677": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1270/text.pdf",
+   "kind": "dzu"
+  },
+  "2684": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2684/2684.pdf",
+   "kind": "druk",
+   "print": "2684"
+  },
+  "2685": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/972/text.pdf",
+   "kind": "dzu"
+  },
+  "2693": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2693/2693.pdf",
+   "kind": "druk",
+   "print": "2693"
+  },
+  "2694": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1296/text.pdf",
+   "kind": "dzu"
+  },
+  "2695": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1154/text.pdf",
+   "kind": "dzu"
+  },
+  "2696": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1034/text.pdf",
+   "kind": "dzu"
+  },
+  "2698": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1123/text.pdf",
+   "kind": "dzu"
+  },
+  "2699": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1099/text.pdf",
+   "kind": "dzu"
+  },
+  "2700": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2700/2700.pdf",
+   "kind": "druk",
+   "print": "2700"
+  },
+  "2701": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1102/text.pdf",
+   "kind": "dzu"
+  },
+  "2737": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1440/text.pdf",
+   "kind": "dzu"
+  },
+  "2738": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1439/text.pdf",
+   "kind": "dzu"
+  },
+  "2750": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2750/2750.pdf",
+   "kind": "druk",
+   "print": "2750"
+  },
+  "2769": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2769/2769.pdf",
+   "kind": "druk",
+   "print": "2769"
+  },
+  "2778": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2778/2778.pdf",
+   "kind": "druk",
+   "print": "2778"
+  },
+  "2799": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1353/text.pdf",
+   "kind": "dzu"
+  },
+  "2800": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2800/2800.pdf",
+   "kind": "druk",
+   "print": "2800"
+  },
+  "2801": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1340/text.pdf",
+   "kind": "dzu"
+  },
+  "2810": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1326/text.pdf",
+   "kind": "dzu"
+  },
+  "2821": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1347/text.pdf",
+   "kind": "dzu"
+  },
+  "2822": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1157/text.pdf",
+   "kind": "dzu"
+  },
+  "2837": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf",
+   "kind": "dzu"
+  },
+  "2838": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1446/text.pdf",
+   "kind": "dzu"
+  },
+  "2839": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1398/text.pdf",
+   "kind": "dzu"
+  },
+  "2840": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1479/text.pdf",
+   "kind": "dzu"
+  },
+  "2841": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1478/text.pdf",
+   "kind": "dzu"
+  },
+  "2842": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2842/2842.pdf",
+   "kind": "druk",
+   "print": "2842"
+  },
+  "2846": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1343/text.pdf",
+   "kind": "dzu"
+  },
+  "2865": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2865/2865.pdf",
+   "kind": "druk",
+   "print": "2865"
+  },
+  "2866": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1358/text.pdf",
+   "kind": "dzu"
+  },
+  "2867": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2867/2867.pdf",
+   "kind": "druk",
+   "print": "2867"
+  },
+  "2868": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2868/2868.pdf",
+   "kind": "druk",
+   "print": "2868"
+  },
+  "2869": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2869/2869.pdf",
+   "kind": "druk",
+   "print": "2869"
+  },
+  "2870": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1517/text.pdf",
+   "kind": "dzu"
+  },
+  "2872": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1354/text.pdf",
+   "kind": "dzu"
+  },
+  "2884": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2884/2884.pdf",
+   "kind": "druk",
+   "print": "2884"
+  },
+  "2995": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2995/2995.pdf",
+   "kind": "druk",
+   "print": "2995"
+  },
+  "2996": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2996/2996.pdf",
+   "kind": "druk",
+   "print": "2996"
+  },
+  "2997": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2997/2997.pdf",
+   "kind": "druk",
+   "print": "2997"
+  },
+  "2998": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1522/text.pdf",
+   "kind": "dzu"
+  },
+  "2999": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/2999/2999.pdf",
+   "kind": "druk",
+   "print": "2999"
+  },
+  "3000": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3000/3000.pdf",
+   "kind": "druk",
+   "print": "3000"
+  },
+  "3001": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3001/3001.pdf",
+   "kind": "druk",
+   "print": "3001"
+  },
+  "3002": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1518/text.pdf",
+   "kind": "dzu"
+  },
+  "3003": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3003/3003.pdf",
+   "kind": "druk",
+   "print": "3003"
+  },
+  "3004": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3004/3004.pdf",
+   "kind": "druk",
+   "print": "3004"
+  },
+  "3007": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3007/3007.pdf",
+   "kind": "druk",
+   "print": "3007"
+  },
+  "3009": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3009/3009.pdf",
+   "kind": "druk",
+   "print": "3009"
+  },
+  "3010": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1476/text.pdf",
+   "kind": "dzu"
+  },
+  "3011": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3011/3011.pdf",
+   "kind": "druk",
+   "print": "3011"
+  },
+  "3012": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1477/text.pdf",
+   "kind": "dzu"
+  },
+  "3013": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3013/3013.pdf",
+   "kind": "druk",
+   "print": "3013"
+  },
+  "3015": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1308/text.pdf",
+   "kind": "dzu"
+  },
+  "3028": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1349/text.pdf",
+   "kind": "dzu"
+  },
+  "3030": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3030/3030.pdf",
+   "kind": "druk",
+   "print": "3030"
+  },
+  "3035": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3035/3035.pdf",
+   "kind": "druk",
+   "print": "3035"
+  },
+  "3038": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3038/3038.pdf",
+   "kind": "druk",
+   "print": "3038"
+  },
+  "3040": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3040/3040.pdf",
+   "kind": "druk",
+   "print": "3040"
+  },
+  "3074": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1509/text.pdf",
+   "kind": "dzu"
+  },
+  "3085": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3085/3085.pdf",
+   "kind": "druk",
+   "print": "3085"
+  },
+  "3086": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3086/3086.pdf",
+   "kind": "druk",
+   "print": "3086"
+  },
+  "3088": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3088/3088.pdf",
+   "kind": "druk",
+   "print": "3088"
+  },
+  "3094": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3094/3094.pdf",
+   "kind": "druk",
+   "print": "3094"
+  },
+  "3099": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1354/text.pdf",
+   "kind": "dzu"
+  },
+  "3100": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1287/text.pdf",
+   "kind": "dzu"
+  },
+  "3101": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1466/text.pdf",
+   "kind": "dzu"
+  },
+  "3102": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1348/text.pdf",
+   "kind": "dzu"
+  },
+  "3120": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3120/3120.pdf",
+   "kind": "druk",
+   "print": "3120"
+  },
+  "3121": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3121/3121.pdf",
+   "kind": "druk",
+   "print": "3121"
+  },
+  "3135": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3135/3135.pdf",
+   "kind": "druk",
+   "print": "3135"
+  },
+  "3136": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1540/text.pdf",
+   "kind": "dzu"
+  },
+  "3137": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3137/3137.pdf",
+   "kind": "druk",
+   "print": "3137"
+  },
+  "3138": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3138/3138.pdf",
+   "kind": "druk",
+   "print": "3138"
+  },
+  "3139": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3139/3139.pdf",
+   "kind": "druk",
+   "print": "3139"
+  },
+  "3140": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3140/3140.pdf",
+   "kind": "druk",
+   "print": "3140"
+  },
+  "3141": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3141/3141.pdf",
+   "kind": "druk",
+   "print": "3141"
+  },
+  "3142": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3142/3142.pdf",
+   "kind": "druk",
+   "print": "3142"
+  },
+  "3143": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3143/3143.pdf",
+   "kind": "druk",
+   "print": "3143"
+  },
+  "3144": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3144/3144.pdf",
+   "kind": "druk",
+   "print": "3144"
+  },
+  "3146": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3146/3146.pdf",
+   "kind": "druk",
+   "print": "3146"
+  },
+  "3147": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3147/3147.pdf",
+   "kind": "druk",
+   "print": "3147"
+  },
+  "3148": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3148/3148.pdf",
+   "kind": "druk",
+   "print": "3148"
+  },
+  "3149": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf",
+   "kind": "dzu"
+  },
+  "3153": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3153/3153.pdf",
+   "kind": "druk",
+   "print": "3153"
+  },
+  "3154": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3154/3154.pdf",
+   "kind": "druk",
+   "print": "3154"
+  },
+  "3155": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3155/3155.pdf",
+   "kind": "druk",
+   "print": "3155"
+  },
+  "3157": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3157/3157.pdf",
+   "kind": "druk",
+   "print": "3157"
+  },
+  "3159": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3159/3159.pdf",
+   "kind": "druk",
+   "print": "3159"
+  },
+  "3160": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf",
+   "kind": "dzu"
+  },
+  "3163": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3163/3163.pdf",
+   "kind": "druk",
+   "print": "3163"
+  },
+  "3186": {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1514/text.pdf",
+   "kind": "dzu"
+  },
+  "3204": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3204/3204.pdf",
+   "kind": "druk",
+   "print": "3204"
+  },
+  "3231": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3231/3231.pdf",
+   "kind": "druk",
+   "print": "3231"
+  },
+  "3232": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3232/3232.pdf",
+   "kind": "druk",
+   "print": "3232"
+  },
+  "3245": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3245/3245.pdf",
+   "kind": "druk",
+   "print": "3245"
+  },
+  "3261": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3261/3261.pdf",
+   "kind": "druk",
+   "print": "3261"
+  },
+  "3262": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3262/3262.pdf",
+   "kind": "druk",
+   "print": "3262"
+  },
+  "3263": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3263/3263.pdf",
+   "kind": "druk",
+   "print": "3263"
+  },
+  "3264": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3264/3264.pdf",
+   "kind": "druk",
+   "print": "3264"
+  },
+  "3266": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3266/3266.pdf",
+   "kind": "druk",
+   "print": "3266"
+  },
+  "3278": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3278/3278.pdf",
+   "kind": "druk",
+   "print": "3278"
+  },
+  "3281": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3281/3281.pdf",
+   "kind": "druk",
+   "print": "3281"
+  },
+  "3293": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3293/3293.pdf",
+   "kind": "druk",
+   "print": "3293"
+  },
+  "3295": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3295/3295.pdf",
+   "kind": "druk",
+   "print": "3295"
+  },
+  "3355": {
+   "url": "https://api.sejm.gov.pl/sejm/term10/prints/3355/3355.pdf",
+   "kind": "druk",
+   "print": "3355"
+  }
+ }
 }
