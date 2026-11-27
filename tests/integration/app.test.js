@@ -161,8 +161,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Opozycja w PRL i stanowiska';
-const NEWEST_LINE = 'Profile: Opozycja w PRL i stanowiska';
+const NEWEST = 'Aktywność i skuteczność posła';
+const NEWEST_LINE = 'Profile: Aktywność i skuteczność posła';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

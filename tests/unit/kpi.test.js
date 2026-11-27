@@ -123,6 +123,7 @@ describe('KPI card view', () => {
     const html = renderProfileKpi({ kpi: DATA }, { id: 8 });
     expect(html).toContain('nie podpisał(a) żadnego poselskiego projektu ustawy');
     expect(html).not.toContain('class="tax-list kpi-bills"');
+    expect(html).not.toContain('z odpowiedzią –');
     expect(renderProfileKpi({ kpi: null }, { id: 7 })).toBe('');
   });
   it('draws bars on one scale', () => {

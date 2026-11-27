@@ -60,7 +60,7 @@ export function renderProfileKpi(ctx, mp, { infoTip } = {}) {
   const sp = tile({
     id: 'speeches',
     title: 'Wystąpienia',
-    tip: tipFor(`Wypowiedzi posła na sali plenarnej według stenogramów, w roli posła (także jako sprawozdawca). Nie liczymy czytania komunikatów przez sekretarza, wystąpień złożonych do protokołu ani wypowiedzi jako członek rządu. Średnia = wszystkie wystąpienia posłów (${formatInt(s.total)}) / posłowie z mandatem.`, 'https://api.sejm.gov.pl/sejm/term10/proceedings'),
+    tip: tipFor(`Wypowiedzi posła na sali plenarnej według stenogramów, w roli posła (także jako sprawozdawca). Nie liczymy czytania komunikatów przez sekretarza, wystąpień złożonych do protokołu ani wypowiedzi jako członek rządu; prowadzenie obrad przez marszałka i wicemarszałków też się nie liczy. Średnia = wszystkie wystąpienia posłów (${formatInt(s.total)}) / posłowie z mandatem.`, 'https://api.sejm.gov.pl/sejm/term10/proceedings'),
     big: formatInt(s.n),
     unit: plural(s.n, 'wystąpienie', 'wystąpienia', 'wystąpień'),
     vs: versus(s.times, 1, 0.05),
@@ -76,7 +76,7 @@ export function renderProfileKpi(ctx, mp, { infoTip } = {}) {
     unit: plural(i.n, 'interpelacja', 'interpelacje', 'interpelacji'),
     vs: versus(i.times, 1, 0.05),
     lines: [
-      `<strong>${esc(timesAverage(i.times))}</strong> (średnio ${esc(avgInt(i.avg))}); z odpowiedzią ${esc(formatPct(i.answeredPct))}, w Sejmie ${esc(formatPct(i.avgAnsweredPct))}`,
+      `<strong>${esc(timesAverage(i.times))}</strong> (średnio ${esc(avgInt(i.avg))})${i.n ? `; z odpowiedzią ${esc(formatPct(i.answeredPct))}, w Sejmie ${esc(formatPct(i.avgAnsweredPct))}` : ''}`,
       `<span data-testid="kpi-questions">Zapytania: <strong>${formatInt(q.n)}</strong>, ${esc(timesAverage(q.times))} (średnio ${esc(avgInt(q.avg))})${q.n ? `; z odpowiedzią ${esc(formatPct(q.answeredPct))}, w Sejmie ${esc(formatPct(q.avgAnsweredPct))}` : ''}</span>`,
     ],
     bars: compareBars(i.n, i.avg, { valueLabel: formatInt(i.n), benchLabel: avgInt(i.avg) }),
