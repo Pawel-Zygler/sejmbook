@@ -899,19 +899,38 @@ describe('Profile: mini map of the district', () => {
   });
 });
 
-describe('Posłowie: card with the portrait top-left and facts on the right', () => {
+describe('Posłowie: card with the portrait top-left, the name top-right and facts at the bottom', () => {
   beforeEach(() => nav('#poslowie'));
-  it('puts the photo first, then party, votes, district and attendance, then the name', () => {
+  it('puts the photo first, then the name, then party, votes, district, attendance, age and terms', () => {
     const card = $('.mp-card');
     expect(card.firstElementChild.classList.contains('mp-card-photo')).toBe(true);
+    expect(card.children[1].classList.contains('mp-card-head')).toBe(true);
+    expect(card.children[1].firstElementChild.classList.contains('mp-card-link')).toBe(true);
+    const sub = [...card.querySelector('.mp-card-sub').children].map((e) => e.className.split(' ')[0]);
+    expect(sub).toEqual(['mp-card-age', 'mp-card-terms', 'mp-card-district']);
     const facts = [...card.querySelector('.mp-card-facts').children].map((e) => e.className.split(' ')[0]);
-    expect(facts.slice(0, 3)).toEqual(['mp-card-party', 'mp-card-votes', 'mp-card-district']);
-    expect(card.querySelector('.mp-card-facts').nextElementSibling.classList.contains('mp-card-link')).toBe(true);
+    expect(facts.slice(0, 2)).toEqual(['mp-card-party', 'mp-card-votes']);
+    expect(facts).not.toContain('mp-card-district');
     expect(card.querySelector('.mp-card-photo').getAttribute('href')).toBe(card.querySelector('.mp-card-link').getAttribute('href'));
   });
 });
 
 describe('Feed: seats of the Sejm on top', () => {
+  it('shows "Państwo i rządy" without the "Państwo" eyebrow and the intro sentence', () => {
+    nav('#panstwo');
+    const head = $('[data-testid="page-head"]');
+    expect(head.querySelector('h1').textContent).toBe('Państwo i rządy');
+    expect(head.querySelector('.eyebrow')).toBeNull();
+    expect(head.querySelector('.lede')).toBeNull();
+  });
+
+  it('puts the date of a post in its own element at the end of the header (top-right corner)', () => {
+    nav('#start');
+    const head = $('article.post .post-head time.post-time').parentElement;
+    expect(head.lastElementChild.classList.contains('post-time')).toBe(true);
+    expect(head.querySelector('small time')).toBeNull();
+  });
+
   it('shows the "Skład Sejmu" post before the time window and the feed posts', () => {
     nav('');
     const view = $('[data-view="home"]');
@@ -919,6 +938,15 @@ describe('Feed: seats of the Sejm on top', () => {
     expect(view.firstElementChild.textContent).toContain('Skład Sejmu');
     const posts = $$('[data-view="home"] .feed-post');
     if (posts.length) expect(view.firstElementChild.compareDocumentPosition(posts[0]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+  it('keeps the data source in an info button, not as visible text (Pawel, 2026-11-27)', () => {
+    nav('');
+    const head = $('[data-testid="seat-post"] .post-head small');
+    const tip = head.querySelector('[data-testid="info-tip"]');
+    expect(tip).not.toBeNull();
+    expect(tip.querySelector('.info-tip-body').textContent).toContain('API Sejmu');
+    tip.remove();
+    expect(head.textContent).not.toContain('API Sejmu');
   });
 });
 

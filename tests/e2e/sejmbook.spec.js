@@ -176,7 +176,7 @@ test('MP photos show in rankings and on the profile, initials when a photo fails
   await expect(page.locator('.avatar-xl .avatar-ini')).toBeVisible();
 });
 
-test('MP cards: portrait top-left, party tag top-right, then votes, district, attendance; name below', async ({ page }) => {
+test('MP cards: portrait top-left, name top-right with age, terms and district under it, badges at the bottom', async ({ page }) => {
   await page.goto(`${PAGE}#poslowie`);
   const card = page.locator('.mp-card').first();
   const tag = card.getByTestId('club-tag');
@@ -196,13 +196,21 @@ test('MP cards: portrait top-left, party tag top-right, then votes, district, at
   const att = await card.getByTestId('att-badge').boundingBox();
   expect(photo.x - c.x).toBeLessThan(24);
   expect(photo.y - c.y).toBeLessThan(24);
-  expect(c.x + c.width - (box.x + box.width)).toBeLessThan(24);
-  expect(box.y - c.y).toBeLessThan(24);
-  expect(box.x).toBeGreaterThan(photo.x + photo.width);
-  expect(votes.y).toBeGreaterThan(box.y);
-  expect(district.y).toBeGreaterThan(votes.y);
-  expect(att.y).toBeGreaterThan(district.y);
-  expect(name.y).toBeGreaterThanOrEqual(photo.y + photo.height - 1);
+  expect(c.x + c.width - (name.x + name.width)).toBeLessThan(24);
+  expect(name.y - c.y).toBeLessThan(24);
+  expect(name.x).toBeGreaterThan(photo.x + photo.width);
+  for (const b of [box, votes, att]) expect(b.y).toBeGreaterThanOrEqual(photo.y + photo.height - 1);
+  const age = await card.getByTestId('mp-card-age').boundingBox();
+  const terms = await card.getByTestId('mp-card-terms').boundingBox();
+  await expect(card.getByTestId('mp-card-terms')).toContainText('kadencj');
+  expect(age.y).toBeGreaterThan(name.y);
+  expect(terms.y).toBeGreaterThan(age.y);
+  expect(district.y).toBeGreaterThan(terms.y);
+  for (const b of [age, terms, district]) expect(c.x + c.width - (b.x + b.width)).toBeLessThan(24);
+  // Plain text, not badges.
+  const bg = await card.locator('.mp-card-sub > span').evaluateAll((els) => els.map((e) => getComputedStyle(e).borderTopWidth));
+  expect(bg.every((w) => w === '0px')).toBe(true);
+  expect(c.y + c.height - (att.y + att.height)).toBeLessThan(60);
   // Every tag in the grid fits its card, the longest club names included.
   const overflow = await page.locator('.mp-card').evaluateAll((cards) => cards.filter((el) => {
     const t = el.querySelector('.club-tag');
@@ -636,6 +644,18 @@ test('Profile: mini map of Poland with the district highlighted', async ({ page 
   const on = await map.locator('.dm-on').evaluate((e) => getComputedStyle(e).fill);
   const land = await map.locator('.dm-land').evaluate((e) => getComputedStyle(e).fill);
   expect(on).not.toBe(land);
+});
+
+test('Feed: time filter on the right, post date in the top-right corner', async ({ page }) => {
+  await page.goto(PAGE);
+  const panel = await page.getByTestId('feed-window').boundingBox();
+  const last = await page.locator('[data-action="feed-window"]').last().boundingBox();
+  expect(panel.x + panel.width - (last.x + last.width)).toBeLessThan(24);
+  const post = page.locator('article.post:has([data-testid="post-time"])').first();
+  const a = await post.boundingBox();
+  const t = await post.getByTestId('post-time').boundingBox();
+  expect(a.x + a.width - (t.x + t.width)).toBeLessThan(28);
+  expect(t.y - a.y).toBeLessThan(28);
 });
 
 test('Feed: the seats of the Sejm come first', async ({ page }) => {

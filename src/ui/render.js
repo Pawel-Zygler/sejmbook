@@ -309,7 +309,7 @@ function postHead(ctx, e) {
   const name = e.mp ? mpLink(e.mp, esc(e.mp.name), 'official-link') : e.kind === 'vote' || (e.kind === 'office' && !e.person) ? esc(e.author) : stateNameLink(ctx, e.author);
   const face = e.mp ? mpLink(e.mp, avatar(ctx, e.mp, 'md')) : e.kind === 'vote' || (e.kind === 'office' && !e.person) ? pageBadge() : feedFace(ctx, e.author, initials(e.author));
   const extra = e.kind === 'act' && e.act.from.length > 1 ? ` i ${e.act.from.length - 1} ${plural(e.act.from.length - 1, 'inny poseł', 'innych posłów', 'innych posłów')}` : '';
-  return `<header class="post-head">${face}<div><strong>${name}${extra}</strong><small>${esc(e.role)} · <time datetime="${esc(e.time ?? e.date ?? '')}">${esc(when)}</time>${e.place ? ` · ${esc(e.place)}` : ''}</small></div></header>`;
+  return `<header class="post-head">${face}<div class="post-who"><strong>${name}${extra}</strong><small>${esc(e.role)}${e.place ? ` · ${esc(e.place)}` : ''}</small></div><time class="post-time" data-testid="post-time" datetime="${esc(e.time ?? e.date ?? '')}">${esc(when)}</time></header>`;
 }
 
 /** One entry of the feed as a post. */
@@ -382,7 +382,7 @@ export function renderHome(ctx, feedState = {}) {
   <section class="feed" data-view="home">
     <!-- Seats of the Sejm first, above the feed (Pawel, 2026-11-26: "daj to na front"). -->
     <article class="post seat-post" data-testid="seat-post">
-      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja · dane z API Sejmu, ${esc(ctx.fetchedAt)}</small></div></header>
+      <header class="post-head">${pageBadge()}<div><strong>Sejmbook · Skład Sejmu</strong><small>X kadencja ${infoTip(`Dane z API Sejmu, stan na ${ctx.fetchedAt}.`, 'https://api.sejm.gov.pl/sejm/term10/MP')}</small></div></header>
       <p class="post-text"><b>${active}</b> aktywnych mandatów w ${counts.length} klubach i kołach. Kliknij klub, żeby zobaczyć jego posłów.</p>
       <div class="seat-bar" role="img" aria-label="Podział mandatów między kluby">${bar}</div>
       <ul class="club-legend">
@@ -469,11 +469,9 @@ function termCard(ctx, m) {
   const now = m.current ? ctx.mpsById.get(m.current) : null;
   const face = now ? avatar(ctx, now, 'lg') : personAvatar(m.name, clubFamily(m.club, m.clubName).color, 'lg', govPhoto(ctx, m.name));
   const href = now ? hrefFor({ name: 'profile', id: now.id }) : `#osoba-${esc(m.person)}`;
-  const facts = [
-    `<span class="mp-card-party">${termClubChip(m)}</span>`,
-    m.districtNum ? cardDistrict(m.districtNum, m.districtName) : '',
-  ];
-  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${cardShell(href, face, m.name, facts.join(''))}
+  const facts = `<span class="mp-card-party">${termClubChip(m)}</span>`;
+  const sub = m.districtNum ? cardDistrict(m.districtNum, m.districtName) : '';
+  return `<li class="mp-card term-card" data-term-mp="${esc(m.key)}">${cardShell(href, face, m.name, facts, sub)}
     <small class="muted term-card-terms">${now?.active ? 'dziś w Sejmie · ' : ''}kadencje ${termRanges(m.terms)}</small></li>`;
 }
 
@@ -586,26 +584,41 @@ export function renderDirectory(ctx, state, list) {
 
 const cardDistrict = (num, name) => `<span class="mp-card-district" title="okręg wyborczy nr ${num} · ${esc(name ?? '')}">okr. ${num}${name ? ` · ${esc(name)}` : ''}</span>`;
 
-/** Card layout (Pawel, 2026-11-26): portrait in the top-left corner, facts on the right from the top, name at the bottom. */
-const cardShell = (href, face, name, facts) => `<a class="mp-card-photo" href="${href}" tabindex="-1" aria-hidden="true">${face}</a>
-    <div class="mp-card-facts" data-testid="mp-card-meta">${facts}</div>
-    <a class="mp-card-link" href="${href}"><span class="mp-card-name">${esc(name)}</span></a>`;
+/** Card layout (Pawel, 2026-11-27): portrait top-left, name top-right with age, terms and district as plain lines under it,
+ *  badges (club, votes, attendance) at the bottom. */
+const cardShell = (href, face, name, facts, sub = '') => `<a class="mp-card-photo" href="${href}" tabindex="-1" aria-hidden="true">${face}</a>
+    <div class="mp-card-head"><a class="mp-card-link" href="${href}"><span class="mp-card-name">${esc(name)}</span></a>${sub ? `<div class="mp-card-sub" data-testid="mp-card-sub">${sub}</div>` : ''}</div>
+    <div class="mp-card-facts" data-testid="mp-card-meta">${facts}</div>`;
 
-/** Facts on the right of the card, top to bottom: party tag (with a PZPR mark), votes in 2023, district, attendance. */
+/** Age from the year of birth (the Sejm API gives only the year, so it can be a year too high before the birthday). */
+function cardAge(ctx, mp) {
+  const now = Number(String(ctx.today ?? ctx.fetchedAt ?? new Date().toISOString()).slice(0, 4));
+  if (!Number.isInteger(mp.birthYear) || !now) return '';
+  const age = now - mp.birthYear;
+  return `<span class="mp-card-age" data-testid="mp-card-age" title="rocznik ${mp.birthYear}">${age} ${plural(age, 'rok', 'lata', 'lat')}</span>`;
+}
+
+const cardTerms = (n) => (n ? `<span class="mp-card-terms" data-testid="mp-card-terms" title="kadencje w Sejmie III RP">${n} ${plural(n, 'kadencja', 'kadencje', 'kadencji')}</span>` : '');
+
+/** Plain lines under the name: age, number of terms, district. */
+export function mpCardSub(ctx, mp) {
+  return [cardAge(ctx, mp), cardTerms(ctx.career?.career?.[mp.id]?.length), cardDistrict(mp.districtNum, mp.districtName)].join('');
+}
+
+/** Badges at the bottom of the card: party tag (with a PZPR mark), votes in 2023, attendance. */
 export function mpCardMeta(ctx, mp) {
   const c = clubOf(ctx, mp);
   const votes = Number.isFinite(mp.votes) ? `<span class="mp-card-votes" title="głosy w wyborach do Sejmu 2023">${formatInt(mp.votes)} ${plural(mp.votes, 'głos', 'głosy', 'głosów')}</span>` : '';
   return [
     `<span class="mp-card-party">${clubTag(c.short, c.color, c.name)}${formerPartyChip(ctx, mp, true)}</span>`,
     votes,
-    cardDistrict(mp.districtNum, mp.districtName),
     attendanceBadge(ctx, mp.id, 16),
   ].join('');
 }
 
 function mpCard(ctx, mp) {
   const off = inactiveLabel(mp);
-  return `<li class="mp-card${off ? ' inactive' : ''}">${cardShell(hrefFor({ name: 'profile', id: mp.id }), avatar(ctx, mp, 'lg'), mp.name, mpCardMeta(ctx, mp))}
+  return `<li class="mp-card${off ? ' inactive' : ''}">${cardShell(hrefFor({ name: 'profile', id: mp.id }), avatar(ctx, mp, 'lg'), mp.name, mpCardMeta(ctx, mp), mpCardSub(ctx, mp))}
     ${off ? `<span class="badge-off">${esc(off)}</span>` : ''}</li>`;
 }
 

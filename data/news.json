@@ -63,6 +63,17 @@
       }
     },
     {
+      "id": "2026-11-27-nowe-karty",
+      "date": "2026-11-27",
+      "title": "Nowe karty posłów",
+      "section": "Posłowie",
+      "body": "Na kartach posłów wiek, liczba kadencji i okręg są pod nazwiskiem, data wpisu w Feedzie jest w prawym górnym rogu, a Państwo ma krótszy nagłówek.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-bez-kpi",
       "date": "2026-11-27",
       "title": "Bez karty aktywności",
