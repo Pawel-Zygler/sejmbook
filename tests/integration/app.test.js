@@ -164,8 +164,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Współczynnik deklaracji';
-const NEWEST_LINE = 'Profile: Współczynnik deklaracji';
+const NEWEST = 'Cywilizacja łacińska: poprzednie zasady';
+const NEWEST_LINE = 'Rankingi: Cywilizacja łacińska: poprzednie zasady';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

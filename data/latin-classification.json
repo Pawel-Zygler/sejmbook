@@ -2,7 +2,7 @@
   "title": "Zgodność z cywilizacją łacińską",
   "experimental": true,
   "disclaimer": "Karta eksperymentalna. To interpretacja autora strony, oparta na „O wielości cywilizacji” i „Logos a Ethos” Feliksa Konecznego, a nie neutralna ocena. Liczymy wyłącznie głosowania i aktywność posła według czterech zasad; nie przypisujemy nikomu żadnej innej cywilizacji.",
-  "scoring": "Filary 1–3: głos zgodny z kierunkiem ustawy = 1, wstrzymanie się = 0,5, głos przeciwny = 0; nieobecności pomijamy. Ustawa zgodna: zgodny jest głos za; niezgodna: zgodny jest głos przeciw. Nie liczymy ustaw „spornych” (czekają na decyzję autora) ani przyjętych niemal jednogłośnie (co najmniej 90% głosów za albo przeciw), bo nie odróżniają posłów. Wynik filaru = suma punktów / liczba policzonych głosów × 100. Filar 4: średnia z dwóch percentyli wśród posłów, obecności i niezależności od klubu. Wynik ogólny = średnia filarów, w których poseł ma wynik. Od 67: wysoka zgodność, 34–66: częściowa, poniżej 34: niska zgodność (ryzyko).",
+  "scoring": "Filary 1–3: głos zgodny z kierunkiem ustawy = 1, wstrzymanie się = 0,5, głos przeciwny = 0; nieobecności pomijamy (liczą się w filarze 4). Ustawa zgodna: zgodny jest głos za; niezgodna: zgodny jest głos przeciw. Ustawy „sporne” pokazujemy, ale nie liczymy, dopóki autor nie przypisze im kierunku. Wynik filaru = suma punktów / liczba oddanych głosów × 100. Wynik ogólny = średnia filarów, w których poseł głosował. Od 67: wysoka zgodność, 34–66: częściowa, poniżej 34: niska zgodność (ryzyko).",
   "criteriaSource": "opis projektu (pole description) w API Sejmu: https://api.sejm.gov.pl/sejm/term10/processes/{nr}",
   "deregulationPattern": "deregulac",
   "pillars": [
@@ -28,7 +28,7 @@
       "id": 4,
       "name": "Personalizm i odpowiedzialność osobista",
       "short": "Personalizm",
-      "rule": "Koneczny: cywilizacja łacińska jest personalistyczna, a nie gromadna; człowiek odpowiada za siebie, nie za stado. Mierzymy dwie rzeczy po równo, obie jako percentyl wśród posłów (0 = najsłabszy, 100 = najlepszy): obecność na posiedzeniach (dni z choć jednym głosem / dni obrad w czasie mandatu, z karty KPI) i niezależność głosowania (jak często poseł głosował inaczej niż większość jego obecnego klubu w głosowaniach nad całymi ustawami)."
+      "rule": "Koneczny: cywilizacja łacińska jest personalistyczna, a nie gromadna; człowiek odpowiada za siebie, nie za stado. Mierzymy dwie rzeczy po równo: obecność na posiedzeniach (dni z choć jednym głosem / dni obrad w czasie mandatu, z karty KPI) i niezależność głosowania (jak często poseł głosował inaczej niż większość jego obecnego klubu w głosowaniach nad całymi ustawami, jako percentyl wśród posłów)."
     }
   ],
   "laws": [
@@ -344,6 +344,5 @@
       "direction": "zgodna",
       "reason": "wychowanie patriotyczne i Komisja Edukacji Narodowej jako organ ekspercki"
     }
-  ],
-  "consensusSkip": 0.9
+  ]
 }
