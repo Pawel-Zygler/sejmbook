@@ -73,7 +73,7 @@ export function renderState(ctx, today) {
   const ministers = members.filter((m) => !pm.includes(m) && !deputies.includes(m));
   return `
   <section class="feed state" data-view="state">
-    ${pageHead({ icon: '⚖', eyebrow: 'Państwo', title: 'Państwo i rządy', lede: 'Najważniejsze urzędy III Rzeczypospolitej, rząd, który rządzi dziś, i wszystkie rządy od 1989 roku. Kliknij osobę, żeby zobaczyć jej profil.' })}
+    ${pageHead({ icon: '⚖', title: 'Państwo i rządy' })}
 
     <div class="panel">
       <h2>Najważniejsze urzędy dziś</h2>

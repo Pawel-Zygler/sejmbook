@@ -912,6 +912,14 @@ describe('Posłowie: card with the portrait top-left, the name top-right and fac
 });
 
 describe('Feed: seats of the Sejm on top', () => {
+  it('shows "Państwo i rządy" without the "Państwo" eyebrow and the intro sentence', () => {
+    nav('#panstwo');
+    const head = $('[data-testid="page-head"]');
+    expect(head.querySelector('h1').textContent).toBe('Państwo i rządy');
+    expect(head.querySelector('.eyebrow')).toBeNull();
+    expect(head.querySelector('.lede')).toBeNull();
+  });
+
   it('puts the date of a post in its own element at the end of the header (top-right corner)', () => {
     nav('#start');
     const head = $('article.post .post-head time.post-time').parentElement;
