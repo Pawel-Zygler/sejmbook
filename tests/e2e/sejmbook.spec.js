@@ -104,7 +104,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Feed w jednej linii');
+  await expect(post).toContainText('Ustawy prosto do PDF');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +137,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Feed w jednej linii');
+  await expect(page.locator('.news-post').first()).toContainText('Ustawy prosto do PDF');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -660,6 +660,15 @@ test('Feed: time filter on the right, one line per entry with the source behind 
   await tip.focus();
   await expect(tip.locator('.info-tip-body')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('Laws: a click on a law title goes straight to its PDF', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-32`);
+  const link = page.getByTestId('profile-laws').locator('.tax-law-title').first();
+  await expect(link).toBeVisible();
+  expect(await link.getAttribute('href')).toMatch(/^https:\/\/api\.sejm\.gov\.pl\/.+\.pdf$/);
+  expect(await link.getAttribute('target')).toBe('_blank');
+  await expect(page.getByTestId('profile-laws').locator('.pdf-mark').first()).toBeVisible();
 });
 
 test('Feed: the seats of the Sejm come first', async ({ page }) => {

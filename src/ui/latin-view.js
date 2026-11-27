@@ -1,6 +1,7 @@
 import { mpLatin, rankLatin, clubLatin, bandOf, RANK_BANDS, latinHistogram, sortValue, isConsensus } from '../lib/latin.js';
 import { hrefFor } from '../lib/router.js';
-import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
+import { lawHref, lawLinkTitle, pdfMark } from '../lib/law-pdf.js';
+import { VOTE_LABEL, votingUrl } from '../lib/taxes.js';
 import { formatPct } from '../lib/kpi.js';
 import { mpSov } from '../lib/sovereignty.js';
 
@@ -56,7 +57,7 @@ function lawItem({ law, vote, points, consensus }) {
     : points == null ? (vote === '-' ? 'nie liczy się (nieobecność)' : 'nie liczy się') : `${String(points).replace('.', ',')} pkt`;
   return `<li class="tax-law latin-law" data-process="${esc(law.process)}" data-direction="${esc(law.direction)}">
     <div class="tax-law-top"><span class="tax-vote tax-v-${vote === '-' ? 'X' : vote}">${esc(VOTE_LABEL[vote])}</span><span class="latin-dir latin-dir-${esc(law.direction)}">${esc(DIR_LABEL[law.direction])}</span><time datetime="${esc(law.date)}">${esc(law.date)}</time><span class="latin-pts">${esc(pts)}</span></div>
-    <a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}</a>
+    <a class="tax-law-title" href="${esc(lawHref(law))}" target="_blank" rel="noopener" title="${esc(lawLinkTitle(law))}">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}${pdfMark(law)}</a>
     <span class="tax-law-why">${esc(law.reason)}${SOURCE_LABEL[law.source] ? ` <em class="muted">(${esc(SOURCE_LABEL[law.source])})</em>` : ''}</span>
     <span class="tax-law-meta"><a href="${esc(votingUrl(law))}" target="_blank" rel="noopener">głosowanie nr ${law.votingNumber}, pos. ${law.sitting}</a></span>
   </li>`;

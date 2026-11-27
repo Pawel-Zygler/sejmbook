@@ -1,4 +1,5 @@
-import { mpTaxTally, tallySentence, VOTE_CODES, VOTE_LABEL, DIRECTION_LABEL, processUrl, votingUrl, lawStatus, lawsWord } from '../lib/taxes.js';
+import { lawHref, lawLinkTitle, pdfMark } from '../lib/law-pdf.js';
+import { mpTaxTally, tallySentence, VOTE_CODES, VOTE_LABEL, DIRECTION_LABEL, votingUrl, lawStatus, lawsWord } from '../lib/taxes.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -16,7 +17,7 @@ const voteChip = (code) => `<span class="tax-vote tax-v-${code === '-' ? 'X' : c
 function lawItem({ law, vote }) {
   return `<li class="tax-law" data-process="${esc(law.process)}">
     <div class="tax-law-top">${voteChip(vote)}<time datetime="${esc(law.date)}">${esc(law.date)}</time>${law.veto ? '<span class="tax-flag">weto</span>' : ''}</div>
-    <a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener">Ustawa ${esc(law.title)}</a>
+    <a class="tax-law-title" href="${esc(lawHref(law))}" target="_blank" rel="noopener" title="${esc(lawLinkTitle(law))}">Ustawa ${esc(law.title)}${pdfMark(law)}</a>
     <span class="tax-law-why">${esc(law.reason)}</span>
     <span class="tax-law-meta"><a href="${esc(votingUrl(law))}" target="_blank" rel="noopener">głosowanie nr ${law.votingNumber}, pos. ${law.sitting}</a> · ${esc(lawStatus(law))}</span>
   </li>`;

@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
+- **Profile: Ustawy prosto do PDF.** Kliknięcie w ustawę otwiera od razu jej PDF: tekst z Dziennika Ustaw albo druk sejmowy.
 - **Start: Feed w jednej linii.** Każdy wpis w Feedzie to teraz jedna linijka: data, kto, co. Urząd i źródło są pod przyciskiem „i”.
 - **Rankingi: Cywilizacja łacińska: poprzednie zasady.** Wynik cywilizacji łacińskiej znów liczy wszystkie ustawy i zwykłą obecność; suwerenność liczymy bez zmian.
 - **Profile: Współczynnik deklaracji.** Na profilu posła sprawdzisz, czy głosował tak, jak jego komitet obiecywał w kampanii 2023.

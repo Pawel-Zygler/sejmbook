@@ -24,6 +24,7 @@ import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
 import bioData from '../../data/bio.json';
 import workData from '../../data/work.json';
+import lawPdfsData from '../../data/law-pdfs.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -164,8 +165,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Feed w jednej linii';
-const NEWEST_LINE = 'Start: Feed w jednej linii';
+const NEWEST = 'Ustawy prosto do PDF';
+const NEWEST_LINE = 'Profile: Ustawy prosto do PDF';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -768,6 +769,41 @@ describe('Interface switch: classic and modern look', () => {
     remount();
     expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
     expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
+  });
+});
+
+describe('Laws open their PDF (Pawel, 2026-11-27)', () => {
+  const pdfs = { laws: Object.fromEntries(lawData.laws.map((l) => [l.process, { url: `https://api.sejm.gov.pl/eli/acts/DU/2024/${l.process}/text.pdf`, kind: 'dzu' }])) };
+  const mount = (extra) => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, lawData, taxData, latinData, declarationsData, today: '2026-11-24', ...extra });
+  };
+  it('links every law title on a profile straight to the PDF, with a PDF mark', () => {
+    mount({ lawPdfsData: pdfs });
+    nav('#posel-32');
+    const links = $$('[data-testid="profile-laws"] .tax-law-title');
+    expect(links.length).toBeGreaterThan(0);
+    for (const a of links) expect(a.getAttribute('href')).toMatch(/\.pdf$/);
+    expect($('[data-testid="profile-laws"] .pdf-mark')).not.toBeNull();
+    const tax = $$('[data-testid="profile-taxes"] .tax-law-title');
+    for (const a of tax) expect(a.getAttribute('href')).toMatch(/\.pdf$/);
+  });
+  it('falls back to the legislative process without PDF data', () => {
+    mount({});
+    nav('#posel-32');
+    const a = $('[data-testid="profile-laws"] .tax-law-title');
+    expect(a.getAttribute('href')).toContain('PrzebiegProc.xsp');
+    expect($('[data-testid="profile-laws"] .pdf-mark')).toBeNull();
+  });
+  it('uses the bundled data/law-pdfs.json for the laws it covers', () => {
+    mount({ lawPdfsData });
+    nav('#posel-32');
+    const known = new Set(Object.keys(lawPdfsData.laws ?? {}));
+    for (const li of $$('[data-testid="profile-laws"] .tax-law')) {
+      const href = li.querySelector('.tax-law-title').getAttribute('href');
+      if (known.has(li.dataset.process)) expect(href).toBe(lawPdfsData.laws[li.dataset.process].url);
+    }
   });
 });
 

@@ -74,7 +74,7 @@ describe('law search card', () => {
     expect(h).toContain('stan na 2026-11-26');
     // One line per law: the row has no line breaks inside, the full title is in the tooltip.
     for (const li of h.match(/<li class="tax-law law-row"[\s\S]*?<\/li>/g)) expect(li).not.toContain('\n');
-    expect(h).toContain('title="Ustawa o zmianie ustawy o podatku akcyzowym (Dz.U. 2025 poz. 1)"');
+    expect(h).toContain('title="Ustawa o zmianie ustawy o podatku akcyzowym (Dz.U. 2025 poz. 1): przebieg procesu legislacyjnego"');
   });
 
   it('is left out without data or without any vote of the MP', () => {

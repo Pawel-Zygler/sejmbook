@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-ustawy-pdf",
+      "date": "2026-11-27",
+      "title": "Ustawy prosto do PDF",
+      "section": "Profile",
+      "body": "Kliknięcie w ustawę otwiera od razu jej PDF: tekst z Dziennika Ustaw albo druk sejmowy.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-feed-w-linii",
       "date": "2026-11-27",
       "title": "Feed w jednej linii",

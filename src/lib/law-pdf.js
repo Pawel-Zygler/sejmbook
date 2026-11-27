@@ -46,8 +46,8 @@ export const lawHref = (law) => law?.pdf?.url ?? processUrl(law);
 
 /** Hover text for that link. */
 export function lawLinkTitle(law) {
-  const name = `Ustawa ${law.title}`;
-  if (law.pdf?.kind === 'dzu') return `${name}: tekst z Dziennika Ustaw, PDF${law.dzu ? ` (${law.dzu})` : ''}`;
+  const name = `Ustawa ${law.title}${law.dzu ? ` (${law.dzu})` : ''}`;
+  if (law.pdf?.kind === 'dzu') return `${name}: tekst z Dziennika Ustaw, PDF`;
   if (law.pdf?.kind === 'druk') return `${name}: projekt, druk nr ${law.pdf.print ?? law.process}, PDF`;
   return `${name}: przebieg procesu legislacyjnego`;
 }
