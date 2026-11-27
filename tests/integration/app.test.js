@@ -163,8 +163,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Wykres rozkładu: cywilizacja łacińska';
-const NEWEST_LINE = 'Rankingi: Wykres rozkładu: cywilizacja łacińska';
+const NEWEST = 'Suwerenność kompetencji (eksperyment)';
+const NEWEST_LINE = 'Rankingi: Suwerenność kompetencji (eksperyment)';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -1090,6 +1090,26 @@ describe('Profile: experimental card "Zgodność z cywilizacją łacińską"', (
     expect(total()).toBeLessThanOrEqual(mpsData.mps.filter((m) => m.active && m.club === 'Lewica').length);
     click($('[data-action="latin-sort"][data-sort="total"]'));
     click($('[data-action="latin-club"][data-club=""]'));
+  });
+
+  it('separate indicator "Suwerenność kompetencji": section on the card, column and sort in the ranking', () => {
+    nav('#posel-33');
+    const sec = $('[data-testid="profile-latin"] [data-testid="latin-sov"]');
+    expect(sec).not.toBeNull();
+    expect(sec.textContent).toContain('osobny wskaźnik');
+    expect(Number(sec.querySelector('[data-testid="latin-sov-score"]').textContent)).toBeGreaterThanOrEqual(0);
+    expect($$('[data-testid="profile-latin"] .latin-pillar')).toHaveLength(4);
+    nav('#konieczny');
+    expect($('[data-testid="latin-sov-avg"]')).not.toBeNull();
+    click($('[data-action="latin-sort"][data-sort="sov"]'));
+    expect($('[data-testid="latin-hist"]').dataset.key).toBe('sov');
+    const v = $$('[data-testid="latin-row-sov"]').map((td) => td.textContent).filter((t) => t !== '–').map(Number);
+    expect(v.length).toBeGreaterThan(300);
+    expect(v).toEqual([...v].sort((x, y) => y - x));
+    click($('[data-action="latin-view"][data-view="clubs"]'));
+    expect($$('[data-testid="latin-clubs"] td.latin-sov-col').length).toBeGreaterThan(5);
+    click($('[data-action="latin-view"][data-view="mps"]'));
+    click($('[data-action="latin-sort"][data-sort="total"]'));
   });
 
   it('is linked from the sitemap and the footer', () => {

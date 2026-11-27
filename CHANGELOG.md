@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-27
 
+- **Rankingi: Suwerenność kompetencji (eksperyment).** Nowy osobny wskaźnik: czy poseł głosuje za przenoszeniem kompetencji do UE, czy za zatrzymaniem ich w Polsce.
 - **Rankingi: Wykres rozkładu: cywilizacja łacińska.** Ranking ma teraz wykres, który pokazuje, ilu posłów ma jaki wynik.
 - **Profile: LinkedIn przy nazwisku posła.** Przy nazwisku jest teraz ikona LinkedIn: potwierdzony profil z Wikidata albo wyszukiwanie po imieniu i nazwisku.
 - **Rankingi: Ranking: cywilizacja łacińska.** Nowy eksperymentalny ranking posłów według czterech zasad Konecznego, a karta jest teraz na profilu każdego posła.
