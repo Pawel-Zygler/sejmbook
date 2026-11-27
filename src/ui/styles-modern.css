@@ -162,6 +162,12 @@
 :root[data-ui="modern"] .tax-bar { height: 12px; }
 :root[data-ui="modern"] .tax-group h3 { font-family: var(--font-display); letter-spacing: 0.08em; }
 
+/* Profile: KPI card */
+:root[data-ui="modern"] .kpi-tile { border-radius: 16px; }
+:root[data-ui="modern"] .kpi-tile h3 { font-family: var(--font-display); letter-spacing: 0.08em; }
+:root[data-ui="modern"] .kpi-big b { font-family: var(--font-display); }
+:root[data-ui="modern"] .kpi-bar { height: 10px; }
+
 /* Pages without a right column use the full width */
 :root[data-ui="modern"][data-aside="off"] .layout { grid-template-columns: minmax(0, 1fr); }
 

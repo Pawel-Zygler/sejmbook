@@ -47,5 +47,6 @@ npm run coverage    # unit + progi pokrycia (lines/functions/statements 95%, bra
 ```
 Zasady:
 - każda nowa funkcja wchodzi razem z testami na wszystkich trzech poziomach;
+- każdy znaleziony brak (zauważony przez Claude'a albo przez Pawła) zamieniamy w test automatyczny, który pilnuje, że brakujący element już jest; wybieramy najtańszy poziom: unit, potem integracja, a e2e (Playwright) tylko w ostateczności;
 - każda nowa funkcja dostaje krótki post w Changelogu (`data/news.json`), a test kontraktu danych pilnuje jego poprawności. CI: `.github/workflows/tests.yml`.
 </details>

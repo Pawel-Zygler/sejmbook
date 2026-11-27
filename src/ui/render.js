@@ -10,6 +10,7 @@ import { listPl, ageWords, aboutYears, termsWords, termOrdinals } from '../lib/p
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
+import { renderProfileKpi } from './kpi-view.js';
 import { renderProfileLaws } from './law-view.js';
 import { renderProfileLinks } from './profile-links.js';
 import { renderDistrictMap } from './district-map.js';
@@ -950,6 +951,7 @@ export function renderProfile(ctx, id) {
       <div class="feed">
         ${personNewsPost(ctx, mp.name)}
         ${renderProfileAttendance(ctx, mp)}
+        ${renderProfileKpi(ctx, mp, { infoTip })}
         ${renderProfileTaxes(ctx, mp, { infoTip })}
         ${renderProfileLaws(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}

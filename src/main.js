@@ -13,6 +13,7 @@ import contactsData from '../data/contacts.json';
 import feedData from '../data/feed.json';
 import governmentData from '../data/government.json';
 import taxData from '../data/tax-votes.json';
+import kpiData from '../data/kpi.json';
 import lawData from '../data/law-votes.json';
 import socialData from '../data/social.json';
 import workData from '../data/work.json';
@@ -20,4 +21,4 @@ import districtMapData from '../data/district-map.json';
 import bioData from '../data/bio.json';
 import { createApp } from './app.js';
 
-createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, lawData, socialData, workData, districtMapData, bioData, mediaData: window.__SEJM_MEDIA__ });
+createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, socialData, workData, districtMapData, bioData, mediaData: window.__SEJM_MEDIA__ });

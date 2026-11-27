@@ -1,0 +1,29 @@
+name: kpi
+# Builds data/kpi.json (attendance, speeches, interpellations, MPs' bills per MP) from the Sejm API.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '50 4 * * 3'
+  push:
+    branches: [main, 'claude/**']
+    paths: ['scripts/fetch-kpi.mjs', 'src/lib/kpi.js', '.github/workflows/kpi.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - run: node scripts/fetch-kpi.mjs
+      - name: Commit KPI data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/kpi.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update MP KPI from the Sejm API"
+          git pull --rebase
+          git push

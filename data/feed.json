@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-26T23:51:23.505Z",
+ "fetchedAt": "2026-11-27T08:32:59.446Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
@@ -16,6 +16,12 @@
     "date": "2026-11-26",
     "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/rozmowy-prezydentow-polski-i-chile,130840",
     "seenAt": "2026-11-26T23:51:23.505Z"
+   },
+   {
+    "title": "Prezydent RP: Chcemy nadać nowy impuls relacjom polsko-chilijskim",
+    "date": "2026-11-26",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/prezydent-rp-chcemy-nadac-nowy-impuls-relacjom-polsko-chilijskim,130894",
+    "seenAt": "2026-11-26T23:59:59.000Z"
    },
    {
     "title": "Rada Samorządu Terytorialnego o trudnej sytuacji finansowej szpitali powiatowych",
@@ -46,12 +52,6 @@
     "date": "2026-11-26",
     "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-z-okazji-70-lecia-muzeum-okregowego-w-suwalkach,130791",
     "seenAt": "2026-11-26T23:51:23.505Z"
-   },
-   {
-    "title": "Spotkanie z przedstawicielami chilijskiej Polonii [PL/EN]",
-    "date": "2026-11-25",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-spotkal-sie-z-przedstawicielami-chilijskiej-polonii-w-santiago-de-chile,130766",
-    "seenAt": "2026-11-25T23:59:59.000Z"
    }
   ]
  },
@@ -3352,6 +3352,12 @@
    "source": "https://www.gov.pl/web/nauka/wiadomosci",
    "items": [
     {
+     "title": "Powołania nowych członków Rady Narodowego Centrum Nauki",
+     "date": "2026-11-27",
+     "url": "https://www.gov.pl/web/nauka/powolania-nowych-czlonkow-rady-narodowego-centrum-nauki",
+     "seenAt": "2026-11-27T08:32:59.446Z"
+    },
+    {
      "title": "Bezpieczny kampus: wzmacniamy współpracę na rzecz bezpieczeństwa środowiska akademickiego",
      "date": "2026-11-26",
      "url": "https://www.gov.pl/web/nauka/bezpieczny-kampus-wzmacniamy-wspolprace-na-rzecz-bezpieczenstwa-srodowiska-akademickiego",
@@ -3374,12 +3380,6 @@
      "date": "2026-11-25",
      "url": "https://www.gov.pl/web/nauka/nauka-ma-kobiecy-glos--znamy-nazwiska-laureatek-26-edycji-programu-loral-unesco-dla-kobiet-i-nauki",
      "seenAt": "2026-11-25T17:14:29.097Z"
-    },
-    {
-     "title": "Ministerstwo wzmacnia udział Polski w inicjatywie Uniwersytetów Europejskich",
-     "date": "2026-11-23",
-     "url": "https://www.gov.pl/web/nauka/ministerstwo-wzmacnia-udzial-polski-w-inicjatywie-uniwersytetow-europejskich",
-     "seenAt": "2026-11-23T23:59:59.000Z"
     }
    ]
   },
@@ -3422,6 +3422,12 @@
    "source": "https://www.gov.pl/web/rodzina/aktualnosci-wiadomosci",
    "items": [
     {
+     "title": "Ministra Pracy ponownie przewodniczącą Rady Dialogu Społecznego",
+     "date": "2026-11-27",
+     "url": "https://www.gov.pl/web/rodzina/ministra-pracy-ponownie-przewodniczaca-rady-dialogu-spolecznego",
+     "seenAt": "2026-11-27T08:32:59.446Z"
+    },
+    {
      "title": "Dzień Pracownika Socjalnego. Ministra Pracy wręczyła nagrody szczególnie zasłużonym",
      "date": "2026-11-24",
      "url": "https://www.gov.pl/web/rodzina/dzien-pracownika-socjalnego-ministra-pracy-wreczyla-nagrody-szczegolnie-zasluzonym",
@@ -3444,12 +3450,6 @@
      "date": "2026-11-10",
      "url": "https://www.gov.pl/web/rodzina/nikt-nie-rodzi-sie-rodzicem-gotowosc-przychodzi-z-czasem--ruszyla-kampania-spoleczna-wspierajaca-przyszlych-i-obecnych-rodzicow",
      "seenAt": "2026-11-10T23:59:59.000Z"
-    },
-    {
-     "title": "Nowe przepisy antymobbingowe wchodzą w życie",
-     "date": "2026-11-05",
-     "url": "https://www.gov.pl/web/rodzina/nowe-przepisy-antymobbingowe-wchodza-w-zycie",
-     "seenAt": "2026-11-05T23:59:59.000Z"
     }
    ]
   },
@@ -3548,6 +3548,12 @@
      "seenAt": "2026-11-26T23:51:23.505Z"
     },
     {
+     "title": "Ogłoszenie Programu Certyfikacji Szkółek Piłkarskich na lata 2027-2029 – wyłonienie ogólnopolskiego operatora",
+     "date": "2026-11-26",
+     "url": "https://www.gov.pl/web/sport/ogloszenie-programu-certyfikacji-szkolek-pilkarskich-na-lata-2027-2029--wylonienie-ogolnopolskiego-operatora",
+     "seenAt": "2026-11-26T23:59:59.000Z"
+    },
+    {
      "title": "Trzy medale zdobyli Polacy w Senegalu. Minister sportu i turystyki spotkał się z medalistami Młodzieżowych Igrzysk Olimpijskich 2026",
      "date": "2026-11-24",
      "url": "https://www.gov.pl/web/sport/trzy-medale-zdobyli-polacy-w-senegalu-minister-sportu-i-turystyki-spotkal-sie-z-medalistami-mlodziezowych-igrzysk-olimpijskich-2026",
@@ -3558,12 +3564,6 @@
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/sport/posiedzenie-rady-ue-w-formacie-ministrow-ds-sportu3",
      "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Wspólny komunikat Ministerstwa Sportu i Turystyki oraz Polskiego Związku Łyżwiarstwa Figurowego",
-     "date": "2026-11-21",
-     "url": "https://www.gov.pl/web/sport/wspolny-komunikat-ministerstwa-sportu-i-turystyki-oraz-polskiego-zwiazku-lyzwiarstwa-figurowego",
-     "seenAt": "2026-11-21T23:59:59.000Z"
     }
    ]
   },
@@ -3612,6 +3612,12 @@
    "source": "https://www.gov.pl/web/mswia/aktualnosci",
    "items": [
     {
+     "title": "W 16 szkołach odbędą się ćwiczenia reagowania podczas zagrożenia atakiem z powietrza",
+     "date": "2026-11-27",
+     "url": "https://www.gov.pl/web/mswia/w-16-szkolach-odbeda-sie-cwiczenia-reagowania-podczas-zagrozenia-atakiem-z-powietrza",
+     "seenAt": "2026-11-27T08:32:59.446Z"
+    },
+    {
      "title": "Blisko 40 mln zł dla Państwowego Instytutu Medycznego MSWiA na zwiększenie ochrony zdrowia w sytuacjach kryzysowych. W PIM MSWiA podpisano umowę na pozyskanie Funduszy Norweskich",
      "date": "2026-11-26",
      "url": "https://www.gov.pl/web/mswia/blisko-40-mln-zl-dla-panstwowego-instytutu-medycznego-mswia",
@@ -3633,12 +3639,6 @@
      "title": "Wizyta kierownictwa MSWiA w Helsinkach: Budujemy partnerstwo strategiczne na rzecz bezpieczeństwa regionu",
      "date": "2026-11-23",
      "url": "https://www.gov.pl/web/mswia/wizyta-kierownictwa-mswia-w-helsinkach",
-     "seenAt": "2026-11-23T23:59:59.000Z"
-    },
-    {
-     "title": "Działania MSWiA na rzecz bezpieczeństwa. Podsumowanie trzeciego tygodnia listopada",
-     "date": "2026-11-23",
-     "url": "https://www.gov.pl/web/mswia/dzialania-mswia-na-rzecz-bezpieczenstwa-podsumowanie-trzeciego-tygodnia-listopada",
      "seenAt": "2026-11-23T23:59:59.000Z"
     }
    ]
