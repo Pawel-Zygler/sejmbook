@@ -2,6 +2,10 @@
 
 Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `data/news.json`, tak jak strona Changelog w serwisie.
 
+## 2026-11-27
+
+- **Posłowie: Posłowie wszystkich kadencji.** Na liście posłów filtr „Wszystkie” pokazuje każdego posła III RP raz.
+
 ## 2026-11-26
 
 - **Feed: Skład Sejmu na górze.** Podział mandatów między kluby jest teraz na samej górze Feedu.

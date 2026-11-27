@@ -1,5 +1,5 @@
 import { indexById, clubById, filterMps, filterTermMps } from './lib/mps.js';
-import { termMps, indexPeople } from './lib/career.js';
+import { termMps, termList, indexPeople } from './lib/career.js';
 import { mergeEarlyTerms } from './lib/early-terms.js';
 import { parseHash } from './lib/router.js';
 import { mergeWikiParties } from './lib/life.js';
@@ -71,7 +71,7 @@ export function createApp(doc, win, data) {
   function renderDirectoryList() {
     const t = Number(state.directory.term);
     const past = t !== 10 && ctx.terms;
-    const found = past ? filterTermMps(termMps(ctx.terms, t), state.directory) : filterMps(ctx.mps, state.directory);
+    const found = past ? filterTermMps(termList(ctx.terms, t), state.directory) : filterMps(ctx.mps, state.directory);
     const key = sortKeys(Boolean(past)).includes(state.directory.sort) ? state.directory.sort : 'name';
     const list = sortMps(ctx, found, key, key === state.directory.sort ? state.directory.dir : undefined);
     const html = renderDirectory(ctx, state.directory, list);
