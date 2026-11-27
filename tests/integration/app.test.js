@@ -919,6 +919,15 @@ describe('Feed: seats of the Sejm on top', () => {
     const posts = $$('[data-view="home"] .feed-post');
     if (posts.length) expect(view.firstElementChild.compareDocumentPosition(posts[0]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
+  it('keeps the data source in an info button, not as visible text (Pawel, 2026-11-27)', () => {
+    nav('');
+    const head = $('[data-testid="seat-post"] .post-head small');
+    const tip = head.querySelector('[data-testid="info-tip"]');
+    expect(tip).not.toBeNull();
+    expect(tip.querySelector('.info-tip-body').textContent).toContain('API Sejmu');
+    tip.remove();
+    expect(head.textContent).not.toContain('API Sejmu');
+  });
 });
 
 describe('Posłowie: all terms at once', () => {
