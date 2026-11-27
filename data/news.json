@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-flyer-bez-szacunkow",
+      "date": "2026-11-27",
+      "title": "Frequent Flyer bez szacunków",
+      "section": "Rankingi",
+      "body": "Ranking Frequent Flyer pokazuje już tylko pewne dane: liczbę lotów i artykuły, bez szacowanych kilometrów.",
+      "link": {
+        "href": "#frequent-flyer",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-27-ustawy-pdf",
       "date": "2026-11-27",
       "title": "Ustawy prosto do PDF",

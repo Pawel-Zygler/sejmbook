@@ -5,7 +5,7 @@ import clubsData from '../../data/clubs.json';
 import flightsData from '../../data/flights.json';
 import airportsData from '../../data/airports.json';
 import { createContext } from '../../src/app.js';
-import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, flyerDonut, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, mpCardSub, clubTag, renderCareerSpectrum, listPl, firstActivityText, careerSentence, renderParties, articleLinks, earthLaps, earthBadge, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
+import { esc, plural, sejmProfileUrl, renderNotFound, renderProfile, renderFlyer, renderHome, renderDirectory, renderAside, renderLiveFeed, renderVotingDetails, feedProfileHref, govPhoto, pageHead, personNewsPost, officeHolderName, feedEntries, feedPost, renderContact, renderPerson, directoryFilters, termPicker, personAvatar, flyerTotals, clubChip, formerPartyChip, rankingSwitch, avatar, photoUrl, photoSrc, clubLogo, mpCardMeta, mpCardSub, clubTag, renderCareerSpectrum, listPl, firstActivityText, careerSentence, renderParties, articleLinks, renderNewsPost, renderChangelog, newsSection, sortNews, podiumBadge, PODIUM_BADGES, infoTip } from '../../src/ui/render.js';
 import { contrast } from '../../src/lib/color.js';
 import { filterMps } from '../../src/lib/mps.js';
 
@@ -45,11 +45,11 @@ describe('views', () => {
   it('profile of an unknown id renders notFound', () => {
     expect(renderProfile(ctx, 9999)).toContain('data-view="notFound"');
   });
-  it('profile shows flight history and km estimate for a frequent flyer', () => {
+  it('profile shows flight history for a frequent flyer, without a km estimate', () => {
     const html = renderProfile(ctx, 240);
     expect(html).toContain('Łukasz Mejza');
     expect(html).toContain('2026 (do 1 listopada)');
-    expect(html).toMatch(/≈\s40\s595/); // 115 × 353 km
+    expect(html).not.toContain('szacunek');
   });
   it('profile without flight data shows no flight post and no note about it', () => {
     const html = renderProfile(ctx, 400);
@@ -62,14 +62,19 @@ describe('views', () => {
   it('profile labels inactive mandates', () => {
     expect(renderProfile(ctx, 38)).toContain('zrzekł(a) się mandatu');
   });
-  it('flyer shows no coverage note, source list or article list, and has an earth-laps column', () => {
+  it('flyer shows no coverage note, source list or article list, and no estimated km (Pawel, 2026-11-27)', () => {
     for (const d of flightsData.datasets) {
       const html = renderFlyer(ctx, { period: String(d.term), dataset: d.id, sortBy: 'km' });
       expect(html).not.toContain(esc(d.coverageNote));
       expect(html).not.toContain('<h2>Źródła danych</h2>');
       expect(html).not.toContain('all-articles');
       expect(html).not.toContain('Krajowe loty posłów na koszt');
-      expect(html).toContain('<th scope="col" class="earth-col">Okrążenia<br>Ziemi</th>');
+      expect(html).not.toContain('Okrążenia');
+      expect(html).not.toContain('≈ km');
+      expect(html).not.toContain('class="bar-col"');
+      expect(html).not.toContain('earth-badge');
+      expect(html).not.toContain('Jak liczymy kilometry');
+      expect(html).toContain('<th scope="col" class="num">Loty</th><th scope="col">Artykuły</th>');
     }
   });
   it('flyer falls back to the first dataset for an unknown id', () => {
@@ -187,9 +192,9 @@ describe('podium badges', () => {
     expect(html.indexOf('data-testid="ranking"')).toBeLessThan(html.indexOf('class="panel method"'));
     expect(html).not.toContain('class="panel coverage"');
   });
-  it('flyer still renders any dataset (2025: Dowhan leads on km, Kmita on flights)', () => {
+  it('flyer still renders any dataset, always ranked by flights (2025: Kmita)', () => {
     const first = (html) => html.slice(html.indexOf('<tbody>')).match(/data-mp-id="(\d+)"/)[1];
-    expect(first(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'km' }))).toBe('70');
+    expect(first(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'km' }))).toBe('165');
     expect(first(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'flights' }))).toBe('165');
     expect(renderFlyer(ctx, { period: '10', dataset: '2025', sortBy: 'km' })).not.toContain('data-testid="parts"');
   });
@@ -242,15 +247,6 @@ describe('MP photos', () => {
 });
 
 describe('all articles list', () => {
-  it('earth laps: one decimal, a floor for short distances, nothing without km', () => {
-    expect(earthLaps(40075)).toBe('1,0');
-    expect(earthLaps(12022)).toBe('0,3');
-    expect(earthLaps(1000)).toBe('<0,1');
-    expect(earthLaps(null)).toBeNull();
-    expect(earthBadge(80150)).toContain('<span class="earth-n" aria-hidden="true">2,0</span>');
-    expect(earthBadge(80150)).toContain('🌍');
-    expect(earthBadge(null)).toContain('–');
-  });
   it('ranking rows have no captions under the name (route, periods)', () => {
     const html = renderFlyer(ctx, { period: 'all', dataset: null, sortBy: 'km' });
     expect(html).not.toContain('Loty z:');
@@ -418,7 +414,9 @@ describe('page-specific sidebar', () => {
     expect(directoryFilters(ctx, st.directory)).toContain('class="filter on" data-action="filter-club" data-club="KO"');
     expect(directoryFilters(ctx, st.directory, 'phone')).toContain('id="dir-inactive-phone"');
     expect(renderAside(ctx, { name: 'flyer' }, st)).toBe(flyerTotals(ctx, st.flyer));
-    expect(flyerTotals(ctx, st.flyer)).toContain('data-testid="sum-km"');
+    expect(flyerTotals(ctx, st.flyer)).not.toContain('sum-km');
+    expect(flyerTotals(ctx, st.flyer)).not.toContain('flyer-donut');
+    expect(flyerTotals(ctx, st.flyer)).toContain('data-testid="sum-flights"');
     expect(renderAside(ctx, { name: 'home' }, st)).toBe('');
   });
 });
@@ -518,20 +516,6 @@ describe('renderPerson', () => {
   });
 });
 
-describe('flyerDonut', () => {
-  it('draws one slice per club plus "Inne", with tooltips and a legend in series colours', () => {
-    const mk = (club, km) => ({ mp: { club }, km });
-    const html = flyerDonut(ctx, [mk('KO', 600), mk('PiS', 200), mk('PSL', 100), mk('Lewica', 50), mk('Razem', 30), mk('niez.', 20)]);
-    expect((html.match(/class="donut-seg"/g) ?? []).length).toBe(5);
-    expect(html).toContain('fill:var(--series-1)');
-    expect(html).toContain('fill:var(--series-other)');
-    expect(html).toContain('<title>KO: ≈ 600 km (60,0%)</title>');
-    expect(html).toContain('<span class="lg-name" title="Razem, Niezrzeszeni">Inne</span>');
-    expect(html).toContain('>0,00</text>');
-    expect(flyerDonut(ctx, [])).toBe('');
-    expect(flyerDonut(ctx, [mk('KO', 10)])).toContain('A 52 52 0 1 1');
-  });
-});
 
 const FEED_GOV = {
   offices: [{ id: 'marszalek-senatu', title: 'Marszałek Senatu', holders: [{ name: 'Anna Senat', from: '2023-11-13', to: null }] }],

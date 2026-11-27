@@ -24,7 +24,7 @@ test('home feed shows the seat bar, without Frequent Flyer posts', async ({ page
   await expect(page.locator('.seat-bar .seg')).toHaveCount(12);
 });
 
-test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', async ({ page }) => {
+test('Frequent Flyer: one merged "Od zawsze" set ranked by flights, no filters, no estimates', async ({ page }) => {
   await page.goto(`${PAGE}#frequent-flyer`);
   const rows = page.locator('[data-testid="ranking"] tbody tr');
   expect(await rows.count()).toBeGreaterThan(20);
@@ -34,7 +34,9 @@ test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', asyn
   await expect(page.locator('[data-action="sort"]')).toHaveCount(0);
   await expect(page.locator('.coverage')).toHaveCount(0);
   await expect(page.getByTestId('all-articles')).toHaveCount(0);
-  await expect(rows.first().getByTestId('earth-badge')).toBeVisible();
+  await expect(page.getByTestId('earth-badge')).toHaveCount(0);
+  await expect(page.locator('[data-view="flyer"] .bar-col')).toHaveCount(0);
+  await expect(page.locator('[data-testid="ranking"] thead')).not.toContainText('km');
 });
 
 test('clicking an MP in the ranking opens the profile', async ({ page }) => {
@@ -104,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Ustawy prosto do PDF');
+  await expect(post).toContainText('Frequent Flyer bez szacunków');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -137,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Ustawy prosto do PDF');
+  await expect(page.locator('.news-post').first()).toContainText('Frequent Flyer bez szacunków');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -300,7 +302,8 @@ test('Frequent Flyer starts with the first MP; totals in the sidebar or under th
   await expect(page.locator('.flyer-hero')).toHaveCount(0);
   const totals = page.locator('[data-testid="flyer-totals"]:visible');
   await expect(totals).toHaveCount(1);
-  await expect(totals.getByTestId('sum-km')).toContainText('≈');
+  await expect(totals.getByTestId('sum-flights')).toBeVisible();
+  await expect(totals.getByTestId('sum-km')).toHaveCount(0);
   const rowY = (await firstRow.boundingBox()).y;
   const viewH = page.viewportSize().height;
   expect(rowY).toBeLessThan(viewH);
@@ -359,19 +362,14 @@ test('Former MPs have their own profile', async ({ page }) => {
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
 
-test('Dark and light mode: switch, and the donut uses the mode\'s palette', async ({ page, isMobile }) => {
+test('Dark and light mode: switch and keep the choice', async ({ page }) => {
   await page.goto(`${PAGE}#frequent-flyer`);
   const btn = page.getByTestId('theme-btn');
   while ((await btn.getAttribute('data-theme')) !== 'light') await btn.click();
-  const donut = page.locator('[data-testid="flyer-donut"]:visible').first();
-  if (isMobile) await donut.scrollIntoViewIfNeeded();
-  const fill = () => donut.locator('.donut-seg').first().evaluate((el) => getComputedStyle(el).fill);
-  expect(await fill()).toBe('rgb(154, 92, 0)');
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(245, 243, 238)');
   const bgLight = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
   await btn.click();
   await expect(btn).toHaveAttribute('data-theme', 'dark');
-  expect(await fill()).toBe('rgb(255, 181, 71)');
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).not.toBe(bgLight);
   await page.reload();
   await expect(page.getByTestId('theme-btn')).toHaveAttribute('data-theme', 'dark');

@@ -123,7 +123,7 @@ describe('Frequent Flyer', () => {
   beforeEach(() => nav('#frequent-flyer'));
   const rows = () => $$('[data-testid="ranking"] tbody tr');
 
-  it('shows one merged "Od zawsze" set sorted by estimated km, with every article', () => {
+  it('shows one merged "Od zawsze" set ranked by flights, with every article and no estimates', () => {
     const view = $('[data-view="flyer"]');
     expect(view.dataset.dataset).toBe('all');
     const ids = new Set(app.ctx.flights.datasets.flatMap((d) => d.entries.map((e) => String(e.mpId))));
@@ -131,8 +131,10 @@ describe('Frequent Flyer', () => {
     expect(rows()[0].textContent).toContain('Grzegorz Napieralski');
     expect($('.coverage')).toBeNull();
     expect($('[data-testid="all-articles"]')).toBeNull();
-    expect(rows().every((tr) => tr.querySelector('.earth-col'))).toBe(true);
-    expect(rows()[0].querySelector('[data-testid="earth-badge"] .earth-n').textContent).toMatch(/^\d+,\d$/);
+    const flights = rows().map((tr) => Number(tr.querySelector('td.num').textContent));
+    expect([...flights].sort((a, b) => b - a)).toEqual(flights);
+    expect($('[data-view="flyer"] .earth-col, [data-view="flyer"] .bar-col, [data-view="flyer"] [data-testid="earth-badge"]')).toBeNull();
+    expect($('[data-view="flyer"]').textContent).not.toMatch(/≈|km/);
   });
   it('has no filters', () => {
     expect($('.flyer-side')).toBeNull();
@@ -165,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Ustawy prosto do PDF';
-const NEWEST_LINE = 'Profile: Ustawy prosto do PDF';
+const NEWEST = 'Frequent Flyer bez szacunków';
+const NEWEST_LINE = 'Rankingi: Frequent Flyer bez szacunków';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -449,7 +451,8 @@ describe('Sidebar per page', () => {
     expect(view.querySelector('.flyer-hero')).toBeNull();
     expect(view.querySelector('.stats')).toBeNull();
     expect($('#aside [data-testid="sum-flights"]').textContent).toMatch(/\d/);
-    expect($('#aside [data-testid="sum-km"]').textContent).toContain('≈');
+    expect($('#aside [data-testid="sum-km"]')).toBeNull();
+    expect($('#aside').textContent).not.toMatch(/≈|km/);
   });
   it('other pages have no right column', () => {
     nav('#start');
@@ -536,13 +539,16 @@ describe('Theme switch and Frequent Flyer donut', () => {
       expect(root.getAttribute('data-theme')).toBe(t === 'auto' ? null : t);
     }
   });
-  it('the donut in the sidebar matches the km totals', () => {
+  it('has no km donut in the sidebar (estimates removed, Pawel 2026-11-27)', () => {
     nav('#frequent-flyer');
-    const donut = $('#aside [data-testid="flyer-donut"]');
-    expect(donut).not.toBeNull();
-    const shares = $$('#aside .donut-legend .lg-val').map((e) => parseFloat(e.textContent.replace(',', '.')));
-    expect(shares.reduce((a, b) => a + b, 0)).toBeCloseTo(100, 0);
-    expect(donut.querySelectorAll('.donut-seg').length).toBe(shares.length);
+    expect($('#aside [data-testid="flyer-donut"]')).toBeNull();
+  });
+  it('MP profile flight posts show flights and cost, no estimated km', () => {
+    nav('#posel-257');
+    const post = $('.flight-post');
+    expect(post).not.toBeNull();
+    expect(post.textContent).not.toContain('szacunek');
+    expect(post.textContent).toContain('lotów');
   });
 });
 

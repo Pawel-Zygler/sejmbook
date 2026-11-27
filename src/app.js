@@ -74,8 +74,8 @@ export function createApp(doc, win, data) {
     route: parseHash(win.location.hash),
     directory: { query: '', club: '', includeInactive: false, term: 10, sort: 'name', dir: 'asc' },
     parties: { scope: 'all' },
-    // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
-    flyer: { period: 'all', dataset: null, sortBy: 'km' },
+    // One view (Pawel, 2026-11-24): "Od zawsze", no filters; ranked by flights, no estimated km (2026-11-27).
+    flyer: { period: 'all', dataset: null, sortBy: 'flights' },
     attendance: { order: 'desc', club: '', view: 'mps' },
     latin: { order: 'desc', club: '', band: 'all', sortBy: 'total', view: 'mps' },
     // Feed time window (Pawel, 2026-11-24: the feed shows the last hours first).
