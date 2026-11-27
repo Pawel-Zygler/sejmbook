@@ -358,8 +358,8 @@
     {
      "label": "Fundacja „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego",
      "qid": "Q5508924",
-     "from": null,
-     "to": null,
+     "from": 2016,
+     "to": 2023,
      "src": "plwiki"
     },
     {
@@ -1119,7 +1119,7 @@
     {
      "label": "Stowarzyszenie „Wspólnota Polska”",
      "qid": "Q1342099",
-     "from": null,
+     "from": 2017,
      "to": null,
      "src": "plwiki"
     }
@@ -1205,15 +1205,15 @@
     {
      "label": "Niezależny Samorządny Związek Zawodowy Rolników Indywidualnych „Solidarność”",
      "qid": "Q2646070",
-     "from": null,
+     "from": 1981,
      "to": null,
      "src": "plwiki,wikidata"
     },
     {
      "label": "Stowarzyszenie Dziennikarzy Polskich",
      "qid": "Q9346181",
-     "from": null,
-     "to": null,
+     "from": 1989,
+     "to": 1992,
      "src": "plwiki,wikidata"
     }
    ]
@@ -1329,16 +1329,16 @@
    "title": "Krzysztof Lipiec",
    "items": [
     {
-     "label": "Niezależne Zrzeszenie Studentów",
-     "qid": "Q763652",
-     "from": 1980,
-     "to": null,
+     "label": "Socjalistyczny Związek Studentów Polskich",
+     "qid": "Q9339079",
+     "from": 1978,
+     "to": 1979,
      "src": "plwiki"
     },
     {
-     "label": "Socjalistyczny Związek Studentów Polskich",
-     "qid": "Q9339079",
-     "from": null,
+     "label": "Niezależne Zrzeszenie Studentów",
+     "qid": "Q763652",
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     }
@@ -1415,6 +1415,20 @@
    "title": "Antoni Macierewicz",
    "items": [
     {
+     "label": "1 Warszawska Drużyna Harcerska im. Romualda Traugutta Czarna Jedynka",
+     "qid": "Q9130595",
+     "from": 1966,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
+     "label": "Związek Harcerstwa Polskiego",
+     "qid": "Q1995166",
+     "from": 1966,
+     "to": null,
+     "src": "plwiki"
+    },
+    {
      "label": "Komitet Obrony Robotników",
      "qid": "Q1779995",
      "from": 1968,
@@ -1426,13 +1440,6 @@
      "qid": "Q5152957",
      "from": 1968,
      "to": 1989,
-     "src": "plwiki,wikidata"
-    },
-    {
-     "label": "1 Warszawska Drużyna Harcerska im. Romualda Traugutta Czarna Jedynka",
-     "qid": "Q9130595",
-     "from": null,
-     "to": null,
      "src": "plwiki,wikidata"
     },
     {
@@ -1469,13 +1476,6 @@
      "from": null,
      "to": null,
      "src": "plwiki,wikidata"
-    },
-    {
-     "label": "Związek Harcerstwa Polskiego",
-     "qid": "Q1995166",
-     "from": null,
-     "to": null,
-     "src": "plwiki"
     }
    ]
   },
@@ -1533,7 +1533,7 @@
     {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
-     "from": null,
+     "from": 1996,
      "to": null,
      "src": "plwiki"
     }
@@ -1545,7 +1545,7 @@
     {
      "label": "Forum Młodych PiS",
      "qid": "Q6503147",
-     "from": null,
+     "from": 2011,
      "to": null,
      "src": "plwiki"
     }
@@ -1617,17 +1617,17 @@
    "title": "Piotr Müller",
    "items": [
     {
-     "label": "Rada Główna Nauki i Szkolnictwa Wyższego",
-     "qid": "Q11833345",
+     "label": "Parlament Studentów Rzeczypospolitej Polskiej",
+     "qid": "Q11811715",
      "from": 2013,
      "to": 2014,
      "src": "plwiki"
     },
     {
-     "label": "Parlament Studentów Rzeczypospolitej Polskiej",
-     "qid": "Q11811715",
-     "from": null,
-     "to": null,
+     "label": "Rada Główna Nauki i Szkolnictwa Wyższego",
+     "qid": "Q11833345",
+     "from": 2013,
+     "to": 2014,
      "src": "plwiki"
     }
    ]
@@ -1660,16 +1660,16 @@
    "title": "Barbara Nowacka",
    "items": [
     {
-     "label": "Młodzi Socjaliści",
-     "qid": "Q8058433",
-     "from": 2005,
+     "label": "Federacja na rzecz Kobiet i Planowania Rodziny",
+     "qid": "Q9258352",
+     "from": 1993,
      "to": null,
      "src": "plwiki"
     },
     {
-     "label": "Federacja na rzecz Kobiet i Planowania Rodziny",
-     "qid": "Q9258352",
-     "from": null,
+     "label": "Młodzi Socjaliści",
+     "qid": "Q8058433",
+     "from": 2005,
      "to": null,
      "src": "plwiki"
     }
@@ -1822,7 +1822,7 @@
     {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
-     "from": null,
+     "from": 1989,
      "to": null,
      "src": "plwiki"
     }
@@ -1946,7 +1946,7 @@
     {
      "label": "Akcja Wyborcza Solidarność",
      "qid": "Q416916",
-     "from": null,
+     "from": 1998,
      "to": null,
      "src": "plwiki"
     }
@@ -1977,7 +1977,7 @@
     {
      "label": "Młode Centrum",
      "qid": "Q8058009",
-     "from": null,
+     "from": 2005,
      "to": null,
      "src": "plwiki"
     }
@@ -2054,6 +2054,13 @@
    "title": "Tadeusz Samborski",
    "items": [
     {
+     "label": "Związek Młodzieży Wiejskiej",
+     "qid": "Q9392362",
+     "from": 1962,
+     "to": null,
+     "src": "plwiki,wikidata"
+    },
+    {
      "label": "Fundacja „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego",
      "qid": "Q5508924",
      "from": 1996,
@@ -2073,13 +2080,6 @@
      "from": null,
      "to": null,
      "src": "wikidata"
-    },
-    {
-     "label": "Związek Młodzieży Wiejskiej",
-     "qid": "Q9392362",
-     "from": null,
-     "to": null,
-     "src": "plwiki,wikidata"
     }
    ]
   },
@@ -2089,7 +2089,7 @@
     {
      "label": "Związek Ochotniczych Straży Pożarnych Rzeczypospolitej Polskiej",
      "qid": "Q9392377",
-     "from": null,
+     "from": 1985,
      "to": null,
      "src": "plwiki"
     }
@@ -2132,8 +2132,8 @@
     {
      "label": "Związek Młodzieży Wiejskiej",
      "qid": "Q9392362",
-     "from": null,
-     "to": null,
+     "from": 1971,
+     "to": 1977,
      "src": "plwiki"
     }
    ]
@@ -2175,8 +2175,8 @@
     {
      "label": "Śląsk Wrocław",
      "qid": "Q3025349",
-     "from": 2013,
-     "to": 2023,
+     "from": 2000,
+     "to": 2002,
      "src": "plwiki"
     }
    ]
@@ -2430,7 +2430,7 @@
     {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
-     "from": null,
+     "from": 1980,
      "to": null,
      "src": "plwiki"
     }
@@ -2497,8 +2497,8 @@
     {
      "label": "Ludowe Zespoły Sportowe",
      "qid": "Q6699027",
-     "from": 1976,
-     "to": 1994,
+     "from": 1972,
+     "to": null,
      "src": "plwiki"
     },
     {
@@ -2918,7 +2918,7 @@
     {
      "label": "Niezależny Samorządny Związek Zawodowy „Solidarność”",
      "qid": "Q1003",
-     "from": null,
+     "from": 1984,
      "to": null,
      "src": "plwiki"
     }

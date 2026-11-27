@@ -380,7 +380,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1993,
     "to": null,
     "sentence": "Od 1993 działał w PSL-Porozumieniu Ludowym."
    },
@@ -1192,7 +1192,7 @@
     "classes": [
      "Q49773"
     ],
-    "from": null,
+    "from": 1981,
     "to": null,
     "sentence": "Od 1981 działał w Ruchu Młodej Polski."
    },
@@ -1215,7 +1215,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1991,
     "to": null,
     "sentence": "Od 1991 pełnił funkcję likwidatora majątku Polskiej Zjednoczonej Partii Robotniczej w Gdańsku."
    },
@@ -2680,8 +2680,8 @@
     "classes": [
      "Q3491915"
     ],
-    "from": null,
-    "to": null,
+    "from": 1994,
+    "to": 2002,
     "sentence": "Od 1994 do 2002 zasiadał w radzie miasta i gminy Kolbuszowa."
    },
    {
@@ -2899,8 +2899,8 @@
     "classes": [
      "Q150093"
     ],
-    "from": null,
-    "to": null,
+    "from": 2002,
+    "to": 2006,
     "sentence": "Od 2002 do 2006 był członkiem zarządu województwa warmińsko-mazurskiego."
    },
    {
@@ -3049,8 +3049,8 @@
      "Q4830453",
      "Q6881511"
     ],
-    "from": null,
-    "to": null,
+    "from": 2016,
+    "to": 2018,
     "sentence": "Od 2016 do 2018 przewodniczył Radzie Nadzorczej Korporacji Ubezpieczeń Kredytów Eksportowych S.A."
    },
    {
@@ -3243,8 +3243,8 @@
     "qid": "Q3154693",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": 1994,
-    "to": 1998,
+    "from": 1990,
+    "to": 2005,
     "sentence": "Od 1990 do 2005 zasiadał w radzie miejskiej Trzcianka, od 1994 do 1998 był członkiem zarządu miasta."
    },
    {
@@ -3254,8 +3254,8 @@
     "classes": [
      "Q3491915"
     ],
-    "from": 1994,
-    "to": 1998,
+    "from": 1990,
+    "to": 2005,
     "sentence": "Od 1990 do 2005 zasiadał w radzie miejskiej Trzcianka, od 1994 do 1998 był członkiem zarządu miasta."
    },
    {
@@ -3428,8 +3428,8 @@
     "classes": [
      "Q327333"
     ],
-    "from": null,
-    "to": null,
+    "from": 1997,
+    "to": 1998,
     "sentence": "Od 1997 do 1998 pełnił funkcję dyrektora oddziału wojewódzkiego Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych w Ostrołęce."
    },
    {
@@ -4216,7 +4216,7 @@
     "classes": [
      "Q5"
     ],
-    "from": null,
+    "from": 2001,
     "to": null,
     "sentence": "Od 2001 był członkiem zarządu klubu żużlowego ZKŻ Zielona Góra, w okresie pełnienia funkcji prezesa przez Roberta Smolenia."
    },
@@ -4399,8 +4399,8 @@
     "classes": [
      "Q157031"
     ],
-    "from": null,
-    "to": null,
+    "from": 2016,
+    "to": 2023,
     "sentence": "Od 2016 do 2023 sprawował funkcję przewodniczącego rady Fundacji „Pomoc Polakom na Wschodzie” im. Jana Olszewskiego."
    },
    {
@@ -5448,8 +5448,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
-    "to": null,
+    "from": 2000,
+    "to": 2001,
     "sentence": "Od 2000 do 2001 należał do Stronnictwa Konserwatywno-Ludowego oraz do stowarzyszenia Młodzi Konserwatyści."
    },
    {
@@ -5785,8 +5785,8 @@
      "Q327333",
      "Q9367288"
     ],
-    "from": null,
-    "to": null,
+    "from": 2000,
+    "to": 2001,
     "sentence": "Od 2000 do 2001 kierował śląskim oddziałem Agencji Restrukturyzacji i Modernizacji Rolnictwa."
    }
   ]
@@ -6329,8 +6329,8 @@
      "Q925381",
      "Q1549591"
     ],
-    "from": null,
-    "to": null,
+    "from": 1993,
+    "to": 1995,
     "sentence": "Od 1993 do 1995 pełniła funkcję pełnomocnika zarządu Fundacji na rzecz Polskich Związków Kredytowych w Gdyni."
    },
    {
@@ -6907,8 +6907,8 @@
     "classes": [
      "Q2616791"
     ],
-    "from": null,
-    "to": null,
+    "from": 1995,
+    "to": 1998,
     "sentence": "Od 1995 do 1998 pełnił funkcję radnego rady miasta Zakopane, był także członkiem zarządu miasta."
    },
    {
@@ -7809,7 +7809,7 @@
     "classes": [
      "Q3504085"
     ],
-    "from": null,
+    "from": 2001,
     "to": null,
     "sentence": "Od 2001 pełniła funkcję sekretarza gminy Tarnowo Podgórne."
    },
@@ -8017,8 +8017,8 @@
     "classes": [
      "Q14350"
     ],
-    "from": null,
-    "to": null,
+    "from": 1993,
+    "to": 1995,
     "sentence": "Od 1993 do 1995 sprawowała funkcję sekretarza Rady Nadzorczej Polskiego Radia Opole."
    },
    {
@@ -8274,8 +8274,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": 2020,
-    "to": 2022,
+    "from": 2003,
+    "to": null,
     "sentence": "Od 2003 prezes partii Prawo i Sprawiedliwość, w latach 2020–2022 i w 2023 wiceprezes Rady Ministrów, w latach 2020–2022 przewodniczący Komitetu Rady Ministrów do spraw Bezpieczeństwa Narodowego i spraw Obronnych."
    },
    {
@@ -8331,7 +8331,7 @@
     "classes": [
      "Q5"
     ],
-    "from": null,
+    "from": 1979,
     "to": null,
     "sentence": "Od 1979 należał do redakcji kierowanego przez Antoniego Macierewicza niezależnego miesięcznika „Głos”."
    },
@@ -8342,7 +8342,7 @@
     "classes": [
      "Q1002697"
     ],
-    "from": null,
+    "from": 1979,
     "to": null,
     "sentence": "Od 1979 należał do redakcji kierowanego przez Antoniego Macierewicza niezależnego miesięcznika „Głos”."
    },
@@ -8372,7 +8372,7 @@
     "qid": "Q24945852",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": null,
+    "from": 1987,
     "to": null,
     "sentence": "Od 1987 był sekretarzem Krajowej Komisji Wykonawczej NSZZ „Solidarność”."
    },
@@ -8383,7 +8383,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1988,
     "to": null,
     "sentence": "Od 1988 należał do Komitetu Obywatelskiego „Solidarność”."
    },
@@ -8571,8 +8571,8 @@
     "classes": [
      "Q247073"
     ],
-    "from": null,
-    "to": null,
+    "from": 2006,
+    "to": 2007,
     "sentence": "Od 2006 do 2007 pełnił funkcję radnego powiatu kaliskiego i wicestarosty."
    }
   ]
@@ -8740,7 +8740,7 @@
      "Q43229",
      "Q1685451"
     ],
-    "from": null,
+    "from": 1984,
     "to": null,
     "sentence": "Od 1984 należał do niejawnego Niezależnego Zrzeszenia Studentów."
    },
@@ -8934,8 +8934,8 @@
     "classes": [
      "Q3558970"
     ],
-    "from": 2005,
-    "to": 2007,
+    "from": 1989,
+    "to": 2004,
     "sentence": "Od 1989 do 2004 kierował PZZ AGRO-PIAST w Chorzelowie, następnie w latach 2005–2007 kierował marketingiem w PPM „Taurus” w Pilźnie."
    },
    {
@@ -9078,7 +9078,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1992,
     "to": null,
     "sentence": "Od 1992 działał w Partii Konserwatywnej i następnie w Stronnictwie Konserwatywno-Ludowym (m.in. jako przewodniczący regionu)."
    },
@@ -9089,7 +9089,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1992,
     "to": null,
     "sentence": "Od 1992 działał w Partii Konserwatywnej i następnie w Stronnictwie Konserwatywno-Ludowym (m.in. jako przewodniczący regionu)."
    },
@@ -9656,7 +9656,7 @@
     "classes": [
      "Q11780435"
     ],
-    "from": null,
+    "from": 2000,
     "to": null,
     "sentence": "Od 2000 kierowała działem gospodarczym tygodnika „Nowe Państwo”."
    },
@@ -9785,8 +9785,8 @@
     "classes": [
      "Q515"
     ],
-    "from": null,
-    "to": null,
+    "from": 2015,
+    "to": 2016,
     "sentence": "Od 2015 do 2016 kierował Związkiem Komunalnym Gmin „Komunikacja Międzygminna” w Olkuszu, następnie został dyrektorem krakowskiego oddziału Kasy Rolniczego Ubezpieczenia Społecznego."
    },
    {
@@ -10170,8 +10170,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
-    "to": null,
+    "from": 1992,
+    "to": 1998,
     "sentence": "Od 1992 do 1998 był członkiem Konfederacji Polski Niepodległej, następnie Ruchu Społecznego AWS."
    },
    {
@@ -10514,8 +10514,8 @@
      "Q3754526",
      "Q9367288"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2000,
     "sentence": "Od 1998 do 2000 był zatrudniony w Kancelarii Prezesa Rady Ministrów Jerzego Buzka, m.in. kierował wydziałem w Departamencie Spraw Zagranicznych."
    },
    {
@@ -10525,8 +10525,8 @@
     "classes": [
      "Q5"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2000,
     "sentence": "Od 1998 do 2000 był zatrudniony w Kancelarii Prezesa Rady Ministrów Jerzego Buzka, m.in. kierował wydziałem w Departamencie Spraw Zagranicznych."
    },
    {
@@ -10774,8 +10774,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
-    "to": null,
+    "from": 1989,
+    "to": 1992,
     "sentence": "Od 1989 do 1992 był przewodniczącym Komitetu Obywatelskiego w gminie Winnica."
    },
    {
@@ -10808,7 +10808,7 @@
      "Q163740",
      "Q708676"
     ],
-    "from": null,
+    "from": 2017,
     "to": null,
     "sentence": "Od 2017 był przewodniczącym rady krajowej Stowarzyszenia „Wspólnota Polska”."
    },
@@ -11347,8 +11347,8 @@
     "classes": [
      "Q5"
     ],
-    "from": null,
-    "to": null,
+    "from": 2005,
+    "to": 2006,
     "sentence": "Od 2005 do 2006 kierował biurem poselskim Janusza Palikota."
    },
    {
@@ -11955,8 +11955,8 @@
     "classes": [
      "Q48204"
     ],
-    "from": null,
-    "to": null,
+    "from": 1989,
+    "to": 1992,
     "sentence": "Od 1989 do 1992 pełnił funkcję wiceprezesa oddziału rzeszowskiego Stowarzyszenia Dziennikarzy Polskich."
    },
    {
@@ -11966,8 +11966,8 @@
     "classes": [
      "Q14350"
     ],
-    "from": null,
-    "to": null,
+    "from": 1994,
+    "to": 1998,
     "sentence": "Od 1994 do 1998 przewodniczył radzie programowej Polskiego Radia Rzeszów."
    },
    {
@@ -11977,7 +11977,7 @@
     "classes": [
      "Q178790"
     ],
-    "from": null,
+    "from": 1981,
     "to": null,
     "sentence": "Od 1981 r. członek NSZZ Rolników Indywidualnych „Solidarność”."
    },
@@ -11988,8 +11988,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
-    "to": null,
+    "from": 1990,
+    "to": 1999,
     "sentence": "Od 1990 do 1999 należał do Porozumienia Centrum."
    },
    {
@@ -11999,8 +11999,8 @@
     "classes": [
      "Q11741739"
     ],
-    "from": null,
-    "to": null,
+    "from": 2005,
+    "to": 2007,
     "sentence": "Od 2005 do 2007 przewodniczył Komisji Administracji i Spraw Wewnętrznych."
    },
    {
@@ -12405,7 +12405,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1986,
     "to": null,
     "sentence": "Od 1986 działał w Zjednoczonym Stronnictwie Ludowym, następnie był członkiem Polskiego Stronnictwa Ludowego."
    },
@@ -12510,8 +12510,8 @@
      "Q28640",
      "Q4164871"
     ],
-    "from": null,
-    "to": null,
+    "from": 2003,
+    "to": 2006,
     "sentence": "Od 2003 do 2006 był sekretarzem miasta Nowy Sącz."
    },
    {
@@ -12537,8 +12537,8 @@
     "classes": [
      "Q247073"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2002,
     "sentence": "Od 1998 do 2002 był radnym gminy Somonino, następnie przez trzy lata zasiadał w radzie powiatu kartuskiego."
    },
    {
@@ -12628,8 +12628,8 @@
     "classes": [
      "Q2616791"
     ],
-    "from": null,
-    "to": null,
+    "from": 1996,
+    "to": 2004,
     "sentence": "Od 1996 do 2004 pełniła funkcję naczelnika wydziału rozwoju w Raciborzu, a następnie w Rybniku."
    },
    {
@@ -12751,8 +12751,8 @@
     "classes": [
      "Q1685451"
     ],
-    "from": null,
-    "to": null,
+    "from": 1978,
+    "to": 1979,
     "sentence": "Od 1978 do 1979 należał do Socjalistycznego Związku Studentów Polskich."
    },
    {
@@ -12775,8 +12775,8 @@
      "Q11204",
      "Q675911"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2002,
     "sentence": "Od 1998 do 2002 zasiadał w sejmiku świętokrzyskim, następnie do 2005 w radzie powiatu starachowickiego."
    },
    {
@@ -12995,7 +12995,7 @@
     "classes": [
      "Q23702035"
     ],
-    "from": 1994,
+    "from": 1993,
     "to": null,
     "sentence": "Od 1993 działała w Unii Demokratycznej, następnie od 1994 w Unii Wolności, w której kierowała jednym z łódzkich kół partii."
    },
@@ -13359,7 +13359,7 @@
      "Q43229",
      "Q3933153"
     ],
-    "from": null,
+    "from": 1966,
     "to": null,
     "sentence": "Od 1966 należał do 1. Warszawskiej Drużyny Harcerskiej im. Romualda Traugutta „Czarna Jedynka” przy warszawskim liceum im. Tadeusza Reytana, był w niej instruktorem harcerskim, przez kilka lat drużynowym."
    },
@@ -13370,7 +13370,7 @@
     "classes": [
      "Q3280746"
     ],
-    "from": null,
+    "from": 1966,
     "to": null,
     "sentence": "Od 1966 należał do 1. Warszawskiej Drużyny Harcerskiej im. Romualda Traugutta „Czarna Jedynka” przy warszawskim liceum im. Tadeusza Reytana, był w niej instruktorem harcerskim, przez kilka lat drużynowym."
    },
@@ -13384,7 +13384,7 @@
      "Q1572070",
      "Q66742026"
     ],
-    "from": null,
+    "from": 1966,
     "to": null,
     "sentence": "Od 1966 należał do 1. Warszawskiej Drużyny Harcerskiej im. Romualda Traugutta „Czarna Jedynka” przy warszawskim liceum im. Tadeusza Reytana, był w niej instruktorem harcerskim, przez kilka lat drużynowym."
    },
@@ -13931,7 +13931,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1993,
     "to": null,
     "sentence": "Od 1993 należał do Porozumienia Centrum, następnie przystąpił do Prawa i Sprawiedliwości."
    }
@@ -14092,7 +14092,7 @@
      "Q43229",
      "Q178790"
     ],
-    "from": null,
+    "from": 1996,
     "to": null,
     "sentence": "Od 1996 pracowała jako nauczycielka, stała na czele szkolnej „Solidarności”."
    },
@@ -14120,7 +14120,7 @@
     "classes": [
      "Q2493450"
     ],
-    "from": null,
+    "from": 2011,
     "to": null,
     "sentence": "Od 2011 kierował okręgowymi strukturami Forum Młodych PiS."
    },
@@ -14689,8 +14689,8 @@
      "Q4164871",
      "Q12737077"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2005,
     "sentence": "Od 1998 do 2005 pełnił funkcję radnego i starosty powiatu mińskiego."
    },
    {
@@ -14700,8 +14700,8 @@
     "classes": [
      "Q247073"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2005,
     "sentence": "Od 1998 do 2005 pełnił funkcję radnego i starosty powiatu mińskiego."
    },
    {
@@ -14786,7 +14786,7 @@
      "Q7278",
      "Q23702035"
     ],
-    "from": null,
+    "from": 1994,
     "to": null,
     "sentence": "Od 1994 należała do Unii Wolności."
    },
@@ -15149,8 +15149,8 @@
     "classes": [
      "Q1685451"
     ],
-    "from": null,
-    "to": null,
+    "from": 2013,
+    "to": 2014,
     "sentence": "Od 2013 do 2014 był przewodniczącym Parlamentu Studentów Rzeczypospolitej Polskiej."
    },
    {
@@ -15383,7 +15383,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1999,
     "to": null,
     "sentence": "Od 1999 pełnił funkcję przewodniczącego rady wojewódzkiej Sojuszu Lewicy Demokratycznej i sekretarza rady krajowej."
    },
@@ -15539,8 +15539,8 @@
      "Q7278",
      "Q48204"
     ],
-    "from": 1997,
-    "to": 2001,
+    "from": 1991,
+    "to": 1995,
     "sentence": "Od 1991 do 1995 był członkiem Unii Polityki Realnej, w latach 1997–2001 należał do Stronnictwa Konserwatywno-Ludowego."
    },
    {
@@ -15678,7 +15678,7 @@
     "qid": "Q1414611",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": null,
+    "from": 1993,
     "to": null,
     "sentence": "Od 1993 działała w telefonie zaufania prowadzonym przez Federację na Rzecz Kobiet i Planowania Rodziny."
    },
@@ -15689,7 +15689,7 @@
     "classes": [
      "Q163740"
     ],
-    "from": null,
+    "from": 1993,
     "to": null,
     "sentence": "Od 1993 działała w telefonie zaufania prowadzonym przez Federację na Rzecz Kobiet i Planowania Rodziny."
    },
@@ -16284,7 +16284,7 @@
     "qid": "Q28673139",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": null,
+    "from": 2014,
     "to": null,
     "sentence": "Od 2014 była wiceprzewodniczącą Komisji Polityki Senioralnej."
    },
@@ -17295,7 +17295,7 @@
      "Q43229",
      "Q178790"
     ],
-    "from": null,
+    "from": 1989,
     "to": null,
     "sentence": "Od 1989 jest członkiem NSZZ „Solidarność”."
    },
@@ -17570,7 +17570,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1990,
     "to": null,
     "sentence": "Od 1990 działał w Porozumieniu Centrum, następnie przystąpił do Prawa i Sprawiedliwości."
    },
@@ -17579,8 +17579,8 @@
     "qid": "Q3154693",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": null,
-    "to": null,
+    "from": 1994,
+    "to": 2007,
     "sentence": "Od 1994 do 2007 zasiadał w białostockiej radzie miasta."
    },
    {
@@ -17677,7 +17677,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1999,
     "to": null,
     "sentence": "Od 1999 zasiadał we władzach wojewódzkich Stronnictwa Konserwatywno-Ludowego."
    },
@@ -18389,7 +18389,7 @@
     "classes": [
      "Q6138528"
     ],
-    "from": null,
+    "from": 1998,
     "to": null,
     "sentence": "Od 1998 z rekomendacji Akcji Wyborczej Solidarność pełnił funkcję przewodniczącego krakowskiej Dzielnicy XVI Bieńczyce."
    },
@@ -18400,7 +18400,7 @@
     "classes": [
      "Q4286337"
     ],
-    "from": null,
+    "from": 1998,
     "to": null,
     "sentence": "Od 1998 z rekomendacji Akcji Wyborczej Solidarność pełnił funkcję przewodniczącego krakowskiej Dzielnicy XVI Bieńczyce."
    },
@@ -18470,7 +18470,7 @@
     "classes": [
      "Q38723"
     ],
-    "from": null,
+    "from": 2001,
     "to": null,
     "sentence": "Od 2001 kierował Katedrą Filozofii Prawa i Etyki w Salezjańskiej Wyższej Szkole Ekonomii i Zarządzania w Łodzi."
    },
@@ -18676,7 +18676,7 @@
     "classes": [
      "Q48204"
     ],
-    "from": null,
+    "from": 2005,
     "to": null,
     "sentence": "Od 2005 działała w Młodym Centrum, następnie w Stowarzyszeniu Projekt: Polska."
    },
@@ -19039,8 +19039,8 @@
      "Q7278",
      "Q48204"
     ],
-    "from": null,
-    "to": null,
+    "from": 1994,
+    "to": 1998,
     "sentence": "Od 1994 do 1998 należał do Unii Polityki Realnej, a następnie do Stronnictwa Konserwatywno-Ludowego."
    },
    {
@@ -19050,7 +19050,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 2001,
     "to": null,
     "sentence": "Od 2001 należał do Platformy Obywatelskiej."
    },
@@ -19177,7 +19177,7 @@
     "classes": [
      "Q7210356"
     ],
-    "from": null,
+    "from": 1962,
     "to": null,
     "sentence": "Od 1962 działał w Związku Młodzieży Wiejskiej."
    },
@@ -19188,7 +19188,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1964,
     "to": null,
     "sentence": "Od 1964 należał do Zjednoczonego Stronnictwa Ludowego, następnie przystąpił do Polskiego Stronnictwa Ludowego."
    },
@@ -19347,7 +19347,7 @@
      "Q163740",
      "Q15911314"
     ],
-    "from": null,
+    "from": 1985,
     "to": null,
     "sentence": "Od 1985 członek Związku Ochotniczych Straży Pożarnych, zasiadał w prezydium zarządu wojewódzkiego ZOSP."
    },
@@ -19358,7 +19358,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": 1990,
+    "from": 1988,
     "to": null,
     "sentence": "Od 1988 należał do Zjednoczonego Stronnictwa Ludowego, a od 1990 jest członkiem Polskiego Stronnictwa Ludowego."
    },
@@ -20134,8 +20134,8 @@
     "classes": [
      "Q7210356"
     ],
-    "from": null,
-    "to": null,
+    "from": 1971,
+    "to": 1977,
     "sentence": "Od 1971 do 1977 działał w Związku Młodzieży Wiejskiej."
    },
    {
@@ -20147,8 +20147,8 @@
      "Q6866556",
      "Q66739700"
     ],
-    "from": null,
-    "to": null,
+    "from": 2001,
+    "to": 2003,
     "sentence": "Od 2001 do 2003 zajmował stanowisko sekretarza stanu w Ministerstwie Rolnictwa i Rozwoju Wsi."
    },
    {
@@ -20416,8 +20416,8 @@
     "classes": [
      "Q10517054"
     ],
-    "from": 2013,
-    "to": 2023,
+    "from": 2000,
+    "to": 2002,
     "sentence": "Od 2000 do 2002 pełnił funkcję wiceprezesa klubu piłki ręcznej WKS Śląsk Wrocław, w latach 2013–2023 był wiceprezesem Stowarzyszenia Dyrektorów Samorządowych Instytucji Kultury."
    },
    {
@@ -21378,8 +21378,8 @@
     "classes": [
      "Q3957"
     ],
-    "from": null,
-    "to": null,
+    "from": 1993,
+    "to": 1996,
     "sentence": "Od 1993 do 1996 kierował Regionalnym Ośrodkiem Kultury w Tarczynie."
    },
    {
@@ -21497,8 +21497,8 @@
     "classes": [
      "Q247073"
     ],
-    "from": null,
-    "to": null,
+    "from": 2006,
+    "to": 2007,
     "sentence": "Od 2006 do 2007 pełnił funkcję przewodniczącego rady powiatu wałeckiego."
    },
    {
@@ -21605,8 +21605,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
-    "to": null,
+    "from": 1996,
+    "to": 1997,
     "sentence": "Od 1996 do 1997 był członkiem Ruchu Odbudowy Polski."
    },
    {
@@ -21690,7 +21690,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1994,
     "to": null,
     "sentence": "Od 1994 należał do Socjaldemokracji Rzeczypospolitej Polskiej, następnie wstąpił do Sojuszu Lewicy Demokratycznej."
    },
@@ -21701,7 +21701,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1994,
     "to": null,
     "sentence": "Od 1994 należał do Socjaldemokracji Rzeczypospolitej Polskiej, następnie wstąpił do Sojuszu Lewicy Demokratycznej."
    },
@@ -23144,7 +23144,7 @@
      "Q43229",
      "Q178790"
     ],
-    "from": null,
+    "from": 1980,
     "to": null,
     "sentence": "Od 1980 działał w NSZZ „Solidarność”, był członkiem redakcji „Solidarności Dolnośląskiej”."
    },
@@ -23354,8 +23354,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": 1993,
-    "to": 1997,
+    "from": 1990,
+    "to": 1999,
     "sentence": "Od 1990 do 1999 należał do Porozumienia Centrum (był wiceprezesem tej partii od 1993 do 1997 i jej prezesem od 1997 do 1999, kierował również oddziałem siedleckim PC)."
    },
    {
@@ -23396,8 +23396,8 @@
     "qid": "Q675911",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": null,
-    "to": null,
+    "from": 2002,
+    "to": 2005,
     "sentence": "Od 2002 do 2005 zasiadał w sejmiku mazowieckim."
    },
    {
@@ -23407,8 +23407,8 @@
     "classes": [
      "Q150093"
     ],
-    "from": null,
-    "to": null,
+    "from": 2002,
+    "to": 2005,
     "sentence": "Od 2002 do 2005 zasiadał w sejmiku mazowieckim."
    },
    {
@@ -23514,8 +23514,8 @@
     "classes": [
      "Q14350"
     ],
-    "from": null,
-    "to": null,
+    "from": 1995,
+    "to": 1998,
     "sentence": "Od 1995 do 1998 przewodniczył radzie programowej Radia Kraków."
    },
    {
@@ -23600,8 +23600,8 @@
     "classes": [
      "Q20652655"
     ],
-    "from": 1976,
-    "to": 1994,
+    "from": 1972,
+    "to": null,
     "sentence": "Od 1972 był działaczem Zrzeszenia Ludowych Zespołów Sportowych, w latach 1976–1994 należał do Związku Socjalistycznej Młodzieży Polskiej (w latach 1978–1992 kierował tą organizacją w województwie poznańskim), od 1978 działał także w Polskie"
    },
    {
@@ -23676,8 +23676,8 @@
      "Q11204",
      "Q675911"
     ],
-    "from": null,
-    "to": null,
+    "from": 1998,
+    "to": 2000,
     "sentence": "Od 1998 do 2000 zasiadał w sejmiku wielkopolskim."
    },
    {
@@ -25617,8 +25617,8 @@
      "Q1241288",
      "Q6866556"
     ],
-    "from": null,
-    "to": null,
+    "from": 2005,
+    "to": 2008,
     "sentence": "Od 2005 do 2008 pełnił funkcję dyrektora Departamentu Dywersyfikacji Dostaw Nośników Energii w Ministerstwie Gospodarki."
    },
    {
@@ -26180,7 +26180,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1976,
     "to": null,
     "sentence": "Od 1976 był członkiem Polskiej Zjednoczonej Partii Robotniczej."
    }
@@ -26621,7 +26621,7 @@
     "classes": [
      "Q15416"
     ],
-    "from": null,
+    "from": 2009,
     "to": null,
     "sentence": "Od 2009 kierował programem Informacje w TVP3 Olsztyn."
    },
@@ -26769,7 +26769,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
+    "from": 1992,
     "to": null,
     "sentence": "Od 1992 należał do Partii Konserwatywnej."
    },
@@ -26780,8 +26780,8 @@
     "classes": [
      "Q150093"
     ],
-    "from": null,
-    "to": null,
+    "from": 2002,
+    "to": 2003,
     "sentence": "Od 2002 do 2003 zasiadał w zarządzie województwa mazowieckiego."
    },
    {
@@ -27343,7 +27343,7 @@
      "Q43229",
      "Q178790"
     ],
-    "from": null,
+    "from": 1984,
     "to": null,
     "sentence": "Od 1984 pracował w Akademii Ekonomicznej we Wrocławiu, był członkiem komisji zakładowej NSZZ „Solidarność” na AE."
    },
@@ -28001,8 +28001,8 @@
     "classes": [
      "Q7278"
     ],
-    "from": null,
-    "to": null,
+    "from": 1996,
+    "to": 1997,
     "sentence": "Od 1996 do 1997 zasiadał w zarządzie okręgu wałbrzyskiego Ruchu Odbudowy Polski."
    },
    {
@@ -28158,7 +28158,7 @@
      "Q327333",
      "Q9367288"
     ],
-    "from": null,
+    "from": 2016,
     "to": null,
     "sentence": "Od 2016 kierowała kraśnickim biurem powiatowym Agencji Restrukturyzacji i Modernizacji Rolnictwa, a następnie pełniła funkcję zastępczyni dyrektora lubelskiego oddziału Krajowego Ośrodka Wsparcia Rolnictwa."
    },
@@ -28169,7 +28169,7 @@
     "classes": [
      "Q327333"
     ],
-    "from": null,
+    "from": 2016,
     "to": null,
     "sentence": "Od 2016 kierowała kraśnickim biurem powiatowym Agencji Restrukturyzacji i Modernizacji Rolnictwa, a następnie pełniła funkcję zastępczyni dyrektora lubelskiego oddziału Krajowego Ośrodka Wsparcia Rolnictwa."
    },
@@ -28180,7 +28180,7 @@
     "classes": [
      "Q247073"
     ],
-    "from": null,
+    "from": 2021,
     "to": null,
     "sentence": "Od 2021 zasiadała w radzie nadzorczej Zakładu Zagospodarowania Odpadów Komunalnych w Adamkach (obsługującego gminy powiatu radzyńskiego)."
    }
@@ -28375,8 +28375,8 @@
     "classes": [
      "Q48845950"
     ],
-    "from": null,
-    "to": null,
+    "from": 2018,
+    "to": 2019,
     "sentence": "Od 2018 do 2019 pełniła funkcje zastępcy dyrektora Departamentu Promocji i Komunikacji Społecznej w Górnośląsko-Zagłębiowskiej Metropolii w Katowicach."
    }
   ]
@@ -28646,7 +28646,7 @@
     "classes": [
      "Q7278"
     ],
-    "from": 2006,
+    "from": 2005,
     "to": null,
     "sentence": "Od 2005 zasiadał we władzach krajowych i regionalnych Partii Demokratycznej – demokraci.pl, wystąpił z partii w 2006."
    },
@@ -28713,8 +28713,8 @@
      "Q11204",
      "Q675911"
     ],
-    "from": null,
-    "to": null,
+    "from": 2002,
+    "to": 2005,
     "sentence": "Od 2002 do 2005 zasiadała w sejmiku małopolskim II kadencji z ramienia koalicji POPiS."
    },
    {
@@ -28722,8 +28722,8 @@
     "qid": "Q7120021",
     "verdict": "nie organizacja",
     "classes": [],
-    "from": null,
-    "to": null,
+    "from": 2002,
+    "to": 2005,
     "sentence": "Od 2002 do 2005 zasiadała w sejmiku małopolskim II kadencji z ramienia koalicji POPiS."
    }
   ]
@@ -29425,7 +29425,7 @@
     "classes": [
      "Q744913"
     ],
-    "from": null,
+    "from": 2016,
     "to": null,
     "sentence": "Od roku 2016 był członkiem Podkomisji ds. Ponownego Zbadania Wypadku Lotniczego pod Smoleńskiem (podkomisja Antoniego Macierewicza o katastrofie smoleńskiej)."
    },
@@ -29436,7 +29436,7 @@
     "classes": [
      "Q5"
     ],
-    "from": null,
+    "from": 2016,
     "to": null,
     "sentence": "Od roku 2016 był członkiem Podkomisji ds. Ponownego Zbadania Wypadku Lotniczego pod Smoleńskiem (podkomisja Antoniego Macierewicza o katastrofie smoleńskiej)."
    },
