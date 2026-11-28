@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Linia życia: oś czasu';
-const NEWEST_LINE = 'Profile: Linia życia: oś czasu';
+const NEWEST = 'Hierarchia urzędów';
+const NEWEST_LINE = 'Państwo: Hierarchia urzędów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -599,6 +599,21 @@ describe('Logo', () => {
   it('shows the tagline under the name', () => {
     expect($('.logo .logo-name').textContent).toBe('sejmbook');
     expect($('[data-testid="logo-tag"]').textContent).toBe('wydarzenia w Rzeczypospolitej');
+  });
+});
+
+describe('Państwo: top offices as a hierarchy (Pawel, 2026-11-28)', () => {
+  it('puts the President on top, the three powers under him and control bodies with the NBP below', () => {
+    nav('#panstwo');
+    const chart = $('[data-testid="office-grid"]');
+    expect(chart.querySelector('[data-tier="head"] [data-office="prezydent"]').textContent).toContain('Karol Nawrocki');
+    const branches = [...chart.querySelectorAll('[data-branch]')];
+    expect(branches.map((b) => b.dataset.branch)).toEqual(['ustawodawcza', 'wykonawcza', 'sadownicza']);
+    const ids = (el) => [...el.querySelectorAll('.office-card')].map((c) => c.dataset.office);
+    expect(branches.map(ids)).toEqual([['marszalek-sejmu', 'marszalek-senatu'], ['premier'], ['prezes-tk', 'prezes-sn']]);
+    expect(ids(chart.querySelector('[data-tier="control"]'))).toEqual(['prezes-nik', 'rpo', 'prezes-nbp']);
+    expect(chart.querySelectorAll('.office-card').length).toBe(9);
+    expect(chart.closest('.panel').querySelector('h2 [data-testid="info-tip"]').textContent).toContain('art. 10');
   });
 });
 

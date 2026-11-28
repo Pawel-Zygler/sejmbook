@@ -106,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Linia życia: oś czasu');
+  await expect(post).toContainText('Hierarchia urzędów');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -139,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Linia życia: oś czasu');
+  await expect(page.locator('.news-post').first()).toContainText('Hierarchia urzędów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -538,6 +538,18 @@ test.describe('modern look', () => {
     await page.goto(PAGE);
     expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(18, 17, 16)');
   });
+});
+
+test('Państwo: offices drawn as a hierarchy, three powers side by side on desktop, stacked on a phone', async ({ page }, info) => {
+  await page.goto(`${PAGE}#panstwo`);
+  const chart = page.getByTestId('office-grid');
+  await expect(chart.locator('[data-tier="head"] [data-office="prezydent"]')).toContainText('Karol Nawrocki');
+  const tops = await chart.locator('[data-branch]').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+  expect(tops).toHaveLength(3);
+  if (info.project.name === 'mobile') expect(tops[1]).toBeGreaterThan(tops[0]);
+  else expect(new Set(tops).size).toBe(1);
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(0);
 });
 
 test('Life line: only the time axis, no view tabs, no horizontal scroll', async ({ page }) => {

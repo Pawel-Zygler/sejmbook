@@ -183,6 +183,36 @@ const isDeputy = (office) => /^Wiceprezes Rady Ministrów|wicepremier/i.test(off
 export const OFFICE_ORDER = ['prezydent', 'premier', 'marszalek-sejmu', 'marszalek-senatu', 'prezes-tk', 'prezes-sn', 'prezes-nbp', 'prezes-nik', 'rpo'];
 
 /**
+ * The top offices as a hierarchy (Pawel, 2026-11-28: "zrób tu jakąś hierarchię"), following the Constitution:
+ * the President as head of state (art. 126), the three powers of art. 10, then the bodies of state control and
+ * the central bank (chapters IX and X). Any office not listed lands in the last tier, so nothing is ever lost.
+ */
+export const OFFICE_TIERS = [
+  { id: 'head', label: 'Głowa państwa', offices: ['prezydent'] },
+  { id: 'branches', branches: [
+    { id: 'ustawodawcza', label: 'Władza ustawodawcza', note: 'Sejm i Senat', offices: ['marszalek-sejmu', 'marszalek-senatu'] },
+    { id: 'wykonawcza', label: 'Władza wykonawcza', note: 'Rada Ministrów', offices: ['premier'] },
+    { id: 'sadownicza', label: 'Władza sądownicza', note: 'trybunały i sądy', offices: ['prezes-tk', 'prezes-sn'] },
+  ] },
+  { id: 'control', label: 'Kontrola państwowa, prawa obywateli i bank centralny', offices: ['prezes-nik', 'rpo', 'prezes-nbp'] },
+];
+
+/** Offices (from buildHierarchy) grouped into OFFICE_TIERS: {head, branches:[{…, offices}], control}. */
+export function officeTiers(offices) {
+  const byId = new Map((offices ?? []).map((o) => [o.id, o]));
+  const used = new Set();
+  const take = (ids) => ids.map((id) => byId.get(id)).filter(Boolean).map((o) => { used.add(o.id); return o; });
+  const [head, mid, control] = OFFICE_TIERS;
+  const out = {
+    head: { ...head, offices: take(head.offices) },
+    branches: mid.branches.map((b) => ({ ...b, offices: take(b.offices) })),
+    control: { ...control, offices: take(control.offices) },
+  };
+  out.control.offices.push(...(offices ?? []).filter((o) => !used.has(o.id)));
+  return out;
+}
+
+/**
  * Everything the UI needs from data/government.json: governments in order, offices (with the Prime Minister list
  * derived from the governments), one entry per person with all their roles, and an index by slug.
  */

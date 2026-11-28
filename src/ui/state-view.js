@@ -8,7 +8,7 @@ import { stackRows } from './render.js';
 import { POSTS_COLOR } from '../lib/bio.js';
 import { clubFamily } from '../lib/career.js';
 import { aboutYears } from '../lib/pl-words.js';
-import { currentHolders, currentMembers, searchOfficials, fold, personSlug } from '../lib/government.js';
+import { currentHolders, currentMembers, searchOfficials, fold, personSlug, officeTiers } from '../lib/government.js';
 import { personKey, roleSpectrum } from '../lib/career.js';
 
 const day = (iso) => (iso ? iso.split('-').reverse().join('.') : '');
@@ -41,15 +41,28 @@ export function mpLinkFor(ctx, name) {
   return null;
 }
 
-function officeCard(ctx, office, today) {
+function officeCard(ctx, office, today, size = 'md') {
   const now = currentHolders(office, today);
   const last = office.holders.at(-1);
   const shown = now.length ? now : [];
   return `<li class="office-card" data-office="${esc(office.id)}">
       <p class="office-title">${esc(office.title)}</p>
-      ${shown.length ? shown.map((h) => `<p class="office-holder">${personAvatar(h.name, null, 'sm', govPhoto(ctx, h.name))}<span>${holderLink(ctx, h)}${h.acting ? ' <small class="muted">p.o.</small>' : ''}<small class="muted">od ${esc(day(h.from))}</small></span></p>`).join('')
+      ${shown.length ? shown.map((h) => `<p class="office-holder">${personAvatar(h.name, null, size, govPhoto(ctx, h.name))}<span>${holderLink(ctx, h)}${h.acting ? ' <small class="muted">p.o.</small>' : ''}<small class="muted">od ${esc(day(h.from))}</small></span></p>`).join('')
         : `<p class="office-holder muted">brak danych${last ? ` (ostatnio: ${holderLink(ctx, last)})` : ''}</p>`}
     </li>`;
+}
+
+const HIERARCHY_TIP = infoTip('Układ według Konstytucji RP: Prezydent jako najwyższy przedstawiciel państwa (art. 126), trójpodział władzy z art. 10 (Sejm i Senat; Prezydent i Rada Ministrów; sądy i trybunały) oraz organy kontroli państwowej i ochrony prawa (rozdział IX: NIK, RPO) i bank centralny (rozdział X: NBP). Prezydent należy też do władzy wykonawczej.', 'https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=wdu19970780483', 'Skąd ten układ');
+
+/** The top offices as an org chart: head of state, the three powers under it, then control bodies and the NBP. */
+function officeChart(ctx, offices, today) {
+  const t = officeTiers(offices);
+  const list = (os, size) => `<ul class="office-grid">${os.map((o) => officeCard(ctx, o, today, size)).join('')}</ul>`;
+  return `<div class="office-chart" data-testid="office-grid">
+      <section class="office-tier office-tier-head" data-tier="head"><p class="tier-label">${esc(t.head.label)}</p>${list(t.head.offices, 'lg')}</section>
+      <div class="office-branches" data-tier="branches">${t.branches.map((b) => `<section class="office-branch" data-branch="${esc(b.id)}"><p class="tier-label">${esc(b.label)}<small>${esc(b.note)}</small></p>${list(b.offices, 'md')}</section>`).join('')}</div>
+      ${t.control.offices.length ? `<section class="office-tier office-tier-control" data-tier="control"><p class="tier-label">${esc(t.control.label)}</p>${list(t.control.offices, 'sm')}</section>` : ''}
+    </div>`;
 }
 
 function govRow(g) {
@@ -78,8 +91,8 @@ export function renderState(ctx, today) {
     ${pageHead({ icon: '⚖', title: 'Państwo i rządy' })}
 
     <div class="panel">
-      <h2>Najważniejsze urzędy dziś</h2>
-      <ul class="office-grid" data-testid="office-grid">${g.offices.map((o) => officeCard(ctx, o, today)).join('')}</ul>
+      <h2>Najważniejsze urzędy dziś ${HIERARCHY_TIP}</h2>
+      ${officeChart(ctx, g.offices, today)}
     </div>
 
     <div class="panel" data-testid="cabinet-now">

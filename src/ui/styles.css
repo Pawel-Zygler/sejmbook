@@ -486,6 +486,27 @@ h2 { font-size: 1.1rem; }
 .office-holder { margin: 0; display: flex; gap: 8px; align-items: center; }
 .office-holder + .office-holder { margin-top: 6px; }
 .office-holder > span:last-child { display: grid; min-width: 0; }
+/* Państwo: the top offices as a hierarchy (Pawel, 2026-11-28) */
+.office-chart { display: grid; gap: 22px; --tie: var(--line); }
+.office-tier, .office-branch { position: relative; min-width: 0; }
+.tier-label { margin: 0 0 8px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); text-align: center; }
+.tier-label small { display: block; text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 0.74rem; }
+.office-chart .office-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.office-tier-head .office-grid { grid-template-columns: minmax(0, 340px); justify-content: center; }
+.office-tier-head .office-card { border: 2px solid var(--accent); text-align: left; }
+.office-tier-head .office-holder { font-size: 1.08rem; }
+.office-tier-head::after { content: ""; position: absolute; left: 50%; bottom: -22px; height: 22px; width: 2px; background: var(--tie); }
+.office-branches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; position: relative; padding-top: 14px; border-top: 2px solid var(--tie); }
+.office-branch { padding: 10px; border-radius: var(--radius); background: var(--surface-2); }
+.office-branch::before { content: ""; position: absolute; left: 50%; top: -16px; height: 14px; width: 2px; background: var(--tie); }
+.office-branch .office-grid { grid-template-columns: 1fr; gap: 8px; }
+.office-tier-control { padding-top: 14px; border-top: 1px dashed var(--tie); }
+.office-tier-control .office-card { padding: 8px 10px; }
+@media (max-width: 720px) {
+  .office-branches { grid-template-columns: 1fr; border-top: 0; padding-top: 0; }
+  .office-branch::before { display: none; }
+  .office-tier-head::after { display: none; }
+}
 .official-link { color: var(--ink); font-weight: 600; text-decoration: none; }
 .official-link:hover { color: var(--accent); text-decoration: underline; }
 .gov-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
