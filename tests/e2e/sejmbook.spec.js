@@ -106,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Przełącznik rządów');
+  await expect(post).toContainText('Nagłówek bez nakładania');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -139,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Przełącznik rządów');
+  await expect(page.locator('.news-post').first()).toContainText('Nagłówek bez nakładania');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -553,6 +553,16 @@ test('Państwo: offices drawn as a hierarchy, three powers side by side on deskt
   else expect(new Set(tops).size).toBe(1);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);
+});
+
+test('Header is part of the page: it scrolls away and never covers the feed', async ({ page }) => {
+  await page.goto(PAGE);
+  const bar = page.locator('.topbar');
+  expect(await bar.evaluate((el) => getComputedStyle(el).position)).not.toMatch(/sticky|fixed/);
+  await page.evaluate(() => window.scrollTo(0, 600));
+  await page.waitForTimeout(100);
+  const box = await bar.boundingBox();
+  expect(box.y + box.height).toBeLessThanOrEqual(0);
 });
 
 test('Life line: only the time axis, no view tabs, no horizontal scroll', async ({ page }) => {

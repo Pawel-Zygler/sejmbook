@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-naglowek",
+      "date": "2026-11-28",
+      "title": "Nagłówek bez nakładania",
+      "section": "Serwis",
+      "body": "Nagłówek strony przewija się razem z treścią i nie zasłania już feedu.",
+      "link": {
+        "href": "#start",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-przelacznik-rzadow",
       "date": "2026-11-28",
       "title": "Przełącznik rządów",

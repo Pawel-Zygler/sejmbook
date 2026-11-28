@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Przełącznik rządów';
-const NEWEST_LINE = 'Państwo: Przełącznik rządów';
+const NEWEST = 'Nagłówek bez nakładania';
+const NEWEST_LINE = 'Serwis: Nagłówek bez nakładania';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-28
 
+- **Serwis: Nagłówek bez nakładania.** Nagłówek strony przewija się razem z treścią i nie zasłania już feedu.
 - **Państwo: Przełącznik rządów.** Wszystkie rządy III RP są w jednej tabeli: wybierasz rząd z paska albo strzałkami, od dzisiejszego do pierwszego.
 - **Państwo: Hierarchia urzędów.** Najważniejsze urzędy są ułożone jak w Konstytucji: prezydent na górze, pod nim trzy władze, niżej NIK, RPO i NBP.
 - **Profile: Linia życia: oś czasu.** Linia życia na profilach ma jeden widok, oś czasu. Zakładki Kroki i Etapy zniknęły.
