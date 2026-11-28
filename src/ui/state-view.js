@@ -1,5 +1,7 @@
 // "Państwo": the III RP state hierarchy. Top offices today, the government in power, every government since 1989,
 // lists of holders of each top office, and a profile for every president, prime minister and minister.
+import { renderOfficialLatin } from './latin-view.js';
+import { infoTip } from './render.js';
 import { esc, plural, personHref, personAvatar, govPhoto, spectrumBar, stateRolesLink, personNewsPost, pageHead, listPl, workText, workTip } from './render.js';
 import { workFor, WORK_COLOR, WORK_LABEL } from '../lib/work.js';
 import { stackRows } from './render.js';
@@ -221,6 +223,7 @@ export function renderOfficial(ctx, slug, today) {
       </aside>
       <div class="feed">
         ${news || '<article class="post"><p class="post-text">Brak oficjalnych komunikatów tej osoby w Feedzie. Pobieramy je z oficjalnych stron urzędów, które dziś działają.</p></article>'}
+        ${renderOfficialLatin(ctx, p, { infoTip })}
         ${sourceNote(ctx)}
       </div>
     </div>

@@ -24,7 +24,7 @@ test('home feed shows the seat bar, without Frequent Flyer posts', async ({ page
   await expect(page.locator('.seat-bar .seg')).toHaveCount(12);
 });
 
-test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', async ({ page }) => {
+test('Frequent Flyer: one merged "Od zawsze" set ranked by flights, no filters, no estimates', async ({ page }) => {
   await page.goto(`${PAGE}#frequent-flyer`);
   const rows = page.locator('[data-testid="ranking"] tbody tr');
   expect(await rows.count()).toBeGreaterThan(20);
@@ -34,7 +34,9 @@ test('Frequent Flyer: one merged "Od zawsze" set ranked by km, no filters', asyn
   await expect(page.locator('[data-action="sort"]')).toHaveCount(0);
   await expect(page.locator('.coverage')).toHaveCount(0);
   await expect(page.getByTestId('all-articles')).toHaveCount(0);
-  await expect(rows.first().getByTestId('earth-badge')).toBeVisible();
+  await expect(page.getByTestId('earth-badge')).toHaveCount(0);
+  await expect(page.locator('[data-view="flyer"] .bar-col')).toHaveCount(0);
+  await expect(page.locator('[data-testid="ranking"] thead')).not.toContainText('km');
 });
 
 test('clicking an MP in the ranking opens the profile', async ({ page }) => {
@@ -300,7 +302,8 @@ test('Frequent Flyer starts with the first MP; totals in the sidebar or under th
   await expect(page.locator('.flyer-hero')).toHaveCount(0);
   const totals = page.locator('[data-testid="flyer-totals"]:visible');
   await expect(totals).toHaveCount(1);
-  await expect(totals.getByTestId('sum-km')).toContainText('≈');
+  await expect(totals.getByTestId('sum-flights')).toBeVisible();
+  await expect(totals.getByTestId('sum-km')).toHaveCount(0);
   const rowY = (await firstRow.boundingBox()).y;
   const viewH = page.viewportSize().height;
   expect(rowY).toBeLessThan(viewH);
@@ -359,19 +362,14 @@ test('Former MPs have their own profile', async ({ page }) => {
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
 
-test('Dark and light mode: switch, and the donut uses the mode\'s palette', async ({ page, isMobile }) => {
+test('Dark and light mode: switch and keep the choice', async ({ page }) => {
   await page.goto(`${PAGE}#frequent-flyer`);
   const btn = page.getByTestId('theme-btn');
   while ((await btn.getAttribute('data-theme')) !== 'light') await btn.click();
-  const donut = page.locator('[data-testid="flyer-donut"]:visible').first();
-  if (isMobile) await donut.scrollIntoViewIfNeeded();
-  const fill = () => donut.locator('.donut-seg').first().evaluate((el) => getComputedStyle(el).fill);
-  expect(await fill()).toBe('rgb(154, 92, 0)');
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(245, 243, 238)');
   const bgLight = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
   await btn.click();
   await expect(btn).toHaveAttribute('data-theme', 'dark');
-  expect(await fill()).toBe('rgb(255, 181, 71)');
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).not.toBe(bgLight);
   await page.reload();
   await expect(page.getByTestId('theme-btn')).toHaveAttribute('data-theme', 'dark');
@@ -413,6 +411,18 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
   }
 });
 
+test('Cywilizacja łacińska: card of an official from their government\'s bills', async ({ page }) => {
+  await page.goto(`${PAGE}#urzad-adam-bodnar`);
+  const card = page.locator('[data-testid="official-latin"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Eksperymentalne');
+  await expect(page.locator('[data-testid="official-latin-total-value"]')).toHaveText(/^\d+$/);
+  await card.locator('[data-testid="official-latin-pillar-2"] summary').click();
+  await expect(card.locator('[data-testid="official-latin-pillar-2"] li.latin-law').first()).toContainText('projekt rządu');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
+});
+
 test('Feed: open a voting to see clubs, switch the time window', async ({ page }) => {
   await page.goto(PAGE);
   await expect(page.locator('.topnav a[data-nav="home"]')).toHaveText('Feed');
@@ -423,7 +433,7 @@ test('Feed: open a voting to see clubs, switch the time window', async ({ page }
   await expect(v.locator('.vote-links a').first()).toHaveAttribute('href', /sejm\.gov\.pl/);
   await page.locator('[data-window="all"]').click();
   await expect(page.locator('[data-window="all"]')).toHaveAttribute('aria-pressed', 'true');
-  await page.locator('#view .feed-post[data-feed="president"] .post-head a').first().click();
+  await page.locator('#view .feed-post[data-feed="president"] .feed-who a').first().click();
   await expect(page.locator('#view h1')).toHaveText('Karol Nawrocki');
   const vw = page.viewportSize().width;
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
@@ -455,7 +465,7 @@ test('Feed: office releases and MP acts; sitemap from the side menu or the feed 
   await page.goto(`${PAGE}#start`);
   await page.locator('[data-action="feed-window"][data-window="all"]').click();
   await expect(page.locator('.feed-post[data-feed="office"]').first()).toBeVisible();
-  await expect(page.locator('.feed-post[data-feed="act"] .post-head a[href^="#posel-"]').first()).toBeVisible();
+  await expect(page.locator('.feed-post[data-feed="act"] .feed-who a[href^="#posel-"]').first()).toBeVisible();
   await page.locator('[data-testid="feed-note"] a[href="#mapa"]').click();
   await expect(page.locator('#view h1')).toHaveText('Mapa strony');
   await page.getByTestId('sitemap').locator('a', { hasText: 'Rząd Jerzego Buzka' }).click();
@@ -503,7 +513,7 @@ test.describe('modern look', () => {
     expect(textTransform).toBe('none');
     await expect(page.locator('#top-search')).toBeVisible();
     const foot = page.getByTestId('site-foot');
-    await expect(foot.locator('.foot-col a')).toHaveCount(9);
+    await expect(foot.locator('.foot-col a')).toHaveCount(10);
     await expect(foot).toContainText('Źródła danych');
     await nav.getByRole('link', { name: 'Frequent Flyer' }).click();
     await expect(page).toHaveURL(/#frequent-flyer$/);
@@ -646,16 +656,29 @@ test('Profile: mini map of Poland with the district highlighted', async ({ page 
   expect(on).not.toBe(land);
 });
 
-test('Feed: time filter on the right, post date in the top-right corner', async ({ page }) => {
+test('Feed: time filter on the right, one line per entry with the source behind the i', async ({ page }) => {
   await page.goto(PAGE);
   const panel = await page.getByTestId('feed-window').boundingBox();
   const last = await page.locator('[data-action="feed-window"]').last().boundingBox();
   expect(panel.x + panel.width - (last.x + last.width)).toBeLessThan(24);
-  const post = page.locator('article.post:has([data-testid="post-time"])').first();
-  const a = await post.boundingBox();
-  const t = await post.getByTestId('post-time').boundingBox();
-  expect(a.x + a.width - (t.x + t.width)).toBeLessThan(28);
-  expect(t.y - a.y).toBeLessThan(28);
+  // One line per feed entry: every row is a single line high, and the source sits behind the "i".
+  const rows = page.locator('.feed-row:not([data-feed="vote"]) .feed-line');
+  const heights = await rows.evaluateAll((els) => els.slice(0, 15).map((e) => e.getBoundingClientRect().height));
+  expect(Math.max(...heights)).toBeLessThan(48);
+  const first = page.locator('.feed-row .feed-line').first();
+  const tip = first.getByTestId('info-tip');
+  await tip.focus();
+  await expect(tip.locator('.info-tip-body')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('Laws: a click on a law title goes straight to its PDF', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-32`);
+  const link = page.getByTestId('profile-laws').locator('.tax-law-title').first();
+  await expect(link).toBeVisible();
+  expect(await link.getAttribute('href')).toMatch(/^https:\/\/api\.sejm\.gov\.pl\/.+\.pdf$/);
+  expect(await link.getAttribute('target')).toBe('_blank');
+  await expect(page.getByTestId('profile-laws').locator('.pdf-mark').first()).toBeVisible();
 });
 
 test('Feed: the seats of the Sejm come first', async ({ page }) => {

@@ -1,3 +1,4 @@
+import { attachLawPdfs } from './lib/law-pdf.js';
 import { mergeBio } from './lib/bio.js';
 import { indexById, clubById, filterMps, filterTermMps } from './lib/mps.js';
 import { termMps, termList, indexPeople } from './lib/career.js';
@@ -18,7 +19,7 @@ import { readLifeView, saveLifeView, applyLifeView } from './lib/life-view.js';
 import { refreshLawCard, LAW_PAGE } from './ui/law-view.js';
 import { sortMps, nextSort, sortKeys } from './lib/dir-sort.js';
 
-export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, voteTallyData, declarationsData, socialData, workData, districtMapData, bioData, today }) {
+export function createContext({ mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, mediaData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, voteTallyData, declarationsData, socialData, workData, districtMapData, bioData, lawPdfsData, today }) {
   // Terms I–II (Wikipedia) joined to terms III–X (API Sejmu).
   const allTerms = mergeEarlyTerms(termsData ?? null, earlyTermsData ?? null);
   return {
@@ -31,17 +32,17 @@ export function createContext({ mpsData, clubsData, flightsData, airportsData, n
     news: newsData?.posts ?? [],
     attendance: attendanceData ?? null,
     // Final votes on laws that raised or cut taxes in the X term (data/tax-votes.json, API Sejmu).
-    taxes: taxData ?? null,
+    taxes: attachLawPdfs(taxData ?? null, lawPdfsData),
     // KPI of every MP's work in the X term (data/kpi.json, API Sejmu).
     kpi: kpiData ?? null,
     // Every final vote on a whole law in the X term, per MP (data/law-votes.json, API Sejmu).
-    laws: lawData ?? null,
+    laws: attachLawPdfs(lawData ?? null, lawPdfsData),
     // Experimental Koneczny card: classified laws and club independence (data/latin.json, built by scripts/build-latin.mjs).
-    latin: latinData ?? null,
+    latin: attachLawPdfs(latinData ?? null, lawPdfsData),
     // "Za i przeciw": yes/no/abstain/absent counts per MP over every X-term voting (data/vote-tally.json, API Sejmu).
     votes: voteTallyData ?? null,
     // "Współczynnik deklaracji": 2023 committee promises vs votes (data/declarations-card.json, scripts/build-declarations.mjs).
-    declarations: declarationsData ?? null,
+    declarations: attachLawPdfs(declarationsData ?? null, lawPdfsData),
     // Mini map of the 41 Sejm districts (data/district-map.json, GUGiK borders + Wikipedia).
     districtMap: districtMapData ?? null,
     career: careerData ?? null,
@@ -77,8 +78,8 @@ export function createApp(doc, win, data) {
     route: parseHash(win.location.hash),
     directory: { query: '', club: '', includeInactive: false, term: 10, sort: 'name', dir: 'asc' },
     parties: { scope: 'all' },
-    // One view for now (Pawel, 2026-11-24): "Od zawsze", sorted by estimated km, no filters.
-    flyer: { period: 'all', dataset: null, sortBy: 'km' },
+    // One view (Pawel, 2026-11-24): "Od zawsze", no filters; ranked by flights, no estimated km (2026-11-27).
+    flyer: { period: 'all', dataset: null, sortBy: 'flights' },
     attendance: { order: 'desc', club: '', view: 'mps' },
     latin: { order: 'desc', club: '', band: 'all', sortBy: 'total', view: 'mps' },
     // "Za i przeciw" (Pawel, 2026-11-27): starts with who voted "za" most often.

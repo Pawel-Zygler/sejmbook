@@ -847,6 +847,33 @@ h2 { font-size: 1.1rem; }
 .decl-verdict { font-size: 0.75rem; font-weight: 700; }
 .decl-ok { color: var(--lab-hi); } .decl-bad { color: var(--lab-low); } .decl-half { color: var(--lab-mid); }
 
+/* Feed as one line per entry (Pawel, 2026-11-27), in the manner of the table of laws. */
+.feed-rows { list-style: none; margin: 0; padding: 4px 0; display: flex; flex-direction: column; }
+.feed-row + .feed-row { border-top: 1px solid var(--line); }
+.feed-line { display: grid; grid-template-columns: 5.6em minmax(0, 11em) minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 8px 14px; font-size: 0.9rem; white-space: nowrap; }
+.feed-line > * { min-width: 0; }
+.feed-line .post-time { color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.feed-who { overflow: hidden; text-overflow: ellipsis; font-weight: 600; color: var(--ink); }
+.feed-who a { color: inherit; text-decoration: none; }
+.feed-who a:hover { color: var(--accent); text-decoration: underline; }
+.feed-title { overflow: hidden; text-overflow: ellipsis; margin: 0; font-weight: 400; font-size: inherit; line-height: 1.4; color: var(--ink); }
+.feed-title a { color: inherit; text-decoration: none; }
+.feed-title a:hover { color: var(--accent); text-decoration: underline; }
+.feed-res { font-size: 0.78rem; margin-right: 4px; }
+.feed-line .info-tip { margin-left: 0; }
+.feed-line .info-tip-body { left: auto; right: -6px; transform: none; }
+.feed-row .vote-item summary.feed-line::after { content: none; }
+.feed-row .vote-item summary.feed-line:hover .feed-title { color: var(--accent); }
+.feed-row .vote-item[open] .vote-more { padding: 0 14px 12px; }
+.feed-row:hover { background: var(--surface-2); }
+@media (max-width: 640px) {
+  .feed-line { grid-template-columns: 4.9em minmax(0, 7em) minmax(0, 1fr) auto; gap: 8px; padding: 8px 12px; font-size: 0.84rem; }
+}
+
+/* Laws open their PDF directly (Pawel, 2026-11-27). */
+.pdf-mark { display: inline-block; margin-left: 6px; padding: 0 5px; border-radius: 4px; border: 1px solid currentColor; color: var(--accent); font-size: 0.66rem; font-weight: 700; line-height: 1.5; letter-spacing: 0.03em; vertical-align: 1px; }
+.law-row .pdf-mark { margin-left: -4px; }
+
 /* Ranking "Za i przeciw" */
 .votes-rank { min-width: 820px; }
 .votes-rank th.sorted, .votes-rank th.sorted .th-sort { color: var(--accent); }

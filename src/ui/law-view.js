@@ -1,6 +1,7 @@
 // Profile card: search every law the MP voted on (X term) and see the vote, za / przeciw / wstrzymał / nieobecny.
 import { searchLaws, LAW_VOTE_FILTERS, LAW_VOTE_FILTER_LABEL } from '../lib/law-votes.js';
-import { VOTE_LABEL, processUrl, votingUrl, lawsWord } from '../lib/taxes.js';
+import { lawHref, lawLinkTitle, pdfMark } from '../lib/law-pdf.js';
+import { VOTE_LABEL, votingUrl, lawsWord } from '../lib/taxes.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -10,7 +11,7 @@ const voteChip = (code) => `<span class="tax-vote tax-v-${code === '-' ? 'X' : c
 
 function lawRow({ law, vote }) {
   // One line per law (Pawel, 2026-11-26): the title is cut with "…" and shown whole on hover.
-  return `<li class="tax-law law-row" data-process="${esc(law.process)}" data-vote="${vote === '-' ? 'X' : vote}">${voteChip(vote)}<time datetime="${esc(law.date)}">${esc(law.date)}</time>${law.passed === false ? '<span class="tax-flag">odrzucona</span>' : ''}<a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener" title="${esc(`Ustawa ${law.title}${law.dzu ? ` (${law.dzu})` : ''}`)}">${esc(law.title)}</a><a class="law-vote-link" href="${esc(votingUrl(law))}" target="_blank" rel="noopener" title="${esc(`Głosowanie nr ${law.votingNumber}, posiedzenie ${law.sitting}`)}">głos. ${law.votingNumber}/${law.sitting}</a></li>`;
+  return `<li class="tax-law law-row" data-process="${esc(law.process)}" data-vote="${vote === '-' ? 'X' : vote}">${voteChip(vote)}<time datetime="${esc(law.date)}">${esc(law.date)}</time>${law.passed === false ? '<span class="tax-flag">odrzucona</span>' : ''}<a class="tax-law-title" href="${esc(lawHref(law))}" target="_blank" rel="noopener" title="${esc(lawLinkTitle(law))}">${esc(law.title)}</a>${pdfMark(law)}<a class="law-vote-link" href="${esc(votingUrl(law))}" target="_blank" rel="noopener" title="${esc(`Głosowanie nr ${law.votingNumber}, posiedzenie ${law.sitting}`)}">głos. ${law.votingNumber}/${law.sitting}</a></li>`;
 }
 
 /** Filter chips, the count and the list for the current query; the part that is redrawn while typing. */
