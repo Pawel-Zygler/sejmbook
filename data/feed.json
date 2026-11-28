@@ -1,10 +1,16 @@
 {
- "fetchedAt": "2026-11-28T03:19:15.323Z",
+ "fetchedAt": "2026-11-28T15:31:24.996Z",
  "president": {
   "who": "Karol Nawrocki",
   "role": "Prezydent RP",
   "source": "https://www.prezydent.pl/aktualnosci",
   "items": [
+   {
+    "title": "Rusza Akademia Prezydencka 2027!",
+    "date": "2026-11-28",
+    "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/rusza-akademia-prezydencka-2027,130982",
+    "seenAt": "2026-11-28T15:31:24.996Z"
+   },
    {
     "title": "Do uczestników akademii barbórkowej Centralnej Stacji Ratownictwa Górniczego w Bytomiu",
     "date": "2026-11-27",
@@ -46,12 +52,6 @@
     "date": "2026-11-27",
     "url": "https://www.prezydent.pl/prawo/ustawy-zawetowane/decyzje-prezydenta-rp-w-sprawie-ustaw,130915",
     "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Minister Adam Andruszkiewicz z wizytą w Białymstoku",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/minister-adam-andruszkiewicz-z-wizyta-w-bialymstoku,130941",
-    "seenAt": "2026-11-27T23:59:59.000Z"
    }
   ]
  },
@@ -3612,6 +3612,12 @@
    "source": "https://www.gov.pl/web/mswia/aktualnosci",
    "items": [
     {
+     "title": "Przedłużenie strefy buforowej na granicy polsko-białoruskiej o kolejne 90 dni",
+     "date": "2026-11-28",
+     "url": "https://www.gov.pl/web/mswia/przedluzenie-strefy-buforowej-na-granicy-polsko-bialoruskiej-o-kolejne-90-dni",
+     "seenAt": "2026-11-28T15:31:24.996Z"
+    },
+    {
      "title": "Odprawa służb w RCB w związku z prognozowanymi intensywnymi opadami śniegu",
      "date": "2026-11-27",
      "url": "https://www.gov.pl/web/mswia/odprawa-sluzb-w-rcb-w-zwiazku-z-prognozowanymi-intensywnymi-opadami-sniegu",
@@ -3634,12 +3640,6 @@
      "date": "2026-11-26",
      "url": "https://www.gov.pl/web/mswia/blisko-40-mln-zl-dla-panstwowego-instytutu-medycznego-mswia",
      "seenAt": "2026-11-26T12:33:33.170Z"
-    },
-    {
-     "title": "Ponad 68 mln zł i realizacja w rok. Nowy budynek Państwowego Instytutu Medycznego MSWiA oddany do użytku",
-     "date": "2026-11-25",
-     "url": "https://www.gov.pl/web/mswia/ponad-68-mln-zl-i-realizacja-w-rok-nowy-budynek-panstwowego-instytutu-medycznego-mswia-oddany-do-uzytku",
-     "seenAt": "2026-11-25T17:14:29.097Z"
     }
    ]
   },
