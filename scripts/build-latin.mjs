@@ -6,12 +6,13 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { buildLatinLaws, clubIndependence, percentiles, lawAuthor } from '../src/lib/latin.js';
 import { buildSovLaws } from '../src/lib/sovereignty.js';
+import { buildQuincunxLaws } from '../src/lib/quincunx.js';
 
 const root = new URL('..', import.meta.url);
 const read = async (rel) => (existsSync(new URL(rel, root)) ? JSON.parse(await readFile(new URL(rel, root), 'utf8')) : null);
 
 export async function buildLatin() {
-  const [cls, lawVotes, taxVotes, descriptions, mps, sovCls, kpi] = await Promise.all(['data/latin-classification.json', 'data/law-votes.json', 'data/tax-votes.json', 'data/raw/law-descriptions.json', 'data/mps.json', 'data/sovereignty-classification.json', 'data/kpi.json'].map(read));
+  const [cls, lawVotes, taxVotes, descriptions, mps, sovCls, kpi, quinCls] = await Promise.all(['data/latin-classification.json', 'data/law-votes.json', 'data/tax-votes.json', 'data/raw/law-descriptions.json', 'data/mps.json', 'data/sovereignty-classification.json', 'data/kpi.json', 'data/quincunx-classification.json'].map(read));
   // Who submitted each bill (government, President), for the officials' card (Pawel, 2026-11-28).
   const withAuthor = (l) => ({ ...l, author: lawAuthor(descriptions?.laws?.[l.process]) });
   const laws = buildLatinLaws(cls, lawVotes, taxVotes, descriptions).map(withAuthor);
@@ -27,8 +28,11 @@ export async function buildLatin() {
   // Separate indicator "Suwerenność kompetencji" (Pawel, 2026-11-27), shipped in the same file.
   const { laws: _s, implementationPattern, euPattern, ...sovMeta } = sovCls ?? {};
   const sovereignty = sovCls ? { ...sovMeta, laws: buildSovLaws(sovCls, lawVotes, descriptions).map(withAuthor) } : null;
+  // Separate indicator "Pięciomian Konecznego" (Pawel, 2026-11-28), shipped in the same file.
+  const { laws: _q, ...quinMeta } = quinCls ?? {};
+  const quincunx = quinCls ? { ...quinMeta, consensusSkip: cls.consensusSkip ?? null, laws: buildQuincunxLaws(quinCls, lawVotes) } : null;
   // Pillar 4 uses raw attendance again (Pawel, 2026-11-27 22:20); the percentiles stay in the file for reference.
-  const out = { ...meta, fetchedAt: lawVotes.fetchedAt, laws, independence, attendance, attendanceMode: cls.attendanceMode ?? 'raw', sovereignty };
+  const out = { ...meta, fetchedAt: lawVotes.fetchedAt, laws, independence, attendance, attendanceMode: cls.attendanceMode ?? 'raw', sovereignty, quincunx };
   await writeFile(new URL('data/latin.json', root), JSON.stringify(out) + '\n');
   return out;
 }
@@ -36,5 +40,5 @@ export async function buildLatin() {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const out = await buildLatin();
   const by = (k) => out.laws.reduce((a, l) => ((a[l[k]] = (a[l[k]] ?? 0) + 1), a), {});
-  console.log(`${out.laws.length} laws`, by('pillar'), by('direction'), by('source'), `${Object.keys(out.independence).length} MPs with independence`, 'sovereignty', out.sovereignty?.laws.length, out.sovereignty?.laws.reduce((a, l) => ((a[l.direction] = (a[l.direction] ?? 0) + 1), a), {}));
+  console.log(`${out.laws.length} laws`, by('pillar'), by('direction'), by('source'), `${Object.keys(out.independence).length} MPs with independence`, 'sovereignty', out.sovereignty?.laws.length, 'quincunx', out.quincunx?.laws.length, out.sovereignty?.laws.reduce((a, l) => ((a[l.direction] = (a[l.direction] ?? 0) + 1), a), {}));
 }

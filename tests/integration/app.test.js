@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Jedna karta Konecznego';
-const NEWEST_LINE = 'Profile: Jedna karta Konecznego';
+const NEWEST = 'Pięciomian Konecznego (eksperyment)';
+const NEWEST_LINE = 'Profile: Pięciomian Konecznego (eksperyment)';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {

@@ -1,0 +1,788 @@
+{
+ "title": "Pięciomian Konecznego",
+ "experimental": true,
+ "disclaimer": "Wskaźnik eksperymentalny: interpretacja autora strony według metody Feliksa Konecznego, nie neutralna ocena. Oceniamy wyłącznie głosowania nad ustawami, nie ludzi.",
+ "scoring": "Każda sfera 0–100: głos zgodny z kierunkiem ustawy = 1 pkt, wstrzymanie = 0,5, przeciwny = 0, nieobecności nie liczymy. Wynik łączny jak w algorytmie Konecznego (QUINCUNX_COHERENCE): średnia geometryczna sfer × współczynnik spójności (1 − odchylenie standardowe / średnia). Jedna zaniedbana sfera mocno obniża wynik, nierówne sfery też.",
+ "criteriaSource": "indeksy repozytorium algorytm_konecznego; ustawy sporne rozstrzyga test APOSTERIORI_APRIORI (prawo narzucające wizję z góry = niezgodna, prawo wyrosłe z doświadczenia = zgodna); zatwierdził autor strony 2026-11-28",
+ "criteriaUrl": "https://github.com/Pawel-Zygler/algorytm_konecznego/tree/main/indices",
+ "spheres": [
+  {
+   "id": "dobro",
+   "name": "Dobro",
+   "kpis": [
+    "2"
+   ],
+   "latinPillars": [
+    1
+   ],
+   "rule": "Hegemonia etyki: państwo i urzędnik podlegają tej samej moralności co osoba (QUINCUNX_COHERENCE, kategoria I). Liczymy ustawy filaru 1 karty łacińskiej (prymat etyki nad państwem) i KPI „Odpowiedzialność urzędnika”."
+  },
+  {
+   "id": "prawda",
+   "name": "Prawda",
+   "kpis": [
+    "4",
+    "5",
+    "7"
+   ],
+   "rule": "Autonomia dociekań: prawda szukana swobodnie, oświata bez monopolu państwa, jawność (TRUTH_AND_SCIENCE)."
+  },
+  {
+   "id": "zdrowie",
+   "name": "Zdrowie",
+   "kpis": [
+    "8",
+    "9",
+    "10"
+   ],
+   "rule": "Res sacra miser: ochrona życia, niezależny lekarz, piecza o zdrowie publiczne (HEALTH_STATUS)."
+  },
+  {
+   "id": "dobrobyt",
+   "name": "Dobrobyt",
+   "kpis": [
+    "12",
+    "13",
+    "14"
+   ],
+   "rule": "Własność i praca budują niezależność osoby, a dorobek przechodzi na kolejne pokolenia bez długu (INHERITANCE_CONTINUITY, WORK_ETHOS, TIME_MASTERY)."
+  },
+  {
+   "id": "piekno",
+   "name": "Piękno",
+   "kpis": [
+    "15",
+    "16"
+   ],
+   "rule": "Piękno uduchawia życie: ochrona dziedzictwa i mecenat wolny od dyktatu urzędu (BEAUTY_AND_ART)."
+  }
+ ],
+ "kpis": {
+  "2": {
+   "sphere": "dobro",
+   "name": "Odpowiedzialność urzędnika",
+   "rule": "ADMINISTRATIVE_RESPONSIBILITY: urzędnik odpowiada osobiście, obywatel ma niezależny sąd przeciw urzędowi. Zgodna: wzmacnia obywatela wobec urzędu, karze nieuczciwość urzędników. Niezgodna: chroni urząd przed obywatelem."
+  },
+  "4": {
+   "sphere": "prawda",
+   "name": "Wolność słowa i nauki",
+   "rule": "TRUTH_AND_SCIENCE (pyt. 2, 5, 7): prawda szukana swobodnie, bez cenzury państwowej. Zgodna: więcej swobody wypowiedzi i autonomii nauki. Niezgodna: nowe przestępstwa za słowo, administracyjne usuwanie treści, nadzór urzędu nad debatą."
+  },
+  "5": {
+   "sphere": "prawda",
+   "name": "Oświata bez monopolu państwa",
+   "rule": "TRUTH_AND_SCIENCE (pyt. 4): oświata wolna od monopolu i ideologizacji państwa. Zgodna: więcej swobody szkół, rodziców i oddolnych inicjatyw. Niezgodna: więcej centralnej kontroli nad programem i szkołami niepublicznymi."
+  },
+  "7": {
+   "sphere": "prawda",
+   "name": "Jawność",
+   "rule": "TRUTH_AND_SCIENCE (pyt. 9): rzetelne gromadzenie i udostępnianie dokumentów. Zgodna: więcej jawności wydatków i decyzji publicznych. Niezgodna: utajnianie informacji."
+  },
+  "8": {
+   "sphere": "zdrowie",
+   "name": "Ochrona życia w medycynie",
+   "rule": "HEALTH_STATUS (pyt. 2, 4, 7): res sacra miser, odrzucenie zabójstwa medycznego. Zgodna: chroni życie od poczęcia do naturalnej śmierci. Niezgodna: osłabia tę ochronę."
+  },
+  "9": {
+   "sphere": "zdrowie",
+   "name": "Niezależny lekarz",
+   "rule": "HEALTH_STATUS (pyt. 5, 8): samorządny zawód lekarza i swoboda leczenia zgodna z wiedzą i sumieniem. Zgodna: mniej biurokratycznych ograniczeń dla lekarza. Niezgodna: podporządkowanie lekarza urzędowi."
+  },
+  "10": {
+   "sphere": "zdrowie",
+   "name": "Piecza o zdrowie publiczne",
+   "rule": "HEALTH_STATUS (pyt. 1, 6, 9): państwo dba o higienę, wodę i dostęp do leczenia metodą naukową. Zgodna: poprawia realną opiekę i higienę publiczną. Niezgodna: ogranicza dostęp do leczenia."
+  },
+  "12": {
+   "sphere": "dobrobyt",
+   "name": "Ciągłość mienia rodzinnego",
+   "rule": "INHERITANCE_CONTINUITY i PROPERTY_RIGHTS_STABILITY: ojcowizna trwa w rodzinie przez pokolenia. Zgodna: chroni ziemię i majątek rodziny przed utratą. Niezgodna: utrudnia dziedziczenie lub trwałość własności."
+  },
+  "13": {
+   "sphere": "dobrobyt",
+   "name": "Etos pracy",
+   "rule": "WORK_ETHOS (pyt. 5, 9, 14): praca buduje niezależność osoby, a nie jest polem fiskalizmu. Zgodna: mniejsze obciążenia pracy i przedsiębiorczości, swoboda umów o pracę. Niezgodna: nowe obowiązki i daniny od pracy."
+  },
+  "14": {
+   "sphere": "dobrobyt",
+   "name": "Opanowanie czasu: dług",
+   "rule": "TIME_MASTERY (pyt. 5, 6): kapitalizowanie dorobku dla przyszłych pokoleń. Zgodna: zmniejsza deficyt lub zaostrza reguły. Niezgodna: zwiększa deficyt lub luzuje reguły fiskalne."
+  },
+  "15": {
+   "sphere": "piekno",
+   "name": "Ochrona dziedzictwa",
+   "rule": "BEAUTY_AND_ART (pyt. 5, 6): ochrona zabytków z szacunku dla historyzmu. Zgodna: lepiej chroni zabytki i dobra kultury. Niezgodna: osłabia tę ochronę."
+  },
+  "16": {
+   "sphere": "piekno",
+   "name": "Mecenat bez dyktatu państwa",
+   "rule": "BEAUTY_AND_ART (pyt. 7, 8): mecenat wolny od biurokracji, sztuka służy osobie, nie państwu. Zgodna: niezależny, oddolny mecenat. Niezgodna: twórca zależny od państwowej kasy i urzędu."
+  }
+ },
+ "laws": [
+  {
+   "process": "2200",
+   "kpi": "2",
+   "direction": "zgodna",
+   "reason": "kara za przekupywanie zagranicznych urzędników: jedna etyka także w interesach za granicą",
+   "explain": [
+    {
+     "index": "PUBLIC_MORALITY_TOTALITY_INDEX",
+     "text": "Jedna etyka w życiu prywatnym i publicznym: przekupstwo pozostaje złem także w interesach za granicą (pyt. 1, 5)."
+    },
+    {
+     "index": "ADMINISTRATIVE_RESPONSIBILITY_INDEX",
+     "text": "Urzędnik, także obcy, nie może być „kupiony”; odpowiedzialność osobista za korupcję (pyt. 3, 9)."
+    }
+   ]
+  },
+  {
+   "process": "876",
+   "kpi": "4",
+   "direction": "niezgodna",
+   "reason": "nowe przestępstwa mowy nienawiści: państwo karze za słowo",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Nowe przestępstwa za wypowiedź ograniczają swobodną debatę i krytykę (pyt. 5, 7)."
+    },
+    {
+     "index": "CONSCIENCE_STATUS_INDEX",
+     "text": "Prawo karne wchodzi w sferę przekonań; „elephantiasis ustawodawcza” (pyt. 3)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Katalog chronionych cech wynika z ideologicznej koncepcji, nie z doświadczenia sądów: a priori."
+    }
+   ]
+  },
+  {
+   "process": "1757",
+   "kpi": "4",
+   "direction": "niezgodna",
+   "reason": "wdrożenie unijnego Aktu o usługach cyfrowych: urzędowe procedury usuwania treści w sieci",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Urzędowe procedury usuwania treści oznaczają cenzurę administracyjną (pyt. 2, 7)."
+    },
+    {
+     "index": "LAW_SOURCE_PLURALISM_INDEX",
+     "text": "Prawo przyjęte z gotowej formuły UE, nie wyrosłe z polskiej praktyki (pyt. 3, 19)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Dedukcja z odgórnego rozporządzenia: a priori."
+    }
+   ]
+  },
+  {
+   "process": "2694",
+   "kpi": "4",
+   "direction": "niezgodna",
+   "reason": "Prezes UKE nadzorcą treści w sieci: urząd decyduje o debacie",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Organ rządowy (UKE) staje się nadzorcą treści w sieci (pyt. 2, 5)."
+    },
+    {
+     "index": "ORGANISM_MECHANISM_INDEX",
+     "text": "Mechaniczne regulowanie debaty przez urząd zamiast organicznego życia społecznego."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Wdrożenie odgórnej formuły: a priori."
+    }
+   ]
+  },
+  {
+   "process": "2693",
+   "kpi": "4",
+   "direction": "niezgodna",
+   "reason": "„skuteczniejsze narzędzia reagowania na nielegalne treści”: łatwiejsze blokowanie wypowiedzi",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Łatwiejsze blokowanie wypowiedzi uznanych za „nielegalne” przez administrację (pyt. 2, 7)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Narzędzia projektowane z góry, bez wykazanych faktów nadużyć: a priori."
+    }
+   ]
+  },
+  {
+   "process": "2769",
+   "kpi": "4",
+   "direction": "niezgodna",
+   "reason": "urzędowy nadzór nad reklamą polityczną (rozporządzenie UE 2024/900): organ państwa ocenia przekaz polityczny",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Państwowy organ ocenia przekaz polityczny, czyli ogranicza wolną debatę (pyt. 5)."
+    },
+    {
+     "index": "PUBLIC_MORALITY_TOTALITY_INDEX",
+     "text": "Władza nadzoruje swoich krytyków; państwo sędzią we własnej sprawie."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Wykonanie rozporządzenia UE 2024/900: a priori."
+    }
+   ]
+  },
+  {
+   "process": "1284",
+   "kpi": "4",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): likwidacja uzasadniona ujemnym bilansem kosztów i korzyści tych instytucji",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Likwidacja uzasadniona realnym, ujemnym bilansem kosztów i korzyści, czyli doświadczeniem (pyt. 1, 3)."
+    },
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Nauka nie potrzebuje instytucji tworzonych politycznie dla jednej narracji (pyt. 6)."
+    }
+   ]
+  },
+  {
+   "process": "1857",
+   "kpi": "5",
+   "direction": "niezgodna",
+   "reason": "minister określa „efekty uczenia się” zamiast treści: centralna zmiana programu wszystkich szkół",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Minister centralnie zmienia program wszystkich szkół; oświata zależna od państwa (pyt. 4)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "„Efekty uczenia się” zamiast treści: nowa koncepcja pedagogiczna narzucona z góry (pyt. 2, 5)."
+    },
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Odejście od kanonu treści osłabia przekaz dorobku pokoleń (pyt. 5)."
+    }
+   ]
+  },
+  {
+   "process": "2005",
+   "kpi": "5",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): dane do systemu oświaty jako warunek dotacji, po nadużyciach dotacji dla szkół niepublicznych; korekta wynikła z praktyki",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Warunek przekazania danych dopisany po doświadczeniach z dotacjami „za efekt”: korekta z praktyki (pyt. 1, 12)."
+    },
+    {
+     "index": "PROPERTY_RIGHTS_STABILITY_INDEX",
+     "text": "Publiczne pieniądze trafiają do szkół, które realnie działają; uczciwość wobec podatnika."
+    }
+   ]
+  },
+  {
+   "process": "1650",
+   "kpi": "5",
+   "direction": "zgodna",
+   "reason": "spółdzielnie uczniowskie: oddolne zrzeszenia i nauka pracy w szkole",
+   "explain": [
+    {
+     "index": "WORK_ETHOS_INDEX",
+     "text": "Uczniowie uczą się pracy i gospodarności we własnej spółdzielni (pyt. 5, 6)."
+    },
+    {
+     "index": "PERSONALISM_INDEX",
+     "text": "Dobrowolne, oddolne zrzeszenie osób, nie odgórna organizacja."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Spółdzielczość uczniowska istniała w polskiej tradycji; prawo uznaje praktykę."
+    }
+   ]
+  },
+  {
+   "process": "1526",
+   "kpi": "5",
+   "direction": "niezgodna",
+   "reason": "a priori (wizja narzucona z góry): jeden ustawowy zakaz telefonów dla wszystkich szkół; państwo jako wychowawca zamiast szkoły i rodziców",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Jeden ustawowy zakaz dla wszystkich szkół: państwo jako wychowawca, jednostajność (pyt. 2, 4, 15)."
+    },
+    {
+     "index": "FAMILY_LAW_AUTONOMY_INDEX",
+     "text": "Decyzja zabrana szkole i rodzicom."
+    }
+   ]
+  },
+  {
+   "process": "2668",
+   "kpi": "5",
+   "direction": "niezgodna",
+   "reason": "a priori (wizja narzucona z góry): ustawowy zakaz telefonów także w szkołach niepublicznych i na przerwach; odgórna jednostajność",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Zakaz także w szkołach niepublicznych i na przerwach: odgórna regulacja każdego kroku (pyt. 2, 15)."
+    },
+    {
+     "index": "FAMILY_LAW_AUTONOMY_INDEX",
+     "text": "Rodzice i szkoła niepubliczna tracą wybór."
+    },
+    {
+     "index": "LAW_SOURCE_PLURALISM_INDEX",
+     "text": "Szkoły nie mogą same ustalać statutu w tej sprawie (pyt. 9)."
+    }
+   ]
+  },
+  {
+   "process": "2842",
+   "kpi": "5",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): bezpłatny e-Dziennik jako odpowiedź na realny koszt szkół; zgodna tylko jeśli korzystanie jest dobrowolne",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Odpowiedź na realny koszt prywatnych dzienników; zgodna tylko, jeśli szkoły korzystają dobrowolnie."
+    },
+    {
+     "index": "ORGANISM_MECHANISM_INDEX",
+     "text": "Ryzyko: państwowy system w każdej szkole, jeśli stanie się obowiązkowy."
+    }
+   ]
+  },
+  {
+   "process": "1863",
+   "kpi": "7",
+   "direction": "zgodna",
+   "reason": "jawny rejestr umów jednostek sektora finansów publicznych",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Rzetelne gromadzenie i ujawnianie dokumentów publicznych (pyt. 9)."
+    },
+    {
+     "index": "PUBLIC_MORALITY_TOTALITY_INDEX",
+     "text": "Urzędnik wydaje cudze pieniądze jawnie, pod kontrolą obywateli."
+    }
+   ]
+  },
+  {
+   "process": "3144",
+   "kpi": "7",
+   "direction": "zgodna",
+   "reason": "jawność konkursów i umów na świadczenia zdrowotne",
+   "explain": [
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Jawność konkursów i umów w ochronie zdrowia (pyt. 9)."
+    },
+    {
+     "index": "ADMINISTRATIVE_RESPONSIBILITY_INDEX",
+     "text": "Decyzje NFZ i szpitali poddane kontroli społecznej (pyt. 11)."
+    }
+   ]
+  },
+  {
+   "process": "3035",
+   "kpi": "7",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): wyłączenie z jawności obiektów służb z praktycznych potrzeb bezpieczeństwa",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Wyłączenie wynika z praktycznych potrzeb bezpieczeństwa, nie z ideologii."
+    },
+    {
+     "index": "TRUTH_AND_SCIENCE_INDEX",
+     "text": "Koszt: mniej jawności; dlatego najsłabiej uzasadniona z ocen zgodnych."
+    }
+   ]
+  },
+  {
+   "process": "185",
+   "kpi": "8",
+   "direction": "niezgodna",
+   "reason": "antykoncepcja awaryjna bez recepty: środek o możliwym działaniu wczesnoporonnym",
+   "explain": [
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Środek o możliwym działaniu wczesnoporonnym bez lekarza (pyt. 4, 8)."
+    },
+    {
+     "index": "FAMILY_LAW_AUTONOMY_INDEX",
+     "text": "Dostęp małoletnich z pominięciem rodziców."
+    }
+   ]
+  },
+  {
+   "process": "803",
+   "kpi": "9",
+   "direction": "zgodna",
+   "reason": "koniec ograniczeń w wystawianiu recept: swoboda leczenia",
+   "explain": [
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Lekarz decyduje o leczeniu zgodnie z wiedzą, bez sztucznych barier (pyt. 8)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Ograniczenia zdjęte po doświadczeniach pacjentów i lekarzy."
+    }
+   ]
+  },
+  {
+   "process": "748",
+   "kpi": "10",
+   "direction": "niezgodna",
+   "reason": "a priori (wizja narzucona z góry): samodzielne prawa pacjenta dla małoletniego; aprioryczna autonomia dziecka obok władzy rodziców",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Samodzielne prawa pacjenta dla małoletniego: aprioryczna autonomia dziecka (pyt. 9, 11)."
+    },
+    {
+     "index": "FAMILY_LAW_AUTONOMY_INDEX",
+     "text": "Słabnie władza rodzicielska w sprawach zdrowia dziecka."
+    },
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Plus: troska o zdrowie psychiczne dzieci (pyt. 1); dlatego ocena najmniej pewna."
+    }
+   ]
+  },
+  {
+   "process": "1606",
+   "kpi": "10",
+   "direction": "zgodna",
+   "reason": "wyższe wymagania jakości wody pitnej: higiena publiczna",
+   "explain": [
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Państwo dba o czystą wodę i higienę publiczną (pyt. 6)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Normy jakości wody wynikają z badań i doświadczenia, choć przyszły z dyrektywy UE."
+    }
+   ]
+  },
+  {
+   "process": "2165",
+   "kpi": "10",
+   "direction": "zgodna",
+   "reason": "jakość wody przeznaczonej do spożycia: higiena publiczna",
+   "explain": [
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Wyższe wymagania jakości wody pitnej (pyt. 6, 10)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Racjonalna profilaktyka oparta na pomiarach."
+    }
+   ]
+  },
+  {
+   "process": "1058",
+   "kpi": "10",
+   "direction": "zgodna",
+   "reason": "sprawniejsze ratownictwo medyczne",
+   "explain": [
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Sprawniejsze ratownictwo: res sacra miser w praktyce (pyt. 2, 9)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Zmiany wynikają z doświadczeń systemu ratownictwa."
+    }
+   ]
+  },
+  {
+   "process": "2643",
+   "kpi": "10",
+   "direction": "zgodna",
+   "reason": "karta diagnostyki i leczenia onkologicznego, mniej formalności szpitali",
+   "explain": [
+    {
+     "index": "HEALTH_STATUS_INDEX",
+     "text": "Lepsza ścieżka diagnostyki onkologicznej (pyt. 1, 9)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Mniej formalności po doświadczeniach szpitali."
+    }
+   ]
+  },
+  {
+   "process": "2675",
+   "kpi": "12",
+   "direction": "zgodna",
+   "reason": "powodzianie mogą szybciej odtworzyć zniszczone grunty rolne",
+   "explain": [
+    {
+     "index": "INHERITANCE_CONTINUITY_INDEX",
+     "text": "Rodzina może szybciej odtworzyć zniszczoną ojcowiznę (pyt. 6)."
+    },
+    {
+     "index": "PROPERTY_RIGHTS_STABILITY_INDEX",
+     "text": "Ochrona ziemi jako podstawy niezawisłości rodziny (pyt. 3)."
+    }
+   ]
+  },
+  {
+   "process": "275",
+   "kpi": "13",
+   "direction": "zgodna",
+   "reason": "miesięczny urlop od składek ZUS dla przedsiębiorców",
+   "explain": [
+    {
+     "index": "WORK_ETHOS_INDEX",
+     "text": "Mniej fiskalizmu: praca buduje niezależność, a nie tylko daninę (pyt. 9)."
+    },
+    {
+     "index": "PROPERTY_RIGHTS_STABILITY_INDEX",
+     "text": "Lżejsze ciężary nakładane przez państwo (pyt. 16)."
+    }
+   ]
+  },
+  {
+   "process": "764",
+   "kpi": "13",
+   "direction": "zgodna",
+   "reason": "koniec składki zdrowotnej od sprzedaży środków trwałych",
+   "explain": [
+    {
+     "index": "WORK_ETHOS_INDEX",
+     "text": "Koniec daniny od sprzedaży własnego majątku firmy (pyt. 9)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Usunięcie absurdu wykazanego w praktyce przedsiębiorców."
+    }
+   ]
+  },
+  {
+   "process": "934",
+   "kpi": "13",
+   "direction": "niezgodna",
+   "reason": "obowiązek podawania wynagrodzenia w ofertach pracy: ingerencja w swobodę umów",
+   "explain": [
+    {
+     "index": "LEGAL_DUALISM_INDEX",
+     "text": "Państwo wchodzi w treść prywatnej umowy o pracę."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Wdrożenie dyrektywy UE o jawności płac: formuła narzucona z góry."
+    },
+    {
+     "index": "WORK_ETHOS_INDEX",
+     "text": "Nowe obowiązki zamiast swobody stron (pyt. 14)."
+    }
+   ]
+  },
+  {
+   "process": "1426",
+   "kpi": "13",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): prawo uznaje fakt, że ludzie pracują też na zleceniach i we własnej firmie",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Prawo uznaje fakt, że ludzie pracują na zleceniach i we własnej firmie (pyt. 1)."
+    },
+    {
+     "index": "WORK_ETHOS_INDEX",
+     "text": "Każda uczciwa praca jest godna, nie tylko etat (pyt. 1, 11)."
+    }
+   ]
+  },
+  {
+   "process": "125",
+   "kpi": "14",
+   "direction": "niezgodna",
+   "reason": "ustawa budżetowa na 2024 r. z wysokim deficytem",
+   "explain": [
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Wysoki deficyt przenosi koszty na przyszłe pokolenia zamiast kapitalizować czas (pyt. 5, 6)."
+    }
+   ]
+  },
+  {
+   "process": "687",
+   "kpi": "14",
+   "direction": "niezgodna",
+   "reason": "ustawa budżetowa na 2025 r. z wysokim deficytem",
+   "explain": [
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Wysoki deficyt: życie „jednodniówką” na koszt potomnych (pyt. 6)."
+    }
+   ]
+  },
+  {
+   "process": "1749",
+   "kpi": "14",
+   "direction": "niezgodna",
+   "reason": "ustawa budżetowa na 2026 r. z wysokim deficytem",
+   "explain": [
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Wysoki deficyt obciąża przyszłe pokolenia (pyt. 5, 6)."
+    }
+   ]
+  },
+  {
+   "process": "754",
+   "kpi": "14",
+   "direction": "niezgodna",
+   "reason": "nowelizacja budżetu 2024: wyższy maksymalny deficyt",
+   "explain": [
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Podniesienie maksymalnego deficytu w trakcie roku (pyt. 5)."
+    }
+   ]
+  },
+  {
+   "process": "756",
+   "kpi": "14",
+   "direction": "niezgodna",
+   "reason": "luźniejsze reguły fiskalne samorządów do 2029 r.",
+   "explain": [
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Luźniejsze reguły długu samorządów odkładają koszty na przyszłość (pyt. 5)."
+    }
+   ]
+  },
+  {
+   "process": "472",
+   "kpi": "14",
+   "direction": "niezgodna",
+   "reason": "a priori (wizja narzucona z góry): reguła wydatkowa przestawiona na odgórną formułę UE, nie na własne doświadczenie fiskalne",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Reguła wydatkowa przestawiona na odgórną formułę UE, nie na własne doświadczenie fiskalne (pyt. 3)."
+    },
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Poszerzenie „przestrzeni fiskalnej” to więcej długu (pyt. 5)."
+    }
+   ]
+  },
+  {
+   "process": "257",
+   "kpi": "15",
+   "direction": "zgodna",
+   "reason": "cofnięcie liberalizacji amatorskich poszukiwań zabytków: ochrona dziedzictwa",
+   "explain": [
+    {
+     "index": "BEAUTY_AND_ART_INDEX",
+     "text": "Ochrona zabytków z szacunku dla dorobku przodków (pyt. 6)."
+    },
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Ślady przeszłości chronione przed rozproszeniem (pyt. 9)."
+    },
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Cofnięcie zmiany przed jej wejściem, po głosach archeologów i konserwatorów."
+    }
+   ]
+  },
+  {
+   "process": "1132",
+   "kpi": "15",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): przesunięcie terminu, by poprawić przepisy po doświadczeniach z ich stosowania",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Przesunięcie terminu, by poprawić przepisy po doświadczeniach z ich stosowaniem."
+    },
+    {
+     "index": "BEAUTY_AND_ART_INDEX",
+     "text": "Czas na lepszą ochronę zabytków (pyt. 6)."
+    }
+   ]
+  },
+  {
+   "process": "2160",
+   "kpi": "15",
+   "direction": "zgodna",
+   "reason": "ochrona zabytków i dzieł sztuki przed nielegalnym wywozem",
+   "explain": [
+    {
+     "index": "BEAUTY_AND_ART_INDEX",
+     "text": "Ochrona dzieł sztuki i zabytków przed nielegalnym wywozem (pyt. 6)."
+    },
+    {
+     "index": "TIME_MASTERY_INDEX",
+     "text": "Zachowanie dziedzictwa dla potomnych."
+    }
+   ]
+  },
+  {
+   "process": "2644",
+   "kpi": "16",
+   "direction": "niezgodna",
+   "reason": "a priori (wizja narzucona z góry): nowy urzędowy status „artysty zawodowego” i dopłaty z budżetu; twórca zależny od urzędu",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Nowy urzędowy status „artysty zawodowego”: konstrukcja z góry (pyt. 5, 14)."
+    },
+    {
+     "index": "BEAUTY_AND_ART_INDEX",
+     "text": "Twórca zależny od urzędu i budżetu, nie od wolnego mecenatu (pyt. 7, 8)."
+    },
+    {
+     "index": "WORK_ETHOS_INDEX",
+     "text": "Dopłaty do składek jednej grupy zawodowej (pyt. 14)."
+    }
+   ]
+  },
+  {
+   "process": "3012",
+   "kpi": "16",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): rozbudowa istniejącego wynagrodzenia za wypożyczenia książek, które wyrosło z praktyki prawa autorskiego",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Rozbudowa wynagrodzenia za wypożyczenia, które wyrosło z praktyki prawa autorskiego."
+    },
+    {
+     "index": "BEAUTY_AND_ART_INDEX",
+     "text": "Wynagrodzenie za realne korzystanie z dzieła, nie uznaniowa dotacja (pyt. 7)."
+    }
+   ]
+  },
+  {
+   "process": "840",
+   "kpi": "16",
+   "direction": "zgodna",
+   "reason": "a posteriori (z doświadczenia): przedłużenie istniejącego, sprawdzonego mechanizmu wynagrodzeń za wypożyczenia",
+   "explain": [
+    {
+     "index": "APOSTERIORI_APRIORI_INDEX",
+     "text": "Przedłużenie istniejącego, sprawdzonego mechanizmu."
+    },
+    {
+     "index": "BEAUTY_AND_ART_INDEX",
+     "text": "Autor dostaje zapłatę za użycie dzieła, bez oceny treści przez urząd (pyt. 7, 8)."
+    }
+   ]
+  }
+ ]
+}

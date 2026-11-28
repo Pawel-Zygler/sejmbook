@@ -106,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Jedna karta Konecznego');
+  await expect(post).toContainText('Pięciomian Konecznego (eksperyment)');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -139,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Jedna karta Konecznego');
+  await expect(page.locator('.news-post').first()).toContainText('Pięciomian Konecznego (eksperyment)');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -788,6 +788,26 @@ for (const skin of ['classic', 'modern']) {
     expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
     await page.goto(`${PAGE}#posel-2`); // KO: every MP has the card now
     await expect(page.getByTestId('profile-latin')).toBeVisible();
+  });
+
+  // Pięciomian Konecznego (Pawel, 2026-11-28): five spheres, and an "i" next to each law label explains the verdict.
+  test(`profile: Pięciomian section with per-law index explanations (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#posel-33`);
+    const q = page.getByTestId('latin-quincunx');
+    await expect(q).toBeVisible();
+    await expect(q.getByTestId('latin-quincunx-score')).toHaveText(/^\d{1,3}$/);
+    await expect(q.locator('.quin-sphere')).toHaveCount(5);
+    const prawda = q.getByTestId('quin-sphere-prawda');
+    await prawda.locator('summary').click();
+    const law = prawda.locator('.quin-law').first();
+    await expect(law.getByTestId('quin-dir')).toHaveText(/zgodna|niezgodna/);
+    const tip = law.getByTestId('info-tip');
+    await tip.focus();
+    await expect(tip.locator('.info-tip-body')).toBeVisible();
+    await expect(tip.locator('.info-tip-body')).toContainText('_INDEX:');
+    const box = await q.boundingBox();
+    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
   });
 
   test(`ranking "Cywilizacja łacińska": table, bands, no sideways scroll (${skin})`, async ({ page, isMobile }) => {
