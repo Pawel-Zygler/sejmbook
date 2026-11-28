@@ -379,22 +379,17 @@ describe('Spektrum partyjne: life line', () => {
   });
 });
 
-describe('Life line views (tabs)', () => {
-  it('switches every life line between the time axis, steps and stages', () => {
-    nav('#posel-390');
-    const root = document.documentElement;
-    expect(root.dataset.life).toBe('os');
-    const tabs = $$('[data-testid="life-tabs"] [data-action="life-view"]');
-    expect(tabs.map((b) => b.textContent)).toEqual(['Oś czasu', 'Kroki']);
-    expect($('[data-testid="life-stages"]')).toBeNull();
-    click($('[data-action="life-view"][data-life="kroki"]'));
-    expect(root.dataset.life).toBe('kroki');
-    expect($('[data-action="life-view"][data-life="kroki"]').getAttribute('aria-pressed')).toBe('true');
-    expect($$('[data-testid="life-steps"] .life-step').length).toBeGreaterThan(4);
-    nav('#posel-1');
-    expect($('[data-action="life-view"][data-life="kroki"]').getAttribute('aria-pressed')).toBe('true');
-    click($('[data-action="life-view"][data-life="os"]'));
-    expect(root.dataset.life).toBe('os');
+describe('Life line: only "Oś czasu" (Pawel, 2026-11-28)', () => {
+  it('shows the time axis on every profile, with no view tabs and no Kroki or Etapy list', () => {
+    for (const hash of ['#posel-390', '#posel-1', '#posel-33']) {
+      nav(hash);
+      expect($('[data-testid="life-line"]')).not.toBeNull();
+      expect($('[data-testid="life-tabs"]')).toBeNull();
+      expect($('[data-action="life-view"]')).toBeNull();
+      expect($('[data-testid="life-steps"]')).toBeNull();
+      expect($('[data-testid="life-stages"]')).toBeNull();
+    }
+    expect(document.documentElement.hasAttribute('data-life')).toBe(false);
   });
 });
 
@@ -951,7 +946,7 @@ describe('Profile: round links next to the name, social activity on the life lin
     const lane = $('[data-testid="life-line"] [data-lane="social"]');
     expect(lane).not.toBeNull();
     expect(lane.querySelector('.life-lane-label').textContent).toBe('Działalność społeczna');
-    expect($('[data-testid="life-steps"]').textContent).toContain('Działalność społeczna: Młodzież Wszechpolska');
+    expect(lane.querySelector('.life-seg[title^="Młodzież Wszechpolska"]')).not.toBeNull();
   });
 });
 
@@ -1126,7 +1121,6 @@ describe('Praca zawodowa: professional experience on the life line', () => {
     expect(lane.querySelector('.life-seg[title^="Biblioteka Uniwersytecka w Warszawie"]')).not.toBeNull();
     expect(lane.querySelector('.info-tip-body').textContent).toMatch(/^Praca zawodowa: .*Biblioteka Uniwersytecka w Warszawie/);
     expect(lane.querySelector('.info-tip-body a').getAttribute('href')).toContain('pl.wikipedia.org/wiki/Jaros%C5%82aw_Kaczy%C5%84ski');
-    expect($('[data-testid="life-steps"]').textContent).toContain('Praca zawodowa: Biblioteka Uniwersytecka w Warszawie');
   });
 
   it('an official who never sat in the Sejm has the lane and the jobs in words', () => {

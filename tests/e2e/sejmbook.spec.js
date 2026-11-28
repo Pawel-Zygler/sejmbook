@@ -540,18 +540,13 @@ test.describe('modern look', () => {
   });
 });
 
-test('Life line: two views in tabs, the choice is remembered', async ({ page }) => {
+test('Life line: only the time axis, no view tabs, no horizontal scroll', async ({ page }) => {
   await page.goto(`${PAGE}#posel-390`);
   const panel = page.getByTestId('spectrum');
   await expect(panel.getByTestId('life-line')).toBeVisible();
-  await expect(panel.getByTestId('life-steps')).toBeHidden();
-  await panel.getByRole('button', { name: 'Kroki' }).click();
-  await expect(panel.getByTestId('life-steps')).toBeVisible();
-  await expect(panel.getByTestId('life-line')).toBeHidden();
+  await expect(panel.getByTestId('life-tabs')).toHaveCount(0);
+  await expect(panel.getByRole('button', { name: 'Kroki' })).toHaveCount(0);
   await expect(panel.getByRole('button', { name: 'Etapy' })).toHaveCount(0);
-  await page.reload();
-  await expect(page.getByTestId('spectrum').getByTestId('life-steps')).toBeVisible();
-  await page.getByTestId('spectrum').getByRole('button', { name: 'Oś czasu' }).click();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);
 });

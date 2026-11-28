@@ -617,12 +617,6 @@ h2 { font-size: 1.1rem; }
   :root:not([data-ui="modern"]) .nav-long { display: inline; }
 }
 
-/* Linia życia: dwa widoki w zakładkach (oś czasu, kroki) */
-.life-tabs { display: inline-flex; gap: 2px; padding: 3px; margin: 2px 0 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
-.life-tabs button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; cursor: pointer; }
-.life-tabs button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
-.life-v { display: none; }
-:root:not([data-life]) .life-v-os, :root[data-life="os"] .life-v-os, :root[data-life="kroki"] .life-v-kroki { display: block; }
 /* Oś czasu: większe paski i podpisy, dekady zamiast kresek co rok */
 .life-v-os .life-lane { min-height: 32px; }
 .life-v-os .life-lane-label { font-size: 0.78rem; font-weight: 600; }
@@ -632,17 +626,6 @@ h2 { font-size: 1.1rem; }
 .life-decade { position: absolute; top: 20px; bottom: 0; width: 1px; background: var(--line); }
 .life-axis-tick { position: absolute; transform: translateX(-50%); }
 .life-v-os .life-axis { font-size: 0.76rem; padding-top: 4px; }
-/* Kroki */
-.life-steps { list-style: none; margin: 0; padding: 0; position: relative; }
-.life-step { display: grid; grid-template-columns: 48px 14px minmax(0, 1fr); gap: 10px; align-items: start; padding: 6px 0; position: relative; }
-.life-step::before { content: ""; position: absolute; left: 64px; top: 0; bottom: 0; width: 2px; background: var(--line); }
-.life-step:first-child::before { top: 14px; }
-.life-step:last-child::before { bottom: calc(100% - 14px); }
-.life-step-year { font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; line-height: 20px; }
-.life-step-dot { position: relative; z-index: 1; width: 14px; height: 14px; margin-top: 3px; border-radius: 50%; background: var(--seg); box-shadow: 0 0 0 3px var(--surface); }
-.life-step-dot.uncertain { background: repeating-linear-gradient(135deg, var(--seg) 0 3px, color-mix(in srgb, var(--seg) 45%, #fff) 3px 6px); }
-.life-step-text { display: flex; flex-direction: column; line-height: 1.35; }
-.life-step-text .muted { font-size: 0.82rem; }
 .life-seg.narrow > span { display: none; }
 
 /* ---------- Profile: votes on tax raises and cuts ---------- */
