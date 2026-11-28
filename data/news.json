@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-za-i-przeciw",
+      "date": "2026-11-28",
+      "title": "Za i przeciw",
+      "section": "Rankingi",
+      "body": "Nowy ranking: kto w X kadencji najczęściej głosował za, a kto najczęściej przeciw.",
+      "link": {
+        "href": "#za-przeciw",
+        "label": "Zobacz ranking"
+      }
+    },
+    {
       "id": "2026-11-28-linia-zycia-os",
       "date": "2026-11-28",
       "title": "Linia życia: oś czasu",

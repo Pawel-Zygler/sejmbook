@@ -18,3 +18,12 @@ describe('Aktualności: experimental Latin civilisation card', () => {
     expect(post.body).toMatch(/eksperyment/i);
   });
 });
+
+// Regression (2026-11-28): the "Za i przeciw" ranking has its own post linking to the ranking.
+describe('Aktualności: Za i przeciw', () => {
+  it('has a post that links to #za-przeciw', () => {
+    const post = newsData.posts.find((p) => p.id === '2026-11-28-za-i-przeciw');
+    expect(post.link.href).toBe('#za-przeciw');
+    expect(post.section).toBe('Rankingi');
+  });
+});

@@ -35,6 +35,7 @@ export function renderSitemap(ctx) {
         ${link('#frekwencja', 'Frekwencja', 'obecność na głosowaniach')}
         ${link('#partie', 'Najwięcej partii', 'kto zmieniał kluby')}
         ${link('#konieczny', 'Cywilizacja łacińska', 'eksperyment: cztery zasady Konecznego')}
+        ${link('#za-przeciw', 'Za i przeciw', 'kto najczęściej głosuje za, a kto przeciw')}
       </ul></div>
       <div class="panel"><h2>Serwis</h2><ul>
         ${link('#changelog', 'Changelog', 'każda zmiana w jednym zdaniu')}

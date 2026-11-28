@@ -861,3 +861,16 @@ h2 { font-size: 1.1rem; }
 /* Laws open their PDF directly (Pawel, 2026-11-27). */
 .pdf-mark { display: inline-block; margin-left: 6px; padding: 0 5px; border-radius: 4px; border: 1px solid currentColor; color: var(--accent); font-size: 0.66rem; font-weight: 700; line-height: 1.5; letter-spacing: 0.03em; vertical-align: 1px; }
 .law-row .pdf-mark { margin-left: -4px; }
+
+/* Ranking "Za i przeciw" */
+.votes-rank { min-width: 820px; }
+.votes-rank th.sorted, .votes-rank th.sorted .th-sort { color: var(--accent); }
+.th-sort { all: unset; cursor: pointer; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; white-space: nowrap; }
+.th-sort:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.votes-rank td.vote-yes { color: var(--mint); font-weight: 700; }
+.votes-rank td.vote-no { color: var(--coral); font-weight: 700; }
+.vote-split { display: flex; height: 5px; margin-top: 6px; max-width: 220px; border-radius: 3px; overflow: hidden; background: var(--surface-2); }
+.vote-split i { display: block; height: 100%; }
+.vote-split .vs-yes { background: var(--mint); }
+.vote-split .vs-no { background: var(--coral); }
+.vote-split .vs-abs { background: var(--series-other); }

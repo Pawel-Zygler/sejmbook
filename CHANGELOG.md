@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-28
 
+- **Rankingi: Za i przeciw.** Nowy ranking: kto w X kadencji najczęściej głosował za, a kto najczęściej przeciw.
 - **Profile: Linia życia: oś czasu.** Linia życia na profilach ma jeden widok, oś czasu. Zakładki Kroki i Etapy zniknęły.
 - **Profile: Pięciomian Konecznego (eksperyment).** Na karcie cywilizacji łacińskiej nowy wskaźnik: pięć sfer Konecznego, a ikona „i” przy każdej ustawie wyjaśnia ocenę.
 - **Profile: Jedna karta Konecznego.** Posłowie-ministrowie mają na profilu jedną kartę Cywilizacji łacińskiej, z własnych głosowań, bez drugiej z projektów rządu.
