@@ -798,6 +798,19 @@ describe('Interface switch: classic and modern look', () => {
   });
 });
 
+describe('Tax card: no subtitle, votes in green, red and greys (Pawel, 2026-11-28)', () => {
+  it('has only the title and the info button in the header', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today: '2026-11-24' });
+    nav('#posel-32');
+    const card = $('[data-testid="profile-taxes"]');
+    expect(card.querySelector('.post-head small')).toBeNull();
+    expect(card.textContent).not.toContain('głosowania nad całymi ustawami');
+    expect(card.querySelector('.post-head [data-testid="info-tip"]')).not.toBeNull();
+  });
+});
+
 describe('Latin card header without the subtitle (Pawel, 2026-11-28: "wywal")', () => {
   it('shows only the title and the info button, no "według Feliksa Konecznego…" line', () => {
     app.destroy();

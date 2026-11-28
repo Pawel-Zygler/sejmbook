@@ -12,6 +12,17 @@
       }
     },
     {
+      "id": "2026-11-28-kolory-glosowan",
+      "date": "2026-11-28",
+      "title": "Kolory głosowań",
+      "section": "Profile",
+      "body": "Głosy na profilach mają nowe kolory: za zielony, przeciw czerwony, wstrzymanie i nieobecność w odcieniach szarości.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-latin-naglowek",
       "date": "2026-11-28",
       "title": "Krótszy nagłówek karty Konecznego",
