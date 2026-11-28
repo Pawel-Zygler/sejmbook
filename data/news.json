@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-latin-naglowek",
+      "date": "2026-11-28",
+      "title": "Krótszy nagłówek karty Konecznego",
+      "section": "Profile",
+      "body": "Karta Cywilizacji łacińskiej na profilu ma sam tytuł, a opis jest pod przyciskiem „i”.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-konieczny-urzednicy",
       "date": "2026-11-28",
       "title": "Cywilizacja łacińska: karta urzędników",

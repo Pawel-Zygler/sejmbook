@@ -119,7 +119,7 @@ export function renderProfileLatin(ctx, mp, { infoTip, pilot = LATIN_PILOT_CLUBS
   });
   return `<article class="post tax-post latin-post" data-testid="profile-latin" data-experimental="true">
     <span class="latin-ribbon" data-testid="latin-experimental">Eksperymentalne</span>
-    <header class="post-head"><div><strong>${esc(data.title)}</strong> ${tip(`${data.disclaimer} ${data.scoring} Kierunek każdej ustawy: ${data.criteriaSource}. Głosowania z API Sejmu${data.fetchedAt ? `, stan na ${data.fetchedAt}` : ''}.`, 'https://api.sejm.gov.pl/sejm/term10/votings')}<small>według Feliksa Konecznego, X kadencja · karta eksperymentalna</small></div></header>
+    <header class="post-head"><div><strong>${esc(data.title)}</strong> ${tip(`${data.disclaimer} ${data.scoring} Kierunek każdej ustawy: ${data.criteriaSource}. Głosowania z API Sejmu${data.fetchedAt ? `, stan na ${data.fetchedAt}` : ''}.`, 'https://api.sejm.gov.pl/sejm/term10/votings')}</div></header>
     <div class="latin-total" data-testid="latin-total">
       <p class="latin-big"><b data-testid="latin-total-value">${r.total}</b><span>/100</span></p>
       <span class="latin-level latin-level-${r.level.id}" data-testid="latin-level">${esc(r.level.label)}</span>
@@ -176,7 +176,7 @@ export function renderOfficialLatin(ctx, person, { infoTip } = {}) {
   </section>` : '';
   return `<article class="post tax-post latin-post" data-testid="official-latin" data-experimental="true">
     <span class="latin-ribbon">Eksperymentalne</span>
-    <header class="post-head"><div><strong>${esc(data.title)}: projekty ustaw</strong> ${tip(how, 'https://api.sejm.gov.pl/sejm/term10/processes')}<small>według Feliksa Konecznego, X kadencja · karta urzędnika, eksperymentalna</small></div></header>
+    <header class="post-head"><div><strong>${esc(data.title)}: projekty ustaw</strong> ${tip(how, 'https://api.sejm.gov.pl/sejm/term10/processes')}</div></header>
     <div class="latin-total" data-testid="official-latin-total">
       ${r.total != null
         ? `<p class="latin-big"><b data-testid="official-latin-total-value">${r.total}</b><span>/100</span></p><span class="latin-level latin-level-${r.level.id}">${esc(r.level.label)}</span>`

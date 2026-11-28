@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Cywilizacja łacińska: karta urzędników';
-const NEWEST_LINE = 'Profile: Cywilizacja łacińska: karta urzędników';
+const NEWEST = 'Krótszy nagłówek karty Konecznego';
+const NEWEST_LINE = 'Profile: Krótszy nagłówek karty Konecznego';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -646,7 +646,7 @@ describe('Państwo: III RP hierarchy', () => {
     const card = $('[data-testid="official-latin"]');
     expect(card).not.toBeNull();
     expect(card.dataset.experimental).toBe('true');
-    expect(card.textContent).toContain('karta urzędnika');
+    expect(card.textContent).toContain('projekty ustaw');
     expect(Number($('[data-testid="official-latin-total-value"]').textContent)).toBeGreaterThan(0);
     expect(card.querySelectorAll('li.latin-law[data-author="rzad"]').length).toBeGreaterThan(10);
     nav('#urzad-karol-nawrocki');
@@ -794,6 +794,21 @@ describe('Interface switch: classic and modern look', () => {
     remount();
     expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
     expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
+  });
+});
+
+describe('Latin card header without the subtitle (Pawel, 2026-11-28: "wywal")', () => {
+  it('shows only the title and the info button, no "według Feliksa Konecznego…" line', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, latinData, today: '2026-11-24' });
+    nav('#posel-32');
+    const card = $('[data-testid="profile-latin"]');
+    if (card) {
+      expect(card.querySelector('.post-head small')).toBeNull();
+      expect(card.querySelector('.post-head [data-testid="info-tip"]')).not.toBeNull();
+    }
+    expect($('#view').innerHTML).not.toContain('według Feliksa Konecznego, X kadencja');
   });
 });
 
