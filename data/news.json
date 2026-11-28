@@ -12,6 +12,17 @@
       }
     },
     {
+      "id": "2026-11-28-jedna-karta",
+      "date": "2026-11-28",
+      "title": "Jedna karta Konecznego",
+      "section": "Profile",
+      "body": "Posłowie-ministrowie mają na profilu jedną kartę Cywilizacji łacińskiej, z własnych głosowań, bez drugiej z projektów rządu.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-kolory-glosowan",
       "date": "2026-11-28",
       "title": "Kolory głosowań",
