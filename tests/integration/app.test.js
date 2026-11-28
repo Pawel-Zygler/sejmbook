@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Krótszy nagłówek karty Konecznego';
-const NEWEST_LINE = 'Profile: Krótszy nagłówek karty Konecznego';
+const NEWEST = 'Kolory głosowań';
+const NEWEST_LINE = 'Profile: Kolory głosowań';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -794,6 +794,19 @@ describe('Interface switch: classic and modern look', () => {
     remount();
     expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
     expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
+  });
+});
+
+describe('Tax card: no subtitle, votes in green, red and greys (Pawel, 2026-11-28)', () => {
+  it('has only the title and the info button in the header', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today: '2026-11-24' });
+    nav('#posel-32');
+    const card = $('[data-testid="profile-taxes"]');
+    expect(card.querySelector('.post-head small')).toBeNull();
+    expect(card.textContent).not.toContain('głosowania nad całymi ustawami');
+    expect(card.querySelector('.post-head [data-testid="info-tip"]')).not.toBeNull();
   });
 });
 

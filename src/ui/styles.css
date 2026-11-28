@@ -646,19 +646,20 @@ h2 { font-size: 1.1rem; }
 .life-seg.narrow > span { display: none; }
 
 /* ---------- Profile: votes on tax raises and cuts ---------- */
-.tax-post { --tax-y: var(--accent); --tax-n: #4b5563; --tax-a: #c9b28f; --tax-x: var(--line); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tax-post { --tax-n: #9aa4b2; --tax-a: #7a6a52; } }
-:root[data-theme="dark"] .tax-post { --tax-n: #9aa4b2; --tax-a: #7a6a52; }
+/* Votes (Pawel, 2026-11-28): za green, przeciw red, wstrzymał neutral grey, nieobecny a light shade of that grey. */
+.tax-post { --tax-y: #2e7d40; --tax-y-ink: #fff; --tax-n: #c0392b; --tax-n-ink: #fff; --tax-a: #8a919c; --tax-a-ink: #fff; --tax-x: #dde1e6; --tax-x-ink: #3b4250; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tax-post { --tax-y: #4cbf6b; --tax-y-ink: #07160b; --tax-n: #f0675c; --tax-n-ink: #1c0604; --tax-a: #8b93a0; --tax-a-ink: #0d0f12; --tax-x: #3a3f48; --tax-x-ink: #d5d9df; } }
+:root[data-theme="dark"] .tax-post { --tax-y: #4cbf6b; --tax-y-ink: #07160b; --tax-n: #f0675c; --tax-n-ink: #1c0604; --tax-a: #8b93a0; --tax-a-ink: #0d0f12; --tax-x: #3a3f48; --tax-x-ink: #d5d9df; }
 .tax-post .post-head strong { font-size: 1.05rem; }
 .tax-group { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
 .tax-group h3 { margin: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
 .tax-sum { margin: 0; font-weight: 600; }
 .tax-bar { display: flex; height: 10px; border-radius: 99px; overflow: hidden; gap: 2px; background: var(--surface-2); }
 .tax-seg { min-width: 4px; }
-.tax-v-Y { background: var(--tax-y); color: var(--accent-ink); }
-.tax-v-N { background: var(--tax-n); color: #fff; }
-.tax-v-A { background: var(--tax-a); color: #1c1305; }
-.tax-v-X { background: var(--tax-x); color: var(--ink); }
+.tax-v-Y { background: var(--tax-y); color: var(--tax-y-ink); }
+.tax-v-N { background: var(--tax-n); color: var(--tax-n-ink); }
+.tax-v-A { background: var(--tax-a); color: var(--tax-a-ink); }
+.tax-v-X { background: var(--tax-x); color: var(--tax-x-ink); }
 .tax-list summary { cursor: pointer; font-size: 0.9rem; color: var(--accent); font-weight: 600; padding: 4px 0; }
 .tax-list ol { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .tax-law { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 8px; background: var(--surface-2); }

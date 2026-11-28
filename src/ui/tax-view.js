@@ -40,7 +40,7 @@ export function renderProfileTaxes(ctx, mp, { infoTip } = {}) {
   const t = mpTaxTally(data, mp.id);
   const tip = infoTip ? infoTip(`${data.rule} Głosowania końcowe z API Sejmu${data.fetchedAt ? `, stan na ${data.fetchedAt}` : ''}.`, 'https://api.sejm.gov.pl/sejm/term10/processes', 'Jak liczymy') : '';
   return `<article class="post tax-post" data-testid="profile-taxes">
-    <header class="post-head"><div><strong>Głosowania nad podatkami</strong> ${tip}<small>X kadencja, głosowania nad całymi ustawami</small></div></header>
+    <header class="post-head"><div><strong>Głosowania nad podatkami</strong> ${tip}</div></header>
     ${group('raise', t.raise)}
     ${group('cut', t.cut)}
     ${t.mixed.laws ? group('mixed', t.mixed) : ''}

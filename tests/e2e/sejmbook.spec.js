@@ -106,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Krótszy nagłówek karty Konecznego');
+  await expect(post).toContainText('Kolory głosowań');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -139,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Krótszy nagłówek karty Konecznego');
+  await expect(page.locator('.news-post').first()).toContainText('Kolory głosowań');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -670,6 +670,22 @@ test('Feed: time filter on the right, one line per entry with the source behind 
   await tip.focus();
   await expect(tip.locator('.info-tip-body')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('Votes: za green, przeciw red, wstrzymał and nieobecny in greys, in light and dark mode', async ({ page }) => {
+  await page.goto(`${PAGE}#posel-32`);
+  const card = page.getByTestId('profile-taxes');
+  await expect(card).toBeVisible();
+  const rgb = (sel) => page.evaluate((s) => { const el = document.createElement('span'); el.className = `tax-vote ${s}`; document.querySelector('[data-testid="profile-taxes"]').append(el); const c = getComputedStyle(el).backgroundColor; el.remove(); return c.match(/\d+/g).map(Number); }, sel);
+  for (const theme of ['light', 'dark']) {
+    const btn = page.getByTestId('theme-btn');
+    while ((await btn.getAttribute('data-theme')) !== theme) await btn.click();
+    const [y, n, a, x] = [await rgb('tax-v-Y'), await rgb('tax-v-N'), await rgb('tax-v-A'), await rgb('tax-v-X')];
+    expect(y[1]).toBeGreaterThan(y[0]); // green
+    expect(n[0]).toBeGreaterThan(n[1]); // red
+    for (const g of [a, x]) expect(Math.max(...g) - Math.min(...g)).toBeLessThan(30); // neutral greys
+    expect(Math.abs(a[0] - x[0])).toBeGreaterThan(20); // two different shades
+  }
 });
 
 test('Laws: a click on a law title goes straight to its PDF', async ({ page }) => {
