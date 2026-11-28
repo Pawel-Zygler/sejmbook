@@ -5,9 +5,13 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 ## 2026-11-28
 
 - **Profile: Pięciomian Konecznego (eksperyment).** Na karcie cywilizacji łacińskiej nowy wskaźnik: pięć sfer Konecznego, a ikona „i” przy każdej ustawie wyjaśnia ocenę.
+- **Profile: Cywilizacja łacińska: karta urzędników.** Ministrowie i prezydent dostali eksperymentalną kartę Konecznego liczoną z projektów ustaw, które złożył ich rząd lub urząd.
+- **Rankingi: Cywilizacja łacińska: ustawy zatwierdzone.** Sporne ustawy dostały kierunek według testu a priori / a posteriori, więc liczą się już w wyniku.
 
 ## 2026-11-27
 
+- **Rankingi: Frequent Flyer bez szacunków.** Ranking Frequent Flyer pokazuje już tylko pewne dane: liczbę lotów i artykuły, bez szacowanych kilometrów.
+- **Profile: Ustawy prosto do PDF.** Kliknięcie w ustawę otwiera od razu jej PDF: tekst z Dziennika Ustaw albo druk sejmowy.
 - **Start: Feed w jednej linii.** Każdy wpis w Feedzie to teraz jedna linijka: data, kto, co. Urząd i źródło są pod przyciskiem „i”.
 - **Rankingi: Cywilizacja łacińska: poprzednie zasady.** Wynik cywilizacji łacińskiej znów liczy wszystkie ustawy i zwykłą obecność; suwerenność liczymy bez zmian.
 - **Profile: Współczynnik deklaracji.** Na profilu posła sprawdzisz, czy głosował tak, jak jego komitet obiecywał w kampanii 2023.

@@ -1,5 +1,6 @@
 import { mpDeclarations } from '../lib/declarations.js';
-import { VOTE_LABEL, processUrl, votingUrl } from '../lib/taxes.js';
+import { lawHref, lawLinkTitle, pdfMark } from '../lib/law-pdf.js';
+import { VOTE_LABEL, votingUrl } from '../lib/taxes.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const plural = (n, one, few, many) => {
@@ -22,7 +23,7 @@ function lawItem({ law, vote, consistent }) {
   const cls = consistent === true ? 'ok' : consistent === false ? 'bad' : 'half';
   return `<li class="tax-law decl-law" data-process="${esc(law.process)}" data-stance="${esc(law.stance)}" data-consistent="${consistent}">
     <div class="tax-law-top"><span class="tax-vote tax-v-${vote === '-' ? 'X' : vote}">${esc(VOTE_LABEL[vote])}</span><span class="decl-stance">${esc(STANCE_LABEL[law.stance])}</span><time datetime="${esc(law.date)}">${esc(law.date)}</time><span class="decl-verdict decl-${cls}" data-testid="decl-verdict">${esc(verdict)}</span></div>
-    <a class="tax-law-title" href="${esc(processUrl(law))}" target="_blank" rel="noopener">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}</a>
+    <a class="tax-law-title" href="${esc(lawHref(law))}" target="_blank" rel="noopener" title="${esc(lawLinkTitle(law))}">${law.passed ? 'Ustawa' : 'Projekt (odrzucony)'} ${esc(law.title)}${pdfMark(law)}</a>
     ${law.note ? `<span class="tax-law-why">${esc(law.note)}</span>` : ''}
     <span class="tax-law-meta"><a href="${esc(votingUrl(law))}" target="_blank" rel="noopener">głosowanie nr ${law.votingNumber}, pos. ${law.sitting}</a></span>
   </li>`;

@@ -107,38 +107,38 @@
     {
       "process": "219",
       "pillar": 1,
-      "direction": "sporna",
-      "reason": "wybór sędziów do KRS: obie strony sporu powołują się na niezależność sądów; do decyzji autora"
+      "direction": "zgodna",
+      "reason": "a posteriori: wybór sędziów do KRS wraca do sprawdzonego wcześniej porządku (zatwierdzone przez autora, jak 2108)"
     },
     {
       "process": "2108",
       "pillar": 1,
-      "direction": "sporna",
-      "reason": "nowe zasady wyboru sędziów do KRS: sporne, do decyzji autora"
+      "direction": "zgodna",
+      "reason": "a posteriori: nowe zasady wyboru sędziów do KRS przywracają sprawdzony porządek (zatwierdzone przez autora)"
     },
     {
       "process": "2107",
       "pillar": 1,
-      "direction": "sporna",
-      "reason": "skutki uchwał KRS z lat 2018–2026: sporne, do decyzji autora"
+      "direction": "zgodna",
+      "reason": "a posteriori: skutki uchwał KRS z lat 2018–2026 porządkowane według wyroków (zatwierdzone przez autora)"
     },
     {
       "process": "253",
       "pillar": 1,
-      "direction": "sporna",
-      "reason": "nowa ustawa o Trybunale Konstytucyjnym: sporne, do decyzji autora"
+      "direction": "zgodna",
+      "reason": "a posteriori: ustawa o Trybunale Konstytucyjnym przywraca sprawdzony porządek, jak ustawy o KRS zatwierdzone przez autora"
     },
     {
       "process": "254",
       "pillar": 1,
-      "direction": "sporna",
-      "reason": "przepisy wprowadzające ustawę o TK: sporne, do decyzji autora"
+      "direction": "zgodna",
+      "reason": "a posteriori: przepisy wprowadzające ustawę o TK, jak wyżej"
     },
     {
       "process": "2867",
       "pillar": 1,
-      "direction": "sporna",
-      "reason": "stan spoczynku i delegowania sędziów: sporne, do decyzji autora"
+      "direction": "zgodna",
+      "reason": "a posteriori: stan spoczynku i delegowania sędziów według dotychczasowej praktyki (zatwierdzone przez autora)"
     },
     {
       "process": "558",
@@ -263,20 +263,20 @@
     {
       "process": "1390",
       "pillar": 2,
-      "direction": "sporna",
-      "reason": "zakaz sprzedaży państwowej ziemi rolnej przedłużony o 10 lat: własność państwowa kontra ochrona polskiej ziemi; do decyzji autora"
+      "direction": "niezgodna",
+      "reason": "a priori: jednolity zakaz sprzedaży państwowej ziemi rolnej na kolejne 10 lat, państwo zamiast właściciela"
     },
     {
       "process": "1632",
       "pillar": 2,
-      "direction": "sporna",
-      "reason": "ochrona polskiego rolnictwa i ziemi (zakaz sprzedaży gruntów państwowych): do decyzji autora"
+      "direction": "niezgodna",
+      "reason": "a priori: zakaz sprzedaży gruntów państwowych narzucony odgórnie, państwo zamiast właściciela"
     },
     {
       "process": "2079",
       "pillar": 2,
-      "direction": "sporna",
-      "reason": "zakaz sprzedaży państwowych gruntów rolnych do 2036 r.: do decyzji autora"
+      "direction": "niezgodna",
+      "reason": "a priori: zakaz sprzedaży państwowych gruntów rolnych do 2036 r., państwo zamiast właściciela"
     },
     {
       "process": "176",
@@ -341,8 +341,9 @@
     {
       "process": "671",
       "pillar": 3,
-      "direction": "zgodna",
-      "reason": "wychowanie patriotyczne i Komisja Edukacji Narodowej jako organ ekspercki"
+      "direction": "niezgodna",
+      "reason": "a priori: państwo jako wychowawca, odgórny program wychowania patriotycznego i nowy organ (KEN) nad szkołami"
     }
-  ]
+  ],
+  "approval": "Kierunki ustaw zatwierdził autor serwisu 28.11.2026 testem a priori / a posteriori: ustawa, która usankcjonowuje doświadczenie i fakty, jest zgodna; ustawa, która narzuca odgórną wizję (inżynieria społeczna, jednolite zakazy, państwo jako wychowawca), jest niezgodna."
 }

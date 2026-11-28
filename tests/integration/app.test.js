@@ -24,6 +24,7 @@ import socialData from '../../data/social.json';
 import districtMapData from '../../data/district-map.json';
 import bioData from '../../data/bio.json';
 import workData from '../../data/work.json';
+import lawPdfsData from '../../data/law-pdfs.json';
 import { SHELL_HTML } from '../../src/ui/shell.js';
 import { createApp } from '../../src/app.js';
 
@@ -122,7 +123,7 @@ describe('Frequent Flyer', () => {
   beforeEach(() => nav('#frequent-flyer'));
   const rows = () => $$('[data-testid="ranking"] tbody tr');
 
-  it('shows one merged "Od zawsze" set sorted by estimated km, with every article', () => {
+  it('shows one merged "Od zawsze" set ranked by flights, with every article and no estimates', () => {
     const view = $('[data-view="flyer"]');
     expect(view.dataset.dataset).toBe('all');
     const ids = new Set(app.ctx.flights.datasets.flatMap((d) => d.entries.map((e) => String(e.mpId))));
@@ -130,8 +131,10 @@ describe('Frequent Flyer', () => {
     expect(rows()[0].textContent).toContain('Grzegorz Napieralski');
     expect($('.coverage')).toBeNull();
     expect($('[data-testid="all-articles"]')).toBeNull();
-    expect(rows().every((tr) => tr.querySelector('.earth-col'))).toBe(true);
-    expect(rows()[0].querySelector('[data-testid="earth-badge"] .earth-n').textContent).toMatch(/^\d+,\d$/);
+    const flights = rows().map((tr) => Number(tr.querySelector('td.num').textContent));
+    expect([...flights].sort((a, b) => b - a)).toEqual(flights);
+    expect($('[data-view="flyer"] .earth-col, [data-view="flyer"] .bar-col, [data-view="flyer"] [data-testid="earth-badge"]')).toBeNull();
+    expect($('[data-view="flyer"]').textContent).not.toMatch(/≈|km/);
   });
   it('has no filters', () => {
     expect($('.flyer-side')).toBeNull();
@@ -448,7 +451,8 @@ describe('Sidebar per page', () => {
     expect(view.querySelector('.flyer-hero')).toBeNull();
     expect(view.querySelector('.stats')).toBeNull();
     expect($('#aside [data-testid="sum-flights"]').textContent).toMatch(/\d/);
-    expect($('#aside [data-testid="sum-km"]').textContent).toContain('≈');
+    expect($('#aside [data-testid="sum-km"]')).toBeNull();
+    expect($('#aside').textContent).not.toMatch(/≈|km/);
   });
   it('other pages have no right column', () => {
     nav('#start');
@@ -535,13 +539,16 @@ describe('Theme switch and Frequent Flyer donut', () => {
       expect(root.getAttribute('data-theme')).toBe(t === 'auto' ? null : t);
     }
   });
-  it('the donut in the sidebar matches the km totals', () => {
+  it('has no km donut in the sidebar (estimates removed, Pawel 2026-11-27)', () => {
     nav('#frequent-flyer');
-    const donut = $('#aside [data-testid="flyer-donut"]');
-    expect(donut).not.toBeNull();
-    const shares = $$('#aside .donut-legend .lg-val').map((e) => parseFloat(e.textContent.replace(',', '.')));
-    expect(shares.reduce((a, b) => a + b, 0)).toBeCloseTo(100, 0);
-    expect(donut.querySelectorAll('.donut-seg').length).toBe(shares.length);
+    expect($('#aside [data-testid="flyer-donut"]')).toBeNull();
+  });
+  it('MP profile flight posts show flights and cost, no estimated km', () => {
+    nav('#posel-257');
+    const post = $('.flight-post');
+    expect(post).not.toBeNull();
+    expect(post.textContent).not.toContain('szacunek');
+    expect(post.textContent).toContain('lotów');
   });
 });
 
@@ -630,6 +637,25 @@ describe('Państwo: III RP hierarchy', () => {
     expect($('.profile-top h1').textContent).toBe('Karol Nawrocki');
     expect($('.official-head')).toBeNull();
     expect($('[data-testid="spectrum"] h2').textContent).toBe('Spektrum partyjne');
+  });
+  it('shows the experimental Koneczny card on officials: from the bills of their government, also under the MP profile of a minister', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, kpiData, lawData, latinData, today: '2026-11-27' });
+    nav('#urzad-adam-bodnar');
+    const card = $('[data-testid="official-latin"]');
+    expect(card).not.toBeNull();
+    expect(card.dataset.experimental).toBe('true');
+    expect(card.textContent).toContain('karta urzędnika');
+    expect(Number($('[data-testid="official-latin-total-value"]').textContent)).toBeGreaterThan(0);
+    expect(card.querySelectorAll('li.latin-law[data-author="rzad"]').length).toBeGreaterThan(10);
+    nav('#urzad-karol-nawrocki');
+    expect($('[data-testid="official-latin-few"]')).not.toBeNull();
+    nav('#urzad-lech-walesa');
+    expect($('[data-testid="official-latin"]')).toBeNull();
+    nav(`#posel-${mpsData.mps.find((m) => m.name === 'Andrzej Domański').id}`);
+    expect($('[data-testid="profile-latin"]')).not.toBeNull();
+    expect($('[data-testid="official-latin"]')).not.toBeNull();
   });
   it('gives presidents and prime ministers profiles with all their roles', () => {
     nav('#urzad-lech-kaczynski');
@@ -768,6 +794,41 @@ describe('Interface switch: classic and modern look', () => {
     remount();
     expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
     expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
+  });
+});
+
+describe('Laws open their PDF (Pawel, 2026-11-27)', () => {
+  const pdfs = { laws: Object.fromEntries(lawData.laws.map((l) => [l.process, { url: `https://api.sejm.gov.pl/eli/acts/DU/2024/${l.process}/text.pdf`, kind: 'dzu' }])) };
+  const mount = (extra) => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, lawData, taxData, latinData, declarationsData, today: '2026-11-24', ...extra });
+  };
+  it('links every law title on a profile straight to the PDF, with a PDF mark', () => {
+    mount({ lawPdfsData: pdfs });
+    nav('#posel-32');
+    const links = $$('[data-testid="profile-laws"] .tax-law-title');
+    expect(links.length).toBeGreaterThan(0);
+    for (const a of links) expect(a.getAttribute('href')).toMatch(/\.pdf$/);
+    expect($('[data-testid="profile-laws"] .pdf-mark')).not.toBeNull();
+    const tax = $$('[data-testid="profile-taxes"] .tax-law-title');
+    for (const a of tax) expect(a.getAttribute('href')).toMatch(/\.pdf$/);
+  });
+  it('falls back to the legislative process without PDF data', () => {
+    mount({});
+    nav('#posel-32');
+    const a = $('[data-testid="profile-laws"] .tax-law-title');
+    expect(a.getAttribute('href')).toContain('PrzebiegProc.xsp');
+    expect($('[data-testid="profile-laws"] .pdf-mark')).toBeNull();
+  });
+  it('uses the bundled data/law-pdfs.json for the laws it covers', () => {
+    mount({ lawPdfsData });
+    nav('#posel-32');
+    const known = new Set(Object.keys(lawPdfsData.laws ?? {}));
+    for (const li of $$('[data-testid="profile-laws"] .tax-law')) {
+      const href = li.querySelector('.tax-law-title').getAttribute('href');
+      if (known.has(li.dataset.process)) expect(href).toBe(lawPdfsData.laws[li.dataset.process].url);
+    }
   });
 });
 

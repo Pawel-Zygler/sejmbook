@@ -873,3 +873,7 @@ h2 { font-size: 1.1rem; }
 @media (max-width: 640px) {
   .feed-line { grid-template-columns: 4.9em minmax(0, 7em) minmax(0, 1fr) auto; gap: 8px; padding: 8px 12px; font-size: 0.84rem; }
 }
+
+/* Laws open their PDF directly (Pawel, 2026-11-27). */
+.pdf-mark { display: inline-block; margin-left: 6px; padding: 0 5px; border-radius: 4px; border: 1px solid currentColor; color: var(--accent); font-size: 0.66rem; font-weight: 700; line-height: 1.5; letter-spacing: 0.03em; vertical-align: 1px; }
+.law-row .pdf-mark { margin-left: -4px; }

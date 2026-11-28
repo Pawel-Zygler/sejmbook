@@ -4,7 +4,7 @@ import { currentHolders, currentMembers } from '../lib/government.js';
 import { workFor } from '../lib/work.js';
 import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, termList, ALL_TERMS, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast, partyStyle } from '../lib/life.js';
-import { buildRanking, resolvePeriod, datasetSummary, kmByClub, flightHistoryForMp, timesAroundEarth, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
+import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
 import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
 import { listPl, ageWords, aboutYears, termsWords, termOrdinals } from '../lib/pl-words.js';
 import { hrefFor } from '../lib/router.js';
@@ -12,7 +12,7 @@ import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileKpi } from './kpi-view.js';
 import { renderProfileLaws } from './law-view.js';
-import { renderProfileLatin } from './latin-view.js';
+import { renderProfileLatin, renderOfficialLatin } from './latin-view.js';
 import { renderProfileDeclarations } from './declarations-view.js';
 import { renderProfileLinks } from './profile-links.js';
 import { renderDistrictMap } from './district-map.js';
@@ -964,20 +964,19 @@ export function renderProfile(ctx, id) {
         ${renderProfileTaxes(ctx, mp, { infoTip })}
         ${renderProfileDeclarations(ctx, mp, { infoTip })}
         ${renderProfileLatin(ctx, mp, { infoTip })}
+        ${renderOfficialLatin(ctx, ctx.gov?.byName?.get(foldName(mp.name)), { infoTip })}
         ${renderProfileLaws(ctx, mp, { infoTip })}
-        ${history.map((h) => flightPost(ctx, mp, h, legKm)).join('')}
+        ${history.map((h) => flightPost(ctx, mp, h)).join('')}
       </div>
     </div>
   </section>`;
 }
 
-function flightPost(ctx, mp, h, legKm) {
-  const km = legKm == null ? null : h.flights * legKm;
+function flightPost(ctx, mp, h) {
   return `<article class="post flight-post">
     <header class="post-head">${avatar(ctx, mp, 'md')}<div><strong>${esc(mp.name)}</strong><small>Frequent Flyer · ${esc(h.dataset.label)}</small></div></header>
     <div class="flight-stats">
       <div><b>${h.flights}</b><span>lotów</span></div>
-      <div><b>${km == null ? '–' : '≈\u00a0' + formatInt(km)}</b><span>km, szacunek</span></div>
       <div><b>${formatPln(h.costPln)}</b><span>koszt biletów</span></div>
     </div>
     <footer class="post-foot"><a class="btn" href="#frequent-flyer">Pokaż w rankingu</a><span class="src">Artykuły: ${articleLinks(h.articles)}</span></footer>
@@ -986,88 +985,44 @@ function flightPost(ctx, mp, h, legKm) {
 
 /* ---------- Frequent Flyer ---------- */
 /** Totals of the Frequent Flyer ranking; shown in the right sidebar (and under the ranking on phones). */
-/**
- * Donut chart (experiment, Pawel 2026-11-24): estimated km by club. Colours are the series palette of
- * beautifulcharts.dev (--series-1..4, separate light and dark values); everyone else is a grey "Inne".
- * Each slice has a tooltip; the legend lists club, km and share, so colour is never the only key.
- */
-export function flyerDonut(ctx, rows) {
-  const { total, slices } = kmByClub(rows, 4);
-  if (!slices.length) return '';
-  const R = 52, r = 34, C = 60;
-  const pt = (rad, a) => `${(C + rad * Math.sin(a)).toFixed(2)} ${(C - rad * Math.cos(a)).toFixed(2)}`;
-  let a0 = 0;
-  const label = (s) => (s.club ? (ctx.clubs.get(s.club)?.short ?? s.club) : 'Inne');
-  const pct = (s) => `${(s.share * 100).toFixed(1).replace('.', ',')}%`;
-  const paths = slices.map((s) => {
-    const a1 = a0 + s.share * 2 * Math.PI;
-    const big = a1 - a0 > Math.PI ? 1 : 0;
-    const d = s.share >= 0.9999
-      ? `M ${pt(R, 0)} A ${R} ${R} 0 1 1 ${pt(R, Math.PI)} A ${R} ${R} 0 1 1 ${pt(R, 0)} M ${pt(r, 0)} A ${r} ${r} 0 1 0 ${pt(r, Math.PI)} A ${r} ${r} 0 1 0 ${pt(r, 0)} Z`
-      : `M ${pt(R, a0)} A ${R} ${R} 0 ${big} 1 ${pt(R, a1)} L ${pt(r, a1)} A ${r} ${r} 0 ${big} 0 ${pt(r, a0)} Z`;
-    a0 = a1;
-    return `<path class="donut-seg" d="${d}" style="fill:var(--series-${s.series || 'other'})" data-club="${esc(s.club ?? 'inne')}" tabindex="0"><title>${esc(label(s))}: ≈ ${formatInt(s.km)} km (${pct(s)})</title></path>`;
-  }).join('');
-  const mln = (total / 1e6).toFixed(2).replace('.', ',');
-  return `<figure class="donut" data-testid="flyer-donut">
-      <figcaption class="donut-title">Kilometry według klubów</figcaption>
-      <div class="donut-body">
-        <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Szacowane kilometry według klubów">${paths}
-          <text x="60" y="58" text-anchor="middle" class="donut-num">${mln}</text><text x="60" y="72" text-anchor="middle" class="donut-unit">mln km</text></svg>
-        <ul class="donut-legend">${slices.map((s) => `<li data-club="${esc(s.club ?? 'inne')}"><span class="swatch" style="background:var(--series-${s.series || 'other'})"></span><span class="lg-name"${s.clubs ? ` title="${esc(s.clubs.map((c) => ctx.clubs.get(c)?.short ?? c).join(', '))}"` : ''}>${esc(label(s))}</span><span class="lg-val">${pct(s)}</span></li>`).join('')}</ul>
-      </div>
-    </figure>`;
-}
-
 export function flyerTotals(ctx, state) {
   const { dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
-  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
+  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles);
   const sum = datasetSummary(rows);
-  const earth = rows[0]?.km ? timesAroundEarth(rows[0].km) : null;
+  // Only what the sources say (Pawel, 2026-11-27: "bez szacunków"): flights and articles, no estimated km.
   return `<div class="panel aside-box flyer-totals" data-testid="flyer-totals">
     <h2>Frequent Flyer</h2>
-    <p class="muted">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu. Kilometry szacujemy, bo Sejm ich nie publikuje.</p>
+    <p class="muted">Kto z posłów najwięcej lata po Polsce na koszt Kancelarii Sejmu, według artykułów prasowych.</p>
     <dl class="totals">
       <div><dt>Posłów w zestawieniu</dt><dd>${formatInt(sum.mps)}</dd></div>
       <div><dt>Udokumentowanych lotów</dt><dd data-testid="sum-flights">${formatInt(sum.flights)}</dd></div>
-      <div><dt>Szacowane km</dt><dd data-testid="sum-km">≈&nbsp;${formatInt(sum.km)}</dd></div>
-      ${earth ? `<div><dt>Lider okrążyłby Ziemię</dt><dd>${earth.toFixed(1).replace('.', ',')}×</dd></div>` : ''}
     </dl>
-    ${flyerDonut(ctx, rows)}
   </div>`;
 }
 
 export function renderFlyer(ctx, state) {
   const { dataset: ds } = resolvePeriod(ctx.flights.datasets, state.period, state.dataset);
-  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, state.sortBy, ctx.flights.articles);
-  const sum = datasetSummary(rows);
-  const maxKm = Math.max(1, ...rows.map((r) => r.km ?? 0));
-  const maxFl = Math.max(1, ...rows.map((r) => r.flights));
+  // Ranked by flights, the number the sources give; no estimated km (Pawel, 2026-11-27).
+  const rows = buildRanking(ds, ctx.mpsById, ctx.airports, 'flights', ctx.flights.articles);
   const hasCost = rows.some((r) => r.costPln != null);
-  const leader = rows[0];
-  const earth = leader && leader.km ? timesAroundEarth(leader.km) : null;
 
   return `
   <section data-view="flyer" data-dataset="${esc(ds.id)}">
     ${rankingSwitch('flyer')}
-    ${pageHead({ icon: '✈', eyebrow: 'Ranking', title: 'Frequent Flyer', lede: 'Kilometry to szacunek: Sejm nie publikuje tras.' })}
+    ${pageHead({ icon: '✈', eyebrow: 'Ranking', title: 'Frequent Flyer' })}
     <div class="panel rank-panel">
       <div class="table-wrap">
         <table class="rank" data-testid="ranking">
-          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th><th scope="col" class="num">≈ km</th><th scope="col" class="earth-col">Okrążenia<br>Ziemi</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}<th scope="col" class="bar-col"><span class="visually-hidden">Wykres</span></th></tr></thead>
+          <thead><tr><th scope="col">#</th><th scope="col">Poseł</th><th scope="col" class="num">Loty</th><th scope="col">Artykuły</th>${hasCost ? '<th scope="col" class="num">Koszt</th>' : ''}</tr></thead>
           <tbody>
             ${rows.map((r) => {
-              const share = state.sortBy === 'km' ? (r.km ?? 0) / maxKm : r.flights / maxFl;
               return `<tr data-mp-id="${r.mp.id}"${r.rank <= 3 ? ` class="podium-row podium-row-${r.rank}"` : ''}>
                 <td class="pos">${r.rank}</td>
                 <td class="rank-who">${mpLink(r.mp, `${avatar(ctx, r.mp, 'sm')}<span>${esc(r.mp.name)}</span>`, 'rank-mp')}
                   <span class="rank-meta" data-testid="rank-meta">${clubChip(ctx, r.mp.club, r.mp)}${podiumBadge(r.rank)}${attendanceBadge(ctx, r.mp.id, 16)}</span></td>
                 <td class="num">${r.flights}</td>
                 <td class="arts">${articleLinks(r.articles)}</td>
-                <td class="num">${r.km == null ? '–' : formatInt(r.km)}</td>
-                <td class="earth-col">${earthBadge(r.km)}</td>
                 ${hasCost ? `<td class="num">${formatPln(r.costPln)}</td>` : ''}
-                <td class="bar-col"><span class="bar" style="--w:${(share * 100).toFixed(1)}%"></span></td>
               </tr>`;
             }).join('')}
           </tbody>
@@ -1079,25 +1034,11 @@ export function renderFlyer(ctx, state) {
     <div class="panel method">
       <h2>Odznaki podium</h2>
       <p>Pierwsze miejsce dostaje odznakę ${podiumBadge(1)}, drugie ${podiumBadge(2)}, a trzecie ${podiumBadge(3)}. Przy remisie odznakę dostają wszyscy na tym samym miejscu.</p>
-      <h2>Jak liczymy kilometry</h2>
-      <p>Kancelaria Sejmu ujawnia liczbę lotów i koszt, ale nie trasy. Przyjmujemy, że każdy lot to jeden odcinek między Warszawą (Chopin) a lotniskiem najbliższym okręgowi posła, i liczymy odległość po kole wielkim. Prawdziwy dystans może być inny: posłowie latają też innymi trasami, a ministrowie i wiceministrowie część lotów odbywają służbowo.</p>
+      <h2>Skąd liczba lotów</h2>
+      <p>Liczba lotów to krajowe przeloty opłacone przez Kancelarię Sejmu, podane w artykułach przy każdym pośle. Kancelaria nie publikuje tras ani kilometrów, więc ich nie pokazujemy.</p>
       <p>Klub przy nazwisku to klub z dnia ${esc(ctx.fetchedAt)} według API Sejmu, który może różnić się od klubu w okresie objętym danymi.</p>
     </div>
   </section>`;
-}
-
-/** Laps around the Earth (40 075 km) with one decimal, e.g. "0,3"; under 0,1 shows "<0,1". */
-export function earthLaps(km) {
-  const laps = timesAroundEarth(km);
-  if (laps == null || km <= 0) return null;
-  return laps < 0.05 ? '<0,1' : laps.toFixed(1).replace('.', ',');
-}
-
-/** A globe with the number of laps around the Earth on a small notification-style badge. */
-export function earthBadge(km) {
-  const n = earthLaps(km);
-  if (n == null) return '<span class="muted">–</span>';
-  return `<span class="earth-badge" data-testid="earth-badge" title="${esc(n)} okrążenia Ziemi (obwód 40 075 km)" aria-label="${esc(n)} okrążenia Ziemi"><span class="earth-globe" aria-hidden="true">🌍</span><span class="earth-n" aria-hidden="true">${esc(n)}</span></span>`;
 }
 
 const ROMAN_NUM = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
