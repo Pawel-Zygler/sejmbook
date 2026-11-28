@@ -106,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Frequent Flyer bez szacunków');
+  await expect(post).toContainText('Cywilizacja łacińska: karta urzędników');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -139,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Frequent Flyer bez szacunków');
+  await expect(page.locator('.news-post').first()).toContainText('Cywilizacja łacińska: karta urzędników');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -409,6 +409,18 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
     await page.goto(`${PAGE}${h}`);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
   }
+});
+
+test('Cywilizacja łacińska: card of an official from their government\'s bills', async ({ page }) => {
+  await page.goto(`${PAGE}#urzad-adam-bodnar`);
+  const card = page.locator('[data-testid="official-latin"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Eksperymentalne');
+  await expect(page.locator('[data-testid="official-latin-total-value"]')).toHaveText(/^\d+$/);
+  await card.locator('[data-testid="official-latin-pillar-2"] summary').click();
+  await expect(card.locator('[data-testid="official-latin-pillar-2"] li.latin-law').first()).toContainText('projekt rządu');
+  const vw = page.viewportSize().width;
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(vw);
 });
 
 test('Feed: open a voting to see clubs, switch the time window', async ({ page }) => {
