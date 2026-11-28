@@ -1,5 +1,60 @@
 {
- "fetchedAt": "2026-11-27T23:00:28.791Z",
+ "fetchedAt": "2026-11-28T03:19:15.323Z",
+ "president": {
+  "who": "Karol Nawrocki",
+  "role": "Prezydent RP",
+  "source": "https://www.prezydent.pl/aktualnosci",
+  "items": [
+   {
+    "title": "Do uczestników akademii barbórkowej Centralnej Stacji Ratownictwa Górniczego w Bytomiu",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/do-uczestnikow-akademii-barborkowej-centralnej-stacji-ratownictwa-gorniczego-w-bytomiu,130789",
+    "seenAt": "2026-11-27T23:59:59.000Z"
+   },
+   {
+    "title": "Do uczestników akademii barbórkowej Polskiej Grupy Górniczej w Rybniku",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/do-uczestnikow-akademii-barborkowej-polskiej-grupy-gorniczej--w-rybniku,130831",
+    "seenAt": "2026-11-27T23:59:59.000Z"
+   },
+   {
+    "title": "List na uroczystości barbórkowe w Instytucie Techniki Górniczej KOMAG w Gliwicach",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-uroczystosci-barborkowe-w-instytucie-techniki-gorniczej-komag-w-gliwicach,130796",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Uroczystości pogrzebowe żołnierzy Wojska Polskiego z września 1939 roku w Mościskach",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/uroczystosci-pogrzebowe-zolnierzy-wojska-polskiego-z-wrzesnia-1939-roku-w-mosciskach,130973",
+    "seenAt": "2026-11-27T23:59:59.000Z"
+   },
+   {
+    "title": "Prezydent RP odwiedził kopalnię odkrywkową Sierra Gorda",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-odwiedzil-kopalnie-odkrywkowa-sierra-gorda,130921",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Wystąpienie Prezydenta RP podczas wizyty w kopalni Sierra Gorda",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/wystapienie-prezydenta-rp-podczas-wizyty-w-kopalni-sierra-gorda-,130976",
+    "seenAt": "2026-11-27T23:59:59.000Z"
+   },
+   {
+    "title": "Decyzje Prezydenta RP w sprawie pięciu ustaw",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/prawo/ustawy-zawetowane/decyzje-prezydenta-rp-w-sprawie-ustaw,130915",
+    "seenAt": "2026-11-27T18:59:07.718Z"
+   },
+   {
+    "title": "Minister Adam Andruszkiewicz z wizytą w Białymstoku",
+    "date": "2026-11-27",
+    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/minister-adam-andruszkiewicz-z-wizyta-w-bialymstoku,130941",
+    "seenAt": "2026-11-27T23:59:59.000Z"
+   }
+  ]
+ },
  "pm": {
   "who": "Donald Tusk",
   "role": "Prezes Rady Ministrów",
@@ -3665,44 +3720,6 @@
    ]
   },
   {
-   "id": "nik",
-   "name": "Najwyższa Izba Kontroli",
-   "office": "prezes-nik",
-   "source": "https://www.nik.gov.pl/aktualnosci/",
-   "items": [
-    {
-     "title": "Z Archiwum NIK: Wrzesień 1939. Jak w gmachu NIK powstał sztab obrony Warszawy?",
-     "date": "2026-11-27",
-     "url": "https://www.nik.gov.pl/aktualnosci/z-archiwum-nik-wrzesien-1939-jak-w-gmachu-nik-powstal-sztab-obrony-warszawy.html",
-     "seenAt": "2026-11-27T18:59:07.718Z"
-    },
-    {
-     "title": "NIK na konferencji o funkcjonowaniu szpitali w warunkach konfliktów zbrojnych",
-     "date": "2026-11-27",
-     "url": "https://www.nik.gov.pl/aktualnosci/nik-na-konferencji-o-funkcjonowaniu-szpitali-w-warunkach-konfliktow-zbrojnych.html",
-     "seenAt": "2026-11-27T18:59:07.718Z"
-    },
-    {
-     "title": "Duże opóźnienia reformy zagospodarowania przestrzennego",
-     "date": "2026-11-26",
-     "url": "https://www.nik.gov.pl/komunikaty/duze-opoznienia-reformy-zagospodarowania-przestrzennego/",
-     "seenAt": "2026-11-26T12:33:33.170Z"
-    },
-    {
-     "title": "Międzynarodowy Dzień Eliminacji Przemocy wobec Kobiet - „Zapewnić sprawiedliwość. Chronić osoby doznające przemocy. Położyć kres bezkarności”",
-     "date": "2026-11-25",
-     "url": "https://www.nik.gov.pl/aktualnosci/miedzynarodowy-dzien-eliminacji-przemocy-wobec-kobiet-zapewnic-sprawiedliwosc-chronic-osoby-doznajace-przemocy-polozyc-kres-bezkarnosci.html",
-     "seenAt": "2026-11-25T17:14:29.097Z"
-    },
-    {
-     "title": "Wciąż ponad 3 miliony ton soli rocznie trafia do polskich rzek. Czy wyciągnięto wnioski po katastrofie ekologicznej na Odrze?",
-     "date": "2026-11-24",
-     "url": "https://www.nik.gov.pl/komunikaty/wciaz-ponad-3-miliony-ton-soli-rocznie-trafia-do-polskich-rzek-czy-wyciagnieto-wnioski-po-katastrofie-ekologicznej-na-odrze/",
-     "seenAt": "2026-11-24T10:15:06.879Z"
-    }
-   ]
-  },
-  {
    "id": "senat",
    "name": "Marszałek i Prezydium Senatu",
    "office": "marszalek-senatu",
@@ -3737,6 +3754,44 @@
      "date": "2026-11-20",
      "url": "https://www.senat.gov.pl/aktualnoscilista/marszalek-i-prezydium/art,17933,marszalek-i-wicemarszalkini-senatu-na-10-forum-prawa-autorskiego.html",
      "seenAt": "2026-11-20T23:59:59.000Z"
+    }
+   ]
+  },
+  {
+   "id": "nik",
+   "name": "Najwyższa Izba Kontroli",
+   "office": "prezes-nik",
+   "source": "https://www.nik.gov.pl/aktualnosci/",
+   "items": [
+    {
+     "title": "Z Archiwum NIK: Wrzesień 1939. Jak w gmachu NIK powstał sztab obrony Warszawy?",
+     "date": "2026-11-27",
+     "url": "https://www.nik.gov.pl/aktualnosci/z-archiwum-nik-wrzesien-1939-jak-w-gmachu-nik-powstal-sztab-obrony-warszawy.html",
+     "seenAt": "2026-11-27T18:59:07.718Z"
+    },
+    {
+     "title": "NIK na konferencji o funkcjonowaniu szpitali w warunkach konfliktów zbrojnych",
+     "date": "2026-11-27",
+     "url": "https://www.nik.gov.pl/aktualnosci/nik-na-konferencji-o-funkcjonowaniu-szpitali-w-warunkach-konfliktow-zbrojnych.html",
+     "seenAt": "2026-11-27T18:59:07.718Z"
+    },
+    {
+     "title": "Duże opóźnienia reformy zagospodarowania przestrzennego",
+     "date": "2026-11-26",
+     "url": "https://www.nik.gov.pl/komunikaty/duze-opoznienia-reformy-zagospodarowania-przestrzennego/",
+     "seenAt": "2026-11-26T12:33:33.170Z"
+    },
+    {
+     "title": "Międzynarodowy Dzień Eliminacji Przemocy wobec Kobiet - „Zapewnić sprawiedliwość. Chronić osoby doznające przemocy. Położyć kres bezkarności”",
+     "date": "2026-11-25",
+     "url": "https://www.nik.gov.pl/aktualnosci/miedzynarodowy-dzien-eliminacji-przemocy-wobec-kobiet-zapewnic-sprawiedliwosc-chronic-osoby-doznajace-przemocy-polozyc-kres-bezkarnosci.html",
+     "seenAt": "2026-11-25T17:14:29.097Z"
+    },
+    {
+     "title": "Wciąż ponad 3 miliony ton soli rocznie trafia do polskich rzek. Czy wyciągnięto wnioski po katastrofie ekologicznej na Odrze?",
+     "date": "2026-11-24",
+     "url": "https://www.nik.gov.pl/komunikaty/wciaz-ponad-3-miliony-ton-soli-rocznie-trafia-do-polskich-rzek-czy-wyciagnieto-wnioski-po-katastrofie-ekologicznej-na-odrze/",
+     "seenAt": "2026-11-24T10:15:06.879Z"
     }
    ]
   }
@@ -4024,61 +4079,6 @@
     ],
     "url": "https://sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=zap&nr=4262",
     "seenAt": "2026-11-25T23:59:59.000Z"
-   }
-  ]
- },
- "president": {
-  "who": "Karol Nawrocki",
-  "role": "Prezydent RP",
-  "source": "https://www.prezydent.pl/aktualnosci",
-  "items": [
-   {
-    "title": "List na uroczystości barbórkowe w Instytucie Techniki Górniczej KOMAG w Gliwicach",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-uroczystosci-barborkowe-w-instytucie-techniki-gorniczej-komag-w-gliwicach,130796",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Prezydent RP odwiedził kopalnię odkrywkową Sierra Gorda",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/prezydent-rp-odwiedzil-kopalnie-odkrywkowa-sierra-gorda,130921",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Decyzje Prezydenta RP w sprawie pięciu ustaw",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/prawo/ustawy-zawetowane/decyzje-prezydenta-rp-w-sprawie-ustaw,130915",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Spotkanie z uczniami szkół polskich z Chicago",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/kancelaria/aktywnosc-ministrow/spotkanie-z-uczniami-szkol-polskich-z-chicago,130940",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "List na centralne obchody barbórkowe KGHM Polska Miedź w Głogowie",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-centralne-obchody-barborkowe-kghm-polska-miedz-w-glogowie,130897",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "List na ceremonię pogrzebową szczątków żołnierzy WP poległych w obronie Ojczyzny w 1939 r.",
-    "date": "2026-11-27",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/listy/list-na-ceremonie-pogrzebowa-szczatkow-zolnierzy-wojska-polskiego-poleglych-w-obronie-ojczyzny-w-1939-roku,130804",
-    "seenAt": "2026-11-27T18:59:07.718Z"
-   },
-   {
-    "title": "Prezydent: Chcemy budować bliższe relacje z Ameryką Łacińską i Karaibami [PL/EN]",
-    "date": "2026-11-26",
-    "url": "https://www.prezydent.pl/aktualnosci/wypowiedzi-prezydenta-rp/wystapienia/wyklad-w-siedzibie-komisji-gospodarczej-onz-ds-ameryki-lacinskiej-i-karaibow,130877",
-    "seenAt": "2026-11-26T23:51:23.505Z"
-   },
-   {
-    "title": "Rozmowy Prezydentów Polski i Chile",
-    "date": "2026-11-26",
-    "url": "https://www.prezydent.pl/aktualnosci/wizyty-zagraniczne/rozmowy-prezydentow-polski-i-chile,130840",
-    "seenAt": "2026-11-26T23:51:23.505Z"
    }
   ]
  }
