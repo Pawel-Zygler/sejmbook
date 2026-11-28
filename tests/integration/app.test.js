@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Hierarchia urzędów';
-const NEWEST_LINE = 'Państwo: Hierarchia urzędów';
+const NEWEST = 'Przełącznik rządów';
+const NEWEST_LINE = 'Państwo: Przełącznik rządów';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -617,6 +617,39 @@ describe('Państwo: top offices as a hierarchy (Pawel, 2026-11-28)', () => {
   });
 });
 
+describe('Państwo: switch between governments in one table (Pawel, 2026-11-28)', () => {
+  it('starts on today\'s government and switches with the chips and the arrows', () => {
+    nav('#panstwo');
+    const panel = () => $('[data-testid="cabinet-now"]');
+    expect(panel().dataset.gov).toBe('tusk-3');
+    expect(panel().querySelector('.cabinet-kicker').textContent).toBe('Rada Ministrów dziś');
+    const chips = $$('[data-testid="gov-list"] .gov-chip');
+    expect(chips).toHaveLength(21);
+    expect(chips[0].textContent).toBe('Tusk III 2023 dziś');
+    expect(chips.at(-1).textContent).toBe('Mazowiecki 1989');
+    expect(chips.map((c) => c.textContent)).toContain('Belka II 2004');
+    expect(chips[0].getAttribute('aria-pressed')).toBe('true');
+    click(chips.find((c) => c.textContent === 'Buzek 1997'));
+    expect(panel().dataset.gov).toBe('buzek');
+    expect(panel().querySelector('h3').textContent).toBe('Rząd Jerzego Buzka');
+    expect(panel().querySelector('[data-testid="cabinet-table"]').textContent).toContain('Leszek Balcerowicz');
+    expect($('[data-testid="gov-list"] .gov-chip[aria-pressed="true"]').textContent).toBe('Buzek 1997');
+    expect(location.hash).toBe('#panstwo');
+    const before = panel().querySelector('h3').textContent;
+    click(panel().querySelector('button.gov-arrow[aria-label^="Następny"]'));
+    expect(panel().querySelector('h3').textContent).not.toBe(before);
+    click(panel().querySelector('button.gov-arrow[aria-label^="Poprzedni"]'));
+    expect(panel().querySelector('h3').textContent).toBe(before);
+  });
+  it('the first government has no back arrow and today\'s has no forward arrow', () => {
+    nav('#panstwo');
+    expect($('[data-testid="cabinet-now"] button.gov-arrow[aria-label^="Następny"]')).toBeNull();
+    click($$('[data-testid="gov-list"] .gov-chip').at(-1));
+    expect($('[data-testid="cabinet-now"] button.gov-arrow[aria-label^="Poprzedni"]')).toBeNull();
+    expect($('[data-testid="cabinet-now"] .cabinet-kicker').textContent).toBe('Rząd nr 1 z 21');
+  });
+});
+
 describe('Państwo: III RP hierarchy', () => {
   it('shows today\'s top offices, the cabinet in power and all 21 governments', () => {
     nav('#panstwo');
@@ -626,7 +659,7 @@ describe('Państwo: III RP hierarchy', () => {
     expect($('[data-office="premier"].office-card').textContent).toContain('Donald Tusk');
     expect($('[data-testid="cabinet-now"]').textContent).toContain('Trzeci rząd Donalda Tuska');
     expect($$('[data-testid="gov-list"] li').length).toBe(21);
-    expect($('[data-testid="gov-list"] li').textContent).toContain('Trzeci rząd Donalda Tuska');
+    expect($('[data-testid="gov-list"] li button').getAttribute('title')).toContain('Trzeci rząd Donalda Tuska');
     expect($('details[data-office="prezydent"]').textContent).toContain('Lech Wałęsa');
   });
   it('opens a government with every office held in it', () => {

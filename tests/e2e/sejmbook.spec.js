@@ -106,7 +106,7 @@ test('ranking rows link to all articles about the MP', async ({ page }) => {
 test('Changelog lists site changes and links to them', async ({ page }) => {
   await page.goto(`${PAGE}#changelog`);
   const post = page.locator('.news-post').first();
-  await expect(post).toContainText('Hierarchia urzędów');
+  await expect(post).toContainText('Przełącznik rządów');
   // Posts are folded to one line; opening one shows its text and link.
   const art = page.locator('.news-post[data-news-id="2026-11-23-artykuly"]');
   await expect(art.getByRole('link', { name: 'Zobacz ranking' })).toBeHidden();
@@ -139,7 +139,7 @@ test('Changelog shows the newest change first and keeps older ones; home has non
   await page.goto(PAGE);
   await expect(page.locator('.news-post')).toHaveCount(0);
   await page.goto(`${PAGE}#changelog`);
-  await expect(page.locator('.news-post').first()).toContainText('Hierarchia urzędów');
+  await expect(page.locator('.news-post').first()).toContainText('Przełącznik rządów');
   await expect(page.locator('.news-post[data-news-id="2026-11-23-frekwencja"]')).toBeVisible();
 });
 
@@ -397,7 +397,10 @@ test('Państwo: hierarchy, a government, a president profile and search', async 
   await page.goto(`${PAGE}#panstwo`);
   await expect(page.locator('[data-office="prezydent"].office-card')).toContainText('Karol Nawrocki');
   await expect(page.locator('[data-testid="gov-list"] li')).toHaveCount(21);
-  await page.locator('[data-testid="gov-list"] a', { hasText: 'Rząd Jerzego Buzka' }).click();
+  await page.locator('[data-testid="gov-list"] button', { hasText: 'Buzek 1997' }).click();
+  await expect(page.getByTestId('cabinet-now').locator('h3')).toHaveText('Rząd Jerzego Buzka');
+  await expect(page.getByTestId('cabinet-table')).toContainText('Leszek Balcerowicz');
+  await page.getByTestId('cabinet-now').locator('h3 a').click();
   await expect(page.locator('#view h1')).toHaveText('Rząd Jerzego Buzka');
   await page.goto(`${PAGE}#urzad-lech-walesa`);
   await expect(page.locator('[data-testid="state-roles"]')).toContainText('Prezydent RP');

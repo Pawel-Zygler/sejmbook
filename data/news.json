@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-przelacznik-rzadow",
+      "date": "2026-11-28",
+      "title": "Przełącznik rządów",
+      "section": "Państwo",
+      "body": "Wszystkie rządy III RP są w jednej tabeli: wybierasz rząd z paska albo strzałkami, od dzisiejszego do pierwszego.",
+      "link": {
+        "href": "#panstwo",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-hierarchia-urzedow",
       "date": "2026-11-28",
       "title": "Hierarchia urzędów",

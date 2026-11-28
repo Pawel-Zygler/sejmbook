@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-28
 
+- **Państwo: Przełącznik rządów.** Wszystkie rządy III RP są w jednej tabeli: wybierasz rząd z paska albo strzałkami, od dzisiejszego do pierwszego.
 - **Państwo: Hierarchia urzędów.** Najważniejsze urzędy są ułożone jak w Konstytucji: prezydent na górze, pod nim trzy władze, niżej NIK, RPO i NBP.
 - **Profile: Linia życia: oś czasu.** Linia życia na profilach ma jeden widok, oś czasu. Zakładki Kroki i Etapy zniknęły.
 - **Profile: Pięciomian Konecznego (eksperyment).** Na karcie cywilizacji łacińskiej nowy wskaźnik: pięć sfer Konecznego, a ikona „i” przy każdej ustawie wyjaśnia ocenę.

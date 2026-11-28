@@ -65,8 +65,51 @@ function officeChart(ctx, offices, today) {
     </div>`;
 }
 
-function govRow(g) {
-  return `<li class="gov-row"><a href="#rzad-${esc(g.id)}"><strong>${esc(g.name)}</strong><small class="muted">${esc(span(g.from, g.to))} · ${g.members.length} ${plural(g.members.length, 'funkcja', 'funkcje', 'funkcji')}</small></a>${g.pm ? `<span class="chip">${esc(g.pm.party ?? '')}</span>` : ''}</li>`;
+const surname = (name) => String(name ?? '').trim().split(/\s+/).at(-1);
+/** Short chip label of a government: the Prime Minister's surname and the starting year ("Buzek 1997", "Tusk III 2023"). */
+export function govChipLabel(g, all = [g]) {
+  const who = g.pm ? surname(g.pm.name) : g.name;
+  const same = all.filter((x) => (x.pm ? surname(x.pm.name) : x.name) === who);
+  const nth = same.length > 1 ? ` ${['I', 'II', 'III', 'IV', 'V'][same.indexOf(g)] ?? same.indexOf(g) + 1}` : '';
+  return `${who}${nth} ${String(g.from ?? '').slice(0, 4)}`.trim();
+}
+const byRank = (members) => {
+  const pm = members.filter((m) => /^Prezes Rady Ministrów/.test(m.office));
+  const deputies = members.filter((m) => /^Wiceprezes Rady Ministrów/.test(m.office));
+  return [...pm, ...deputies, ...members.filter((m) => !pm.includes(m) && !deputies.includes(m))];
+};
+
+/**
+ * One panel for every government (Pawel, 2026-11-28: "easier switching between governments, old and today"):
+ * a strip of all 21 governments, ‹ › arrows, and the picked government's table. Today's government shows who
+ * holds each office now; older ones show every office with dates.
+ */
+function cabinetSwitcher(ctx, pickId, today) {
+  const govs = ctx.gov.governments;
+  const ruling = govs.find((x) => !x.to) ?? govs.at(-1);
+  const g = govs.find((x) => x.id === pickId) ?? ruling;
+  const i = govs.indexOf(g);
+  const prev = govs[i - 1];
+  const next = govs[i + 1];
+  const isNow = g === ruling;
+  const rows = byRank(isNow ? currentMembers(g, today) : g.members);
+  const chip = (x) => `<li><button type="button" class="gov-chip${x === ruling ? ' now' : ''}" data-action="gov-pick" data-gov="${esc(x.id)}" aria-pressed="${x === g}" title="${esc(x.name)}, ${esc(span(x.from, x.to))}">${esc(govChipLabel(x, govs))}${x === ruling ? ' <small>dziś</small>' : ''}</button></li>`;
+  const arrow = (x, dir) => (x ? `<button type="button" class="gov-arrow" data-action="gov-pick" data-gov="${esc(x.id)}" aria-label="${dir === 'prev' ? 'Poprzedni rząd' : 'Następny rząd'}: ${esc(x.name)}">${dir === 'prev' ? '‹' : '›'}</button>` : `<span class="gov-arrow" aria-hidden="true"></span>`);
+  return `
+    <div class="panel cabinet" data-testid="cabinet-now" data-gov="${esc(g.id)}">
+      <h2>Rządy III RP</h2>
+      <ol class="gov-chips" data-testid="gov-list">${[...govs].reverse().map(chip).join('')}</ol>
+      <div class="cabinet-head">
+        ${arrow(prev, 'prev')}
+        <div class="cabinet-title">
+          <p class="cabinet-kicker">${isNow ? 'Rada Ministrów dziś' : `Rząd nr ${i + 1} z ${govs.length}`}</p>
+          <h3><a href="#rzad-${esc(g.id)}">${esc(g.name)}</a></h3>
+          <p class="muted">${esc(span(g.from, g.to))}${g.pm?.party ? ` · ${esc(g.pm.party)}` : ''} · ${rows.length} ${plural(rows.length, 'funkcja', 'funkcje', 'funkcji')}${isNow ? ' obsadzonych dziś' : ''}</p>
+        </div>
+        ${arrow(next, 'next')}
+      </div>
+      <div class="gov-table-wrap"><table class="gov-table" data-testid="cabinet-table"><thead><tr><th>Funkcja</th><th>Osoba</th><th class="num">Od</th><th class="num">Do</th></tr></thead><tbody>${memberRows(ctx, rows)}</tbody></table></div>
+    </div>`;
 }
 
 function memberRows(ctx, members) {
@@ -78,14 +121,9 @@ function sourceNote(ctx) {
 }
 
 /** #panstwo: the hierarchy page. */
-export function renderState(ctx, today) {
+export function renderState(ctx, today, pickId = null) {
   const g = ctx.gov;
   if (!g) return '<section data-view="state"><p class="panel">Brak danych o urzędach.</p></section>';
-  const ruling = g.governments.find((x) => !x.to) ?? g.governments.at(-1);
-  const members = currentMembers(ruling, today);
-  const pm = members.filter((m) => /^Prezes Rady Ministrów/.test(m.office));
-  const deputies = members.filter((m) => /^Wiceprezes Rady Ministrów/.test(m.office));
-  const ministers = members.filter((m) => !pm.includes(m) && !deputies.includes(m));
   return `
   <section class="feed state" data-view="state">
     ${pageHead({ icon: '⚖', title: 'Państwo i rządy' })}
@@ -95,16 +133,7 @@ export function renderState(ctx, today) {
       ${officeChart(ctx, g.offices, today)}
     </div>
 
-    <div class="panel" data-testid="cabinet-now">
-      <h2>Rada Ministrów dziś</h2>
-      <p class="muted"><a href="#rzad-${esc(ruling.id)}">${esc(ruling.name)}</a>, ${esc(span(ruling.from, ruling.to))}</p>
-      <table class="gov-table"><tbody>${memberRows(ctx, [...pm, ...deputies, ...ministers])}</tbody></table>
-    </div>
-
-    <div class="panel">
-      <h2>Rządy III RP</h2>
-      <ol class="gov-list" reversed data-testid="gov-list">${[...g.governments].reverse().map(govRow).join('')}</ol>
-    </div>
+    ${cabinetSwitcher(ctx, pickId, today)}
 
     <div class="panel">
       <h2>Wszyscy na najważniejszych urzędach</h2>

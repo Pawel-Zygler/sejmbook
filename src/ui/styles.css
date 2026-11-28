@@ -514,6 +514,27 @@ h2 { font-size: 1.1rem; }
 .gov-table td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .gov-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .gov-office { color: var(--muted); }
+/* Państwo: one panel to switch between all governments (Pawel, 2026-11-28) */
+.gov-chips { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.gov-chip { font: inherit; font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; white-space: nowrap; }
+.gov-chip:hover { border-color: var(--accent); }
+.gov-chip small { font-weight: 700; color: var(--accent); margin-left: 2px; }
+.gov-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.gov-chip[aria-pressed="true"] small { color: inherit; }
+.cabinet-head { display: grid; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+.cabinet-title { text-align: center; min-width: 0; }
+.cabinet-title h3 { margin: 2px 0; font-size: 1.15rem; }
+.cabinet-title h3 a { color: var(--ink); text-decoration: none; }
+.cabinet-title h3 a:hover { color: var(--accent); text-decoration: underline; }
+.cabinet-title p { margin: 0; }
+.cabinet-kicker { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.gov-arrow { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+span.gov-arrow { border: 0; background: none; }
+button.gov-arrow:hover { border-color: var(--accent); color: var(--accent); }
+.gov-table-wrap { overflow-x: auto; }
+@media (max-width: 600px) {
+  .cabinet .gov-table th:nth-child(4), .cabinet .gov-table td:nth-child(4) { display: none; }
+}
 .gov-list { margin: 0; padding-left: 2.2em; display: grid; gap: 6px; }
 .gov-row { padding: 4px 0; }
 .gov-row a { text-decoration: none; display: inline-grid; color: var(--ink); }

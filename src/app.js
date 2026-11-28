@@ -75,6 +75,8 @@ export function createApp(doc, win, data) {
     parties: { scope: 'all' },
     // One view (Pawel, 2026-11-24): "Od zawsze", no filters; ranked by flights, no estimated km (2026-11-27).
     flyer: { period: 'all', dataset: null, sortBy: 'flights' },
+    // Government picked on #panstwo (null = the one in power).
+    gov: { pick: null },
     attendance: { order: 'desc', club: '', view: 'mps' },
     latin: { order: 'desc', club: '', band: 'all', sortBy: 'total', view: 'mps' },
     // Feed time window (Pawel, 2026-11-24: the feed shows the last hours first).
@@ -102,7 +104,7 @@ export function createApp(doc, win, data) {
     else if (r.name === 'person') html = renderPerson(ctx, r.key);
     else if (r.name === 'changelog') html = renderChangelog(ctx);
     else if (r.name === 'sitemap') html = renderSitemap(ctx);
-    else if (r.name === 'state') html = renderState(ctx, ctx.today);
+    else if (r.name === 'state') html = renderState(ctx, ctx.today, state.gov.pick);
     else if (r.name === 'government') html = renderGovernment(ctx, r.id);
     else if (r.name === 'official') html = renderOfficial(ctx, r.slug, ctx.today);
     else if (r.name === 'flyer') html = renderFlyer(ctx, state.flyer);
@@ -215,6 +217,10 @@ export function createApp(doc, win, data) {
       state.latin.club = el.dataset.club;
       if (el.dataset.view) state.latin.view = el.dataset.view;
       render();
+    } else if (action === 'gov-pick') {
+      state.gov.pick = el.dataset.gov;
+      render();
+      doc.querySelector('[data-testid="cabinet-now"] .gov-chip[aria-pressed="true"]')?.focus?.({ preventScroll: true });
     } else if (action === 'att-club') {
       state.attendance.club = el.dataset.club;
       if (el.dataset.view) state.attendance.view = el.dataset.view;
