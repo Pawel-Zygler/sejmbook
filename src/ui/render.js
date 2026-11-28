@@ -5,7 +5,6 @@ import { workFor } from '../lib/work.js';
 import { careerSpectrum, spectrumOf, partyPath, termRanges, partyHoppers, allPartyHoppers, singlePartyCount, romanTerm, clubFamily, termMps, termList, ALL_TERMS, personKey, buildPath, clubNameIn } from '../lib/career.js';
 import { lifeTimeline, pos, communistPast, partyStyle } from '../lib/life.js';
 import { buildRanking, resolvePeriod, datasetSummary, flightHistoryForMp, legKmForDistrict, airportForDistrict } from '../lib/flights.js';
-import { LIFE_VIEWS, DEFAULT_LIFE_VIEW, LIFE_VIEW_LABEL } from '../lib/life-view.js';
 import { listPl, ageWords, aboutYears, termsWords, termOrdinals } from '../lib/pl-words.js';
 import { hrefFor } from '../lib/router.js';
 import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
@@ -657,7 +656,6 @@ export function careerSentence(sp) {
 }
 
 const yearsWord = (n) => `${n} ${plural(n, 'rok', 'lata', 'lat')}`;
-const LANE_WORD = { opposition: 'Opozycja w PRL', social: 'Działalność społeczna', work: 'Praca zawodowa', parties: 'Partia', sejm: 'Sejm' };
 
 /** Social activity in prose: "Działalność społeczna: Młodzież Wszechpolska w latach 1997–2005, KoLiber od 2001 oraz ZHR." */
 export function socialText(tl) {
@@ -693,37 +691,8 @@ export function workTip(w, tl = null) {
   return infoTip(`${list ? `${list} ` : ''}Źródło: zdania o pracy i pracodawcy podlinkowani w artykule w polskiej Wikipedii oraz Wikidata (P108, pracodawca). Bez funkcji politycznych, które są na innych liniach.`, href, 'Praca zawodowa: źródło');
 }
 
-/** Every stretch of the life line in time order, with its lane, for the "Kroki" view. */
-function lifeStretches(tl) {
-  return tl.lanes.flatMap((l) => l.items.map((it) => ({ ...it, lane: l.id })))
-    .sort((a, b) => a.from - b.from || (a.lane === 'sejm') - (b.lane === 'sejm'));
-}
 const stretchYears = (it) => (it.uncertain ? 'w PRL, lata nieznane' : it.since ? `od ${it.from}` : it.open ? `${it.from}–dziś` : it.from === it.to ? `${it.to}` : `${it.from}–${it.to}`);
-const stretchTitle = (it) => {
-  if (it.lane === 'parties') return (it.full ?? it.label).replace(/, lata członkostwa nieznane$/, '');
-  if (it.lane === 'work') return it.full ?? it.label;
-  if (it.lane === 'sejm' && it.terms?.length) return `${it.label.split(' · ')[0]}, ${it.terms.length === 1 ? 'kadencja' : 'kadencje'} ${termRanges(it.terms)}`;
-  return it.label;
-};
-
-/** "Kroki": the life as a vertical list of dated steps (birth, 1989, each membership and Sejm stretch). */
-export function lifeSteps(tl) {
-  const steps = [{ year: tl.birth, title: 'Urodzenie', note: '', color: 'var(--muted)', kind: 'birth' }];
-  if (tl.bornInPrl) steps.push({ year: tl.prlEnd, title: 'Początek III RP', note: `w wieku ${tl.prlEnd - tl.birth} lat`, color: 'var(--accent)', kind: 'rp' });
-  for (const it of lifeStretches(tl)) {
-    steps.push({
-      year: it.uncertain ? null : it.from,
-      title: `${LANE_WORD[it.lane]}: ${stretchTitle(it)}`,
-      note: it.uncertain ? 'w PRL, lata nieznane' : `${stretchYears(it)} · od ${it.from - tl.birth}. roku życia`,
-      color: it.color, kind: it.lane, uncertain: it.uncertain,
-    });
-  }
-  steps.sort((a, b) => (a.year ?? tl.prlEnd - 0.5) - (b.year ?? tl.prlEnd - 0.5));
-  return `<ol class="life-steps">${steps.map((s) => `<li class="life-step" data-kind="${s.kind}"><span class="life-step-year">${s.year ?? 'PRL'}</span><span class="life-step-dot${s.uncertain ? ' uncertain' : ''}" style="--seg:${esc(s.color)}"></span><span class="life-step-text"><b>${esc(s.title)}</b>${s.note ? `<span class="muted">${esc(s.note)}</span>` : ''}</span></li>`).join('')}
-        <li class="life-step" data-kind="now"><span class="life-step-year">${tl.now}</span><span class="life-step-dot" style="--seg:var(--line)"></span><span class="life-step-text"><b>Dziś</b><span class="muted">${tl.now - tl.birth} lat</span></span></li></ol>`;
-}
-
-/** Decade marks for the "Oś czasu" view, skipping those too close to the ends or to 1989. */
+/** Decade marks on the life line (Pawel kept only "Oś czasu" on 2026-11-28; Kroki and Etapy removed), skipping those too close to the ends or to 1989. */
 function decades(tl) {
   const out = [];
   for (let y = Math.ceil((tl.birth + 1) / 10) * 10; y < tl.now; y += 10) {
@@ -731,11 +700,6 @@ function decades(tl) {
     out.push(y);
   }
   return out;
-}
-
-/** Tabs that switch every life line between the three views. */
-function lifeTabs() {
-  return `<div class="life-tabs" role="group" aria-label="Widok linii życia" data-testid="life-tabs">${LIFE_VIEWS.map((v) => `<button type="button" data-action="life-view" data-life="${v}" aria-pressed="${v === DEFAULT_LIFE_VIEW}">${LIFE_VIEW_LABEL[v]}</button>`).join('')}</div>`;
 }
 
 const foldPl = (s) => String(s).toLowerCase().replace(/[„”"]/g, '');
@@ -792,7 +756,6 @@ export function renderLifeLine(ctx, mp, sp = null) {
   const first = [firstActivityText(tl), social ? `<span data-testid="social-text">${social}${socialTip ? ` ${socialTip}` : ''}</span>` : '', work ? `<span data-testid="work-text">${work} ${workTip(job)}</span>` : '', career ? `<span data-testid="spectrum-text">${career}</span>` : ''].filter(Boolean).join(' ');
   const ticks = decades(tl);
   return `
-      ${lifeTabs()}
       <div class="life-v life-v-os life" data-testid="life-line">
         <div class="life-eras" aria-hidden="true">
           ${tl.bornInPrl ? `<span class="life-era prl" style="left:0;width:${prlW}%">PRL</span>` : ''}
@@ -804,7 +767,6 @@ export function renderLifeLine(ctx, mp, sp = null) {
         <div class="life-axis"><span>ur. ${tl.birth}</span>${ticks.map((y) => `<span class="life-axis-tick" style="left:${left(y)}%">${y}</span>`).join('')}${tl.bornInPrl ? `<span class="life-axis-1989" style="left:${left(tl.prlEnd)}%">1989</span>` : ''}<span>${tl.now}</span></div>
         ${undatedRow(tl.undated.filter((u) => !tl.lanes.some((l) => l.id === 'opposition' && l.items.some((it) => foldPl(u).includes(foldPl(it.label.replace(' (lata nieznane)', '')))))), qid)}
       </div>
-      <div class="life-v life-v-kroki" data-testid="life-steps">${lifeSteps(tl)}</div>
       ${SHOW_LIFE_PROSE && (first || undatedTip) ? `<p class="life-first bio" data-testid="life-first">${first}${undatedTip ? ` ${undatedTip}` : ''}</p>` : ''}`;
 }
 

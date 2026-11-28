@@ -10,7 +10,7 @@ import earlyTermsData from '../../data/early-terms.json';
 import { workCandidates, ownBusinessLabel, ownerLabel, cleanJobLabel, employerVerdict, wdYear, wdDate, sameBirth, sameName, nameLinks, profilePeople, mergeWorkItems, workFor, WORK_LABEL } from '../../src/lib/work.js';
 import { lifeTimeline } from '../../src/lib/life.js';
 import { createContext } from '../../src/app.js';
-import { renderProfile, renderPerson, workText, workTip, workLine, lifeSteps } from '../../src/ui/render.js';
+import { renderProfile, renderPerson, workText, workTip, workLine } from '../../src/ui/render.js';
 import { renderOfficial, roleLine } from '../../src/ui/state-view.js';
 
 const ARTICLE = `'''Jan Próbny''' – polityk.
@@ -216,7 +216,6 @@ describe('"Praca zawodowa" on the life line', () => {
     expect(lane.label).toBe(WORK_LABEL);
     expect(lane.items.map((x) => [x.label, x.from, x.to, x.since])).toEqual([['Fundacja Testowa', 2008, 2011, false], ['Wydawnictwo Testowe', 2012, 2012, true]]);
     expect(tl.workUndated.map((x) => x.label)).toEqual(['Tłumacz']);
-    expect(lifeSteps(tl)).toContain('Praca zawodowa: Fundacja Testowa (analityk)');
   });
   it('the profile shows the lane, and its "i" lists every job (undated too) with the source', () => {
     const html = renderProfile(ctx, 33);

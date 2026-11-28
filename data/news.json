@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-linia-zycia-os",
+      "date": "2026-11-28",
+      "title": "Linia życia: oś czasu",
+      "section": "Profile",
+      "body": "Linia życia na profilach ma jeden widok, oś czasu. Zakładki Kroki i Etapy zniknęły.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-pieciomian",
       "date": "2026-11-28",
       "title": "Pięciomian Konecznego (eksperyment)",
