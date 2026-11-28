@@ -646,7 +646,7 @@ describe('Państwo: III RP hierarchy', () => {
     const card = $('[data-testid="official-latin"]');
     expect(card).not.toBeNull();
     expect(card.dataset.experimental).toBe('true');
-    expect(card.textContent).toContain('karta urzędnika');
+    expect(card.textContent).toContain('projekty ustaw');
     expect(Number($('[data-testid="official-latin-total-value"]').textContent)).toBeGreaterThan(0);
     expect(card.querySelectorAll('li.latin-law[data-author="rzad"]').length).toBeGreaterThan(10);
     nav('#urzad-karol-nawrocki');
@@ -655,7 +655,18 @@ describe('Państwo: III RP hierarchy', () => {
     expect($('[data-testid="official-latin"]')).toBeNull();
     nav(`#posel-${mpsData.mps.find((m) => m.name === 'Andrzej Domański').id}`);
     expect($('[data-testid="profile-latin"]')).not.toBeNull();
-    expect($('[data-testid="official-latin"]')).not.toBeNull();
+    // One Koneczny card per profile (Pawel, 2026-11-28): no second card from the government's bills.
+    expect($('[data-testid="official-latin"]')).toBeNull();
+    expect($$('#view .latin-post').length).toBe(1);
+  });
+  it('never shows the same card twice on any MP profile', () => {
+    const ids = [36, 68, 76, 90, 115, 128, ...mpsData.mps.filter((m) => m.active).slice(0, 25).map((m) => m.id)]; // ministers who are MPs + a sample
+    for (const id of ids) { const mp = { id };
+      nav(`#posel-${mp.id}`);
+      const ids = $$('#view .feed > article[data-testid]').map((a) => a.dataset.testid);
+      expect(new Set(ids).size, `posel-${mp.id}: ${ids.join(',')}`).toBe(ids.length);
+      expect($$('#view .latin-post').length, `posel-${mp.id}`).toBeLessThanOrEqual(1);
+    }
   });
   it('gives presidents and prime ministers profiles with all their roles', () => {
     nav('#urzad-lech-kaczynski');
@@ -794,6 +805,34 @@ describe('Interface switch: classic and modern look', () => {
     remount();
     expect(document.documentElement.getAttribute('data-ui')).toBe('modern');
     expect($('[data-skin="modern"]').getAttribute('aria-pressed')).toBe('true');
+  });
+});
+
+describe('Tax card: no subtitle, votes in green, red and greys (Pawel, 2026-11-28)', () => {
+  it('has only the title and the info button in the header', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, taxData, today: '2026-11-24' });
+    nav('#posel-32');
+    const card = $('[data-testid="profile-taxes"]');
+    expect(card.querySelector('.post-head small')).toBeNull();
+    expect(card.textContent).not.toContain('głosowania nad całymi ustawami');
+    expect(card.querySelector('.post-head [data-testid="info-tip"]')).not.toBeNull();
+  });
+});
+
+describe('Latin card header without the subtitle (Pawel, 2026-11-28: "wywal")', () => {
+  it('shows only the title and the info button, no "według Feliksa Konecznego…" line', () => {
+    app.destroy();
+    document.body.innerHTML = SHELL_HTML;
+    app = createApp(document, window, { mpsData, clubsData, flightsData, airportsData, newsData, attendanceData, careerData, lifeData, wikiPartiesData, termsData, earlyTermsData, contactsData, feedData, governmentData, latinData, today: '2026-11-24' });
+    nav('#posel-32');
+    const card = $('[data-testid="profile-latin"]');
+    if (card) {
+      expect(card.querySelector('.post-head small')).toBeNull();
+      expect(card.querySelector('.post-head [data-testid="info-tip"]')).not.toBeNull();
+    }
+    expect($('#view').innerHTML).not.toContain('według Feliksa Konecznego, X kadencja');
   });
 });
 

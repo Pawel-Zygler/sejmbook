@@ -12,6 +12,39 @@
       }
     },
     {
+      "id": "2026-11-28-jedna-karta",
+      "date": "2026-11-28",
+      "title": "Jedna karta Konecznego",
+      "section": "Profile",
+      "body": "Posłowie-ministrowie mają na profilu jedną kartę Cywilizacji łacińskiej, z własnych głosowań, bez drugiej z projektów rządu.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
+      "id": "2026-11-28-kolory-glosowan",
+      "date": "2026-11-28",
+      "title": "Kolory głosowań",
+      "section": "Profile",
+      "body": "Głosy na profilach mają nowe kolory: za zielony, przeciw czerwony, wstrzymanie i nieobecność w odcieniach szarości.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
+      "id": "2026-11-28-latin-naglowek",
+      "date": "2026-11-28",
+      "title": "Krótszy nagłówek karty Konecznego",
+      "section": "Profile",
+      "body": "Karta Cywilizacji łacińskiej na profilu ma sam tytuł, a opis jest pod przyciskiem „i”.",
+      "link": {
+        "href": "#poslowie",
+        "label": "Zobacz"
+      }
+    },
+    {
       "id": "2026-11-28-konieczny-urzednicy",
       "date": "2026-11-28",
       "title": "Cywilizacja łacińska: karta urzędników",
