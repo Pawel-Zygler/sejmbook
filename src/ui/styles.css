@@ -830,6 +830,10 @@ h2 { font-size: 1.1rem; }
 /* Separate indicator "Suwerenność kompetencji": dashed top line on the card, a divider before its column in tables */
 .latin-sov { border-top-style: dashed; margin-top: 4px; }
 .latin-sov h3 em { font-style: normal; font-weight: 500; }
+.quin-sphere { display: flex; flex-direction: column; gap: 4px; padding: 8px 0 0 10px; border-left: 2px solid var(--line); }
+.quin-sphere h4 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+.quin-sphere h4 > span { flex: 1 1 auto; min-width: 0; }
+.quin-kpi { margin: 8px 0 2px; font-size: 0.8rem; }
 .latin-dir-oddaje { color: var(--lab-low); } .latin-dir-zatrzymuje { color: var(--lab-hi); }
 .latin-rank .latin-sov-col { border-left: 1px dashed var(--line); }
 .latin-sort-opt { display: inline-flex; align-items: center; gap: 2px; }

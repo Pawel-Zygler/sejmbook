@@ -5,6 +5,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 ## 2026-11-28
 
 - **Rankingi: Za i przeciw.** Nowy ranking: kto w X kadencji najczęściej głosował za, a kto najczęściej przeciw.
+- **Profile: Pięciomian Konecznego (eksperyment).** Na karcie cywilizacji łacińskiej nowy wskaźnik: pięć sfer Konecznego, a ikona „i” przy każdej ustawie wyjaśnia ocenę.
 - **Profile: Jedna karta Konecznego.** Posłowie-ministrowie mają na profilu jedną kartę Cywilizacji łacińskiej, z własnych głosowań, bez drugiej z projektów rządu.
 - **Profile: Kolory głosowań.** Głosy na profilach mają nowe kolory: za zielony, przeciw czerwony, wstrzymanie i nieobecność w odcieniach szarości.
 - **Profile: Krótszy nagłówek karty Konecznego.** Karta Cywilizacji łacińskiej na profilu ma sam tytuł, a opis jest pod przyciskiem „i”.

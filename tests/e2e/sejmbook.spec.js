@@ -790,6 +790,26 @@ for (const skin of ['classic', 'modern']) {
     await expect(page.getByTestId('profile-latin')).toBeVisible();
   });
 
+  // Pięciomian Konecznego (Pawel, 2026-11-28): five spheres, and an "i" next to each law label explains the verdict.
+  test(`profile: Pięciomian section with per-law index explanations (${skin})`, async ({ page }) => {
+    await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
+    await page.goto(`${PAGE}#posel-33`);
+    const q = page.getByTestId('latin-quincunx');
+    await expect(q).toBeVisible();
+    await expect(q.getByTestId('latin-quincunx-score')).toHaveText(/^\d{1,3}$/);
+    await expect(q.locator('.quin-sphere')).toHaveCount(5);
+    const prawda = q.getByTestId('quin-sphere-prawda');
+    await prawda.locator('summary').click();
+    const law = prawda.locator('.quin-law').first();
+    await expect(law.getByTestId('quin-dir')).toHaveText(/zgodna|niezgodna/);
+    const tip = law.getByTestId('info-tip');
+    await tip.focus();
+    await expect(tip.locator('.info-tip-body')).toBeVisible();
+    await expect(tip.locator('.info-tip-body')).toContainText('_INDEX:');
+    const box = await q.boundingBox();
+    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize().width + 1);
+  });
+
   test(`ranking "Cywilizacja łacińska": table, bands, no sideways scroll (${skin})`, async ({ page, isMobile }) => {
     await page.addInitScript((s) => { try { localStorage.setItem('sejmbook-ui', s); } catch { /* ignore */ } }, skin);
     await page.goto(`${PAGE}#frequent-flyer`);
