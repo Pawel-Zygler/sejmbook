@@ -167,8 +167,8 @@ describe('Frequent Flyer', () => {
   });
 });
 
-const NEWEST = 'Kolory głosowań';
-const NEWEST_LINE = 'Profile: Kolory głosowań';
+const NEWEST = 'Jedna karta Konecznego';
+const NEWEST_LINE = 'Profile: Jedna karta Konecznego';
 
 describe('Changelog', () => {
   it('lists site changes, newest first, and the home feed has none', () => {
@@ -655,7 +655,18 @@ describe('Państwo: III RP hierarchy', () => {
     expect($('[data-testid="official-latin"]')).toBeNull();
     nav(`#posel-${mpsData.mps.find((m) => m.name === 'Andrzej Domański').id}`);
     expect($('[data-testid="profile-latin"]')).not.toBeNull();
-    expect($('[data-testid="official-latin"]')).not.toBeNull();
+    // One Koneczny card per profile (Pawel, 2026-11-28): no second card from the government's bills.
+    expect($('[data-testid="official-latin"]')).toBeNull();
+    expect($$('#view .latin-post').length).toBe(1);
+  });
+  it('never shows the same card twice on any MP profile', () => {
+    const ids = [36, 68, 76, 90, 115, 128, ...mpsData.mps.filter((m) => m.active).slice(0, 25).map((m) => m.id)]; // ministers who are MPs + a sample
+    for (const id of ids) { const mp = { id };
+      nav(`#posel-${mp.id}`);
+      const ids = $$('#view .feed > article[data-testid]').map((a) => a.dataset.testid);
+      expect(new Set(ids).size, `posel-${mp.id}: ${ids.join(',')}`).toBe(ids.length);
+      expect($$('#view .latin-post').length, `posel-${mp.id}`).toBeLessThanOrEqual(1);
+    }
   });
   it('gives presidents and prime ministers profiles with all their roles', () => {
     nav('#urzad-lech-kaczynski');

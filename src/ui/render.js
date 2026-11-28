@@ -12,7 +12,7 @@ import { attendanceBadge, renderProfileAttendance } from './attendance-view.js';
 import { renderProfileTaxes } from './tax-view.js';
 import { renderProfileKpi } from './kpi-view.js';
 import { renderProfileLaws } from './law-view.js';
-import { renderProfileLatin, renderOfficialLatin } from './latin-view.js';
+import { renderProfileLatin } from './latin-view.js';
 import { renderProfileDeclarations } from './declarations-view.js';
 import { renderProfileLinks } from './profile-links.js';
 import { renderDistrictMap } from './district-map.js';
@@ -964,7 +964,8 @@ export function renderProfile(ctx, id) {
         ${renderProfileTaxes(ctx, mp, { infoTip })}
         ${renderProfileDeclarations(ctx, mp, { infoTip })}
         ${renderProfileLatin(ctx, mp, { infoTip })}
-        ${renderOfficialLatin(ctx, ctx.gov?.byName?.get(foldName(mp.name)), { infoTip })}
+        ${/* One Koneczny card per MP profile (Pawel, 2026-11-28: no duplicates): the MP's own votes. The card from the
+            government's bills stays on the official's state profile. */ ''}
         ${renderProfileLaws(ctx, mp, { infoTip })}
         ${history.map((h) => flightPost(ctx, mp, h)).join('')}
       </div>

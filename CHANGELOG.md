@@ -4,6 +4,7 @@ Każda zmiana w Sejmbooku, najnowsze na górze. Plik powstaje przy budowaniu z `
 
 ## 2026-11-28
 
+- **Profile: Jedna karta Konecznego.** Posłowie-ministrowie mają na profilu jedną kartę Cywilizacji łacińskiej, z własnych głosowań, bez drugiej z projektów rządu.
 - **Profile: Kolory głosowań.** Głosy na profilach mają nowe kolory: za zielony, przeciw czerwony, wstrzymanie i nieobecność w odcieniach szarości.
 - **Profile: Krótszy nagłówek karty Konecznego.** Karta Cywilizacji łacińskiej na profilu ma sam tytuł, a opis jest pod przyciskiem „i”.
 - **Profile: Cywilizacja łacińska: karta urzędników.** Ministrowie i prezydent dostali eksperymentalną kartę Konecznego liczoną z projektów ustaw, które złożył ich rząd lub urząd.
